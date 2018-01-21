@@ -81,7 +81,7 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Tamamen ücretsiz!</h1>
+						<h1 class="display-4">Tamamen ücretsiz</h1>
 						<p class="lead">Daha ne duruyorsun?</p>
 						<hr class="my-4">
 						<p class="text-center"><a class="btn btn-warning btn-lg" href="/login" role="button"><i class="fa fa-facebook text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
