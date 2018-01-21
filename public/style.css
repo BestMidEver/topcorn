@@ -1,0 +1,81 @@
+html {  position: relative;  min-height: 100%;}
+body { margin-bottom: 330px;}
+.footer {  position: absolute;  bottom: 0;  width: 100%; height: 250px; background-color: #f5f5f5;}
+button:focus{box-shadow: none!important;}
+.yeswrap {  white-space: normal!important;}
+.nav > li {  float: left;  position: relative;}
+.tab1 .active::after {  position: absolute;  bottom: 0;  left: 0;  width: 100%;  content: " ";  border-bottom: 5px solid #5BC0EB;}
+.background-white{background-color: #fff!important;}
+.background-black{background-color: #000!important;}
+.background-lightgrey{background-color: #f7f7f7!important;}
+.btn-facebook{background-color:#4267b2; border-color:#4267b2;}
+.btn-facebook:hover{background-color:#3b5998; border-color:#3b5998;}
+.text-black{color:#000!important;}
+.text-dark{color:#212529!important;}
+.text-middle-light{color:#999!important;}
+.text-light{color:#eee!important;}
+.hover-white:hover{color:#fff!important;}
+.form-control{height: calc(2.25rem + 4px)!important;}
+.position-relative{position: relative;}
+.addban:hover {color:#d9534f;background-color: #ececec;}, .fa{color:#d9534f;}
+.addseen:hover {color:#5cb85c;background-color: #ececec;}, .fa{color:#5cb85c;}
+.addlater:hover {color:#f0ad4e;background-color: #ececec;}, .fa{color:#f0ad4e;}
+.addfacebook:hover {color:#4267b2;background-color: #ececec;}, .fa{color:#4267b2;}
+.btn-vot{background: #fff!important;color: #000!important;}
+.divfooter{position: absolute;bottom: .5rem!important;width: 100%;}
+.votecard .card-img{z-index: 5;}
+.faded{opacity: 0!important;z-index: 0!important;  transition: opacity 0.5s ease-in, z-index 3s!important;}
+.faderdiv{opacity: 1;  transition: opacity 0.5s ease-in;z-index: 7;}
+.votecard .votediv .btn{border-radius: 50px;}
+.votecard .votediv .btn-warning{color: #fff;}
+.votecard.modal-dialog{    max-height: 600px!important;    max-width: 400px!important;}
+.coverpic{object-fit: cover;width: 100%; max-height: 300px; min-height: 150px;}
+.coveroverlayersmall{position: absolute;    bottom: 1rem;    width: 100%;}
+.coveroverlayermedium{position: absolute;    bottom: 1rem;    left: 2rem;}
+.profilepicsmall{object-fit: cover;    width: 100px;    height: 100px; border-radius: 100px;}
+.profilepicmedium{object-fit: cover;    width: 200px;    height: 200px; border-radius: 100px;}
+.trailercover{object-fit: cover;width: 100%; max-height: 300px; min-height: 150px;filter: brightness(50%);}
+.custom-over-layer{position: absolute;width: 100%;top:0;}
+.trailer{max-height: 500px;}
+.fa22 .fa{font-size: 22px!important;}
+.fa40 .fa{font-size: 40px!important;}
+.lead-small{font-size: 1rem;}
+.moviecard-rating{position: absolute;bottom: 0;right: 0;}
+.loginbuttonfa{position: absolute;    left: 28px;    top: 10px;}
+.moviecard_5{    color: #fff;    background-color: #28a745;    border-color: #28a745;}
+.moviecard_4{    color: #fff;    background-color: #17a2b8;    border-color: #17a2b8;}
+.moviecard_3{    color: #fff;    background-color: #868e96;    border-color: #868e96;}
+.moviecard_2{    color: #fff;    background-color: #ffc107;    border-color: #ffc107;}
+.moviecard_1{    color: #fff;    background-color: #dc3545;    border-color: #dc3545;}
+.bordered_button{border-color:#fff;}
+.pos_abs-bot_0{position: absolute;bottom: 0;}
+.left_0-right-0{left: 0}
+.p_x_15{padding-left: 15px}
+@media (hover: none) {
+  .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
+  .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
+  .btn-secondary:hover {    color: #fff;    background-color: #868e96;}
+  .badge-light:hover {    color: #111;    background-color: #f8f9fa!important;}
+  .btn-info:hover {    color: #fff;    background-color: #17a2b8;}
+  .btn-success:hover {    color: #fff;    background-color: #28a745;}
+}
+@media (max-width: 767px) {
+	.nowrap {  white-space: normal;}
+	.left_0-right-0{left: 0;right: 0;}
+	.p_x_15{padding-right: 15px;padding-left: 15px}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.review{column-count:2;}
+	.nowrap {  white-space: nowrap;}
+	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.review{column-count:2;}
+	.nowrap {  white-space: nowrap;}
+	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }
+}
+@media (min-width: 1199px) {
+	.review{column-count:3;}
+	.nowrap {  white-space: nowrap;}
+	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }
+}

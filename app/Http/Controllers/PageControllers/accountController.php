@@ -1,0 +1,196 @@
+<?php
+
+namespace App\Http\Controllers\PageControllers;
+
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Picture\TrPictureResource;
+use App\Model\Rated;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+
+class accountController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+
+
+	public function account($lang = '')
+	{
+		if($lang != '') App::setlocale($lang);
+
+		$image_quality = Auth::User()->image_quality;
+
+		return view('account', compact('image_quality'));
+	}
+
+
+
+
+	public function change_profile(Request $request)
+	{
+		$request->validate([
+			'name' => 'required|min:6',
+		]);
+
+		$user = Auth::User();
+		$user->name=$request->name;
+		if($request->profile_pic != '? string: ?'){
+			if($request->profile_pic == "0"){
+				$user->profile_pic = '';
+			}else{
+				$user->profile_pic = '/'.explode("/", $request->profile_pic)[1];
+			}
+		}
+		if($request->cover_pic != '? string: ?'){
+			$user->cover_pic = '/'.explode("/", $request->cover_pic)[1];
+		}
+		$user->save();
+
+		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');
+
+		return redirect('/account');
+	}
+
+	
+
+
+	public function password($lang = '')
+	{
+    	if($lang != '') App::setlocale($lang);
+
+    	$is_from_facebook=0;
+		if(Auth::User()->facebook_id){
+			if(Hash::check(Auth::User()->facebook_id, Auth::User()->password)){
+				$is_from_facebook = 1;
+			}
+		}
+
+		$image_quality = Auth::User()->image_quality;
+
+		return view('accountpassword', compact('is_from_facebook', 'image_quality'));
+	}
+
+
+
+
+	public function change_password(Request $request, $lang = '')
+	{	
+		if($lang != '') App::setlocale($lang);
+
+		if(Hash::check(Auth::User()->facebook_id, Auth::User()->password)){
+
+			$request->validate([
+	            'new_password' => 'required|confirmed|min:6',
+			]);
+			$user = Auth::User();
+			$user->password = Hash::make($request->new_password);
+			$user->save();
+
+			$request->session()->flash('status', 'Şifreniz başarıyla güncellendi.');
+
+			return redirect('/account/password');
+
+		}else if(Hash::check($request->current_password, Auth::User()->password)){
+
+			$request->validate([
+				'current_password' => 'required|min:6',
+	            'new_password' => 'required|confirmed|min:6',
+			]);
+			$user = Auth::User();
+			$user->password = Hash::make($request->new_password);
+			$user->save();
+
+			$request->session()->flash('status', 'Şifreniz başarıyla güncellendi.');
+
+			return redirect('/account/password');
+
+		}else{
+			return redirect('/account/password')->withErrors([
+	            "current_password" => "Şifre Hatalı",
+	        ]);
+		}
+	}
+
+
+
+
+	public function interface($lang = '')
+	{
+    	if($lang != '') App::setlocale($lang);
+
+    	$image_quality = Auth::User()->image_quality;
+
+		return view('accountinterface', compact('image_quality'));
+	}
+
+
+
+
+	public function change_interface(Request $request, $lang = '')
+	{
+		if($lang != '') App::setlocale($lang);
+
+		$user = Auth::User();
+		$user->lang = $request->lang;
+		$user->secondary_lang = $request->secondary_lang;
+		$user->image_quality = $request->image_quality;
+		$user->save();
+
+		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');
+		return redirect('/account/interface');
+	}
+
+
+
+
+	public function change_insta_language($lang)
+	{
+		if(Auth::check() == 1){
+	    	$user = Auth::User();
+			$user->lang = $lang;
+			$user->save();
+		}else{
+			Session::put('insta_language_change_used', $lang);
+		}
+		return back();
+	}
+
+
+
+
+    public function get_cover_pics($lang = 'en')
+    {
+        switch ($lang) {
+            case 'en':
+                return TrPictureResource::collection(
+                    Rated::where(['user_id' => Auth::user()->id])->get()
+                );
+                break;
+            
+            case 'tr':
+                return TrPictureResource::collection(
+                    Rated::where(['user_id' => Auth::user()->id])->get()
+                );
+                break;
+            
+            case 'hu':
+                return TrPictureResource::collection(
+                    Rated::where(['user_id' => Auth::user()->id])->get()
+                );
+                break;
+            
+            default:
+                return TrPictureResource::collection(
+                    Rated::where(['user_id' => Auth::user()->id])->get()
+                );
+                break;
+        }
+    }
+}
