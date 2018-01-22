@@ -385,20 +385,24 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			rate.add_rate($scope.movies[index].id, rate_code)
 			.then(function(response){
 				console.log(response);
+				$('#myModal').modal('hide');
 				if(response.status == 201){
-					$('#myModal').modal('hide');
 					$scope.movies[index].rated_id=response.data.data.rated_id;
 					$scope.movies[index].rate_code=response.data.data.rate;
+				}else{
+					$('#myModal').modal('show');
 				}
 			});
 		}else if(rate_code == null){
 			rate.un_rate($scope.movies[index].rated_id)
 			.then(function(response){
 				console.log(response);
+				$('#myModal').modal('hide');
 				if(response.status == 204){
-					$('#myModal').modal('hide');
 					$scope.movies[index].rated_id=null;
 					$scope.movies[index].rate_code=null;
+				}else{
+					$('#myModal').modal('show');
 				}
 			});
 		}
