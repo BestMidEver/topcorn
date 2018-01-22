@@ -13,7 +13,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 
 	$http({
 		method: 'GET',
-		url: pass.constants_domain+'/api/get_cover_pics',
+		url: pass.constants_domain+'/api/get_cover_pics/'+pass.lang,
 		headers: {
 			'Content-Type': 'application/json',
 			'Accept' : 'application/json'

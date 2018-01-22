@@ -165,32 +165,15 @@ class accountController extends Controller
 
 
 
-    public function get_cover_pics($lang = 'en')
+    public function get_cover_pics($lang)
     {
-        switch ($lang) {
-            case 'en':
-                return TrPictureResource::collection(
-                    Rated::where(['user_id' => Auth::user()->id])->get()
-                );
-                break;
-            
-            case 'tr':
-                return TrPictureResource::collection(
-                    Rated::where(['user_id' => Auth::user()->id])->get()
-                );
-                break;
-            
-            case 'hu':
-                return TrPictureResource::collection(
-                    Rated::where(['user_id' => Auth::user()->id])->get()
-                );
-                break;
-            
-            default:
-                return TrPictureResource::collection(
-                    Rated::where(['user_id' => Auth::user()->id])->get()
-                );
-                break;
-        }
+    	$return_val = DB::table('rateds')
+    	->where('user_id', Auth::id())
+    	->join('movies', 'movies.id', '=', 'rateds.movie_id')
+    	->select(
+            'movies.'.$lang.'_title as title',
+            'movies.'.$lang.'_cover_path as cover_path',
+            'movies.id as movie_id'
+        )->get();
     }
 }
