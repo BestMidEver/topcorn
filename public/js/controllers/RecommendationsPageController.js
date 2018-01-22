@@ -381,11 +381,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.rate=function(index, rate_code)
 	{
 		console.log(index, rate_code)
+		$('#myModal').modal('hide');
 		if(rate_code != null){
 			rate.add_rate($scope.movies[index].id, rate_code)
 			.then(function(response){
 				console.log(response);
-				$('#myModal').modal('hide');
 				if(response.status == 201){
 					$scope.movies[index].rated_id=response.data.data.rated_id;
 					$scope.movies[index].rate_code=response.data.data.rate;
@@ -397,7 +397,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			rate.un_rate($scope.movies[index].rated_id)
 			.then(function(response){
 				console.log(response);
-				$('#myModal').modal('hide');
 				if(response.status == 204){
 					$scope.movies[index].rated_id=null;
 					$scope.movies[index].rate_code=null;
