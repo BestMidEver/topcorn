@@ -386,9 +386,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
+					$('#myModal').modal('hide');
 					$scope.movies[index].rated_id=response.data.data.rated_id;
 					$scope.movies[index].rate_code=response.data.data.rate;
-					$('#myModal').modal('hide');
 				}
 			});
 		}else if(rate_code == null){
@@ -396,9 +396,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
+					$('#myModal').modal('hide');
 					$scope.movies[index].rated_id=null;
 					$scope.movies[index].rate_code=null;
-					$('#myModal').modal('hide');
 				}
 			});
 		}
