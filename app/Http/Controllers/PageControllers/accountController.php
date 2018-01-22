@@ -8,6 +8,7 @@ use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
@@ -175,5 +176,7 @@ class accountController extends Controller
             'movies.'.$lang.'_cover_path as cover_path',
             'movies.id as movie_id'
         )->get();
+
+  		return $return_val;
     }
 }
