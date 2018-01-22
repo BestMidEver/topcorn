@@ -325,6 +325,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	
 	$scope.this_rate=function(rate_code)
 	{
+		$('#this_movie_modal').modal('hide');
 		if(rate_code != null){
 			rate.add_rate($scope.user_movie_record.movie_id, rate_code)
 			.then(function(response){
@@ -332,7 +333,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.status == 201){
 					$scope.user_movie_record.rated_id=response.data.data.rated_id;
 					$scope.user_movie_record.rate_code=response.data.data.rate;
-					$('#this_movie_modal').modal('hide');
+				}else{
+					$('#this_movie_modal').modal('show');
 				}
 			});
 		}else if(rate_code == null){
@@ -342,7 +344,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.status == 204){
 					$scope.user_movie_record.rated_id=null;
 					$scope.user_movie_record.rate_code=null;
-					$('#this_movie_modal').modal('hide');
+				}else{
+					$('#this_movie_modal').modal('show');
 				}
 			});
 		}

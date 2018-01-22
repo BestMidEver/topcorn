@@ -340,6 +340,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.rate=function(index, rate_code)
 	{
 		console.log(index, rate_code)
+		$('#myModal').modal('hide');
 		if(rate_code != null){
 			rate.add_rate($scope.movies[index].id, rate_code)
 			.then(function(response){
@@ -347,7 +348,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				if(response.status == 201){
 					$scope.movies[index].rated_id=response.data.data.rated_id;
 					$scope.movies[index].rate_code=response.data.data.rate;
-					$('#myModal').modal('hide');
 					$scope.modify_user_movies({
 						'movie_id':response.data.data.movie_id,
 						'rated_id':response.data.data.rated_id,
@@ -355,6 +355,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'later_id':null,
 						'ban_id':null
 					})
+				}else{
+					$('#myModal').modal('show');
 				}
 			});
 		}else if(rate_code == null){
@@ -365,7 +367,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				if(response.status == 204){
 					$scope.movies[index].rated_id=null;
 					$scope.movies[index].rate_code=null;
-					$('#myModal').modal('hide');
 					$scope.modify_user_movies({
 						'movie_id':temp.id,
 						'rated_id':null,
@@ -373,6 +374,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'later_id':temp.later_id,
 						'ban_id':temp.ban_id
 					});
+				}else{
+					$('#myModal').modal('show');
 				}
 			});
 		}

@@ -196,6 +196,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.rate=function(index, rate_code)
 	{
 		console.log(index, rate_code)
+		$('#myModal').modal('hide');
 		if(rate_code != null){
 			rate.add_rate($scope.movies[index].id, rate_code)
 			.then(function(response){
@@ -203,7 +204,8 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 				if(response.status == 201){
 					$scope.movies[index].rated_id=response.data.data.rated_id;
 					$scope.movies[index].rate_code=response.data.data.rate;
-					$('#myModal').modal('hide');
+				}else{
+					$('#myModal').modal('show');
 				}
 			});
 		}else if(rate_code == null){
@@ -213,7 +215,8 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 				if(response.status == 204){
 					$scope.movies[index].rated_id=null;
 					$scope.movies[index].rate_code=null;
-					$('#myModal').modal('hide');
+				}else{
+					$('#myModal').modal('show');
 				}
 			});
 		}
