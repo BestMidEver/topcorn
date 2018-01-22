@@ -175,7 +175,9 @@ class accountController extends Controller
             'movies.'.$lang.'_title as title',
             'movies.'.$lang.'_cover_path as cover_path',
             'movies.id as movie_id'
-        )->get();
+        )
+    	->orderBy('movies.'.$lang.'_title', 'asc')
+        ->get();
 
   		return $return_val;
     }

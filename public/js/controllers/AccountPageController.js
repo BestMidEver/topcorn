@@ -19,8 +19,8 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 			'Accept' : 'application/json'
 		}
 	}).then(function successCallback(response) {
-		console.log(response.data.data)
-		$scope.cover_movies=response.data.data;
+		console.log(response.data)
+		$scope.cover_movies=response.data;
 	}, function errorCallback(response) {
 	});
 
