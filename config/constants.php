@@ -12,7 +12,7 @@ return array(
     'cover_error' => '/images/cover.png',
 
     'movie_card' => array(
-      'https://image.tmdb.org/t/p/w92_and_h138_bestv2',
+      'https://image.tmdb.org/t/p/w92_and_h138_bestv2', 
       'https://image.tmdb.org/t/p/w180_and_h270_bestv2',
       'https://image.tmdb.org/t/p/w300_and_h450_bestv2',
     ),
