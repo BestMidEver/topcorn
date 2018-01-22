@@ -170,6 +170,7 @@ class accountController extends Controller
     {
     	$return_val = DB::table('rateds')
     	->where('user_id', Auth::id())
+    	->where('rateds.rate', '=', 5)
     	->join('movies', 'movies.id', '=', 'rateds.movie_id')
     	->select(
             'movies.'.$lang.'_title as title',
