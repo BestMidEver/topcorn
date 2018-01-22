@@ -36,13 +36,13 @@ class SuckPageJob implements ShouldQueue
     public function handle()
     {
         if($this->isPopular){
-            $movies = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), false)['results'];
+            $movies = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), true)['results'];
         }else{
-            $movies = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/top_rated?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), false)['results'];
+            $movies = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/top_rated?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), true)['results'];
         }
         for ($j=0; $j < count($movies) ; $j++) {
             if($movies[$j]['vote_average'] > config('constants.suck_page.min_vote_average') && $movies[$j]['vote_count'] > config('constants.suck_page.min_vote_count')){
-                SuckMovieJob::dispatch($movies[$j]['id'], false)->onQueue("low");
+                SuckMovieJob::dispatch($movies[$j]['id'], true)->onQueue("low");
             }
         }
     }
