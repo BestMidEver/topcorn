@@ -43,7 +43,8 @@ class recommendationsController extends Controller
     public function get_top_rateds($tab, Request $request)
     {
         $return_val = DB::table('movies')
-        ->where('vote_count', '>', 200)
+        ->where('vote_count', '>', 50)
+        ->where('vote_average', '>', config('constants.suck_page.min_vote_average'))
         ->leftjoin('rateds', function ($join) use ($request) {
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->whereIn('rateds.user_id', $request->f_users);
