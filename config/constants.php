@@ -13,14 +13,14 @@ return array(
 
     'movie_card' => array(
       'https://image.tmdb.org/t/p/w92_and_h138_bestv2', 
-      'https://image.tmdb.org/t/p/w180_and_h270_bestv2',
+      'https://image.tmdb.org/t/p/w200_and_h300_bestv2',
       'https://image.tmdb.org/t/p/w300_and_h450_bestv2',
     ),
     'movie_card_error' => '/images/noimage15.png',
 
     'rate_modal' => array(
       'https://image.tmdb.org/t/p/w92_and_h138_bestv2',
-      'https://image.tmdb.org/t/p/w180_and_h270_bestv2',
+      'https://image.tmdb.org/t/p/w200_and_h300_bestv2',
       'https://image.tmdb.org/t/p/w300_and_h450_bestv2',
     ),
     'rate_modal_error' => '/images/noimage15.png',

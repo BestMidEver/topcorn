@@ -150,7 +150,7 @@ class recommendationsController extends Controller
             'bans.id as ban_id'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.9)) > 1')
+        ->havingRaw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.9)) > 10')
         ->orderBy('point', 'desc');
 
         if($request->f_genre != [])
