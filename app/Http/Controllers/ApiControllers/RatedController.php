@@ -4,7 +4,6 @@ namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RatedRequest;
-use App\Http\Resources\Movie\AllMovieResource;
 use App\Http\Resources\Rated\RatedResource;
 use App\Jobs\SuckMovieJob;
 use App\Model\Rated;
@@ -28,7 +27,7 @@ class RatedController extends Controller
     public function index()
     {
         return RatedResource::collection(
-            Rated::where(['user_id' => Auth::user()->id])->get()
+            Rated::where(['user_id' => Auth::id()])->get()
         );
     }    
 
