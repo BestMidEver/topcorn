@@ -63,7 +63,7 @@ return [
     'medium' => 'Orta',                                                                 //accountinterface,
     'minute' => 'dakika',
     'movie' => 'Film',
-    'movies' => 'Filmler',                                                               //person,
+    'movies' => 'Film',                                                                 //person,
     'movie_details' => 'Film Detayları',
     'most_rated' => 'En Çok Oylanan',
     'most_populer' => 'En Popüler',                                                     //recommendations,
