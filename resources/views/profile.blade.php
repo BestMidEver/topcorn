@@ -58,16 +58,16 @@
 </div>
 
 <div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans'">
-	<div class="dropdown" ng-init="mod_title='Kesinlikle Öner'">
+	<div class="dropdown" ng-init="mod_title='{{ __('general.definitely_recommend') }}'">
 		<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{mod_title}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<button class="dropdown-item" ng-click="mod_title='Kesinlikle Öner';active_tab='get_rateds/5';get_first_page_data();">{{ __('general.definitely_recommend') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='Öner';active_tab='get_rateds/4';get_first_page_data();">{{ __('general.recommend') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='Kararsız';active_tab='get_rateds/3';get_first_page_data();">{{ __('general.not_sure') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='Önerme';active_tab='get_rateds/2';get_first_page_data();">{{ __('general.dont_recommend') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='Kesinlikle Önerme';active_tab='get_rateds/1';get_first_page_data();">{{ __('general.definitely_dont_recommend') }}</button>
+			<button class="dropdown-item" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data();">{{ __('general.definitely_recommend') }}</button>
+			<button class="dropdown-item" ng-click="mod_title='{{ __('general.recommend') }}';active_tab='get_rateds/4';get_first_page_data();">{{ __('general.recommend') }}</button>
+			<button class="dropdown-item" ng-click="mod_title='{{ __('general.not_sure') }}';active_tab='get_rateds/3';get_first_page_data();">{{ __('general.not_sure') }}</button>
+			<button class="dropdown-item" ng-click="mod_title='{{ __('general.dont_recommend') }}';active_tab='get_rateds/2';get_first_page_data();">{{ __('general.dont_recommend') }}</button>
+			<button class="dropdown-item" ng-click="mod_title='{{ __('general.definitely_dont_recommend') }}';active_tab='get_rateds/1';get_first_page_data();">{{ __('general.definitely_dont_recommend') }}</button>
 			<div class="dropdown-divider"></div>
 			<button class="dropdown-item" ng-click="mod_title='Hepsi';active_tab='get_rateds/all';get_first_page_data();">{{ __('general.all') }}</button>
 		</div>

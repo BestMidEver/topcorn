@@ -6,7 +6,7 @@ return array(
 
     'cover' => array(
       'https://image.tmdb.org/t/p/w300',
-      'https://image.tmdb.org/t/p/w650',
+      'https://image.tmdb.org/t/p/w600',
       'https://image.tmdb.org/t/p/w1280',
     ),
     'cover_error' => '/images/cover.png',

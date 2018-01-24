@@ -7,7 +7,7 @@
 	<h5 class="d-inline align-middle my-2">{{ __('navbar.recommendations') }}</h5>
 	<button class="btn btn-warning btn-sm text-white ml-3 my-2" type="button" disabled>{{ Auth::user()->name }}</button>
 	<button class="btn btn-warning btn-sm text-white mx-1 my-2" type="button" ng-repeat="user in party_members" ng-click="remove_from_party(user.user_id);">@{{user.name}} <i class="fa fa-times" aria-hidden="true"></i></button>
-	<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd"><i class="fa fa-plus" aria-hidden="true"></i> Kişi Ekle</button>
+	<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fa fa-plus" aria-hidden="true"></i> {{ __('general.add_person') }}</button>
 </div>
 
 <div class="collapse container-fluid background-lightgrey" id="collapseAdd">
@@ -15,7 +15,7 @@
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8">
 			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-			<input type="text" class="form-control" placeholder="{{ __('general.search_user') }}" aria-describedby="basic-addon1" ng-model="search_text" ng-change="search_users()" ng-model-options="{debounce: 750}">
+			<input type="text" id="input_user" class="form-control" placeholder="{{ __('general.search_user') }}" aria-describedby="basic-addon1" ng-model="search_text" ng-change="search_users()" ng-model-options="{debounce: 750}">
 		</div>
 		<div class="col"></div>
 	</div>
@@ -50,7 +50,7 @@
 	</div>
 	@include('layout.pagination', ['suffix' => '_search'])
 	<div class="text-center pb-1">
-		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseAdd"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseAdd" ng-click="reset_add_person_input()"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 	</div>
 </div>
 

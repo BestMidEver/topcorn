@@ -149,6 +149,6 @@ class RatedController extends Controller
             'bans.id as ban_id'
         );
 
-        return $return_val->take(2)->get();
+        return $return_val->take(10)->get();
     }
 }

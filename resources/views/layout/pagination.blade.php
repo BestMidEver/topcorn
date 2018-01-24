@@ -1,5 +1,5 @@
 <nav aria-label="Page navigation" class="mt-5" ng-show="pagination{{ $suffix }} > 1">
-  <ul class="pagination justify-content-center" ng-init="current_page{{ $suffix }}=1">
+  <ul class="pagination justify-content-center mb-0" ng-init="current_page{{ $suffix }}=1">
     <li class="page-item" ng-class="{'disabled':current_page{{ $suffix }}==1}">
       <button class="page-link" ng-click="paginate{{ $suffix }}(current_page{{ $suffix }}-1)">
         <span aria-hidden="true">&laquo;</span>
@@ -12,8 +12,11 @@
     <li class="page-item" ng-class="{'disabled':current_page{{ $suffix }}==pagination{{ $suffix }}}">
       <button class="page-link" ng-click="paginate{{ $suffix }}(current_page{{ $suffix }}+1)">
         <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">{{ __('general.previous') }}</span>
+        <span class="sr-only">{{ __('general.next') }}</span>
       </button>
     </li>
   </ul>
+  <div class="text-center mt-2">
+    <span class="text-muted" aria-hidden="true"><small>{!! __('general.pagination_info') !!}</small></span>
+  </div>
 </nav>

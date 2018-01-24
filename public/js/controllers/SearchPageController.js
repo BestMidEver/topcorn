@@ -48,19 +48,22 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			var temp=$scope.model[$scope.active_tab].replace(/ /g , "%20");
 			switch($scope.active_tab) {
 				case 'movie':
-				$http({
-					method: 'GET',
-					url: 'https://api.themoviedb.org/3/search/movie?api_key='+pass.constants_api_key+'&language='+pass.lang+'&query='+temp+'&page='+$scope.page+'&include_adult=false'
-				}).then(function successCallback(response) {
-					console.log(response.data);
-					external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
-					$scope.movies=response.data.results;
-					if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
-					else $scope.pagination=1000;
-					$scope.current_page=response.data.page;
-				}, function errorCallback(response) {
-				});
-				break;
+					$http({
+						method: 'GET',
+						url: 'https://api.themoviedb.org/3/search/movie?api_key='+pass.constants_api_key+'&language='+pass.lang+'&query='+temp+'&page='+$scope.page+'&include_adult=false'
+					}).then(function successCallback(response) {
+						console.log(response.data);
+						external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
+						$scope.movies=response.data.results;
+						if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
+						else $scope.pagination=1000;
+						$scope.current_page=response.data.page;
+						$scope.from=(response.data.page-1)*20+1;
+						$scope.to=(response.data.page-1)*20+response.data.results.length;
+						$scope.in=response.data.total_results;
+					}, function errorCallback(response) {
+					});
+					break;
 				case 'person':
 					$http({
 						method: 'GET',
@@ -68,11 +71,15 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					}).then(function successCallback(response) {
 						console.log(response.data);
 						$scope.people=response.data.results;
-						$scope.pagination=response.data.total_pages;
+						if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
+						else $scope.pagination=1000;
 						$scope.current_page=response.data.page;
+						$scope.from=(response.data.page-1)*20+1;
+						$scope.to=(response.data.page-1)*20+response.data.results.length;
+						$scope.in=response.data.total_results;
 					}, function errorCallback(response) {
 					});
-				break;
+					break;
 				case 'user':
 					rate.search_users(temp, $scope.page_search)
 					.then(function(response){
@@ -80,8 +87,11 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						$scope.users=response.data.data;
 						$scope.pagination_search=response.data.last_page;
 						$scope.current_page_search=response.data.current_page;
+						$scope.from=response.data.from;
+						$scope.to=response.data.to;
+						$scope.in=response.data.total;
 					});
-				break;
+					break;
 				default:
 			}
 			$(".tooltip").hide();
@@ -101,7 +111,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////// INPUT FOCUS ON TAB CHANGE /////////////////////////////
+////////////////////////////////////////// SET FOCUS /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.setFocus = function(id_of_input){
 		console.log(id_of_input)
@@ -110,7 +120,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		}, 500);
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////// INPUT FOCUS ON TAB CHANGE /////////////////////////////
+////////////////////////////////////////// SET FOCUS /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -122,6 +132,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.quickvote=function()
 	{
 		$scope.get_quick_rate();
+		$('#myModal').modal('show');
 	};
 
 	$scope.get_quick_rate=function()
@@ -132,7 +143,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			if(response.data.length>0){
 				$scope.modalmovies=response.data;
 				$scope.next_quick_rate();
-				$('#myModal').modal('show');
 				$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 			}else{
 				$('#myModal').modal('hide');
@@ -192,6 +202,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$scope.modalmovie.rated_id=response.data.data.rated_id;
 					$scope.modalmovie.rate_code=response.data.data.rate;
 					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
+					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
 					//$('#myModal').modal('hide');
@@ -205,6 +216,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$scope.modalmovie.rated_id=null;
 					$scope.modalmovie.rate_code=null;
 					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
+					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
 					//$('#myModal').modal('hide');

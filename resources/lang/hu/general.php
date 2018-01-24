@@ -61,7 +61,8 @@ return [
     'm' => 'p',
     'medium' => 'Közepes',                                                  //accountinterface,
     'minute' => 'perc',							                            //movie
-    'movie' => 'Film',							
+    'movie' => 'Film',                          
+    'movies' => 'Film',							
     'movie_details' => 'Film részletei',				                    //movie
     'most_rated' => 'Legnépszerűbb',
     'most_populer' => 'Legnépszerűbb',                                      //recommendations,

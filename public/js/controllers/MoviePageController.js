@@ -146,6 +146,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.quickvote=function()
 	{
 		$scope.get_quick_rate();
+		$('#myModal').modal('show');
 	};
 
 	$scope.get_quick_rate=function()
@@ -156,7 +157,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			if(response.data.length>0){
 				$scope.modalmovies=response.data;
 				$scope.next_quick_rate();
-				$('#myModal').modal('show');
 				$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 			}else{
 				$('#myModal').modal('hide');
@@ -216,6 +216,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$scope.modalmovie.rated_id=response.data.data.rated_id;
 					$scope.modalmovie.rate_code=response.data.data.rate;
 					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
+					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
 					//$('#myModal').modal('hide');
@@ -229,6 +230,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$scope.modalmovie.rated_id=null;
 					$scope.modalmovie.rate_code=null;
 					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
+					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
 					//$('#myModal').modal('hide');

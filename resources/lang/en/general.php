@@ -33,10 +33,10 @@ return [
     'directing' => 'Directing',                                             //person
     'director' => 'Director',                                               //movie
     'directors' => 'Directors',                                             //movie
-    'definitely_dont_recommend' => 'Definitely Don\'t Recommend',           //ratemodal, profile,
+    'definitely_dont_recommend' => 'Definitely Don\\\'t Recommend',           //ratemodal, profile,
     'definitely_recommend' => 'Definitely Recommend',                       //ratemodal, profile,
     'dollar_account' => 'Dollar Account',                                   //donation,
-    'dont_recommend' => 'Don\'t Recommend',                                 //ratemodal, profile,
+    'dont_recommend' => 'Don\\\'t Recommend',                                 //ratemodal, profile,
     'editing' => 'Editing',                                                 //person,
     'email' => 'Email',                                                     //email, reset, login, register,
     'email_confirmation' => 'Email Confirmation',                           //register,
@@ -49,7 +49,7 @@ return [
     'forgot_my_password' => 'I Forgot My Password',                         //email, login,
     'genre' => 'GENRE',                                                     //recommendations_genres,
     'h' => 'h',                                                             //movie,
-    'havent_seen' => 'Haven\'t Seen',                                       //ratemodal,
+    'havent_seen' => 'Haven\\\'t Seen',                                       //ratemodal,
     'high' => 'High',                                                       //accountinterface,
     'hismovies' => 'Movies',                                                //person,
     'image_quality' => 'Image Quality',                                     //accountinterface,
@@ -61,7 +61,8 @@ return [
     'm' => 'm',
     'medium' => 'Medium',                                                   //accountinterface,
     'minute' => 'minute',                                                   //movie,
-    'movie' => 'Movie',
+    'movie' => 'movie',
+    'movies' => 'movies',                                                   //person,
     'movie_details' => 'Movie Details',                                     //movie,
     'most_rated' => 'Most Rated',                                           //person,
     'most_populer' => 'Most Popular',                                       //recommendations,

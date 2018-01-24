@@ -193,12 +193,12 @@
 <!--Cast Section-->
 
 <!--Review Section-->
-<div class="container-fluid mt-5" ng-if="movie.reviews.results.length>0">	
+<div class="container-fluid mt-5">	
 	<div>
 		<span class="h5 mb-0 pr-2">{{ __('general.reviews') }}</span>
 		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i> {{ __('general.add_review') }}</a>
 	</div>
-	<div class="py-4" ng-repeat="review in movie.reviews.results">
+	<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
 		<div class="h6 pb-2">@{{review.author}}</div>
 		<div id="@{{'accordion'+$index}}">
 			<div ng-if="review.id == 'long'">
@@ -224,6 +224,9 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="p-5" ng-if="!movie.reviews.results.length>0">
+		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
 	</div>
 </div>
 <!--Review Section-->
