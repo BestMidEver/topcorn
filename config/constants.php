@@ -6,20 +6,20 @@ return array(
 
     'cover' => array(
       'https://image.tmdb.org/t/p/w300',
-      'https://image.tmdb.org/t/p/w600',
+      'https://image.tmdb.org/t/p/w780',
       'https://image.tmdb.org/t/p/w1280',
     ),
     'cover_error' => '/images/cover.png',
 
     'movie_card' => array(
-      'https://image.tmdb.org/t/p/w92_and_h138_bestv2', 
+      'https://image.tmdb.org/t/p/w150_and_h225_bestv2', 
       'https://image.tmdb.org/t/p/w200_and_h300_bestv2',
       'https://image.tmdb.org/t/p/w300_and_h450_bestv2',
     ),
     'movie_card_error' => '/images/noimage15.png',
 
     'rate_modal' => array(
-      'https://image.tmdb.org/t/p/w92_and_h138_bestv2',
+      'https://image.tmdb.org/t/p/w150_and_h225_bestv2',
       'https://image.tmdb.org/t/p/w200_and_h300_bestv2',
       'https://image.tmdb.org/t/p/w300_and_h450_bestv2',
     ),
