@@ -49,9 +49,16 @@
 								</div>
 								<div class=""></div>
 							</div>
-							<div class="row mt-2 align-items-end">
+							<div class="d-flex flex-row justify-content-between mt-2" ng-if="!(modalmovie.is_quick_rate && previous_quick_rate_movie)">
+								<div class=""></div>
+								<div class="faderdiv">
+									<button class="btn btn-danger btn-lg" ng-class="{'bordered_button':modalmovie.rate_code==1}" ng-click="modalmovie.is_quick_rate ? quick_rate(1) : rate(modalmovie.index, 1)">{{ __('general.definitely_dont_recommend') }}</button>
+								</div>
+								<div class=""></div>
+							</div>
+							<div class="row mt-2 align-items-end" ng-if="modalmovie.is_quick_rate && previous_quick_rate_movie">
 								<div class="col-2 faderdiv">
-									<button type="button" class="btn btn-secondary btn-sm badge-light float-left" ng-show="modalmovie.is_quick_rate && previous_quick_rate_movie" ng-click="previous_quick_rate()">
+									<button type="button" class="btn btn-secondary btn-sm badge-light float-left" ng-click="previous_quick_rate()">
 										<i class="fa fa-undo" aria-hidden="true"></i>
 									</button>
 								</div>

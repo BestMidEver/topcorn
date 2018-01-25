@@ -49,10 +49,6 @@ class recommendationsController extends Controller
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->whereIn('rateds.user_id', $request->f_users);
         })
-        ->where(function($query) {
-            $query->whereNull('rateds.id');
-            $query->orWhere('rateds.rate', '=', 0);
-        })
         ->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::user()->id);
@@ -74,7 +70,9 @@ class recommendationsController extends Controller
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
-        );
+        )
+        ->groupBy('movies.id')
+        ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0');
 
         if($tab=='popular'){
             $return_val = $return_val->orderBy('popularity', 'desc');
@@ -85,7 +83,6 @@ class recommendationsController extends Controller
         if($request->f_genre != []){
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
             ->whereIn('genre_id', $request->f_genre)
-            ->groupBy('movies.id')
             ->havingRaw('COUNT(*)='.count($request->f_genre));
         }
 
@@ -121,10 +118,6 @@ class recommendationsController extends Controller
             $join->on('r2.movie_id', '=', 'movies.id')
             ->whereIn('r2.user_id', $request->f_users);
         })
-        ->where(function($query) {
-            $query->whereNull('r2.id');
-            $query->orWhere('r2.rate', '=', 0);
-        })
         ->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::user()->id);
@@ -139,7 +132,7 @@ class recommendationsController extends Controller
             'recommendations.this_id as id',
             'recommendations.movie_id as mother_movie_id',
             'movies.original_title',
-            DB::raw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.9))*movies.vote_average AS point'),
+            DB::raw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.8))*movies.vote_average AS point'),
             DB::raw('COUNT(*) as count'),
             'movies.vote_average',
             'movies.release_date',
@@ -151,7 +144,7 @@ class recommendationsController extends Controller
             'bans.id as ban_id'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.9)) > 10')
+        ->havingRaw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.8)) > 10 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
         ->orderBy('point', 'desc');
 
         if($request->f_genre != [])
