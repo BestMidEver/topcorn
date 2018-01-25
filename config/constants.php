@@ -26,9 +26,9 @@ return array(
     'rate_modal_error' => '/images/noimage15.png',
 
     'thumb_nail' => array(
-      'https://image.tmdb.org/t/p/w45',
       'https://image.tmdb.org/t/p/w90',
       'https://image.tmdb.org/t/p/w185',
+      'https://image.tmdb.org/t/p/w300',
     ),
     'thumb_nail_error' => '/images/no_image_150x150_question_mark.png',
 
