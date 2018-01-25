@@ -5,30 +5,30 @@ return array(
   'image' => array(
 
     'cover' => array(
-      'https://image.tmdb.org/t/p/w300',
-      'https://image.tmdb.org/t/p/w780',
-      'https://image.tmdb.org/t/p/w1280',
+      'http://image.tmdb.org/t/p/w300',
+      'http://image.tmdb.org/t/p/w780',
+      'http://image.tmdb.org/t/p/w1280',
     ),
     'cover_error' => '/images/cover.png',
 
     'movie_card' => array(
-      'https://image.tmdb.org/t/p/w92_and_h138_bestv2', 
-      'https://image.tmdb.org/t/p/w200_and_h300_bestv2',
-      'https://image.tmdb.org/t/p/w300_and_h450_bestv2',
+      'http://image.tmdb.org/t/p/w92_and_h138_bestv2', 
+      'http://image.tmdb.org/t/p/w200_and_h300_bestv2',
+      'http://image.tmdb.org/t/p/w300_and_h450_bestv2',
     ),
     'movie_card_error' => '/images/noimage15.png',
 
     'rate_modal' => array(
-      'https://image.tmdb.org/t/p/w92_and_h138_bestv2',
-      'https://image.tmdb.org/t/p/w200_and_h300_bestv2',
-      'https://image.tmdb.org/t/p/w300_and_h450_bestv2',
+      'http://image.tmdb.org/t/p/w92_and_h138_bestv2',
+      'http://image.tmdb.org/t/p/w200_and_h300_bestv2',
+      'http://image.tmdb.org/t/p/w300_and_h450_bestv2',
     ),
     'rate_modal_error' => '/images/noimage15.png',
 
     'thumb_nail' => array(
-      'https://image.tmdb.org/t/p/w90',
-      'https://image.tmdb.org/t/p/w185',
-      'https://image.tmdb.org/t/p/w300',
+      'http://image.tmdb.org/t/p/w90',
+      'http://image.tmdb.org/t/p/w185',
+      'http://image.tmdb.org/t/p/w300',
     ),
     'thumb_nail_error' => '/images/no_image_150x150_question_mark.png',
 
