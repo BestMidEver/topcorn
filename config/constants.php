@@ -26,9 +26,9 @@ return array(
     'rate_modal_error' => '/images/noimage15.png',
 
     'thumb_nail' => array(
-      'https://image.tmdb.org/t/p/w100_and_h100_bestv2',
-      'https://image.tmdb.org/t/p/w150_and_h150_bestv2',
-      'https://image.tmdb.org/t/p/w300_and_h300_bestv2',
+      'https://image.tmdb.org/t/p/w45',
+      'https://image.tmdb.org/t/p/w90',
+      'https://image.tmdb.org/t/p/w185',
     ),
     'thumb_nail_error' => '/images/no_image_150x150_question_mark.png',
 
