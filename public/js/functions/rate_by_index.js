@@ -277,7 +277,7 @@ MyApp.factory('rate', function($http) {
     	remove_from_history: remove_from_history,
     	get_recommendations_page_data: get_recommendations_page_data,
     	get_user_movies: get_user_movies,
-    	search_movies: search_movies,
+    	search_movies: search_movies, 
     	search_people: search_people,
     	search_users: search_users,
     };
