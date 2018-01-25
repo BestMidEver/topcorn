@@ -72,6 +72,7 @@
 			<button class="dropdown-item" ng-click="mod_title='Hepsi';active_tab='get_rateds/all';get_first_page_data();">{{ __('general.all') }}</button>
 		</div>
 	</div>
+	<span class="text-muted pl-2"><small>@{{movies.length}} <span ng-show="movies.length < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="movies.length > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 </div>
 
 <div id="scroll_top_point">
