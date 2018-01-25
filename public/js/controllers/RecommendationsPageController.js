@@ -83,7 +83,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
 		.then(function(response){
-			console.log(response.data)
+			console.log(response)
 			$scope.movies=response.data.data;
 			$scope.pagination=response.data.last_page;
 			$scope.current_page=response.data.current_page;

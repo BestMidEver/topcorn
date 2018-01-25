@@ -146,23 +146,6 @@ MyApp.factory('rate', function($http) {
 
 
 
-    search_users = function(search_text, page) 
-    {
-        return $http({
-			method: 'GET',
-			url: pass.constants_domain + '/api/search_users/'+search_text+'?page='+page,
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept' : 'application/json'
-			},
-		}).then(function successCallback(response) {
-			return response;
-		}, function errorCallback(response) {
-		});
-    }
-
-
-
     add_to_history = function(user_id) 
     {
         return $http({
@@ -230,6 +213,57 @@ MyApp.factory('rate', function($http) {
 
 
 
+    search_movies = function(constants_api_key, lang, temp, page) 
+    {
+		return $http({
+			method: 'GET',
+			url: 'https://api.themoviedb.org/3/search/movie?api_key='+constants_api_key+'&language='+lang+'&query='+temp+'&page='+page+'&include_adult=false',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+    search_people = function(constants_api_key, lang, temp, page) 
+    {
+		return $http({
+			method: 'GET',
+			url: 'https://api.themoviedb.org/3/search/person?api_key='+constants_api_key+'&language='+lang+'&query='+temp+'&page='+page+'&include_adult=false',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+    search_users = function(search_text, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: pass.constants_domain + '/api/search_users/'+search_text+'?page='+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     return {
     	get_quick_rate: get_quick_rate,
     	add_later: add_later,
@@ -239,10 +273,12 @@ MyApp.factory('rate', function($http) {
     	add_ban: add_ban,
     	un_ban: un_ban,
     	get_last_parties: get_last_parties,
-    	search_users: search_users,
     	add_to_history: add_to_history,
     	remove_from_history: remove_from_history,
     	get_recommendations_page_data: get_recommendations_page_data,
     	get_user_movies: get_user_movies,
+    	search_movies: search_movies,
+    	search_people: search_people,
+    	search_users: search_users,
     };
 })

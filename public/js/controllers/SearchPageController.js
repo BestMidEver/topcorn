@@ -37,7 +37,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.movies=null;
 		$scope.people=null;
 		$scope.users=null
-		$scope.model={};
+		$scope.model.movie='';
+		$scope.model.person='';
+		$scope.model.user='';
 	}
 
 	$scope.get_page_data = function()
@@ -48,36 +50,41 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			var temp=$scope.model[$scope.active_tab].replace(/ /g , "%20");
 			switch($scope.active_tab) {
 				case 'movie':
-					$http({
-						method: 'GET',
-						url: 'https://api.themoviedb.org/3/search/movie?api_key='+pass.constants_api_key+'&language='+pass.lang+'&query='+temp+'&page='+$scope.page+'&include_adult=false'
-					}).then(function successCallback(response) {
+					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
+					.then(function(response){
 						console.log(response.data);
-						external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
-						$scope.movies=response.data.results;
-						if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
-						else $scope.pagination=1000;
-						$scope.current_page=response.data.page;
-						$scope.from=(response.data.page-1)*20+1;
-						$scope.to=(response.data.page-1)*20+response.data.results.length;
-						$scope.in=response.data.total_results;
-					}, function errorCallback(response) {
+						if(!response.data.results.length>0){
+							rate.search_people(pass.constants_api_key, pass.lang, temp, $scope.page)
+							.then(function(response){
+								if(response.data.results.length>0){
+									$scope.active_tab='person';
+									$scope.setFocus('input_person');
+									$scope.model.person=$scope.model.movie;
+									$scope.model.movie='';
+									$scope.inside_get_page_data_person(response);
+								}
+							});
+						}
+						$scope.inside_get_page_data_movie(response);
 					});
 					break;
 				case 'person':
-					$http({
-						method: 'GET',
-						url: 'https://api.themoviedb.org/3/search/person?api_key='+pass.constants_api_key+'&language='+pass.lang+'&query='+temp+'&page='+$scope.page+'&include_adult=false'
-					}).then(function successCallback(response) {
+					rate.search_people(pass.constants_api_key, pass.lang, temp, $scope.page)
+					.then(function(response){
 						console.log(response.data);
-						$scope.people=response.data.results;
-						if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
-						else $scope.pagination=1000;
-						$scope.current_page=response.data.page;
-						$scope.from=(response.data.page-1)*20+1;
-						$scope.to=(response.data.page-1)*20+response.data.results.length;
-						$scope.in=response.data.total_results;
-					}, function errorCallback(response) {
+						if(!response.data.results.length>0){
+							rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
+							.then(function(response){
+								if(response.data.results.length>0){
+									$scope.active_tab='movie';
+									$scope.setFocus('input_movie');
+									$scope.model.movie=$scope.model.person;
+									$scope.model.person='';
+									$scope.inside_get_page_data_movie(response);
+								}
+							});
+						}
+						$scope.inside_get_page_data_person(response);
 					});
 					break;
 				case 'user':
@@ -96,6 +103,27 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			}
 			$(".tooltip").hide();
 		}
+	}
+
+	$scope.inside_get_page_data_movie = function(response){
+		external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
+		$scope.movies=response.data.results;
+		if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
+		else $scope.pagination=1000;
+		$scope.current_page=response.data.page;
+		$scope.from=(response.data.page-1)*20+1;
+		$scope.to=(response.data.page-1)*20+response.data.results.length;
+		$scope.in=response.data.total_results;
+	}
+
+	$scope.inside_get_page_data_person = function(response){
+		$scope.people=response.data.results;
+		if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
+		else $scope.pagination=1000;
+		$scope.current_page=response.data.page;
+		$scope.from=(response.data.page-1)*20+1;
+		$scope.to=(response.data.page-1)*20+response.data.results.length;
+		$scope.in=response.data.total_results;
 	}
 
     $scope.get_first_page_data = function()
