@@ -5,6 +5,7 @@ return [
     'a_z' => 'A -> Z',
     'according_to_my_taste' => 'Benim Zevkime Göre',                                    //recommendations,
     'acting' => 'Oyunculuk',            
+    'active' => 'Etkin',                                                                //accountinterface,             NEW NEW NEW
     'actor' => 'Oyuncu',            
     'actors' => 'Oyuncular',            
     'add' => 'Ekle',                                                                    //recommendations,
@@ -34,6 +35,7 @@ return [
     'directing' => 'Yönetmenlik',
     'director' => 'Yönetmen',
     'directors' => 'Yönetmenler',
+    'disabled' => 'Devre Dışı',                                                         //accountinterface,                     NEW NEW NEW
     'definitely_dont_recommend' => 'Kesinlikle Önerme',                                 //ratemodal, profile,
     'definitely_recommend' => 'Kesinlikle Öner',                                        //ratemodal, profile,
     'dollar_account' => 'Dolar Hesabı',                                                 //donation,
@@ -53,6 +55,7 @@ return [
     'havent_seen' => 'İzlemedim',                                                       //ratemodal,
     'high' => 'Yüksek',                                                                 //accountinterface,
     'hismovies' => 'Filmleri',
+    'hover_title_language' => 'Film İpucu',                                             //accountinterface,                     NEW NEW NEW
     'image_quality' => 'Görsel Kalitesi',                                               //accountinterface,
     'interface' => 'Arayüz',                                                            //account,
     'its_title' => 'Adı',
@@ -60,9 +63,7 @@ return [
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
     'm' => 'dk.',
-    'margin_bootstrap_default' => 'Varsayılan',                                         //accountinterface,                     NEW NEW NEW
-    'margin_fill_screen' => 'Tam Ekran',                                                //accountinterface,                     NEW NEW NEW
-    'margin_x_setting' => 'Kenar Boşlukları',                                           //accountinterface,                     NEW NEW NEW
+    'margin_x_setting' => 'Tam Ekran',                                                  //accountinterface,                     NEW NEW NEW
     'medium' => 'Orta',                                                                 //accountinterface,
     'minute' => 'dakika',
     'movie' => 'Film',
@@ -70,6 +71,8 @@ return [
     'movie_details' => 'Film Detayları',
     'most_rated' => 'En Çok Oylanan',
     'most_populer' => 'En Popüler',                                                     //recommendations,
+    'movies_original_language' => 'Filmin Orijinal Dili',                               //accountinterface,                     NEW NEW NEW
+    'my_secondary_language' => 'İkinci Dilim',                                          //accountinterface,                     NEW NEW NEW
     'new_password' => 'Yeni Şifre',                                                     //reset, accountpassword,
     'new_password_confirmation' => 'Tekrar Yeni Şifre',                                 //reset, accountpassword,
     'newest' => 'En Yeni',
@@ -79,6 +82,7 @@ return [
     'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
+    'open_new_tab' => 'Yeni Sekme',                                                     //accountinterface,                     NEW NEW NEW
     'or' => 'VEYA',                                                                     //login, register,
     'original_title' => 'Orijinal Adı',
     'original_language' => 'Orijinal Dili',

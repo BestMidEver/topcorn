@@ -141,8 +141,10 @@ class accountController extends Controller
 		$user = Auth::User();
 		$user->lang = $request->lang;
 		$user->secondary_lang = $request->secondary_lang;
+		$user->hover_title_language = $request->hover_title_language;
 		$user->image_quality = $request->image_quality;
 		$user->margin_x_setting = $request->margin_x_setting;
+		$user->open_new_tab = $request->open_new_tab;
 		$user->save();
 
 		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');

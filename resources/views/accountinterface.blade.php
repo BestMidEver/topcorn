@@ -65,6 +65,22 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
+				        <label for="hover_title_language">{{ __('general.hover_title_language') }}</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-mouse-pointer"></i></div>
+				                <select class="form-control" id="hover_title_language" name="hover_title_language">
+									<option value=1 {{ Auth::User()->hover_title_language == 1 ? 'selected' : '' }}>{{ __('general.movies_original_language') }}</option>
+									<option value=0 {{ Auth::User()->hover_title_language == 0 ? 'selected' : '' }}>{{ __('general.my_secondary_language') }}</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
 				        <label for="image_quality">{{ __('general.image_quality') }}</label>
 				    </div>
 				    <div class="col-md-6">
@@ -87,10 +103,26 @@
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-arrows-alt"></i></div>
 				                <select class="form-control" id="margin_x_setting" name="margin_x_setting">
-									<option value=1 {{ Auth::User()->margin_x_setting == 1 ? 'selected' : '' }}>{{ __('general.margin_bootstrap_default') }}</option>
-									<option value=0 {{ Auth::User()->margin_x_setting == 0 ? 'selected' : '' }}>{{ __('general.margin_fill_screen') }}</option>
+									<option value=1 {{ Auth::User()->margin_x_setting == 1 ? 'selected' : '' }}>{{ __('general.active') }}</option>
+									<option value=0 {{ Auth::User()->margin_x_setting == 0 ? 'selected' : '' }}>{{ __('general.disabled') }}</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="open_new_tab">{{ __('general.open_new_tab') }}</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-external-link"></i></div>
+				                <select class="form-control" id="open_new_tab" name="open_new_tab">
+									<option value=1 {{ Auth::User()->open_new_tab == 1 ? 'selected' : '' }}>{{ __('general.active') }}</option>
+									<option value=0 {{ Auth::User()->open_new_tab == 0 ? 'selected' : '' }}>{{ __('general.disabled') }}</option>
 								</select>
 				            </div>
 				        </div>
