@@ -60,6 +60,9 @@ return [
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
     'm' => 'dk.',
+    'margin_bootstrap_default' => 'Varsayılan',                                         //accountinterface,                     NEW NEW NEW
+    'margin_fill_screen' => 'Tam Ekran',                                                //accountinterface,                     NEW NEW NEW
+    'margin_x_setting' => 'Kenar Boşlukları',                                           //accountinterface,                     NEW NEW NEW
     'medium' => 'Orta',                                                                 //accountinterface,
     'minute' => 'dakika',
     'movie' => 'Film',

@@ -142,6 +142,7 @@ class accountController extends Controller
 		$user->lang = $request->lang;
 		$user->secondary_lang = $request->secondary_lang;
 		$user->image_quality = $request->image_quality;
+		$user->margin_x_setting = $request->margin_x_setting;
 		$user->save();
 
 		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');

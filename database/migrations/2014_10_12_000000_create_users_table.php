@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('lang')->default('en');
             $table->string('secondary_lang')->default('en');
             $table->tinyInteger('image_quality')->default(1);
+            $table->tinyInteger('margin_x_setting')->default(0);
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

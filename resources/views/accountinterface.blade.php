@@ -81,6 +81,22 @@
 				    </div>
 				</div>
 				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="margin_x_setting">{{ __('general.margin_x_setting') }}</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+				                <select class="form-control" id="margin_x_setting" name="margin_x_setting">
+									<option value=1 {{ Auth::User()->margin_x_setting == 1 ? 'selected' : '' }}>{{ __('general.margin_bootstrap_default') }}</option>
+									<option value=0 {{ Auth::User()->margin_x_setting == 0 ? 'selected' : '' }}>{{ __('general.margin_fill_screen') }}</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row">
 				    <div class="col-md-3"></div>
 				    <div class="col-md-6">
 				        <button type="submit" class="btn btn-primary btn-block">{{ __('general.save_changes') }}</button>

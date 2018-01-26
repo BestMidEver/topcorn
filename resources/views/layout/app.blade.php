@@ -145,7 +145,7 @@
 
 
 
-    <div class="container-fluid px-1 px-md-3 px-lg-5">
+    <div class="container{{ Auth::user()->margin_x_setting == 0 ? '-fluid px-1 px-md-3 px-lg-5' : '' }}">
         @section('body')
         @show
     </div>
