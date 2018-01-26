@@ -12,7 +12,7 @@
 								</button>
 							</div>
 							<div class="faderdiv">
-								<h4><a href="/movie/@{{movie.id}}" data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title}}"><span class="badge badge-light yeswrap p-1">@{{movie.title}} <small><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span></a></h4>
+								<h4><a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title}}"><span class="badge badge-light yeswrap p-1">@{{movie.title}} <small><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span></a></h4>
 							</div>
 							<div class="faderdiv">
 								<button type="button" class="btn btn-secondary btn-sm badge-light float-right" data-dismiss="modal" aria-label="Close">

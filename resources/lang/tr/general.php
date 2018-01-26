@@ -72,7 +72,7 @@ return [
     'most_rated' => 'En Çok Oylanan',
     'most_populer' => 'En Popüler',                                                     //recommendations,
     'movies_original_language' => 'Filmin Orijinal Dili',                               //accountinterface,                     NEW NEW NEW
-    'my_secondary_language' => 'İkinci Dilim',                                          //accountinterface,                     NEW NEW NEW
+    'my_secondary_language' => 'İkinci Dil\'im',                                          //accountinterface,                     NEW NEW NEW
     'new_password' => 'Yeni Şifre',                                                     //reset, accountpassword,
     'new_password_confirmation' => 'Tekrar Yeni Şifre',                                 //reset, accountpassword,
     'newest' => 'En Yeni',

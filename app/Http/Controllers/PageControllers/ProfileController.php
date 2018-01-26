@@ -17,6 +17,12 @@ class ProfileController extends Controller
 
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
+        if(Auth::check()){
+            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+        }else{
+            $target = '_self';
+        }
+
         $user = User::where(['id' => $profile_user_id])->first();
         if(!$user) return redirect('/not-found');
         $profile_user_name = $user->name;
@@ -27,7 +33,7 @@ class ProfileController extends Controller
             $profile_profile_pic = config('constants.image.thumb_nail')[$image_quality].$user->profile_pic;
         }
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target'));
 	}
 
     public function get_rateds($rate, $user, $lang)

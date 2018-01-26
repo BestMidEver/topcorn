@@ -34,7 +34,9 @@ class recommendationsController extends Controller
 
         $image_quality = Auth::User()->image_quality;
 
-        return view('recommendations', compact('image_quality'));
+        $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+
+        return view('recommendations', compact('image_quality', 'target'));
     }
 
     

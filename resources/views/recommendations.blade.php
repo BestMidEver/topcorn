@@ -28,7 +28,7 @@
 		<div class="d-flex flex-wrap">
 			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-2 px-1" ng-repeat="user in users">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
-					<a ng-href="/profile/@{{user.user_id}}">
+					<a ng-href="/profile/@{{user.user_id}}" target={{$target}}>
 						<img class="card-img-top" ng-src="@{{user.profile_path == '' && user.facebook_profile_path || constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						<div class="card-block">
 							<h6 class="card-title px-1 pt-1 text-muted text-center">@{{user.name}}</h6>

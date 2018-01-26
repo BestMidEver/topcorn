@@ -14,6 +14,12 @@ class DonationController extends Controller
 
 		$image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
-		return view('donation' , compact('image_quality'));
+        if(Auth::check()){
+            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+        }else{
+            $target = '_self';
+        }
+
+		return view('donation' , compact('image_quality', 'target'));
 	}
 }

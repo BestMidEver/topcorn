@@ -28,7 +28,9 @@ class accountController extends Controller
 
 		$image_quality = Auth::User()->image_quality;
 
-		return view('account', compact('image_quality'));
+        $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+
+		return view('account', compact('image_quality', 'target'));
 	}
 
 
@@ -75,7 +77,9 @@ class accountController extends Controller
 
 		$image_quality = Auth::User()->image_quality;
 
-		return view('accountpassword', compact('is_from_facebook', 'image_quality'));
+        $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+
+		return view('accountpassword', compact('is_from_facebook', 'image_quality', 'target'));
 	}
 
 
@@ -128,7 +132,9 @@ class accountController extends Controller
 
     	$image_quality = Auth::User()->image_quality;
 
-		return view('accountinterface', compact('image_quality'));
+        $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+
+		return view('accountinterface', compact('image_quality', 'target'));
 	}
 
 

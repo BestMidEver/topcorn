@@ -20,7 +20,13 @@ class movieController extends Controller
 
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
-    	return view('movie', compact('id', 'image_quality'));
+        if(Auth::check()){
+            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+        }else{
+            $target = '_self';
+        }
+
+    	return view('movie', compact('id', 'image_quality', 'target'));
     }
 
     public function get_user_movie_record($movie)

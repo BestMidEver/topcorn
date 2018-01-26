@@ -95,11 +95,11 @@
 			<div class="pt-2" ng-if="movie.overview.length > 0"<p>@{{movie.overview}}</p></div>
 			<div ng-if="directors.length > 0">
 				<div class="h6 pt-1"><span ng-if="directors.length == 1">{{ __('general.director') }}</span><span ng-if="directors.length > 1">{{ __('general.directors') }}</span></div>
-				<p><span class="d-inline" ng-repeat="director in directors"><span ng-if="$index!=0">, </span><a href="/person/@{{director.id}}" class="text-dark">@{{director.name}}</a></span></p>
+				<p><span class="d-inline" ng-repeat="director in directors"><span ng-if="$index!=0">, </span><a href="/person/@{{director.id}}" target={{$target}} class="text-dark">@{{director.name}}</a></span></p>
 			</div>
 			<div ng-if="writers.length > 0">
 				<div class="h6 pt-1"><span ng-if="writers.length == 1">{{ __('general.writer') }}</span><span ng-if="writers.length > 1">{{ __('general.writers') }}</span></div>
-				<p><span class="d-inline" ng-repeat="writer in writers"><span ng-if="$index!=0">, </span><a href="/person/@{{writer.id}}" class="text-dark nowrap">@{{writer.name}}</a> @{{'(' + writer.job +')'}}</span></p>
+				<p><span class="d-inline" ng-repeat="writer in writers"><span ng-if="$index!=0">, </span><a href="/person/@{{writer.id}}" target={{$target}} class="text-dark nowrap">@{{writer.name}}</a> @{{'(' + writer.job +')'}}</span></p>
 			</div>
 		</div>
 	</div>
@@ -141,7 +141,7 @@
 			</div>
 			<div ng-if="movie.belongs_to_collection">
 				<div class="h6 pt-1">@{{movie.belongs_to_collection.name}}</div>
-				<div ng-repeat="c in collection"><a ng-href="/movie/@{{c.id}}" class="text-dark">@{{c.title + (c.release_date ? ' (' + c.release_date.substring(0, 4) + ')' : '') }}</a></div>
+				<div ng-repeat="c in collection"><a ng-href="/movie/@{{c.id}}" target={{$target}} class="text-dark">@{{c.title + (c.release_date ? ' (' + c.release_date.substring(0, 4) + ')' : '') }}</a></div>
 			</div>
 		</div>
 	</div>
@@ -155,7 +155,7 @@
 		<div class="d-flex flex-wrap">
 			<div class="col-4 col-lg-2 mt-2 px-1" ng-repeat="person in movie.credits.cast | limitTo:6">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
-					<a href="/person/@{{person.id}}">
+					<a href="/person/@{{person.id}}" target={{$target}}>
 						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 						<div class="card-block text-center">
 							<h6 class="card-title px-1 pt-1 text-dark">@{{person.name}}</h6>
@@ -170,7 +170,7 @@
 		<div class="d-flex flex-wrap">
 			<div class="col-4 col-lg-2 mt-2 px-1" ng-repeat="person in movie.credits.cast | limitTo:100:6">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
-					<a href="/person/@{{person.id}}">
+					<a href="/person/@{{person.id}}" target={{$target}}>
 						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 						<div class="card-block text-center">
 							<h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
