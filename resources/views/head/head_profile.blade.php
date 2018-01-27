@@ -19,5 +19,5 @@ pass={
 @section('controllername' ,'ProfilePageController')
 
 @section('title')
-{{ __('title.profile') }}
+{{ $profile_user_name.__('title.profile') }}
 @endsection

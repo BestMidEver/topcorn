@@ -121,6 +121,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		});
 		temp=_.where(languages,{i:$scope.movie.original_language});
 		if(temp.length > 0)$scope.movie.original_language=temp[0].o;
+		console.log(countries)
 		_.each($scope.movie.production_countries, function(t){
 			temp=_.where(countries,{i:t.iso_3166_1});
 			if(temp.length > 0)t.name=temp[0].o;

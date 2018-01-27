@@ -48,7 +48,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="secondary_lang">{{ __('general.secondary_language') }}</label>
+				        <label for="secondary_lang" ng-mouseenter="hovering_seco=true" ng-mouseleave="hovering_seco=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_secondary_language') }}">{{ __('general.secondary_language') }} <i class="fa" ng-class="{'fa-question-circle':hovering_seco, 'fa-question-circle-o':!hovering_seco}" aria-hidden="true"></i></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -65,7 +65,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="hover_title_language">{{ __('general.hover_title_language') }}</label>
+				        <label for="hover_title_language" ng-mouseenter="hovering_hove=true" ng-mouseleave="hovering_hove=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_hover_title') }}">{{ __('general.hover_title_language') }} <i class="fa" ng-class="{'fa-question-circle':hovering_hove, 'fa-question-circle-o':!hovering_hove}" aria-hidden="true"></i></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -81,7 +81,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="image_quality">{{ __('general.image_quality') }}</label>
+				        <label for="image_quality" ng-mouseenter="hovering_imag=true" ng-mouseleave="hovering_imag=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_image_quality') }}">{{ __('general.image_quality') }} <i class="fa" ng-class="{'fa-question-circle':hovering_imag, 'fa-question-circle-o':!hovering_imag}" aria-hidden="true"></i></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -98,7 +98,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="margin_x_setting">{{ __('general.margin_x_setting') }}</label>
+				        <label for="margin_x_setting" ng-mouseenter="hovering_marg=true" ng-mouseleave="hovering_marg=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_full_screen') }}">{{ __('general.margin_x_setting') }} <i class="fa" ng-class="{'fa-question-circle':hovering_marg, 'fa-question-circle-o':!hovering_marg}" aria-hidden="true"></i></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -114,7 +114,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="open_new_tab">{{ __('general.open_new_tab') }}</label>
+				        <label for="open_new_tab" ng-mouseenter="hovering_open=true" ng-mouseleave="hovering_open=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_open_new_tab') }}">{{ __('general.open_new_tab') }} <i class="fa" ng-class="{'fa-question-circle':hovering_open, 'fa-question-circle-o':!hovering_open}" aria-hidden="true"></i></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">

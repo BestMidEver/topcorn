@@ -36,7 +36,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 			}
 		}).then(function successCallback(response) {
 			console.log(response.data.cast)
-			$scope.profile_actors=response.data.cast;
+			$scope.profile_actors=_.filter(response.data.cast, function(o){ return o.profile_path != null; });
 		}, function errorCallback(response) {
 		});	
 	}
