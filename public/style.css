@@ -3,6 +3,7 @@ body { margin-bottom: 330px;}
 .footer {  position: absolute;  bottom: 0;  width: 100%; height: 250px; background-color: #f5f5f5;}
 button:focus{box-shadow: none!important;}
 .yeswrap {  white-space: normal!important;}
+.break-word{word-wrap: break-word;}
 .nav > li {  float: left;  position: relative;}
 .tab1 .active::after {  position: absolute;  bottom: 0;  left: 0;  width: 100%;  content: " ";  border-bottom: 5px solid #5BC0EB;}
 .background-white{background-color: #fff!important;}

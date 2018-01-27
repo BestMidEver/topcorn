@@ -137,7 +137,7 @@
 			</div>
 			<div ng-if="movie.homepage.length > 0">
 				<div class="h6 pt-1">{{ __('general.official_website') }}</div>
-				<a ng-href="@{{movie.homepage}}" target="_blank" class="text-dark"><p><i class="fa fa-external-link" aria-hidden="true"></i> @{{movie.homepage}}</p></a>
+				<a ng-href="@{{movie.homepage}}" target="_blank" class="text-dark break-word"><p><i class="fa fa-external-link" aria-hidden="true"></i> @{{movie.homepage}}</p></a>
 			</div>
 			<div ng-if="movie.belongs_to_collection">
 				<div class="h6 pt-1">@{{movie.belongs_to_collection.name}}</div>

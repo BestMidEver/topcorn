@@ -44,6 +44,12 @@ class recommendationsController extends Controller
 
     public function get_top_rateds($tab, Request $request)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+        
         $return_val = DB::table('movies')
         ->where('vote_count', '>', 100)
         ->where('vote_average', '>', config('constants.suck_page.min_vote_average'))
@@ -63,11 +69,11 @@ class recommendationsController extends Controller
         ->where('bans.id', '=', null)
         ->select(
             'movies.id as id',
-            'movies.original_title',
+            'movies.'.$hover_title.' as original_title',
             'movies.vote_average',
             'movies.release_date',
-            'movies.'.$request->lang.'_title as title',
-            'movies.'.$request->lang.'_poster_path as poster_path',
+            'movies.'.Auth::User()->lang.'_title as title',
+            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
@@ -111,6 +117,12 @@ class recommendationsController extends Controller
 
     public function get_pemosu(Request $request)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+
         $return_val = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
         ->where('rateds.rate', '<>', 3)
@@ -133,13 +145,13 @@ class recommendationsController extends Controller
         ->select(
             'recommendations.this_id as id',
             'recommendations.movie_id as mother_movie_id',
-            'movies.original_title',
+            'movies.'.$hover_title.' as original_title',
             DB::raw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.8))*movies.vote_average AS point'),
             DB::raw('COUNT(*) as count'),
             'movies.vote_average',
             'movies.release_date',
-            'movies.'.$request->lang.'_title as title',
-            'movies.'.$request->lang.'_poster_path as poster_path',
+            'movies.'.Auth::User()->lang.'_title as title',
+            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
             'r2.id as rated_id',
             'r2.rate as rate_code',
             'laters.id as later_id',

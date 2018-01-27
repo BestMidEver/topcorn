@@ -77,8 +77,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			"f_lang": f_lang,
 			"f_genre": f_genre,
 			"f_min": $scope.slider.minValue,
-			"f_max": $scope.slider.maxValue,
-			"lang": pass.lang
+			"f_max": $scope.slider.maxValue
 		}
 
 		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)

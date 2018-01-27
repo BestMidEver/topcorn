@@ -38,6 +38,12 @@ class ProfileController extends Controller
 
     public function get_rateds($rate, $user, $lang)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+
         $return_val = DB::table('rateds')
         ->where('rateds.user_id', $user)
         ->join('movies', 'movies.id', '=', 'rateds.movie_id')
@@ -56,7 +62,7 @@ class ProfileController extends Controller
         ->select(
             'movies.id as id',
             'movies.'.$lang.'_title as title',
-            'movies.original_title as original_title',
+            'movies.'.$hover_title.' as original_title',
             'movies.release_date as release_date',
             'movies.'.$lang.'_poster_path as poster_path',
             'movies.vote_average as vote_average',
@@ -76,8 +82,17 @@ class ProfileController extends Controller
         return $return_val->paginate(24);
     }    
 
+
+
+
     public function get_laters($user, $lang)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+
         $return_val = DB::table('laters')
         ->where('laters.user_id', $user)
         ->join('movies', 'movies.id', '=', 'laters.movie_id')
@@ -96,7 +111,7 @@ class ProfileController extends Controller
         ->select(
             'movies.id as id',
             'movies.'.$lang.'_title as title',
-            'movies.original_title as original_title',
+            'movies.'.$hover_title.' as original_title',
             'movies.release_date as release_date',
             'movies.'.$lang.'_poster_path as poster_path',
             'movies.vote_average as vote_average',
@@ -110,8 +125,17 @@ class ProfileController extends Controller
         return $return_val->paginate(24);
     }    
 
+
+
+
     public function get_bans($user, $lang)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+
         $return_val = DB::table('bans')
         ->where('bans.user_id', $user)
         ->join('movies', 'movies.id', '=', 'bans.movie_id')
@@ -130,7 +154,7 @@ class ProfileController extends Controller
         ->select(
             'movies.id as id',
             'movies.'.$lang.'_title as title',
-            'movies.original_title as original_title',
+            'movies.'.$hover_title.' as original_title',
             'movies.release_date as release_date',
             'movies.'.$lang.'_poster_path as poster_path',
             'movies.vote_average as vote_average',
