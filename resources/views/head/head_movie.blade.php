@@ -9,10 +9,10 @@ pass={
 	"constants_domain":"{{config('api.url')}}",
 	"api_key":"{{config('constants.api_key')}}",
 };
-@include('translations.languages');
-@include('translations.countries');
-@include('translations.jobs');
 </script>
+<script src="/js/code_translations/{{ App::getlocale() }}/countries.js"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/languages.js"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/jobs.js"></script>
 @endsection
 
 @section('underscore')
