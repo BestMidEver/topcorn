@@ -50,6 +50,9 @@ Route::get('person/{id}/{lang?}', 'PageControllers\personController@person')
 Route::get('donation/{lang?}', 'PageControllers\DonationController@donate')
 	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
 
+Route::get('privacy-policy/{lang?}', 'PageControllers\PrivacypolicyController@privacypolicy')
+	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
+
 Route::get('not-found', function () {
     return view('errors\404');
 });//PUBLIC

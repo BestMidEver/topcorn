@@ -111,7 +111,7 @@
                 <div class="col col-sm-3 d-none d-sm-inline">
                     <div class="py-2 small"><a class="text-dark" href="#">{{ __('navbar.faq') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="https://www.facebook.com/Denemetopconr-249280122276045/" target="_blank">{{ __('navbar.contact_us') }}</a></div>
-                    <div class="py-2 small"><a class="text-dark" href="#">{{ __('navbar.privacy') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __('navbar.privacy') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/donation">{{ __('navbar.donation') }}</a></div>
                 </div>
                 <div class="col col-sm-3 d-none d-sm-inline">
