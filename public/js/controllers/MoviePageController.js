@@ -22,8 +22,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			method: 'GET',
 			url: pass.constants_domain+'/api/get_user_movie_record/'+pass.movieid
 		}).then(function successCallback(response) {
-			if(response.data.data[0]){
-				$scope.user_movie_record = response.data.data[0];
+			if(response.data.data){
+				$scope.user_movie_record = response.data.data;
 			}else{
 				$scope.user_movie_record = {
 					ban_id: null,

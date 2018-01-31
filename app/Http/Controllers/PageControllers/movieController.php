@@ -55,9 +55,5 @@ class movieController extends Controller
         );
 
         return response()->json($return_val->first());
-
-        /*return SearchResource::collection(
-            Movie::where('id', $movie)->get()
-        );*/
     }
 }
