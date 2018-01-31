@@ -22,6 +22,7 @@ class Kernel extends HttpKernel
         /////////////////////custom///////////////////////
         \Illuminate\Session\Middleware\StartSession::class,
         \App\Http\Middleware\Locale::class,
+        \App\Http\Middleware\PreferredDomain::class,
     ];
 
     /**
