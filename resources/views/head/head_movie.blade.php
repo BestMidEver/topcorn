@@ -29,5 +29,5 @@ pass={
 @section('controllername', 'MoviePageController')
 
 @section('title')
-@{{movie.title + movie.release_date>0 ? ' (' + movie.release_date.substring(0, 4) + ')' : ''}}{{ __('title.movie') }}
+@{{movie.title}}@{{ movie.release_date>0 ? ' (' + movie.release_date.substring(0, 4) + ')' : ''}}{{ __('title.movie') }}
 @endsection
