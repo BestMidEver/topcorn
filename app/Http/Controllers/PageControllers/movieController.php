@@ -51,7 +51,7 @@ class movieController extends Controller
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
-        )
+        );
 
         return $return_val->first();
 
