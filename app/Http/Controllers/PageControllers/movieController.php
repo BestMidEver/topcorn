@@ -34,15 +34,15 @@ class movieController extends Controller
     {
         $return_val = DB::table('movies')
         ->where('movies.id', '=', $movie)
-        ->leftjoin('rateds', function() {
+        ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->where('rateds.user_id', '=', Auth::user()->id);
         })
-        ->leftjoin('laters', function() {
+        ->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::user()->id);
         })
-        ->leftjoin('bans', function() {
+        ->leftjoin('bans', function ($join) {
             $join->on('bans.movie_id', '=', 'movies.id')
             ->where('bans.user_id', '=', Auth::user()->id);
         })
