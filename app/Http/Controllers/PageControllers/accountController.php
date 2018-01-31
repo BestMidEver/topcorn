@@ -38,7 +38,6 @@ class accountController extends Controller
 
 	public function change_profile(Request $request)
 	{
-		return $request->profile_pic;
 		$request->validate([
 			'name' => 'required|min:6',
 		]);
@@ -46,7 +45,7 @@ class accountController extends Controller
 		$user = Auth::User();
 		$user->name=$request->name;
 		if($request->profile_pic != '? string: ?'){
-			if($request->profile_pic == "0"){
+			if($request->profile_pic == "number:0"){
 				$user->profile_pic = '';
 			}else{
 				$user->profile_pic = '/'.explode("/", $request->profile_pic)[1];
