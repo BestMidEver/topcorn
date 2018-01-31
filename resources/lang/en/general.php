@@ -76,7 +76,9 @@ return [
     'new_password' => 'New Password',                                       //reset, accountpassword,
     'new_password_confirmation' => 'New Password Confirmation',             //reset, accountpassword,
     'newest' => 'Newest',
+    'next' => 'Next',                                                       //pagination,
     'no_result' => 'No result',                                             //profile,
+    'no_result_review' => 'No review',                                      //movie
     'not_sure' => 'Not Sure',                                               //ratemodal, profile,
     'novel' => 'Novel',                                                     //person,
     'official_website' => 'Official Website',                               //movie,

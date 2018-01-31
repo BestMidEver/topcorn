@@ -76,9 +76,9 @@ return [
     'new_password' => 'Yeni Şifre',                                                     //reset, accountpassword,
     'new_password_confirmation' => 'Tekrar Yeni Şifre',                                 //reset, accountpassword,
     'newest' => 'En Yeni',
-    'next' => 'Sonraki',                                                                //pagination,                           NEW NEW NEW
+    'next' => 'Sonraki',                                                                //pagination,
     'no_result' => 'Sonuç bulunamadı.',                                                 //profile, search
-    'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                //profile                               NEW NEW NEW
+    'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                //movie
     'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
@@ -87,7 +87,7 @@ return [
     'original_title' => 'Orijinal Adı',
     'original_language' => 'Orijinal Dili',
     'pagination_info' => 
-        '{{in}} <span class="pr-2"> sonuç içinde</span> {{from}} - {{to}}',             //pagination,                           NEW NEW NEW
+        '{{in}} <span class="pr-2"> sonuç içinde</span> {{from}} - {{to}}',             //pagination,
     'password' => 'Şifre',                                                              //login, register, account,
     'password_confirmation' => 'Tekrar Şifre',                                          //register
     'person' => 'Kişi',         
@@ -123,7 +123,7 @@ return [
     'send_instructions' => 'Talimatları Gönder',                                        //email,
     'share' => 'Paylaş',            
     'show_everyone' => 'Herkesi Göster',            
-    'standard' => 'Standart',                                                           //accountinterface,                         NEW NEW NEW      
+    'standard' => 'Standart',                                                           //accountinterface,  
     'top_rated' => 'En Yüksek Oy Alan',         
     'trailer' => 'FRAGMAN',         
     'try_account' => 'Türk Lirası Hesabı',                                              //donation,
