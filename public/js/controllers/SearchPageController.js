@@ -27,7 +27,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	rate.get_user_movies()
 	.then(function(response){
 		console.log(response.data);
-		$scope.user_movies = response.data.data;
+		$scope.user_movies = response.data;
 	});
 
 	$scope.reset_tab = function()
