@@ -85,7 +85,7 @@ return [
     'original_title' => 'Original Title',                                   //movie,
     'original_language' => 'Original Language',                             //movie,
     'pagination_info' => 
-        '{{from}} - {{to}} <span class="px-2">of</span> {{in}}',            //pagination,
+        '{{from}} - {{to}}<span class="px-2">of</span> {{in}}',             //pagination,
     'password' => 'Password',                                               //login, register, account,
     'password_confirmation' => 'Password Confirmation',                     //register,
     'person' => 'Person',                                                   //search,
