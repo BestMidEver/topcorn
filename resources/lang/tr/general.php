@@ -5,11 +5,11 @@ return [
     'a_z' => 'A -> Z',
     'according_to_my_taste' => 'Benim Zevkime Göre',                                    //recommendations,
     'acting' => 'Oyunculuk',            
-    'active' => 'Etkin',                                                                //accountinterface,             NEW NEW NEW
+    'active' => 'Etkin',                                                                //accountinterface,
     'actor' => 'Oyuncu',            
     'actors' => 'Oyuncular',            
     'add' => 'Ekle',                                                                    //recommendations,
-    'add_person' => 'Kişi Ekle',                                                        //recommendations,              NEW NEW NEW
+    'add_person' => 'Kullanıcı Ekle',                                                   //recommendations,
     'add_review' => 'Eleştiri Ekle',                                                    //movie,
     'all' => 'Hepsi',                                                                   //profile,
     'author' => 'Yaratıcı',         
@@ -35,7 +35,7 @@ return [
     'directing' => 'Yönetmenlik',
     'director' => 'Yönetmen',
     'directors' => 'Yönetmenler',
-    'disabled' => 'Devre Dışı',                                                         //accountinterface,                     NEW NEW NEW
+    'disabled' => 'Devre Dışı',                                                         //accountinterface,
     'definitely_dont_recommend' => 'Kesinlikle Önerme',                                 //ratemodal, profile,
     'definitely_recommend' => 'Kesinlikle Öner',                                        //ratemodal, profile,
     'dollar_account' => 'Dolar Hesabı',                                                 //donation,
@@ -55,7 +55,7 @@ return [
     'havent_seen' => 'İzlemedim',                                                       //ratemodal,
     'high' => 'Yüksek',                                                                 //accountinterface,
     'hismovies' => 'Filmleri',
-    'hover_title_language' => 'Film İpucu',                                             //accountinterface,                     NEW NEW NEW
+    'hover_title_language' => 'Film İpucu',                                             //accountinterface,
     'image_quality' => 'Görsel Kalitesi',                                               //accountinterface,
     'interface' => 'Arayüz',                                                            //account,
     'its_title' => 'Adı',
@@ -63,7 +63,7 @@ return [
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
     'm' => 'dk.',
-    'margin_x_setting' => 'Tam Ekran',                                                  //accountinterface,                     NEW NEW NEW
+    'margin_x_setting' => 'Tam Ekran',                                                  //accountinterface,
     'medium' => 'Orta',                                                                 //accountinterface,
     'minute' => 'dakika',
     'movie' => 'Film',
@@ -71,8 +71,8 @@ return [
     'movie_details' => 'Film Detayları',
     'most_rated' => 'En Çok Oylanan',
     'most_populer' => 'En Popüler',                                                     //recommendations,
-    'movies_original_language' => 'Filmin Orijinal Dili',                               //accountinterface,                     NEW NEW NEW
-    'my_secondary_language' => 'İkinci Dil\'im',                                          //accountinterface,                     NEW NEW NEW
+    'movies_original_language' => 'Filmin Orijinal Dili',                               //accountinterface,
+    'my_secondary_language' => 'İkinci Dil\'im',                                        //accountinterface,                     NEW NEW NEW
     'new_password' => 'Yeni Şifre',                                                     //reset, accountpassword,
     'new_password_confirmation' => 'Tekrar Yeni Şifre',                                 //reset, accountpassword,
     'newest' => 'En Yeni',
