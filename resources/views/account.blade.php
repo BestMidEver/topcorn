@@ -97,11 +97,11 @@
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
 				                <select class="form-control" id="profile_pic" name="profile_pic" ng-change="choose_profile()" ng-model="profile_path" ng-init="profile_path=''">
-				                	<option ng-value="profile_path_selected_value" ng-show="profile_path!=''">@{{profile_path_selected_text}}</option>
+				                	<option ng-value="profile_path_selected_value" ng-hide="true">@{{profile_path_selected_text}}</option>
 				                	@if(Auth::user()->facebook_profile_pic)
 				                	<option ng-value="[0,'Facebook Profil Fotoğrafı']" ng-hide="p.profile_path == 0">{{ __('general.facebook_profile_photo') }}</option>
 				                	@endif
-				                	<option ng-repeat="p in profile_actors" ng-hide="p.profile_path == profile_path" ng-value="[p.profile_path,p.name]">@{{p.name}}</option>
+				                	<option ng-repeat="p in profile_actors" ng-value="[p.profile_path,p.name]">@{{p.name}}</option>
 								</select>
 				            </div>
 				        <small id="coverhelp" class="form-text text-muted float-right mt-0 mb-2">{{ __('general.profile_photo_help') }}</small>

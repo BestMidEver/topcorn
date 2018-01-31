@@ -63,8 +63,13 @@
 
 
 
+    <?php
+    if(Auth::user()->margin_x_setting == 2) $full_screen = '-fluid px-1';
+    else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
+    else $full_screen = '';
+    ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark px-md-0">
-        <div class="container{{ Auth::user()->margin_x_setting == 1 ? '-fluid px-1 px-md-3 px-lg-5' : '' }}">
+        <div class="container{{ $full_screen }}">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -145,7 +150,8 @@
 
 
 
-    <div class="container{{ Auth::user()->margin_x_setting == 1 ? '-fluid px-1 px-md-3 px-lg-5' : '' }}">
+
+    <div class="container{{ $full_screen }}">
         @section('body')
         @show
     </div>

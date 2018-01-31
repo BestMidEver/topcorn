@@ -105,7 +105,8 @@
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-arrows-alt"></i></div>
 				                <select class="form-control" id="margin_x_setting" name="margin_x_setting">
-									<option value=1 {{ Auth::User()->margin_x_setting == 1 ? 'selected' : '' }}>{{ __('general.active') }}</option>
+									<option value=2 {{ Auth::User()->margin_x_setting == 2 ? 'selected' : '' }}>{{ __('general.active') }}</option>
+									<option value=1 {{ Auth::User()->margin_x_setting == 1 ? 'selected' : '' }}>{{ __('general.standard') }}</option>
 									<option value=0 {{ Auth::User()->margin_x_setting == 0 ? 'selected' : '' }}>{{ __('general.disabled') }}</option>
 								</select>
 				            </div>

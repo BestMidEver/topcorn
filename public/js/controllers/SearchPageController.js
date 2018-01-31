@@ -18,6 +18,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.image_url_prefix_movie_card = pass.image_url_prefix_movie_card;
+	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
 	$scope.user_id = pass.user_id;
 	$scope.model={};
 	$scope.active_tab='movie';

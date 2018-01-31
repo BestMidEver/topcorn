@@ -123,6 +123,7 @@ return [
     'send_instructions' => 'Talimatları Gönder',                                        //email,
     'share' => 'Paylaş',            
     'show_everyone' => 'Herkesi Göster',            
+    'standard' => 'Standart',                                                           //accountinterface,                         NEW NEW NEW      
     'top_rated' => 'En Yüksek Oy Alan',         
     'trailer' => 'FRAGMAN',         
     'try_account' => 'Türk Lirası Hesabı',                                              //donation,

@@ -10,7 +10,7 @@
 			<div class="d-flex flex-column">
 				<div class="d-flex flex-row align-items-center">
 					<img ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicsmall" alt="Responsive image">
-					<h5><span class="badge badge-light ml-2 yeswrap text-left">{{config('constants.gabar')}}@{{person.name}} @{{age}} - {{ __('general.hismovies') }}</span></h5>
+					<h5><a ng-href="http://www.google.com/search?q=@{{person.name}}" target="_blank" class="badge badge-light ml-2 yeswrap text-left">{{config('constants.gabar')}}@{{person.name}} @{{age}} - {{ __('general.hismovies') }}</a></h5>
 				</div>
 			</div>
 		</div>
@@ -19,7 +19,7 @@
 		<div class="d-flex flex-column">
 			<div class="d-flex flex-row align-items-center">
 				<img ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicmedium" alt="Responsive image">
-				<h5><span class="badge badge-light ml-2 yeswrap text-left">@{{person.name}} @{{age}} - {{ __('general.hismovies') }}</span></h5>
+				<h5><a ng-href="http://www.google.com/search?q=@{{person.name}}" target="_blank" class="badge badge-light ml-2 yeswrap text-left">@{{person.name}} @{{age}} - {{ __('general.hismovies') }}</a></h5>
 			</div>
 		</div>
 	</div>
