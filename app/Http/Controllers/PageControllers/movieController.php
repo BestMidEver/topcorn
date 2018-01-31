@@ -31,8 +31,32 @@ class movieController extends Controller
 
     public function get_user_movie_record($movie)
     {
-        return SearchResource::collection(
+        $return_val = DB::table('movies')
+        ->where('movies.id', '=', $movie)
+        ->leftjoin('rateds', function {
+            $join->on('rateds.movie_id', '=', 'movies.id')
+            ->where('rateds.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('laters', function {
+            $join->on('laters.movie_id', '=', 'movies.id')
+            ->where('laters.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('bans', function {
+            $join->on('bans.movie_id', '=', 'movies.id')
+            ->where('bans.user_id', '=', Auth::user()->id);
+        })
+        ->select(
+            'movies.id as movie_id',
+            'rateds.id as rated_id',
+            'rateds.rate as rate_code',
+            'laters.id as later_id',
+            'bans.id as ban_id'
+        )
+
+        return $return_val->first();
+
+        /*return SearchResource::collection(
             Movie::where('id', $movie)->get()
-        );
+        );*/
     }
 }
