@@ -54,7 +54,7 @@ class movieController extends Controller
             'bans.id as ban_id'
         );
 
-        return $return_val->first()->toArray();
+        return response()->json($return_val->first());
 
         /*return SearchResource::collection(
             Movie::where('id', $movie)->get()
