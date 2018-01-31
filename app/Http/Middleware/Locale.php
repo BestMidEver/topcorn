@@ -25,7 +25,7 @@ class Locale
             Session::put('secondary_lang', Auth::user()->secondary_lang);
         }else if(!Session::has('insta_language_change_used')){
  
-            $languages = isset($_SERVER["HTTP_ACCEPT_LANGUAGE"]) ? explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']) : '';
+            $languages = isset($_SERVER["HTTP_ACCEPT_LANGUAGE"]) ? explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']) : [];
             foreach($languages as $language)
             {
                 $language = explode('-',$language)[0];
