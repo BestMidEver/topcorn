@@ -72,7 +72,7 @@ return [
     'most_rated' => 'En Çok Oylanan',
     'most_populer' => 'En Popüler',                                                     //recommendations,
     'movies_original_language' => 'Filmin Orijinal Dili',                               //accountinterface,
-    'my_secondary_language' => 'İkinci Dil\'im',                                        //accountinterface,                     NEW NEW NEW
+    'my_secondary_language' => 'İkinci Dil\'im',                                        //accountinterface,
     'new_password' => 'Yeni Şifre',                                                     //reset, accountpassword,
     'new_password_confirmation' => 'Tekrar Yeni Şifre',                                 //reset, accountpassword,
     'newest' => 'En Yeni',
@@ -82,7 +82,7 @@ return [
     'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
-    'open_new_tab' => 'Yeni Sekme',                                                     //accountinterface,                     NEW NEW NEW
+    'open_new_tab' => 'Yeni Sekme',                                                     //accountinterface,
     'or' => 'VEYA',                                                                     //login, register,
     'original_title' => 'Orijinal Adı',
     'original_language' => 'Orijinal Dili',
