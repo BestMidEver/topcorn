@@ -1,10 +1,6 @@
 genres=[
 	{
 		"i":28,
-		"o":"xxxxxxx28xxxxxxxxxxxx"
-	},
-	{
-		"i":28,
 		"o":"Action"
 	},
 	{

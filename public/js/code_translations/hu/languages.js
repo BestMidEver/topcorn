@@ -1,9 +1,5 @@
 languages=[
 	{
-		"i":28,
-		"o":"xxxxxxxxxxxxxxxxxxxxxxenxxxxxxxxxxxxxxxxxxxxxxx"
-	},
-	{
 		"i":"en",
 		"o":"Angol"
 	},

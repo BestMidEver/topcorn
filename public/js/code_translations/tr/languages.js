@@ -1,9 +1,5 @@
 languages=[
 	{
-		"i":28,
-		"o":"a"
-	},
-	{
 		"i":"en",
 		"o":"İngilizce"
 	},
