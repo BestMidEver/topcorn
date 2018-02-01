@@ -26,7 +26,7 @@
 <div class="container-fluid mt-3">
 	<div class="row">
 		<div class="col"></div>
-		<div class="col-12 col-xl-8">
+		<div class="col-12 col-xl-10">
 			<form class="form-horizontal" role="form" method="POST" action="/account/password">
 				{{ csrf_field() }}
 				<div class="row">
