@@ -183,8 +183,8 @@
                     <div class=" h-100 d-flex flex-column justify-content-between">
                         <div class="py-2 small">
                             <div class="text-dark pb-1">{{ __('navbar.like_us_on_facebook') }}</div>
-                            <div class="fb-like mr-1 mb-2" data-href="https://www.facebook.com/Denemetopconr-249280122276045/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
-                            <div class="fb-share-button" data-href="https://www.moviem8s.com/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.moviem8s.com%2F&amp;src=sdkpreparse"></a></div>
+                            <div class="fb-like mr-1 mb-2" data-href="https://www.facebook.com/topcorn.io/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                            <div class="fb-share-button" data-href="https://topcorn.io/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2F&amp;src=sdkpreparse"></a></div>
                         </div>
                         <div class="text-middle-light small py-2"><span>© 2018 {{ config('app.name') }}. {{ __('navbar.all_rights_reserved') }}</span></div>
                     </div>
