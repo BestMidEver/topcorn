@@ -48,6 +48,10 @@ languages=[
 		"o":"Çince"
 	},
 	{
+		"i":"cn",
+		"o":"Çince"
+	},
+	{
 		"i":"hr",
 		"o":"Hırvatça"
 	},

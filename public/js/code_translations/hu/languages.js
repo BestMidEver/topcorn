@@ -48,6 +48,10 @@ languages=[
 		"o":"Kínai"
 	},
 	{
+		"i":"cn",
+		"o":"Kínai"
+	},
+	{
 		"i":"hr",
 		"o":"Horvát"
 	},

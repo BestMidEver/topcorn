@@ -48,6 +48,10 @@ languages=[
 		"o":"xxxxxxxxxxxxxxxxxxxxxxzhxxxxxxxxxxxxxxxxxxxxxxx"
 	},
 	{
+		"i":"cn",
+		"o":"xxxxxxxxxxxxxxxxxxxxxxzhxxxxxxxxxxxxxxxxxxxxxxx"
+	},
+	{
 		"i":"hr",
 		"o":"xxxxxxxxxxxxxxxxxxxxxxhrxxxxxxxxxxxxxxxxxxxxxxx"
 	},
