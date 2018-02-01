@@ -66,7 +66,7 @@ return [
     'margin_x_setting' => 'Full Screen',                                    //accountinterface,
     'medium' => 'Medium',                                                   //accountinterface,
     'minute' => 'minute',                                                   //movie,
-    'movie' => 'movie',
+    'movie' => 'Movie',
     'movies' => 'movies',                                                   //person,
     'movie_details' => 'Movie Details',                                     //movie,
     'most_rated' => 'Most Rated',                                           //person,
