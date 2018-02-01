@@ -1,7 +1,7 @@
 languages=[
 	{
 		"i":28,
-		"o":"xxxxxxxxxxxxxxxxxxxxxxenxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"a"
 	},
 	{
 		"i":"en",

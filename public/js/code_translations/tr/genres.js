@@ -1,7 +1,7 @@
 genres=[
 	{
 		"i":28,
-		"o":"xxxxxxxxxx28xxxxxxxx"
+		"o":"a"
 	},
 	{
 		"i":28,
