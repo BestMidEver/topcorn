@@ -39,8 +39,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	    });
 	};
 
-	console.log(languages)
 	$scope.languages=_.sortBy(languages, 'o');
+	console.log($scope.languages)
 	$scope.languages.pop();
 	$scope.genres=_.sortBy(genres, 'o');
 	$scope.genres.pop();
