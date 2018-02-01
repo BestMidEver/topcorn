@@ -40,7 +40,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	};
 
 	$scope.languages=_.sortBy(languages, 'o');
-	console.log($scope.languages)
+	console.log($scope.languages, languages)
 	$scope.languages.pop();
 	$scope.genres=_.sortBy(genres, 'o');
 	$scope.genres.pop();
