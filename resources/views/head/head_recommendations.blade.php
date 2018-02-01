@@ -11,9 +11,9 @@ pass={
 	"with_user_id":"{!! session('with_user_id') !!}",
 	"with_user_name":"{!! session('with_user_name') !!}",
 };
-@include('translations.languages');
-@include('translations.genres');
 </script>
+<script src="/js/code_translations/{{ App::getlocale() }}/genres.js"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/languages.js"></script>
 @endsection
 
 @section('angular_slider')
