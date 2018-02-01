@@ -37,7 +37,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 	rate.get_user_movies()
 	.then(function(response){
 		console.log(response.data);
-		$scope.user_movies = response.data.data;
+		$scope.user_movies = response.data;
 		$scope.get_page_data();
 	});
 
