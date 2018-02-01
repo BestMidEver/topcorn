@@ -7,7 +7,7 @@
 					<div class="text-center h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row justify-content-between">
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-left" data-toggle="tooltip" data-placement="bottom" title="Bu filmi izlemediğini farzet, sana önereyim mi?">
+								<button type="button" class="btn btn-secondary btn-sm badge-light float-left" data-toggle="tooltip" data-placement="bottom" title="{{ __('long_texts.the_question') }}">
 									<i class="fa fa-question" aria-hidden="true"></i>
 								</button>
 							</div>

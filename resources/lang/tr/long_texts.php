@@ -7,4 +7,5 @@ return [
     'hint_image_quality' => 'İnternet bağlantınıza uygun olarak görsel kalitesini seçebilirsiniz. Bu ayar, fragmanları etkilemez.',
     'hint_full_screen' => 'Sağdan ve soldan bırakılan boşlukları azaltır.',
     'hint_open_new_tab' => 'Film, kişi ve kullanıcıları yeni sekmede açar.',
+    'the_question' => 'Eğer bu filmi izlememiş olsaydın, sana önermemi ister miydin?',
 ];

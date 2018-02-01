@@ -7,4 +7,5 @@ return [
     'hint_image_quality' => 'You can choose the image quality according to your internet connection. This setting does not affect trailers.',
     'hint_full_screen' => 'This setting reduces the spaces from left and right.',
     'hint_open_new_tab' => 'This setting opens movies, people and users in a new tab.',
+    'the_question' => 'Assume that you haven\'t watched this movie, do you want me to recommend it to you?',
 ];
