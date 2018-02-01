@@ -12,6 +12,7 @@ return [
     'hu' => 'Macarca',
     'bg' => 'Bulgarca',
     'zh' => 'Çince',
+    'cn' => 'Çince',
     'hr' => 'Hırvatça',
     'cs' => 'Çekçe',
     'da' => 'Danca',

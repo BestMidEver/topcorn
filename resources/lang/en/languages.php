@@ -12,6 +12,7 @@ return [
     'hu' => 'Hungarian',
     'bg' => 'Bulgarian', 
     'zh' => 'Chinese',
+    'cn' => 'Chinese',
     'hr' => 'Croatian',
     'cs' => 'Czech',
     'da' => 'Danish',
