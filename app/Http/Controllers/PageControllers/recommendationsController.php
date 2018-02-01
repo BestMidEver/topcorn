@@ -51,7 +51,7 @@ class recommendationsController extends Controller
         }
         
         $return_val = DB::table('movies')
-        ->where('vote_count', '>', 10)
+        ->where('vote_count', '>', 100)
         ->where('vote_average', '>', config('constants.suck_page.min_vote_average'))
         ->leftjoin('rateds', function ($join) use ($request) {
             $join->on('rateds.movie_id', '=', 'movies.id')
@@ -146,7 +146,7 @@ class recommendationsController extends Controller
             'recommendations.this_id as id',
             'recommendations.movie_id as mother_movie_id',
             'movies.'.$hover_title.' as original_title',
-            DB::raw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.8))*movies.vote_average AS point'),
+            DB::raw('sum(IF(recommendations.is_similar, 2, 7)*(rateds.rate-3.8))*movies.vote_average AS point'),
             DB::raw('COUNT(*) as count'),
             'movies.vote_average',
             'movies.release_date',
@@ -158,7 +158,7 @@ class recommendationsController extends Controller
             'bans.id as ban_id'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(IF(recommendations.is_similar, 1, 7)*(rateds.rate-3.8)) > 10 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
+        ->havingRaw('sum(IF(recommendations.is_similar, 2, 7)*(rateds.rate-3.8)) > 3 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
         ->orderBy('point', 'desc');
 
         if($request->f_genre != [])
