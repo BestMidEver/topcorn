@@ -12,6 +12,6 @@ return [
     'person' => ' - Topcorn',
     'privacypolicy' => 'Gizlilik Politikası - Topcorn',
     'profile' => ' - Topcorn',
-    'recommendations' => 'Customized movie recommendations',
+    'recommendations' => 'Zevkinize Uygun Film Önerileri',
     'search' => 'Ara - Film | Kişi | Kullanıcı - Topcorn',
 ];

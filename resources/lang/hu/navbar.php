@@ -5,7 +5,7 @@ return [
     'search' => 'Keresés',
     'movie_person_user_search' => 'Film/Személy/Felhasználó Keresés',
     'sequentialvote' => 'Gyors Szavazás',
-    'recommendations' => 'Ajánlásaim',
+    'recommendations' => 'Ajánlások',
     'movie_recommendations' => 'Film Ajánlások',
     'watchlater' => 'Később megnézem',
     'profile' => 'Profilom',
