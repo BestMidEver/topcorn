@@ -109,7 +109,7 @@
         <div class="container pt-5">
             <div class="row text-center text-sm-left">
                 <div class="col col-sm-3 d-none d-sm-inline">
-                    <div class="py-2 small"><a class="text-dark" href="#">{{ __('navbar.faq') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/faq">{{ __('navbar.faq') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="https://www.facebook.com/topcorn.io/" target="_blank">{{ __('navbar.contact_us') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __('navbar.privacy') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/donation">{{ __('navbar.donation') }}</a></div>

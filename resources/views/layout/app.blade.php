@@ -111,7 +111,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li class="nav-item d-md-none">
-                        <a class="nav-link" href="#">{{ __('navbar.faq') }}</a>
+                        <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/donation">{{ __('navbar.donation') }}</a>
@@ -134,7 +134,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/account">{{ __('navbar.account') }}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">{{ __('navbar.faq') }}</a>
+                            <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
                             <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-muted" href="{{ route('logout') }}" onclick="event.preventDefault();   document.getElementById('logout-form').submit();">{{ __('navbar.logout') }}</a>
@@ -163,7 +163,7 @@
         <div class="container pt-5">
             <div class="row text-center text-sm-left">
                 <div class="col col-sm-3 d-none d-sm-inline">
-                    <div class="py-2 small"><a class="text-dark" href="#">{{ __('navbar.faq') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/faq">{{ __('navbar.faq') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="https://www.facebook.com/topcorn.io/" target="_blank">{{ __('navbar.contact_us') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __('navbar.privacy') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/donation">{{ __('navbar.donation') }}</a></div>
