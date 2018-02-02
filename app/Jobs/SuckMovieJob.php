@@ -18,6 +18,7 @@ class SuckMovieJob implements ShouldQueue
 
     protected $id;
     protected $isWithRecommendation;
+    protected $check_recent;
     /**
      * Create a new job instance.
      *
