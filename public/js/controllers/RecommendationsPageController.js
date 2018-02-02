@@ -40,9 +40,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	};
 
 	$scope.languages=_.sortBy(languages, 'o');
-	console.log($scope.genres, genres)
 	$scope.languages.pop();
 	$scope.genres=_.sortBy(genres, 'o');
+	console.log($scope.genres, genres)
 	$scope.genres.pop();
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
