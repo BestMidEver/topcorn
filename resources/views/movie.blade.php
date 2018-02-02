@@ -68,7 +68,7 @@
 <div class="d-flex flex-wrap justify-content-between">
 	<div>
 		<div class="d-flex flex-column">
-			<div class="px-3 px-md-0"><h1 class="h4 py-2">@{{movie.title}}</h1></div>
+			<div class="px-3 px-md-0"><a ng-href="http://www.google.com/search?q=@{{movie.title}}" target="_blank"><h1 class="h4 py-2">@{{movie.title}}</h1></a></div>
 		</div>
 	</div>
 	@if(Auth::check())
