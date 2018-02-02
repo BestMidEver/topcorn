@@ -47,7 +47,7 @@ class SuckMovieJob implements ShouldQueue
             Recommendation::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['similar']['results']); $k++) {
                 $temp = $movie['similar']['results'][$k];
-                SuckMovieJob::dispatch($temp['id'], false)->onQueue("low");
+                SuckMovieJob::dispatch($temp['id'], false)->onQueue("high");
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 $recommendation = new Recommendation;
                 $recommendation->id = $this->id.'_'.$temp['id'];
@@ -58,7 +58,7 @@ class SuckMovieJob implements ShouldQueue
             }
             for ($k=0; $k < count($movie['recommendations']['results']); $k++) {
                 $temp = $movie['recommendations']['results'][$k];
-                SuckMovieJob::dispatch($temp['id'], false)->onQueue("low");
+                SuckMovieJob::dispatch($temp['id'], false)->onQueue("high");
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 Recommendation::updateOrCreate(
                     ['this_id' => $temp['id'], 'movie_id' => $this->id],
