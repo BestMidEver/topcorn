@@ -109,11 +109,11 @@
 			<div class="h5 d-none d-lg-inline">{{ __('general.movie_details') }}</div>
 			<div ng-if="movie.original_title.length > 0">
 				<div class="h6 pt-2">{{ __('general.original_title') }}</div>
-				<p>@{{movie.original_title}}</p>
+				<a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.original_title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><p>@{{movie.original_title}}</p></a>
 			</div>
 			<div ng-if="secondary_title.length > 0">
 				<div class="h6 pt-1">@{{secondary_language}} {{ __('general.its_title') }}</div>
-				<p>@{{secondary_title}}</p>
+				<a class="text-dark" ng-href="http://www.google.com/search?q=@{{secondary_title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><p>@{{secondary_title}}</p></a>
 			</div>
 			<div ng-if="movie.original_language.length > 0">
 				<div class="h6 pt-1">{{ __('general.original_language') }}</div>
