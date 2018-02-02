@@ -52,7 +52,7 @@ class BanController extends Controller
     public function store(BanRequest $request)
     {
         $ban = Ban::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->movie_id));
-        SuckMovieJob::dispatch($request->movie_id, false, true)->onQueue("high");
+        SuckMovieJob::dispatch($request->movie_id, false)->onQueue("high");
         return Response([
             'data' => new BanResource($ban),
         ], Response::HTTP_CREATED);

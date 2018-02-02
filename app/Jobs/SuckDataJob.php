@@ -6,7 +6,6 @@ use App\Jobs\RestartJob;
 use App\Jobs\SuckMovieJob;
 use App\Jobs\SuckPageJob;
 use App\Model\Rated;
-use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -50,9 +49,8 @@ class SuckDataJob implements ShouldQueue
 
 
         
-        foreach(Rated::where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())->pluck('movie_id')->unique() as $id)
-        {
-            SuckMovieJob::dispatch($id, true, false)->onQueue("low");
+        foreach(Rated::All()->pluck('movie_id')->unique() as $id){
+            SuckMovieJob::dispatch($id, true)->onQueue("low");
         }
 
         //RestartJob::dispatch()->onQueue("low");

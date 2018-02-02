@@ -53,7 +53,7 @@ class LaterController extends Controller
     {
         $later = Later::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->movie_id));
         //$later->save();
-        SuckMovieJob::dispatch($request->movie_id, false, true)->onQueue("high");
+        SuckMovieJob::dispatch($request->movie_id, false)->onQueue("high");
         return Response([
             'data' => new LaterResource($later),
         ], Response::HTTP_CREATED);

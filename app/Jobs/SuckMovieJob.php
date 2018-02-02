@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Jobs\SuckMovieJob;
 use App\Model\Genre;
 use App\Model\Movie;
 use App\Model\Recommendation;
@@ -18,17 +19,15 @@ class SuckMovieJob implements ShouldQueue
 
     protected $id;
     protected $isWithRecommendation;
-    protected $check_recent;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($id, $isWithRecommendation, $check_recent)
+    public function __construct($id, $isWithRecommendation)
     {
         $this->id = $id;
         $this->isWithRecommendation = $isWithRecommendation;
-        $this->check_recent = $check_recent;
     }
 
     /**
@@ -38,18 +37,17 @@ class SuckMovieJob implements ShouldQueue
      */
     public function handle()
     {
-        if($this->check_recent){
-            $is_recent = Movie::where('id', $this->id)
-            ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
-            ->first();
-            if($is_recent) return;
-        }
+        $is_recent = Movie::where('id', $this->id)
+        ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
+        ->first();
+        if($is_recent) return;
 
         if($this->isWithRecommendation){
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);
             Recommendation::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['similar']['results']); $k++) {
                 $temp = $movie['similar']['results'][$k];
+                SuckMovieJob::dispatch($temp['id'], false)->onQueue("low");
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 $recommendation = new Recommendation;
                 $recommendation->id = $this->id.'_'.$temp['id'];
@@ -60,6 +58,7 @@ class SuckMovieJob implements ShouldQueue
             }
             for ($k=0; $k < count($movie['recommendations']['results']); $k++) {
                 $temp = $movie['recommendations']['results'][$k];
+                SuckMovieJob::dispatch($temp['id'], false)->onQueue("low");
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 Recommendation::updateOrCreate(
                     ['this_id' => $temp['id'], 'movie_id' => $this->id],
