@@ -13,6 +13,7 @@ return [
     'contact_us' => 'Bize Ulaşın',
     'account' => 'Ayarlar',
     'faq' => 'Sıkça Sorulan Sorular',
+    'faq_long' => 'Sıkça Sorulan Sorular',
     'login' => 'Giriş Yap',
     'logout' => 'Çıkış Yap',
     'donation' => 'Bağış',

@@ -13,6 +13,7 @@ return [
     'contact_us' => 'Contact Us',
     'account' => 'Settings',
     'faq' => 'FAQ',
+    'faq_long' => 'Frequently Asked Questions',
     'login' => 'Login',
     'logout' => 'Logout',
     'donation' => 'Donate',

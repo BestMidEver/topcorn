@@ -53,6 +53,9 @@ Route::get('donation/{lang?}', 'PageControllers\DonationController@donate')
 Route::get('privacy-policy/{lang?}', 'PageControllers\PrivacypolicyController@privacypolicy')
 	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
 
+Route::get('faq/{lang?}', 'PageControllers\FaqController@faq')
+	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
+
 Route::get('not-found', function () {
     return view('errors\404');
 });//PUBLIC

@@ -4,6 +4,7 @@ return [
     'account' => 'Ayarlar - Topcorn',
     'donation' => 'Bağış Yap - Topcorn',
     'email' => 'Şifremi Unuttum - Topcorn',
+    'faq' => 'Sıkça Sorulan Sorular - Topcorn',
     'home' => 'Topcorn - Zevkinize Uygun Film Önerileri',
     'login' => 'Giriş Yap - Topcorn',
     'movie' => ' - Topcorn',
@@ -12,6 +13,6 @@ return [
     'person' => ' - Topcorn',
     'privacypolicy' => 'Gizlilik Politikası - Topcorn',
     'profile' => ' - Topcorn',
-    'recommendations' => 'Zevkinize Uygun Film Önerileri',
+    'recommendations' => 'Zevkinize Uygun Film Önerileri - Topcorn',
     'search' => 'Ara - Film | Kişi | Kullanıcı - Topcorn',
 ];

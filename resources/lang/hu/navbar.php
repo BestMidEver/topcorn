@@ -13,6 +13,7 @@ return [
     'contact_us' => 'Lépjen kapcsolatba velünk',
     'account' => 'Beállítások',
     'faq' => 'Gyakran Ismételt Kérdések',
+    'faq_long' => 'Gyakran Ismételt Kérdések',
     'login' => 'Bejelentkezés',
     'logout' => 'Kijelentkezés',
     'donation' => 'Adomány',
