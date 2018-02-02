@@ -50,7 +50,7 @@ class SuckDataJob implements ShouldQueue
 
 
         
-        foreach(Rated::where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())()->pluck('movie_id')->unique() as $id)
+        foreach(Rated::where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())->pluck('movie_id')->unique() as $id)
         {
             SuckMovieJob::dispatch($id, true, false)->onQueue("low");
         }
