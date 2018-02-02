@@ -2,7 +2,7 @@
 
 return [
     '9999' => 'İİİİİ',
-    '28' => 'Aksiyons',
+    '28' => 'Aksiyon',
     '12' => 'Macera',
     '16' => 'Animasyon',
     '35' => 'Komedi',
