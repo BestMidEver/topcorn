@@ -1,602 +1,606 @@
 countries=[
 	{
+		"i":99999,
+		"o":"İİİİİ"
+	},
+	{
 		"i":"GB",
-		"o":"xxxxxxxxxxxxxxxxGBxxxxxxxxxxxxxxxxxx"
+		"o":"Great Britain"
 	},
 	{
 		"i":"CA",
-		"o":"xxxxxxxxxxxxxxxxCAxxxxxxxxxxxxxxxxxx"
+		"o":"Canada"
 	},
 	{
 		"i":"US",
-		"o":"xxxxxxxxxxxxxxxxUSxxxxxxxxxxxxxxxxxx"
+		"o":"United States of America"
 	},
 	{
 		"i":"AU",
-		"o":"xxxxxxxxxxxxxxxxAUxxxxxxxxxxxxxxxxxx"
+		"o":"Australia"
 	},
 	{
 		"i":"NZ",
-		"o":"xxxxxxxxxxxxxxxxNZxxxxxxxxxxxxxxxxxx"
+		"o":"New Zealand"
 	},
 	{
 		"i":"ZA",
-		"o":"xxxxxxxxxxxxxxxxZAxxxxxxxxxxxxxxxxxx"
+		"o":"South Africa"
 	},
 	{
 		"i":"AF",
-		"o":"xxxxxxxxxxxxxxxxAFxxxxxxxxxxxxxxxxxx"
+		"o":"Afghanistan"
 	},
 	{
 		"i":"AL",
-		"o":"xxxxxxxxxxxxxxxxALxxxxxxxxxxxxxxxxxx"
+		"o":"Albania"
 	},
 	{
 		"i":"DZ",
-		"o":"xxxxxxxxxxxxxxxxDZxxxxxxxxxxxxxxxxxx"
+		"o":"Algeria"
 	},
 	{
 		"i":"AR",
-		"o":"xxxxxxxxxxxxxxxxARxxxxxxxxxxxxxxxxxx"
+		"o":"Argentina"
 	},
 	{
 		"i":"AM",
-		"o":"xxxxxxxxxxxxxxxxAMxxxxxxxxxxxxxxxxxx"
+		"o":"Armenia"
 	},
 	{
 		"i":"AT",
-		"o":"xxxxxxxxxxxxxxxxATxxxxxxxxxxxxxxxxxx"
+		"o":"Austria"
 	},
 	{
 		"i":"AZ",
-		"o":"xxxxxxxxxxxxxxxxAZxxxxxxxxxxxxxxxxxx"
+		"o":"Azerbaijan"
 	},
 	{
 		"i":"BS",
-		"o":"xxxxxxxxxxxxxxxxBSxxxxxxxxxxxxxxxxxx"
+		"o":"Bahamas"
 	},
 	{
 		"i":"BH",
-		"o":"xxxxxxxxxxxxxxxxBHxxxxxxxxxxxxxxxxxx"
+		"o":"Bahrain"
 	},
 	{
 		"i":"BD",
-		"o":"xxxxxxxxxxxxxxxxBDxxxxxxxxxxxxxxxxxx"
+		"o":"Bangladesh"
 	},
 	{
 		"i":"BY",
-		"o":"xxxxxxxxxxxxxxxxBYxxxxxxxxxxxxxxxxxx"
+		"o":"Belarus"
 	},
 	{
 		"i":"BE",
-		"o":"xxxxxxxxxxxxxxxxBExxxxxxxxxxxxxxxxxx"
+		"o":"Belgium"
 	},
 	{
 		"i":"BT",
-		"o":"xxxxxxxxxxxxxxxxBTxxxxxxxxxxxxxxxxxx"
+		"o":"Bhutan"
 	},
 	{
 		"i":"BO",
-		"o":"xxxxxxxxxxxxxxxxBOxxxxxxxxxxxxxxxxxx"
+		"o":"Bolivia"
 	},
 	{
 		"i":"BA",
-		"o":"xxxxxxxxxxxxxxxxBAxxxxxxxxxxxxxxxxxx"
+		"o":"Bosnia and Herzegovina"
 	},
 	{
 		"i":"BW",
-		"o":"xxxxxxxxxxxxxxxxBWxxxxxxxxxxxxxxxxxx"
+		"o":"Botswana"
 	},
 	{
 		"i":"BR",
-		"o":"xxxxxxxxxxxxxxxxBRxxxxxxxxxxxxxxxxxx"
+		"o":"Brazil"
 	},
 	{
 		"i":"BG",
-		"o":"xxxxxxxxxxxxxxxxBGxxxxxxxxxxxxxxxxxx"
+		"o":"Bulgaria"
 	},
 	{
 		"i":"BN",
-		"o":"xxxxxxxxxxxxxxxxBNxxxxxxxxxxxxxxxxxx"
+		"o":"Brunei Darussalam"
 	},
 	{
 		"i":"KH",
-		"o":"xxxxxxxxxxxxxxxxKHxxxxxxxxxxxxxxxxxx"
+		"o":"Cambodia"
 	},
 	{
 		"i":"CM",
-		"o":"xxxxxxxxxxxxxxxxCMxxxxxxxxxxxxxxxxxx"
+		"o":"Cameroon"
 	},
 	{
 		"i":"CF",
-		"o":"xxxxxxxxxxxxxxxxCFxxxxxxxxxxxxxxxxxx"
+		"o":"Central African Republic"
 	},
 	{
 		"i":"CL",
-		"o":"xxxxxxxxxxxxxxxxCLxxxxxxxxxxxxxxxxxx"
+		"o":"Chile"
 	},
 	{
 		"i":"CN",
-		"o":"xxxxxxxxxxxxxxxxCNxxxxxxxxxxxxxxxxxx"
+		"o":"China"
 	},
 	{
 		"i":"CO",
-		"o":"xxxxxxxxxxxxxxxxCOxxxxxxxxxxxxxxxxxx"
+		"o":"Colombia"
 	},
 	{
 		"i":"CR",
-		"o":"xxxxxxxxxxxxxxxxCRxxxxxxxxxxxxxxxxxx"
+		"o":"Costa Rica"
 	},
 	{
 		"i":"CI",
-		"o":"xxxxxxxxxxxxxxxxCIxxxxxxxxxxxxxxxxxx"
+		"o":"Côte d'Ivoire"
 	},
 	{
 		"i":"HR",
-		"o":"xxxxxxxxxxxxxxxxHRxxxxxxxxxxxxxxxxxx"
+		"o":"Croatia"
 	},
 	{
 		"i":"CU",
-		"o":"xxxxxxxxxxxxxxxxCUxxxxxxxxxxxxxxxxxx"
+		"o":"Cuba"
 	},
 	{
 		"i":"CY",
-		"o":"xxxxxxxxxxxxxxxxCYxxxxxxxxxxxxxxxxxx"
+		"o":"Cyprus"
 	},
 	{
 		"i":"CZ",
-		"o":"xxxxxxxxxxxxxxxxCZxxxxxxxxxxxxxxxxxx"
+		"o":"Czechia"
 	},
 	{
 		"i":"DK",
-		"o":"xxxxxxxxxxxxxxxxDKxxxxxxxxxxxxxxxxxx"
+		"o":"Denmark"
 	},
 	{
 		"i":"DO",
-		"o":"xxxxxxxxxxxxxxxxDOxxxxxxxxxxxxxxxxxx"
+		"o":"Dominican Republic"
 	},
 	{
 		"i":"DM",
-		"o":"xxxxxxxxxxxxxxxxDMxxxxxxxxxxxxxxxxxx"
+		"o":"Dominica"
 	},
 	{
 		"i":"EC",
-		"o":"xxxxxxxxxxxxxxxxECxxxxxxxxxxxxxxxxxx"
+		"o":"Ecuador"
 	},
 	{
 		"i":"EG",
-		"o":"xxxxxxxxxxxxxxxxEGxxxxxxxxxxxxxxxxxx"
+		"o":"Egypt"
 	},
 	{
 		"i":"SV",
-		"o":"xxxxxxxxxxxxxxxxSVxxxxxxxxxxxxxxxxxx"
+		"o":"El Salvador"
 	},
 	{
 		"i":"GQ",
-		"o":"xxxxxxxxxxxxxxxxGQxxxxxxxxxxxxxxxxxx"
+		"o":"Equatorial Guinea"
 	},
 	{
 		"i":"ER",
-		"o":"xxxxxxxxxxxxxxxxERxxxxxxxxxxxxxxxxxx"
+		"o":"Eritrea"
 	},
 	{
 		"i":"EE",
-		"o":"xxxxxxxxxxxxxxxxEExxxxxxxxxxxxxxxxxx"
+		"o":"Estonia"
 	},
 	{
 		"i":"ET",
-		"o":"xxxxxxxxxxxxxxxxETxxxxxxxxxxxxxxxxxx"
+		"o":"Ethiopia"
 	},
 	{
 		"i":"FI",
-		"o":"xxxxxxxxxxxxxxxxFIxxxxxxxxxxxxxxxxxx"
+		"o":"Finland"
 	},
 	{
 		"i":"FR",
-		"o":"xxxxxxxxxxxxxxxxFRxxxxxxxxxxxxxxxxxx"
+		"o":"France"
 	},
 	{
 		"i":"GA",
-		"o":"xxxxxxxxxxxxxxxxGAxxxxxxxxxxxxxxxxxx"
+		"o":"Gabon"
 	},
 	{
 		"i":"GM",
-		"o":"xxxxxxxxxxxxxxxxGMxxxxxxxxxxxxxxxxxx"
+		"o":"Gambia"
 	},
 	{
 		"i":"GE",
-		"o":"xxxxxxxxxxxxxxxxGExxxxxxxxxxxxxxxxxx"
+		"o":"Georgia"
 	},
 	{
 		"i":"DE",
-		"o":"xxxxxxxxxxxxxxxxDExxxxxxxxxxxxxxxxxx"
+		"o":"Germany"
 	},
 	{
 		"i":"GH",
-		"o":"xxxxxxxxxxxxxxxxGHxxxxxxxxxxxxxxxxxx"
+		"o":"Ghana"
 	},
 	{
 		"i":"GR",
-		"o":"xxxxxxxxxxxxxxxxGRxxxxxxxxxxxxxxxxxx"
+		"o":"Greece"
 	},
 	{
 		"i":"GD",
-		"o":"xxxxxxxxxxxxxxxxGDxxxxxxxxxxxxxxxxxx"
+		"o":"Grenada"
 	},
 	{
 		"i":"GT",
-		"o":"xxxxxxxxxxxxxxxxGTxxxxxxxxxxxxxxxxxx"
+		"o":"Guatemala"
 	},
 	{
 		"i":"GN",
-		"o":"xxxxxxxxxxxxxxxxGNxxxxxxxxxxxxxxxxxx"
+		"o":"Guinea"
 	},
 	{
 		"i":"GW",
-		"o":"xxxxxxxxxxxxxxxxGWxxxxxxxxxxxxxxxxxx"
+		"o":"Guinea-Bissau"
 	},
 	{
 		"i":"VA",
-		"o":"xxxxxxxxxxxxxxxxVAxxxxxxxxxxxxxxxxxx"
+		"o":"Vatican City"
 	},
 	{
 		"i":"HU",
-		"o":"xxxxxxxxxxxxxxxxHUxxxxxxxxxxxxxxxxxx"
+		"o":"Hungary"
 	},
 	{
 		"i":"IS",
-		"o":"xxxxxxxxxxxxxxxxISxxxxxxxxxxxxxxxxxx"
+		"o":"Iceland"
 	},
 	{
 		"i":"IN",
-		"o":"xxxxxxxxxxxxxxxxINxxxxxxxxxxxxxxxxxx"
+		"o":"India"
 	},
 	{
 		"i":"ID",
-		"o":"xxxxxxxxxxxxxxxxIDxxxxxxxxxxxxxxxxxx"
+		"o":"Indonesia"
 	},
 	{
 		"i":"IR",
-		"o":"xxxxxxxxxxxxxxxxIRxxxxxxxxxxxxxxxxxx"
+		"o":"Iran"
 	},
 	{
 		"i":"IQ",
-		"o":"xxxxxxxxxxxxxxxxIQxxxxxxxxxxxxxxxxxx"
+		"o":"Iraq"
 	},
 	{
 		"i":"IE",
-		"o":"xxxxxxxxxxxxxxxxIExxxxxxxxxxxxxxxxxx"
+		"o":"Ireland"
 	},
 	{
 		"i":"IL",
-		"o":"xxxxxxxxxxxxxxxxILxxxxxxxxxxxxxxxxxx"
+		"o":"Israel"
 	},
 	{
 		"i":"IT",
-		"o":"xxxxxxxxxxxxxxxxITxxxxxxxxxxxxxxxxxx"
+		"o":"Italy"
 	},
 	{
 		"i":"JM",
-		"o":"xxxxxxxxxxxxxxxxJMxxxxxxxxxxxxxxxxxx"
+		"o":"Jamaica"
 	},
 	{
 		"i":"JP",
-		"o":"xxxxxxxxxxxxxxxxJPxxxxxxxxxxxxxxxxxx"
+		"o":"Japan"
 	},
 	{
 		"i":"JO",
-		"o":"xxxxxxxxxxxxxxxxJOxxxxxxxxxxxxxxxxxx"
+		"o":"Jordan"
 	},
 	{
 		"i":"KZ",
-		"o":"xxxxxxxxxxxxxxxxKZxxxxxxxxxxxxxxxxxx"
+		"o":"Kazakhstan"
 	},
 	{
 		"i":"KE",
-		"o":"xxxxxxxxxxxxxxxxKExxxxxxxxxxxxxxxxxx"
+		"o":"Kenya"
 	},
 	{
 		"i":"KP",
-		"o":"xxxxxxxxxxxxxxxxKPxxxxxxxxxxxxxxxxxx"
+		"o":"North Korea"
 	},
 	{
 		"i":"KR",
-		"o":"xxxxxxxxxxxxxxxxKRxxxxxxxxxxxxxxxxxx"
+		"o":"South Korea"
 	},
 	{
 		"i":"KW",
-		"o":"xxxxxxxxxxxxxxxxKWxxxxxxxxxxxxxxxxxx"
+		"o":"Kuwait"
 	},
 	{
 		"i":"KG",
-		"o":"xxxxxxxxxxxxxxxxKGxxxxxxxxxxxxxxxxxx"
+		"o":"Kyrgyzstan"
 	},
 	{
 		"i":"LA",
-		"o":"xxxxxxxxxxxxxxxxLAxxxxxxxxxxxxxxxxxx"
+		"o":"Lao People's Democratic Republic"
 	},
 	{
 		"i":"LV",
-		"o":"xxxxxxxxxxxxxxxxLVxxxxxxxxxxxxxxxxxx"
+		"o":"Latvia"
 	},
 	{
 		"i":"LB",
-		"o":"xxxxxxxxxxxxxxxxLBxxxxxxxxxxxxxxxxxx"
+		"o":"Lebanon"
 	},
 	{
 		"i":"LR",
-		"o":"xxxxxxxxxxxxxxxxLRxxxxxxxxxxxxxxxxxx"
+		"o":"Liberia"
 	},
 	{
 		"i":"LY",
-		"o":"xxxxxxxxxxxxxxxxLYxxxxxxxxxxxxxxxxxx"
+		"o":"Libya"
 	},
 	{
 		"i":"LI",
-		"o":"xxxxxxxxxxxxxxxxLIxxxxxxxxxxxxxxxxxx"
+		"o":"Liechtenstein"
 	},
 	{
 		"i":"LT",
-		"o":"xxxxxxxxxxxxxxxxLTxxxxxxxxxxxxxxxxxx"
+		"o":"Lithuania"
 	},
 	{
 		"i":"LU",
-		"o":"xxxxxxxxxxxxxxxxLUxxxxxxxxxxxxxxxxxx"
+		"o":"Luxembourg"
 	},
 	{
 		"i":"MK",
-		"o":"xxxxxxxxxxxxxxxxMKxxxxxxxxxxxxxxxxxx"
+		"o":"Macedonia"
 	},
 	{
 		"i":"MG",
-		"o":"xxxxxxxxxxxxxxxxMGxxxxxxxxxxxxxxxxxx"
+		"o":"Madagascar"
 	},
 	{
 		"i":"MW",
-		"o":"xxxxxxxxxxxxxxxxMWxxxxxxxxxxxxxxxxxx"
+		"o":"Malawi"
 	},
 	{
 		"i":"MY",
-		"o":"xxxxxxxxxxxxxxxxMYxxxxxxxxxxxxxxxxxx"
+		"o":"Malaysia"
 	},
 	{
 		"i":"MV",
-		"o":"xxxxxxxxxxxxxxxxMVxxxxxxxxxxxxxxxxxx"
+		"o":"Maldives"
 	},
 	{
 		"i":"MH",
-		"o":"xxxxxxxxxxxxxxxxMHxxxxxxxxxxxxxxxxxx"
+		"o":"Marshall Islands"
 	},
 	{
 		"i":"MR",
-		"o":"xxxxxxxxxxxxxxxxMRxxxxxxxxxxxxxxxxxx"
+		"o":"Mauritania"
 	},
 	{
 		"i":"MU",
-		"o":"xxxxxxxxxxxxxxxxMUxxxxxxxxxxxxxxxxxx"
+		"o":"Mauritius"
 	},
 	{
 		"i":"MX",
-		"o":"xxxxxxxxxxxxxxxxMXxxxxxxxxxxxxxxxxxx"
+		"o":"Mexico"
 	},
 	{
 		"i":"FM",
-		"o":"xxxxxxxxxxxxxxxxFMxxxxxxxxxxxxxxxxxx"
+		"o":"Micronesia"
 	},
 	{
 		"i":"MD",
-		"o":"xxxxxxxxxxxxxxxxMDxxxxxxxxxxxxxxxxxx"
+		"o":"Moldova"
 	},
 	{
 		"i":"MC",
-		"o":"xxxxxxxxxxxxxxxxMCxxxxxxxxxxxxxxxxxx"
+		"o":"Monaco"
 	},
 	{
 		"i":"MN",
-		"o":"xxxxxxxxxxxxxxxxMNxxxxxxxxxxxxxxxxxx"
+		"o":"Mongolia"
 	},
 	{
 		"i":"ME",
-		"o":"xxxxxxxxxxxxxxxxMExxxxxxxxxxxxxxxxxx"
+		"o":"Montenegro"
 	},
 	{
 		"i":"MA",
-		"o":"xxxxxxxxxxxxxxxxMAxxxxxxxxxxxxxxxxxx"
+		"o":"Morocco"
 	},
 	{
 		"i":"MZ",
-		"o":"xxxxxxxxxxxxxxxxMZxxxxxxxxxxxxxxxxxx"
+		"o":"Mozambique"
 	},
 	{
 		"i":"NA",
-		"o":"xxxxxxxxxxxxxxxxNAxxxxxxxxxxxxxxxxxx"
+		"o":"Namibia"
 	},
 	{
 		"i":"NL",
-		"o":"xxxxxxxxxxxxxxxxNLxxxxxxxxxxxxxxxxxx"
+		"o":"Netherlands"
 	},
 	{
 		"i":"NI",
-		"o":"xxxxxxxxxxxxxxxxNIxxxxxxxxxxxxxxxxxx"
+		"o":"Nicaragua"
 	},
 	{
 		"i":"NE",
-		"o":"xxxxxxxxxxxxxxxxNExxxxxxxxxxxxxxxxxx"
+		"o":"Niger	"
 	},
 	{
 		"i":"NG",
-		"o":"xxxxxxxxxxxxxxxxNGxxxxxxxxxxxxxxxxxx"
+		"o":"Nigeria"
 	},
 	{
 		"i":"NO",
-		"o":"xxxxxxxxxxxxxxxxNOxxxxxxxxxxxxxxxxxx"
+		"o":"Norway"
 	},
 	{
 		"i":"OM",
-		"o":"xxxxxxxxxxxxxxxxOMxxxxxxxxxxxxxxxxxx"
+		"o":"Oman"
 	},
 	{
 		"i":"PS",
-		"o":"xxxxxxxxxxxxxxxxPSxxxxxxxxxxxxxxxxxx"
+		"o":"Palestine"
 	},
 	{
 		"i":"PG",
-		"o":"xxxxxxxxxxxxxxxxPGxxxxxxxxxxxxxxxxxx"
+		"o":"Papua New Guinea"
 	},
 	{
 		"i":"PH",
-		"o":"xxxxxxxxxxxxxxxxPHxxxxxxxxxxxxxxxxxx"
+		"o":"Philippines"
 	},
 	{
 		"i":"PL",
-		"o":"xxxxxxxxxxxxxxxxPLxxxxxxxxxxxxxxxxxx"
+		"o":"Poland"
 	},
 	{
 		"i":"PT",
-		"o":"xxxxxxxxxxxxxxxxPTxxxxxxxxxxxxxxxxxx"
+		"o":"Portugal"
 	},
 	{
 		"i":"PR",
-		"o":"xxxxxxxxxxxxxxxxPRxxxxxxxxxxxxxxxxxx"
+		"o":"Puerto Rico"
 	},
 	{
 		"i":"QA",
-		"o":"xxxxxxxxxxxxxxxxQAxxxxxxxxxxxxxxxxxx"
+		"o":"Qatar"
 	},
 	{
 		"i":"RO",
-		"o":"xxxxxxxxxxxxxxxxROxxxxxxxxxxxxxxxxxx"
+		"o":"Romania"
 	},
 	{
 		"i":"RU",
-		"o":"xxxxxxxxxxxxxxxxRUxxxxxxxxxxxxxxxxxx"
+		"o":"Russia"
 	},
 	{
 		"i":"RW",
-		"o":"xxxxxxxxxxxxxxxxRWxxxxxxxxxxxxxxxxxx"
+		"o":"Rwanda"
 	},
 	{
 		"i":"KN",
-		"o":"xxxxxxxxxxxxxxxxKNxxxxxxxxxxxxxxxxxx"
+		"o":"Saint Kitts and Nevis"
 	},
 	{
 		"i":"VC",
-		"o":"xxxxxxxxxxxxxxxxVCxxxxxxxxxxxxxxxxxx"
+		"o":"Saint Vincent and the Grenadines"
 	},
 	{
 		"i":"RS",
-		"o":"xxxxxxxxxxxxxxxxRSxxxxxxxxxxxxxxxxxx"
+		"o":"Serbia"
 	},
 	{
 		"i":"SC",
-		"o":"xxxxxxxxxxxxxxxxSCxxxxxxxxxxxxxxxxxx"
+		"o":"Seychelles"
 	},
 	{
 		"i":"SG",
-		"o":"xxxxxxxxxxxxxxxxSGxxxxxxxxxxxxxxxxxx"
+		"o":"Singapore"
 	},
 	{
 		"i":"SK",
-		"o":"xxxxxxxxxxxxxxxxSKxxxxxxxxxxxxxxxxxx"
+		"o":"Slovakia"
 	},
 	{
 		"i":"SI",
-		"o":"xxxxxxxxxxxxxxxxSIxxxxxxxxxxxxxxxxxx"
+		"o":"Slovenia"
 	},
 	{
 		"i":"SB",
-		"o":"xxxxxxxxxxxxxxxxSBxxxxxxxxxxxxxxxxxx"
+		"o":"Solomon Islands"
 	},
 	{
 		"i":"SO",
-		"o":"xxxxxxxxxxxxxxxxSOxxxxxxxxxxxxxxxxxx"
+		"o":"Somalia"
 	},
 	{
 		"i":"SS",
-		"o":"xxxxxxxxxxxxxxxxSSxxxxxxxxxxxxxxxxxx"
+		"o":"South Sudan"
 	},
 	{
 		"i":"ES",
-		"o":"xxxxxxxxxxxxxxxxESxxxxxxxxxxxxxxxxxx"
+		"o":"Spain"
 	},
 	{
 		"i":"SR",
-		"o":"xxxxxxxxxxxxxxxxSRxxxxxxxxxxxxxxxxxx"
+		"o":"Suriname"
 	},
 	{
 		"i":"SE",
-		"o":"xxxxxxxxxxxxxxxxSExxxxxxxxxxxxxxxxxx"
+		"o":"Sweden"
 	},
 	{
 		"i":"CH",
-		"o":"xxxxxxxxxxxxxxxxCHxxxxxxxxxxxxxxxxxx"
+		"o":"Switzerland"
 	},
 	{
 		"i":"SY",
-		"o":"xxxxxxxxxxxxxxxxSYxxxxxxxxxxxxxxxxxx"
+		"o":"Syria"
 	},
 	{
 		"i":"TW",
-		"o":"xxxxxxxxxxxxxxxxTWxxxxxxxxxxxxxxxxxx"
+		"o":"Taiwan"
 	},
 	{
 		"i":"TJ",
-		"o":"xxxxxxxxxxxxxxxxTJxxxxxxxxxxxxxxxxxx"
+		"o":"Tajikistan"
 	},
 	{
 		"i":"TZ",
-		"o":"xxxxxxxxxxxxxxxxTZxxxxxxxxxxxxxxxxxx"
+		"o":"Tanzania"
 	},
 	{
 		"i":"TH",
-		"o":"xxxxxxxxxxxxxxxxTHxxxxxxxxxxxxxxxxxx"
+		"o":"Thailand"
 	},
 	{
 		"i":"TT",
-		"o":"xxxxxxxxxxxxxxxxTTxxxxxxxxxxxxxxxxxx"
+		"o":"Trinidad and Tobago"
 	},
 	{
 		"i":"TN",
-		"o":"xxxxxxxxxxxxxxxxTNxxxxxxxxxxxxxxxxxx"
+		"o":"Tunisia"
 	},
 	{
 		"i":"TR",
-		"o":"xxxxxxxxxxxxxxxxTRxxxxxxxxxxxxxxxxxx"
+		"o":"Turkey"
 	},
 	{
 		"i":"TM",
-		"o":"xxxxxxxxxxxxxxxxTMxxxxxxxxxxxxxxxxxx"
+		"o":"Turkmenistan"
 	},
 	{
 		"i":"TC",
-		"o":"xxxxxxxxxxxxxxxxTCxxxxxxxxxxxxxxxxxx"
+		"o":"Turks and Caicos Islands"
 	},
 	{
 		"i":"UA",
-		"o":"xxxxxxxxxxxxxxxxUAxxxxxxxxxxxxxxxxxx"
+		"o":"Ukraine"
 	},
 	{
 		"i":"AE",
-		"o":"xxxxxxxxxxxxxxxxAExxxxxxxxxxxxxxxxxx"
+		"o":"United Arab Emirates"
 	},
 	{
 		"i":"UZ",
-		"o":"xxxxxxxxxxxxxxxxUZxxxxxxxxxxxxxxxxxx"
+		"o":"Uzbekistan"
 	},
 	{
 		"i":"VE",
-		"o":"xxxxxxxxxxxxxxxxVExxxxxxxxxxxxxxxxxx"
+		"o":"Venezuela"
 	},
 	{
 		"i":"VN",
-		"o":"xxxxxxxxxxxxxxxxVNxxxxxxxxxxxxxxxxxx"
+		"o":"Viet Nam"
 	},
 	{
 		"i":"ZM",
-		"o":"xxxxxxxxxxxxxxxxZMxxxxxxxxxxxxxxxxxx"
+		"o":"Zambia"
 	},
 	{
 		"i":"ZW",
-		"o":"xxxxxxxxxxxxxxxxZWxxxxxxxxxxxxxxxxxx"
+		"o":"Zimbabwe"
 	}
 ]

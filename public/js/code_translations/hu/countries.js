@@ -1,5 +1,9 @@
 countries=[
 	{
+		"i":99999,
+		"o":"İİİİİ"
+	},
+	{
 		"i":"GB",
 		"o":"Egyesült Királyság"
 	},

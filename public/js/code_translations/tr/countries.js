@@ -1,5 +1,9 @@
 countries=[
 	{
+		"i":99999,
+		"o":"İİİİİ"
+	},
+	{
 		"i":"GB",
 		"o":"Birleşik Krallık"
 	},
@@ -237,7 +241,7 @@ countries=[
 	},
 	{
 		"i":"VA",
-		"o":"Kutsal Makam"
+		"o":"Vatikan Şehri"
 	},
 	{
 		"i":"HU",
@@ -345,7 +349,7 @@ countries=[
 	},
 	{
 		"i":"MK",
-		"o":"Makedonya Cumhuriyeti"
+		"o":"Makedonya"
 	},
 	{
 		"i":"MG",
@@ -437,7 +441,7 @@ countries=[
 	},
 	{
 		"i":"PS",
-		"o":"Filistin Devleti"
+		"o":"Filistin"
 	},
 	{
 		"i":"PG",

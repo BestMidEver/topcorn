@@ -1,198 +1,202 @@
 languages=[
 	{
+		"i":99999,
+		"o":"İİİİİ"
+	},
+	{
 		"i":"en",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxenxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"English"
 	},
 	{
 		"i":"tr",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxtrxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Turkish"
 	},
 	{
 		"i":"es",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxesxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Spanish"
 	},
 	{
 		"i":"de",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxdexxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"German"
 	},
 	{
 		"i":"fr",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxfrxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"French"
 	},
 	{
 		"i":"ru",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxruxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Russian"
 	},
 	{
 		"i":"ar",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxarxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Arabic"
 	},
 	{
 		"i":"az",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxazxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Azerbaijani"
 	},
 	{
 		"i":"hu",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxhuxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Hungarian"
 	},
 	{
 		"i":"bg",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxbgxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Bulgarian"
 	},
 	{
 		"i":"zh",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxzhxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Chinese"
 	},
 	{
 		"i":"cn",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxzhxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Chinese"
 	},
 	{
 		"i":"hr",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxhrxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Croatian"
 	},
 	{
 		"i":"cs",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxcsxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Czech"
 	},
 	{
 		"i":"da",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxdaxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Danish"
 	},
 	{
 		"i":"nl",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxnlxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Dutch"
 	},
 	{
 		"i":"et",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxetxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Estonian"
 	},
 	{
 		"i":"fi",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxfixxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Finnish"
 	},
 	{
 		"i":"hi",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxhixxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Hindi"
 	},
 	{
 		"i":"id",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxidxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Indonesian"
 	},
 	{
 		"i":"ga",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxgaxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Irish"
 	},
 	{
 		"i":"it",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxitxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Italian"
 	},
 	{
 		"i":"ja",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxjaxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Japanese"
 	},
 	{
 		"i":"kk",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxkkxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Kazakh"
 	},
 	{
 		"i":"ky",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxkyxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Kirghiz"
 	},
 	{
 		"i":"ko",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxkoxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Korean"
 	},
 	{
 		"i":"ku",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxkuxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Kurdish"
 	},
 	{
 		"i":"la",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxlaxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Latin"
 	},
 	{
 		"i":"lt",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxltxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Lithuanian"
 	},
 	{
 		"i":"lv",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxlvxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Latvian"
 	},
 	{
 		"i":"mk",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxmkxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Macedonian"
 	},
 	{
 		"i":"ms",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxmsxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Malay"
 	},
 	{
 		"i":"mi",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxmixxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Maori"
 	},
 	{
 		"i":"mn",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxmnxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Mongolian"
 	},
 	{
 		"i":"no",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxnoxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Norwegian"
 	},
 	{
 		"i":"fa",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxfaxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Persian"
 	},
 	{
 		"i":"pl",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxplxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Polish"
 	},
 	{
 		"i":"pt",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxptxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Portuguese"
 	},
 	{
 		"i":"ro",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxroxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Romanian"
 	},
 	{
 		"i":"sk",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxskxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Slovak"
 	},
 	{
 		"i":"sl",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxslxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Slovenian"
 	},
 	{
 		"i":"sv",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxsvxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Swedish"
 	},
 	{
 		"i":"tk",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxtkxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Turkmen"
 	},
 	{
 		"i":"tt",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxttxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Tatar"
 	},
 	{
 		"i":"ug",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxugxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Uighur"
 	},
 	{
 		"i":"uk",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxukxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Ukrainian"
 	},
 	{
 		"i":"uz",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxuzxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Uzbek"
 	},
 	{
 		"i":"vi",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxvixxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Vietnamese"
 	},
 	{
 		"i":"el",
-		"o":"xxxxxxxxxxxxxxxxxxxxxxelxxxxxxxxxxxxxxxxxxxxxxx"
+		"o":"Greek"
 	}
 ];
