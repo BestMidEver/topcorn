@@ -23,10 +23,11 @@ class SuckMovieJob implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($id, $isWithRecommendation)
+    public function __construct($id, $isWithRecommendation, $check_recent)
     {
         $this->id = $id;
         $this->isWithRecommendation = $isWithRecommendation;
+        $this->check_recent = $check_recent;
     }
 
     /**
@@ -36,10 +37,12 @@ class SuckMovieJob implements ShouldQueue
      */
     public function handle()
     {
-        $is_recent = Movie::where('id', $this->id)
-        ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
-        ->first();
-        if($is_recent) return;
+        if($this->check_recent){
+            $is_recent = Movie::where('id', $this->id)
+            ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
+            ->first();
+            if($is_recent) return;
+        }
 
         if($this->isWithRecommendation){
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);

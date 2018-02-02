@@ -50,7 +50,7 @@ class RatedController extends Controller
     public function store(Request $request)
     {
         $later = Rated::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->movie_id), array('rate' => $request->rate));
-        SuckMovieJob::dispatch($request->movie_id, true)->onQueue("high");
+        SuckMovieJob::dispatch($request->movie_id, true, true)->onQueue("high");
         return Response([
             'data' => new RatedResource($later),
         ], Response::HTTP_CREATED);

@@ -42,7 +42,7 @@ class SuckPageJob implements ShouldQueue
         }
         for ($j=0; $j < count($movies) ; $j++) {
             if($movies[$j]['vote_average'] > config('constants.suck_page.min_vote_average') && $movies[$j]['vote_count'] > config('constants.suck_page.min_vote_count')){
-                SuckMovieJob::dispatch($movies[$j]['id'], false)->onQueue("low");
+                SuckMovieJob::dispatch($movies[$j]['id'], false, true)->onQueue("low");
             }
         }
     }
