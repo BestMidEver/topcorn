@@ -49,6 +49,7 @@ button:focus{box-shadow: none!important;}
 .moviecard_2{    color: #fff;    background-color: #ffc107;    border-color: #ffc107;}
 .moviecard_1{    color: #fff;    background-color: #dc3545;    border-color: #dc3545;}
 .bordered_button{border-color:#fff;}
+.tmdblogo{height: 40px;}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
