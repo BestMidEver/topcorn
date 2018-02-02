@@ -1,5 +1,9 @@
 languages=[
 	{
+		"i":"zz",
+		"o":"İİİİ"
+	},
+	{
 		"i":"en",
 		"o":"İngilizce"
 	},
