@@ -23,7 +23,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">1 - Arama Sayfası</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">2 - Arama Sayfası</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -32,15 +32,17 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i>Ara" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
+            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i>Ara" veya sayfanın en altındaki altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
-            Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.
+            Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını yazmalısın.
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Film </div>
-            Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girebilirsin.
+            <div class="h6 text-muted">Aranılan Filmi Oylama</div>
+            Film aradıktan sonra çıkan listede muhtemelen birçok filmlerin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan "<i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim" tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylamalısın.
+            <div class="mt-2"><small>"<i class="fa fa-clock-o" aria-hidden="true"></i>" tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle'm" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><small>"<i class="fa fa-ban" aria-hidden="true"></i>" tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
           </li>
           <li class="list-group-item">
             <div class="mb-2">Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girebilirsin.</div>
