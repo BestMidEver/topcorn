@@ -7,8 +7,8 @@ pass={
 	"api_key":"{{config('constants.api_key')}}",
 	"constants_domain":"{{config('api.url')}}",
 };
-<script src="/js/code_translations/{{ App::getlocale() }}/jobs.js"></script>
 </script>
+<script src="/js/code_translations/{{ App::getlocale() }}/jobs.js"></script>
 @endsection
 
 @section('underscore')
