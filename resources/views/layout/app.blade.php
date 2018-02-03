@@ -121,6 +121,13 @@
                         <a class="nav-link text-muted" href="#">{{ __('navbar.logout') }}</a>
                     </li>
                 </ul>
+
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <button class="nav-link d-md-none text-warning btn btn-link"><i class="fa graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.tutorial') }}</span></button>
+                    </li>
+                </ul>
+
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
