@@ -36,10 +36,10 @@ return [
     'director' => 'Director',                                               //movie
     'directors' => 'Directors',                                             //movie
     'disabled' => 'Disabled',                                               //accountinterface,
-    'definitely_dont_recommend' => 'Definitely Don\\\'t Recommend',         //ratemodal, profile,
+    'definitely_dont_recommend' => 'Definitely Don\'t Recommend',         //ratemodal, profile,
     'definitely_recommend' => 'Definitely Recommend',                       //ratemodal, profile,
     'dollar_account' => 'Dollar Account',                                   //donation,
-    'dont_recommend' => 'Don\\\'t Recommend',                               //ratemodal, profile,
+    'dont_recommend' => 'Don\'t Recommend',                               //ratemodal, profile,
     'editing' => 'Editing',                                                 //person,
     'email' => 'Email',                                                     //email, reset, login, register,
     'email_confirmation' => 'Email Confirmation',                           //register,
@@ -52,7 +52,7 @@ return [
     'forgot_my_password' => 'I Forgot My Password',                         //email, login,
     'genre' => 'GENRE',                                                     //recommendations_genres,
     'h' => 'h',                                                             //movie,
-    'havent_seen' => 'Haven\\\'t Seen',                                     //ratemodal,
+    'havent_seen' => 'Haven\'t Seen',                                     //ratemodal,
     'high' => 'High',                                                       //accountinterface,
     'hismovies' => 'Movies',                                                //person,
     'hover_title_language' => 'Movie Tooltip',                              //accountinterface,
