@@ -80,6 +80,11 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <button class="nav-link d-md-none text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.tutorial') }}</span></button>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
                     <a class="nav-link d-md-none {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.search') }}</span></a>
                 </li>
             </ul>
