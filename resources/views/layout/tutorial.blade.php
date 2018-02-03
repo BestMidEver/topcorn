@@ -1,4 +1,5 @@
-<div class="modal fade d-none" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
+@if(0)
+<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -17,7 +18,7 @@
     </div>
   </div>
 </div>
-
+@endif
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
