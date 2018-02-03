@@ -18,7 +18,6 @@
     </div>
   </div>
 </div>
-@endif
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -32,7 +31,7 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i>Ara" veya sayfanın en altındaki altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
+            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğunda "<i class="fa fa-search" aria-hidden="true"></i>Ara" veya sayfanın en altındaki altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
@@ -46,7 +45,7 @@
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Kişi Arama</div>
-            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsine kısa kişi dedik. Kişi aramak için "Kişi" sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
+            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için "Kişi" sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Kullanıcı Arama</div>
@@ -56,6 +55,42 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
         <button type="button" class="btn btn-primary">Önceki Ders</button>
+        <button type="button" class="btn btn-primary">Sonraki Ders</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">1 - Peş Peşe Oyla</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Ne İşe Yarar?</div>
+            Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. "Peş Peşe Oylama" özelliği en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
+          </li>
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Özelliğe Erişim</div>
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğunda "<i class="fa fa-star-half-o" aria-hidden="true"></i>Peş Peşe Oyla" tuşuna basmalısın.
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Film Oylama</div>
+            İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
+            <p>"Eğer bu filmi izlememiş olsaydın, sana önermemi ister miydin?"</p>
+            Bu soruya ne kadar çok ve ne kadar tutarlı cevap verirsen, sana o kadar kaliteli tavsiye verebiliriz.
+            <p>Eğer 
+          </li>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-dismiss="modal">Sonra Yap</button>
+        <button type="button" class="btn btn-secondary">Önceki Ders</button>
         <button type="button" class="btn btn-primary">Sonraki Ders</button>
       </div>
     </div>
