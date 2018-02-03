@@ -31,13 +31,12 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
-            Arama sayfasına ulaşmak için gezinti çubuğunda veya altbilgisinde "{{ __('navbar.search') }}" linkine tıklayıp "Arama" sayfasına gitmelisin.
+            Arama sayfasına ulaşmak için gezinti çubuğunda "{{ __('navbar.search') }}" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linkine tıklayıp "Ara" sayfasına gitmelisin.
           </li>
           <li class="list-group-item list-group-item-success">
-            Film aramak için "{{ __('general.movie') }}"" sekmesinde arama çubuğuna aramak istediğiniz filmin adını giriniz.
-          </li>
-          <li class="list-group-item">
-            Film sekmesinde arama çubuğuna aramak istediğiniz filmin adının tamamını veya herhangi bir bölümünü herhangi bir dilde giriniz.
+            Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.
+            Kişi(Oyuncu, yönetmen, yapımcı vb.) aramak için "Kişi" sekmesinde aramak istediğin kişinin adını girmelisin.
+            Kullanıcı aramak için "Kullanıcı" sekmesinde aramak istediğin kullanıcının adını veya e-postasını girmelisin.
           </li>
       </div>
       <div class="modal-footer">
