@@ -8,11 +8,11 @@
         </button>
       </div>
       <div class="modal-body">
-        Zaten kullanımı çk basit olan topcornun bütün temel özelliklerini öğrenmen için sana 5 dakikalık bir kurs hazırladık. 
+        Zaten kullanımı çok basit olan topcornun bütün temel özelliklerini öğrenmen için sana 5 dakikalık bir kurs hazırladık. 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
-        <button type="button" class="btn btn-primary">Haydi Kursa Başlayalım</button>
+        <button type="button" class="btn btn-primary">Kursa Başlayalım</button>
       </div>
     </div>
   </div>
