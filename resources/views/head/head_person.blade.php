@@ -7,7 +7,7 @@ pass={
 	"api_key":"{{config('constants.api_key')}}",
 	"constants_domain":"{{config('api.url')}}",
 };
-@include('translations.jobs');
+<script src="/js/code_translations/{{ App::getlocale() }}/jobs.js"></script>
 </script>
 @endsection
 
