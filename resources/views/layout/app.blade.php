@@ -75,7 +75,7 @@
             </button>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.tutorial') }}</span></button>
+                    <button class="nav-link d-md-none text-info btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.tutorial') }}</span></button>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -96,7 +96,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item d-md-none">
-                        <button class="nav-link text-warning btn btn-link"><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                        <button class="nav-link text-info btn btn-link"><span class=""> {{ __('navbar.tutorial') }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item">
@@ -132,7 +132,7 @@
                 </ul>
                 <ul class="navbar-nav mx-auto d-none d-md-inline">
                     <li class="nav-item">
-                        <button class="nav-link text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                        <button class="nav-link text-info btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
