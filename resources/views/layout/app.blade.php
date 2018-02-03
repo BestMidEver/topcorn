@@ -75,12 +75,12 @@
             </button>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
+                    <button class="nav-link d-md-none text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.tutorial') }}</span></button>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.tutorial') }}</span></button>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
