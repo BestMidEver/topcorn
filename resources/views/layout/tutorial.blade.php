@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Kursa Giriş</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">0 - Kursa Giriş</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,7 +13,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
-        <button type="button" class="btn btn-primary">0 - Kursa Başlayalım</button>
+        <button type="button" class="btn btn-primary">Kursa Başlayalım</button>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">1 - Film Ara</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">1 - Arama Sayfası</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -31,15 +31,18 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
-            Film aramak için gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}" linkine tıklayıp "Arama" sayfasına gitmelisin.
+            Arama sayfasına ulaşmak için gezinti çubuğunda veya altbilgisinde "{{ __('navbar.search') }}" linkine tıklayıp "Arama" sayfasına gitmelisin.
+          </li>
+          <li class="list-group-item list-group-item-success">
+            Film aramak için "{{ __('general.movie') }}"" sekmesinde arama çubuğuna aramak istediğiniz filmin adını giriniz.
           </li>
           <li class="list-group-item">
-            Film sekmesinde <input type="text" class="form-control" placeholder="{{ __('general.search_movie') }}"> arama çubuğuna aramak istediğiniz filmin adının tamamını veya herhangi bir kısmını herhangi bir dilde giriniz.
+            Film sekmesinde arama çubuğuna aramak istediğiniz filmin adının tamamını veya herhangi bir bölümünü herhangi bir dilde giriniz.
           </li>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
-        <button type="button" class="btn btn-primary">0 - Kursa Başlayalım</button>
+        <button type="button" class="btn btn-primary">Sonraki Ders</button>
       </div>
     </div>
   </div>
