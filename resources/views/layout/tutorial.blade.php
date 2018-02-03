@@ -32,7 +32,7 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true">Ara" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
+            Arama sayfasına ulaşmak için gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i>Ara" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
