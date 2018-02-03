@@ -90,7 +90,7 @@
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item d-md-none">
                         <button class="nav-link text-warning btn btn-link"><span class=""> {{ __('navbar.tutorial') }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
