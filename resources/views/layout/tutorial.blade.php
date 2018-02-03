@@ -55,6 +55,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
+        <button type="button" class="btn btn-primary">Önceki Ders</button>
         <button type="button" class="btn btn-primary">Sonraki Ders</button>
       </div>
     </div>
