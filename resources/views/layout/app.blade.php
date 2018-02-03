@@ -88,11 +88,6 @@
                     <button class="nav-link d-md-none text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.sequentialvote') }}</span></button>
                 </li>
             </ul>
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <button class="nav-link text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
-                </li>
-            </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -127,6 +122,11 @@
                     </li>
                 </ul>
 
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <button class="nav-link text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                    </li>
+                </ul>
 
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
