@@ -1,5 +1,5 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="votecard modal-dialog modal-dialog-centered" role="document">
+	<div class="votecard modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="card">
 				<img class="card-img" ng-src="{{config('constants.image.rate_modal')[$image_quality]}}@{{modalmovie.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
