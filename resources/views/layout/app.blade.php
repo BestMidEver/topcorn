@@ -91,7 +91,8 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <button class="nav-link text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                        <button class="nav-link text-warning btn btn-link"><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                        <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
