@@ -34,8 +34,8 @@
             Arama sayfasına ulaşmak için gezinti çubuğunda "{{ __('navbar.search') }}" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linkine tıklayıp "Ara" sayfasına gitmelisin.
           </li>
           <li class="list-group-item">
-            <div class="mb-1">Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.</div>
-            <div class="mb-1">Kişi(Oyuncu, yönetmen, yapımcı vb.) aramak için "Kişi" sekmesinde aramak istediğin kişinin adını girmelisin.</div>
+            <div class="mb-2">Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.</div>
+            <div class="mb-2">Kişi(Oyuncu, yönetmen, yapımcı vb.) aramak için "Kişi" sekmesinde aramak istediğin kişinin adını girmelisin.</div>
             <div>Kullanıcı aramak için "Kullanıcı" sekmesinde aramak istediğin kullanıcının adını veya e-postasını girmelisin.</div>
           </li>
       </div>
