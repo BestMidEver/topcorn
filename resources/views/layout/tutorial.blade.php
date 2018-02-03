@@ -45,7 +45,12 @@
             <div class="mt-2"><small>"<i class="fa fa-ban" aria-hidden="true"></i>" tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
           </li>
           <li class="list-group-item">
-            <div class="mb-2">Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girebilirsin.</div>
+            <div class="h6 text-muted">Kişi Arama</div>
+            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsine kısa kişi dedik. Kişi aramak için "Kişi" sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Kullanıcı Arama</div>
+            Topcorn kullanıcılarını aramak için "Kullanıcı" sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
           </li>
       </div>
       <div class="modal-footer">
