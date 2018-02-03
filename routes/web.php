@@ -57,7 +57,7 @@ Route::get('faq/{lang?}', 'PageControllers\FaqController@faq')
 	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
 
 Route::get('not-found', function () {
-    return view('errors\404');
+    return view('errors.404');
 });//PUBLIC
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// OTHER PAGES ////////////////////////////////////
