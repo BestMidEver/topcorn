@@ -33,10 +33,10 @@
           <li class="list-group-item list-group-item-success">
             Arama sayfasına ulaşmak için gezinti çubuğunda "{{ __('navbar.search') }}" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linkine tıklayıp "Ara" sayfasına gitmelisin.
           </li>
-          <li class="list-group-item list-group-item-success">
-            <p>Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.</p>
-            <p>Kişi(Oyuncu, yönetmen, yapımcı vb.) aramak için "Kişi" sekmesinde aramak istediğin kişinin adını girmelisin.</p>
-            <p>Kullanıcı aramak için "Kullanıcı" sekmesinde aramak istediğin kullanıcının adını veya e-postasını girmelisin.</p>
+          <li class="list-group-item">
+            <div>Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.</div>
+            <div>Kişi(Oyuncu, yönetmen, yapımcı vb.) aramak için "Kişi" sekmesinde aramak istediğin kişinin adını girmelisin.</div>
+            <div>Kullanıcı aramak için "Kullanıcı" sekmesinde aramak istediğin kullanıcının adını veya e-postasını girmelisin.</div>
           </li>
       </div>
       <div class="modal-footer">
