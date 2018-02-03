@@ -124,7 +124,7 @@
 
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <button class="nav-link text-warning btn btn-link"><i class="fa graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                        <button class="nav-link text-warning btn btn-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
                     </li>
                 </ul>
 
