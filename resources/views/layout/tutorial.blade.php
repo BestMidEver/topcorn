@@ -83,7 +83,7 @@
           <li class="list-group-item">
             <div class="h6 text-muted">Film Oylama</div>
             İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
-            <p>"Eğer bu filmi izlememiş olsaydın, sana önermemi ister miydin?"</p>
+            <p class="lead">"Eğer bu filmi izlememiş olsaydın, sana önermemi ister miydin?"</p>
             Bu soruya ne kadar çok ve ne kadar tutarlı cevap verirsen, sana o kadar kaliteli tavsiye verebiliriz.
             <p>Eğer 
           </li>
