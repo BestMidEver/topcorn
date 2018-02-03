@@ -29,7 +29,13 @@
         </button>
       </div>
       <div class="modal-body">
-        Film aramak için gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}" linkine tıklayıp "Arama" sayfasına gitmelisin.
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success">
+            Film aramak için gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}" linkine tıklayıp "Arama" sayfasına gitmelisin.
+          </li>
+          <li class="list-group-item">
+            Film sekmesinde <input type="text" class="form-control" placeholder="{{ __('general.search_movie') }}"> arama çubuğuna aramak istediğiniz filmin adının tamamını veya herhangi bir kısmını herhangi bir dilde giriniz.
+          </li>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
