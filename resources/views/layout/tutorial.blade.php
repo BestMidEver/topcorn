@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Zaten kullanımı çok basit olan topcornun bütün temel özelliklerini öğrenmen için sana 5 dakikalık bir kurs hazırladık. 
+        Zaten kullanımı çok basit olan topcornun bütün temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık. 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
@@ -31,12 +31,19 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
-            Arama sayfasına ulaşmak için gezinti çubuğunda "{{ __('navbar.search') }}" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linkine tıklayıp "Ara" sayfasına gitmelisin.
+            <div class="h6 text-muted">Sayfaya Erişim</div>
+            Arama sayfasına ulaşmak için gezinti çubuğunda "<i class="fa fa-search d-none d-md-inline" aria-hidden="true">Ara" veya altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
           </li>
           <li class="list-group-item">
-            <div class="mb-2">Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.</div>
-            <div class="mb-2">Kişi(Oyuncu, yönetmen, yapımcı vb.) aramak için "Kişi" sekmesinde aramak istediğin kişinin adını girmelisin.</div>
-            <div>Kullanıcı aramak için "Kullanıcı" sekmesinde aramak istediğin kullanıcının adını veya e-postasını girmelisin.</div>
+            <div class="h6 text-muted">Film Arama</div>
+            Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girmelisin.
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Film </div>
+            Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girebilirsin.
+          </li>
+          <li class="list-group-item">
+            <div class="mb-2">Film aramak için "Film" sekmesinde arama çubuğuna aramak istediğin filmin adını girebilirsin.</div>
           </li>
       </div>
       <div class="modal-footer">
