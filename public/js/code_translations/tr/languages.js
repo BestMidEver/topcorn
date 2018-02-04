@@ -173,7 +173,7 @@ languages=[
 	},
 	{
 		"i":"th",
-		"o":"Tai Dili"
+		"o":"TaiDili"
 	},
 	{
 		"i":"tk",
