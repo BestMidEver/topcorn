@@ -89,7 +89,7 @@
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="lead text-warning py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>Peş Peşe Oyla</span> tuşuna basmalısın.
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="lead text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>Peş Peşe Oyla</span> tuşuna basmalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Oylama</div>
