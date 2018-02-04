@@ -76,6 +76,10 @@
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
           </li>
           <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Özelliğe Erişim</div>
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basmalısın.
+          </li>
+          <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
             İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
             <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
@@ -86,10 +90,6 @@
             <div class="py-2"><span class="badge badge-secondary">Kararsız</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
             <div class="py-2"><span class="badge badge-info">Öner</span> -> Beğendiğin filmler için</div>
             <div class="py-2"><span class="badge badge-success">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
-          </li>
-          <li class="list-group-item list-group-item-success">
-            <div class="h6 text-muted">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basmalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Oylama</div>
