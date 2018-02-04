@@ -80,12 +80,12 @@
             İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
             <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
             Bu soruya verebileceğin 6 muhtemel yanıt vardır:
-            <div><span class="lead badge badge-warning py-2">"İzlemedim"</span> -> İzlemediğin filmler için</div>
-            <div><span class="lead badge badge-warning py-2">"Sakın"</span> -> İzlediğine çok pişman olduğun ve kesinlikle senin için zaman kaybı olduğunu düşündüğün filmler için</div>
-            <div><span class="lead badge badge-warning py-2">"Önerme"</span> -> İzlemeseydim de olurdu dediğin filmler için</div>
-            <div><span class="lead badge badge-warning py-2">"Kararsız"</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
-            <div><span class="lead badge badge-warning py-2">"Öner"</span> -> Beğendiğin filmler için</div>
-            <div><span class="lead badge badge-warning py-2">"Kesinlikle"</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
+            <div><span class="lead py-2 badge badge-warning py-2">"İzlemedim"</span> -> İzlemediğin filmler için</div>
+            <div><span class="lead py-2 badge badge-warning py-2">"Sakın"</span> -> İzlediğine çok pişman olduğun ve kesinlikle senin için zaman kaybı olduğunu düşündüğün filmler için</div>
+            <div><span class="lead py-2 badge badge-warning py-2">"Önerme"</span> -> İzlemeseydim de olurdu dediğin filmler için</div>
+            <div><span class="lead py-2 badge badge-warning py-2">"Kararsız"</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
+            <div><span class="lead py-2 badge badge-warning py-2">"Öner"</span> -> Beğendiğin filmler için</div>
+            <div><span class="lead py-2 badge badge-warning py-2">"Kesinlikle"</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Özelliğe Erişim</div>
