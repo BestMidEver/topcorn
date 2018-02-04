@@ -172,6 +172,10 @@ languages=[
 		"o":"İsveççe"
 	},
 	{
+		"i":"th",
+		"o":"Tai Dili"
+	},
+	{
 		"i":"tk",
 		"o":"Türkmence"
 	},

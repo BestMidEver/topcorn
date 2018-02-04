@@ -180,6 +180,10 @@ languages=[
 		"o":"Tatar"
 	},
 	{
+		"i":"th",
+		"o":"Thai"
+	},
+	{
 		"i":"ug",
 		"o":"Uighur"
 	},

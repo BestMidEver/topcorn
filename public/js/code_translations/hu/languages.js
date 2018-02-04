@@ -176,6 +176,10 @@ languages=[
 		"o":"Türkmén"
 	},
 	{
+		"i":"th",
+		"o":"Thai"
+	},
+	{
 		"i":"tt",
 		"o":"Tatár"
 	},
