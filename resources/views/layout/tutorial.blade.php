@@ -73,23 +73,23 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Ne İşe Yarar?</div>
-            Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. "Peş Peşe Oylama" özelliği en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
+            Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
             İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
             <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
             Bu soruya verebileceğin 6 muhtemel yanıt vardır:
-            <div><span class="lead py-2 badge badge-warning py-2">"İzlemedim"</span> -> İzlemediğin filmler için</div>
-            <div><span class="lead py-2 badge badge-warning py-2">"Sakın"</span> -> İzlediğine çok pişman olduğun ve kesinlikle senin için zaman kaybı olduğunu düşündüğün filmler için</div>
-            <div><span class="lead py-2 badge badge-warning py-2">"Önerme"</span> -> İzlemeseydim de olurdu dediğin filmler için</div>
-            <div><span class="lead py-2 badge badge-warning py-2">"Kararsız"</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
-            <div><span class="lead py-2 badge badge-warning py-2">"Öner"</span> -> Beğendiğin filmler için</div>
-            <div><span class="lead py-2 badge badge-warning py-2">"Kesinlikle"</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
+            <div class="py-2"><span class="lead badge badge-warning py-2">İzlemedim</span> -> İzlemediğin filmler için</div>
+            <div class="py-2"><span class="lead badge badge-warning py-2">Sakın</span> -> İzlediğine çok pişman olduğun ve kesinlikle senin için zaman kaybı olduğunu düşündüğün filmler için</div>
+            <div class="py-2"><span class="lead badge badge-warning py-2">Önerme</span> -> İzlemeseydim de olurdu dediğin filmler için</div>
+            <div class="py-2"><span class="lead badge badge-warning py-2">Kararsız</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
+            <div class="py-2"><span class="lead badge badge-warning py-2">Öner</span> -> Beğendiğin filmler için</div>
+            <div class="py-2"><span class="lead badge badge-warning py-2">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki "<i class="fa fa-star-half-o" aria-hidden="true"></i>Peş Peşe Oyla" tuşuna basmalısın.
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="lead badge badge-warning py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i>Peş Peşe Oyla</span> tuşuna basmalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Oylama</div>
