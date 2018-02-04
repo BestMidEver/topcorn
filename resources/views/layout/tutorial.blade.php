@@ -31,7 +31,7 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğunda "<i class="fa fa-search" aria-hidden="true"></i>Ara" veya sayfanın en altındaki altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
+            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki "<i class="fa fa-search" aria-hidden="true"></i>Ara" veya sayfanın en altındaki altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
@@ -53,7 +53,6 @@
           </li>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
         <button type="button" class="btn btn-primary">Önceki Ders</button>
         <button type="button" class="btn btn-primary">Sonraki Ders</button>
       </div>
@@ -77,19 +76,28 @@
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. "Peş Peşe Oylama" özelliği en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
           </li>
           <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
+            İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
+            <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
+            Bu soruya verebileceğin 6 muhtemel yanıt vardır:
+            <div class="lead py-2">"İzlemedim"</div> -> İzlemediğin filmler için
+            <div class="lead py-2">"Sakın"</div> -> İzlediğine çok pişman olduğun ve kesinlikle senin için zaman kaybı olduğunu düşündüğün filmler için
+            <div class="lead py-2">"Önerme"</div> -> İzlemeseydim de olurdu dediğin filmler için
+            <div class="lead py-2">"Kararsız"</div> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için
+            <div class="lead py-2">"Öner"</div> -> Beğendiğin filmler için
+            <div class="lead py-2">"Kesinlikle"</div> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için
+          </li>
+          <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğunda "<i class="fa fa-star-half-o" aria-hidden="true"></i>Peş Peşe Oyla" tuşuna basmalısın.
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki "<i class="fa fa-star-half-o" aria-hidden="true"></i>Peş Peşe Oyla" tuşuna basmalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Oylama</div>
-            İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
-            <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, sana önermemi ister miydin?"</div>
-            Bu soruya ne kadar çok ve ne kadar tutarlı cevap verirsen, sana o kadar kaliteli tavsiye verebiliriz.
+            
              
           </li>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-link" data-dismiss="modal">Sonra Yap</button>
         <button type="button" class="btn btn-secondary">Önceki Ders</button>
         <button type="button" class="btn btn-primary">Sonraki Ders</button>
       </div>
