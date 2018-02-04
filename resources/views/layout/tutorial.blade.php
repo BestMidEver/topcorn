@@ -94,9 +94,10 @@
           <li class="list-group-item">
             <div class="h6 text-muted">Film Oylama</div>
             Peş Peşe Oylama özelliği ile en az 5 filmi oylamalısın.
-            <div class="mt-2"><small><span class="badge badge-light touch-light">Filmin Adı (XXXX)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
-            <div class="mt-2"><small>"<i class="fa fa-clock-o" aria-hidden="true"></i>" tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><small>"<i class="fa fa-ban" aria-hidden="true"></i>" tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><small><span class="badge badge-light">Filmin Adı (Filmin Yılı)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
+            <div class="mt-2"><small><i class="fa fa-clock-o" aria-hidden="true"></i> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><small><i class="fa fa-ban" aria-hidden="true"></i> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><small><i class="fa fa-undo" aria-hidden="true"></i> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
           </li>
       </div>
       <div class="modal-footer">
