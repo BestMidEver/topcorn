@@ -232,8 +232,8 @@ Route::get('test', function(){
         ->orderBy('point', 'desc');
 
         if(["18"] != []){
-            $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
-            ->whereIn('genre_id', [18]);
+            $return_val = $return_val->leftjoin('genres', 'genres.movie_id', '=', 'movies.id')
+            ->whereIn('genre_id', ["18"]);
         }
 
         if([] != [])
