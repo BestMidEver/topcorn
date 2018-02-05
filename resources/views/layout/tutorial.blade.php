@@ -18,6 +18,9 @@
     </div>
   </div>
 </div>
+@endif
+
+@if(1)
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -60,6 +63,8 @@
   </div>
 </div>
 @endif
+
+@if(0)
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -107,3 +112,4 @@
     </div>
   </div>
 </div>
+@endif
