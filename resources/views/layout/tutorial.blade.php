@@ -89,7 +89,7 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki "<i class="fa fa-search" aria-hidden="true"></i>Ara" veya sayfanın en altındaki altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
+            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="bg-dark h6"><i class="fa fa-search" aria-hidden="true"></i>Ara</span> veya sayfanın en altındaki altbilgisinde "Film/Kişi/Kullanıcı Ara" linklerinden birine tıklamalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
