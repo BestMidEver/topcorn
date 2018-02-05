@@ -90,17 +90,17 @@
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
             Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altındaki altbilgisinde <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-info">Arama sayfasına git.</span></div>
+            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-danger">Arama sayfasına git.</span></div>
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
             Film aramak için <span class="h6 badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazabilirsin.
-            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-info">Bir film ara.</span></div>
+            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-danger">Bir film ara.</span></div>
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
             Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-info">İzlediğin 5 filmi oyla.</span></div>
+            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-danger">İzlediğin 5 filmi oyla.</span></div>
             <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
