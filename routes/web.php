@@ -236,9 +236,9 @@ Route::get('test', function(){
             ->whereIn('genre_id', ["18"]);
         }
 
-        if([] != [])
+        if(["en"] != [])
         {
-            $return_val = $return_val->whereIn('original_language', []);
+            $return_val = $return_val->whereIn('original_language', ["en"]);
         }
 
         if(1917 != 1917)
