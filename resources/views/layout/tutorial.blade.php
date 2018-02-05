@@ -93,14 +93,14 @@
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
-            Film aramak için<span class="underlined h6"> Film </span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazmalısın.
+            Film aramak için <span class="h6 badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazmalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
             Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylamalısın.
             <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
-            <div class="mt-2"><small><i class="fa fa-clock-o" aria-hidden="true"></i> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><small><i class="fa fa-ban" aria-hidden="true"></i> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><small><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Kişi Arama</div>
