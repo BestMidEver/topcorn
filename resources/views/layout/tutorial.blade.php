@@ -104,16 +104,16 @@
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Kişi Arama</div>
-            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için "Kişi" sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
+            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="h6 badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Kullanıcı Arama</div>
-            Topcorn kullanıcılarını aramak için "Kullanıcı" sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
+            Topcorn kullanıcılarını aramak için <span class="h6 badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
           </li>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Önceki Ders</button>
-        <button type="button" class="btn btn-primary">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" disabled>Sonraki Ders</button>
       </div>
     </div>
   </div>
