@@ -43,7 +43,7 @@ class recommendationsController extends Controller
 
 
     public function get_top_rateds($tab, Request $request)
-    {
+    {return dd($request);
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
@@ -117,6 +117,7 @@ class recommendationsController extends Controller
 
     public function get_pemosu(Request $request)
     {
+        return dd($request);
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
