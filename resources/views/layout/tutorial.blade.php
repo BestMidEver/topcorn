@@ -93,7 +93,7 @@
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Arama</div>
-            Film aramak için <span class="underlined h6">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazmalısın.
+            Film aramak için <span class="underlined h6"> Film </span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazmalısın.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
