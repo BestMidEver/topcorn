@@ -241,9 +241,9 @@ Route::get('test', function(){
             $return_val = $return_val->whereIn('original_language', ["en"]);
         }
 
-        if(1917 != 1917)
+        if(2005 != 1917)
         {
-            $return_val = $return_val->where('movies.release_date', '>=', Carbon::create(1917,1,1));
+            $return_val = $return_val->where('movies.release_date', '>=', Carbon::create(2005,1,1));
         }
 
         if(2018 != 2018)
