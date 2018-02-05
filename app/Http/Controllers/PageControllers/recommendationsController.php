@@ -43,7 +43,7 @@ class recommendationsController extends Controller
 
 
     public function get_top_rateds($tab, Request $request)
-    {return $request->all();
+    {
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
@@ -117,7 +117,6 @@ class recommendationsController extends Controller
 
     public function get_pemosu(Request $request)
     {
-        return $request->all();
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
@@ -165,7 +164,8 @@ class recommendationsController extends Controller
         if($request->f_genre != [])
         {
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
-            ->whereIn('genre_id', $request->f_genre);
+            ->whereIn('genre_id', $request->f_genre)
+            ->havingRaw('COUNT(*)='.count($request->f_genre));
         }
 
         if($request->f_lang != [])
