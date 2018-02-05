@@ -90,7 +90,7 @@
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
             Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altındaki altbilgisinde <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-success">Arama sayfasına git.</span></div>
+            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge">Arama sayfasına git.</span></div>
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Film Arama</div>
