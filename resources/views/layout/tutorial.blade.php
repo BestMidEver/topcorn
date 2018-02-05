@@ -41,7 +41,8 @@
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basmalısın.
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Peş Peşe Oylama özelliğini çalıştır.</span></div>
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
@@ -57,7 +58,7 @@
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Film Oylama</div>
-            Peş Peşe Oylama özelliği ile en az 5 filmi oylamalısın.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">5 filmi oyla.</span></div>
             <div class="mt-2"><small><span class="badge badge-light">Filmin Adı (Filmin Yılı)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><small><i class="fa fa-clock-o" aria-hidden="true"></i> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><small><i class="fa fa-ban" aria-hidden="true"></i> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
@@ -75,7 +76,7 @@
 
 
 
-@if(1)
+@if(0)
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -89,18 +90,18 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altındaki altbilgisinde <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev:</span><span>Arama sayfasına git.</span></div>
+            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altındaki altbilgisindeki <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span>Arama sayfasına git.</span></div>
           </li>
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Film Arama</div>
             Film aramak için <span class="h6 badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazabilirsin.
-            <div class="py-2"><span class="text-muted">Görev:</span><span>Bir film ara.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span>Bir film ara.</span></div>
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
             Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev:</span><span class="badge badge-danger">İzlediğin 5 filmi oyla.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">İzlediğin 1 filmi oyla.</span></div>
             <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
@@ -126,7 +127,7 @@
 
 
 
-@if(0)
+@if(1)
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -140,22 +141,35 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Tavsiye sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altındaki altbilgisinde <span class="h6 badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklamalısın.
+            Tavsiye sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altındaki altbilgisindeki <span class="h6 badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Tavsiyeler sayfasına git.</span></div>
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">En Yüksek Oy Alan Filmler</div>
-            En yüksek oy alan izlenmemiş filmleri görmek için <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesine tıklamalısın.
+            En yüksek oy alan izlenmemiş filmleri görmek için <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesine tıklayabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">En Yüksek Oy Alan sekmesine git.</span></div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Listedeki Filmleri Oylama</div>
+            <div class="h6 text-muted">En Popüler Filmler</div>
+            En popüler izlenmemiş filmleri görmek için <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesine tıklayabilirsin.
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Benim Zevkime Göre</div>
+            Bu liste, Topcorn'u Topcorn yapan listedir. Yalnızca size özel film önerilerini burada bulabilirsiniz. Unutmayın, Topcorn'a ne kadar doğru ve çok bilgi verirseniz bu liste o ölçüde zengin ve size uygun olacaktır.
+            En popüler izlenmemiş filmleri görmek için <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesine tıklayabilirsin.
+            <div class="mt-2"><small>Bu kısımı kullanmadan önce kursu tamamlamanızı öneriyoruz.</small></div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Tavsiyelerdeki Filmleri Oylama</div>
             Muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden izlediğin filmlerin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylamalısın.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">İzlediğin 1 filmi oyla.</span></div>
             <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Kişi Arama</div>
-            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="h6 badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
+            <div class="h6 text-muted">Filmfiltre</div>
+            <span class="h6 badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> tuşuna basıp filtreyi ayarlayabilir; listedeki filmleri orijinal diline, türüne ve yılına göre daraltabilirsin.
           </li>
           <li class="list-group-item">
             <div class="h6 text-muted">Kullanıcı Arama</div>
