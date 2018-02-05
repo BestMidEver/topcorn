@@ -231,10 +231,9 @@ Route::get('test', function(){
         ->havingRaw('sum(IF(recommendations.is_similar, 2, 7)*(rateds.rate-3.8)) > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
         ->orderBy('point', 'desc');
 
-        if([] != []){
+        if(["18"] != []){
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
-            ->whereIn('genre_id', ["18"])
-            ->havingRaw('COUNT(*)='.count(["18"]));
+            ->whereIn('genre_id', [18]);
         }
 
         if([] != [])
