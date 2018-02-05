@@ -236,7 +236,7 @@ Route::get('test', function(){
             //->whereIn('genre_id', ["18"]);
         }
 
-        if(["en"] != [])
+        /*if(["en"] != [])
         {
             $return_val = $return_val->whereIn('original_language', ["en"]);
         }
@@ -249,7 +249,7 @@ Route::get('test', function(){
         if(2018 != 2018)
         {
             $return_val = $return_val->where('movies.release_date', '<=', Carbon::create(2018,12,31));
-        }
+        }*/
 
         return $return_val->paginate(24);
 });
