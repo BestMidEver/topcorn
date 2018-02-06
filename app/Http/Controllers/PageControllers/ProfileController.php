@@ -91,8 +91,12 @@ class ProfileController extends Controller
 
     public function get_laters($user, $lang)
     {
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0){
+                $hover_title = Auth::User()->secondary_lang.'_title';
+            }else{
+                $hover_title = 'original_title';
+            }
         }else{
             $hover_title = 'original_title';
         }
@@ -134,8 +138,12 @@ class ProfileController extends Controller
 
     public function get_bans($user, $lang)
     {
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0){
+                $hover_title = Auth::User()->secondary_lang.'_title';
+            }else{
+                $hover_title = 'original_title';
+            }
         }else{
             $hover_title = 'original_title';
         }
