@@ -90,7 +90,7 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altındaki altbilgisindeki <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
+            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span>Arama sayfasına git.</span></div>
           </li>
           <li class="list-group-item list-group-item-success">
@@ -141,7 +141,7 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Tavsiyeler sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altındaki altbilgisindeki <span class="h6 badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
+            Tavsiyeler sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Tavsiyeler sayfasına git.</span></div>
           </li>
           <li class="list-group-item">
@@ -227,13 +227,24 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
-            Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="h6 badge badge-secondary">Ayarlar</span> veya sayfanın en altındaki altbilgisindeki <span class="h6 badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
+            <div class="h6 text-muted">Sayfaya Erişim</div>
+            Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="h6 badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Ayarlar sayfasına git.</span>
           </li>
           <li class="list-group-item list-group-item-success">
-            <div class="h6 text-muted">Özelliğe Erişim</div>
-            Profilini biraz güçlendirdin, şimdi de ayarlar sayfasından kapak ve profil fotoğrafı seçebilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">50 film oyla.</span></div>
+            <div class="h6 text-muted">Kapak Fotoğrafı Seçme</div>
+            Kapak fotoğrafı açılır listesinden en çok beğendiğin filmlerden birinin kapak fotoğrafını kendi kapak fotoğrafın olarak belirleyebilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Bir kapak fotoğrafı seç.</span></div>
+          </li>
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Profil Fotoğrafı Seçme</div>
+            Kapak fotoğrafı seçtikten sonra, o filmde oynayan oyunculardan birinin profil fotoğrafını; ya da facebook ile giriş yaptıysan facebook profil fotoğrafını profil fotoğrafı açılır listesinden belirleyebilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Bir profil fotoğrafı seç.</span></div>
+          </li>
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Değişiklikleri Kaydetme</div>
+            Profilini ayarladıktan sonra değişiklikleri kaydetmek için <span class="h6 badge badge-secondary">Değişiklikleri Kaydet</span> tuşuna basabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Değişiklikleri kaydet.</span></div>
           </li>
       </div>
       <div class="modal-footer">
