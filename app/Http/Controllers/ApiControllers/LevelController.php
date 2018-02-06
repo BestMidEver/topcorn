@@ -17,6 +17,17 @@ class LevelController extends Controller
 
     public function level_manipulate(Request $request)
     {
-        return $request->level;
+        switch ($request->level) {
+        	case 1:
+        		return "bu birdir";
+        		break;
+        	
+        	case 100:
+        		return "bu yüzdür";
+        		break;
+        	
+        	default:
+        		return "wrong!"
+        }
     }  
 }
