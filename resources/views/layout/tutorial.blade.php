@@ -127,7 +127,7 @@
 
 
 
-@if(1)
+@if(0)
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
@@ -174,7 +174,71 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" disabled>Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" disabled>Son Ders</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+
+
+
+
+@if(0)
+<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">4 - Son Görev</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Profilini Güçlendir</div>
+            Peş Peşe Oylama, arama yapma veya tavsiye alma; hangisi kolayına geliyorsa onu kullanarak profilini güçlendirebilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">50 film oyla.</span></div>
+          </li>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary">Önceki Ders</button>
+        <button type="button" class="btn btn-primary" disabled>Mezuniyet</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+
+
+
+
+@if(1)
+<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">5 - Ayarlar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success">
+            Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="h6 badge badge-secondary">Ayarlar</span> veya sayfanın en altındaki altbilgisindeki <span class="h6 badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Ayarlar sayfasına git.</span>
+          </li>
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Özelliğe Erişim</div>
+            Profilini biraz güçlendirdin, şimdi de ayarlar sayfasından kapak ve profil fotoğrafı seçebilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">50 film oyla.</span></div>
+          </li>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary">Önceki Ders</button>
+        <button type="button" class="btn btn-primary" disabled>Diplomanı Al</button>
       </div>
     </div>
   </div>
