@@ -264,6 +264,26 @@ MyApp.factory('rate', function($http) {
 
 
 
+
+    level_manipulate = function(level) 
+    {
+        return $http({
+			method: 'POST',
+			url: pass.constants_domain + '/api/level',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {"level":level}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
+
     return {
     	get_quick_rate: get_quick_rate,
     	add_later: add_later,
@@ -280,5 +300,6 @@ MyApp.factory('rate', function($http) {
     	search_movies: search_movies, 
     	search_people: search_people,
     	search_users: search_users,
+    	level_manipulate: level_manipulate,
     };
 })

@@ -472,6 +472,11 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 	$scope.tutorial = function(mode){
 		console.log(mode);
+
+		rate.level_manipulate(mode)
+		.then(function(response){
+			console.log(response);
+		});
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////

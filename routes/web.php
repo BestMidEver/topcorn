@@ -163,6 +163,7 @@ Route::apiResource('api/laters','ApiControllers\LaterController');
 Route::apiResource('api/rateds','ApiControllers\RatedController');
 Route::get('api/search_users/{text?}','ApiControllers\SearchController@search_users');
 Route::get('api/get_quick_rate/{lang}','ApiControllers\RatedController@get_quick_rate');
+Route::post('api/level','ApiControllers\LevelController@level_manipulate');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// API RATE (AUTH) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
