@@ -67,6 +67,9 @@
     if(Auth::user()->margin_x_setting == 2) $full_screen = '-fluid px-1';
     else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
     else $full_screen = '';
+
+    if(Auth::user()->level < 2) $users_manual = __('navbar.graduate');
+    else $users_manual = __('navbar.start_course');
     ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark px-md-0">
         <div class="container{{ $full_screen }}">
@@ -75,7 +78,7 @@
             </button>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.tutorial') }}</span></button>
+                    <button class="nav-link d-md-none text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ $users_manual }}</span></button>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -96,7 +99,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item d-md-none">
-                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> {{ $users_manual }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item">
@@ -132,7 +135,7 @@
                 </ul>
                 <ul class="navbar-nav mx-auto d-none d-md-inline">
                     <li class="nav-item">
-                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ __('navbar.tutorial') }}</span></button>
+                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ $users_manual }}</span></button>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
