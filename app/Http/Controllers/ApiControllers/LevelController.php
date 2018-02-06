@@ -27,7 +27,7 @@ class LevelController extends Controller
         		break;
         	
         	default:
-        		return "wrong!"
+        		return "wrong!";
         }
     }  
 }
