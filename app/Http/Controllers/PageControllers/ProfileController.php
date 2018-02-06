@@ -38,8 +38,12 @@ class ProfileController extends Controller
 
     public function get_rateds($rate, $user, $lang)
     {
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0){
+                $hover_title = Auth::User()->secondary_lang.'_title';
+            }else{
+                $hover_title = 'original_title';
+            }
         }else{
             $hover_title = 'original_title';
         }
