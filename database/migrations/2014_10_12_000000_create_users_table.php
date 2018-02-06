@@ -15,6 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('level')->default(0);
             $table->string('facebook_id');
             $table->string('name');
             $table->string('cover_pic')->nullable();
