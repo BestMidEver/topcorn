@@ -18,20 +18,22 @@ class LevelController extends Controller
 
     public function level_manipulate(Request $request)
     {
+		$user = Auth::User();
+
         switch ($request->level) {
         	case 1:
-        		$user = Auth::User();
         		$user->level = 1;
-        		$user->save();
-        		return response('Level manipulated', 200);
         		break;
         	
         	case 100:
-        		return "bu yüzdür";
+        		$user->level = 100;
         		break;
         	
         	default:
         		return "wrong!";
         }
+
+		$user->save();
+		return response('Level manipulated to '.$request->level, 200);
     }  
 }
