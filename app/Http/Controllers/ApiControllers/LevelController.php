@@ -19,6 +19,9 @@ class LevelController extends Controller
     {
         switch ($request->level) {
         	case 1:
+        		$user = Auth::User();
+        		$user->level = 1;
+        		$user->save();
         		return "bu birdir";
         		break;
         	
