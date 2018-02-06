@@ -7,7 +7,7 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"constants_domain":"{{config('api.url')}}",
 	"constants_api_key":"{{config('constants.api_key')}}",
-	"level":{{ Auth::User->level }},
+	"level":{{ Auth::User()->level }},
 };
 </script>
 @endsection
