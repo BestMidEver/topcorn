@@ -68,7 +68,7 @@
     else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
     else $full_screen = '';
 
-    if(Auth::user()->level < 2) $users_manual = __('start_course');
+    if(Auth::user()->level < 2) $users_manual = __('navbar.start_course');
     else $users_manual = __('navbar.graduate');
     ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark px-md-0">
