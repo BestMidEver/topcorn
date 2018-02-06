@@ -1,9 +1,9 @@
-@if(1)
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Kullanım Klavuzu</h5>
+        <h5 class="modal-title" ng-if="current_level < 2">Kullanım Klavuzu</h5>
+        <h5 class="modal-title" ng-if="current_level == 100">1 - Peş Peşe Oyla</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -18,7 +18,6 @@
     </div>
   </div>
 </div>
-@endif
 
 
 
