@@ -12,8 +12,8 @@
         Zaten kullanımı çok basit olan topcornun bütün temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık. 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sonra Yap</button>
-        <button type="button" class="btn btn-primary">Kursa Başlayalım</button>
+        <button type="button" class="btn btn-secondary" ng-click="tutorial(1)">Sonra Yap</button>
+        <button type="button" class="btn btn-primary" ng-click="tutorial(100)">Kursa Başlayalım</button>
       </div>
     </div>
   </div>
