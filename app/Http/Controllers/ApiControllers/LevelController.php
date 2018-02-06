@@ -23,7 +23,7 @@ class LevelController extends Controller
         		$user = Auth::User();
         		$user->level = 1;
         		$user->save();
-        		return "bu birdir";
+        		return response('Level manipulated', 200);
         		break;
         	
         	case 100:
