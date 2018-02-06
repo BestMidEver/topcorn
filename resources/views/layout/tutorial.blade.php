@@ -63,6 +63,7 @@
         </ul>
       </div>
       <div class="modal-footer">
+        <button ng-click="level_up()">level atla</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 103">Sonraki Ders</button>
       </div>
     </div>
