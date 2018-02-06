@@ -31,16 +31,16 @@
       </div>
       <div class="modal-body">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 100}">
             <div class="h6 text-muted">Ne İşe Yarar?</div>
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
           </li>
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
             <div class="h6 text-muted">Özelliğe Erişim</div>
             Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Peş Peşe Oylama özelliğini çalıştır.</span></div>
           </li>
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 102}" ng-if="current_level > 101">
             <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
             İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
             <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
@@ -52,7 +52,7 @@
             <div class="py-2"><span class="badge badge-info">Öner</span> -> Beğendiğin filmler için</div>
             <div class="py-2"><span class="badge badge-success">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
           </li>
-          <li class="list-group-item">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 103}" ng-if="current_level > 102">
             <div class="h6 text-muted">Film Oylama</div>
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">5 filmi oyla.</span></div>
             <div class="mt-2"><small><span class="badge badge-light">Filmin Adı (Filmin Yılı)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
@@ -63,7 +63,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 103">Sonraki Ders</button>
       </div>
     </div>
     <!--QUICK RATE-->
