@@ -476,6 +476,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		rate.level_manipulate(mode)
 		.then(function(response){
 			console.log(response);
+			if(reponse.data == 1) $('#tutorial').modal('hide');
 		});
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
