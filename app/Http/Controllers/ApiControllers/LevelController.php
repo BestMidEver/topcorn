@@ -34,6 +34,6 @@ class LevelController extends Controller
         }
 
 		$user->save();
-		return response('Level manipulated to '.$request->level, 200);
+		return response($user->level, 200);
     }  
 }
