@@ -1,9 +1,11 @@
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+
+    <!--USERS MANUAL-->
+    <div class="modal-content" ng-if="current_level < 2">
       <div class="modal-header">
-        <h5 class="modal-title" ng-if="current_level < 2">Kullanım Klavuzu</h5>
-        <h5 class="modal-title" ng-if="current_level == 100">1 - Peş Peşe Oyla</h5>
+        <h5 class="modal-title">Kullanım Klavuzu</h5>
+        <h5 class="modal-title">1 - Peş Peşe Oyla</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -16,18 +18,14 @@
         <button type="button" class="btn btn-primary" ng-click="tutorial(100)">Kursa Başlayalım</button>
       </div>
     </div>
-  </div>
-</div>
+    <!--USERS MANUAL-->
 
 
 
-
-@if(0)
-<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
+    <!--QUICK RATE-->
+    <div class="modal-content" ng-if="current_level > 99 && current_level < 200">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">1 - Peş Peşe Oyla</h5>
+        <h5 class="modal-title">1 - Peş Peşe Oyla</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -63,6 +61,65 @@
             <div class="mt-2"><small><i class="fa fa-ban" aria-hidden="true"></i> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><small><i class="fa fa-undo" aria-hidden="true"></i> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
           </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Sonraki Ders</button>
+      </div>
+    </div>
+    <!--QUICK RATE-->
+
+
+
+
+  </div>
+</div>
+
+
+
+
+@if(0)
+<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">1 - Peş Peşe Oyla</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Ne İşe Yarar?</div>
+            Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
+          </li>
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Özelliğe Erişim</div>
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Peş Peşe Oylama özelliğini çalıştır.</span></div>
+          </li>
+          <li class="list-group-item list-group-item-success">
+            <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
+            İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
+            <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
+            Bu soruya verebileceğin 6 muhtemel yanıt vardır:
+            <div class="py-2"><span class="badge badge-light">İzlemedim</span> -> İzlemediğin filmler için</div>
+            <div class="py-2"><span class="badge badge-danger">Sakın</span> -> İzlediğine çok pişman olduğun ve kesinlikle senin için zaman kaybı olduğunu düşündüğün filmler için</div>
+            <div class="py-2"><span class="badge badge-warning">Önerme</span> -> İzlemeseydim de olurdu dediğin filmler için</div>
+            <div class="py-2"><span class="badge badge-secondary">Kararsız</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
+            <div class="py-2"><span class="badge badge-info">Öner</span> -> Beğendiğin filmler için</div>
+            <div class="py-2"><span class="badge badge-success">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Film Oylama</div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">5 filmi oyla.</span></div>
+            <div class="mt-2"><small><span class="badge badge-light">Filmin Adı (Filmin Yılı)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
+            <div class="mt-2"><small><i class="fa fa-clock-o" aria-hidden="true"></i> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><small><i class="fa fa-ban" aria-hidden="true"></i> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><small><i class="fa fa-undo" aria-hidden="true"></i> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
+          </li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary">Sonraki Ders</button>
@@ -80,7 +137,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">2 - Arama Sayfası</h5>
+        <h5 class="modal-title">2 - Arama Sayfası</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -113,6 +170,7 @@
             <div class="h6 text-muted">Kullanıcı Arama</div>
             Topcorn kullanıcılarını aramak için <span class="h6 badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
           </li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Önceki Ders</button>
@@ -131,7 +189,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">3 - Tavsiyeler</h5>
+        <h5 class="modal-title">3 - Tavsiyeler</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -170,6 +228,7 @@
             <div class="h6 text-muted">Filmfiltre</div>
             <span class="h6 badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> tuşuna basıp filtreyi ayarlayabilir; listedeki filmleri orijinal diline, türüne ve yılına göre daraltabilirsin.
           </li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Önceki Ders</button>
@@ -188,7 +247,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">4 - Son Görev</h5>
+        <h5 class="modal-title">4 - Son Görev</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -200,6 +259,7 @@
             Peş Peşe Oylama, arama yapma veya tavsiye alma; hangisi kolayına geliyorsa onu kullanarak profilini güçlendirebilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">50 film oyla.</span></div>
           </li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Önceki Ders</button>
@@ -218,7 +278,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">5 - Ayarlar</h5>
+        <h5 class="modal-title">5 - Ayarlar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -245,6 +305,7 @@
             Profilini ayarladıktan sonra değişiklikleri kaydetmek için <span class="h6 badge badge-secondary">Değişiklikleri Kaydet</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Değişiklikleri kaydet.</span></div>
           </li>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary">Önceki Ders</button>
