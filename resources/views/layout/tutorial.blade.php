@@ -1,5 +1,5 @@
 <div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 
     <!--USERS MANUAL-->
     <div class="modal-content" ng-if="current_level < 2">
