@@ -35,7 +35,7 @@
             <div class="h6 text-muted">Ne İşe Yarar?</div>
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
             <div class="h6 text-muted mt-3">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
+            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">Peş Peşe Oylama özelliğini çalıştır.</span></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 102}" ng-if="current_level > 101">
