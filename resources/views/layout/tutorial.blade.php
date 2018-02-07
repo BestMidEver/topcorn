@@ -81,7 +81,7 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 200}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
             Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 201}">Arama sayfasına git.</span><i class="fas fa-check" ng-if="current_level > 200"></i></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 201}">Arama sayfasına git.</span><i class="fas fa-check" ng-show="current_level > 200"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 201}" ng-if="current_level > 200">
             <div class="h6 text-muted">Film Arama</div>
