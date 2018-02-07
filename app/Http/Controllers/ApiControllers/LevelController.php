@@ -29,6 +29,14 @@ class LevelController extends Controller
         		$user->level = 100;
         		break;
         	
+        	case 200:
+        		$user->level = 200;
+        		break;
+        	
+        	case 300:
+        		$user->level = 300;
+        		break;
+        	
         	default:
         		return "wrong!";
         }
