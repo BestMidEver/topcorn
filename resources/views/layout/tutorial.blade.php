@@ -168,7 +168,7 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 400}">
             <div class="h6 text-muted">Profilini Güçlendir</div>
             Peş Peşe Oylama, arama yapma veya tavsiye alma; hangisi kolayına geliyorsa onu kullanarak profilini güçlendirebilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">50 film oyla.</span> <i class="fa fa-check" ng-show="current_level > 400"></i></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 401}">50 film oyla.</span> <i class="fa fa-check" ng-show="current_level > 400"></i></div>
           </li>
         </ul>
       </div>
