@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        Zaten kullanımı çok basit olan topcornun bütün temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık. 
+        Zaten kullanımı çok basit olan topcornun temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık. 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="tutorial(1)">Sonra Yap</button>
@@ -96,9 +96,6 @@
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
             Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 203}">İzlediğin 1 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 202"></i></div>
-            <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
-            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
           </li>
         </ul>
       </div>
@@ -135,7 +132,7 @@
             <span class="h6 badge badge-secondary">En Popüler</span> sekmesinde en popüler filmleri görebilirsin.
             <div class="h6 text-muted mt-4">Benim Zevkime Göre <small>(Bu kısmı kullanmadan önce kursu tamamlamanızı öneriyoruz.)</small></div>
             Bu liste, Topcorn'u Topcorn yapan listedir. Yalnızca size özel film önerilerini burada bulabilirsiniz. Unutmayın, Topcorn'a ne kadar tutarlı ve çok bilgi verirseniz bu liste o ölçüde zengin ve size uygun olacaktır.
-            Yalnızca senin zevkine göre seçilmiş filmleri görmek için <span class="h6 badge badge-secondary">Benim Zevkime Göre</span> sekmesine tıklayabilirsin.
+            Yalnızca senin zevkine göre seçilmiş filmleri görmek için <span class="badge badge-secondary">Benim Zevkime Göre</span> sekmesine tıklayabilirsin.
             <div class="h6 text-muted mt-4">Tavsiyelerdeki Filmleri Oylama</div>
             Muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden izlediğin filmlerin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 302}">İzlediğin 1 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 301"></i></div>
@@ -213,12 +210,17 @@
             Profilini ayarladıktan sonra değişiklikleri kaydetmek için <span class="h6 badge badge-secondary">Değişiklikleri Kaydet</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 504}">Değişiklikleri kaydet.</span> <i class="fa fa-check" ng-show="current_level > 503"></i></div>
           </li>
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 504}" ng-if="current_level > 503">
+            <div class="h6 text-muted">Profil Sayfası</div>
+            Kendi profilini görmek için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Profilim</span> linklerinden birine tıklayabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 505}">Profil sayfana git.</span> <i class="fa fa-check" ng-show="current_level > 504"></i></div>
+          </li>
         </ul>
       </div>
       <div class="modal-footer">
         <button ng-click="level_up(1)">level atla</button>
         <button type="button" class="btn btn-secondary" ng-click="level_up(410)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 504" ng-click="tutorial(600)">Diplomanı Al</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 505" ng-click="tutorial(600)">Diplomanı Al</button>
       </div>
     </div>
     <!--GRADUATION-->
