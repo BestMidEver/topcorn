@@ -59,7 +59,6 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button ng-click="level_up(1)">level atla</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 102" ng-click="tutorial(200)">Sonraki Ders</button>
       </div>
     </div>
@@ -100,7 +99,6 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button ng-click="level_up(1)">level atla</button>
         <button type="button" class="btn btn-secondary" ng-click="level_up(110)">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 203" ng-click="tutorial(300)">Sonraki Ders</button>
       </div>
@@ -142,7 +140,6 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button ng-click="level_up(1)">level atla</button>
         <button type="button" class="btn btn-secondary" ng-click="level_up(210)">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 302" ng-click="tutorial(400)">Son Ders</button>
       </div>
@@ -170,7 +167,6 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button ng-click="level_up(1)">level atla</button>
         <button type="button" class="btn btn-secondary" ng-click="level_up(310)">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 401" ng-click="tutorial(500)">Mezuniyet</button>
       </div>
@@ -218,7 +214,6 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button ng-click="level_up(1)">level atla</button>
         <button type="button" class="btn btn-secondary" ng-click="level_up(410)">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 505" ng-click="tutorial(600)">Diplomanı Al</button>
       </div>
