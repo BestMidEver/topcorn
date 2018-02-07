@@ -474,18 +474,14 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.current_level = pass.level;
 
 		$scope.level_up = function(lvl){
+			if(response.data == 1)$('#tutorial').modal('hide');
 			rate.level_manipulate(lvl)
 			.then(function(response){
 				console.log(response);
-				if(response.data == 1){
-					$scope.current_level = response.data;
-					$('#tutorial').modal('hide');
-				}else{
-					$scope.current_level = response.data;
-					setTimeout(function() {
-						$('#tutorial').modal('show');
-					}, 3000);
-				}
+				$scope.current_level = response.data;
+				setTimeout(function() {
+					$('#tutorial').modal('show');
+				}, 2000);
 			});
 		}
 	}
