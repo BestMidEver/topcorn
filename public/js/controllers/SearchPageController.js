@@ -470,6 +470,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.level < 700){
+		if(pass.level == 0)	$('#tutorial').modal('show');
+		$scope.current_level = pass.level;
+
 		$scope.level_up = function(lvl){
 			rate.level_manipulate(lvl)
 			.then(function(response){
@@ -483,21 +486,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						$('#tutorial').modal('show');
 					}, 3000);
 				}
-			});
-		}
-		if(pass.level == 0)	$('#tutorial').modal('show');
-		$scope.current_level = pass.level;
-
-		$scope.tutorial = function(mode){
-			console.log(mode);
-
-			rate.level_manipulate(mode)
-			.then(function(response){
-				console.log(response);
-				if(response.data == 1){
-					$('#tutorial').modal('hide');
-				}
-				$scope.current_level = response.data;
 			});
 		}
 	}
