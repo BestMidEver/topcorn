@@ -36,7 +36,7 @@
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
             <div class="h6 text-muted mt-4">Özelliğe Erişim</div>
             Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 101}">Peş Peşe Oylama özelliğini çalıştır.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 101}">Peş Peşe Oylama özelliğini çalıştır.</span> <i class="fa fa-check" ng-show="current_level > 100"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
             <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
@@ -50,7 +50,7 @@
             <div class="py-2"><span class="badge badge-secondary">Öner</span> -> Beğendiğin filmler için</div>
             <div class="py-2"><span class="badge badge-secondary">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
             <div class="h6 text-muted mt-4">Film Oylama</div>
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">5 filmi oyla.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">5 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 101"></i></div>
             <div class="mt-2"><small>Filmin adına tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
@@ -87,6 +87,10 @@
             <div class="h6 text-muted">Film Arama</div>
             Film aramak için <span class="h6 badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 202}">Bir film ara.</span> <i class="fa fa-check" ng-show="current_level > 201"></i></div>
+            <div class="h6 text-muted mt-4">Kişi Arama</div>
+            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="h6 badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
+            <div class="h6 text-muted mt-4">Kullanıcı Arama</div>
+            Topcorn kullanıcılarını aramak için <span class="h6 badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 202}" ng-if="current_level > 201">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
@@ -95,10 +99,6 @@
             <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
-            <div class="h6 text-muted mt-4">Kişi Arama</div>
-            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="h6 badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
-            <div class="h6 text-muted mt-4">Kullanıcı Arama</div>
-            Topcorn kullanıcılarını aramak için <span class="h6 badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
           </li>
         </ul>
       </div>
@@ -110,19 +110,13 @@
     </div>
     <!--SEARCH-->
 
-  </div>
-</div>
 
 
 
-
-
-@if(0)
-<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
+    <!--RECOMMENDATIONS-->
+    <div class="modal-content" ng-if="current_level > 299 && current_level < 400">
       <div class="modal-header">
-        <h5 class="modal-title">2 - Arama Sayfası</h5>
+        <h5 class="modal-title">3 - Tavsiyeler</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -131,41 +125,41 @@
         <ul class="list-group">
           <li class="list-group-item list-group-item-success">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span>Arama sayfasına git.</span></div>
-          </li>
-          <li class="list-group-item list-group-item-success">
-            <div class="h6 text-muted">Film Arama</div>
-            Film aramak için <span class="h6 badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span>Bir film ara.</span></div>
+            Tavsiyeler sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Tavsiyeler sayfasına git.</span></div>
           </li>
           <li class="list-group-item">
-            <div class="h6 text-muted">Aratılan Filmi Oylama</div>
-            Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
+            <div class="h6 text-muted">En Yüksek Oy Alan Filmler</div>
+            En yüksek oy alan izlenmemiş filmleri görmek için <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesine tıklayabilirsin.
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">En Yüksek Oy Alan sekmesine git.</span></div>
+            <div class="h6 text-muted mt-4">En Popüler Filmler</div>
+            En popüler izlenmemiş filmleri görmek için <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesine tıklayabilirsin.
+            <div class="h6 text-muted mt-4">Benim Zevkime Göre</div>
+            Bu liste, Topcorn'u Topcorn yapan listedir. Yalnızca size özel film önerilerini burada bulabilirsiniz. Unutmayın, Topcorn'a ne kadar doğru ve çok bilgi verirseniz bu liste o ölçüde zengin ve size uygun olacaktır.
+            En popüler izlenmemiş filmleri görmek için <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesine tıklayabilirsin.
+            <div class="mt-2"><small>Bu kısımı kullanmadan önce kursu tamamlamanızı öneriyoruz.</small></div>
+          </li>
+          <li class="list-group-item">
+            <div class="h6 text-muted">Tavsiyelerdeki Filmleri Oylama</div>
+            Muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden izlediğin filmlerin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylamalısın.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">İzlediğin 1 filmi oyla.</span></div>
             <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
-          </li>
-          <li class="list-group-item">
-            <div class="h6 text-muted">Kişi Arama</div>
-            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="h6 badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
-          </li>
-          <li class="list-group-item">
-            <div class="h6 text-muted">Kullanıcı Arama</div>
-            Topcorn kullanıcılarını aramak için <span class="h6 badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
+            <div class="h6 text-muted mt-4">Filmfiltre</div>
+            <span class="h6 badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> tuşuna basıp filtreyi ayarlayabilir; listedeki filmleri orijinal diline, türüne ve yılına göre daraltabilirsin.
           </li>
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" disabled>Sonraki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="level_up(210)">Önceki Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 303" ng-click="tutorial(400)">Son Ders</button>
       </div>
     </div>
+    <!--RECOMMENDATIONS-->
+
   </div>
 </div>
-@endif
-
 
 
 
