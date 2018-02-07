@@ -162,7 +162,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
-		if(pass.level == 100) $scope.level_up(101);//NEW NEW NEW
+		if($scope.current_level == 100) $scope.level_up(101);//NEW NEW NEW
 	};
 
 	$scope.get_quick_rate=function()
