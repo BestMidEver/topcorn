@@ -21,9 +21,12 @@ class LevelController extends Controller
 		$user = Auth::User();
 
     	$accepted_modes = [1,100,101,200,201,300,301];
-    	if(in_array($request->level, $accepted_modes)){
+    	if(in_array($request->level, $accepted_modes))
+    	{
 			$user->level = $request->level;
-    	}else{
+    	}
+    	else
+    	{
     		return response("wrong", 405);
     	}
 
