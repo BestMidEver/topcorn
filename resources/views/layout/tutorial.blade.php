@@ -52,9 +52,9 @@
             <div class="h6 text-muted mt-4">Film Oylama</div>
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">5 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 101"></i></div>
             <div class="mt-2"><small>Filmin adına tıklayıp, filmin sayfasına gidebilirsin.</small></div>
-            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
+            <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
           </li>
         </ul>
       </div>
@@ -80,17 +80,17 @@
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 200}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
+            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 201}">Arama sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 200"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 201}" ng-if="current_level > 200">
             <div class="h6 text-muted">Film Arama</div>
-            Film aramak için <span class="h6 badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazabilirsin.
+            Film aramak için <span class="badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 202}">Bir film ara.</span> <i class="fa fa-check" ng-show="current_level > 201"></i></div>
             <div class="h6 text-muted mt-4">Kişi Arama</div>
-            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="h6 badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
+            Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
             <div class="h6 text-muted mt-4">Kullanıcı Arama</div>
-            Topcorn kullanıcılarını aramak için <span class="h6 badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
+            Topcorn kullanıcılarını aramak için <span class="badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 202}" ng-if="current_level > 201">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
@@ -122,14 +122,14 @@
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 300}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Tavsiyeler sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
+            Tavsiyeler sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 301}">Tavsiyeler sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 300"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 301}" ng-if="current_level > 300">
             <div class="h6 text-muted">En Yüksek Oy Alan Filmler</div>
-            <span class="h6 badge badge-secondary">En Yüksek Oy Alan</span> sekmesinde en yüksek oyu alan filmleri görebilirsin.
+            <span class="badge badge-secondary">En Yüksek Oy Alan</span> sekmesinde en yüksek oyu alan filmleri görebilirsin.
             <div class="h6 text-muted mt-4">En Popüler Filmler</div>
-            <span class="h6 badge badge-secondary">En Popüler</span> sekmesinde en popüler filmleri görebilirsin.
+            <span class="badge badge-secondary">En Popüler</span> sekmesinde en popüler filmleri görebilirsin.
             <div class="h6 text-muted mt-4">Benim Zevkime Göre <small>(Bu kısmı kullanmadan önce kursu tamamlamanızı öneriyoruz.)</small></div>
             Bu liste, Topcorn'u Topcorn yapan listedir. Yalnızca size özel film önerilerini burada bulabilirsiniz. Unutmayın, Topcorn'a ne kadar tutarlı ve çok bilgi verirseniz bu liste o ölçüde zengin ve size uygun olacaktır.
             Yalnızca senin zevkine göre seçilmiş filmleri görmek için <span class="badge badge-secondary">Benim Zevkime Göre</span> sekmesine tıklayabilirsin.
@@ -137,7 +137,7 @@
             Muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden izlediğin filmlerin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 302}">İzlediğin 1 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 301"></i></div>
             <div class="h6 text-muted mt-4">Filmfiltre</div>
-            <span class="h6 badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> tuşuna basıp filtreyi ayarlayabilir; listedeki filmleri orijinal diline, türüne ve yılına göre daraltabilirsin.
+            <span class="badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> tuşuna basıp filtreyi ayarlayabilir; listedeki filmleri orijinal diline, türüne ve yılına göre daraltabilirsin.
           </li>
         </ul>
       </div>
@@ -192,7 +192,7 @@
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 500}">
             <div class="h6 text-muted">Ayarlar Sayfasına Erişim</div>
-            Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="h6 badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
+            Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 501}">Ayarlar sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 500"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 501}" ng-if="current_level > 500">
@@ -207,12 +207,12 @@
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 503}" ng-if="current_level > 502">
             <div class="h6 text-muted">Değişiklikleri Kaydetme</div>
-            Profilini ayarladıktan sonra değişiklikleri kaydetmek için <span class="h6 badge badge-secondary">Değişiklikleri Kaydet</span> tuşuna basabilirsin.
+            Profilini ayarladıktan sonra değişiklikleri kaydetmek için <span class="badge badge-secondary">Değişiklikleri Kaydet</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 504}">Değişiklikleri kaydet.</span> <i class="fa fa-check" ng-show="current_level > 503"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 504}" ng-if="current_level > 503">
             <div class="h6 text-muted">Profil Sayfasına Erişim</div>
-            Kendi profilini görmek için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Profilim</span> linklerinden birine tıklayabilirsin.
+            Kendi profilini görmek için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Profilim</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 505}">Profil sayfana git.</span> <i class="fa fa-check" ng-show="current_level > 504"></i></div>
           </li>
         </ul>
@@ -238,10 +238,12 @@
       </div>
       <div class="modal-body">
         <p>Artık Topcorn'un temel özelliklerini biliyorsun. Bizi facebookta beğenmekten ve arkadaşlarına tavsiye etmekten çekinme.</p>
-        Aramıza tekrar hoş geldin.
+        <p>Bu kursta öğrendiklerine ve daha fazlasına ulaşmak istersen sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Sıkça Sorulan Sorular</span> linkine tıklayabilirsin.</p>
+        Tekrardan aramıza hoş geldin.
+        <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 502}">Şaka şaka, haydi durma kepini fırlat :D</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-click="tutorial(100)">Kepini Fırlat</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Kepini Fırlat</button>
       </div>
     </div>
     <!--CONGRATULATIONS-->
