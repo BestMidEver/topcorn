@@ -183,7 +183,7 @@
     <!--GRADUATION-->
     <div class="modal-content" ng-if="current_level > 499 && current_level < 600">
       <div class="modal-header">
-        <h5 class="modal-title">5 - Ayarlar</h5>
+        <h5 class="modal-title">5 - Mezuniyet</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -191,7 +191,7 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 500}">
-            <div class="h6 text-muted">Sayfaya Erişim</div>
+            <div class="h6 text-muted">Ayarlar Sayfasına Erişim</div>
             Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="h6 badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 501}">Ayarlar sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 500"></i></div>
           </li>
@@ -211,7 +211,7 @@
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 504}">Değişiklikleri kaydet.</span> <i class="fa fa-check" ng-show="current_level > 503"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 504}" ng-if="current_level > 503">
-            <div class="h6 text-muted">Profil Sayfası</div>
+            <div class="h6 text-muted">Profil Sayfasına Erişim</div>
             Kendi profilini görmek için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Profilim</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 505}">Profil sayfana git.</span> <i class="fa fa-check" ng-show="current_level > 504"></i></div>
           </li>
@@ -224,6 +224,27 @@
       </div>
     </div>
     <!--GRADUATION-->
+
+
+
+
+    <!--CONGRATULATIONS-->
+    <div class="modal-content" ng-if="current_level < 2">
+      <div class="modal-header">
+        <h5 class="modal-title">Tebrikler</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Artık Topcorn'un temel özelliklerini biliyorsun. Bizi facebookta beğenmekten ve arkadaşlarına tavsiye etmekten çekinme.</p>
+        Aramıza tekrar hoş geldin.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" ng-click="tutorial(100)">Kepini Fırlat</button>
+      </div>
+    </div>
+    <!--CONGRATULATIONS-->
 
   </div>
 </div>
