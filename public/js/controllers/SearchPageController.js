@@ -474,7 +474,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.current_level = pass.level;
 
 		$scope.level_up = function(lvl){
-			if(response.data == 1)$('#tutorial').modal('hide');
+			if(lvl == 1)$('#tutorial').modal('hide');
 			rate.level_manipulate(lvl)
 			.then(function(response){
 				console.log(response);
