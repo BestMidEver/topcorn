@@ -479,9 +479,11 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			.then(function(response){
 				console.log(response);
 				$scope.current_level = response.data;
-				setTimeout(function() {
-					$('#tutorial').modal('show');
-				}, 2000);
+				if($scope.current_level!=100){
+					setTimeout(function() {
+						$('#tutorial').modal('show');
+					}, 2000);
+				}
 			});
 		}
 	}
