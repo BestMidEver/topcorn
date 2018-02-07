@@ -487,6 +487,10 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				$scope.current_level = 1;
 			}else if(response.data == 100){
 				$scope.current_level = 100;
+			}else if(response.data == 200){
+				$scope.current_level = 200;
+			}else if(response.data == 300){
+				$scope.current_level = 300;
 			}
 		});
 	}
