@@ -59,7 +59,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button ng-click="level_up()">level atla</button>
+        <button ng-click="level_up(1)">level atla</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 102" ng-click="tutorial(200)">Sonraki Ders</button>
       </div>
     </div>
@@ -78,38 +78,34 @@
       </div>
       <div class="modal-body">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 200}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
             Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span>Arama sayfasına git.</span></div>
           </li>
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 201}" ng-if="current_level > 200">
             <div class="h6 text-muted">Film Arama</div>
             Film aramak için <span class="h6 badge badge-secondary">Film</span> sekmesinde arama çubuğuna aramak istediğin filmin adını yazabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span>Bir film ara.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 201}">Bir film ara.</span></div>
           </li>
-          <li class="list-group-item">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 202}" ng-if="current_level > 201">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
             Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">İzlediğin 1 filmi oyla.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 202}">İzlediğin 1 filmi oyla.</span></div>
             <div class="mt-2"><small>Filmin posterine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
-          </li>
-          <li class="list-group-item">
-            <div class="h6 text-muted">Kişi Arama</div>
+            <div class="h6 text-muted mt-4">Kişi Arama</div>
             Yönetmen, oyuncu, kameraman, yapımcı vb profesyonellerin hepsini kısaca kişi olarak adlandırdık. Kişi aramak için <span class="h6 badge badge-secondary">Kişi</span> sekmesinde arama çubuğuna aramak istediğin kişinin adını yazabilirsin.
-          </li>
-          <li class="list-group-item">
-            <div class="h6 text-muted">Kullanıcı Arama</div>
+            <div class="h6 text-muted mt-4">Kullanıcı Arama</div>
             Topcorn kullanıcılarını aramak için <span class="h6 badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.
           </li>
         </ul>
       </div>
       <div class="modal-footer">
-        <button ng-click="level_up()">level atla</button>
-        <button type="button" class="btn btn-secondary">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 102" ng-click="tutorial(300)">Sonraki Ders</button>
+        <button ng-click="level_up(1)">level atla</button>
+        <button type="button" class="btn btn-secondary" ng-click="level_up(1)">Önceki Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 204" ng-click="tutorial(300)">Sonraki Ders</button>
       </div>
     </div>
     <!--SEARCH-->

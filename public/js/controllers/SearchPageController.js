@@ -484,14 +484,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			console.log(response);
 			if(response.data == 1){
 				$('#tutorial').modal('hide');
-				$scope.current_level = 1;
-			}else if(response.data == 100){
-				$scope.current_level = 100;
-			}else if(response.data == 200){
-				$scope.current_level = 200;
-			}else if(response.data == 300){
-				$scope.current_level = 300;
 			}
+			$scope.current_level = response.data;
 		});
 	}
 //////////////////////////////////////////////////////////////////////////////////////////

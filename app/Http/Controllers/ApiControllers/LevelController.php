@@ -24,11 +24,11 @@ class LevelController extends Controller
     	if(in_array($request->level, $accepted_modes)){
 			$user->level = $request->level;
     	}else{
-    		return response(405);
+    		return response("wrong", 405);
     	}
 
 
 		$user->save();
-		return response(200);
+		return response($user->level, 200);
     }  
 }
