@@ -213,7 +213,7 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 504}" ng-if="current_level > 503">
             <div class="h6 text-muted">Profil Sayfasına Erişim</div>
             Kendi profilini görmek için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Profilim</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 505}">Profil sayfana git.</span> <i class="fa fa-check" ng-show="current_level > 504"></i></div>
+            <div class="py-2"><span class="text-muted">Yeni Görev: </span><span ng-class="{'badge badge-danger':current_level < 505}">Profil sayfana git.</span> <i class="fa fa-check" ng-show="current_level > 504"></i></div>
           </li>
         </ul>
       </div>
@@ -240,10 +240,10 @@
         <p>Artık Topcorn'un temel özelliklerini biliyorsun. Bizi facebookta beğenmekten ve arkadaşlarına tavsiye etmekten çekinme.</p>
         <p>Bu kursta öğrendiklerine ve daha fazlasına ulaşmak istersen sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Sıkça Sorulan Sorular</span> linkine tıklayabilirsin.</p>
         Tekrardan aramıza hoş geldin.
-        <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Şaka şaka, haydi durma kepini fırlat :D</div>
+        <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Şaka şaka, haydi durma kepini fırlat :)</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Kepini Fırlat</button>
+        <button type="button" class="btn btn-primary" ng-click="tutorial(700)">Kepini Fırlat</button>
       </div>
     </div>
     <!--CONGRATULATIONS-->
