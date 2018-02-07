@@ -34,8 +34,6 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}">
             <div class="h6 text-muted">Ne İşe Yarar?</div>
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
-          </li>
-          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
             <div class="h6 text-muted">Özelliğe Erişim</div>
             Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge text-warning bg-dark py-2"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">Peş Peşe Oylama özelliğini çalıştır.</span></div>
@@ -55,7 +53,7 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 103}" ng-if="current_level > 102">
             <div class="h6 text-muted">Film Oylama</div>
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 104}">5 filmi oyla.</span></div>
-            <div class="mt-2"><small><span class="badge badge-secondary">Filmin Adı (Filmin Yılı)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
+            <div class="mt-2"><span class="badge badge-secondary">Filmin Adı (Filmin Yılı)</span><small> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
