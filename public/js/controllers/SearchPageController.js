@@ -162,6 +162,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
+		if(pass.level == 100) $scope.level_up(101);//NEW NEW NEW
 	};
 
 	$scope.get_quick_rate=function()
@@ -468,15 +469,17 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-	if(false){
+	if(pass.level < 700){
 		$scope.level_up = function(lvl){
-			if(lvl == 1)$scope.current_level++;
-			else $scope.current_level=lvl;
+			rate.level_manipulate(lvl)
+			.then(function(response){
+				console.log(response);
+				if(response.data == 1){
+					$('#tutorial').modal('hide');
+				}
+				$scope.current_level = response.data;
+			});
 		}
-
-
-
-
 		if(pass.level == 0)	$('#tutorial').modal('show');
 		$scope.current_level = pass.level;
 
