@@ -196,22 +196,22 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 500}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
             Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="h6 badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 501}">Ayarlar sayfasına git.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 501}">Ayarlar sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 500"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 501}" ng-if="current_level > 500">
             <div class="h6 text-muted">Kapak Fotoğrafı Seçme</div>
             Kapak fotoğrafı açılır listesinden en çok beğendiğin filmlerden birinin kapak fotoğrafını kendi kapak fotoğrafın olarak belirleyebilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 502}">Bir kapak fotoğrafı seç.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 502}">Bir kapak fotoğrafı seç.</span> <i class="fa fa-check" ng-show="current_level > 501"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 502}" ng-if="current_level > 501">
             <div class="h6 text-muted">Profil Fotoğrafı Seçme</div>
             Kapak fotoğrafı seçtikten sonra, o filmde oynayan oyunculardan birinin profil fotoğrafını; ya da facebook ile giriş yaptıysan facebook profil fotoğrafını profil fotoğrafı açılır listesinden belirleyebilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 503}">Bir profil fotoğrafı seç.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 503}">Bir profil fotoğrafı seç.</span> <i class="fa fa-check" ng-show="current_level > 502"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 503}" ng-if="current_level > 502">
             <div class="h6 text-muted">Değişiklikleri Kaydetme</div>
             Profilini ayarladıktan sonra değişiklikleri kaydetmek için <span class="h6 badge badge-secondary">Değişiklikleri Kaydet</span> tuşuna basabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 503}">Değişiklikleri kaydet.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 504}">Değişiklikleri kaydet.</span> <i class="fa fa-check" ng-show="current_level > 503"></i></div>
           </li>
         </ul>
       </div>
