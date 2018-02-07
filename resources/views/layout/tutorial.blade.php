@@ -31,7 +31,7 @@
       </div>
       <div class="modal-body">
         <ul class="list-group">
-          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 100}">
             <div class="h6 text-muted">Ne İşe Yarar?</div>
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
             <div class="h6 text-muted mt-4">Özelliğe Erişim</div>
@@ -50,7 +50,7 @@
             <div class="py-2"><span class="badge badge-secondary">Öner</span> -> Beğendiğin filmler için</div>
             <div class="py-2"><span class="badge badge-secondary">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
             <div class="h6 text-muted mt-4">Film Oylama</div>
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 103}">5 filmi oyla.</span></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">5 filmi oyla.</span></div>
             <div class="mt-2"><span class="badge badge-secondary">Filmin Adı (Filmin Yılı)</span><small> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
@@ -60,7 +60,7 @@
       </div>
       <div class="modal-footer">
         <button ng-click="level_up()">level atla</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 103">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 102">Sonraki Ders</button>
       </div>
     </div>
     <!--QUICK RATE-->
