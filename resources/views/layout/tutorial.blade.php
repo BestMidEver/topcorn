@@ -55,10 +55,10 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 103}" ng-if="current_level > 102">
             <div class="h6 text-muted">Film Oylama</div>
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 104}">5 filmi oyla.</span></div>
-            <div class="mt-2"><small><span class="badge badge-light">Filmin Adı (Filmin Yılı)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
-            <div class="mt-2"><small><i class="fa fa-clock-o" aria-hidden="true"></i> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><small><i class="fa fa-ban" aria-hidden="true"></i> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><small><i class="fa fa-undo" aria-hidden="true"></i> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
+            <div class="mt-2"><small><span class="badge badge-secondary">Filmin Adı (Filmin Yılı)</span> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
+            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
+            <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
           </li>
         </ul>
       </div>
