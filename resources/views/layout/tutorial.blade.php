@@ -104,7 +104,7 @@
       </div>
       <div class="modal-footer">
         <button ng-click="level_up(1)">level atla</button>
-        <button type="button" class="btn btn-secondary" ng-click="level_up(1)">Önceki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="level_up(110)">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-disabled="current_level < 203" ng-click="tutorial(300)">Sonraki Ders</button>
       </div>
     </div>
