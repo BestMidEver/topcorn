@@ -240,7 +240,7 @@
         <p>Artık Topcorn'un temel özelliklerini biliyorsun. Bizi facebookta beğenmekten ve arkadaşlarına tavsiye etmekten çekinme.</p>
         <p>Bu kursta öğrendiklerine ve daha fazlasına ulaşmak istersen sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Sıkça Sorulan Sorular</span> linkine tıklayabilirsin.</p>
         Tekrardan aramıza hoş geldin.
-        <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 502}">Şaka şaka, haydi durma kepini fırlat :D</div>
+        <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Şaka şaka, haydi durma kepini fırlat :D</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Kepini Fırlat</button>
