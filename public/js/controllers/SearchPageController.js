@@ -475,9 +475,14 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			.then(function(response){
 				console.log(response);
 				if(response.data == 1){
+					$scope.current_level = response.data;
 					$('#tutorial').modal('hide');
+				}else{
+					$scope.current_level = response.data;
+					setTimeout(function() {
+						$('#tutorial').modal('show');
+					}, 3000);
 				}
-				$scope.current_level = response.data;
 			});
 		}
 		if(pass.level == 0)	$('#tutorial').modal('show');
