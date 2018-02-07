@@ -38,7 +38,7 @@
             Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">Peş Peşe Oylama özelliğini çalıştır.</span></div>
           </li>
-          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 102}" ng-if="current_level > 101">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
             <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
             İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
             <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
@@ -49,10 +49,8 @@
             <div class="py-2"><span class="badge badge-secondary">Kararsız</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
             <div class="py-2"><span class="badge badge-secondary">Öner</span> -> Beğendiğin filmler için</div>
             <div class="py-2"><span class="badge badge-secondary">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
-          </li>
-          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 103}" ng-if="current_level > 102">
-            <div class="h6 text-muted">Film Oylama</div>
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 104}">5 filmi oyla.</span></div>
+            <div class="h6 text-muted mt-4">Film Oylama</div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 103}">5 filmi oyla.</span></div>
             <div class="mt-2"><span class="badge badge-secondary">Filmin Adı (Filmin Yılı)</span><small> linkine tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="h6 badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
@@ -62,7 +60,7 @@
       </div>
       <div class="modal-footer">
         <button ng-click="level_up()">level atla</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 104">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 103">Sonraki Ders</button>
       </div>
     </div>
     <!--QUICK RATE-->
