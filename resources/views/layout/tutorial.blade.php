@@ -180,17 +180,11 @@
     </div>
     <!--VOTE MOVIES-->
 
-  </div>
-</div>
 
 
 
-
-
-@if(0)
-<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
+    <!--GRADUATION-->
+    <div class="modal-content" ng-if="current_level > 499 && current_level < 600">
       <div class="modal-header">
         <h5 class="modal-title">5 - Ayarlar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -199,33 +193,35 @@
       </div>
       <div class="modal-body">
         <ul class="list-group">
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 500}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
             Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="h6 badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="h6 badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="h6 badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Ayarlar sayfasına git.</span>
+            <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Ayarlar sayfasına git.</span></div>
           </li>
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 501}" ng-if="current_level > 500">
             <div class="h6 text-muted">Kapak Fotoğrafı Seçme</div>
             Kapak fotoğrafı açılır listesinden en çok beğendiğin filmlerden birinin kapak fotoğrafını kendi kapak fotoğrafın olarak belirleyebilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Bir kapak fotoğrafı seç.</span></div>
           </li>
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 502}" ng-if="current_level > 501">
             <div class="h6 text-muted">Profil Fotoğrafı Seçme</div>
             Kapak fotoğrafı seçtikten sonra, o filmde oynayan oyunculardan birinin profil fotoğrafını; ya da facebook ile giriş yaptıysan facebook profil fotoğrafını profil fotoğrafı açılır listesinden belirleyebilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Bir profil fotoğrafı seç.</span></div>
           </li>
-          <li class="list-group-item list-group-item-success">
+          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 503}" ng-if="current_level > 502">
             <div class="h6 text-muted">Değişiklikleri Kaydetme</div>
             Profilini ayarladıktan sonra değişiklikleri kaydetmek için <span class="h6 badge badge-secondary">Değişiklikleri Kaydet</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Değişiklikleri kaydet.</span></div>
           </li>
-        </div>
+        </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" disabled>Diplomanı Al</button>
+        <button ng-click="level_up(1)">level atla</button>
+        <button type="button" class="btn btn-secondary" ng-click="level_up(410)">Önceki Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 504" ng-click="tutorial(600)">Diplomanı Al</button>
       </div>
     </div>
+    <!--GRADUATION-->
+
   </div>
 </div>
-@endif
