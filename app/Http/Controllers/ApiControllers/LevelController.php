@@ -20,28 +20,15 @@ class LevelController extends Controller
     {
 		$user = Auth::User();
 
-        switch ($request->level) {
-        	case 1:
-        		$user->level = 1;
-        		break;
-        	
-        	case 100:
-        		$user->level = 100;
-        		break;
-        	
-        	case 200:
-        		$user->level = 200;
-        		break;
-        	
-        	case 300:
-        		$user->level = 300;
-        		break;
-        	
-        	default:
-        		return "wrong!";
-        }
+    	$accepted_modes = [1,100,101,200,201,300,301];
+    	if(in_array($request->level, $accepted_modes)){
+			$user->level = $request->level;
+    	}else{
+    		return response(405);
+    	}
+
 
 		$user->save();
-		return response($user->level, 200);
+		return response(200);
     }  
 }
