@@ -8,6 +8,7 @@ pass={
 	"constants_domain":"{{config('api.url')}}",
 	"constants_api_key":"{{config('constants.api_key')}}",
 	"level":{{ Auth::User()->level }},
+	"watched_movie_number":{{ Rated::where('user_id', Auth::id())->count() }}
 };
 </script>
 @endsection
