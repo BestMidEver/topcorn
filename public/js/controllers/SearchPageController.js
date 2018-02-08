@@ -478,7 +478,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			rate.get_watched_movie_number()
 			.then(function(response){
 				console.log(response)
-				if(lvl==102) if(response.data>4) $scope.level_up(lvl);
+				if(lvl==102) if(response.data>0) $scope.level_up(lvl);
 			});
 		}
 
@@ -488,7 +488,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			.then(function(response){
 				console.log(response);
 				$scope.current_level = response.data;
-				if($scope.current_level!=100){
+				if($scope.current_level!=100 && $scope.current_level!=200){
 					setTimeout(function() {
 						$('#tutorial').modal('show');
 					}, 2000);

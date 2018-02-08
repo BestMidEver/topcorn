@@ -50,7 +50,7 @@
             <div class="py-2"><span class="badge badge-secondary">Öner</span> -> Beğendiğin filmler için</div>
             <div class="py-2"><span class="badge badge-secondary">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
             <div class="h6 text-muted mt-4">Film Oylama</div>
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">Peş peşe oylama özelliği ile 5 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 101"></i></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">Peş peşe oylama özelliği ile 1 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 101"></i></div>
             <div class="mt-2"><small>Filmin adına tıklayıp, filmin sayfasına gidebilirsin.</small></div>
             <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
             <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
@@ -59,7 +59,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 102" ng-click="tutorial(200)">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 102" ng-click="level_up(200)">Sonraki Ders</button>
       </div>
     </div>
     <!--QUICK RATE-->
