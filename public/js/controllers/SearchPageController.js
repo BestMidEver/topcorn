@@ -477,6 +477,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.get_watched_movie_number = function(lvl){
 			rate.get_watched_movie_number()
 			.then(function(response){
+				console.log(response)
 				if(lvl==102) if(response>4) $scope.level_up(lvl);
 			});
 		}
