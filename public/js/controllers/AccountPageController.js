@@ -333,8 +333,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 				$scope.show_tutorial();
 			});
 		}else if(pass.level == 504 && window.location.href.indexOf("topcorn.io/account") > -1){
-			console.log(pass.with_message);
-			$scope.show_tutorial();
+			if(pass.with_message==1) $scope.show_tutorial();
 		}else if(pass.level == 504 && window.location.href.indexOf("topcorn.io/profile") > -1){
 			rate.level_manipulate(505)
 			.then(function(response){
