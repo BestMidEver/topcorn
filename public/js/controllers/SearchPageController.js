@@ -495,6 +495,15 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.level < 700){
+		$scope.get_watched_movie_number = function(lvl){
+			rate.get_watched_movie_number()
+			.then(function(response){
+				console.log(response)
+				if(lvl==102) if(response.data>0) $scope.level_up(lvl);
+				else if(lvl==401) if(response.data>49) $scope.level_up(lvl);
+			});
+		}
+		
 		if(pass.level == 0)	$scope.show_tutorial();
 		else if(pass.level == 400) $scope.get_watched_movie_number(401);
 		$scope.current_level = pass.level;
@@ -503,15 +512,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			setTimeout(function() {
 				$('#tutorial').modal('show');
 			}, 1000);
-		}
-
-		$scope.get_watched_movie_number = function(lvl){
-			rate.get_watched_movie_number()
-			.then(function(response){
-				console.log(response)
-				if(lvl==102) if(response.data>0) $scope.level_up(lvl);
-				else if(lvl==401) if(response.data>49) $scope.level_up(lvl);
-			});
 		}
 
 		$scope.level_check = function(){
