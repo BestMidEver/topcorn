@@ -482,12 +482,19 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			});
 		}
 
+				console.log(window.location.href)
+		$scope.level_check = function(){
+			if($scope.current_level==200 && window.location.href.indexOf("search") > -1){
+			}
+		}
+
 		$scope.level_up = function(lvl){
 			if(lvl == 1)$('#tutorial').modal('hide');
 			rate.level_manipulate(lvl)
 			.then(function(response){
 				console.log(response);
 				$scope.current_level = response.data;
+				$scope.level_check();
 				if($scope.current_level!=100 && $scope.current_level!=200){
 					setTimeout(function() {
 						$('#tutorial').modal('show');
