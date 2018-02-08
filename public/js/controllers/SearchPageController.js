@@ -500,10 +500,19 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			.then(function(response){
 				console.log(response)
 				if(lvl==102) if(response.data>0) $scope.level_up(lvl);
-				else if(lvl==401) if(response.data>49) $scope.level_up(lvl);
+				else if(lvl==401){
+					if(response.data>49){ 
+						$scope.level_up(lvl); 
+						console.log(4)
+					}else{
+						console.log(3)
+					};
+				}else{
+					console.log(1)
+				}
 			});
 		}
-		
+
 		if(pass.level == 0)	$scope.show_tutorial();
 		else if(pass.level == 400) $scope.get_watched_movie_number(401);
 		$scope.current_level = pass.level;
