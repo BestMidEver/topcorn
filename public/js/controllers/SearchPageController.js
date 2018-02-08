@@ -402,6 +402,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				}else{
 					$('#myModal').modal('show');
 				}
+				if($scope.current_level==202) $scope.level_up(203);
 			});
 		}else if(rate_code == null){
 			var temp = $scope.movies[index];
