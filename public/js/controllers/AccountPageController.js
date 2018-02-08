@@ -51,6 +51,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		}else{
 			$scope.profile_src = pass.constants_image_thumb_nail+$scope.profile_path;
 		}
+		if($scope.current_level == 502) $scope.level_up(503);
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
