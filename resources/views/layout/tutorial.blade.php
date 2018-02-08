@@ -94,7 +94,7 @@
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 202}" ng-if="current_level > 201">
             <div class="h6 text-muted">Aratılan Filmi Oylama</div>
             Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 203}">İzlediğin 1 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 202"></i></div>
+            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 203}">İzlediğin 1 filmi aratıp oyla.</span> <i class="fa fa-check" ng-show="current_level > 202"></i></div>
           </li>
         </ul>
       </div>

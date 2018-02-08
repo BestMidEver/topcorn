@@ -302,10 +302,10 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.modify_user_movies=function(movie){
 		if(_.where($scope.user_movies, {movie_id:movie.movie_id}).length>0){
 			temp=_.where($scope.user_movies, {movie_id:movie.movie_id})[0];
-			temp.ban_id=movie.ban_id;
-			temp.later_id=movie.later_id;
-			temp.rated_id=movie.rated_id;
-			temp.rate_code=movie.rate_code;
+			if(movie.ban_id != null)temp.ban_id=movie.ban_id;
+			if(movie.later_id != null)temp.later_id=movie.later_id;
+			if(movie.rated_id != null)temp.rated_id=movie.rated_id;
+			if(movie.rate_code != null)temp.rate_code=movie.rate_code;
 		}else{
 			$scope.user_movies.push(movie);
 		}
@@ -469,10 +469,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////// TUTORIAL ////////////////////////////////////////
+/////////////////////////////////// TUTORIAL(SEARCH) /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.level < 700){
-		if(pass.level == 0)	$scope.show_tutorial();
 		if(pass.level == 200 && window.location.href.indexOf("topcorn.io/search") > -1){
 			rate.level_manipulate(201)
 			.then(function(response){
@@ -481,6 +480,19 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				$scope.show_tutorial();
 			});
 		}
+	}
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////// TUTORIAL(SEARCH) /////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// TUTORIAL ////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+	if(pass.level < 700){
+		if(pass.level == 0)	$scope.show_tutorial();
 		$scope.current_level = pass.level;
 
 		$scope.show_tutorial = function(){
