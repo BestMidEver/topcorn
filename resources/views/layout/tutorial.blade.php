@@ -238,7 +238,7 @@
         <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Şaka şaka, haydi durma kepini fırlat :)</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-click="tutorial(700)">Kepini Fırlat</button>
+        <button type="button" class="btn btn-primary" ng-click="current_level(700)">Kepini Fırlat</button>
       </div>
     </div>
     <!--CONGRATULATIONS-->
