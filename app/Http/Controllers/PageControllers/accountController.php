@@ -30,7 +30,9 @@ class accountController extends Controller
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
-		return view('account', compact('image_quality', 'target'));
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+		return view('account', compact('image_quality', 'target', 'watched_movie_number'));
 	}
 
 
@@ -79,7 +81,9 @@ class accountController extends Controller
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
-		return view('accountpassword', compact('is_from_facebook', 'image_quality', 'target'));
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+		return view('accountpassword', compact('is_from_facebook', 'image_quality', 'target', 'watched_movie_number'));
 	}
 
 
@@ -134,7 +138,9 @@ class accountController extends Controller
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
-		return view('accountinterface', compact('image_quality', 'target'));
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+		return view('accountinterface', compact('image_quality', 'target', 'watched_movie_number'));
 	}
 
 

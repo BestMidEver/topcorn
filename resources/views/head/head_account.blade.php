@@ -10,6 +10,8 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"constants_domain":"{{config('api.url')}}",
 	"api_key":"{{config('constants.api_key')}}",
+	"level":{{ Auth::User()->level }},
+	"watched_movie_number":{{ $watched_movie_number }}
 };
 </script>
 @endsection
