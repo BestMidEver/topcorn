@@ -496,6 +496,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.level < 700){
 		$scope.get_watched_movie_number = function(lvl){
+			console.log(lvl)
 			rate.get_watched_movie_number()
 			.then(function(response){
 				console.log(response)
@@ -512,7 +513,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				}
 			});
 		}
-		console.log(pass.level, pass.level == 400)
 
 		if(pass.level == 0)	$scope.show_tutorial();
 		else if(pass.level == 400) $scope.get_watched_movie_number(401);
