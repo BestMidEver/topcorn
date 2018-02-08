@@ -35,7 +35,7 @@
             <div class="h6 text-muted">Ne İşe Yarar?</div>
             Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
             <div class="h6 text-muted mt-4">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
+            Peş Peşe Oylamak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 101}">Peş Peşe Oylama özelliğini çalıştır.</span> <i class="fa fa-check" ng-show="current_level > 100"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
@@ -79,7 +79,7 @@
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 200}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Arama sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
+            Arama sayfasına ulaşmak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 201}">Arama sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 200"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 201}" ng-if="current_level > 200">
@@ -120,7 +120,7 @@
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 300}">
             <div class="h6 text-muted">Sayfaya Erişim</div>
-            Tavsiyeler sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
+            Tavsiyeler sayfasına ulaşmak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 301}">Tavsiyeler sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 300"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 301}" ng-if="current_level > 300">
@@ -188,7 +188,7 @@
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 500}">
             <div class="h6 text-muted">Ayarlar Sayfasına Erişim</div>
-            Ayarlar sayfasına ulaşmak için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
+            Ayarlar sayfasına ulaşmak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="badge badge-secondary">Ayarlar</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Ayarlar</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 501}">Ayarlar sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 500"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 501}" ng-if="current_level > 500">
@@ -208,7 +208,7 @@
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 504}" ng-if="current_level > 503">
             <div class="h6 text-muted">Profil Sayfasına Erişim</div>
-            Kendi profilini görmek için sayfanın en üstündeki gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Profilim</span> linklerinden birine tıklayabilirsin.
+            Kendi profilini görmek için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Profilim</span> linklerinden birine tıklayabilirsin.
             <div class="py-2"><span class="text-muted">Yeni Görev: </span><span ng-class="{'badge badge-danger':current_level < 505}">Profil sayfana git.</span> <i class="fa fa-check" ng-show="current_level > 504"></i></div>
           </li>
         </ul>

@@ -23,7 +23,7 @@ class searchController extends Controller
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
-        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();   //NEW NEW NEW
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
 		return view('search', compact('image_quality', 'target', 'watched_movie_number'));
 	}
