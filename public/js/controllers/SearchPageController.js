@@ -536,7 +536,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				console.log(response);
 				$scope.current_level = response.data;
 				$scope.level_check();
-				if($scope.current_level!=100 && $scope.current_level!=200){
+				if($scope.current_level!=100 && $scope.current_level!=200 && $scope.current_level!=700){
 					$scope.show_tutorial();
 				}
 			});
