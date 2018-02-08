@@ -299,13 +299,13 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SAME PART(SEARCH) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-	$scope.modify_user_movies=function(movie){
+	$scope.modify_user_movies=function(movie, which_function){
 		if(_.where($scope.user_movies, {movie_id:movie.movie_id}).length>0){
 			temp=_.where($scope.user_movies, {movie_id:movie.movie_id})[0];
-			if(movie.ban_id != null)temp.ban_id=movie.ban_id;
-			if(movie.later_id != null)temp.later_id=movie.later_id;
-			if(movie.rated_id != null)temp.rated_id=movie.rated_id;
-			if(movie.rate_code != null)temp.rate_code=movie.rate_code;
+			if(which_function == 'ban')temp.ban_id=movie.ban_id;
+			if(which_function == 'later')temp.later_id=movie.later_id;
+			if(which_function == 'rate')temp.rated_id=movie.rated_id;
+			if(which_function == 'rate')temp.rate_code=movie.rate_code;
 		}else{
 			$scope.user_movies.push(movie);
 		}
@@ -359,7 +359,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'rate_code':null,
 						'later_id':response.data.data.later_id,
 						'ban_id':null
-					});
+					}, 'later');
 				}
 			});
 		}else{
@@ -375,7 +375,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'rate_code':temp.rate_code,
 						'later_id':null,
 						'ban_id':temp.ban_id
-					});
+					}, 'later');
 				}
 			});
 		}
@@ -398,7 +398,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'rate_code':response.data.data.rate,
 						'later_id':null,
 						'ban_id':null
-					})
+					}, 'rate')
 				}else{
 					$('#myModal').modal('show');
 				}
@@ -417,7 +417,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'rate_code':null,
 						'later_id':temp.later_id,
 						'ban_id':temp.ban_id
-					});
+					}, 'rate');
 				}else{
 					$('#myModal').modal('show');
 				}
@@ -440,7 +440,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'rate_code':null,
 						'later_id':null,
 						'ban_id':response.data.data.ban_id
-					});
+					}, 'ban');
 				}
 			});
 		}else{
@@ -456,7 +456,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'rate_code':temp.rate_code,
 						'later_id':temp.later_id,
 						'ban_id':null
-					});
+					}, 'ban');
 				}
 			});
 		}
