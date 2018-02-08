@@ -5,6 +5,8 @@ pass={
 	"lang":"{{ App::getlocale() }}",
 	"profile_user_id":"{{ $profile_user_id }}", 
 	"constants_domain":"{{config('api.url')}}",
+	"level":{{ Auth::User()->level }},
+	"watched_movie_number":{{ $watched_movie_number }}
 };
 </script>
 @endsection

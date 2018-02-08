@@ -215,7 +215,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(410)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 505" ng-click="tutorial(600)">Diplomanı Al</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 505" ng-click="level_up(600)">Diplomanı Al</button>
       </div>
     </div>
     <!--GRADUATION-->

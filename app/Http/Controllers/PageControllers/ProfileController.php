@@ -33,7 +33,9 @@ class ProfileController extends Controller
             $profile_profile_pic = config('constants.image.thumb_nail')[$image_quality].$user->profile_pic;
         }
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target'));
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number'));
 	}
 
     public function get_rateds($rate, $user, $lang)
