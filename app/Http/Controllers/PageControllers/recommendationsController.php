@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\Rated;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -36,7 +37,9 @@ class recommendationsController extends Controller
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
-        return view('recommendations', compact('image_quality', 'target'));
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+        return view('recommendations', compact('image_quality', 'target', 'watched_movie_number'));
     }
 
     

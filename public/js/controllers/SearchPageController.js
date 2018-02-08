@@ -481,14 +481,16 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			}, 1000);
 		}
 
-		if(pass.level == 200 && window.location.href.indexOf("topcorn.io/search") > -1){
+		if(pass.level == 0)	$scope.show_tutorial();
+		else if(pass.level == 200 && window.location.href.indexOf("topcorn.io/search") > -1){
 			rate.level_manipulate(201)
 			.then(function(response){
 				console.log(response);
 				$scope.current_level = response.data;
 				$scope.show_tutorial();
 			});
-		}else if(pass.level == 500 && window.location.href.indexOf("topcorn.io/account") > -1){
+		}else if(pass.level == 400) $scope.get_watched_movie_number(401);
+		else if(pass.level == 500 && window.location.href.indexOf("topcorn.io/account") > -1){
 			rate.level_manipulate(501)
 			.then(function(response){
 				console.log(response);
@@ -515,8 +517,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			});
 		}
 
-		if(pass.level == 0)	$scope.show_tutorial();
-		else if(pass.level == 400) $scope.get_watched_movie_number(401);
 		$scope.current_level = pass.level;
 
 		$scope.level_check = function(){

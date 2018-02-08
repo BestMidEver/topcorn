@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PageControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Movie\SearchResource;
 use App\Model\Movie;
+use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -23,11 +24,13 @@ class movieController extends Controller
 
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+            $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         }else{
             $target = '_self';
+            $watched_movie_number = null;
         }
 
-    	return view('movie', compact('id', 'image_quality', 'target'));
+    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number'));
     }
 
     public function get_user_movie_record($movie)

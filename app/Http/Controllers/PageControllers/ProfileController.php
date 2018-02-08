@@ -20,8 +20,10 @@ class ProfileController extends Controller
 
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+            $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         }else{
             $target = '_self';
+            $watched_movie_number = null;
         }
 
         $user = User::where(['id' => $profile_user_id])->first();
@@ -34,7 +36,6 @@ class ProfileController extends Controller
             $profile_profile_pic = config('constants.image.thumb_nail')[$image_quality].$user->profile_pic;
         }
 
-        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
 		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number'));
 	}

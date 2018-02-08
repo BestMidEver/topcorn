@@ -30,8 +30,8 @@ class LevelController extends Controller
     		return response("wrong", 405);
     	}
 
-
 		$user->save();
+
 		return response($user->level, 200);
     }  
 }
