@@ -56,6 +56,9 @@ class accountController extends Controller
 		if($request->cover_pic != '? string: ?'){
 			$user->cover_pic = '/'.explode("/", $request->cover_pic)[1];
 		}
+		if($user->level == 503){
+			$user->level = 504;
+		}
 		$user->save();
 
 		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');

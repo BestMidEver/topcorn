@@ -489,6 +489,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				$scope.current_level = response.data;
 				$scope.show_tutorial();
 			});
+		}else if(pass.level == 504 && window.location.href.indexOf("topcorn.io/account") > -1){
+			$scope.show_tutorial();
 		}
 
 		$scope.get_watched_movie_number = function(lvl){
