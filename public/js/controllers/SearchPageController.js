@@ -67,6 +67,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 							});
 						}
 						$scope.inside_get_page_data_movie(response);
+						if($scope.current_level == 201)$scope.level_up(202);
 					});
 					break;
 				case 'person':
@@ -471,16 +472,22 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.level < 700){
-		if(pass.level == 0)	$('#tutorial').modal('show');
+		if(pass.level == 0)	$scope.show_tutorial();
 		if(pass.level == 200 && window.location.href.indexOf("topcorn.io/search") > -1){
 			rate.level_manipulate(201)
 			.then(function(response){
 				console.log(response);
 				$scope.current_level = response.data;
-				$('#tutorial').modal('show');
+				$scope.show_tutorial();
 			});
 		}
 		$scope.current_level = pass.level;
+
+		$scope.show_tutorial = function(){
+			setTimeout(function() {
+				$('#tutorial').modal('show');
+			}, 1000);
+		}
 
 		$scope.get_watched_movie_number = function(lvl){
 			rate.get_watched_movie_number()
@@ -508,9 +515,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				$scope.current_level = response.data;
 				$scope.level_check();
 				if($scope.current_level!=100 && $scope.current_level!=200){
-					setTimeout(function() {
-						$('#tutorial').modal('show');
-					}, 2000);
+					$scope.show_tutorial();
 				}
 			});
 		}
