@@ -67,7 +67,7 @@ class RatedController extends Controller
      */
     public function show(Rated $rated)
     {
-        return new RatedResource($rated);
+        return Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
     }
 
     /**
