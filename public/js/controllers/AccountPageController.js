@@ -27,6 +27,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 	$scope.choose_cover = function(){
 		$scope.cover_src=pass.constants_image_cover+$scope.cover_path;
 		movie_id = _.where($scope.cover_movies, {cover_path:$scope.cover_path})[0].movie_id;
+		if($scope.current_level == 501) $scope.level_up(502);
 		$http({
 			method: 'GET',
 			url: 'https://api.themoviedb.org/3/movie/'+movie_id+'/credits?api_key='+pass.api_key,
