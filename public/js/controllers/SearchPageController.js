@@ -511,7 +511,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					console.log(1)
 				}
 			});
-		}
+		}console.log(pass.level, pass.level == 400)
 
 		if(pass.level == 0)	$scope.show_tutorial();
 		else if(pass.level == 400) $scope.get_watched_movie_number(401);
