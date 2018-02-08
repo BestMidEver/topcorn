@@ -58,10 +58,12 @@ class accountController extends Controller
 		}
 		if($user->level == 503){
 			$user->level = 504;
+			$request->session()->flash('tutorial_504', 'level up');
 		}
 		$user->save();
 
 		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');
+
 
 		return redirect('/account');
 	}
