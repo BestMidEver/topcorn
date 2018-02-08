@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,8 @@ class searchController extends Controller
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
-		return view('search', compact('image_quality', 'target'));
+        $watched_movie_number = Rated::where('user_id', Auth::id())->count();
+
+		return view('search', compact('image_quality', 'target', 'watched_movie_number'));
 	}
 }
