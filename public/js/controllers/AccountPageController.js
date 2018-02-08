@@ -367,7 +367,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		}
 
 		$scope.level_up = function(lvl){
-			if(lvl == 1)$('#tutorial').modal('hide');
+			if(lvl == 1 || lvl == 700)$('#tutorial').modal('hide');
 			rate.level_manipulate(lvl)
 			.then(function(response){
 				console.log(response);
