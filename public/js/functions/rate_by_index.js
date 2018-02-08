@@ -19,6 +19,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_watched_movie_number = function() 
+    {
+        return $http({
+			method: 'GET',
+			url: pass.constants_domain + '/api/get_watched_movie_number/',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
 
     add_later = function(movie_id) 
     {
@@ -286,6 +303,7 @@ MyApp.factory('rate', function($http) {
 
     return {
     	get_quick_rate: get_quick_rate,
+    	get_watched_movie_number: get_watched_movie_number,
     	add_later: add_later,
     	un_later: un_later,
     	add_rate: add_rate,

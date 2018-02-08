@@ -235,6 +235,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
+					if($scope.current_level == 101) $scope.get_watched_movie_number(102);		//NEW NEW
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -472,6 +473,13 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	if(pass.level < 700){
 		if(pass.level == 0)	$('#tutorial').modal('show');
 		$scope.current_level = pass.level;
+
+		$scope.get_watched_movie_number = function(lvl){
+			rate.get_watched_movie_number()
+			.then(function(response){
+				if(lvl==102) if(response>4) $scope.level_up(lvl);
+			});
+		}
 
 		$scope.level_up = function(lvl){
 			if(lvl == 1)$('#tutorial').modal('hide');
