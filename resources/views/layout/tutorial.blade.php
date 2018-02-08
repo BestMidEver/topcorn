@@ -141,7 +141,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(210)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 302" ng-click="tutorial(400)">Son Ders</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 302" ng-click="level_up(400)">Son Ders</button>
       </div>
     </div>
     <!--RECOMMENDATIONS-->
@@ -168,7 +168,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(310)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 401" ng-click="tutorial(500)">Mezuniyet</button>
+        <button type="button" class="btn btn-primary" ng-disabled="current_level < 401" ng-click="level_up(500)">Mezuniyet</button>
       </div>
     </div>
     <!--VOTE MOVIES-->

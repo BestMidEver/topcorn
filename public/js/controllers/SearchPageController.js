@@ -237,6 +237,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
 					if($scope.current_level == 101) $scope.get_watched_movie_number(102);		//NEW NEW
+					else if($scope.current_level==400) $scope.get_watched_movie_number(401);		//NEW NEW
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -403,6 +404,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$('#myModal').modal('show');
 				}
 				if($scope.current_level==202) $scope.level_up(203);
+				else if($scope.current_level==400) $scope.get_watched_movie_number(401);		//NEW NEW
 			});
 		}else if(rate_code == null){
 			var temp = $scope.movies[index];
@@ -507,6 +509,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			.then(function(response){
 				console.log(response)
 				if(lvl==102) if(response.data>0) $scope.level_up(lvl);
+				else if(lvl==401) if(response.data>49) $scope.level_up(lvl);
 			});
 		}
 
