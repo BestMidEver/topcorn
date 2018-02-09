@@ -403,7 +403,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				}else{
 					$('#myModal').modal('show');
 				}
-				if($scope.current_level==202) $scope.level_up(203);
+				if($scope.current_level==202) $scope.level_up(203);		//TUTORIAL RATE SEARCHED MOVIE
 				else if($scope.current_level==400) $scope.get_watched_movie_number(401);		//NEW NEW NEW
 			});
 		}else if(rate_code == null){

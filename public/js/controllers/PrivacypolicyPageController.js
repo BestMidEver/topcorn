@@ -7,6 +7,7 @@ MyApp.controller('PrivacypolicyPageController', function($scope, $http, rate)
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
+		if($scope.current_level == 100) $scope.level_up(101);
 	};
 
 	$scope.get_quick_rate=function()
@@ -79,6 +80,8 @@ MyApp.controller('PrivacypolicyPageController', function($scope, $http, rate)
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
+					if($scope.current_level == 101) $scope.get_watched_movie_number(102);
+					else if($scope.current_level==400) $scope.get_watched_movie_number(401);
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -137,7 +140,7 @@ MyApp.controller('PrivacypolicyPageController', function($scope, $http, rate)
 
 
 
-
+/*
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// SAME PART //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -248,4 +251,5 @@ MyApp.controller('PrivacypolicyPageController', function($scope, $http, rate)
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// SAME PART //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
+*/
 });
