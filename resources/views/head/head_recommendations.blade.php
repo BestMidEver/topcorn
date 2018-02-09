@@ -5,7 +5,7 @@ pass={
 	"lang":"{{ App::getlocale() }}",
 	"user_id":{{ Auth::id() }}, 
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
-	"constants_domain":"{{config('app.url')}}",
+	"constants_domain":"{{config('api.url')}}",
 	"constants_angular_slider_min_value":"{{config('constants.angular_slider.min_value')}}",
 	"constants_angular_slider_max_value":"{{config('constants.angular_slider.max_value')}}",
 	"with_user_id":"{!! session('with_user_id') !!}",
