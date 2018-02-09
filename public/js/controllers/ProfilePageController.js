@@ -336,8 +336,16 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			}, 1000);
 		}
 
-		if(pass.level == 200 && window.location.href.indexOf("topcorn.io/search") > -1){
+		if(pass.level == 0)	$scope.show_tutorial();
+		else if(pass.level == 200 && window.location.href.indexOf("topcorn.io/search") > -1){
 			rate.level_manipulate(201)
+			.then(function(response){
+				console.log(response);
+				$scope.current_level = response.data;
+				$scope.show_tutorial();
+			});
+		}else if(pass.level == 300 && window.location.href.indexOf("topcorn.io/recommendations") > -1){
+			rate.level_manipulate(301)
 			.then(function(response){
 				console.log(response);
 				$scope.current_level = response.data;
@@ -366,17 +374,28 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			.then(function(response){
 				console.log(response)
 				if(lvl==102 && response.data>0) $scope.level_up(lvl);
+				else if(lvl==302 && response.data>1) $scope.level_up(lvl);
 				else if(lvl==401 && response.data>49) $scope.level_up(lvl);
 			});
 		}
 
-		if(pass.level == 0)	$scope.show_tutorial();
-		else if(pass.level == 400) $scope.get_watched_movie_number(401);
 		$scope.current_level = pass.level;
 
 		$scope.level_check = function(){
 			if($scope.current_level==200 && window.location.href.indexOf("topcorn.io/search") > -1){
 				rate.level_manipulate(201)
+				.then(function(response){
+					console.log(response);
+					$scope.current_level = response.data;
+				});
+			}else if($scope.current_level==300 && window.location.href.indexOf("topcorn.io/recommendations") > -1){
+				rate.level_manipulate(301)
+				.then(function(response){
+					console.log(response);
+					$scope.current_level = response.data;
+				});
+			}else if($scope.current_level==400 && window.location.href.indexOf("topcorn.io/account") > -1){
+				rate.level_manipulate(401)
 				.then(function(response){
 					console.log(response);
 					$scope.current_level = response.data;
@@ -391,7 +410,9 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				console.log(response);
 				$scope.current_level = response.data;
 				$scope.level_check();
-				if($scope.current_level!=100 && $scope.current_level!=200 && $scope.current_level!=700){
+				if($scope.current_level!=1 && $scope.current_level!=100 && $scope.current_level!=200 
+					&& $scope.current_level!=300 && $scope.current_level!=400 && $scope.current_level!=500 
+					&& $scope.current_level!=600 && $scope.current_level!=700){
 					$scope.show_tutorial();
 				}
 			});
