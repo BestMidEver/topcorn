@@ -529,6 +529,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 					console.log(response);
 					$scope.current_level = response.data;
 				});
+			}else if($scope.current_level==300 && window.location.href.indexOf("topcorn.io/recommendations") > -1){
+				rate.level_manipulate(301)
+				.then(function(response){
+					console.log(response);
+					$scope.current_level = response.data;
+				});
 			}
 		}
 
