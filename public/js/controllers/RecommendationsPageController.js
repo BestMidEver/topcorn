@@ -290,8 +290,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					if($scope.current_level == 101) $scope.get_watched_movie_number(102);
-					else if($scope.current_level==400) $scope.get_watched_movie_number(401);
+					if($scope.current_level == 101) $scope.get_watched_movie_number(102);		//TUTORIAL QUICK RATE
+					else if($scope.current_level==400) $scope.get_watched_movie_number(401);		//TUTORIAL CHECK 50 MOVIES
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -492,8 +492,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$scope.current_level = response.data;
 				$scope.show_tutorial();
 			});
-		}else if(pass.level == 400) $scope.get_watched_movie_number(401);
-		else if(pass.level == 500 && window.location.href.indexOf("topcorn.io/account") > -1){
+		}else if(pass.level == 500 && window.location.href.indexOf("topcorn.io/account") > -1){
 			rate.level_manipulate(501)
 			.then(function(response){
 				console.log(response);
@@ -532,6 +531,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				});
 			}else if($scope.current_level==300 && window.location.href.indexOf("topcorn.io/recommendations") > -1){
 				rate.level_manipulate(301)
+				.then(function(response){
+					console.log(response);
+					$scope.current_level = response.data;
+				});
+			}else if($scope.current_level==400 && window.location.href.indexOf("topcorn.io/account") > -1){
+				rate.level_manipulate(401)
 				.then(function(response){
 					console.log(response);
 					$scope.current_level = response.data;

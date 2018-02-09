@@ -232,9 +232,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Artık Topcorn'un temel özelliklerini biliyorsun. Bizi facebookta beğenmekten ve arkadaşlarına tavsiye etmekten çekinme.</p>
+        <p>Artık Topcorn'un temel özelliklerini biliyorsun. Profilini daha da güçlendir ve sana özel film önerilerinin tadını çıkart.</p>
         <p>Bu kursta öğrendiklerine ve daha fazlasına ulaşmak istersen sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Sıkça Sorulan Sorular</span> linkine tıklayabilirsin.</p>
-        Tekrardan aramıza hoş geldin.
         <div class="py-2"><span class="text-muted">Görev: </span><span class="badge badge-danger">Şaka şaka, haydi durma kepini fırlat :)</div>
       </div>
       <div class="modal-footer">
