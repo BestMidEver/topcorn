@@ -212,7 +212,7 @@
     
 @include('layout.ratemodal')
 
-@if(Auth::User->level < 700)
+@if(Auth::User()->level < 700)
     @include('layout.tutorial')
 @endif
 </body>
