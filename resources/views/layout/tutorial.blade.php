@@ -111,7 +111,7 @@
     <!--RECOMMENDATIONS-->
     <div class="modal-content" ng-if="current_level > 299 && current_level < 400">
       <div class="modal-header">
-        <h5 class="modal-title">3 - Tavsiyeler</h5>
+        <h5 class="modal-title">3 - Film Tavsiyeleri</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

@@ -516,6 +516,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			.then(function(response){
 				console.log(response)
 				if(lvl==102 && response.data>0) $scope.level_up(lvl);
+				else if(lvl==302 && response.data>1) $scope.level_up(lvl);
 				else if(lvl==401 && response.data>49) $scope.level_up(lvl);
 			});
 		}
