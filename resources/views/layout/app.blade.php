@@ -76,11 +76,13 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            @if(Auth::User()->level < 700)
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <button class="nav-link d-md-none text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ $users_manual }}</span></button>
                 </li>
             </ul>
+            @endif
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
@@ -98,10 +100,12 @@
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
+                    @if(Auth::User()->level < 700)
                     <li class="nav-item d-md-none">
                         <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> {{ $users_manual }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
                     </li>
@@ -133,11 +137,13 @@
                         <a class="nav-link text-muted" href="#">{{ __('navbar.logout') }}</a>
                     </li>
                 </ul>
+                @if(Auth::User()->level < 700)
                 <ul class="navbar-nav mx-auto d-none d-md-inline">
                     <li class="nav-item">
                         <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ $users_manual }}</span></button>
                     </li>
                 </ul>
+                @endif
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
