@@ -67,9 +67,6 @@
     if(Auth::user()->margin_x_setting == 2) $full_screen = '-fluid px-1';
     else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
     else $full_screen = '';
-
-    if(Auth::user()->level < 2) $users_manual = __('navbar.start_course');
-    else $users_manual = __('navbar.graduate');
     ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark px-md-0">
         <div class="container{{ $full_screen }}">
@@ -77,9 +74,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             @if(Auth::User()->level < 700)
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto" ng-if="current_level<700">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ $users_manual }}</span></button>
+                    <button class="nav-link d-md-none text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> @{{ current_level < 2 ? {{ __('navbar.start_course') }} : {{ __('navbar.graduate') }} }}</span></button>
                 </li>
             </ul>
             @endif
@@ -101,8 +98,8 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     @if(Auth::User()->level < 700)
-                    <li class="nav-item d-md-none">
-                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> {{ $users_manual }}</span></button>
+                    <li class="nav-item d-md-none" ng-if="current_level<700">
+                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> @{{ current_level < 2 ? {{ __('navbar.start_course') }} : {{ __('navbar.graduate') }} }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     @endif
@@ -138,9 +135,9 @@
                     </li>
                 </ul>
                 @if(Auth::User()->level < 700)
-                <ul class="navbar-nav mx-auto d-none d-md-inline">
+                <ul class="navbar-nav mx-auto d-none d-md-inline" ng-if="current_level<700">
                     <li class="nav-item">
-                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> {{ $users_manual }}</span></button>
+                        <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> @{{ current_level < 2 ? {{ __('navbar.start_course') }} : {{ __('navbar.graduate') }} }}</span></button>
                     </li>
                 </ul>
                 @endif
