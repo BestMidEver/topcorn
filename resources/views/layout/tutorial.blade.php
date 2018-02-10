@@ -109,7 +109,7 @@
 
 
     <!--RECOMMENDATIONS-->
-    <div class="modal-content" ng-if="((current_level > 299 && current_level < 400) && show_previous_tutorial != 'search') || show_previous_tutorial == 'recommendations'">
+    <div class="modal-content" ng-if="((current_level > 299 && current_level < 400) && show_previous_tutorial != 'quick rate' && show_previous_tutorial != 'search') || show_previous_tutorial == 'recommendations'">
       <div class="modal-header">
         <h5 class="modal-title">3 - Film Tavsiyeleri</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -150,7 +150,7 @@
 
 
     <!--VOTE MOVIES-->
-    <div class="modal-content" ng-if="((current_level > 399 && current_level < 500) && show_previous_tutorial != 'recommendations') || show_previous_tutorial == 'last mission'">
+    <div class="modal-content" ng-if="((current_level > 399 && current_level < 500) && show_previous_tutorial != 'quick rate' && show_previous_tutorial != 'search' && show_previous_tutorial != 'recommendations') || show_previous_tutorial == 'last mission'">
       <div class="modal-header">
         <h5 class="modal-title">4 - Son Görev</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -177,7 +177,7 @@
 
 
     <!--GRADUATION-->
-    <div class="modal-content" ng-if="current_level > 499 && current_level < 600 && show_previous_tutorial != 'last mission'">
+    <div class="modal-content" ng-if="current_level > 499 && current_level < 600 && show_previous_tutorial != 'quick rate' && show_previous_tutorial != 'search' && show_previous_tutorial != 'recommendations' && show_previous_tutorial != 'last mission'">
       <div class="modal-header">
         <h5 class="modal-title">5 - Mezuniyet</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
