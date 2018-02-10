@@ -10,7 +10,7 @@ return [
     'last_quest' => 'Final Task',
     'users_manual' => 'User\'s Guide',
     'users_manual_1' => 'Eventhough Topcorn is very easy to use, we prepeared a short tutorial to learn and understand the basics.',
-    'users_manual_2' => 'You may click <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursa Başla</span> / <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursu Bitir</span> button to come back here.',
+    'users_manual_2' => 'You may click <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Start the Tutorial</span> / <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Continue the Tutorial</span> button to come back here.',
     'sequential_1' => 'Ne İşe Yarar?',
     'sequential_2' => 'Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. ',
     'sequential_3' => 'Özelliğe Erişim',
