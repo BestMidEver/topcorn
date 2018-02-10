@@ -10,7 +10,8 @@
         </button>
       </div>
       <div class="modal-body">
-        Zaten kullanımı çok basit olan topcornun temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık. 
+        <p>Zaten kullanımı çok basit olan topcornun temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık.</p>
+        Buraya, sayfanın en üstünde ve ortasındaki <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursa Başla/ Kursu Bitir</span> tuşuna basarak ulaşabilirsin.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(1)">Sonra Yap</button>
