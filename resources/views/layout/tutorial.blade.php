@@ -99,7 +99,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous_tutorial = 'quick rate';asd();">Önceki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous('quick rate');">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-hide="current_level < 203" ng-click="level_up(300)">Sonraki Ders</button>
       </div>
     </div>
@@ -109,7 +109,7 @@
 
 
     <!--RECOMMENDATIONS-->
-    <div class="modal-content" ng-if="(current_level > 299 && current_level < 400) || show_previous_tutorial == 'recommendations'">
+    <div class="modal-content" ng-if="((current_level > 299 && current_level < 400) && show_previous_tutorial != 'search') || show_previous_tutorial == 'recommendations'">
       <div class="modal-header">
         <h5 class="modal-title">3 - Film Tavsiyeleri</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -140,7 +140,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous_tutorial = 'search'">Önceki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous('search');">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-hide="current_level < 302" ng-click="level_up(400)">Son Ders</button>
       </div>
     </div>
@@ -150,7 +150,7 @@
 
 
     <!--VOTE MOVIES-->
-    <div class="modal-content" ng-if="(current_level > 399 && current_level < 500) || show_previous_tutorial == 'last mission'">
+    <div class="modal-content" ng-if="((current_level > 399 && current_level < 500) && show_previous_tutorial != 'recommendations') || show_previous_tutorial == 'last mission'">
       <div class="modal-header">
         <h5 class="modal-title">4 - Son Görev</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -167,7 +167,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous_tutorial = 'recommendations'">Önceki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous('recommendations);">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-hide="current_level < 401" ng-click="level_up(500)">Mezuniyet</button>
       </div>
     </div>
@@ -177,7 +177,7 @@
 
 
     <!--GRADUATION-->
-    <div class="modal-content" ng-if="(current_level > 499 && current_level < 600) || show_previous_tutorial == 'graduation'">
+    <div class="modal-content" ng-if="current_level > 499 && current_level < 600 && show_previous_tutorial != 'last mission'">
       <div class="modal-header">
         <h5 class="modal-title">5 - Mezuniyet</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -214,7 +214,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous_tutorial = 'last mission'">Önceki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous('last mission');">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-hide="current_level < 505" ng-click="level_up(600)">Diplomanı Al</button>
       </div>
     </div>
