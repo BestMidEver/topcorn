@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body">
         <p>{{ __('tutorial.users_manual_1') }}</p>
-        {! __('tutorial.users_manual_2') !}
+        {!! __('tutorial.users_manual_2') !!}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(1)">{{ __('tutorial.do_it_later') }}</button>
