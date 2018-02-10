@@ -37,7 +37,7 @@
             {{ __('tutorial.sequential_2') }}
             <div class="h6 text-muted mt-4">{{ __('tutorial.sequential_3') }}</div>
             {!! __('tutorial.sequential_4') !!}
-            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{\'badge badge-danger\':current_level < 101}">{{ __('tutorial.sequential_mission') }}</span> <i class="fa fa-check" ng-show="current_level > 100"></i></div>
+            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 101}">{{ __('tutorial.sequential_mission') }}</span> <i class="fa fa-check" ng-show="current_level > 100"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
             <div class="h6 text-muted">{{ __('tutorial.sequential_5') }}</div>
