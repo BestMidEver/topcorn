@@ -59,7 +59,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 102" ng-click="level_up(200)">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" ng-if="current_level < 102" ng-click="level_up(200)">Sonraki Ders</button>
       </div>
     </div>
     <!--QUICK RATE-->
@@ -100,7 +100,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(110)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 203" ng-click="level_up(300)">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" ng-if="current_level < 203" ng-click="level_up(300)">Sonraki Ders</button>
       </div>
     </div>
     <!--SEARCH-->
@@ -141,7 +141,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(210)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 302" ng-click="level_up(400)">Son Ders</button>
+        <button type="button" class="btn btn-primary" ng-if="current_level < 302" ng-click="level_up(400)">Son Ders</button>
       </div>
     </div>
     <!--RECOMMENDATIONS-->
@@ -168,7 +168,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(310)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 401" ng-click="level_up(500)">Mezuniyet</button>
+        <button type="button" class="btn btn-primary" ng-if="current_level < 401" ng-click="level_up(500)">Mezuniyet</button>
       </div>
     </div>
     <!--VOTE MOVIES-->
@@ -215,7 +215,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" ng-click="level_up(410)">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-disabled="current_level < 505" ng-click="level_up(600)">Diplomanı Al</button>
+        <button type="button" class="btn btn-primary" ng-if="current_level < 505" ng-click="level_up(600)">Diplomanı Al</button>
       </div>
     </div>
     <!--GRADUATION-->
