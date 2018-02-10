@@ -100,7 +100,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous('quick rate')">{{ __('tutorial.previous_lesson') }}Önceki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous('quick rate')">{{ __('tutorial.previous_lesson') }}</button>
         <button type="button" class="btn btn-primary" ng-hide="current_level < 203" ng-click="level_up(300)">{{ __('tutorial.next_lesson') }}</button>
       </div>
     </div>
@@ -112,7 +112,7 @@
     <!--RECOMMENDATIONS-->
     <div class="modal-content" ng-if="((current_level > 299 && current_level < 400) && show_previous_tutorial != 'quick rate' && show_previous_tutorial != 'search') || show_previous_tutorial == 'recommendations'">
       <div class="modal-header">
-        <h5 class="modal-title">3 - Film Tavsiyeleri</h5>
+        <h5 class="modal-title">3 - {{ __('tutorial.recommendations') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -120,29 +120,28 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 300}">
-            <div class="h6 text-muted">Sayfaya Erişim</div>
-            Tavsiyeler sayfasına ulaşmak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.
-            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 301}">Tavsiyeler sayfasına git.</span> <i class="fa fa-check" ng-show="current_level > 300"></i></div>
+            <div class="h6 text-muted">{{ __('tutorial.reach_page') }}</div>
+            {!! __('tutorial.recommendations_1') !!}
+            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 301}">{{ __('tutorial.recommendations_mission') }}</span> <i class="fa fa-check" ng-show="current_level > 300"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 301}" ng-if="current_level > 300">
-            <div class="h6 text-muted">En Yüksek Oy Alan Filmler</div>
-            <span class="badge badge-secondary">En Yüksek Oy Alan</span> sekmesinde en yüksek oyu alan filmleri görebilirsin.
-            <div class="h6 text-muted mt-4">En Popüler Filmler</div>
-            <span class="badge badge-secondary">En Popüler</span> sekmesinde en popüler filmleri görebilirsin.
-            <div class="h6 text-muted mt-4">Benim Zevkime Göre <small>(Bu kısmı kullanmadan önce kursu tamamlamanızı öneriyoruz.)</small></div>
-            Bu liste, Topcorn'u Topcorn yapan listedir. Yalnızca size özel film önerilerini burada bulabilirsiniz. Unutmayın, Topcorn'a ne kadar tutarlı ve çok bilgi verirseniz bu liste o ölçüde zengin ve size uygun olacaktır.
-            Yalnızca senin zevkine göre seçilmiş filmleri görmek için <span class="badge badge-secondary">Benim Zevkime Göre</span> sekmesine tıklayabilirsin.
-            <div class="h6 text-muted mt-4">Tavsiyelerdeki Filmleri Oylama</div>
-            Muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden izlediğin filmlerin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.
-            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 302}">İzlediğin 1 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 301"></i></div>
-            <div class="h6 text-muted mt-4">Filmfiltre</div>
-            <span class="badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> tuşuna basıp filtreyi ayarlayabilir; listedeki filmleri orijinal diline, türüne ve yılına göre daraltabilirsin.
+            <div class="h6 text-muted">{{ __('tutorial.recommendations_2') }}</div>
+            {!! __('tutorial.recommendations_3') !!}
+            <div class="h6 text-muted mt-4">{{ __('tutorial.recommendations_4') }}</div>
+            {!! __('tutorial.recommendations_5') !!}
+            <div class="h6 text-muted mt-4">{!! __('tutorial.recommendations_6') !!}</div>
+            {!! __('tutorial.recommendations_7') !!}
+            <div class="h6 text-muted mt-4">{{ __('tutorial.recommendations_8') }}</div>
+            {!! __('tutorial.recommendations_9') !!}
+            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 302}">{{ __('tutorial.recommendations_mission_1') }}</span> <i class="fa fa-check" ng-show="current_level > 301"></i></div>
+            <div class="h6 text-muted mt-4">{{ __('tutorial.recommendations_10') }}</div>
+            {!! __('tutorial.recommendations_11') !!}
           </li>
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous('search');">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-hide="current_level < 302" ng-click="level_up(400)">Son Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous('search')">{{ __('tutorial.previous_lesson') }}</button>
+        <button type="button" class="btn btn-primary" ng-hide="current_level < 302" ng-click="level_up(400)">{{ __('tutorial.next_lesson') }}</button>
       </div>
     </div>
     <!--RECOMMENDATIONS-->
@@ -153,7 +152,7 @@
     <!--VOTE MOVIES-->
     <div class="modal-content" ng-if="((current_level > 399 && current_level < 500) && show_previous_tutorial != 'quick rate' && show_previous_tutorial != 'search' && show_previous_tutorial != 'recommendations') || show_previous_tutorial == 'last mission'">
       <div class="modal-header">
-        <h5 class="modal-title">4 - {{ __('tutorial.quest') }}</h5>
+        <h5 class="modal-title">4 - {{ __('tutorial.last_quest') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
