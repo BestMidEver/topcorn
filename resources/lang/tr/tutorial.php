@@ -6,7 +6,7 @@ return [
     'quest' => 'Görev',
     'users_manual' => 'Kullanım Klavuzu',
     'users_manual_1' => 'Zaten kullanımı çok basit olan topcornun temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık.',
-    'users_manual_2' => 'Buraya, sayfanın en üstünde ve ortasındaki <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursa Başla/ Kursu Bitir</span> tuşuna basarak ulaşabilirsin.',
+    'users_manual_2' => 'Buraya, sayfanın en üstünde ve ortasındaki <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursa Başla</span> / <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursu Bitir</span> tuşuna basarak ulaşabilirsin.',
     'sequential_1' => 'Ne İşe Yarar?',
     'sequential_2' => 'Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. ',
     'sequential_3' => 'Özelliğe Erişim',
