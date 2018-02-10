@@ -403,7 +403,6 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			}
 		}
 
-		$scope.show_previous_tutorial='';
 		$scope.level_up = function(lvl){
 			if(lvl <= $scope.current_level){
 				$scope.show_previous_tutorial='';
