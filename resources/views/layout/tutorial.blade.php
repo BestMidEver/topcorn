@@ -25,7 +25,7 @@
     <!--QUICK RATE-->
     <div class="modal-content" ng-if="(current_level > 99 && current_level < 200) || show_previous_tutorial == 'quick rate'">
       <div class="modal-header">
-        <h5 class="modal-title">1 - Peş Peşe Oyla</h5>
+        <h5 class="modal-title">1 - {{ __('navbar.sequentialvote') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -33,34 +33,34 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 100}">
-            <div class="h6 text-muted">Ne İşe Yarar?</div>
-            Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Bu özellik en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. 
-            <div class="h6 text-muted mt-4">Özelliğe Erişim</div>
-            Peş Peşe Oylamak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 101}">Peş Peşe Oylama özelliğini çalıştır.</span> <i class="fa fa-check" ng-show="current_level > 100"></i></div>
+            <div class="h6 text-muted">{{ __('tutorial.sequential_1') }}</div>
+            {{ __('tutorial.sequential_2') }}
+            <div class="h6 text-muted mt-4">{{ __('tutorial.sequential_3') }}</div>
+            {!! __('tutorial.sequential_4') !!}
+            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{\'badge badge-danger\':current_level < 101}">{{ __('tutorial.sequential_mission') }}</span> <i class="fa fa-check" ng-show="current_level > 100"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
-            <div class="h6 text-muted">Neye Göre Oy Vermelisin?</div>
-            İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır: 
-            <div class="lead py-2">"Eğer bu filmi izlememiş olsaydın, Topcorn'un bunu sana önermesini ister miydin?"</div>
-            Bu soruya verebileceğin 6 muhtemel yanıt vardır:
-            <div class="py-2"><span class="badge badge-secondary">İzlemedim</span> -> İzlemediğin filmler için</div>
-            <div class="py-2"><span class="badge badge-secondary">Sakın</span> -> İzlediğine çok pişman olduğun ve kesinlikle senin için zaman kaybı olduğunu düşündüğün filmler için</div>
-            <div class="py-2"><span class="badge badge-secondary">Önerme</span> -> İzlemeseydim de olurdu dediğin filmler için</div>
-            <div class="py-2"><span class="badge badge-secondary">Kararsız</span> -> İyi hatırlayamadığın, olumlu ya da olumsuz bir fikrinin olmadığı filmler için</div>
-            <div class="py-2"><span class="badge badge-secondary">Öner</span> -> Beğendiğin filmler için</div>
-            <div class="py-2"><span class="badge badge-secondary">Kesinlikle</span> -> Kesinlikle, ne olursa olsun izlenmesi gereken filmler için</div>
-            <div class="h6 text-muted mt-4">Film Oylama</div>
-            <div class="py-2"><span class="text-muted">Görev: </span><span ng-class="{'badge badge-danger':current_level < 102}">Peş peşe oylama özelliği ile 1 filmi oyla.</span> <i class="fa fa-check" ng-show="current_level > 101"></i></div>
-            <div class="mt-2"><small>Filmin adına tıklayıp, filmin sayfasına gidebilirsin.</small></div>
-            <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> tuşuna basıp, daha sonra izlemeye karar verdiğin filmleri "Sonra İzle" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> tuşuna basıp, tavsiye listende görmek istemediğin filmleri "Banlananlar" listene kaydedebilirsin.</small></div>
-            <div class="mt-2"><span class="badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> tuşuna basıp, son verdiğin oyu geri alabilirsin.</small></div>
+            <div class="h6 text-muted">{{ __('tutorial.sequential_5') }}</div>
+            {{ __('tutorial.sequential_6') }}
+            <div class="lead py-2">"{{ __('long_texts.the_question') }}"</div>
+            {{ __('tutorial.sequential_7') }}
+            <div class="py-2"><span class="badge badge-secondary">{{ __('general.havent_seen') }}</span> -> {{ __('tutorial.sequential_8') }}</div>
+            <div class="py-2"><span class="badge badge-secondary">{{ __('general.definitely_dont_recommend') }}</span> -> {{ __('tutorial.sequential_9') }}</div>
+            <div class="py-2"><span class="badge badge-secondary">{{ __('general.dont_recommend') }}</span> -> {{ __('tutorial.sequential_10') }}</div>
+            <div class="py-2"><span class="badge badge-secondary">{{ __('general.not_sure') }}</span> -> {{ __('tutorial.sequential_11') }}</div>
+            <div class="py-2"><span class="badge badge-secondary">{{ __('general.recommend') }}</span> -> {{ __('tutorial.sequential_12') }}</div>
+            <div class="py-2"><span class="badge badge-secondary">{{ __('general.definitely_recommend') }}</span> -> {{ __('tutorial.sequential_13') }}</div>
+            <div class="h6 text-muted mt-4">{{ __('tutorial.sequential_14') }}</div>
+            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 102}">{{ __('tutorial.sequential_mission_2') }}</span> <i class="fa fa-check" ng-show="current_level > 101"></i></div>
+            <div class="mt-2"><small>{{ __('tutorial.sequential_15') }}</small></div>
+            <div class="mt-2">{!! __('tutorial.sequential_16') !!}</div>
+            <div class="mt-2">{!! __('tutorial.sequential_17') !!}</div>
+            <div class="mt-2">{!! __('tutorial.sequential_18') !!}</div>
           </li>
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-hide="current_level < 102" ng-click="level_up(200)">Sonraki Ders</button>
+        <button type="button" class="btn btn-primary" ng-hide="current_level < 102" ng-click="level_up(200)">{{ __('tutorial.sequential_19') }}</button>
       </div>
     </div>
     <!--QUICK RATE-->
