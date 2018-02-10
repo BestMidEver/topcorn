@@ -99,7 +99,7 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous_tutorial = 'quick rate'">Önceki Ders</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous_tutorial = 'quick rate';asd();">Önceki Ders</button>
         <button type="button" class="btn btn-primary" ng-hide="current_level < 203" ng-click="level_up(300)">Sonraki Ders</button>
       </div>
     </div>
