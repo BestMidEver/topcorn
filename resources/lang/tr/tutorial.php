@@ -7,7 +7,7 @@ return [
     'next_lesson' => 'Sonraki Ders',
     'previous_lesson' => 'Önceki Ders',
     'quest' => 'Görev',
-    'last_quest' => 'Görev',
+    'last_quest' => 'Son Görev',
     'users_manual' => 'Kullanım Klavuzu',
     'users_manual_1' => 'Zaten kullanımı çok basit olan topcornun temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık.',
     'users_manual_2' => 'Buraya, sayfanın en üstünde ve ortasındaki <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursa Başla</span> / <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursu Bitir</span> tuşuna basarak ulaşabilirsin.',
