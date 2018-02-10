@@ -22,7 +22,7 @@
 
 
     <!--QUICK RATE-->
-    <div class="modal-content" ng-if="(current_level > 99 && current_level < 200) || show_previous_tutorial == '1'">
+    <div class="modal-content" ng-if="(current_level > 99 && current_level < 200) || show_previous_tutorial == 'quick rate'">
       <div class="modal-header">
         <h5 class="modal-title">1 - Peş Peşe Oyla</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
