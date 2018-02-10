@@ -226,18 +226,18 @@
     <!--CONGRATULATIONS-->
     <div class="modal-content" ng-if="current_level == 600">
       <div class="modal-header">
-        <h5 class="modal-title">Tebrikler</h5>
+        <h5 class="modal-title">{{ __('tutorial.gratz') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Artık Topcorn'un temel özelliklerini biliyorsun. Profilini daha da güçlendir ve sana özel film önerilerinin tadını çıkart.</p>
-        <p>Bu kursta öğrendiklerine ve daha fazlasına ulaşmak istersen sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Sıkça Sorulan Sorular</span> linkine tıklayabilirsin.</p>
-        <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span class="badge badge-danger">Şaka şaka, haydi durma kepini fırlat :)</div>
+        <p>{{ __('tutorial.gratz_1') }}</p>
+        <p>{!! __('tutorial.gratz_2') !!}</p>
+        <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span class="badge badge-danger">{{ __('tutorial.gratz_mission') }}</div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-click="level_up(700)">Kepini Fırlat</button>
+        <button type="button" class="btn btn-primary" ng-click="level_up(700)">{{ __('tutorial.gratz_3') }}</button>
       </div>
     </div>
     <!--CONGRATULATIONS-->
