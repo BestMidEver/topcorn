@@ -4,18 +4,18 @@
     <!--USERS MANUAL-->
     <div class="modal-content" ng-if="current_level < 2">
       <div class="modal-header">
-        <h5 class="modal-title">Kullanım Klavuzu</h5>
+        <h5 class="modal-title">{{ __('tutorial.users_manual') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>Zaten kullanımı çok basit olan topcornun temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık.</p>
-        Buraya, sayfanın en üstünde ve ortasındaki <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursa Başla/ Kursu Bitir</span> tuşuna basarak ulaşabilirsin.
+        <p>{{ __('tutorial.users_manual_1') }}</p>
+        {! __('tutorial.users_manual_2') !}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="level_up(1)">Sonra Yap</button>
-        <button type="button" class="btn btn-primary" ng-click="level_up(100)">Kursa Başlayalım</button>
+        <button type="button" class="btn btn-secondary" ng-click="level_up(1)">{{ __('tutorial.do_it_later') }}</button>
+        <button type="button" class="btn btn-primary" ng-click="level_up(100)">{{ __('tutorial.start_course') }}</button>
       </div>
     </div>
     <!--USERS MANUAL-->
