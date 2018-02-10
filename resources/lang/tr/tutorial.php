@@ -64,12 +64,4 @@ return [
     'last_quest_mission' => '50 film oyla.',
     'last_quest_3' => 'Mezuniyet',
     'last_quest_' => '',
-    'last_quest_' => '',
-    'last_quest_' => '',
-    'last_quest_' => '',
-    'last_quest_' => '',
-    'last_quest_' => '',
-    'last_quest_' => '',
-    'last_quest_' => '',
-    'last_quest_' => '',
 ];
