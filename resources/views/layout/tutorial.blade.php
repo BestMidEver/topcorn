@@ -160,15 +160,15 @@
       <div class="modal-body">
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 400}">
-            <div class="h6 text-muted">Profilini Güçlendir</div>
-            Peş Peşe Oylama, arama yapma veya tavsiye alma; hangisi kolayına geliyorsa onu kullanarak profilini güçlendirebilirsin.
-            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 401}">50 film oyla.</span> <i class="fa fa-check" ng-show="current_level > 400"></i></div>
+            <div class="h6 text-muted">{{ __('tutorial.last_quest_1') }}</div>
+            {{ __('tutorial.last_quest_2') }}
+            <div class="py-2"><span class="text-muted">{{ __('tutorial.last_quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 401}">{{ __('tutorial.last_quest_mission') }}</span> <i class="fa fa-check" ng-show="current_level > 400"></i></div>
           </li>
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" ng-click="show_previous('recommendations);">Önceki Ders</button>
-        <button type="button" class="btn btn-primary" ng-hide="current_level < 401" ng-click="level_up(500)">Mezuniyet</button>
+        <button type="button" class="btn btn-secondary" ng-click="show_previous('recommendations);">{{ __('tutorial.previous_lesson') }}</button>
+        <button type="button" class="btn btn-primary" ng-hide="current_level < 401" ng-click="level_up(500)">{{ __('tutorial.last_quest_3') }}Mezuniyet</button>
       </div>
     </div>
     <!--VOTE MOVIES-->
