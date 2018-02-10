@@ -74,7 +74,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             @if(Auth::User()->level < 700)
-            <ul class="navbar-nav ml-auto" ng-if="current_level<700">
+            <ul class="navbar-nav ml-auto" ng-show="current_level<700">
                 <li class="nav-item">
                     <button class="nav-link d-md-none text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> @{{ current_level < 2 ? {{ __('navbar.start_course') }} : {{ __('navbar.graduate') }} }}</span></button>
                 </li>
@@ -98,7 +98,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     @if(Auth::User()->level < 700)
-                    <li class="nav-item d-md-none" ng-if="current_level<700">
+                    <li class="nav-item d-md-none" ng-show="current_level<700">
                         <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> @{{ current_level < 2 ? {{ __('navbar.start_course') }} : {{ __('navbar.graduate') }} }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
@@ -135,7 +135,7 @@
                     </li>
                 </ul>
                 @if(Auth::User()->level < 700)
-                <ul class="navbar-nav mx-auto d-none d-md-inline" ng-if="current_level<700">
+                <ul class="navbar-nav mx-auto d-none d-md-inline" ng-show="current_level<700">
                     <li class="nav-item">
                         <button class="nav-link text-info btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> @{{ current_level < 2 ? {{ __('navbar.start_course') }} : {{ __('navbar.graduate') }} }}</span></button>
                     </li>
