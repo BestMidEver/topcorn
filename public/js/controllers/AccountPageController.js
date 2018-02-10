@@ -387,18 +387,26 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		}
 
 		$scope.level_up = function(lvl){
-			if(lvl == 1 || lvl == 700)$('#tutorial').modal('hide');
-			rate.level_manipulate(lvl)
-			.then(function(response){
-				console.log(response);
-				$scope.current_level = response.data;
-				$scope.level_check();
-				if($scope.current_level!=1 && $scope.current_level!=100 && $scope.current_level!=200 
-					&& $scope.current_level!=300 && $scope.current_level!=400 && $scope.current_level!=500 
-					&& $scope.current_level!=600 && $scope.current_level!=700){
-					$scope.show_tutorial();
-				}
-			});
+			if(lvl <= $scope.current_level){
+				$scope.show_previous_tutorial='';
+			}else{
+				if(lvl == 1 || lvl == 700)$('#tutorial').modal('hide');
+				rate.level_manipulate(lvl)
+				.then(function(response){
+					console.log(response);
+					$scope.current_level = response.data;
+					$scope.level_check();
+					if($scope.current_level!=1 && $scope.current_level!=100 && $scope.current_level!=200 
+						&& $scope.current_level!=300 && $scope.current_level!=400 && $scope.current_level!=500 
+						&& $scope.current_level!=600 && $scope.current_level!=700){
+						$scope.show_tutorial();
+					}
+				});
+			}
+		}
+
+		$scope.show_previous = function(which){
+			$scope.show_previous_tutorial=which;
 		}
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
