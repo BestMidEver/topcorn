@@ -404,7 +404,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 		}
 
 		$scope.level_up = function(lvl){
-			if(lvl <= current_level){
+			if(lvl <= $scope.current_level){
 				$scope.show_previous_tutorial='';
 			}else{
 				if(lvl == 1 || lvl == 700)$('#tutorial').modal('hide');
