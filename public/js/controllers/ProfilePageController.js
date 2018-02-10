@@ -418,7 +418,9 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			});
 		}
 
-		$scope.asd = function(){$scope.show_previous_tutorial="quick rate";console.log("asd")}
+		$scope.show_previous = function(which){
+			$scope.show_previous_tutorial=which;
+		}
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
