@@ -76,7 +76,7 @@ return [
     'settings_8' => 'After you customized your profile, you can push <span class="badge badge-secondary">Save Changes</span> button, in order to save the changes.',
     'settings_mission_4' => 'Save the changes.',
     'settings_9' => 'Accessing to Your Profile Page',
-    'settings_10' => 'You can click <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> on the navigation bar or <span class="badge badge-secondary">My Profile</span> on the footer, in order to access your profile page.',
+    'settings_10' => 'You can click <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> My Profile</span> on the navigation bar or <span class="badge badge-secondary">My Profile</span> on the footer, in order to access your profile page.',
     'settings_mission_5' => 'Go to your profile page.',
     'settings_11' => 'Get Your Diploma',
     'gratz' => 'Congratulations',
