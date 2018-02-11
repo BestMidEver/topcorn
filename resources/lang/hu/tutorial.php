@@ -76,7 +76,7 @@ return [
     'settings_8' => 'A profil beállítása után a változtatások mentéséhez nyomd meg a <span class="badge badge-secondary">Változások mentése</span> gombot.',
     'settings_mission_4' => 'Változtatások mentése.',
     'settings_9' => 'Hozzáférés a profiloldalhoz',
-    'settings_10' => 'Az oldal tetején lévő navigációs sáv <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilim</span> linkjére vagy az oldal alján található lábléc <span class="badge badge-secondary">Profilim</span>  linkjére kattintva megtekintheted saját profilodat.',
+    'settings_10' => 'Az oldal tetején lévő navigációs sáv <span class="badge badge-secondary"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Profilom</span> linkjére vagy az oldal alján található lábléc <span class="badge badge-secondary">Profilom</span>  linkjére kattintva megtekintheted saját profilodat.',
     'settings_mission_5' => 'Ugrás a profiloldalra.',
     'settings_11' => 'Vedd át a diplomád!',
     'gratz' => 'Gratulálunk!',
