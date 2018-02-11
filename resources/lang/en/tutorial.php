@@ -64,7 +64,7 @@ return [
     'last_quest_3' => 'Graduation',
     'settings' => 'Graduation',
     'settings_1' => 'Access to the Settings Page',
-    'settings_2' => 'You can click <span class="badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="badge badge-secondary">Ayarlar</span> on the navigation bar or <span class="badge badge-secondary">Ayarlar</span> on the footer, in order to access settings page.',
+    'settings_2' => 'You can click <span class="badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="badge badge-secondary">Settings</span> on the navigation bar or <span class="badge badge-secondary">Settings</span> on the footer, in order to access settings page.',
     'settings_mission' => 'Go to the settings page.',
     'settings_3' => 'Choosing a Cover Photo',
     'settings_4' => 'You can choose a movie that you liked to use it\'s cover photo as your cover photo.',
