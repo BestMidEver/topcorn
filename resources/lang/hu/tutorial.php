@@ -30,7 +30,7 @@ return [
     'sequential_15' => 'A film címére kattintva elérheted a film oldalát.',
     'sequential_16' => '<small>Ha egy filmet később meg szeretnél nézni, akkor a</small> <span class="badge badge-secondary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><small> gombra kattintva elmentheted a \'Később megnézem\' listádba. </small>',
     'sequential_17' => '<small>Ha egy filmet nem szeretnél látni az ajánlások között, akkor klikkelj a</small> <span class="badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span> <small>gombra.</small>',
-    'sequential_18' => '<span class="badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> gombra kattintva, visszaveheted az utolsó szavazatodat.</small>',
+    'sequential_18' => '<small>A</small> <span class="badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> gombra kattintva, visszaveheted az utolsó szavazatodat.</small>',
     'search_page' => 'Keresés oldal',
     'search_page_1' => 'Az oldal tetején lévő navigációs sáv <span class="badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Ara</span> linkjére vagy az oldal alján, a láblécben található <span class="badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> linkre kattintva elérheted a keresési oldalt.',
     'search_mission' => 'Ugrás a keresőoldalra.',
