@@ -32,7 +32,7 @@ return [
     'sequential_17' => '<small>You can click</small> <span class="badge badge-secondary"><i class="fa fa-ban" aria-hidden="true"></i></span><small> button to ban the movie, if you don\'t want to see it in your recommendations.</small>',
     'sequential_18' => '<small>You can click</small> <span class="badge badge-secondary"><i class="fa fa-undo" aria-hidden="true"></i></span><small> button to take back your last vote.</small>',
     'search_page' => 'Search Page',
-    'search_page_1' => 'You can click <span class="badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Search</span> on the navigation bar or <span class="badge badge-secondary">Film/Kişi/Kullanıcı Ara</span> on the footer, in order to accessing search page.',
+    'search_page_1' => 'You can click <span class="badge badge-secondary"><i class="fa fa-search" aria-hidden="true"></i> Search</span> on the navigation bar or <span class="badge badge-secondary">Search Movie/Person/User</span> on the footer, in order to accessing search page.',
     'search_mission' => 'Go to Search Page.',
     'search_page_2' => 'Searching Movies',
     'search_page_3' => 'In order to search a movie, you can enter the name of the movie into the movie search box under <span class="badge badge-secondary">Movie</span> tab.',
