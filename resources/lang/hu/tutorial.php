@@ -64,7 +64,7 @@ return [
     'last_quest_3' => 'Diploma megszerzése',
     'settings' => 'Diploma megszerzése',
     'settings_1' => 'Hozzáférés a Beállítások oldalhoz',
-    'settings_2' => 'Az oldal tetején található navigációs sáv <span class="badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="badge badge-secondary">Beállítások</span> -re vagy a lap alján található láblécben található <span class="badge badge-secondary">Beállítások</span> linkjére kattintva eljuthatsz a Beállítások oldalra.',
+    'settings_2' => 'Az oldal tetején található navigációs sáv <span class="badge badge-secondary"><i class="fa fa fa-caret-down" aria-hidden="true"></i></span> > <span class="badge badge-secondary">Beállítások</span> gombra vagy a lap alján található láblécben található <span class="badge badge-secondary">Beállítások</span> linkjére kattintva eljuthatsz a Beállítások oldalra.',
     'settings_mission' => 'Menj a Beállítások oldalra.',
     'settings_3' => 'Borítókép kiválasztása',
     'settings_4' => 'A legördülő listából beállíthatod az egyik kedvenc filmed borítóját borítóképként.',
