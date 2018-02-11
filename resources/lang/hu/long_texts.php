@@ -7,4 +7,5 @@ return [
     'hint_image_quality' => 'Kiválaszthatod a képminőséget az internetkapcsolatnak megfelelően. Ez a beállítás nem érinti a filmelőzeteseket.',
     'hint_full_screen' => 'Csökkentheted az oldal jobb és bal szélén lévő helyet.',
     'hint_open_new_tab' => 'A film, az emberek és a felhasználók megnyitása új lapon.',
+    'the_question' => 'Tegyük fel, hogy ezt a filmet még nem láttad! Szeretnéd, hogy a Topcorn ajánlja neked?',
 ]; 
