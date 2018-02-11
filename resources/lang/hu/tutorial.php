@@ -52,7 +52,7 @@ return [
     'recommendations_4' => 'Legnépszerűbb filmek',
     'recommendations_5' => '<span class="badge badge-secondary">Legnépszerűbb</span> láthatod a legnépszerűbb filmeket.',
     'recommendations_6' => 'Az én ízlésem szerint <small>(Azt javasoljuk, hogy ezt a részt a tanfolyam  megkezdése előtt töltsd ki.)</small>',
-    'recommendations_7' => 'Ez a lista teszi a Topcorn különlegessé. A filmjavaslatokat csak a Te ízlésed szerint találhatod meg, miután elegendő szavazatot adtál a rendszerbe. A személyre szabott film ajánlásokat a <span class="badge badge-secondary">Az én ízlésem szerint</span> lapon találhatók..',
+    'recommendations_7' => 'Ez a lista teszi a Topcorn különlegessé. A filmjavaslatokat csak a Te ízlésed szerint találhatod meg, miután elegendő szavazatot adtál a rendszerbe. A személyre szabott film ajánlásokat a <span class="badge badge-secondary">Az én ízlésem szerint</span> lapon találhatod.',
     'recommendations_8' => 'Film szavazás az Ajánlásokban',
     'recommendations_9' => 'Valószínűleg megjelenik a filmek listája, miután beírtad a filmet a film keresőmezőjébe. Klikkelj a  <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Láttam</span> ahogy már megtanultad az első leckében.',
     'recommendations_mission_1' => 'Értékelj egy megnézett filmet!',
