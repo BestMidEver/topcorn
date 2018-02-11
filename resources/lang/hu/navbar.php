@@ -20,4 +20,6 @@ return [
     'privacy' => 'Adatvédelem',
     'like_us_on_facebook' => 'Kedvelj minket Facebook-on!',
     'all_rights_reserved' => 'Minden jog fenntartva',
+    'graduate' => 'A kurzus folytatása',                                
+    'start_course' => 'Kezdődjön a kurzus!',  
 ];

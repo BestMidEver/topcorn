@@ -20,6 +20,6 @@ return [
     'privacy' => 'Gizlilik Politikası',
     'like_us_on_facebook' => 'Bizi Facebook\'ta Beğenin',
     'all_rights_reserved' => 'Her Hakkı Saklıdır.',
-    'graduate' => 'Kursa Devam Et',                                          //NEW NEW NEW
-    'start_course' => 'Kursa Başla',                                   //NEW NEW NEW
+    'graduate' => 'Kursa Devam Et',                                   
+    'start_course' => 'Kursa Başla',                                   
 ];
