@@ -39,7 +39,7 @@ return [
     'definitely_dont_recommend' => 'Semmiképpen',                           //ratemodal, profile,
     'definitely_recommend' => 'Mindenképpen',                               //ratemodal, profile,
     'dollar_account' => 'Dollár számla',                                    //donation,
-    'dont_recommend' => 'Ne ajánld!',                                       //ratemodal, profile,
+    'dont_recommend' => 'Nem',                                              //ratemodal, profile,
     'editing' => 'Vágás',                                                   //person
     'email' => 'E-mail cím',                                                //email, reset, login, register,
     'email_confirmation' => 'E-mail cím megerősítése',                      //register,
@@ -103,7 +103,7 @@ return [
     'profile_photo_help' => '(A film szereplői közül)',                     //account,
     'read_all' => 'Több',                                                   //movie
     'recipient_name' => 'A címzett neve',                                   //donation,
-    'recommend' => 'Ajánld!',                                               //ratemodal, profile,
+    'recommend' => 'Igen!',                                                 //ratemodal, profile,
     'remember_me' => 'Emlékezz rám!',                                       //login,
     'remove' => 'Törlés',                                                   //recommendations,
     'revenue' => 'Bevétel',                                                 //movie
