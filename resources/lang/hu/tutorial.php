@@ -14,7 +14,7 @@ return [
     'sequential_1' => 'Ez mire való?',
     'sequential_2' => 'A Topcorn megismeri és megtanulja az ízlésedet, az általad már megnézett és értékelt filmek alapján, majd személyreszabott ajánlást kínál.  Ez a funkció segít a profilod megerősítésében és felkínája a leggyakrabban szavazott filmeket. ',
     'sequential_3' => 'Hogyan férek hozzá?',
-    'sequential_4' => 'A gyors szavazáshoz kattints a <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> gombra a fenti  navigációs sávban.',
+    'sequential_4' => 'A gyors szavazáshoz kattints a <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Gyors Szavazás</span> gombra a fenti  navigációs sávban.',
     'sequential_mission' => 'Indítsd el a gyors szavazást!.',
     'sequential_5' => 'Hogyan szavazzak?',
     'sequential_6' => 'Csak egy kérdésre kell válaszolnod minden megnézett filmnél:',
