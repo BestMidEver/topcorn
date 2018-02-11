@@ -42,7 +42,7 @@ return [
     'search_page_6' => 'Kullanıcı Arama',
     'search_page_7' => 'Topcorn kullanıcılarını aramak için <span class="badge badge-secondary">Kullanıcı</span> sekmesinde arama çubuğuna aramak istediğin kullanıcının adını veya e-postasını yazabilirsin.',
     'search_page_8' => 'Aratılan Filmi Oylama',
-    'search_page_9' => 'Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.',
+    'search_page_9' => 'Film aradıktan sonra çıkan listede muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden aradığın filmin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp ilk derste öğrendiğin gibi oylayabilirsin.',
     'search_mission_3' => 'İzlediğin 1 filmi aratıp oyla.',
     'recommendations' => 'Film Tavsiyeleri',
     'recommendations_1' => 'Tavsiyeler sayfasına ulaşmak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-th-list" aria-hidden="true"></i> Tavsiyeler</span> veya sayfanın en altında altbilgisindeki <span class="badge badge-secondary">Film Tavsiyeleri</span> linklerinden birine tıklayabilirsin.',
@@ -55,7 +55,7 @@ return [
     'recommendations_7' => 'Bu liste, Topcorn\'u Topcorn yapan listedir. Yalnızca size özel film önerilerini burada bulabilirsiniz. Unutmayın, Topcorn\'a ne kadar tutarlı ve çok bilgi verirseniz bu liste o ölçüde zengin ve size uygun olacaktır.
             Yalnızca senin zevkine göre seçilmiş filmleri görmek için <span class="badge badge-secondary">Benim Zevkime Göre</span> sekmesine tıklayabilirsin.',
     'recommendations_8' => 'Tavsiyelerdeki Filmleri Oylama',
-    'recommendations_9' => 'Muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden izlediğin filmlerin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp "1 - Peş Peşe Oylama" dersinde öğrendiğin gibi oylayabilirsin.',
+    'recommendations_9' => 'Muhtemelen birçok filmin olduğu liste göreceksin. Bu filmlerden izlediğin filmlerin altındaki çubuktan <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> İzledim</span> tuşuna basıp ilk derste öğrendiğin gibi oylayabilirsin.',
     'recommendations_mission_1' => 'İzlediğin 1 filmi oyla.',
     'recommendations_10' => 'Filmfiltre',
     'recommendations_11' => '<span class="badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> tuşuna basıp filtreyi ayarlayabilir; listedeki filmleri orijinal diline, türüne ve yılına göre daraltabilirsin.',
