@@ -12,7 +12,7 @@ return [
     'users_manual_1' => 'Készítettünk egy rövid tanfolyamot azért, hogy könnyen megértsd és megtanuld a Topcorn alapvető jellemzőit és működését.',
     'users_manual_2' => 'Klikkelj a <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kezdődjön a kurzus!</span> / <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> A kurzus folytatása</span>  gombra a kurzus elindításához, vagy későbbi befejezéséhez.',
     'sequential_1' => 'Ez mire való?',
-    'sequential_2' => 'A Topcorn megismeri és megtanulja az ízlésedet, az általad már megnézett és értékelt filmek alapján, majd személyreszabott ajánlást kínál.  Ez a funkció segít a profilod megerősítésében és felkínája a leggyakrabban szavazott filmeket. '
+    'sequential_2' => 'A Topcorn megismeri és megtanulja az ízlésedet, az általad már megnézett és értékelt filmek alapján, majd személyreszabott ajánlást kínál.  Ez a funkció segít a profilod megerősítésében és felkínája a leggyakrabban szavazott filmeket. ',
     'sequential_3' => 'Hogyan férek hozzá?',
     'sequential_4' => 'A gyors szavazáshoz kattints a <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> gombra a fenti  navigációs sávban.',
     'sequential_mission' => 'Indítsd el a gyors szavazást!.',
