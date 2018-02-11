@@ -59,7 +59,7 @@ return [
     'recommendations_10' => 'Filmszűrő',
     'recommendations_11' => 'A <span class="badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SZŰRŐ</span> gombra kattintva beállíthatod a szűrőt. A felsorolt filmeket le lehet szűkíteni az eredeti nyelv, műfaj és év szerint..',
     'last_quest_1' => 'A profilom megerősítése',
-    'last_quest_2' => 'Gyors szavazás, keresés vagy ajánlások; attól függően, hogy melyik könnyebb számodra, erősítheted mega a profilod.',
+    'last_quest_2' => 'Gyors szavazás, keresés vagy ajánlások; attól függően, hogy melyik könnyebb számodra. Ezekkel erősítheted meg a profilodat.',
     'last_quest_mission' => 'Szavazz 50 filmre.',
     'last_quest_3' => 'Diploma megszerzése',
     'settings' => 'Diploma megszerzése',
