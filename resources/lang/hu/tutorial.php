@@ -57,7 +57,7 @@ return [
     'recommendations_9' => 'Valószínűleg megjelenik a filmek listája, miután beírtad a filmet a film keresőmezőjébe. Klikkelj a  <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Láttam</span> ahogy már megtanultad az első leckében.',
     'recommendations_mission_1' => 'Értékelj egy megnézett filmet!',
     'recommendations_10' => 'Filmszűrő',
-    'recommendations_11' => 'A <span class="badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SÜZGEÇ</span> gombra kattintva beállíthatod a szűrőt. A felsorolt filmeket le lehet szűkíteni az eredeti nyelv, műfaj és év szerint..',
+    'recommendations_11' => 'A <span class="badge badge-secondary"><i class="fa fa-filter" aria-hidden="true"></i> SZŰRŐ</span> gombra kattintva beállíthatod a szűrőt. A felsorolt filmeket le lehet szűkíteni az eredeti nyelv, műfaj és év szerint..',
     'last_quest_1' => 'A profilom megerősítése',
     'last_quest_2' => 'Gyors szavazás, keresés vagy ajánlások; attól függően, hogy melyik könnyebb számodra, erősítheted mega a profilod.',
     'last_quest_mission' => 'Szavazz 50 filmre.',
