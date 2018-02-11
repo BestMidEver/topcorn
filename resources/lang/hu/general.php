@@ -28,7 +28,7 @@ return [
     'continue_without_facebook' => 'Folytatás Facebook nélkül',             //home
     'country' => 'Ország',                                                  //donation,
     'cover_photo' => 'Borítókép',                                           //account,
-    'cover_photo_help' => 'A "Mindenképpen ajánld!" filmek közül',          //account,
+    'cover_photo_help' => 'A "Mindenképpen" filmek közül',                  //account,
     'create_new_password' => 'Új jelszó létrehozása',                       //reset,
     'crew' => 'Stáb',                           
     'current_password' => 'Jelenlegi jelszó',                               //accountpassword,
@@ -36,8 +36,8 @@ return [
     'director' => 'Rendező',                                                //movie
     'directors' => 'Rendezők',                                              //movie
     'disabled' => 'Inaktív',                                                //accountinterface,
-    'definitely_dont_recommend' => 'Mindenképpen ne ajánld!',               //ratemodal, profile,
-    'definitely_recommend' => 'Mindenképpen ajánld!',                       //ratemodal, profile,
+    'definitely_dont_recommend' => 'Semmiképpen',                           //ratemodal, profile,
+    'definitely_recommend' => 'Mindenképpen',                               //ratemodal, profile,
     'dollar_account' => 'Dollár számla',                                    //donation,
     'dont_recommend' => 'Ne ajánld!',                                       //ratemodal, profile,
     'editing' => 'Vágás',                                                   //person
