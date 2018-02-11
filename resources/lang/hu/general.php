@@ -103,7 +103,7 @@ return [
     'profile_photo_help' => '(A film szereplői közül)',                     //account,
     'read_all' => 'Több',                                                   //movie
     'recipient_name' => 'A címzett neve',                                   //donation,
-    'recommend' => 'Igen!',                                                 //ratemodal, profile,
+    'recommend' => 'Igen',                                                  //ratemodal, profile,
     'remember_me' => 'Emlékezz rám!',                                       //login,
     'remove' => 'Törlés',                                                   //recommendations,
     'revenue' => 'Bevétel',                                                 //movie
