@@ -192,22 +192,22 @@ Route::get('suckData', function(){
 Route::get('test', function(){
 
 
-    $is_recent = Movie::where('id', 1903)
+    $is_recent = Movie::where('id', 346685)
     ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
     ->first();
     if($is_recent) return;
 
     if(true){
-        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/1903?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);
-        Recommendation::where(['movie_id' => 1903])->delete();
+        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/346685?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);
+        Recommendation::where(['movie_id' => 346685])->delete();
         for ($k=0; $k < count($movie['similar']['results']); $k++) {
             $temp = $movie['similar']['results'][$k];
             SuckMovieJob::dispatch($temp['id'], false)->onQueue("high");
             if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
             $recommendation = new Recommendation;
-            $recommendation->id = 1903*10000000 + $temp['id'];
+            $recommendation->id = 346685*10000000 + $temp['id'];
             $recommendation->this_id = $temp['id'];
-            $recommendation->movie_id = 1903;
+            $recommendation->movie_id = 346685;
             $recommendation->is_similar = true;
             $recommendation->save();
         }
@@ -216,13 +216,13 @@ Route::get('test', function(){
             SuckMovieJob::dispatch($temp['id'], false)->onQueue("high");
             if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
             Recommendation::updateOrCreate(
-                ['this_id' => $temp['id'], 'movie_id' => 1903],
-                ['id' => 1903*10000000 + $temp['id'],
+                ['this_id' => $temp['id'], 'movie_id' => 346685],
+                ['id' => 346685*10000000 + $temp['id'],
                 'is_similar' => false,]
             );
         }
-        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/1903?api_key='.config('constants.api_key').'&language=tr'), true);
-        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/1903?api_key='.config('constants.api_key').'&language=hu'), true);
+        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/346685?api_key='.config('constants.api_key').'&language=tr'), true);
+        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/346685?api_key='.config('constants.api_key').'&language=hu'), true);
         Movie::updateOrCreate(
             ['id' => $movie['id']],
             ['original_title' => $movie['original_title'],
@@ -241,7 +241,7 @@ Route::get('test', function(){
             'hu_cover_path' => $movie_hu['backdrop_path'],
             'vote_count' => $movie['vote_count']]
         );
-        Genre::where(['movie_id' => 1903])->delete();
+        Genre::where(['movie_id' => 346685])->delete();
         for ($k=0; $k < count($movie['genres']); $k++) { 
             $genre = new Genre;
             $genre->id = $movie['id']*10000000 + $movie['genres'][$k]['id'];
@@ -250,9 +250,9 @@ Route::get('test', function(){
             $genre->save();
         }
     }else{
-        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/1903?api_key='.config('constants.api_key').'&language=en'), true);
-        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/1903?api_key='.config('constants.api_key').'&language=tr'), true);
-        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/1903?api_key='.config('constants.api_key').'&language=hu'), true);
+        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/346685?api_key='.config('constants.api_key').'&language=en'), true);
+        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/346685?api_key='.config('constants.api_key').'&language=tr'), true);
+        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/346685?api_key='.config('constants.api_key').'&language=hu'), true);
         Movie::updateOrCreate(
             ['id' => $movie['id']],
             ['original_title' => $movie['original_title'],
@@ -271,7 +271,7 @@ Route::get('test', function(){
             'hu_cover_path' => $movie_hu['backdrop_path'],
             'vote_count' => $movie['vote_count']]
         );
-        Genre::where(['movie_id' => 1903])->delete();
+        Genre::where(['movie_id' => 346685])->delete();
         for ($k=0; $k < count($movie['genres']); $k++) { 
             $genre = new Genre;
             $genre->id = $movie['id']*10000000 + $movie['genres'][$k]['id'];
