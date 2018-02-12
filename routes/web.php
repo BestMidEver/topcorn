@@ -202,7 +202,7 @@ Route::get('test', function(){
             SuckMovieJob::dispatch($temp['id'], false)->onQueue("high");
             if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
             $recommendation = new Recommendation;
-            $recommendation->id = composit_to_int(77, $temp['id']);
+            $recommendation->id = 77*10000000 + $temp['id'];
             $recommendation->this_id = $temp['id'];
             $recommendation->movie_id = 77;
             $recommendation->is_similar = true;
@@ -214,7 +214,7 @@ Route::get('test', function(){
             if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
             Recommendation::updateOrCreate(
                 ['this_id' => $temp['id'], 'movie_id' => 77],
-                ['id' => composit_to_int(77, $temp['id']),
+                ['id' => 77*10000000 + $temp['id'],
                 'is_similar' => false,]
             );
         }
@@ -241,7 +241,7 @@ Route::get('test', function(){
         Genre::where(['movie_id' => 77])->delete();
         for ($k=0; $k < count($movie['genres']); $k++) { 
             $genre = new Genre;
-            $genre->id = composit_to_int($movie['id'], $movie['genres'][$k]['id']);
+            $genre->id = $movie['id']*10000000 + $movie['genres'][$k]['id'];
             $genre->movie_id = $movie['id'];
             $genre->genre_id = $movie['genres'][$k]['id'];
             $genre->save();
@@ -271,7 +271,7 @@ Route::get('test', function(){
         Genre::where(['movie_id' => 77])->delete();
         for ($k=0; $k < count($movie['genres']); $k++) { 
             $genre = new Genre;
-            $genre->id = composit_to_int($movie['id'], $movie['genres'][$k]['id']);
+            $genre->id = $movie['id']*10000000 + $movie['genres'][$k]['id'];
             $genre->movie_id = $movie['id'];
             $genre->genre_id = $movie['genres'][$k]['id'];
             $genre->save();
@@ -279,12 +279,6 @@ Route::get('test', function(){
     }
 
 }
-    function composit_to_int($x, $y)
-    {
-        $new_id = $x*10000000 + $y;
-
-        return $new_id;
-    }
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
