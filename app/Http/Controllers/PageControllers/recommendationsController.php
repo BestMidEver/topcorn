@@ -131,7 +131,7 @@ class recommendationsController extends Controller
         //->where('rateds.rate', '<>', 3)
         ->join('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        ->leftjoin('genres as gabis', 'gabis.movie_id', 'movies.id')
+        ->join('genres as gabis', 'gabis.movie_id', 'movies.id')
         ->leftjoin('rateds as r2', function ($join) use ($request) {
             $join->on('r2.movie_id', '=', 'movies.id')
             ->whereIn('r2.user_id', $request->f_users);
