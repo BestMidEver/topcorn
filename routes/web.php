@@ -191,7 +191,7 @@ Route::get('suckData', function(){
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
 
-    function composit_to_int($x, $y) return $x*10000000 + $y;
+    function composit_to_int($x, $y){return $x*10000000 + $y};
 
     $is_recent = Movie::where('id', 77)
     ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
