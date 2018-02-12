@@ -165,7 +165,7 @@ class recommendationsController extends Controller
         ->orderBy('point', 'desc');
 
         if($request->f_genre != []){
-            $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
+            $return_val = $return_val->leftjoin('genres', 'genres.movie_id', '=', 'movies.id')
             ->whereIn('genre_id', $request->f_genre);
             /*->havingRaw('COUNT(*)='.count($request->f_genre));*/
         }
