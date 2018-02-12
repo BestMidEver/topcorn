@@ -129,7 +129,7 @@ class recommendationsController extends Controller
         $return_val = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
         //->where('rateds.rate', '<>', 3)
-        ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
+        ->join('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
         ->join('genres', 'genres.movie_id', '=', 'movies.id')
         ->leftjoin('rateds as r2', function ($join) use ($request) {
