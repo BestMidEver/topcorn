@@ -33,7 +33,7 @@ class SuckDataJob implements ShouldQueue
      */
     public function handle()
     {
-        /*$total_pages = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key='.config('constants.api_key').'&language=en-US&page=1'), true)['total_pages'];
+        $total_pages = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key='.config('constants.api_key').'&language=en-US&page=1'), true)['total_pages'];
         for ($page=1; $page <= $total_pages; $page++) { 
             SuckPageJob::dispatch($page, true)->onQueue("low");
         }
@@ -44,11 +44,11 @@ class SuckDataJob implements ShouldQueue
         $total_pages = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/top_rated?api_key='.config('constants.api_key').'&language=en-US&page=1'), true)['total_pages'];
         for ($page=1; $page <= $total_pages; $page++) {
             SuckPageJob::dispatch($page, false)->onQueue("low");
-        }*/
+        }
 
 
 
-        //
+        
         foreach(Rated::All()->pluck('movie_id')->unique() as $id){
             SuckMovieJob::dispatch($id, true)->onQueue("low");
         }
