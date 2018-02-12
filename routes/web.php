@@ -189,71 +189,7 @@ Route::get('suckData', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-        if(0 == 0){
-            $hover_title = 'en'.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
-
-        $return_val = DB::table('rateds')
-        ->whereIn('rateds.user_id', [7])
-        ->where('rateds.rate', '<>', 3)
-        ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
-        ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        ->leftjoin('rateds as r2', function ($join){
-            $join->on('r2.movie_id', '=', 'movies.id')
-            ->whereIn('r2.user_id', [7]);
-        })
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'movies.id')
-            ->where('laters.user_id', '=', 7);
-        })
-        //->where('laters.id', '=', null)
-        ->leftjoin('bans', function ($join){
-            $join->on('bans.movie_id', '=', 'movies.id')
-            ->whereIn('bans.user_id', [7]);
-        })
-        ->where('bans.id', '=', null)
-        ->select(
-            'recommendations.this_id as id',
-            'recommendations.movie_id as mother_movie_id',
-            'movies.'.$hover_title.' as original_title',
-            DB::raw('sum(IF(recommendations.is_similar, 2, 7)*(rateds.rate-3.8))*movies.vote_average AS point'),
-            DB::raw('COUNT(*) as count'),
-            'movies.vote_average',
-            'movies.release_date',
-            'movies.'.'tr'.'_title as title',
-            'movies.'.'tr'.'_poster_path as poster_path',
-            'r2.id as rated_id',
-            'r2.rate as rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
-        )
-        ->groupBy('movies.id')
-        //->havingRaw('sum(IF(recommendations.is_similar, 2, 7)*(rateds.rate-3.8)) > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
-        ->orderBy('point', 'desc');
-
-        if(["18"] != []){
-            //$return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id');
-            //->whereIn('genre_id', ["18"]);
-        }
-
-        /*if(["en"] != [])
-        {
-            $return_val = $return_val->whereIn('original_language', ["en"]);
-        }
-
-        if(2005 != 1917)
-        {
-            $return_val = $return_val->where('movies.release_date', '>=', Carbon::create(2005,1,1));
-        }
-
-        if(2018 != 2018)
-        {
-            $return_val = $return_val->where('movies.release_date', '<=', Carbon::create(2018,12,31));
-        }*/
-
-        return $return_val->paginate(24);
+    return ":D";
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
