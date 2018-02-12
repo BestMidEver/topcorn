@@ -37,8 +37,6 @@ class SuckMovieJob implements ShouldQueue
      */
     public function handle()
     {
-        function composit_to_int($x, $y){ return $x*10000000 + $y; }
-
         $is_recent = Movie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
@@ -52,7 +50,7 @@ class SuckMovieJob implements ShouldQueue
                 SuckMovieJob::dispatch($temp['id'], false)->onQueue("high");
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 $recommendation = new Recommendation;
-                $recommendation->id = composit_to_int($this->id, $temp['id']);
+                $recommendation->id = $this->id*10000000 + $$temp['id'];
                 $recommendation->this_id = $temp['id'];
                 $recommendation->movie_id = $this->id;
                 $recommendation->is_similar = true;
@@ -64,7 +62,7 @@ class SuckMovieJob implements ShouldQueue
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 Recommendation::updateOrCreate(
                     ['this_id' => $temp['id'], 'movie_id' => $this->id],
-                    ['id' => composit_to_int($this->id, $temp['id']),
+                    ['id' => $this->id*10000000 + $$temp['id'],
                     'is_similar' => false,]
                 );
             }
@@ -91,7 +89,7 @@ class SuckMovieJob implements ShouldQueue
             Genre::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['genres']); $k++) { 
                 $genre = new Genre;
-                $genre->id = composit_to_int($movie['id'], $movie['genres'][$k]['id']);
+                $genre->id = $movie['id']*10000000 + $$movie['genres'][$k]['id'];
                 $genre->movie_id = $movie['id'];
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
@@ -121,7 +119,7 @@ class SuckMovieJob implements ShouldQueue
             Genre::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['genres']); $k++) { 
                 $genre = new Genre;
-                $genre->id = composit_to_int($movie['id'], $movie['genres'][$k]['id']);
+                $genre->id = $movie['id']*10000000 + $$movie['genres'][$k]['id'];
                 $genre->movie_id = $movie['id'];
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
