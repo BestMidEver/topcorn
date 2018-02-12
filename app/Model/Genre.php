@@ -12,6 +12,8 @@ class Genre extends Model
 
  	protected $fillable = [
     	'id',
+    	'movie_id',
+    	'genre_id'
     ];
 
     public function movie(){
