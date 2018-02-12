@@ -191,12 +191,12 @@ Route::get('suckData', function(){
 Route::get('test', function(){
     $x = 193262;
     $y = 86;
-    return gaben($x, $y)*100;
+    return gaben($x, $y);
 });
 
 function gaben($x, $y)
 {
-    return $x.$y;
+    return strlen((string)$x).'-'.strlen((string)$y);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
