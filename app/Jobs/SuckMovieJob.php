@@ -50,7 +50,7 @@ class SuckMovieJob implements ShouldQueue
                 SuckMovieJob::dispatch($temp['id'], false)->onQueue("high");
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 $recommendation = new Recommendation;
-                $recommendation->id = $this->id.'_'.$temp['id'];
+                $recommendation->id = composit_to_int($this->id, $temp['id']);
                 $recommendation->this_id = $temp['id'];
                 $recommendation->movie_id = $this->id;
                 $recommendation->is_similar = true;
@@ -62,7 +62,7 @@ class SuckMovieJob implements ShouldQueue
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
                 Recommendation::updateOrCreate(
                     ['this_id' => $temp['id'], 'movie_id' => $this->id],
-                    ['id' => $this->id.'_'.$temp['id'],
+                    ['id' => composit_to_int($this->id, $temp['id']),
                     'is_similar' => false,]
                 );
             }
@@ -89,7 +89,7 @@ class SuckMovieJob implements ShouldQueue
             Genre::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['genres']); $k++) { 
                 $genre = new Genre;
-                $genre->id = $movie['id'].'_'.$movie['genres'][$k]['id'];
+                $genre->id = composit_to_int($movie['id'], $movie['genres'][$k]['id']);
                 $genre->movie_id = $movie['id'];
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
@@ -119,11 +119,20 @@ class SuckMovieJob implements ShouldQueue
             Genre::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['genres']); $k++) { 
                 $genre = new Genre;
-                $genre->id = $movie['id'].'_'.$movie['genres'][$k]['id'];
+                $genre->id = composit_to_int($movie['id'], $movie['genres'][$k]['id']);
                 $genre->movie_id = $movie['id'];
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
             }
+        }
+
+        function composit_to_int($x, $y)
+        {
+            $current_length = strlen($x.$y);
+            $zeros_must_be_added_between = 14-$current_length;
+            $new_id = $x.str_repeat("0",$zeros_must_be_added_between).$y;
+            
+            return $new_id;
         }
     }
 }
