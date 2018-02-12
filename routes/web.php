@@ -1,6 +1,7 @@
 <?php
 
 use App\Jobs\SuckDataJob;
+use App\Jobs\SuckMovieJob;
 use App\Model\Genre;
 use App\Model\Movie;
 use App\Model\Recommendation;
