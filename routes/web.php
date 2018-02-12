@@ -196,7 +196,7 @@ Route::get('test', function(){
 
 function gaben($x, $y)
 {
-    $current_length=strlen((string)($x.$y));
+    $current_length=strlen($x.$y);
     return $current_length.'-'.strlen((string)$x).'-'.strlen((string)$y);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
