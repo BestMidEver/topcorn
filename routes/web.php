@@ -192,7 +192,7 @@ Route::get('test', function(){
     return gaben();
 });
 
-public function gaben()
+function gaben()
 {
     return "hahah";
 };
