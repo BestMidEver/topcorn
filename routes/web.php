@@ -195,7 +195,7 @@ Route::get('test', function(){
     if($is_recent) return;
 
     if(true){
-        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.77.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);
+        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/77?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);
         Recommendation::where(['movie_id' => 77])->delete();
         for ($k=0; $k < count($movie['similar']['results']); $k++) {
             $temp = $movie['similar']['results'][$k];
@@ -218,8 +218,8 @@ Route::get('test', function(){
                 'is_similar' => false,]
             );
         }
-        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.77.'?api_key='.config('constants.api_key').'&language=tr'), true);
-        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.77.'?api_key='.config('constants.api_key').'&language=hu'), true);
+        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/77?api_key='.config('constants.api_key').'&language=tr'), true);
+        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/77?api_key='.config('constants.api_key').'&language=hu'), true);
         Movie::updateOrCreate(
             ['id' => $movie['id']],
             ['original_title' => $movie['original_title'],
@@ -247,9 +247,9 @@ Route::get('test', function(){
             $genre->save();
         }
     }else{
-        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.77.'?api_key='.config('constants.api_key').'&language=en'), true);
-        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.77.'?api_key='.config('constants.api_key').'&language=tr'), true);
-        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.77.'?api_key='.config('constants.api_key').'&language=hu'), true);
+        $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/77?api_key='.config('constants.api_key').'&language=en'), true);
+        $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/77?api_key='.config('constants.api_key').'&language=tr'), true);
+        $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/77?api_key='.config('constants.api_key').'&language=hu'), true);
         Movie::updateOrCreate(
             ['id' => $movie['id']],
             ['original_title' => $movie['original_title'],
