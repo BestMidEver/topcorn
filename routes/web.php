@@ -198,7 +198,7 @@ function gaben($x, $y)
 {
     $current_length = strlen($x.$y);
     $zeros_must_be_added_between = 14-$current_length;
-    $new_id = $x.str_repeat("0",$zeros_must_be_added_between).$y
+    $new_id = $x.str_repeat("0",$zeros_must_be_added_between).$y;
     return $new_id;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
