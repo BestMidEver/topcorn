@@ -190,6 +190,14 @@ Route::get('suckData', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
+
+    function composit_to_int($x, $y)
+    {
+        $new_id = $x*10000000 + $y;
+
+        return $new_id;
+    }
+    
     $is_recent = Movie::where('id', 77)
     ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
     ->first();
@@ -277,13 +285,6 @@ Route::get('test', function(){
             $genre->genre_id = $movie['genres'][$k]['id'];
             $genre->save();
         }
-    }
-
-    function composit_to_int($x, $y)
-    {
-        $new_id = $x*10000000 + $y;
-
-        return $new_id;
     }
 });
 //////////////////////////////////////////////////////////////////////////////////////////
