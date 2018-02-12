@@ -37,12 +37,7 @@ class SuckMovieJob implements ShouldQueue
      */
     public function handle()
     {
-        function composit_to_int($x, $y)
-        {
-            $new_id = $x*10000000 + $y;
-
-            return $new_id;
-        }
+        function composit_to_int($x, $y){ return $x*10000000 + $y; }
 
         $is_recent = Movie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
