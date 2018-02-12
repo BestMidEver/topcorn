@@ -131,7 +131,7 @@ class recommendationsController extends Controller
         //->where('rateds.rate', '<>', 3)
         ->join('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        ->join('genres', 'genres.movie_id', '=', 'movies.id')
+        ->join('genres as gabis', 'genres.movie_id', '=', 'movies.id')
         ->leftjoin('rateds as r2', function ($join) use ($request) {
             $join->on('r2.movie_id', '=', 'movies.id')
             ->whereIn('r2.user_id', $request->f_users);
@@ -159,7 +159,8 @@ class recommendationsController extends Controller
             'r2.id as rated_id',
             'r2.rate as rate_code',
             'laters.id as later_id',
-            'bans.id as ban_id'
+            'bans.id as ban_id',
+            'gabis.id as gabarli'
         )
         ->groupBy('movies.id')
         ->havingRaw('sum(IF(recommendations.is_similar, 2, 7)*(rateds.rate-3.8)) > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
