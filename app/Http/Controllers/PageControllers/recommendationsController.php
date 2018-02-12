@@ -131,6 +131,7 @@ class recommendationsController extends Controller
         //->where('rateds.rate', '<>', 3)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
+        ->join('genres', 'genres.movie_id', '=', 'movies.id')
         ->leftjoin('rateds as r2', function ($join) use ($request) {
             $join->on('r2.movie_id', '=', 'movies.id')
             ->whereIn('r2.user_id', $request->f_users);
@@ -164,11 +165,11 @@ class recommendationsController extends Controller
         ->havingRaw('sum(IF(recommendations.is_similar, 2, 7)*(rateds.rate-3.8)) > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
         ->orderBy('point', 'desc');
 
-        if($request->f_genre != []){
-            $return_val = $return_val->leftjoin('genres', 'genres.movie_id', '=', 'movies.id')
-            ->whereIn('genre_id', $request->f_genre);
-            /*->havingRaw('COUNT(*)='.count($request->f_genre));*/
-        }
+        /*if($request->f_genre != []){
+            $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
+            ->whereIn('genre_id', $request->f_genre)
+            ->havingRaw('COUNT(*)='.count($request->f_genre));
+        }*/
 
         if($request->f_lang != [])
         {
