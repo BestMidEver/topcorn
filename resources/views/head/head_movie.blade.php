@@ -8,8 +8,10 @@ pass={
 	"is_auth":"{{  Auth::Check()  }}",
 	"constants_domain":"{{config('api.url')}}",
 	"api_key":"{{config('constants.api_key')}}",
+	@if(Auth::check())
 	"level":{{ Auth::User()->level }},
 	"watched_movie_number":{{ $watched_movie_number }}
+	@endif
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/countries.js"></script>
