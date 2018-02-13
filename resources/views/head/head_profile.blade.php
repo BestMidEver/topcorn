@@ -7,8 +7,8 @@ pass={
 	"constants_domain":"{{config('api.url')}}",
 	@if(Auth::check())
 	"level":{{ Auth::User()->level }},
-	@endif
 	"watched_movie_number":{{ $watched_movie_number }}
+	@endif
 };
 </script>
 @endsection
