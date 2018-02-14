@@ -22,7 +22,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			method: 'GET',
 			url: pass.constants_domain+'/api/get_user_movie_record/'+pass.movieid
 		}).then(function successCallback(response) {
-			console.log(":D", response)
 			if(response.data.hasOwnProperty('ban_id')){
 				$scope.user_movie_record = response.data;
 			}else{
@@ -311,7 +310,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 	$scope.this_later=function()
 	{
-		console.log($scope.user_movie_record, $scope.user_movie_record.movie_id)
 		if($scope.user_movie_record.later_id == null){
 			rate.add_later($scope.user_movie_record.movie_id)
 			.then(function(response){
