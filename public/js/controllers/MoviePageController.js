@@ -23,7 +23,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			url: pass.constants_domain+'/api/get_user_movie_record/'+pass.movieid
 		}).then(function successCallback(response) {
 			console.log(":D", response)
-			if(response.data.ban_id){
+			if(response.data.hasOwnProperty('ban_id')){
 				$scope.user_movie_record = response.data;
 			}else{
 				$scope.user_movie_record = {
