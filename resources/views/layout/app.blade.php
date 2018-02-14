@@ -76,7 +76,7 @@
             @if(Auth::User()->level < 700)
             <ul class="navbar-nav ml-auto" ng-show="current_level<700">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-danger btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> @{{ current_level < 2 ? start_course : graduate }}</span></button>
+                    <button class="nav-link d-md-none btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> @{{ current_level < 2 ? start_course : graduate }}</span></button>
                 </li>
             </ul>
             @endif
@@ -99,7 +99,7 @@
                 <ul class="navbar-nav mr-auto">
                     @if(Auth::User()->level < 700)
                     <li class="nav-item d-md-none" ng-show="current_level<700">
-                        <button class="nav-link text-danger btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
+                        <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     @endif
@@ -137,7 +137,7 @@
                 @if(Auth::User()->level < 700)
                 <ul class="navbar-nav mx-auto d-none d-md-inline" ng-show="current_level<700">
                     <li class="nav-item">
-                        <button class="nav-link text-danger btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
+                        <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
                     </li>
                 </ul>
                 @endif
