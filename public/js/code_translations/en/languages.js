@@ -80,6 +80,10 @@ languages=[
 		"o":"Hindi"
 	},
 	{
+		"i":"bn",
+		"o":"Bengali"
+	},
+	{
 		"i":"id",
 		"o":"Indonesian"
 	},

@@ -80,6 +80,10 @@ languages=[
 		"o":"Hintçe"
 	},
 	{
+		"i":"bn",
+		"o":"Bengalce"
+	},
+	{
 		"i":"id",
 		"o":"Endonezce"
 	},
