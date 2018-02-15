@@ -54,7 +54,7 @@ class recommendationsController extends Controller
         }
         
         $return_val = DB::table('movies')
-        ->where('vote_count', '>', 250)
+        ->where('vote_count', '>', 1)
         ->where('vote_average', '>', config('constants.suck_page.min_vote_average'))
         ->leftjoin('rateds', function ($join) use ($request) {
             $join->on('rateds.movie_id', '=', 'movies.id')
