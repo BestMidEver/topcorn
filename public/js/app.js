@@ -38,3 +38,7 @@ $(document).ready(function() {
 $('[data-toggle="tooltip"]').tooltip({
     trigger : 'hover'
 });
+
+  $('[data-toggle="popover"]').popover({
+    container: 'body'
+  })
