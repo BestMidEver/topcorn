@@ -157,6 +157,9 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/account">{{ __('navbar.account') }}</a>
+                            @if(Auth::User()->level < 700)
+                            <button class="dropdown-item btn btn-link" ng-show="current_level==1" data-toggle="modal" data-target="#tutorial">@{{ current_level < 2 ? start_course : graduate }}</button>
+                            @endif
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
                             <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
