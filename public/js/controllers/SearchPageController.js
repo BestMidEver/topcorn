@@ -552,6 +552,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			if(lvl <= $scope.current_level){
 				$scope.show_previous_tutorial='';
 			}else{
+				console.log(lvl)
 				if(lvl == 1 || lvl == 700)$('#tutorial').modal('hide');
 				rate.level_manipulate(lvl)
 				.then(function(response){
