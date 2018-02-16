@@ -72,7 +72,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @if(Auth::User()->level < 700 && Auth::User->level != 1)
+            @if(Auth::User()->level < 700 && Auth::User()->level != 1)
             <ul class="navbar-nav ml-auto" ng-show="current_level<700 && current_level!=1">
                 <li class="nav-item">
                     <button class="nav-link d-md-none btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> @{{ current_level < 2 ? start_course : graduate }}</span></button>
@@ -96,7 +96,7 @@
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    @if(Auth::User()->level < 700 && Auth::User->level != 1)
+                    @if(Auth::User()->level < 700 && Auth::User()->level != 1)
                     <li class="nav-item d-md-none" ng-show="current_level<700 && current_level!=1">
                         <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
                         <div class="dropdown-divider d-md-none"></div>
@@ -133,7 +133,7 @@
                         <a class="nav-link text-muted" href="#">{{ __('navbar.logout') }}</a>
                     </li>
                 </ul>
-                @if(Auth::User()->level < 700 && Auth::User->level != 1)
+                @if(Auth::User()->level < 700 && Auth::User()->level != 1)
                 <ul class="navbar-nav mx-auto d-none d-md-inline" ng-show="current_level<700 && current_level!=1">
                     <li class="nav-item">
                         <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
