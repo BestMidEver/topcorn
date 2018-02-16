@@ -34,25 +34,9 @@
         <ul class="list-group">
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 100}">
             {{ __('tutorial.sequential_1') }}
-            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 101}">{{ __('tutorial.sequential_mission') }}</span> <i class="fa fa-check" ng-show="current_level > 100"></i></div>
           </li>
           <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
-            <div class="h6 text-muted">{{ __('tutorial.sequential_5') }}</div>
-            {{ __('tutorial.sequential_6') }}
-            <div class="lead py-2">"{{ __('long_texts.the_question') }}"</div>
-            {{ __('tutorial.sequential_7') }}
-            <div class="py-2"><span class="badge badge-secondary">{{ __('general.havent_seen') }}</span> -> {{ __('tutorial.sequential_8') }}</div>
-            <div class="py-2"><span class="badge badge-secondary">{{ __('general.definitely_dont_recommend') }}</span> -> {{ __('tutorial.sequential_9') }}</div>
-            <div class="py-2"><span class="badge badge-secondary">{{ __('general.dont_recommend') }}</span> -> {{ __('tutorial.sequential_10') }}</div>
-            <div class="py-2"><span class="badge badge-secondary">{{ __('general.not_sure') }}</span> -> {{ __('tutorial.sequential_11') }}</div>
-            <div class="py-2"><span class="badge badge-secondary">{{ __('general.recommend') }}</span> -> {{ __('tutorial.sequential_12') }}</div>
-            <div class="py-2"><span class="badge badge-secondary">{{ __('general.definitely_recommend') }}</span> -> {{ __('tutorial.sequential_13') }}</div>
-            <div class="h6 text-muted mt-4">{{ __('tutorial.sequential_14') }}</div>
-            <div class="py-2"><span class="text-muted">{{ __('tutorial.quest') }}: </span><span ng-class="{'badge badge-danger':current_level < 102}">{{ __('tutorial.sequential_mission_2') }}</span> <i class="fa fa-check" ng-show="current_level > 101"></i></div>
-            <div class="mt-2"><small>{{ __('tutorial.sequential_15') }}</small></div>
-            <div class="mt-2">{!! __('tutorial.sequential_16') !!}</div>
-            <div class="mt-2">{!! __('tutorial.sequential_17') !!}</div>
-            <div class="mt-2">{!! __('tutorial.sequential_18') !!}</div>
+            {{ __('tutorial.sequential_2') }}
           </li>
         </ul>
       </div>
