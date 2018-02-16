@@ -34,7 +34,7 @@
         {{ __('tutorial.sequential_1') }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" ng-hide="current_level < 102" ng-click="level_up(200)">{{ __('tutorial.next_lesson') }}</button>
+        <button type="button" class="btn btn-primary" ng-click="level_up(200)">{{ __('tutorial.next_lesson') }}</button>
       </div>
     </div>
     <!--QUICK RATE-->
