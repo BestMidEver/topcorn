@@ -122,6 +122,12 @@
                         <a class="nav-link" href="/account">{{ __('navbar.account') }}</a>
                         <div class="dropdown-divider"></div>
                     </li>
+                    @if(Auth::User()->level < 700)
+                    <li class="nav-item d-md-none" ng-show="current_level==1">
+                        <button class="nav-link" data-toggle="modal" data-target="#tutorial">@{{ current_level < 2 ? start_course : graduate }}</button>
+                        <div class="dropdown-divider"></div>
+                    </li>
+                    @endif
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
                     </li>
@@ -192,9 +198,6 @@
                     <div class="py-2 small"><a class="text-dark" href="/search">{{ __('navbar.movie_person_user_search') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/account">{{ __('navbar.account') }}</a></div>
-                    @if(Auth::User()->level < 700)
-                    <div class="py-2 small" ng-show="current_level==1"><button class="text-dark">{{ __('navbar.account') }}</button></div>
-                    @endif
                 </div>
                 <div class="col-4 col-sm-2">
                     <div class="py-2 small"><a class="text-dark" href="/change_insta_language/en">English</a></div>
