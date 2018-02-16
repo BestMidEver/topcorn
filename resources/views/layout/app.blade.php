@@ -120,11 +120,10 @@
                     </li>
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/account">{{ __('navbar.account') }}</a>
-                        <div class="dropdown-divider"></div>
                     </li>
                     @if(Auth::User()->level < 700)
                     <li class="nav-item d-md-none" ng-show="current_level==1">
-                        <button class="nav-link" data-toggle="modal" data-target="#tutorial">@{{ current_level < 2 ? start_course : graduate }}</button>
+                        <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial">@{{ current_level < 2 ? start_course : graduate }}</button>
                         <div class="dropdown-divider"></div>
                     </li>
                     @endif
