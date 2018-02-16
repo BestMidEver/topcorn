@@ -12,8 +12,6 @@ return [
     'users_manual_1' => 'topcorn.io\'ya hoş geldin!',
     'users_manual_2' => 'Siteye tümüyle hakim olabilmen için ufak bir eğitim hazırladık. 15 dk sonra tüm özellikleriyle topcorn.io ustası haline geleceksin.',
     'sequential_1' => 'Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.',
-    'sequential_3' => 'Özelliğe Erişim',
-    'sequential_4' => 'Peş Peşe Oylamak için sayfanın en üstünde gezinti çubuğundaki <span class="badge badge-secondary"><i class="fa fa-star-half-o" aria-hidden="true"></i> Peş Peşe Oyla</span> tuşuna basabilirsin.',
     'sequential_mission' => 'Peş Peşe Oylama özelliğini çalıştır.',
     'sequential_5' => 'Neye Göre Oy Vermelisin?',
     'sequential_6' => 'İzlediğin her film için cevap vermen gereken yalnızca bir soru vardır:',
