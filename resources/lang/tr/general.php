@@ -28,7 +28,7 @@ return [
     'continue_without_facebook' => 'Facebook Olmadan Devam Et',                         //home
     'country' => 'Ülke',                                                                //donation,
     'cover_photo' => 'Kapak Fotoğrafı',                                                 //account,
-    'cover_photo_help' => '"Kesinlikle" Dediklerinden',                            //account,
+    'cover_photo_help' => '"Bayıldım" Dediklerinden',                            //account,
     'create_new_password' => 'Yeni Şifre Oluştur',                                      //reset,
     'crew' => 'Set Ekibi',          
     'current_password' => 'Şimdiki Şifre',                                              //accountpassword,
@@ -37,9 +37,9 @@ return [
     'directors' => 'Yönetmenler',
     'disabled' => 'Devre Dışı',                                                         //accountinterface,
     'definitely_dont_recommend' => 'Sakın',                                 //ratemodal, profile,
-    'definitely_recommend' => 'Kesinlikle',                                        //ratemodal, profile,
+    'definitely_recommend' => 'Bayıldım',                                        //ratemodal, profile,
     'dollar_account' => 'Dolar Hesabı',                                                 //donation,
-    'dont_recommend' => 'Önerme',                                                       //ratemodal, profile,
+    'dont_recommend' => 'Yok yok',                                                       //ratemodal, profile,
     'editing' => 'Kurgu',
     'email' => 'E-Posta',                                                               //email, reset, login, register,
     'email_confirmation' => 'Tekrar E-Posta',                                           //register,
@@ -79,7 +79,7 @@ return [
     'next' => 'Sonraki',                                                                //pagination,
     'no_result' => 'Sonuç bulunamadı.',                                                 //profile, search
     'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                //movie
-    'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,
+    'not_sure' => 'Eh işte',                                                         //ratemodal, profile,
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
     'open_new_tab' => 'Yeni Sekme',                                                     //accountinterface,
@@ -103,7 +103,7 @@ return [
     'profile_photo_help' => '(Kapaktaki Filmin Oyuncularından)',                        //account,
     'read_all' => 'Hepsini oku',            
     'recipient_name' => 'Alıcının Adı',                                                 //donation,
-    'recommend' => 'Öner',                                                              //ratemodal, profile,
+    'recommend' => 'Başarılı',                                                          //ratemodal, profile,
     'remember_me' => 'Beni hatırla',                                                    //login,
     'remove' => 'Sil',                                                                  //recommendations,
     'revenue' => 'Gelir',           
