@@ -1,16 +1,15 @@
 <?php
 
 return [
-    'do_it_later' => 'Sonra Yap',
+    'do_it_later' => 'Sonra',
     'reach_page' => 'Sayfaya Erişim',
-    'start_course' => 'Kursa Başlayalım',
+    'start_course' => 'Başla',
     'next_lesson' => 'Sonraki Ders',
     'previous_lesson' => 'Önceki Ders',
     'quest' => 'Görev',
     'last_quest' => 'Son Görev',
-    'users_manual' => 'Kullanım Klavuzu',
-    'users_manual_1' => 'Zaten kullanımı çok basit olan Topcorn\'un temel özelliklerini öğrenmen ve mantığını kavraman için sana kısa bir kurs hazırladık.',
-    'users_manual_2' => 'Buraya, sayfanın en üstünde ve ortasındaki <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursa Başla</span> veya <span class="badge badge-secondary"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Kursu Bitir</span> tuşuna basarak ulaşabilirsin.',
+    'users_manual' => 'topcorn.io\'ya hoş geldin!',
+    'users_manual_1' => 'Siteye tümüyle hakim olabilmen için ufak bir eğitim hazırladık. 15 dk sonra tüm özellikleriyle topcorn.io ustası haline geleceksin.',
     'sequential_1' => 'Ne İşe Yarar?',
     'sequential_2' => 'Topcorn, daha önce izlediğin filmlere verdiğin oylardan yola çıkarak senin film zevkini öğrenir ve sana özel film önerilerinde bulunur. Peş peşe oylama özelliği, en sıklıkla oylanan filmleri sana sorarak profilini güçlendirmene yardımcı olur. ',
     'sequential_3' => 'Özelliğe Erişim',

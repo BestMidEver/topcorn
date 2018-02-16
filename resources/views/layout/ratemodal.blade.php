@@ -7,9 +7,9 @@
 					<div class="text-center h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row justify-content-between">
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-left" data-toggle="tooltip" data-placement="bottom" title="{{ __('long_texts.the_question') }}">
+								<!--<button type="button" class="btn btn-secondary btn-sm badge-light float-left" data-toggle="tooltip" data-placement="bottom" title="{{ __('long_texts.the_question') }}">
 									<i class="fa fa-question" aria-hidden="true"></i>
-								</button>
+								</button>-->
 							</div>
 							<div class="faderdiv">
 								<h4 data-toggle="tooltip" data-placement="bottom" data-original-title="@{{modalmovie.original_title}}"><a href="/movie/@{{modalmovie.id}}" target={{$target}}><span class="badge badge-light yeswrap p-1">@{{modalmovie.title}} <small><em>(@{{modalmovie.release_date.substring(0, 4)}})</em></small></span></a></h4>
