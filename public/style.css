@@ -51,7 +51,7 @@ button:focus{box-shadow: none!important;}
 .bordered_button{border-color:#fff;}
 .tmdblogo{height: 30px;}
 .underlined{border-bottom: 5px solid #5BC0EB;}
-.z-2000{z-index: 2000;}
+.z-1041{z-index: 1041;}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
