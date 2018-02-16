@@ -31,14 +31,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <ul class="list-group">
-          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 100}">
-            {{ __('tutorial.sequential_1') }}
-          </li>
-          <li class="list-group-item" ng-class="{'list-group-item-success':current_level > 101}" ng-if="current_level > 100">
-            {{ __('tutorial.sequential_2') }}
-          </li>
-        </ul>
+        {{ __('tutorial.sequential_1') }}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" ng-hide="current_level < 102" ng-click="level_up(200)">{{ __('tutorial.next_lesson') }}</button>
