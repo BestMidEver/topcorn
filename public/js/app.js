@@ -34,7 +34,9 @@ $(document).ready(function() {
 		$( ".faderdiv" ).toggleClass( "faded" );
 	});
 	$(function () {
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover({
+    container: 'body'
+  })
 })
 });
 
