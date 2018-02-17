@@ -1,4 +1,4 @@
-MyApp.controller('DonationPageController', function($scope, $http, rate)
+MyApp.controller('DonationPageController', function($scope, $http, rate, $sce)
 {
 	  $scope.dynamicPopover = {
     content: 'Hello, World!',
