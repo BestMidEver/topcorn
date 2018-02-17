@@ -36,6 +36,7 @@ $(document).ready(function() {
 
 	$("[data-toggle=popover]").each(function(i, obj) {
 		$(this).popover({
+			trigger: 'focus',
 			container: 'body',
 			html: true,
 			content: function() {
