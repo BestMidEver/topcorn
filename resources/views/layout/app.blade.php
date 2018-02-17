@@ -96,7 +96,18 @@
                         <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}s</button>
+                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true" 
+                            @if(Auth::User()->level < 700)
+                            data-toggle="popover" title="Dismissible popover" id="quickvote"
+                            @endif
+                        ></i> {{ __('navbar.sequentialvote') }}</button>
+                        @if(Auth::User()->level < 700)
+                        <div id="popover-content-quickvote" class="d-none">
+                            <div>muhahah</div>
+                            <a href="#riza">riza</a>
+                            <a href="#gabar">gabar</a>
+                        </div>
+                        @endif
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">

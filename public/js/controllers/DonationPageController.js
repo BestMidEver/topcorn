@@ -150,13 +150,11 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 			console.log(location.hash)
 			switch(location.hash){
 				case '#riza':
-					$('#bir').popover('hide')
+					$('#quickvote').popover('hide')
 					break;
 				case '#gabar':
-					$('#bir').popover('show')
+					$('#quickvote').popover('show')
 					break;
-				default:
-					window.location.replace("/not-found");
 			}
 		}, false);
 
