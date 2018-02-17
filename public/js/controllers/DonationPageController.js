@@ -150,10 +150,10 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 			console.log(location.hash)
 			switch(location.hash){
 				case '#riza':
-					$('#popover-content-bir').popover('hide')
+					$('#bir').popover('hide')
 					break;
 				case '#gabar':
-					$('#popover-content-bir').popover('show')
+					$('#bir').popover('show')
 					break;
 				default:
 					window.location.replace("/not-found");
