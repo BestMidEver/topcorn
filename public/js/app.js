@@ -44,6 +44,15 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	switch(location.hash){
+		case '#riza':
+			$('#bir').popover('hide')
+			break;
+		case '#gabar':
+			$('#bir').popover('show')
+			break;
+	}
 });
 
 $('[data-toggle="tooltip"]').tooltip({
