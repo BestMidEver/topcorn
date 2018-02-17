@@ -4,7 +4,7 @@
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
-<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-html="true" data-content='And here\'s some amazing content. It\'s very engaging. <button ng-click="gabar()">Right?</button>'>Click to toggle popover</button>
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-html="true" data-content='And here very engaging. <button ng-click="gabar()">Right?</button>'>Click to toggle popover</button>
 <script type="text/html" id="my-popover-content">
     *** HTML CONTENT GOES HERE ***
 </script>
