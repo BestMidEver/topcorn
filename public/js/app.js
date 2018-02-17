@@ -44,6 +44,10 @@ $(document).ready(function() {
 			}
 		});
 	});
+
+	function gaben(){
+		console.log(muhahah)
+	}
 });
 
 $('[data-toggle="tooltip"]').tooltip({
