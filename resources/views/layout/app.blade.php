@@ -98,14 +98,15 @@
                     <li class="nav-item">
                         <button class="nav-link text-warning btn btn-link" ng-click="quickvote()" 
                             @if(Auth::User()->level < 700)
-                            data-toggle="popover" title="Dismissible popover" id="quickvote"
+                            data-toggle="popover" title="Peş Peşe Oyla" id="quickvote"
                             @endif
                         ><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
                         @if(Auth::User()->level < 700)
                         <div id="popover-content-quickvote" class="d-none">
-                            <div>muhahah</div>
-                            <a href="#riza">riza</a>
-                            <a href="#gabar">gabar</a>
+                            <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
+                            <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
+                            <a href="#riza">İpuçlarını Gösterme</a>
+                            <a href="#gabar">Sonraki İpucu</a>
                         </div>
                         @endif
                         <div class="dropdown-divider d-md-none"></div>
