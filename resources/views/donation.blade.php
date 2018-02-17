@@ -4,7 +4,8 @@
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
-
+<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover"
+ data-html="true" data-content='And herevery engaging. <button onclick=(gaben())>0Right?</button>'>Dismissible popover</a>
 <div class="p-3">
 	<p class="lead">{{ __('long_texts.donation') }}</p>
 </div>
