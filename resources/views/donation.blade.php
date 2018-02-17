@@ -4,7 +4,7 @@
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
-<a tabindex="0" id="bir" class="btn btn-lg btn-danger" role="button" data-toggle="popover" title="Dismissible popover">Dismissible popover</a>
+<a tabindex="0" id="bir" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover">Dismissible popover</a>
 <div id="popover-content-bir" class="d-none">
 	<div>muhahah</div>
 	<a href="#riza">riza</a>
