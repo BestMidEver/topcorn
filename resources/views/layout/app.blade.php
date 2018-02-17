@@ -95,12 +95,12 @@
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
                     </li>
-                    <li class="nav-item">
-                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()" 
+                    <li class="nav-item"
                             @if(Auth::User()->level < 700)
                             data-toggle="popover" title="Peş Peşe Oyla" id="quickvote"
                             @endif
-                        ><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
+                        >
+                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
                         @if(Auth::User()->level < 700)
                         <div id="popover-content-quickvote" class="d-none">
                             <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
