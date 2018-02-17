@@ -105,8 +105,10 @@
                         <div id="popover-content-quickvote" class="d-none">
                             <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
                             <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
-                            <a href="#riza">İpuçlarını Gösterme</a>
-                            <a href="#gabar">Sonraki İpucu</a>
+                            <div class="text-right">
+                                <a class="btn btn-link" href="#riza">İpuçlarını Gösterme</a>
+                                <a class="btn btn-link" href="#gabar">Sonraki İpucu</a>
+                            </div>
                         </div>
                         @endif
                         <div class="dropdown-divider d-md-none"></div>
