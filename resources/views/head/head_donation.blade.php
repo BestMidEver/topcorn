@@ -15,6 +15,7 @@ pass={
 @endsection
 
 @section('angular_controller_js')
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
 <script src="/js/controllers/DonationPageController.js"></script>
 @endsection
 @section('controllername','DonationPageController')
