@@ -1,7 +1,7 @@
 @section('passdata')
 <script type="text/javascript">
 pass={
-	"angular_module_array":['ui.bootstrap'], 
+	"angular_module_array":['ngAnimate', 'ngSanitize', 'ui.bootstrap'], 
 	"lang":"{{ App::getlocale() }}",
 	"constants_domain":"{{config('api.url')}}",
 	"level":{{ Auth::User()->level }},
