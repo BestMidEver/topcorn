@@ -1,13 +1,13 @@
-MyApp.controller('DonationPageController', function($scope, $http, rate, $location)
+MyApp.controller('DonationPageController', function($scope, $http, rate)
 {
 	function gaben(){
 		console.log(muhahah)
 	}
-	$scope.$watch(function(){
-	    return $location.path();
-	}, function(value){
-	    console.log(value);
-	})
+	$scope.$watch(function () {
+    return location.hash
+}, function (value) {
+    console.log(":D:D")
+});
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
