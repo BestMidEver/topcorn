@@ -1,4 +1,4 @@
-MyApp.controller('DonationPageController', function($scope, $http, rate)
+MyApp.controller('DonationPageController', function($scope, $http, rate, $location)
 {
 	function gaben(){
 		console.log(muhahah)
