@@ -147,7 +147,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 	if(pass.level < 700){
 		window.addEventListener("hashchange", function(){ 
 			//$scope.$apply();
-			console.log(":D:ssD2") 
+			console.log(location.hash) 
 		}, false);
 
 
