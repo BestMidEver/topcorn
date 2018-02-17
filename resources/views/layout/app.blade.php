@@ -96,11 +96,11 @@
                         <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true" 
+                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()" 
                             @if(Auth::User()->level < 700)
                             data-toggle="popover" title="Dismissible popover" id="quickvote"
                             @endif
-                        ></i> {{ __('navbar.sequentialvote') }}</button>
+                        ><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
                         @if(Auth::User()->level < 700)
                         <div id="popover-content-quickvote" class="d-none">
                             <div>muhahah</div>
