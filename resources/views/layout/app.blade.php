@@ -106,7 +106,7 @@
                             <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
                             <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
                             <div class="text-right">
-                                <a class="btn btn-sm btn-link d-inline" href="#riza">İpuçlarını Gösterme</a>
+                                <a class="btn btn-sm btn-link d-inline text-muted" href="#riza">İpuçlarını Gösterme</a>
                                 <a class="btn btn-sm btn-link d-inline" href="#gabar">Sonraki İpucu</a>
                             </div>
                         </div>
