@@ -72,13 +72,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @if(Auth::User()->level < 700)
-            <ul class="navbar-nav ml-auto" ng-show="current_level<700 && current_level!=1">
-                <li class="nav-item">
-                    <button class="nav-link d-md-none btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="d-none d-sm-inline"> @{{ current_level < 2 ? start_course : graduate }}</span></button>
-                </li>
-            </ul>
-            @endif
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
@@ -96,12 +89,6 @@
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    @if(Auth::User()->level < 700)
-                    <li class="nav-item d-md-none" ng-show="current_level<700 && current_level!=1">
-                        <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial"><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
-                        <div class="dropdown-divider d-md-none"></div>
-                    </li>
-                    @endif
                     <li class="nav-item">
                         <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
                     </li>
@@ -109,7 +96,7 @@
                         <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
+                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}s</button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
@@ -121,12 +108,6 @@
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/account">{{ __('navbar.account') }}</a>
                     </li>
-                    @if(Auth::User()->level < 700)
-                    <li class="nav-item d-md-none" ng-show="current_level==1">
-                        <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial">@{{ current_level < 2 ? start_course : graduate }}</button>
-                        <div class="dropdown-divider"></div>
-                    </li>
-                    @endif
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
                     </li>
@@ -138,13 +119,6 @@
                         <a class="nav-link text-muted" href="#">{{ __('navbar.logout') }}</a>
                     </li>
                 </ul>
-                @if(Auth::User()->level < 700)
-                <ul class="navbar-nav mx-auto d-none d-md-inline" ng-show="current_level<700 && current_level!=1">
-                    <li class="nav-item">
-                        <button class="nav-link btn btn-link" data-toggle="modal" data-target="#tutorial"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class=""> @{{ current_level < 2 ? start_course : graduate }}</span></button>
-                    </li>
-                </ul>
-                @endif
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
@@ -157,9 +131,6 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/account">{{ __('navbar.account') }}</a>
-                            @if(Auth::User()->level < 700)
-                            <button class="dropdown-item btn btn-link" ng-show="current_level==1" data-toggle="modal" data-target="#tutorial">@{{ current_level < 2 ? start_course : graduate }}</button>
-                            @endif
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
                             <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
