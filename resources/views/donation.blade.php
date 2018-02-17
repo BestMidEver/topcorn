@@ -4,7 +4,7 @@
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
-<button uib-popover-template="myPopoverTemplate" popover-title="taytil" type="button" class="btn btn-default" ng-click="gabar()">Popover With Template</button>
+<button uib-popover-template="'myPopoverTemplate'" popover-title="taytil" type="button" class="btn btn-default" ng-click="gabar()">Popover With Template</button>
 <script type="text/ng-template" id="myPopoverTemplate">
     <div>
       asd
