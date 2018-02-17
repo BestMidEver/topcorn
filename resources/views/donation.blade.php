@@ -4,10 +4,12 @@
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
-<button id="gabar" type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-html="true">Click to toggle popover</button>
-<div id="popover-content-gabar">
-	burası da dutlug <button class="gabarx">gabalar</button>
-</div>
+<button uib-popover-template="dynamicPopover.templateUrl" popover-title="taytil" type="button" class="btn btn-default">Popover With Template</button>
+<script type="text/ng-template" id="myPopoverTemplate.html">
+        <div class="form-group">
+          <label>Popup Title:</label>
+        </div>
+    </script>
 <div class="p-3">
 	<p class="lead">{{ __('long_texts.donation') }}</p>
 </div>
