@@ -147,7 +147,17 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 	if(pass.level < 700){
 		window.addEventListener("hashchange", function(){ 
 			//$scope.$apply();
-			console.log(location.hash) 
+			console.log(location.hash)
+			switch(location.hash){
+				case '#riza':
+					$('#popover-content-bir').popover('hide')
+					break;
+				case '#gabar':
+					$('#popover-content-bir').popover('show')
+					break;
+				default:
+					window.location.replace("/not-found");
+			}
 		}, false);
 
 
