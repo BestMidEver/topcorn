@@ -34,10 +34,10 @@ $(document).ready(function() {
 		$( ".faderdiv" ).toggleClass( "faded" );
 	});
 	$(function () {
-  $('[data-toggle="popover"]').popover({
-    container: 'body'
-  })
-})
+	  $('[data-toggle="popover"]').popover({
+	    container: 'body'
+	  })
+	})
 });
 
 $('[data-toggle="tooltip"]').tooltip({
