@@ -1,20 +1,5 @@
 MyApp.controller('DonationPageController', function($scope, $http, rate)
 {
-	function gaben(){
-		console.log(muhahah)
-	}
-	$scope.$watch(function () {
-    return location.hash
-}, function (value) {
-    console.log(":D:D")
-});
-	$scope.$on('$locationChangeSuccess', function(event, newUrl, oldUrl){
-    // TODO What you want on the event.
-    console.log(":D:ssD")
-});
-	$scope.$on("$routeChangeSuccess", function () {console.log(":D:ssD1")})
-	$scope.$on("$stateChangeSuccess", function () {console.log(":D:ssD2")})
-	window.addEventListener("hashchange", function(){ $scope.$apply();console.log(":D:ssD2") }, false);
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -160,6 +145,24 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.level < 700){
+		window.addEventListener("hashchange", function(){ 
+			//$scope.$apply();
+			console.log(":D:ssD2") 
+		}, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		$scope.show_tutorial = function(){
 			setTimeout(function() {
 				$('#tutorial').modal('show');
@@ -259,119 +262,4 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-/*
-//////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////// SAME PART //////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-	$scope.paginate = function(page)
-	{
-		$scope.page = page;
-		$scope.get_page_data();
-		$scope.scroll_to_top();
-	}
-
-	$scope.votemodal=function(index, movie)
-	{
-		$scope.modalmovie=movie;
-		$scope.modalmovie.index=index;
-		$('#myModal').modal('show');
-	};
-
-	$scope.rate_class = function(is_rated)
-	{
-		switch(is_rated) {
-			case 5:
-				return 'btn-success';
-			case 4:
-				return 'btn-info';
-			case 3:
-				return 'btn-secondary';
-			case 2:
-				return 'btn-warning text-white';
-			case 1:
-				return 'btn-danger';
-			default:
-				return 'btn-outline-secondary addlarter';
-		}
-	}
-
-	$scope.later=function(index)
-	{
-		console.log(index)
-		if($scope.movies[index].later_id == null){
-			rate.add_later($scope.movies[index].id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.movies[index].later_id=response.data.data.later_id;
-				}
-			});
-		}else{
-			rate.un_later($scope.movies[index].later_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204 || response.status == 404){
-					$scope.movies[index].later_id=null;
-				}
-			});
-		}
-	};
-	
-	$scope.rate=function(index, rate_code)
-	{
-		console.log(index, rate_code)
-		$('#myModal').modal('hide');
-		if(rate_code != null){
-			rate.add_rate($scope.movies[index].id, rate_code)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.movies[index].rated_id=response.data.data.rated_id;
-					$scope.movies[index].rate_code=response.data.data.rate;
-				}else{
-					$('#myModal').modal('show');
-				}
-			});
-		}else if(rate_code == null){
-			rate.un_rate($scope.movies[index].rated_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204){
-					$scope.movies[index].rated_id=null;
-					$scope.movies[index].rate_code=null;
-				}else{
-					$('#myModal').modal('show');
-				}
-			});
-		}
-	};
-
-	$scope.ban=function(index)
-	{
-		console.log(index)
-		if($scope.movies[index].ban_id == null){
-			rate.add_ban($scope.movies[index].id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.movies[index].ban_id=response.data.data.ban_id;
-				}
-			});
-		}else{
-			rate.un_ban($scope.movies[index].ban_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204 || response.status == 404){
-					$scope.movies[index].ban_id=null;
-				}
-			});
-		}
-	};
-//////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////// SAME PART //////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-*/
 });
