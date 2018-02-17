@@ -33,6 +33,9 @@ $(document).ready(function() {
 	$( ".votecard .card-img" ).click(function() {
 		$( ".faderdiv" ).toggleClass( "faded" );
 	});
+	$(function () {
+  $('[data-toggle="popover"]').popover()
+})
 });
 
 $('[data-toggle="tooltip"]').tooltip({
