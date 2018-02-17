@@ -34,6 +34,7 @@ $(document).ready(function() {
 		$( ".faderdiv" ).toggleClass( "faded" );
 	});
 
+});
 	$("[data-toggle=popover]").each(function(i, obj) {
 		$(this).popover({
 			container: 'body',
@@ -44,7 +45,6 @@ $(document).ready(function() {
 			}
 		});
 	});
-});
 
 $('[data-toggle="tooltip"]').tooltip({
 	trigger : 'hover'
