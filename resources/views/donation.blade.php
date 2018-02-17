@@ -5,7 +5,7 @@
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
 <button id="gabar" type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-html="true">Click to toggle popover</button>
-<div id="popover-content-gabar" class="hide">
+<div id="popover-content-gabar" class="d-none">
 	burası da dutlug <a href="#" ng-click="gabar()">gabalar</a>
 </div>
 <div class="p-3">
