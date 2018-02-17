@@ -16,12 +16,12 @@ var MyApp = angular.module('MyApp', pass.angular_module_array)
 	}
 })
 .filter('range', function() {
-  return function(input, total) {
-    total = parseInt(total);
-    for (var i=0; i<total; i++)
-      input.push(i);
-    return input;
-  };
+	return function(input, total) {
+		total = parseInt(total);
+		for (var i=0; i<total; i++)
+			input.push(i);
+		return input;
+	};
 });
 
 $('#myModal').on('shown.bs.modal', function () {
@@ -33,13 +33,19 @@ $(document).ready(function() {
 	$( ".votecard .card-img" ).click(function() {
 		$( ".faderdiv" ).toggleClass( "faded" );
 	});
-	$(function () {
-	  $('[data-toggle="popover"]').popover({
-	    container: 'body'
-	  })
-	})
+
+	$("[data-toggle=popover]").each(function(i, obj) {
+		$(this).popover({
+			container: 'body',
+			html: true,
+			content: function() {
+				var id = $(this).attr('id')
+				return $('#popover-content-' + id).html();
+			}
+		});
+	});
 });
 
 $('[data-toggle="tooltip"]').tooltip({
-    trigger : 'hover'
+	trigger : 'hover'
 });

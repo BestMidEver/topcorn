@@ -4,10 +4,10 @@
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
-<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-html="true" data-content='And here very engaging. <button ng-click="gabar()">Right?</button>'>Click to toggle popover</button>
-<script type="text/html" id="my-popover-content">
-    *** HTML CONTENT GOES HERE ***
-</script>
+<button id="gabar" type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-html="true">Click to toggle popover</button>
+<div id="popover-content-gabar">
+	burası da dutlug <button ng-click="gabar()">gabalar</button>
+</div>
 <div class="p-3">
 	<p class="lead">{{ __('long_texts.donation') }}</p>
 </div>
