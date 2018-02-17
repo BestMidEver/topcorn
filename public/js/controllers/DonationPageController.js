@@ -2,8 +2,8 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 {
 	$scope.savar ={}
 	$scope.savar.gabar=function(){console.log("gabar :D")}
-	$('#gabarx').click(function() {
-	  alert( "Handler for .click() called." );
+	$(".gabarx").click(function() {
+	  console.log( "Handler for .click() called." );
 	});
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
