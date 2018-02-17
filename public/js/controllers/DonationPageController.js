@@ -1,29 +1,5 @@
-MyApp.controller('DonationPageController', function($scope, $http, rate, $sce)
+MyApp.controller('DonationPageController', function($scope, $http, rate)
 {
-	  $scope.dynamicPopover = {
-    content: 'Hello, World!',
-    templateUrl: 'myPopoverTemplate.html',
-    title: 'Title'
-  };
-
-  $scope.placement = {
-    options: [
-      'top',
-      'top-left',
-      'top-right',
-      'bottom',
-      'bottom-left',
-      'bottom-right',
-      'left',
-      'left-top',
-      'left-bottom',
-      'right',
-      'right-top',
-      'right-bottom'
-    ],
-    selected: 'top'
-  };
-  $scope.gabar = function(){console.log(':D abar')}
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
