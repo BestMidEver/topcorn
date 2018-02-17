@@ -42,8 +42,10 @@ $(document).ready(function() {
 				var id = $(this).attr('id')
 				return $('#popover-content-' + id).html();
 			}
+		}).click(function() {
+		  console.log( "Handler for .click() called." );
+		});;
 		});
-	});
 });
 
 $('[data-toggle="tooltip"]').tooltip({
