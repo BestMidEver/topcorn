@@ -1,4 +1,4 @@
-MyApp.controller('DonationPageController', function($scope, $http, rate)
+MyApp.controller('DonationPageController', function($scope, $http, rate, $sce)
 {
 	$scope.savar ={}
 	$scope.savar.gabar=function(){console.log("gabar :D")}
