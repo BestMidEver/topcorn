@@ -148,7 +148,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 		window.addEventListener("hashchange", function(){ 
 			//$scope.$apply();
 			console.log(":D:ssD2") 
-		}, true);
+		}, false);
 
 
 
