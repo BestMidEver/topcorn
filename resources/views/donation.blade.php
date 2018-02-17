@@ -4,7 +4,7 @@
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.donation') }}</h5>
-<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-content="#my-popover-content">Click to toggle popover</button>
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title" data-html="true" data-target="#my-popover-content">Click to toggle popover</button>
 <script type="text/html" id="my-popover-content">
     *** HTML CONTENT GOES HERE ***
 </script>
