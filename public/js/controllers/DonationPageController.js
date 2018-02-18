@@ -145,13 +145,30 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.tt_navbar < 6){
+		switch(pass.tt_navbar){
+			case 0:
+				location.hash="tooltip-quickvote";
+				break;
+			case 1:
+				location.hash="tooltip-search";
+				break;
+			case 2:
+				location.hash="tooltip-recommendations";
+				break;
+			case 3:
+				location.hash="tooltip-profile";
+				break;
+			case 4:
+				location.hash="tooltip-percentage";
+				break;
+		}
+
 		window.addEventListener("hashchange", function(){ 
 			console.log(location.hash)
-			location.hash="Gabar";
 			switch(location.hash){
 				case '#tooltip-quickvote':
 					$("[data-toggle=popover]").popover('hide')
-					$('#quickvote').popover('hide')
+					$('#quickvote').popover('show')
 					break;
 				case '#tooltip-search':
 					$("[data-toggle=popover]").popover('hide')
