@@ -149,6 +149,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 			console.log(location.hash)
 			switch(location.hash){
 				case '#tooltip-quickvote':
+					$("[data-toggle=popover]").popover('hide')
 					$('#quickvote').popover('hide')
 					break;
 				case '#tooltip-search':
@@ -156,15 +157,15 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 					$('#search').popover('show')
 					break;
 				case '#tooltip-recommendations':
+					$("[data-toggle=popover]").popover('hide')
 					$('#recommendations').popover('show')
 					break;
 				case '#tooltip-profile':
-					$("[data-toggle=popover]").each(function(i, obj) {
-						$(this).popover('hide');
-					});
+					$("[data-toggle=popover]").popover('hide')
 					$('#profile').popover('show')
 					break;
 				case '#tooltip-percentage':
+					$("[data-toggle=popover]").popover('hide')
 					$('#percentage').popover('show')
 					break;
 			}
