@@ -152,12 +152,16 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 					$('#quickvote').popover('hide')
 					break;
 				case '#tooltip-search':
+					$("[data-toggle=popover]").popover('hide')
 					$('#search').popover('show')
 					break;
 				case '#tooltip-recommendations':
 					$('#recommendations').popover('show')
 					break;
 				case '#tooltip-profile':
+					$("[data-toggle=popover]").each(function(i, obj) {
+						$(this).popover('hide');
+					});
 					$('#profile').popover('show')
 					break;
 				case '#tooltip-percentage':
