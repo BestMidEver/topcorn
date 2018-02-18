@@ -146,14 +146,22 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 //////////////////////////////////////////////////////////////////////////////////////////
 	if(pass.level < 700){
 		window.addEventListener("hashchange", function(){ 
-			//$scope.$apply();
 			console.log(location.hash)
 			switch(location.hash){
-				case '#riza':
+				case '#tooltip-quickvote':
 					$('#quickvote').popover('hide')
 					break;
-				case '#gabar':
-					$('#quickvote').popover('show')
+				case '#tooltip-search':
+					$('#search').popover('show')
+					break;
+				case '#tooltip-recommendations':
+					$('#recommendations').popover('show')
+					break;
+				case '#tooltip-profile':
+					$('#profile').popover('show')
+					break;
+				case '#tooltip-percentage':
+					$('#percentage').popover('show')
 					break;
 			}
 		}, false);

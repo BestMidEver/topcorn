@@ -39,6 +39,7 @@ $(document).ready(function() {
 			container: 'body',
 			html: true,
 			placement: 'bottom',
+			trigger: 'focus',
 			content: function() {
 				var id = $(this).attr('id')
 				return $('#popover-content-' + id).html();
@@ -47,11 +48,20 @@ $(document).ready(function() {
 	});
 
 	switch(location.hash){
-		case '#riza':
+		case '#tooltip-quickvote':
 			$('#quickvote').popover('hide')
 			break;
-		case '#gabar':
-			$('#quickvote').popover('show')
+		case '#tooltip-search':
+			$('#search').popover('show')
+			break;
+		case '#tooltip-recommendations':
+			$('#recommendations').popover('show')
+			break;
+		case '#tooltip-profile':
+			$('#profile').popover('show')
+			break;
+		case '#tooltip-percentage':
+			$('#percentage').popover('show')
 			break;
 	}
 });

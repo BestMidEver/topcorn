@@ -89,28 +89,26 @@
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item"
+                            @if(Auth::User()->level < 700)
+                            data-toggle="popover" title="Tavsiyeler" id="recommendations"
+                            @endif
+                        >
                         <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item"
+                            @if(Auth::User()->level < 700)
+                            data-toggle="popover" title="Arama Yapma" id="search"
+                            @endif
+                        >
                         <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->level < 700)
-                            data-toggle="popover" title="Peş Peşe Oyla" id="quickvote"
+                            data-toggle="popover" title="Hızlı Oylama" id="quickvote"
                             @endif
                         >
                         <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
-                        @if(Auth::User()->level < 700)
-                        <div id="popover-content-quickvote" class="d-none">
-                            <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
-                            <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
-                            <div class="text-right">
-                                <a class="btn btn-sm btn-link d-inline text-muted" href="#riza">İpuçlarını Gösterme</a>
-                                <a class="btn btn-sm btn-link d-inline" href="#gabar">Sonraki İpucu</a>
-                            </div>
-                        </div>
-                        @endif
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
@@ -137,7 +135,11 @@
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item"
+                            @if(Auth::User()->level < 700)
+                            data-toggle="popover" title="Profilin" id="profile"
+                            @endif
+                        >
                         <a class="nav-link {{ Request::segment(1) === 'profile' ? 'active' : null }}" href="/profile/{{ Auth::user()->id }}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span class="">{{ __('navbar.profile') }}</span></a>
                     </li>
                     <li class="nav-item dropdown">
@@ -209,6 +211,42 @@
 
 @if(Auth::User()->level < 700)
     @include('layout.tutorial')
+    <div id="popover-content-quickvote" class="d-none">
+        <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
+        <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
+        <div class="text-right">
+            <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
+            <a class="btn btn-sm btn-link d-inline" href="#tooltip-search">Anladım</a>
+        </div>
+    </div>
+    <div id="popover-content-search" class="d-none">
+        <p>"Yok benim belli filmlerim var. Beni oradan tanı." dersen de, hemen sol üstten dilediğin filmi aratıp izledim butonuyla oylama yapabilirsin.</p>
+        <div class="text-right">
+            <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
+            <a class="btn btn-sm btn-link d-inline" href="#tooltip-recommendations">Anladım</a>
+        </div>
+    </div>
+    <div id="popover-content-recommendations" class="d-none">
+        <p>İşte en güzel yerdeyiz! Bu linkten tam senlik filmlere sol baştan sıralı olarak ulaşabilirsin.</p>
+        <div class="text-right">
+            <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
+            <a class="btn btn-sm btn-link d-inline" href="#tooltip-profile">Anladım</a>
+        </div>
+    </div>
+    <div id="popover-content-profile" class="d-none">
+        <p>Profilini sevdiğin filmlerin görselleriyle kişiselleştirebilirsin. Ama unutma, ne kadar ço film oylarsan, o kadar çok verim alırsın.</p>
+        <div class="text-right">
+            <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
+            <a class="btn btn-sm btn-link d-inline" href="#tooltip-percentage">Anladım</a>
+        </div>
+    </div>
+    <div id="popover-content-percentage" class="d-none">
+        <p>Profilini tamamlamak için en az 50 film oylamalısın. Korkma hepsini şimdi oylamak zorunda değilsin.</p>
+        <div class="text-right">
+            <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
+            <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-done">Anladım</a>
+        </div>
+    </div>
 @endif
 </body>
 </html>
