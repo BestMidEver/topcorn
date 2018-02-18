@@ -39,7 +39,7 @@ $(document).ready(function() {
 			container: 'body',
 			html: true,
 			placement: 'bottom',
-			trigger: 'focus',
+			trigger: 'manual',
 			content: function() {
 				var id = $(this).attr('id')
 				return $('#popover-content-' + id).html();
