@@ -58,9 +58,7 @@ $(document).ready(function() {
 			$('#recommendations').popover('show')
 			break;
 		case '#tooltip-profile':
-			$("[data-toggle=popover]").each(function(i, obj) {
-				$(this).popover('hide');
-			});
+			$('#recommendations').popover('hide')
 			$('#profile').popover('show')
 			break;
 		case '#tooltip-percentage':
