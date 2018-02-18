@@ -147,7 +147,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 	if(pass.tt_navbar < 6){
 		window.addEventListener("hashchange", function(){ 
 			console.log(location.hash)
-			location.has="Gabar";
+			location.hash="Gabar";
 			switch(location.hash){
 				case '#tooltip-quickvote':
 					$("[data-toggle=popover]").popover('hide')
