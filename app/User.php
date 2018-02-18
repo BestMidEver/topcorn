@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'level', 'email', 'password', 'facebook_id', 'profile_pic', 'facebook_profile_pic', 'lang', 'secondary_lang', 'image_quality', 'margin_x_setting', 'open_new_tab', 'hover_title_language',
+        'name', 'level', 'email', 'password', 'facebook_id', 'profile_pic', 'facebook_profile_pic', 'lang', 'secondary_lang', 'image_quality', 'margin_x_setting', 'open_new_tab', 'hover_title_language', 'tt_navbar', 'tt_recommendations', 'tt_search', 'tt_quickvote', 'tt_profile', 'tt_account'
     ];
 
     /**

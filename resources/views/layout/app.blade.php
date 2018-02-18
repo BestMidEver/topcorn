@@ -209,7 +209,7 @@
     
 @include('layout.ratemodal')
 
-@if(Auth::User()->level < 700)
+@if(Auth::User()->tt_navbar < 6)
     @include('layout.tutorial')
     <div id="popover-content-quickvote" class="d-none">
         <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>

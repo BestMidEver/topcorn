@@ -16,14 +16,33 @@ class LevelController extends Controller
 
 
 
-    public function level_manipulate(Request $request)
+    public function tt_manipulate(Request $request)
     {
 		$user = Auth::User();
 
-    	$accepted_modes = [1,100,101,102,200,201,202,203,300,301,302,400,401,500,501,502,503,504,505,600,700];
-    	if(in_array($request->level, $accepted_modes))
+    	if($request->column == 'navbar')
+        {
+            $user->tt_navbar = $request->level;
+        }
+        else if($request->column == 'recommendations')
+        {
+            $user->tt_recommendations = $request->level;
+        }
+        else if($request->column == 'search')
+        {
+            $user->tt_search = $request->level;
+        }
+        else if($request->column == 'quickvote')
+        {
+            $user->tt_quickvote = $request->level;
+        }
+        else if($request->column == 'profile')
+        {
+            $user->tt_profile = $request->level;
+        }
+        else if($request->column == 'account')
     	{
-			$user->level = $request->level;
+			$user->tt_account = $request->level;
     	}
     	else
     	{
@@ -32,6 +51,6 @@ class LevelController extends Controller
 
 		$user->save();
 
-		return response($user->level, 200);
+		return response(['column' => $request->column, 'level' => $request->level], 200);
     }  
 }
