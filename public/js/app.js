@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 	switch(location.hash){
 		case '#tooltip-quickvote':
-			$('#quickvote').popover('hide')
+			$('#quickvote').popover('show')
 			break;
 		case '#tooltip-search':
 			$('#search').popover('show')
