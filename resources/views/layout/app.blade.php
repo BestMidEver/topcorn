@@ -234,7 +234,7 @@
         </div>
     </div>
     <div id="popover-content-profile" class="d-none">
-        <p>Profilini sevdiğin filmlerin görselleriyle kişiselleştirebilirsin. Ama unutma, ne kadar ço film oylarsan, o kadar çok verim alırsın.</p>
+        <p>Profilini sevdiğin filmlerin görselleriyle kişiselleştirebilirsin. Ama unutma, ne kadar çok film oylarsan, o kadar çok verim alırsın.</p>
         <div class="text-right">
             <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
             <a class="btn btn-sm btn-link d-inline" href="#tooltip-percentage">Anladım</a>
