@@ -46,25 +46,6 @@ $(document).ready(function() {
 			}
 		});
 	});
-
-	switch(location.hash){
-		case '#tooltip-quickvote':
-			$('#quickvote').popover('show')
-			break;
-		case '#tooltip-search':
-			$('#search').popover('show')
-			break;
-		case '#tooltip-recommendations':
-			$('#recommendations').popover('show')
-			break;
-		case '#tooltip-profile':
-			$('#recommendations').popover('hide')
-			$('#profile').popover('show')
-			break;
-		case '#tooltip-percentage':
-			$('#percentage').popover('show')
-			break;
-	}
 });
 
 $('[data-toggle="tooltip"]').tooltip({

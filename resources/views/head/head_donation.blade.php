@@ -5,8 +5,12 @@ pass={
 	"lang":"{{ App::getlocale() }}",
 	"constants_domain":"{{config('api.url')}}",
 	@if(Auth::check())
-	"level":{{ Auth::User()->level }},
-	"watched_movie_number":{{ $watched_movie_number }}
+	"tt_navbar":Auth::User()->tt_navbar,
+	"watched_movie_number":{{ $watched_movie_number }},
+
+
+	
+	"level":{{ Auth::User()->level }}
 	@endif
 };
 </script>
