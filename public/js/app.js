@@ -38,8 +38,8 @@ $(document).ready(function() {
 		$(this).popover({
 			container: 'body',
 			html: true,
-			placement: 'right',
-			trigger: 'hover',
+			placement: 'bottom',
+			trigger: 'manual',
 			content: function() {
 				var id = $(this).attr('id')
 				return $('#popover-content-' + id).html();
