@@ -59,7 +59,7 @@ $(document).ready(function() {
 			break;
 		case '#tooltip-profile':
 			$("[data-toggle=popover]").each(function(i, obj) {
-				$(this).popover(hide);
+				$(this).popover('hide');
 			});
 			$('#profile').popover('show')
 			break;
