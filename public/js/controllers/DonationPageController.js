@@ -228,7 +228,8 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 		$scope.get_watched_movie_number = function(lvl){
 			rate.get_watched_movie_number()
 			.then(function(response){
-				console.log(response)
+				console.log(response);
+				$scope.calculate_percentage();
 			});
 		}
 
