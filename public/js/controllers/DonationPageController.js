@@ -180,15 +180,41 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 					break;
 				case '#tooltip-recommendations':
 					$("[data-toggle=popover]").popover('hide')
-					$('#recommendations').popover('show')
+					rate.tt_manipulate('navbar', 2)
+					.then(function(response){
+						console.log(response);
+						$('#recommendations').popover('show');
+					});
 					break;
 				case '#tooltip-profile':
 					$("[data-toggle=popover]").popover('hide')
-					$('#profile').popover('show')
+					rate.tt_manipulate('navbar', 3)
+					.then(function(response){
+						console.log(response);
+						$('#profile').popover('show');
+					});
 					break;
 				case '#tooltip-percentage':
 					$("[data-toggle=popover]").popover('hide')
-					$('#percentage').popover('show')
+					rate.tt_manipulate('navbar', 4)
+					.then(function(response){
+						console.log(response);
+						$('#percentage').popover('show');
+					});
+					break;
+				case '#navbar-tooltips-done':
+					$("[data-toggle=popover]").popover('hide')
+					rate.tt_manipulate('navbar', 50)
+					.then(function(response){
+						console.log(response);
+					});
+					break;
+				case '#cancel-tooltips':
+					$("[data-toggle=popover]").popover('hide')
+					rate.tt_manipulate('navbar', 100)
+					.then(function(response){
+						console.log(response);
+					});
 					break;
 			}
 		}, false);

@@ -131,6 +131,13 @@
                         <a class="nav-link text-muted" href="#">{{ __('navbar.logout') }}</a>
                     </li>
                 </ul>
+                @if(Auth::User()->level < 700)
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" data-toggle="popover" title="Profilini Tamamla" id="percentage">
+                        <span class="nav-link">31%</span>
+                    </li>
+                </ul>
+                @endif
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
