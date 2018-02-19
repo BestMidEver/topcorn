@@ -90,21 +90,21 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"
-                            @if(Auth::User()->level < 700)
+                            @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" title="Tavsiyeler" id="recommendations"
                             @endif
                         >
                         <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
                     </li>
                     <li class="nav-item"
-                            @if(Auth::User()->level < 700)
+                            @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" title="Arama Yapma" id="search"
                             @endif
                         >
                         <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
                     </li>
                     <li class="nav-item"
-                            @if(Auth::User()->level < 700)
+                            @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" title="Hızlı Oylama" id="quickvote"
                             @endif
                         >
@@ -131,10 +131,10 @@
                         <a class="nav-link text-muted" href="#">{{ __('navbar.logout') }}</a>
                     </li>
                 </ul>
-                @if(Auth::User()->level < 700)
+                @if(Auth::User()->level < 1)
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item" data-toggle="popover" title="Profilini Tamamla" id="percentage">
-                        <span class="nav-link">31%</span>
+                        <span class="navbar-brand">31%</span>
                     </li>
                 </ul>
                 @endif
@@ -143,7 +143,7 @@
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
                     </li>
                     <li class="nav-item"
-                            @if(Auth::User()->level < 700)
+                            @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" title="Profilin" id="profile"
                             @endif
                         >
@@ -214,10 +214,15 @@
         </div>
     </footer>
     
+
+
+
 @include('layout.ratemodal')
 
-@if(Auth::User()->tt_navbar < 6)
-    @include('layout.tutorial')
+
+
+
+    @if(Auth::User()->tt_navbar < 50)
     <div id="popover-content-quickvote" class="d-none">
         <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
         <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
@@ -254,6 +259,6 @@
             <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-done">Anladım</a>
         </div>
     </div>
-@endif
+    @endif
 </body>
 </html>
