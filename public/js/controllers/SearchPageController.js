@@ -499,6 +499,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				$("[data-toggle=popover]").popover('hide');
 				$('#quickvote').popover('show');
 			}else if(location.hash.indexOf('tooltip-search')){
+				console.log("muhaha")
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 1)
 				.then(function(response){
