@@ -12,8 +12,7 @@ pass={
 	"with_user_name":"{!! session('with_user_name') !!}",
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
-	"watched_movie_number":{{ $watched_movie_number }},
-	"level":{{ Auth::User()->level }}
+	"watched_movie_number":{{ $watched_movie_number }}
 	@endif
 };
 </script>
