@@ -140,7 +140,7 @@
                 @endif
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
-                        <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
+                        <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fas fa-clock"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
