@@ -84,7 +84,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.sequentialvote') }}</span></button>
+                    <button class="nav-link d-md-none text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star-half" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.sequentialvote') }}</span></button>
                 </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -108,7 +108,7 @@
                             data-toggle="popover" title='Hızlı Oylama<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="quickvote"
                             @endif
                         >
-                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
+                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star-half d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
