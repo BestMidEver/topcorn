@@ -132,7 +132,7 @@
                     </li>
                 </ul>
                 @if(Auth::User()->level < 1)
-                <ul class="navbar-nav mx-auto" ng-if="$scope.watched_movie_number<500">
+                <ul class="navbar-nav mx-auto" ng-if="watched_movie_number<500">
                     <li class="nav-item" data-toggle="popover" title="Profilini Tamamla" id="percentage">
                         <span class="navbar-brand">@{{percentage}}</span>
                     </li>
