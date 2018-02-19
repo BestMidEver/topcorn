@@ -16,7 +16,7 @@
 			<div class="card-footer p-0">
 				<div class="row no-gutters">
 					<div class="col">
-						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)"><i ng-class="movie.later_id!=null?fas:far;" class="fa-clock" aria-hidden="true"></i></button>
+						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)"><i class="far fa-clock" aria-hidden="true" ng-if="movie.later_id!=null"></i><i class="fas fa-clock" aria-hidden="true" ng-if="movie.later_id==null"></i></button>
 					</div>
 					<div class="col-7">
 						<button type="button" class="btn btn-sm btn-block border-0" ng-class="rate_class(movie.rate_code)" ng-click="votemodal($index, movie)"><i class="fa-check" aria-hidden="true"></i> {{ __('general.seen') }}</button>
