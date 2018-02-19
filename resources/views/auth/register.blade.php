@@ -159,7 +159,7 @@ pass={
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <button type="submit" class="btn btn-warning text-white btn-block"><i class="fa fa-envelope-o loginbuttonfa" aria-hidden="true"></i> {{ __('general.save') }}</button>
+                <button type="submit" class="btn btn-warning text-white btn-block"><i class="fa fa-envelope loginbuttonfa" aria-hidden="true"></i> {{ __('general.save') }}</button>
             </div>
         </div>
     </form>
