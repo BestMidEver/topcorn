@@ -236,6 +236,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 		$scope.watched_movie_number = pass.watched_movie_number;
 		$scope.calculate_percentage = function(){
 			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number/5 : $scope.watched_movie_number/5+'%';
+			console.log($scope.percentage)
 		}
 		$scope.calculate_percentage();
 	}
