@@ -144,7 +144,6 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-console.log(pass)
 	if(pass.tt_navbar < 50){
 		switch(pass.tt_navbar){
 			case 0:
@@ -225,13 +224,19 @@ console.log(pass)
 
 	}
 
-	if(pass.level < 1){
+	if(pass.get_watched_movie_number < 500){
 		$scope.get_watched_movie_number = function(lvl){
 			rate.get_watched_movie_number()
 			.then(function(response){
 				console.log(response)
 			});
 		}
+
+		$scope.get_watched_movie_number = pass.get_watched_movie_number;
+		$scope.calculate_percentage = function(){
+			$scope.percentage = pass.lang=='tr' ? '%'+$scope.get_watched_movie_number : $scope.get_watched_movie_number+'%';
+		}
+		$scope.calculate_percentage();
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////

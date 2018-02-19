@@ -134,7 +134,7 @@
                 @if(Auth::User()->level < 1)
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item" data-toggle="popover" title="Profilini Tamamla" id="percentage">
-                        <span class="navbar-brand">31%</span>
+                        <span class="navbar-brand">@{{percentage}}</span>
                     </li>
                 </ul>
                 @endif
