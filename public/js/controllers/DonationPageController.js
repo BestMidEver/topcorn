@@ -80,7 +80,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					if($scope.watched_movie_number < 500) $scope.get_watched_movie_number(); // LEVEL LEVEL
+					if($scope.watched_movie_number < 50) $scope.get_watched_movie_number(); // LEVEL LEVEL
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -95,7 +95,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					if($scope.watched_movie_number < 500) $scope.get_watched_movie_number(); // LEVEL LEVEL
+					if($scope.watched_movie_number < 50) $scope.get_watched_movie_number(); // LEVEL LEVEL
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -224,7 +224,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 
 	}
 
-	if(pass.watched_movie_number < 500){
+	if(pass.watched_movie_number < 50){
 		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
 			.then(function(response){
@@ -236,7 +236,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 
 		$scope.watched_movie_number = pass.watched_movie_number;
 		$scope.calculate_percentage = function(){
-			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number/5 : $scope.watched_movie_number/5+'%';
+			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number*2 : $scope.watched_movie_number*2+'%';
 		}
 		$scope.calculate_percentage();
 	}
