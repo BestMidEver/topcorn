@@ -132,7 +132,7 @@
                     </li>
                 </ul>
                 @if($watched_movie_number < 50)
-                <ul class="navbar-nav mx-auto" ng-if="watched_movie_number<50">
+                <ul class="navbar-nav mx-auto d-md-inline" ng-if="watched_movie_number<50">
                     <li class="nav-item" data-toggle="popover" title='Profilini Tamamla<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="percentage">
                         <span class="navbar-brand">@{{percentage}}</span>
                     </li>
