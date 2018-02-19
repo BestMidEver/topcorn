@@ -80,8 +80,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					if($scope.current_level == 101) $scope.get_watched_movie_number(102);
-					else if($scope.current_level==400) $scope.get_watched_movie_number(401);
+					if($scope.watched_movie_number < 500) $scope.get_watched_movie_number(); // LEVEL LEVEL
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -96,6 +95,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
+					if($scope.watched_movie_number < 500) $scope.get_watched_movie_number(); // LEVEL LEVEL
 					//$('#myModal').modal('hide');
 				}
 			});
@@ -225,7 +225,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 	}
 
 	if(pass.watched_movie_number < 500){
-		$scope.get_watched_movie_number = function(lvl){
+		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
 			.then(function(response){
 				console.log(response);
