@@ -61,7 +61,7 @@ button:focus{box-shadow: none!important;}
   .btn-info:hover {    color: #fff;    background-color: #17a2b8;}
   .btn-success:hover {    color: #fff;    background-color: #28a745;}
 }
-@media (max-width: 767px) {
+@media all and (max-width: 767px) {
 	.nowrap {  white-space: normal;}
 	.left_0-right-0{left: 0;right: 0;}
 	.popup{	display:none!important; }
