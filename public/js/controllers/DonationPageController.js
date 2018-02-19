@@ -224,8 +224,7 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 
 	}
 
-	console.log(pass)
-	if(pass.get_watched_movie_number < 500){
+	if(pass.watched_movie_number < 500){
 		$scope.get_watched_movie_number = function(lvl){
 			rate.get_watched_movie_number()
 			.then(function(response){
@@ -233,9 +232,9 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 			});
 		}
 
-		$scope.get_watched_movie_number = pass.get_watched_movie_number;
+		$scope.watched_movie_number = pass.watched_movie_number;
 		$scope.calculate_percentage = function(){
-			$scope.percentage = pass.lang=='tr' ? '%'+$scope.get_watched_movie_number : $scope.get_watched_movie_number+'%';
+			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number : $scope.watched_movie_number+'%';
 		}
 		$scope.calculate_percentage();
 	}
