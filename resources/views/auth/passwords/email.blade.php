@@ -47,7 +47,9 @@ pass={
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        </div>
                         <input type="text" name="email" class="form-control" id="email" value="{{ old('email') }}" required autofocus>
                     </div>
                 </div>
