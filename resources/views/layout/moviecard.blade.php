@@ -19,7 +19,7 @@
 						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)"><i class="far fa-bookmark" aria-hidden="true"></i></button>
 					</div>
 					<div class="col-7">
-						<button type="button" class="btn btn-sm btn-block border-0" ng-class="rate_class(movie.rate_code)" ng-click="votemodal($index, movie)"><i class="fa fa-star-half-o" aria-hidden="true"></i> {{ __('general.seen') }}</button>
+						<button type="button" class="btn btn-sm btn-block border-0" ng-class="rate_class(movie.rate_code)" ng-click="votemodal($index, movie)"><i class="far fa-check-circle" aria-hidden="true"></i> {{ __('general.seen') }}</button>
 					</div>
 					<div class="col">
 						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addban border-0" ng-class="{'text-danger':movie.ban_id!=null}" ng-click="ban($index)"><i class="fa fa-ban" aria-hidden="true"></i></button>
