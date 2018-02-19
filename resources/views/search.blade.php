@@ -20,6 +20,12 @@
 </div>
 
 <div class="container-fluid mt-3">
+	<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">@</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
 	<div class="row">
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8">
