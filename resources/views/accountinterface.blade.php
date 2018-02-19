@@ -36,7 +36,9 @@
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+				                </div>
 				                <select class="form-control" id="lang" name="lang" autofocus>
 									<option value="tr" {{ Auth::User()->lang == 'tr' ? 'selected' : '' }}>Türkçe</option>
 									<option value="en" {{ Auth::User()->lang == 'en' ? 'selected' : '' }}>English</option>
@@ -53,7 +55,9 @@
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+				                </div>
 				                <select class="form-control" id="secondary_lang" name="secondary_lang">
 									<option value="tr" {{ Auth::User()->secondary_lang == 'tr' ? 'selected' : '' }}>Türkçe</option>
 									<option value="en" {{ Auth::User()->secondary_lang == 'en' ? 'selected' : '' }}>English</option>
@@ -70,7 +74,9 @@
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-mouse-pointer"></i></div>
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-mouse-pointer"></i></div>
+				                </div>
 				                <select class="form-control" id="hover_title_language" name="hover_title_language">
 									<option value=1 {{ Auth::User()->hover_title_language == 1 ? 'selected' : '' }}>{{ __('general.movies_original_language') }}</option>
 									<option value=0 {{ Auth::User()->hover_title_language == 0 ? 'selected' : '' }}>{{ __('general.my_secondary_language') }}</option>
@@ -86,7 +92,9 @@
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+				                </div>
 				                <select class="form-control" id="image_quality" name="image_quality">
 									<option value=2 {{ Auth::User()->image_quality == 2 ? 'selected' : '' }}>{{ __('general.high') }}</option>
 									<option value=1 {{ Auth::User()->image_quality == 1 ? 'selected' : '' }}>{{ __('general.medium') }}</option>
@@ -103,7 +111,9 @@
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-arrows-alt"></i></div>
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-arrows-alt"></i></div>
+				                </div>
 				                <select class="form-control" id="margin_x_setting" name="margin_x_setting">
 									<option value=2 {{ Auth::User()->margin_x_setting == 2 ? 'selected' : '' }}>{{ __('general.active') }}</option>
 									<option value=1 {{ Auth::User()->margin_x_setting == 1 ? 'selected' : '' }}>{{ __('general.standard') }}</option>
@@ -120,7 +130,9 @@
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-external-link"></i></div>
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-external-link"></i></div>
+				                </div>
 				                <select class="form-control" id="open_new_tab" name="open_new_tab">
 									<option value=1 {{ Auth::User()->open_new_tab == 1 ? 'selected' : '' }}>{{ __('general.active') }}</option>
 									<option value=0 {{ Auth::User()->open_new_tab == 0 ? 'selected' : '' }}>{{ __('general.disabled') }}</option>
