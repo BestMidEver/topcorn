@@ -57,7 +57,9 @@
 				    <div class="col-md-6">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+				                </div>
 				                <input type="text" class="form-control" id="name" value="{{  Auth::User()->name }}" name="name" required autofocus onfocus="var temp_value=this.value; this.value=''; this.value=temp_value">
 				            </div>
 				        </div>
