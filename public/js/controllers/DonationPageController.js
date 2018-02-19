@@ -224,8 +224,8 @@ MyApp.controller('DonationPageController', function($scope, $http, rate)
 
 	}
 
-	if(pass.get_watched_movie_number < 500){
 		console.log(pass.get_watched_movie_number)
+	if(pass.get_watched_movie_number < 500){
 		$scope.get_watched_movie_number = function(lvl){
 			rate.get_watched_movie_number()
 			.then(function(response){
