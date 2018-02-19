@@ -74,17 +74,17 @@
             </button>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-md-none {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.search') }}</span></a>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search"></i><span class="d-none d-sm-inline"> {{ __('navbar.search') }}</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star" aria-hidden="true"></i><span class="d-none d-sm-inline"> {{ __('navbar.sequentialvote') }}</span></button>
+                    <button class="nav-link d-md-none text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star"></i><span class="d-none d-sm-inline"> {{ __('navbar.sequentialvote') }}</span></button>
                 </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -94,21 +94,21 @@
                             data-toggle="popover" title='Tavsiyeler<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="recommendations"
                             @endif
                         >
-                        <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
+                        <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline"></i> {{ __('navbar.recommendations') }}</a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" title='Arama Yapma<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="search"
                             @endif
                         >
-                        <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
+                        <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline"></i> {{ __('navbar.search') }}</a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" title='Hızlı Oylama<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="quickvote"
                             @endif
                         >
-                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
+                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star d-none d-md-inline"></i> {{ __('navbar.sequentialvote') }}</button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
@@ -140,17 +140,17 @@
                 @endif
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
-                        <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o" aria-hidden="true"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
+                        <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fa fa-clock-o"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" title='Profilin<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="profile"
                             @endif
                         >
-                        <a class="nav-link {{ Request::segment(1) === 'profile' ? 'active' : null }}" href="/profile/{{ Auth::user()->id }}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span class="">{{ __('navbar.profile') }}</span></a>
+                        <a class="nav-link {{ Request::segment(1) === 'profile' ? 'active' : null }}" href="/profile/{{ Auth::user()->id }}"><i class="far fa-user"></i> <span class="">{{ __('navbar.profile') }}</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <button class="nav-link btn btn-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i>
+                        <button class="nav-link btn btn-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/account">{{ __('navbar.account') }}</a>
