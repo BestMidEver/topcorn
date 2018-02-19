@@ -51,6 +51,6 @@ class LevelController extends Controller
 
 		$user->save();
 
-		return response(200);
+		return response($user->tt_navbar, 200);
     }  
 }
