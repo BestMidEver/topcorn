@@ -14,7 +14,9 @@
 	<div class="row pt-3">
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8">
-			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+			</div>
 			<input type="text" id="input_user" class="form-control" placeholder="{{ __('general.search_user') }}" aria-describedby="basic-addon1" ng-model="search_text" ng-change="search_users()" ng-model-options="{debounce: 750}">
 		</div>
 		<div class="col"></div>
