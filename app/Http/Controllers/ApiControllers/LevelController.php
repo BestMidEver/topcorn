@@ -22,7 +22,7 @@ class LevelController extends Controller
 
     	if($request->column == 'navbar')
         {
-            $user->tt_navbar = $request->level;
+            if($user->tt_navbar < $request->level) $user->tt_navbar = $request->level;
         }
         else if($request->column == 'recommendations')
         {
@@ -51,6 +51,6 @@ class LevelController extends Controller
 
 		$user->save();
 
-		return response(['column' => $request->column, 'level' => $request->level], 200);
+		return response(200);
     }  
 }
