@@ -16,10 +16,10 @@
 			<div class="card-footer p-0">
 				<div class="row no-gutters">
 					<div class="col">
-						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)"><i ng-class="movie.later_id!=null?far:fas;" class="far fa-clock" aria-hidden="true"></i></button>
+						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)"><i ng-class="movie.later_id!=null?fas:far;" class="far fa-clock" aria-hidden="true"></i></button>
 					</div>
 					<div class="col-7">
-						<button type="button" class="btn btn-sm btn-block border-0" ng-class="rate_class(movie.rate_code)" ng-click="votemodal($index, movie)"><i class="fas fa-check" aria-hidden="true"></i> {{ __('general.seen') }}</button>
+						<button type="button" class="btn btn-sm btn-block border-0" ng-class="rate_class(movie.rate_code)" ng-click="votemodal($index, movie)"><i class="fa-check" aria-hidden="true"></i> {{ __('general.seen') }}</button>
 					</div>
 					<div class="col">
 						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addban border-0" ng-class="{'text-danger':movie.ban_id!=null}" ng-click="ban($index)"><i class="fa fa-ban" aria-hidden="true"></i></button>
