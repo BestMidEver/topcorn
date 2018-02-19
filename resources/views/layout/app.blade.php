@@ -132,7 +132,7 @@
                     </li>
                 </ul>
                 @if(Auth::User()->level < 700)
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item" data-toggle="popover" title="Profilini Tamamla" id="percentage">
                         <span class="nav-link">31%</span>
                     </li>
