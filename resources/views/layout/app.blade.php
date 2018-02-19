@@ -105,7 +105,7 @@
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
-                            data-toggle="popover" title='Hızlı Oylama<button type="button" class="close tooltip-x" href="#close-tooltip">&times;</button>' id="quickvote"
+                            data-toggle="popover" title='Hızlı Oylama<a type="button" class="close tooltip-x" href="#close-tooltip">&times;</a>' id="quickvote"
                             @endif
                         >
                         <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="fa fa-star-half-o d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.sequentialvote') }}</button>
