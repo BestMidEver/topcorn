@@ -31,7 +31,7 @@ pass={
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <a href="{{url('login/facebook')}}" class="btn btn-facebook text-white btn-block"><i class="fab fa-facebook-f loginbuttonfa" aria-hidden="true"></i> {{ __('general.login_via_facebook') }}</a>
+            <a href="{{url('login/facebook')}}" class="btn btn-facebook text-white btn-block"><i class="fab fa-facebook loginbuttonfa" aria-hidden="true"></i> {{ __('general.login_via_facebook') }}</a>
         </div>
     </div>
     <div class="row">
