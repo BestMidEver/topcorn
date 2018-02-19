@@ -51,7 +51,9 @@ pass={
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        </div>
                         <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}" required autofocus>
                     </div>
                 </div>
@@ -73,7 +75,9 @@ pass={
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        </div>
                         <input type="text" name="email" class="form-control" id="email" value="{{ old('email') }}" required autofocus>
                     </div>
                 </div>
@@ -95,7 +99,9 @@ pass={
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-repeat"></i></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="width: 2.6rem"><i class="fa fa-repeat"></i></div>
+                        </div>
                         <input type="text" name="email_confirmation" class="form-control" id="email-confirmation" value="{{ old('email_confirmation') }}" required autofocus>
                     </div>
                 </div>
@@ -115,7 +121,9 @@ pass={
             <div class="col-md-6">
                 <div class="form-group has-danger">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        </div>
                         <input type="password" name="password" class="form-control" id="password" required>
                     </div>
                 </div>
@@ -137,8 +145,10 @@ pass={
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem">
-                            <i class="fa fa-repeat"></i>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" style="width: 2.6rem">
+                                <i class="fa fa-repeat"></i>
+                            </div>
                         </div>
                         <input type="password" name="password_confirmation" class="form-control"
                                id="password-confirm" required>
