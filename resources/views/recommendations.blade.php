@@ -7,7 +7,7 @@
 	<h5 class="d-inline align-middle my-2">{{ __('navbar.recommendations') }}</h5>
 	<button class="btn btn-warning btn-sm text-white ml-3 my-2" type="button" disabled>{{ Auth::user()->name }}</button>
 	<button class="btn btn-warning btn-sm text-white mx-1 my-2" type="button" ng-repeat="user in party_members" ng-click="remove_from_party(user.user_id);">@{{user.name}} <i class="fa fa-times" aria-hidden="true"></i></button>
-	<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fa fa-plus" aria-hidden="true"></i> {{ __('general.add_person') }}</button>
+	<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i> {{ __('general.add_person') }}</button>
 </div>
 
 <div class="collapse container-fluid background-lightgrey" id="collapseAdd">
