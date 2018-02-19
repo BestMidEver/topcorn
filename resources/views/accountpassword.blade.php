@@ -101,7 +101,9 @@
 				    <div class="col-md-6">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+				                </div>
 				                <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation" required>
 				            </div>
 				        </div>
