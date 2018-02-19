@@ -6,8 +6,11 @@ pass={
 	"personid":{{$id}}, 
 	"api_key":"{{config('constants.api_key')}}",
 	"constants_domain":"{{config('api.url')}}",
-	"level":{{ Auth::User()->level }},
-	"watched_movie_number":{{ $watched_movie_number }}
+	@if(Auth::check())
+	"tt_navbar":{{ Auth::User()->tt_navbar }},
+	"watched_movie_number":{{ $watched_movie_number }},
+	"level":{{ Auth::User()->level }}
+	@endif
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/jobs.js"></script>

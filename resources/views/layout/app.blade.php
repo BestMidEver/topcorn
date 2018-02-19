@@ -91,14 +91,14 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
-                            data-toggle="popover" title="Tavsiyeler" id="recommendations"
+                            data-toggle="popover" title='Tavsiyeler<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="recommendations"
                             @endif
                         >
                         <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
-                            data-toggle="popover" title="Arama Yapma" id="search"
+                            data-toggle="popover" title='Arama Yapma<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="search"
                             @endif
                         >
                         <a class="nav-link {{ Request::segment(1) === 'search' ? 'active' : null }}" href="/search"><i class="fa fa-search d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.search') }}</a>
@@ -133,7 +133,7 @@
                 </ul>
                 @if($watched_movie_number < 50)
                 <ul class="navbar-nav mx-auto" ng-if="watched_movie_number<50">
-                    <li class="nav-item" data-toggle="popover" title="Profilini Tamamla" id="percentage">
+                    <li class="nav-item" data-toggle="popover" title='Profilini Tamamla<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="percentage">
                         <span class="navbar-brand">@{{percentage}}</span>
                     </li>
                 </ul>
@@ -144,7 +144,7 @@
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
-                            data-toggle="popover" title="Profilin" id="profile"
+                            data-toggle="popover" title='Profilin<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="profile"
                             @endif
                         >
                         <a class="nav-link {{ Request::segment(1) === 'profile' ? 'active' : null }}" href="/profile/{{ Auth::user()->id }}"><i class="fa fa-user-circle-o" aria-hidden="true"></i> <span class="">{{ __('navbar.profile') }}</span></a>

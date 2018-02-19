@@ -54,102 +54,101 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-	if(pass.level < 700){
-		$scope.show_tutorial = function(){
-			setTimeout(function() {
-				$('#tutorial').modal('show');
-			}, 1000);
+	if(pass.tt_navbar < 50){
+		switch(pass.tt_navbar){
+			case 0:
+				location.hash="tooltip-quickvote";
+				break;
+			case 1:
+				location.hash="tooltip-search";
+				break;
+			case 2:
+				location.hash="tooltip-recommendations";
+				break;
+			case 3:
+				location.hash="tooltip-profile";
+				break;
+			case 4:
+				location.hash="tooltip-percentage";
+				break;
 		}
 
-		if(pass.level == 0)	$scope.show_tutorial();
-		else if(pass.level == 200 && window.location.href.indexOf("topcorn.io/search") > -1){
-			rate.level_manipulate(201)
-			.then(function(response){
-				console.log(response);
-				$scope.current_level = response.data;
-				$scope.show_tutorial();
-			});
-		}else if(pass.level == 300 && window.location.href.indexOf("topcorn.io/recommendations") > -1){
-			rate.level_manipulate(301)
-			.then(function(response){
-				console.log(response);
-				$scope.current_level = response.data;
-				$scope.show_tutorial();
-			});
-		}else if(pass.level == 500 && window.location.href.indexOf("topcorn.io/account") > -1){
-			rate.level_manipulate(501)
-			.then(function(response){
-				console.log(response);
-				$scope.current_level = response.data;
-				$scope.show_tutorial();
-			});
-		}else if(pass.level == 504 && window.location.href.indexOf("topcorn.io/account") > -1){
-			$scope.show_tutorial();
-		}else if(pass.level == 504 && window.location.href.indexOf("topcorn.io/profile") > -1){
-			rate.level_manipulate(505)
-			.then(function(response){
-				console.log(response);
-				$scope.current_level = response.data;
-				$scope.show_tutorial();
-			});
-		}
+		window.addEventListener("hashchange", function(){ 
+			console.log(location.hash)
+			switch(location.hash){
+				case '#tooltip-quickvote':
+					$("[data-toggle=popover]").popover('hide');
+					$('#quickvote').popover('show');
+					break;
+				case '#tooltip-search':
+					$("[data-toggle=popover]").popover('hide');
+					rate.tt_manipulate('navbar', 1)
+					.then(function(response){
+						console.log(response);
+						$('#search').popover('show');
+					});
+					break;
+				case '#tooltip-recommendations':
+					$("[data-toggle=popover]").popover('hide');
+					rate.tt_manipulate('navbar', 2)
+					.then(function(response){
+						console.log(response);
+						$('#recommendations').popover('show');
+					});
+					break;
+				case '#tooltip-profile':
+					$("[data-toggle=popover]").popover('hide');
+					rate.tt_manipulate('navbar', 3)
+					.then(function(response){
+						console.log(response);
+						$('#profile').popover('show');
+					});
+					break;
+				case '#tooltip-percentage':
+					$("[data-toggle=popover]").popover('hide');
+					rate.tt_manipulate('navbar', 4)
+					.then(function(response){
+						console.log(response);
+						$('#percentage').popover('show');
+					});
+					break;
+				case '#navbar-tooltips-done':
+					$("[data-toggle=popover]").popover('hide');
+					rate.tt_manipulate('navbar', 50)
+					.then(function(response){
+						console.log(response);
+					});
+					break;
+				case '#cancel-tooltips':
+					$("[data-toggle=popover]").popover('hide');
+					rate.tt_manipulate('navbar', 100)
+					.then(function(response){
+						console.log(response);
+					});
+					break;
+				case '#close-tooltip':
+					$("[data-toggle=popover]").popover('hide');
+					break;
+			}
+		}, false);
 
-		$scope.get_watched_movie_number = function(lvl){
+	}
+
+	if(pass.watched_movie_number < 50){
+		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
 			.then(function(response){
-				console.log(response)
-				if(lvl==102 && response.data>0) $scope.level_up(lvl);
-				else if(lvl==302 && response.data>1) $scope.level_up(lvl);
-				else if(lvl==401 && response.data>49) $scope.level_up(lvl);
+				console.log(response);
+				$scope.watched_movie_number=response.data;
+				$scope.calculate_percentage();
 			});
 		}
 
-		$scope.current_level = pass.level;
-
-		$scope.level_check = function(){
-			if($scope.current_level==200 && window.location.href.indexOf("topcorn.io/search") > -1){
-				rate.level_manipulate(201)
-				.then(function(response){
-					console.log(response);
-					$scope.current_level = response.data;
-				});
-			}else if($scope.current_level==300 && window.location.href.indexOf("topcorn.io/recommendations") > -1){
-				rate.level_manipulate(301)
-				.then(function(response){
-					console.log(response);
-					$scope.current_level = response.data;
-				});
-			}else if($scope.current_level==400 && window.location.href.indexOf("topcorn.io/account") > -1){
-				rate.level_manipulate(401)
-				.then(function(response){
-					console.log(response);
-					$scope.current_level = response.data;
-				});
-			}
+		$scope.watched_movie_number = pass.watched_movie_number;
+		$scope.calculate_percentage = function(){
+			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number*2 : $scope.watched_movie_number*2+'%';
 		}
-
-		$scope.level_up = function(lvl){
-			if(lvl <= $scope.current_level){
-				$scope.show_previous_tutorial='';
-			}else{
-				if(lvl == 1 || lvl == 700)$('#tutorial').modal('hide');
-				rate.level_manipulate(lvl)
-				.then(function(response){
-					console.log(response);
-					$scope.current_level = response.data;
-					$scope.level_check();
-					if($scope.current_level!=1 && $scope.current_level!=100 && $scope.current_level!=200 
-						&& $scope.current_level!=300 && $scope.current_level!=400 && $scope.current_level!=500 
-						&& $scope.current_level!=600 && $scope.current_level!=700){
-						$scope.show_tutorial();
-					}
-				});
-			}
-		}
-
-		$scope.show_previous = function(which){
-			$scope.show_previous_tutorial=which;
-		}
+		$scope.calculate_percentage();
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////

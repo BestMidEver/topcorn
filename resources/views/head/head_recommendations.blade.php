@@ -10,8 +10,11 @@ pass={
 	"constants_angular_slider_max_value":"{{config('constants.angular_slider.max_value')}}",
 	"with_user_id":"{!! session('with_user_id') !!}",
 	"with_user_name":"{!! session('with_user_name') !!}",
-	"level":{{ Auth::User()->level }},
-	"watched_movie_number":{{ $watched_movie_number }}
+	@if(Auth::check())
+	"tt_navbar":{{ Auth::User()->tt_navbar }},
+	"watched_movie_number":{{ $watched_movie_number }},
+	"level":{{ Auth::User()->level }}
+	@endif
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/genres.js"></script>

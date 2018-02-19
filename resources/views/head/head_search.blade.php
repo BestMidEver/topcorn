@@ -7,8 +7,11 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"constants_domain":"{{config('api.url')}}",
 	"constants_api_key":"{{config('constants.api_key')}}",
-	"level":{{ Auth::User()->level }},
-	"watched_movie_number":{{ $watched_movie_number }}
+	@if(Auth::check())
+	"tt_navbar":{{ Auth::User()->tt_navbar }},
+	"watched_movie_number":{{ $watched_movie_number }},
+	"level":{{ Auth::User()->level }}
+	@endif
 };
 </script>
 @endsection

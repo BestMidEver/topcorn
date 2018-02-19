@@ -9,8 +9,9 @@ pass={
 	"constants_domain":"{{config('api.url')}}",
 	"api_key":"{{config('constants.api_key')}}",
 	@if(Auth::check())
-	"level":{{ Auth::User()->level }},
-	"watched_movie_number":{{ $watched_movie_number }}
+	"tt_navbar":{{ Auth::User()->tt_navbar }},
+	"watched_movie_number":{{ $watched_movie_number }},
+	"level":{{ Auth::User()->level }}
 	@endif
 };
 </script>
