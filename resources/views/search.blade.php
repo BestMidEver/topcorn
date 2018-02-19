@@ -23,7 +23,9 @@
 	<div class="row">
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8">
-			<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+			<div class="input-group-prepend">
+				<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+			</div>
 			<input type="text" id="input_movie" class="form-control" ng-show="active_tab=='movie'" placeholder="{{ __('general.search_movie') }}" aria-describedby="basic-addon1" ng-model="model.movie" ng-change="get_page_data()" ng-model-options="{debounce: 750}" autofocus>
 			<input type="text" id="input_person" class="form-control" ng-show="active_tab=='person'" placeholder="{{ __('general.search_person') }}" aria-describedby="basic-addon1" ng-model="model.person" ng-change="get_page_data()" ng-model-options="{debounce: 750}">
 			<input type="text" id="input_user" class="form-control" ng-show="active_tab=='user'" placeholder="{{ __('general.search_user') }}" aria-describedby="basic-addon1" ng-model="model.user" ng-change="get_page_data()" ng-model-options="{debounce: 750}">

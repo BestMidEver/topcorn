@@ -9,7 +9,7 @@ pass={
 	"constants_api_key":"{{config('constants.api_key')}}",
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
-	"watched_movie_number":{{ $watched_movie_number }},
+	"watched_movie_number":{{ $watched_movie_number }}
 	@endif
 };
 </script>
