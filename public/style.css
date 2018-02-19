@@ -52,7 +52,7 @@ button:focus{box-shadow: none!important;}
 .tmdblogo{height: 30px;}
 .underlined{border-bottom: 5px solid #5BC0EB;}
 .z-1041{z-index: 1041;}
-.tooltip-x{}
+.tooltip-x{font-size:1rem;}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
