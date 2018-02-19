@@ -73,7 +73,7 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link d-md-none text-white" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i><span class=""> {{ __('navbar.login') }}</span></a>
+                <a class="nav-link d-md-none text-white" href="/login"><i class="fa fa-sign-in-alt" aria-hidden="true"></i><span class=""> {{ __('navbar.login') }}</span></a>
             </li>
         </ul>
         <div class="collapse navbar-collapse">
@@ -87,7 +87,7 @@
                     <a class="nav-link text-warning" href="/register"><i class="fa fa-plus d-none d-md-inline" aria-hidden="true"></i> <span class="">{{ __('navbar.register') }}</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> <span class="">{{ __('navbar.login') }}</span></a>
+                    <a class="nav-link text-white" href="/login"><i class="fa fa-sign-in-alt" aria-hidden="true"></i> <span class="">{{ __('navbar.login') }}</span></a>
                 </li>
             </ul>
         </div>
