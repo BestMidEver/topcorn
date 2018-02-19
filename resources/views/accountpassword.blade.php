@@ -36,7 +36,9 @@
 				    <div class="col-md-6">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+				                </div>
 				                <input type="email" class="form-control" id="email" value="{{  Auth::User()->email }}" readonly>
 				            </div>
 				        </div>
@@ -50,7 +52,9 @@
 				    <div class="col-md-6">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+				                </div>
 				                <input type="password" class="form-control" id="current_password" name="current_password" required autofocus onfocus="var temp_value=this.value; this.value=''; this.value=temp_value">
 				            </div>
 				        </div>
@@ -73,7 +77,9 @@
 				    <div class="col-md-6">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+				                </div>
 				                <input type="password" class="form-control" id="new_password" name="new_password" required>
 				            </div>
 				        </div>
