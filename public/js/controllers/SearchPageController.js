@@ -495,10 +495,10 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 		window.addEventListener("hashchange", function(){ 
 			console.log(location.hash)
-			if(location.hash.indexOf('tooltip-quickvote')){
+			if(location.hash.indexOf('tooltip-quickvote')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				$('#quickvote').popover('show');
-			}else if(location.hash.indexOf('tooltip-search')){
+			}else if(location.hash.indexOf('tooltip-search')>-1){
 				console.log("muhaha")
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 1)
@@ -506,40 +506,40 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					console.log(response);
 					$('#search').popover('show');
 				});
-			}else if(location.hash.indexOf('tooltip-recommendations')){
+			}else if(location.hash.indexOf('tooltip-recommendations')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 2)
 				.then(function(response){
 					console.log(response);
 					$('#recommendations').popover('show');
 				});
-			}else if(location.hash.indexOf('tooltip-profile')){
+			}else if(location.hash.indexOf('tooltip-profile')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 3)
 				.then(function(response){
 					console.log(response);
 					$('#profile').popover('show');
 				});
-			}else if(location.hash.indexOf('tooltip-percentage')){
+			}else if(location.hash.indexOf('tooltip-percentage')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 4)
 				.then(function(response){
 					console.log(response);
 					$('#percentage').popover('show');
 				});
-			}else if(location.hash.indexOf('navbar-tooltips-done')){
+			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 50)
 				.then(function(response){
 					console.log(response);
 				});
-			}else if(location.hash.indexOf('cancel-tooltips')){
+			}else if(location.hash.indexOf('cancel-tooltips')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 100)
 				.then(function(response){
 					console.log(response);
 				});
-			}else if(location.hash.indexOf('close-tooltip')){
+			}else if(location.hash.indexOf('close-tooltip')>-1){
 				$("[data-toggle=popover]").popover('hide');
 			}
 		}, false);
