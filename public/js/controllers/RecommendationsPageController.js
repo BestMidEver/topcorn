@@ -247,9 +247,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	}
 	$scope.get_last_parties();
 	
+	$scope.page_search=1;
 	$scope.search_users = function()
 	{
-		$scope.page_search=1;
 		if($scope.search_text.length>0){
 			rate.search_users($scope.search_text, $scope.page_search)
 			.then(function(response){
@@ -266,7 +266,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 	$scope.paginate_search = function(page)
 	{
-		console.log("page:"+page)
 		$scope.page_search = page;
 		$scope.search_users();
 	}
