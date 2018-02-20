@@ -2,7 +2,7 @@
   <ul class="pagination justify-content-center mb-0" ng-init="current_page{{ $suffix }}=1">
     <li class="page-item" ng-class="{'disabled':current_page{{ $suffix }}==1}">
       <button class="page-link" ng-click="paginate{{ $suffix }}(current_page{{ $suffix }}-1)">
-        <span aria-hidden="true">&laquo;</span>
+        <span aria-hidden="true"><i class="fas fa-angle-left"></i></span>
         <span class="sr-only">{{ __('general.previous') }}</span>
       </button>
     </li>
