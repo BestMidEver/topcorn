@@ -88,6 +88,8 @@ return [
     'original_language' => 'Orijinal Dili',
     'pagination_info' => 
         '{{in}} <span class="pr-2"> sonuç içinde</span> {{from}} - {{to}}',             //pagination,
+    'pagination_info_search' => 
+        '{{in_search}} <span class="pr-2"> sonuç içinde</span> {{from_search}} - {{to_search}}',             //pagination,
     'password' => 'Şifre',                                                              //login, register, account,
     'password_confirmation' => 'Tekrar Şifre',                                          //register
     'person' => 'Kişi',         

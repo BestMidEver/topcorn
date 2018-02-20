@@ -242,6 +242,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.users=response.data.data;
 			$scope.pagination_search=response.data.last_page;
 			$scope.current_page_search=response.data.current_page;
+			$scope.from_search=response.data.from;
+			$scope.to_search=response.data.to;
+			$scope.in_search=response.data.total;
 			$scope.is_search=false;
 		});
 	}
@@ -257,6 +260,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$scope.users=response.data.data;
 				$scope.pagination_search=response.data.last_page;
 				$scope.current_page_search=response.data.current_page;
+				$scope.from_search=response.data.from;
+				$scope.to_search=response.data.to;
+				$scope.in_search=response.data.total;
 				$scope.is_search=true;
 			});
 		}else{
