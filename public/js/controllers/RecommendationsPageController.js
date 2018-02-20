@@ -264,6 +264,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		}
 	}
 
+	$scope.paginate_search = function(page)
+	{
+		$scope.page_search = page;
+		$scope.search_users();
+	}
+
 	$scope.add_to_history = function(user_id)
 	{
 		rate.add_to_history(user_id)
