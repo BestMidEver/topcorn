@@ -266,6 +266,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 	$scope.paginate_search = function(page)
 	{
+		console.log("page:"+page)
 		$scope.page_search = page;
 		$scope.search_users();
 	}
