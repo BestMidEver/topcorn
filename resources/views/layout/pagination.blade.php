@@ -11,7 +11,7 @@
     </li>
     <li class="page-item" ng-class="{'disabled':current_page{{ $suffix }}==pagination{{ $suffix }}}">
       <button class="page-link" ng-click="paginate{{ $suffix }}(current_page{{ $suffix }}+1)">
-        <span aria-hidden="true">&raquo;</span>
+        <span aria-hidden="true"><i class="fas fa-angle-right"></i></span>
         <span class="sr-only">{{ __('general.next') }}</span>
       </button>
     </li>
