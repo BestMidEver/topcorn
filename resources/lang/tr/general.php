@@ -87,7 +87,7 @@ return [
     'original_title' => 'Orijinal Adı',
     'original_language' => 'Orijinal Dili',
     'pagination_info' => 
-        '{{in:s1}} <span class="pr-2"> sonuç içinde</span> {{from:s1}} - {{to:s3}}',             //pagination,
+        '{{in:suffix}} <span class="pr-2"> sonuç içinde</span> {{from:suffix}} - {{to:suffix}}',             //pagination,
     'password' => 'Şifre',                                                              //login, register, account,
     'password_confirmation' => 'Tekrar Şifre',                                          //register
     'person' => 'Kişi',         
