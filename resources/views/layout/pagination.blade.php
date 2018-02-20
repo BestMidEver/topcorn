@@ -17,6 +17,6 @@
     </li>
   </ul>
   <div class="text-center mt-2">
-    <span class="text-muted" aria-hidden="true"><small>{!! __('general.pagination_info'+$suffix) !!}</small></span>
+    <span class="text-muted" aria-hidden="true"><small>{!! __('general.pagination_info', ['s1' => $suffix, 's2' => $suffix, 's3' => $suffix]) !!}</small></span>
   </div>
 </nav>
