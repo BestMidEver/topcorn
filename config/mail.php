@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'support@topcorn.io'),
-        'name' => env('MAIL_FROM_NAME', 'topcorn'),
+        'name' => env('MAIL_FROM_NAME', 'topcorn.io'),
     ],
 
     /*
