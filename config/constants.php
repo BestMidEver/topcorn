@@ -39,7 +39,7 @@ return array(
 
   'facebook' => array(
 
-    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=moviem8s.com',
+    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
 
   ),
 
