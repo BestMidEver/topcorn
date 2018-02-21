@@ -26,4 +26,19 @@ class DonationController extends Controller
 
 		return view('donation' , compact('image_quality', 'target', 'watched_movie_number'));
 	}
+
+
+
+
+    public function change_insta_language($lang)
+    {
+        if(Auth::check() == 1){
+            $user = Auth::User();
+            $user->lang = $lang;
+            $user->save();
+        }else{
+            Session::put('insta_language_change_used', $lang);
+        }
+        return back();
+    }
 }

@@ -171,21 +171,6 @@ class accountController extends Controller
 
 
 
-	public function change_insta_language($lang)
-	{
-		if(Auth::check() == 1){
-	    	$user = Auth::User();
-			$user->lang = $lang;
-			$user->save();
-		}else{
-			Session::put('insta_language_change_used', $lang);
-		}
-		return back();
-	}
-
-
-
-
     public function get_cover_pics($lang)
     {
     	$return_val = DB::table('rateds')

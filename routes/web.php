@@ -51,6 +51,8 @@ Route::get('person/{id}/{lang?}', 'PageControllers\personController@person')
 
 Route::get('donation/{lang?}', 'PageControllers\DonationController@donate')
 	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
+Route::get('change_insta_language/{lang}', 'PageControllers\DonationController@change_insta_language')
+	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
 
 Route::get('privacy-policy/{lang?}', 'PageControllers\PrivacypolicyController@privacypolicy')
 	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
@@ -141,8 +143,6 @@ Route::get('account', 'PageControllers\accountController@account');
 Route::get('account/password/{lang?}', 'PageControllers\accountController@password')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::get('account/interface/{lang?}', 'PageControllers\accountController@interface')
-	->where('lang', config('constants.supported_languages.for_web_php'));
-Route::get('change_insta_language/{lang}', 'PageControllers\accountController@change_insta_language')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
 Route::post('account', 'PageControllers\accountController@change_profile');
