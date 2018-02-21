@@ -46,7 +46,7 @@ class ResetPassword extends Notification
     {
         return (new MailMessage)
             ->line('qqq')
-            ->action('www', url(config('app.url').route('password.reset', $this->token, false)))
-            ->line('aaa');
+            ->action('Reset Password', url(config('app.url').route('password.reset', $this->token, false)))
+            ->line('eee');
     }
 }
