@@ -163,6 +163,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
+		console.log($scope.modalmovies)
+		if($scope.modalmovies.length < 1)$('#myModal').modal('hide');
 		if($scope.current_level == 100) $scope.level_up(101);//NEW NEW NEW
 	};
 
@@ -173,7 +175,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			console.log(response.data)
 			if(response.data.length>0){
 				$scope.modalmovies=response.data;
-				if($scope.modalmovies.length < 1)$('#myModal').modal('hide');
 				$scope.next_quick_rate();
 				$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 			}else{
