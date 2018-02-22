@@ -6,7 +6,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: pass.constants_domain + '/api/get_quick_rate/'+lang,
+			url: '/api/get_quick_rate/'+lang,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -23,7 +23,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: pass.constants_domain + '/api/get_watched_movie_number/',
+			url: '/api/get_watched_movie_number/',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -41,7 +41,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'POST',
-			url: pass.constants_domain + '/api/laters',
+			url: '/api/laters',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -59,7 +59,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'DELETE',
-			url: pass.constants_domain + '/api/laters/'+record_id,
+			url: '/api/laters/'+record_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -76,7 +76,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'POST',
-			url: pass.constants_domain + '/api/rateds',
+			url: '/api/rateds',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -98,7 +98,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'DELETE',
-			url: pass.constants_domain + '/api/rateds/'+record_id,
+			url: '/api/rateds/'+record_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -115,7 +115,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'POST',
-			url: pass.constants_domain + '/api/bans',
+			url: '/api/bans',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -133,7 +133,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'DELETE',
-			url: pass.constants_domain + '/api/bans/'+record_id,
+			url: '/api/bans/'+record_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -150,7 +150,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: pass.constants_domain + '/api/get_last_parties?page='+page,
+			url: '/api/get_last_parties?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -167,7 +167,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: pass.constants_domain + '/api/add_to_parties/'+user_id,
+			url: '/api/add_to_parties/'+user_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -184,7 +184,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: pass.constants_domain + '/api/remove_from_parties/'+user_id,
+			url: '/api/remove_from_parties/'+user_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -203,7 +203,7 @@ MyApp.factory('rate', function($http) {
     	else var route = 'get_pemosu';
         return $http({
 			method: 'POST',
-			url: pass.constants_domain + '/api/'+route+'?page='+page,
+			url: '/api/'+route+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -221,7 +221,7 @@ MyApp.factory('rate', function($http) {
     {
 		return $http({
 			method: 'GET',
-			url: pass.constants_domain + '/api/get_pluck_id'
+			url: '/api/get_pluck_id'
 		}).then(function successCallback(response) {
 			return response;
 		}, function errorCallback(response) {
@@ -268,7 +268,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: pass.constants_domain + '/api/search_users/'+search_text+'?page='+page,
+			url: '/api/search_users/'+search_text+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -286,7 +286,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'POST',
-			url: pass.constants_domain + '/api/tooltip',
+			url: '/api/tooltip',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'

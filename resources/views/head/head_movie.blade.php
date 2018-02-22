@@ -6,7 +6,6 @@ pass={
 	"movieid":{{$id}}, 
 	"secondary_lang":"{{ Session::get('secondary_lang') }}", 
 	"is_auth":"{{  Auth::Check()  }}",
-	"constants_domain":"{{config('api.url')}}",
 	"api_key":"{{config('constants.api_key')}}",
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
