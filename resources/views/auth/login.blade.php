@@ -31,7 +31,7 @@ pass={
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <a href="{{url('login/facebook')}}" class="btn btn-facebook text-white btn-block"><i class="fab fa-facebook-square loginbuttonfa" aria-hidden="true"></i> {{ __('general.login_via_facebook') }}</a>
+            <a href="{{url('login/facebook')}}" class="btn btn-facebook text-white btn-block"><i class="fab fa-facebook-square loginbuttonfa"></i> {{ __('general.login_via_facebook') }}</a>
         </div>
     </div>
     <div class="row">
@@ -112,7 +112,7 @@ pass={
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <button type="submit" class="btn btn-warning text-white btn-block"><i class="fa fa-envelope loginbuttonfa" aria-hidden="true"></i> {{ __('navbar.login') }}</button>
+                <button type="submit" class="btn btn-warning text-white btn-block"><i class="fa fa-envelope loginbuttonfa"></i> {{ __('navbar.login') }}</button>
             </div>
         </div>
         <a href="{{ route('password.request') }}" class="text-muted"><div class="text-center mt-4">{{ __('general.forgot_my_password') }}</div></a>
