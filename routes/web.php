@@ -28,7 +28,7 @@ Route::redirect('/', '/home');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// SOCIAL LOGIN(GUEST) /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-Route::get('login/{social}','Auth\LoginController@socialLogin')
+Route::get('log_in/{social}/{remember_me}','Auth\LoginController@socialLogin')
 	->where('social','twitter|facebook|linkedin|google|github');
 
 Route::get('login/{social}/callback','Auth\LoginController@handleProviderCallback')
