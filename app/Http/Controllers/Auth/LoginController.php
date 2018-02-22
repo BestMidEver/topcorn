@@ -75,7 +75,7 @@ class LoginController extends Controller
             $user->facebook_profile_pic = $userSocial->avatar;
             $user->save();
             Auth::login($user);
-            return redirect()->intended();
+            return redirect()->intended(); 
         }
     }
 }
