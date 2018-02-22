@@ -45,7 +45,7 @@ class LoginController extends Controller
 
     public function socialLogin($social, $remember_me)
     {
-        Session::put('remember_me', $remember_me);
+        //Session::put('remember_me', $remember_me);
         return Socialite::driver($social)->redirect();
     }
 
