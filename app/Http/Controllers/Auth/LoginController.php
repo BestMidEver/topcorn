@@ -43,9 +43,8 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function socialLogin($social, $remember_me)
+    public function socialLogin($social)
     {
-        //Session::put('remember_me', $remember_me);
         return Socialite::driver($social)->redirect();
     }
 
@@ -56,7 +55,7 @@ class LoginController extends Controller
         $findUser = User::where(['email' => $userSocial->getEmail()])->first();
 
         if($findUser){
-            Auth::login($findUser,true);
+            Auth::login($findUser, true);
 
             $user = Auth::user();
             if($user->facebook_profile_pic == null){
@@ -75,7 +74,7 @@ class LoginController extends Controller
             $user->secondary_lang = Session::get('secondary_lang');
             $user->facebook_profile_pic = $userSocial->avatar;
             $user->save();
-            Auth::login($user,true);
+            Auth::login($user);
             return redirect()->intended();
         }
     }
