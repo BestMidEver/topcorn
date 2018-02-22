@@ -56,7 +56,7 @@ class LoginController extends Controller
         $findUser = User::where(['email' => $userSocial->getEmail()])->first();
 
         if($findUser){
-            Auth::login($findUser, session('remember_me'));
+            Auth::login($findUser, filter_var(session('remember_me'), FILTER_VALIDATE_BOOLEAN) );
 
             $user = Auth::user();
             if($user->facebook_profile_pic == null){
@@ -75,7 +75,7 @@ class LoginController extends Controller
             $user->secondary_lang = Session::get('secondary_lang');
             $user->facebook_profile_pic = $userSocial->avatar;
             $user->save();
-            Auth::login($user, session('remember_me'));
+            Auth::login($user, filter_var(session('remember_me'), FILTER_VALIDATE_BOOLEAN) );
             return redirect()->intended();
         }
     }
