@@ -5,7 +5,7 @@ pass={
 	"lang":"{{ App::getlocale() }}",
 	"user_id":{{ Auth::id() }}, 
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
-	"constants_domain":"{{config('api.url')}}",
+	"constants_domain":"{{url('/')}}",
 	"constants_api_key":"{{config('constants.api_key')}}",
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
