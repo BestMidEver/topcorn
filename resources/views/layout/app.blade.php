@@ -128,7 +128,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li class="nav-item d-md-none">
-                        <a class="nav-link text-muted" href="#">{{ __('navbar.logout') }}</a>
+                        <a class="nav-link text-muted" href="{{ route('logout') }}" onclick="event.preventDefault();   document.getElementById('logout-form').submit();">{{ __('navbar.logout') }}</a>
                     </li>
                 </ul>
                 @if($watched_movie_number < 50)
