@@ -173,6 +173,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			console.log(response.data)
 			if(response.data.length>0){
 				$scope.modalmovies=response.data;
+				if($scope.modalmovies.length < 1)$('#myModal').modal('hide');
 				$scope.next_quick_rate();
 				$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 			}else{
