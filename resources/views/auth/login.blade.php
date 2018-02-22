@@ -34,7 +34,7 @@ pass={
             <div class="form-group">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" ng-model="fb_remember"> {{ __('general.remember_me') }}
+                        <input type="checkbox" ng-model="fb_remember" ng-init="fb_remember=false"> {{ __('general.remember_me') }}
                     </label>
                 </div>
             </div>
