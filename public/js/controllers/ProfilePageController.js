@@ -38,7 +38,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     {
 		$http({
 			method: 'GET',
-			url: pass.constants_domain+'/api/'+$scope.active_tab+'/'+pass.profile_user_id+'/'+pass.lang+'?page='+$scope.page,
+			url: '/api/'+$scope.active_tab+'/'+pass.profile_user_id+'/'+pass.lang+'?page='+$scope.page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
