@@ -55,14 +55,14 @@ class LoginController extends Controller
         $findUser = User::where(['email' => $userSocial->getEmail()])->first();
 
         if($findUser){
-            Auth::login($findUser, true);
-
             $user = Auth::user();
             if($user->facebook_profile_pic == null){
                 $user->facebook_id = $userSocial->id;
                 $user->facebook_profile_pic = $userSocial->avatar;
                 $user->save();
             }
+
+            Auth::login($findUser, true);
             return redirect()->intended();
         }else{
             $user = new User;
