@@ -248,7 +248,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.is_search=false;
 		});
 	}
-	$scope.get_last_parties();
 	
 	$scope.page_search=1;
 	$scope.search_users = function()
@@ -296,6 +295,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	if(pass.with_user_id != ''){
 		$scope.add_to_party({'user_id':parseInt(pass.with_user_id), 'name':pass.with_user_name});
 	}
+	$timeout(function () {
+		$scope.get_last_parties();
+	});
 
 	$scope.remove_from_party = function(user_id)
 	{
