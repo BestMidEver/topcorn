@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,6 +24,11 @@ class LevelController extends Controller
     	if($request->column == 'navbar')
         {
             if($user->tt_navbar < $request->level) $user->tt_navbar = $request->level;
+            if($user->tt_navbar == 4){ //50 filmden çok oylayanlara navbardaki % tooltipini göstermemek için.
+                if(Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count() > 49){
+                    $user->tt_navbar = 5;
+                }
+            }
         }
         else if($request->column == 'recommendations')
         {
