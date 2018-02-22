@@ -30,7 +30,20 @@ pass={
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <a href="{{url('login/facebook')}}" class="btn btn-facebook text-white btn-block"><i class="fa fa-facebook loginbuttonfa" aria-hidden="true"></i> {{ __('general.login_via_facebook') }}</a>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="fb_remember" ng-init="fb_remember=false"> {{ __('general.remember_me') }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <a href="{{url('log_in/facebook')}}/@{{fb_remember}}" class="btn btn-facebook text-white btn-block"><i class="fab fa-facebook-square loginbuttonfa"></i> {{ __('general.login_via_facebook') }}</a>
             </div>
         </div>
         <div class="row">
