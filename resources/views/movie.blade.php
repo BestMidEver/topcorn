@@ -92,7 +92,7 @@
 	<div class="col-12 col-md-9 col-lg-6">
 		<div class="container-fluid">
 			<p class="h6 pt-3 pt-md-0">@{{movie.release_date.substring(0, 4)}} <span class="text-muted" ng-if="movie.genres.length > 0">•</span> <span ng-repeat="genre in movie.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
-			<div class="pt-2" ng-if="movie.overview.length > 0"<p>@{{movie.overview}}</p></div>
+			<div class="pt-2" ng-if="movie.overview.length > 0 && movie.overview != 'No overview found.'"<p>@{{movie.overview}}</p></div>
 			<div ng-if="directors.length > 0">
 				<div class="h6 pt-1"><span ng-if="directors.length == 1">{{ __('general.director') }}</span><span ng-if="directors.length > 1">{{ __('general.directors') }}</span></div>
 				<p><span class="d-inline" ng-repeat="director in directors"><span ng-if="$index!=0">, </span><a href="/person/@{{director.id}}" target={{$target}} class="text-dark">@{{director.name}}</a></span></p>
