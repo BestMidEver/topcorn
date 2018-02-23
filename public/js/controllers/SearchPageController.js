@@ -163,8 +163,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
-		console.log($scope.modalmovies)
-		if($scope.modalmovies.length < 1)$('#myModal').modal('hide');
 		if($scope.current_level == 100) $scope.level_up(101);//NEW NEW NEW
 	};
 
