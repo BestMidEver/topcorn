@@ -7,54 +7,62 @@
 <div class="mt-md-4">
 	<div class="position-relative">
 		<div id="accordion">
+			<div>
 				<div id="collapseCover" class="collapse show">
-					<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
-					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
-						<div class="d-flex flex-row p-2">
+					<div>
+						<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
+						<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
+							<div class="d-flex flex-row p-2">
+								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
+							</div>
+							<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
+								<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2" aria-hidden="true"></i><small>{{ __('general.trailer') }}</small></button>
+							</div>
+							<div class="d-flex flex-row justify-content-end p-2 text-right">
+								<div ng-if="movie.vote_average > 0">
+									<div><span class="text-warning display-4 h6">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+									<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div id="collapseFragman" class="collapse" ng-if="movie.videos.results.length > 0">
+					<div>
+						<div class="d-flex flex-row background-black pl-2 pt-2 pb-3">
 							<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
 						</div>
-						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2" aria-hidden="true"></i><small>{{ __('general.trailer') }}</small></button>
+						<div class="embed-responsive embed-responsive-1by1 trailer">
+							<iframe class="embed-responsive-item" ng-src="@{{trailerurl}}" allowfullscreen></iframe>
 						</div>
-						<div class="d-flex flex-row justify-content-end p-2 text-right">
-							<div ng-if="movie.vote_average > 0">
-								<div><span class="text-warning display-4 h6">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-								<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
+						<div class="d-flex flex-row background-black no-gutters">
+							<div class="col">
+								<div class="h-100 d-flex flex-column justify-content-center pl-2">
+									<div ng-if="movie.videos.results.length > 1">
+										<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-click="previous_trailer();"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+										<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == movie.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="h-100 d-flex flex-column justify-content-center text-center">
+									<div>
+										<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-parent="#accordion" data-target="#collapseCover" aria-expanded="true" aria-controls="accordion"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+									</div>
+								</div>
+							</div>
+							<div class="col pb-2 pr-2 text-right">
+								<div ng-if="movie.vote_average > 0">
+									<div><span class="text-warning display-4 h6">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+									<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div id="collapseFragman" class="collapse" ng-if="movie.videos.results.length > 0">
-					<div class="d-flex flex-row background-black pl-2 pt-2 pb-3">
-						<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
-					</div>
-					<div class="embed-responsive embed-responsive-1by1 trailer">
-						<iframe class="embed-responsive-item" ng-src="@{{trailerurl}}" allowfullscreen></iframe>
-					</div>
-					<div class="d-flex flex-row background-black no-gutters">
-						<div class="col">
-							<div class="h-100 d-flex flex-column justify-content-center pl-2">
-								<div ng-if="movie.videos.results.length > 1">
-									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-click="previous_trailer();"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
-									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == movie.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="h-100 d-flex flex-column justify-content-center text-center">
-								<div>
-									<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-parent="#accordion" data-target="#collapseCover" aria-expanded="true" aria-controls="accordion"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
-								</div>
-							</div>
-						</div>
-						<div class="col pb-2 pr-2 text-right">
-							<div ng-if="movie.vote_average > 0">
-								<div><span class="text-warning display-4 h6">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-								<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
-							</div>
-						</div>
-					</div>
-				</div>
+			</div>
 		</div>
 	</div>
 </div>
