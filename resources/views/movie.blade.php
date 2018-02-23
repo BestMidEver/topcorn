@@ -15,7 +15,7 @@
 							<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
+							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2" aria-hidden="true"></i><small>{{ __('general.trailer') }}</small></button>
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right">
 							<div ng-if="movie.vote_average > 0">
@@ -38,15 +38,15 @@
 						<div class="col">
 							<div class="h-100 d-flex flex-column justify-content-center pl-2">
 								<div ng-if="movie.videos.results.length > 1">
-									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
-									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == movie.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
+									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-click="previous_trailer();"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == movie.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
 								</div>
 							</div>
 						</div>
 						<div class="col">
 							<div class="h-100 d-flex flex-column justify-content-center text-center">
 								<div>
-									<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-target="#collapseCover" aria-expanded="true" aria-controls="collapseCover"><i class="fa fa-angle-up"></i></button>
+									<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-target="#collapseCover" aria-expanded="true" aria-controls="collapseCover"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 								</div>
 							</div>
 						</div>
@@ -74,10 +74,10 @@
 	@if(Auth::check())
 	<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 		<div class="d-flex flex-row justify-content-between">
-			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':user_movie_record.later_id!=null}" ng-click="this_later()"><i class="fas fa-clock d-block" ng-if="user_movie_record.later_id!=null"></i><i class="far fa-clock d-block" ng-if="user_movie_record.later_id==null"></i>{{ __('general.watch_later') }}</button>
-			<button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><i class="fa fa-star-half-o d-block"></i>{{ __('general.seen') }}</button>
-			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id!=null}" ng-click="this_ban()"><i class="fa fa-ban d-block"></i>{{ __('general.ban') }}</button>
-			<a href="{{config('constants.facebook.share_website')}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook"><i class="fa fa-facebook-official d-block"></i>{{ __('general.share') }}</a>
+			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':user_movie_record.later_id!=null}" ng-click="this_later()"><i class="fa fa-clock-o d-block" aria-hidden="true"></i>{{ __('general.watch_later') }}</button>
+			<button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><i class="fa fa-star-half-o d-block" aria-hidden="true"></i>{{ __('general.seen') }}</button>
+			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id!=null}" ng-click="this_ban()"><i class="fa fa-ban d-block" aria-hidden="true"></i>{{ __('general.ban') }}</button>
+			<a href="{{config('constants.facebook.share_website')}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook"><i class="fa fa-facebook-official d-block" aria-hidden="true"></i>{{ __('general.share') }}</a>
 		</div>
 	</div>
 	@endif
@@ -137,7 +137,7 @@
 			</div>
 			<div ng-if="movie.homepage.length > 0">
 				<div class="h6 pt-1">{{ __('general.official_website') }}</div>
-				<a ng-href="@{{movie.homepage}}" target="_blank" class="text-dark break-word"><p><i class="fa fa-external-link"></i> @{{movie.homepage}}</p></a>
+				<a ng-href="@{{movie.homepage}}" target="_blank" class="text-dark break-word"><p><i class="fa fa-external-link" aria-hidden="true"></i> @{{movie.homepage}}</p></a>
 			</div>
 			<div ng-if="movie.belongs_to_collection">
 				<div class="h6 pt-1">@{{movie.belongs_to_collection.name}}</div>
@@ -186,7 +186,7 @@
 			<button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><small>{{ __('general.show_everyone') }}</small></button>
 		</div>
 		<div class="text-center pt-1" ng-show="iscast">
-			<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><i class="fa fa-angle-up"></i></button>
+			<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 		</div>
 	</div>
 </div>
@@ -196,7 +196,7 @@
 <div class="container-fluid mt-5">	
 	<div>
 		<span class="h5 mb-0 pr-2">{{ __('general.reviews') }}</span>
-		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"><i class="fa fa-pencil"></i> {{ __('general.add_review') }}</a>
+		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"><i class="fa fa-pencil" aria-hidden="true"></i> {{ __('general.add_review') }}</a>
 	</div>
 	<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
 		<div class="h6 pb-2">@{{review.author}}</div>
@@ -207,7 +207,7 @@
 						<div ng-bind-html="review.content"></div>
 					</div>
 					<div class="text-center pt-0">
-						<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-parent="@{{'#accordion'+$index}}" data-target="@{{'#collapse'+$index+'b'}}"><i class="fa fa-angle-up"></i></button>
+						<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-parent="@{{'#accordion'+$index}}" data-target="@{{'#collapse'+$index+'b'}}"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 					</div>
 				</div>
 			</div>
