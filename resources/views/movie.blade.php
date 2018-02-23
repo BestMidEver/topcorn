@@ -7,15 +7,14 @@
 <div class="mt-md-4">
 	<div class="position-relative">
 		<div id="accordion">
-						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2" aria-hidden="true"></i><small>{{ __('general.trailer') }}</small></button>
-						</div>
-			<div>
 				<div id="collapseCover" class="collapse show">
 					<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row p-2">
 							<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
+						</div>
+						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
+							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-parent="#accordion" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2" aria-hidden="true"></i><small>{{ __('general.trailer') }}</small></button>
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right">
 							<div ng-if="movie.vote_average > 0">
@@ -25,13 +24,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-							<div class="h-100 d-flex flex-column justify-content-center text-center">
-								<div>
-									<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-parent="#accordion" data-target="#collapseCover" aria-expanded="true" aria-controls="accordion"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
-								</div>
-							</div>
-			<div>
 				<div id="collapseFragman" class="collapse" ng-if="movie.videos.results.length > 0">
 					<div class="d-flex flex-row background-black pl-2 pt-2 pb-3">
 						<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
@@ -49,6 +41,11 @@
 							</div>
 						</div>
 						<div class="col">
+							<div class="h-100 d-flex flex-column justify-content-center text-center">
+								<div>
+									<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-parent="#accordion" data-target="#collapseCover" aria-expanded="true" aria-controls="accordion"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
+								</div>
+							</div>
 						</div>
 						<div class="col pb-2 pr-2 text-right">
 							<div ng-if="movie.vote_average > 0">
@@ -58,7 +55,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	</div>
 </div>
