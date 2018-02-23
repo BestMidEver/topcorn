@@ -26,12 +26,12 @@
 					</div>
 				</div>
 			</div>
-			<div>
 							<div class="h-100 d-flex flex-column justify-content-center text-center">
 								<div>
 									<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-parent="#accordion" data-target="#collapseCover" aria-expanded="true" aria-controls="accordion"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
 								</div>
 							</div>
+			<div>
 				<div id="collapseFragman" class="collapse" ng-if="movie.videos.results.length > 0">
 					<div class="d-flex flex-row background-black pl-2 pt-2 pb-3">
 						<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
