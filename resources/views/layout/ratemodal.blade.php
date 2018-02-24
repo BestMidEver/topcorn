@@ -15,7 +15,7 @@
 								<h4 data-toggle="tooltip" data-placement="bottom" data-original-title="@{{modalmovie.original_title}}"><a href="/movie/@{{modalmovie.id}}" target={{$target}}><span class="badge badge-light yeswrap p-1">@{{modalmovie.title}} <small><em>(@{{modalmovie.release_date.substring(0, 4)}})</em></small></span></a></h4>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-right" data-dismiss="modal" data-backdrop="false" aria-label="Close">
+								<button type="button" class="btn btn-secondary btn-sm badge-light float-right border-circle" data-dismiss="modal" data-backdrop="false" aria-label="Close">
 									<span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
 								</button>
 							</div>
@@ -78,7 +78,7 @@
 								<button class="btn btn-secondary badge-light btn-lg border-circle touch-light" ng-click="modalmovie.is_quick_rate ? quick_rate(0) : rate(modalmovie.index, null)">{{ __('general.havent_seen') }}</button>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-left touch-light border-circle" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
+								<button type="button" class="btn btn-secondary float-left border-circle dark-btn" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
 									<i class="fa fa-ban" aria-hidden="true"></i>
 								</button>
 							</div>
