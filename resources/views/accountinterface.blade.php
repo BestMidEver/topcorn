@@ -93,7 +93,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="far fa-image"></i></div>
 				                </div>
 				                <select class="form-control" id="image_quality" name="image_quality">
 									<option value=2 {{ Auth::User()->image_quality == 2 ? 'selected' : '' }}>{{ __('general.high') }}</option>
@@ -131,7 +131,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-external-link"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-external-link-alt"></i></div>
 				                </div>
 				                <select class="form-control" id="open_new_tab" name="open_new_tab">
 									<option value=1 {{ Auth::User()->open_new_tab == 1 ? 'selected' : '' }}>{{ __('general.active') }}</option>
