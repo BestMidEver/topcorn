@@ -74,7 +74,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand ml-auto" href="/">
+            <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
                 <img src="/images/topcorn_logo.png" width="50" height="50" alt="">
             </a>
             <ul class="navbar-nav ml-auto">
