@@ -30,7 +30,7 @@ button:focus{box-shadow: none!important;}
 .faderdiv{opacity: 1;  transition: opacity 0.5s ease-in;z-index: 7;}
 .votecard .votediv .btn, .border-circle{border-radius: 50px;}
 .btn-verydark{background: #232323;border-color:#232323;}
-.btn-verydark:hover{background: #000;border-color:#000;}
+.btn-verydark:hover{background: #111;border-color:#111;}
 .votecard .votediv .btn-warning{color: #fff;}
 .votecard.modal-dialog{    max-height: 600px!important;    max-width: 400px!important;}
 .coverpic{object-fit: cover;width: 100%; max-height: 300px; min-height: 150px;}

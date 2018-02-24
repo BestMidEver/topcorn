@@ -15,8 +15,8 @@
 								<h4 data-toggle="tooltip" data-placement="bottom" data-original-title="@{{modalmovie.original_title}}"><a href="/movie/@{{modalmovie.id}}" target={{$target}}><span class="badge badge-light yeswrap p-1">@{{modalmovie.title}} <small><em>(@{{modalmovie.release_date.substring(0, 4)}})</em></small></span></a></h4>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-right border-circle" data-dismiss="modal" data-backdrop="false" aria-label="Close">
-									<span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+								<button type="button" class="btn btn-verydark btn-lg float-right border-circle" data-dismiss="modal" data-backdrop="false" aria-label="Close">
+									<span aria-hidden="true"><i class="fa fa-times"></i></span>
 								</button>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 						</div>
 						<div class="d-flex flex-row justify-content-between align-items-end">
 							<div class="faderdiv">
-								<button type="button" class="btn btn-verydark btn-lg float-left border-circle" ng-class="modalmovie.later_id!=null ? 'text-warning' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_later() : later(modalmovie.index)">
+								<button type="button" class="btn btn-verydark btn-lg float-left border-circle text-white" ng-class="modalmovie.later_id!=null ? 'text-warning' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_later() : later(modalmovie.index)">
 									<i class="fas fa-clock" ng-show="modalmovie.later_id!=null"></i><i class="far fa-clock" ng-show="modalmovie.later_id==null"></i>
 								</button>
 							</div>
