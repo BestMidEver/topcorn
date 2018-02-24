@@ -70,15 +70,15 @@
 						</div>
 						<div class="d-flex flex-row justify-content-between align-items-end">
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-left touch-light" ng-class="modalmovie.later_id!=null ? 'text-warning' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_later() : later(modalmovie.index)">
+								<button type="button" class="btn btn-secondary btn-sm badge-light float-left touch-light border-circle" ng-class="modalmovie.later_id!=null ? 'text-warning' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_later() : later(modalmovie.index)">
 									<i class="fa fa-clock-o" aria-hidden="true"></i>
 								</button>
 							</div>
 							<div class="faderdiv">
-								<button class="btn btn-secondary badge-light touch-light" ng-click="modalmovie.is_quick_rate ? quick_rate(0) : rate(modalmovie.index, null)">{{ __('general.havent_seen') }}</button>
+								<button class="btn btn-secondary badge-light btn-lg border-circle touch-light" ng-click="modalmovie.is_quick_rate ? quick_rate(0) : rate(modalmovie.index, null)">{{ __('general.havent_seen') }}</button>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-left touch-light" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
+								<button type="button" class="btn btn-secondary btn-sm badge-light float-left touch-light border-circle" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-muted'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
 									<i class="fa fa-ban" aria-hidden="true"></i>
 								</button>
 							</div>
