@@ -196,7 +196,7 @@
 <div class="container-fluid mt-5">	
 	<div>
 		<span class="h5 mb-0 pr-2">{{ __('general.reviews') }}</span>
-		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"><i class="fa fa-pencil"></i> {{ __('general.add_review') }}</a>
+		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</a>
 	</div>
 	<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
 		<div class="h6 pb-2">@{{review.author}}</div>
