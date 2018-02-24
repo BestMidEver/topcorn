@@ -71,7 +71,7 @@
 						<div class="d-flex flex-row justify-content-between align-items-end">
 							<div class="faderdiv">
 								<button type="button" class="btn btn-verydark btn-lg float-left border-circle text-white" ng-class="modalmovie.later_id!=null ? 'text-warning' : 'text-white'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_later() : later(modalmovie.index)">
-									<i class="fas fa-clock" ng-show="modalmovie.later_id!=null"></i><i class="far fa-clock" ng-show="modalmovie.later_id==null"></i>a
+									<i class="fas fa-clock" ng-show="true"></i><i class="far fa-clock" ng-show="modalmovie.later_id==null"></i>a
 								</button>
 							</div>
 							<div class="faderdiv">
