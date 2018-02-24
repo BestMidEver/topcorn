@@ -76,7 +76,7 @@
 				</div>
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="cover_pic">{{ __('general.cover_photo') }}</label>
+				        <label for="image_quality" ng-mouseenter="hovering_cove=true" ng-mouseleave="hovering_cove=false" data-toggle="tooltip" data-placement="top" title="{{ __('general.cover_photo_help') }}">{{ __('general.cover_photo') }} <span ng-show="!hovering_cove"><i class="far fa-question-circle"></i></span><span ng-show="hovering_cove"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -88,7 +88,6 @@
 									<option ng-repeat="c in cover_movies" ng-value="c.cover_path">@{{c.title}}</option>
 								</select>
 				            </div>
-				        <small id="coverhelp" class="form-text text-muted float-right mt-0 mb-2">{{ __('general.cover_photo_help') }}</small>
 				        </div>
 				    </div>
 				</div>
