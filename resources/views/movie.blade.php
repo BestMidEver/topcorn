@@ -200,9 +200,9 @@
 	</div>
 	<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
 		<div class="h6 pb-2">@{{review.author}}</div>
-		<div id="@{{'accordion'+$index}}" data-parent="@{{'#accordion'+$index}}">
+		<div id="@{{'accordion'+$index}}">
 			<div ng-if="review.id == 'long'">
-				<div id="@{{'collapse'+$index+'a'}}" class="lead lead-small collapse">
+				<div id="@{{'collapse'+$index+'a'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse">
 					<div>
 						<div ng-bind-html="review.content"></div>
 					</div>
