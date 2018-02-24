@@ -15,7 +15,7 @@
 								<h4 data-toggle="tooltip" data-placement="bottom" data-original-title="@{{modalmovie.original_title}}"><a href="/movie/@{{modalmovie.id}}" target={{$target}}><span class="badge btn-verydark yeswrap text-white">@{{modalmovie.title}} <small><em>(@{{modalmovie.release_date.substring(0, 4)}})</em></small></span></a></h4>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-verydark float-right border-circle text-white" data-dismiss="modal" data-backdrop="false" aria-label="Close">
+								<button type="button" class="btn btn-verydark btn-lg float-right border-circle text-white" data-dismiss="modal" data-backdrop="false" aria-label="Close">
 									<span><i class="fa fa-times"></i></span>
 								</button>
 							</div>
@@ -70,7 +70,7 @@
 						</div>
 						<div class="d-flex flex-row justify-content-between align-items-end">
 							<div class="faderdiv">
-								<button type="button" class="btn btn-verydark float-left border-circle text-white" ng-class="modalmovie.later_id!=null ? 'text-warning' : 'text-white'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_later() : later(modalmovie.index)">
+								<button type="button" class="btn btn-verydark btn-lg float-left border-circle text-white" ng-class="modalmovie.later_id!=null ? 'text-warning' : 'text-white'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_later() : later(modalmovie.index)">
 									<span ng-show="modalmovie.later_id!=null"><i class="fas fa-clock"></i></span><span ng-show="modalmovie.later_id==null"><i class="far fa-clock"></i></span>
 								</button>
 							</div>
@@ -78,7 +78,7 @@
 								<button class="btn btn-verydark btn-lg border-circle text-white" ng-click="modalmovie.is_quick_rate ? quick_rate(0) : rate(modalmovie.index, null)">{{ __('general.havent_seen') }}</button>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-verydark float-left border-circle" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-white'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
+								<button type="button" class="btn btn-verydark btn-lg float-left border-circle" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-white'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
 									<i class="fa fa-ban"></i>
 								</button>
 							</div>
