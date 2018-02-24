@@ -82,7 +82,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				            	<div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="far fa-image"></i></div>
 				                </div>
 				                <select class="form-control" id="cover_pic" name="cover_pic" ng-change="choose_cover()" ng-model="cover_path" ng-init="cover_path=''">
 									<option ng-repeat="c in cover_movies" ng-value="c.cover_path">@{{c.title}}</option>
@@ -100,7 +100,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				            	<div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-picture-o"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="far fa-image"></i></div>
 				                </div>
 				                <select class="form-control" id="profile_pic" name="profile_pic" ng-change="choose_profile()" ng-model="profile_path" ng-init="profile_path=''">
 				                	<option ng-value="profile_path_selected_value" ng-hide="true">@{{profile_path_selected_text}}</option>
