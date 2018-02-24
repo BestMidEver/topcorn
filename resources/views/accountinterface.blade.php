@@ -112,7 +112,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-arrows-alt"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-expand-arrows-alt"></i></div>
 				                </div>
 				                <select class="form-control" id="margin_x_setting" name="margin_x_setting">
 									<option value=2 {{ Auth::User()->margin_x_setting == 2 ? 'selected' : '' }}>{{ __('general.active') }}</option>
