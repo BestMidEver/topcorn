@@ -10,6 +10,8 @@
         @show
     </title>
 
+    <link rel="icon" type="image/png" href="/images/topcorn_logo.png">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/style.css">
 
@@ -61,6 +63,9 @@
 
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/images/topcorn_logo.png" width="50" height="50" alt="">
+        </a>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link d-md-none" href="/home"><i class="fa fa-home" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.home') }}</span></a>
