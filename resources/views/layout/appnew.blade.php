@@ -62,8 +62,8 @@
 
 
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-md navbar-dark bg-night">
+        <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
             <img src="/images/topcorn_logo.png" width="50" height="50" alt="">
         </a>
         <ul class="navbar-nav">
