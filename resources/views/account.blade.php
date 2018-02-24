@@ -93,7 +93,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="profile_pic">{{ __('general.profile_photo') }}</label>
+				        <label for="image_quality" ng-mouseenter="hovering_prof=true" ng-mouseleave="hovering_prof=false" data-toggle="tooltip" data-placement="top" title="{{ __('general.profile_photo_help') }}">{{ __('general.profile_photo') }} <span ng-show="!hovering_prof"><i class="far fa-question-circle"></i></span><span ng-show="hovering_prof"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -109,7 +109,6 @@
 				                	<option ng-repeat="p in profile_actors" ng-value="[p.profile_path,p.name]">@{{p.name}}</option>
 								</select>
 				            </div>
-				        <small id="coverhelp" class="form-text text-muted float-right mt-0 mb-2">{{ __('general.profile_photo_help') }}</small>
 				        </div>
 				    </div>
 				</div>
