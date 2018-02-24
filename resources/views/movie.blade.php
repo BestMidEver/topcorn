@@ -207,7 +207,7 @@
 						<div ng-bind-html="review.content"></div>
 					</div>
 					<div class="text-center pt-0">
-						<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'b'}}"><i class="fa fa-angle-up"></i></button>
+						<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'b'}}" aria-expanded="true"><i class="fa fa-angle-up"></i></button>
 					</div>
 				</div>
 			</div>
@@ -218,7 +218,7 @@
 					</div>
 					<div ng-if="review.id == 'long'">
 						<div class="text-center pt-1">
-							<button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}"><small>{{ __('general.read_all') }}</small></button>
+							<button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
 						</div>
 					</div>
 				</div>
