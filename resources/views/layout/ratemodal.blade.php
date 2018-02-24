@@ -58,7 +58,7 @@
 							</div>
 							<div class="row mt-2 align-items-end" ng-if="modalmovie.is_quick_rate && previous_quick_rate_movie">
 								<div class="col-2 faderdiv">
-									<button type="button" class="btn btn-secondary btn-sm badge-light float-left" ng-click="previous_quick_rate()">
+									<button type="button" class="btn btn-verydark btn-lg float-left text-white" ng-click="previous_quick_rate()">
 										<i class="fa fa-undo"></i>
 									</button>
 								</div>
