@@ -74,11 +74,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <ul class="navbar-brand ml-auto">
-                <a href="/">
-                    <img src="/images/topcorn_logo.png" width="50" height="50" alt="">
-                </a>
-            </ul>
+            <a class="navbar-brand ml-auto" href="/">
+                <img src="/images/topcorn_logo.png" width="50" height="50" alt="">
+            </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
