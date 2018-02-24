@@ -78,7 +78,7 @@
 								<button class="btn btn-secondary badge-light btn-lg border-circle touch-light" ng-click="modalmovie.is_quick_rate ? quick_rate(0) : rate(modalmovie.index, null)">{{ __('general.havent_seen') }}</button>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary float-left border-circle dark-background" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-white'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
+								<button type="button" class="btn btn-secondary btn-lg float-left border-circle dark-background" ng-class="modalmovie.ban_id!=null ? 'text-danger' : 'text-white'" ng-show="modalmovie.is_quick_rate" ng-click="modalmovie.is_quick_rate ? quick_ban() : ban(modalmovie.index)">
 									<i class="fa fa-ban" aria-hidden="true"></i>
 								</button>
 							</div>
