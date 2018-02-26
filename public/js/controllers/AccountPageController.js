@@ -1,8 +1,8 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
-	window.onunload = function() {
-	    alert('Bye.');
-	}
+	$(window).unload(function(){
+	  alert('Bye.');
+	});
 	
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){
