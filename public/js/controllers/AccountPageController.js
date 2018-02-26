@@ -1,6 +1,7 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
-	window.onbeforeunload = function() { 
+	console.log(user_name)
+	window.onbeforeunload = function() {
 		//return ""; 
 	}
 
