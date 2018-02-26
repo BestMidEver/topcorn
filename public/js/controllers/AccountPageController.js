@@ -3,9 +3,10 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
-		console.log($scope.cover_path, pass.cover_src)
+		console.log(pass.profile_src, $scope.profile_path)
 		if(pass.user_name != $scope.user_name
-			|| $scope.cover_path != undefined){
+			|| ($scope.cover_path != undefined && pass.cover_src != $scope.cover_path)
+			|| $scope.profile_path != undefined){
 			$scope.is_save_disabled = false;
 		}else{
 			$scope.is_save_disabled = true;
@@ -75,6 +76,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		}else{
 			$scope.profile_src = pass.constants_image_thumb_nail+$scope.profile_path;
 		}
+		$scope.check_save_disabled();
 		if($scope.current_level == 502) $scope.level_up(503);
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
