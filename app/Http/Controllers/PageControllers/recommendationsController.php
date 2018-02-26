@@ -150,7 +150,7 @@ class recommendationsController extends Controller
             'recommendations.movie_id as mother_movie_id',
             'movies.'.$hover_title.' as original_title',
             DB::raw('sum(rateds.rate-3.6) AS point'),
-            DB::raw('COUNT() as count'),
+            DB::raw('COUNT(movies.id) as count'),
             'movies.vote_average',
             'movies.release_date',
             'movies.'.Auth::User()->lang.'_title as title',
