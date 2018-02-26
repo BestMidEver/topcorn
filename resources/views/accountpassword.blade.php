@@ -104,7 +104,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-redo"></i></div>
 				                </div>
-				                <input type="password" class="form-control" id="new_password_confirmation" name="new_password_confirmation" required>
+				                <input type="password" class="form-control" id="new_password_confirmation" ng-model="new_password_confirmation" name="new_password_confirmation" required>
 				            </div>
 				        </div>
 				    </div>
