@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-12 col-xl-10">
-			<form class="form-horizontal" role="form" method="POST" action="/account/password">
+			<form name="myForm" class="form-horizontal" role="form" method="POST" action="/account/password">
 				{{ csrf_field() }}
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
@@ -112,7 +112,7 @@
 				<div class="row mt-3">
 				    <div class="col-md-3"></div>
 				    <div class="col-md-6">
-				        <button type="submit" class="btn btn-primary btn-block">{{ __('general.change_password') }}</button>
+				        <button type="submit" class="btn btn-primary btn-block" ng-disabled="myForm.$invalid">{{ __('general.change_password') }}</button>
 				    </div>
 				</div>
 			</form>
