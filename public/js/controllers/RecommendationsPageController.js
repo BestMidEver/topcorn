@@ -79,7 +79,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$("[data-toggle=popover]").popover('hide');
 				$('#quickvote').popover('show');
 			}else if(location.hash.indexOf('tooltip-search')>-1){
-				console.log("muhaha")
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 1)
 				.then(function(response){
@@ -161,6 +160,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
     $scope.get_page_data = function()
     {
+    	$scope.movies=null;
+
     	var f_lang = [];
         var temp = _.pairs($scope.f_lang_model);
         for (var i = 0; i < temp.length; i++) {
