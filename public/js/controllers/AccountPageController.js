@@ -1,7 +1,7 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
 	window.onbeforeunload = function() { 
-		return true; 
+		return ""; 
 	}
 
 	$('#myform').submit(function() {
