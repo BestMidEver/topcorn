@@ -5,7 +5,7 @@
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.account') }}</h5>
 
-<div class="container-fluid mt-3 pb-1" onbeforeunload="return myFunction()">
+<div class="container-fluid mt-3 pb-1">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<a class="nav-link active text-muted" href="/account">{{ __('general.profile') }}</a>
