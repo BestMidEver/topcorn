@@ -1,6 +1,8 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
-	window.onbeforeunload = function() { return "asdf"; }
+	window.onbeforeunload = function() { 
+		return true; 
+	}
 
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){
