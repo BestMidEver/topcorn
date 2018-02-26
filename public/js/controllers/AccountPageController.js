@@ -1,8 +1,11 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
-	window.onunload = function() {
-	    alert('Bye.');
-	}
+	$scope.$on('$locationChangeStart', function( event ) {
+	    var answer = confirm("Are you sure you want to leave this page?")
+	    if (!answer) {
+	        event.preventDefault();
+	    }
+	});
 	
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){

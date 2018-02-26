@@ -46,10 +46,6 @@ $(document).ready(function() {
 			}
 		});
 	});
-
-	window.onunload = function() {
-	    alert('Bye.');
-	}
 });
 
 $('[data-toggle="tooltip"]').tooltip({
