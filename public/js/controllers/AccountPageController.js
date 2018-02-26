@@ -4,6 +4,11 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		return true; 
 	}
 
+	$('#myform').submit(function() {
+		window.onbeforeunload = null;
+		return true;
+	});
+
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){
 		$scope.profile_src = pass.constants_image_thumb_nail+pass.profile_src;
