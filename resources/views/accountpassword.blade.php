@@ -63,7 +63,7 @@
 				        <div class="form-control-feedback">
 				            @if ($errors->has('current_password'))
 				                <span class="text-danger align-middle float-right float-md-none">
-				                    <i class="fa fa-close"> {{ $errors->first('current_password') }}</i>
+				                    <i class="far fa-times-circle"> {{ $errors->first('current_password') }}</i>
 				                </span>
 				            @endif
 				        </div>
@@ -88,7 +88,7 @@
 				        <div class="form-control-feedback">
 				            @if ($errors->has('new_password'))
 				                <span class="text-danger align-middle float-right float-md-none">
-				                    <i class="fa fa-close"> {{ $errors->first('new_password') }}</i>
+				                    <i class="far fa-times-circle"> {{ $errors->first('new_password') }}</i>
 				                </span>
 				            @endif
 				        </div>
