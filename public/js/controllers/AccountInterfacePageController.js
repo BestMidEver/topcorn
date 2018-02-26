@@ -1,5 +1,5 @@
 MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
-{
+{console.log(pass)
 	$scope.lang=pass.lang;
 	$scope.secondary_lang=pass.secondary_lang;
 	$scope.hover_title_language=pass.hover_title_language;
