@@ -46,9 +46,6 @@ $(document).ready(function() {
 			}
 		});
 	});
-	$( window ).unload(function() {
-	  return "Handler for .unload() called.";
-	});
 });
 
 $('[data-toggle="tooltip"]').tooltip({

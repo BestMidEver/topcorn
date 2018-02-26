@@ -1,5 +1,9 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
+	$(window).on("unload", function(e) {
+    alert("call");
+    console.log("this will be triggered");
+});
 
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){
