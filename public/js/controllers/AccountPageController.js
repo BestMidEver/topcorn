@@ -1,9 +1,6 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
-	$(window).on("unload", function(e) {
-	    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-	    return null;
-	});
+	window.onbeforeunload = function() { return ""; }
 
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){
