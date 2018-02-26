@@ -45,7 +45,7 @@ class SuckMovieJob implements ShouldQueue
         if($this->isWithRecommendation){
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);
             Recommendation::where(['movie_id' => $this->id])->delete();
-            for ($k=0; $k < count($movie['similar']['results']); $k++) {
+            /*for ($k=0; $k < count($movie['similar']['results']); $k++) {
                 $temp = $movie['similar']['results'][$k];
                 SuckMovieJob::dispatch($temp['id'], false)->onQueue("default");
                 if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
@@ -55,7 +55,7 @@ class SuckMovieJob implements ShouldQueue
                 $recommendation->movie_id = $this->id;
                 $recommendation->is_similar = true;
                 $recommendation->save();
-            }
+            }*/
             for ($k=0; $k < count($movie['recommendations']['results']); $k++) {
                 $temp = $movie['recommendations']['results'][$k];
                 SuckMovieJob::dispatch($temp['id'], false)->onQueue("default");
