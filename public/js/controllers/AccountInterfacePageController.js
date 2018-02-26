@@ -4,7 +4,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
-		console.log($scope.lang, $scope.secondary_lang)
+		console.log($scope.gubbak)
 		if(
 			(pass.lang != $scope.lang)
 		){
