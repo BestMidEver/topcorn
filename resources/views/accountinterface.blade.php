@@ -40,9 +40,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
 				                <select class="form-control" id="lang" name="lang" ng-model="lang" ng-change="check_save_disabled()" autofocus>
-									<option value="tr" ng-selected="lang">Türkçe</option>
-									<option value="en" ng-selected="lang">English</option>
-									<option value="hu" ng-selected="lang">Magyar</option>
+									<option ng-value="tr" ng-selected="lang">Türkçe</option>
+									<option ng-value="en" ng-selected="lang">English</option>
+									<option ng-value="hu" ng-selected="lang">Magyar</option>
 								</select>
 				            </div>
 				        </div>
@@ -59,9 +59,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
 				                <select class="form-control" id="secondary_lang" name="secondary_lang" ng-model="secondary_lang" ng-change="check_save_disabled()">
-									<option value="tr" ng-selected="secondary_lang">Türkçe</option>
-									<option value="en" ng-selected="secondary_lang">English</option>
-									<option value="hu" ng-selected="secondary_lang">Magyar</option>
+									<option ng-value="tr" ng-selected="secondary_lang">Türkçe</option>
+									<option ng-value="en" ng-selected="secondary_lang">English</option>
+									<option ng-value="hu" ng-selected="secondary_lang">Magyar</option>
 								</select>
 				            </div>
 				        </div>
