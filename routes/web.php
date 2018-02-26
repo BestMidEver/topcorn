@@ -231,7 +231,7 @@ Route::get('test', function(){
 	    'bans.id as ban_id'
 	)
 	->groupBy('movies.id')
-	->havingRaw('point > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
+	->havingRaw('count > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
 	->orderBy('point', 'desc');
 
 	if([18] != []){
