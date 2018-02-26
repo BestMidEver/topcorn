@@ -1,6 +1,11 @@
 MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 {
 	$scope.lang=pass.lang;
+	$scope.secondary_lang=pass.secondary_lang;
+	$scope.hover_title_language=pass.hover_title_language;
+	$scope.image_quality=pass.image_quality;
+	$scope.margin_x_setting=pass.margin_x_setting;
+	$scope.open_new_tab=pass.open_new_tab;
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
