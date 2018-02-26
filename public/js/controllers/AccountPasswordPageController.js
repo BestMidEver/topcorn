@@ -1,7 +1,7 @@
 MyApp.controller('AccountPasswordPageController', function($scope, $http, rate)
 {
 	window.onbeforeunload = function() {
-		if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
+		if(!$scope.myForm.$invalid) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
 	}
 
 	$('#the_form').submit(function() {
