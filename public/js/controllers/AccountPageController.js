@@ -1,8 +1,5 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
-	$( window ).unload(function() {
-	  return "Handler for .unload() called.";
-	});
 
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){
