@@ -11,7 +11,12 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.check_save_disabled = function(){
 		console.log($scope.lang)
 		if(
-			(pass.lang != $scope.lang)
+			(pass.lang != $scope.lang,
+			pass.hover_title_language != $scope.hover_title_language,
+			pass.hover_title_language != $scope.hover_title_language,
+			pass.image_quality != $scope.image_quality,
+			pass.margin_x_setting != $scope.margin_x_setting,
+			pass.open_new_tab != $scope.open_new_tab)
 		){
 			$scope.is_save_disabled = false;
 		}else{
