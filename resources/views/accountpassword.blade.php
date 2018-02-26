@@ -27,7 +27,7 @@
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-12 col-xl-10">
-			<form name="myForm" class="form-horizontal" role="form" method="POST" action="/account/password">
+			<form id="the_form" name="myForm" class="form-horizontal" role="form" method="POST" action="/account/password">
 				{{ csrf_field() }}
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">

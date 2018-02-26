@@ -1,5 +1,5 @@
 MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
-{console.log(pass)
+{
 	$scope.lang=pass.lang;
 	$scope.secondary_lang=pass.secondary_lang;
 	$scope.hover_title_language=pass.hover_title_language;
@@ -26,6 +26,11 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	window.onbeforeunload = function() {
 		if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
 	}
+
+	$('#the_form').submit(function() {
+		window.onbeforeunload = null;
+		return true;
+	});
 
 
 
