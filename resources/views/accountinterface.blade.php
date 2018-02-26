@@ -39,7 +39,7 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
-				                <select class="form-control" id="lang" name="lang" ng-model="gubbak" ng-change="check_save_disabled()" autofocus>
+				                <select class="form-control" id="lang" name="lang" ng-model="lang" ng-change="check_save_disabled()" autofocus>
 									<option value="tr" {{ Auth::User()->lang == 'tr' ? 'selected' : '' }}>Türkçe</option>
 									<option value="en" {{ Auth::User()->lang == 'en' ? 'selected' : '' }}>English</option>
 									<option value="hu" {{ Auth::User()->lang == 'hu' ? 'selected' : '' }}>Magyar</option>

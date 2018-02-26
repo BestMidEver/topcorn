@@ -1,10 +1,10 @@
 MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 {
-	$scope.gubbak=pass.lang;
+	$scope.lang=pass.lang;
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
-		console.log($scope.gubbak)
+		console.log($scope.lang)
 		if(
 			(pass.lang != $scope.lang)
 		){
