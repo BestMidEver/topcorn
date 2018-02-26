@@ -234,7 +234,7 @@ Route::get('test', function(){
 	->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
 	->orderByRaw('sum(IF(recommendations.is_similar, 1, 3)*(rateds.rate-3))', 'desc');
 
-	if([18] != []){
+	if([18] != [18]){
 	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
 	    ->whereIn('genre_id', [18]);
 	}
