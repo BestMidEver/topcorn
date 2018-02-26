@@ -1,5 +1,25 @@
 MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 {
+	$scope.is_save_disabled = true;
+
+	$scope.check_save_disabled = function(){
+		console.log($scope.lang)
+		/*if(
+			($scope.user_name != undefined && pass.user_name != $scope.user_name)
+			|| ($scope.cover_path != '' && pass.cover_src != $scope.cover_path)
+			|| ($scope.profile_path != '' && pass.profile_src != $scope.profile_path)
+		){
+			$scope.is_save_disabled = false;
+		}else{
+			$scope.is_save_disabled = true;
+		}*/
+	}
+	window.onbeforeunload = function() {
+		if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
+	}
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -137,121 +157,6 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-/*
-//////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////// SAME PART //////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-	$scope.paginate = function(page)
-	{
-		$scope.page = page;
-		$scope.get_page_data();
-		$scope.scroll_to_top();
-	}
-
-	$scope.votemodal=function(index, movie)
-	{
-		$scope.modalmovie=movie;
-		$scope.modalmovie.index=index;
-		$('#myModal').modal('show');
-	};
-
-	$scope.rate_class = function(is_rated)
-	{
-		switch(is_rated) {
-			case 5:
-				return 'btn-success';
-			case 4:
-				return 'btn-info';
-			case 3:
-				return 'btn-secondary';
-			case 2:
-				return 'btn-warning text-white';
-			case 1:
-				return 'btn-danger';
-			default:
-				return 'btn-outline-secondary addlarter';
-		}
-	}
-
-	$scope.later=function(index)
-	{
-		console.log(index)
-		if($scope.movies[index].later_id == null){
-			rate.add_later($scope.movies[index].id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.movies[index].later_id=response.data.data.later_id;
-				}
-			});
-		}else{
-			rate.un_later($scope.movies[index].later_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204 || response.status == 404){
-					$scope.movies[index].later_id=null;
-				}
-			});
-		}
-	};
-	
-	$scope.rate=function(index, rate_code)
-	{
-		console.log(index, rate_code)
-		$('#myModal').modal('hide');
-		if(rate_code != null){
-			rate.add_rate($scope.movies[index].id, rate_code)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.movies[index].rated_id=response.data.data.rated_id;
-					$scope.movies[index].rate_code=response.data.data.rate;
-				}else{
-					$('#myModal').modal('show');
-				}
-			});
-		}else if(rate_code == null){
-			rate.un_rate($scope.movies[index].rated_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204){
-					$scope.movies[index].rated_id=null;
-					$scope.movies[index].rate_code=null;
-				}else{
-					$('#myModal').modal('show');
-				}
-			});
-		}
-	};
-
-	$scope.ban=function(index)
-	{
-		console.log(index)
-		if($scope.movies[index].ban_id == null){
-			rate.add_ban($scope.movies[index].id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.movies[index].ban_id=response.data.data.ban_id;
-				}
-			});
-		}else{
-			rate.un_ban($scope.movies[index].ban_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204 || response.status == 404){
-					$scope.movies[index].ban_id=null;
-				}
-			});
-		}
-	};
-//////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////// SAME PART //////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-*/
 
 
 

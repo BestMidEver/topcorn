@@ -39,7 +39,7 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
-				                <select class="form-control" id="lang" name="lang" autofocus>
+				                <select class="form-control" id="lang" name="lang" ng-model="lang" ng-change="check_save_disabled()" autofocus>
 									<option value="tr" {{ Auth::User()->lang == 'tr' ? 'selected' : '' }}>Türkçe</option>
 									<option value="en" {{ Auth::User()->lang == 'en' ? 'selected' : '' }}>English</option>
 									<option value="hu" {{ Auth::User()->lang == 'hu' ? 'selected' : '' }}>Magyar</option>
@@ -144,7 +144,7 @@
 				<div class="row">
 				    <div class="col-md-3"></div>
 				    <div class="col-md-6">
-				        <button type="submit" class="btn btn-primary btn-block">{{ __('general.save_changes') }}</button>
+				        <button type="submit" class="btn btn-primary btn-block" ng-disabled="is_save_disabled">{{ __('general.save_changes') }}</button>
 				    </div>
 				</div>
 			</form>
