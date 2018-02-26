@@ -149,7 +149,7 @@ class recommendationsController extends Controller
             'recommendations.this_id as id',
             'recommendations.movie_id as mother_movie_id',
             'movies.'.$hover_title.' as original_title',
-            DB::raw('sum(rateds.rate-3)*movies.vote_average AS point'),
+            DB::raw('sum(rateds.rate-3.6)*movies.vote_average AS point'),
             DB::raw('COUNT(*) as count'),
             'movies.vote_average',
             'movies.release_date',
@@ -161,7 +161,7 @@ class recommendationsController extends Controller
             'bans.id as ban_id'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(rateds.rate-3)*movies.vote_average > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
+        ->havingRaw('sum(rateds.rate-3.6) > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
         ->orderBy('point', 'desc');
 
         if($request->f_genre != []){
