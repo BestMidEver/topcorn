@@ -219,7 +219,7 @@ Route::get('test', function(){
 	    'recommendations.this_id as id',
 	    'recommendations.movie_id as mother_movie_id',
 	    'movies.'.$hover_title.' as original_title',
-	    DB::raw('sum(IF(recommendations.is_similar, 1, 3)*(rateds.rate-3))*movies.vote_average AS point'),
+	    DB::raw('sum(IF(recommendations.is_similar, 1, 3)*(rateds.rate-3)) AS point'),
 	    DB::raw('COUNT(*) as count'),
 	    'movies.vote_average',
 	    'movies.release_date',
@@ -231,7 +231,7 @@ Route::get('test', function(){
 	    'bans.id as ban_id'
 	)
 	->groupBy('movies.id')
-	->havingRaw('count > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
+	->havingRaw('sum(IF(recommendations.is_similar, 1, 3)*(rateds.rate-3)) > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
 	->orderBy('point', 'desc');
 
 	if([18] != []){
