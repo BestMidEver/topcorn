@@ -48,6 +48,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 	$scope.choose_cover = function(){
 		$scope.is_searching=true;
 		$scope.cover_src=pass.constants_image_cover+$scope.cover_path;
+		$scope.check_save_disabled();
 		movie_id = _.where($scope.cover_movies, {cover_path:$scope.cover_path})[0].movie_id;
 		if($scope.current_level == 501) $scope.level_up(502);
 		$http({
