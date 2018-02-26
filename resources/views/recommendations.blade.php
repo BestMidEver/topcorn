@@ -89,7 +89,7 @@
 
 <div id="scroll_top_point">
 <div class="p-5" ng-show="movies.length==0">
-	<div class="text-muted text-center">{{ __('general.no_result') }}</div>
+	<div class="text-muted text-center"><span ng-if="!is_waiting">{{ __('general.no_result') }}</span><span ng-if="is_waiting">Aranıyor...</span></div>
 </div>
 	@include('layout.moviecard')
 </div>

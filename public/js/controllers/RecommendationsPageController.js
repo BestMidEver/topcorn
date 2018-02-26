@@ -157,11 +157,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
     $scope.f_lang_model = [];
     $scope.f_genre_model = [];
 	$scope.active_tab= pass.level < 700 ? 'top_rated' : 'pemosu';
+	$scope.is_waiting=false;
 
     $scope.get_page_data = function()
     {
     	$scope.movies=[];
-
+    	$scope.is_waiting=true;
     	var f_lang = [];
         var temp = _.pairs($scope.f_lang_model);
         for (var i = 0; i < temp.length; i++) {
@@ -190,6 +191,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.to=response.data.to;
 			$scope.in=response.data.total;
 			$(".tooltip").hide();
+			$scope.is_waiting=false;
 		});
 	}
 
