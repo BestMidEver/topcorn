@@ -1,5 +1,9 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
+	window.onunload = function() {
+	    alert('Bye.');
+	}
+	
 	$scope.cover_src = pass.constants_image_cover+pass.cover_src;
 	if(pass.profile_src != ""){
 		$scope.profile_src = pass.constants_image_thumb_nail+pass.profile_src;
