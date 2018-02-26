@@ -160,7 +160,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
     $scope.get_page_data = function()
     {
-    	$scope.movies=null;
+    	$scope.movies=[];
 
     	var f_lang = [];
         var temp = _.pairs($scope.f_lang_model);
