@@ -5,7 +5,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 	$scope.check_save_disabled = function(){
 		if(pass.user_name != $scope.user_name
 			|| ($scope.cover_path != '' && pass.cover_src != $scope.cover_path)
-			|| $scope.profile_path != '' && pass.profile_src != $scope.profile_path){
+			|| ($scope.profile_path != '' && pass.profile_src != $scope.profile_path)){
 			$scope.is_save_disabled = false;
 		}else{
 			$scope.is_save_disabled = true;
