@@ -63,7 +63,7 @@ class SuckMovieJob implements ShouldQueue
                 Recommendation::updateOrCreate(
                     ['this_id' => $temp['id'], 'movie_id' => $this->id],
                     ['id' => $this->id*10000000 + $temp['id'],
-                    'is_similar' => $k+1,]
+                    'is_similar' => 5-intval($k/4),]
                 );
             }
             $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
