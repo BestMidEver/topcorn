@@ -7,8 +7,8 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		console.log(pass.cover_src, $scope.cover_path)
 		console.log(pass.profile_src, $scope.profile_path)
 		if(pass.user_name != $scope.user_name
-			|| ($scope.cover_path != undefined && pass.cover_src != $scope.cover_path)
-			|| $scope.profile_path != undefined){
+			|| ($scope.cover_path != '' && pass.cover_src != $scope.cover_path)
+			|| $scope.profile_path != ''){
 			$scope.is_save_disabled = false;
 		}else{
 			$scope.is_save_disabled = true;
