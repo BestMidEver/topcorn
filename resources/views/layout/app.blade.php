@@ -51,7 +51,7 @@
 
 
 
-<body onbeforeunload="return myFunction()">
+<body>
 
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
