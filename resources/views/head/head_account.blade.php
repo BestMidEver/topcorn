@@ -3,6 +3,7 @@
 pass={
 	"angular_module_array":[],
 	"lang":"{{ App::getlocale() }}", 
+	"user_name":"{{ Auth::User()->name }}",
 	"cover_src":"{{ Auth::user()->cover_pic }}", 
 	"profile_src":"{{Auth::user()->profile_pic}}", 
 	"facebook_profile_src":"{{Auth::user()->facebook_profile_pic}}",
