@@ -12,7 +12,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 		console.log($scope.lang)
 		if(
 			(pass.lang != $scope.lang,
-			pass.hover_title_language != $scope.hover_title_language,
+			pass.secondary_lang != $scope.secondary_lang,
 			pass.hover_title_language != $scope.hover_title_language,
 			pass.image_quality != $scope.image_quality,
 			pass.margin_x_setting != $scope.margin_x_setting,
