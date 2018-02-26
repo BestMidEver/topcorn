@@ -220,7 +220,7 @@ Route::get('test', function(){
 	    'recommendations.movie_id as mother_movie_id',
 	    'movies.'.$hover_title.' as original_title',
 	    DB::raw('sum(IF(recommendations.is_similar, 1, 3)*(rateds.rate-3)) AS point'),
-	    DB::raw('COUNT(*) as count'),
+	    //DB::raw('COUNT(*) as count'),
 	    'movies.vote_average',
 	    'movies.release_date',
 	    'movies.tr_title as title',
