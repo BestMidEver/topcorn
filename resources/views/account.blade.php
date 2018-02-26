@@ -13,11 +13,8 @@
 		<li class="nav-item">
 			<a class="nav-link text-muted" href="/account/password">{{ __('general.password') }}</a>
 		</li>
-		<li class="nav-item">
-			<a class="nav-link text-muted" href="/account/interface">{{ __('general.interface') }}</a>
-		</li>
 		<li class="nav-item mb-2">
-			<a class="nav-link text-muted" href="/account/options">Seçenekler</a>
+			<a class="nav-link text-muted" href="/account/interface">{{ __('general.interface') }}</a>
 		</li>
 	</ul>
 </div>
