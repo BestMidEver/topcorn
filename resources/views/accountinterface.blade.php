@@ -39,7 +39,7 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
-				                <select class="form-control" id="lang" name="lang" ng-model="lang" ng-change="check_save_disabled()" ng-init="lang='{{Auth::User()->lang}}'" autofocus>
+				                <select class="form-control" id="lang" name="lang" ng-model="lang" ng-change="check_save_disabled()" autofocus>
 									<option value="tr" ng-selected="lang">Türkçe</option>
 									<option value="en" ng-selected="lang">English</option>
 									<option value="hu" ng-selected="lang">Magyar</option>
@@ -58,10 +58,10 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
-				                <select class="form-control" id="secondary_lang" name="secondary_lang">
-									<option value="tr" {{ Auth::User()->secondary_lang == 'tr' ? 'selected' : '' }}>Türkçe</option>
-									<option value="en" {{ Auth::User()->secondary_lang == 'en' ? 'selected' : '' }}>English</option>
-									<option value="hu" {{ Auth::User()->secondary_lang == 'hu' ? 'selected' : '' }}>Magyar</option>
+				                <select class="form-control" id="secondary_lang" name="secondary_lang" ng-model="secondary_lang" ng-change="check_save_disabled()">
+									<option value="tr" ng-selected="secondary_lang">Türkçe</option>
+									<option value="en" ng-selected="secondary_lang">English</option>
+									<option value="hu" ng-selected="secondary_lang">Magyar</option>
 								</select>
 				            </div>
 				        </div>

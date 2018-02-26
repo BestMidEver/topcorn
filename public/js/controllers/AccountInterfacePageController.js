@@ -1,18 +1,19 @@
 MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 {
+	$scope.lang=pass.lang;
+	$scope.secondary_lang=pass.secondary_lang;
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
 		console.log($scope.lang)
-		/*if(
-			($scope.user_name != undefined && pass.user_name != $scope.user_name)
-			|| ($scope.cover_path != '' && pass.cover_src != $scope.cover_path)
-			|| ($scope.profile_path != '' && pass.profile_src != $scope.profile_path)
+		if(
+			(pass.lang != $scope.lang
+			|| pass.secondary_lang != $scope.secondary_lang)
 		){
 			$scope.is_save_disabled = false;
 		}else{
 			$scope.is_save_disabled = true;
-		}*/
+		}
 	}
 	window.onbeforeunload = function() {
 		if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
