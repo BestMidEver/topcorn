@@ -24,7 +24,9 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 	}, function errorCallback(response) {
 	});
 
+	$scope.is_searching=false;
 	$scope.choose_cover = function(){
+		$scope.is_searching=true;
 		$scope.cover_src=pass.constants_image_cover+$scope.cover_path;
 		movie_id = _.where($scope.cover_movies, {cover_path:$scope.cover_path})[0].movie_id;
 		if($scope.current_level == 501) $scope.level_up(502);
@@ -36,7 +38,8 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 				'Accept' : 'application/json'
 			}
 		}).then(function successCallback(response) {
-			console.log(response.data.cast)
+			console.log(response.data.cast);
+			$scope.is_searching=false;
 			$scope.profile_actors=_.filter(response.data.cast, function(o){ return o.profile_path != null; });
 		}, function errorCallback(response) {
 		});	
