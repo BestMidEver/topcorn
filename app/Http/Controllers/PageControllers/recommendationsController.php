@@ -149,7 +149,7 @@ class recommendationsController extends Controller
             'recommendations.this_id as id',
             'recommendations.movie_id as mother_movie_id',
             'movies.'.$hover_title.' as original_title',
-            DB::raw('sum((rateds.rate-3)*(5/(recommendations.is_similar+4))) AS point'),
+            DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
             DB::raw('COUNT(movies.id) as count'),
             'movies.vote_average',
             'movies.release_date',
