@@ -1,7 +1,7 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
 	$(window).on("unload", function(e) {
-	    console.log("this will be triggered");
+	    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 	    return null;
 	});
 
