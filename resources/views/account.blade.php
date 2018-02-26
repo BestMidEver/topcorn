@@ -60,7 +60,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
 				                </div>
-				                <input type="text" class="form-control" id="name" value="{{  Auth::User()->name }}" ng-model="user_name" name="name" required autofocus onfocus="var temp_value=this.value; this.value=''; this.value=temp_value">
+				                <input type="text" class="form-control" id="name" ng-value="{{  Auth::User()->name }}" ng-model="user_name" name="name" required autofocus onfocus="var temp_value=this.value; this.value=''; this.value=temp_value">
 				            </div>
 				        </div>
 				    </div>
