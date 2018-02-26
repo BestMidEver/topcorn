@@ -55,7 +55,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-key"></i></div>
 				                </div>
-				                <input type="password" class="form-control" id="current_password" name="current_password" required autofocus onfocus="var temp_value=this.value; this.value=''; this.value=temp_value">
+				                <input type="password" class="form-control" id="current_password" name="current_password" ng-model="new_password" required autofocus onfocus="var temp_value=this.value; this.value=''; this.value=temp_value">
 				            </div>
 				        </div>
 				    </div>
@@ -80,7 +80,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-key"></i></div>
 				                </div>
-				                <input type="password" class="form-control" id="new_password" name="new_password" required>
+				                <input type="password" class="form-control" id="new_password" name="new_password" ng-model="new_password" required>
 				            </div>
 				        </div>
 				    </div>
