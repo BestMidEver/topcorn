@@ -197,13 +197,13 @@ Route::get('test', function(){
 	}
 
 	$return_val = DB::table('rateds')
-	->whereIn('rateds.user_id', 7)
+	->whereIn('rateds.user_id', [7])
 	->where('rateds.rate', '<>', 3)
 	->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
 	->join('movies', 'movies.id', '=', 'recommendations.this_id')
 	->leftjoin('rateds as r2', function ($join){
 	    $join->on('r2.movie_id', '=', 'movies.id')
-	    ->whereIn('r2.user_id', 7);
+	    ->whereIn('r2.user_id', [7]);
 	})
 	->leftjoin('laters', function ($join) {
 	    $join->on('laters.movie_id', '=', 'movies.id')
@@ -212,7 +212,7 @@ Route::get('test', function(){
 	//->where('laters.id', '=', null)
 	->leftjoin('bans', function ($join){
 	    $join->on('bans.movie_id', '=', 'movies.id')
-	    ->whereIn('bans.user_id', 7);
+	    ->whereIn('bans.user_id', [7]);
 	})
 	->where('bans.id', '=', null)
 	->select(
