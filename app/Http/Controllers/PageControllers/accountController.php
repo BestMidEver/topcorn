@@ -77,7 +77,7 @@ class accountController extends Controller
 
     	$is_from_facebook=0;
 		if(Auth::User()->facebook_id){
-			if(Hash::check(Auth::User()->facebook_id, Auth::User()->password)){
+			if(Hash::check(Auth::User()->facebook_id+config('constants.facebook.password_spice'), Auth::User()->password)){
 				$is_from_facebook = 1;
 			}
 		}

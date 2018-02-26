@@ -69,7 +69,7 @@ class LoginController extends Controller
             $user = new User;
             $user->name = $userSocial->name;
             $user->email = $userSocial->email;
-            $user->password = Hash::make($userSocial->id);
+            $user->password = Hash::make($userSocial->id+config('constants.facebook.password_spice'));
             $user->facebook_id = $userSocial->id;
             $user->lang = App::getlocale();
             $user->secondary_lang = Session::get('secondary_lang');

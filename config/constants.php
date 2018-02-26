@@ -40,6 +40,7 @@ return array(
   'facebook' => array(
 
     'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+    'password_spice' => 'Sp1cEe',
 
   ),
 
