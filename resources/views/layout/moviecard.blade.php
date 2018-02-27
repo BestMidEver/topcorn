@@ -6,15 +6,16 @@
 					<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
-							<div>
-								<span class="d-block"><span class="display-4 text-white">@{{movie.percent}}</span>%</span>
-								<span>eşleşme</span>
+							<div class="text-white">
+								<span class="display-4">@{{movie.percent}}</span>%
 							</div>
 						</div>
 					</div>
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
-							<div><span class="display-4 text-white">@{{movie.vote_average}}</span>/10</div>
+							<div class="text-white">
+								<span class="h4">@{{movie.vote_average}}</span>/10
+							</div>
 						</div>
 					</div>
 				</div>
