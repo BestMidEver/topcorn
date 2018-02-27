@@ -152,7 +152,7 @@ class recommendationsController extends Controller
             DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
             DB::raw('COUNT(movies.id) as count'),
             DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as percent'),
-            DB::raw('sum(rateds.rate*recommendations.is_similar)/(COUNT(movies.id)*25) as p2'),
+            DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(movies.id) as p2'),
             'movies.vote_average',
             'movies.release_date',
             'movies.'.Auth::User()->lang.'_title as title',
