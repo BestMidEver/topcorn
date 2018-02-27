@@ -4,11 +4,8 @@
 			<a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 				<div class="position-relative">
 					<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-					<div class="p-2 text-right moviecard-percent" ng-if="movie.percent > 0">
-						<div><span class="badge badge-secondary">@{{movie.percent}}%</span></div>
-					</div>
 					<div class="p-2 text-right moviecard-rating" ng-if="movie.vote_average > 0">
-						<div><span class="badge badge-secondary">@{{movie.vote_average}}</span></div>
+						<div><span class="badge badge-secondary"><span ng-if="movie.percent > 0">@{{movie.percent}}% - </span>@{{movie.vote_average}}</span></div>
 					</div>
 				</div>
 				<div class="card-block">
