@@ -12,7 +12,12 @@
 					<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row p-2">
-							<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
+							<div>
+								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
+							</div>
+							<div>
+								@{{movie.percent}}@{{movie.point}}
+							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
 							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>

@@ -22,7 +22,7 @@
 						</div>
 					</div>
 					<div class="p-2 text-right moviecard-percent" ng-if="movie.percent > 0">
-						<div><span class="badge btn-verydark text-white">@{{movie.percent}}%</span></div>
+						<div><span class="badge btn-verydark text-white">%@{{movie.percent}}</span></div>
 					</div>
 					<div class="p-2 text-right moviecard-rating" ng-if="movie.vote_average > 0">
 						<div><span class="badge btn-verydark text-white">@{{movie.vote_average}}</span></div>
