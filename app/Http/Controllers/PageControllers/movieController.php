@@ -54,10 +54,8 @@ class movieController extends Controller
             $join->on('r2.movie_id', '=', 'recommendations.movie_id')
             ->where('r2.user_id', Auth::user()->id);
         })
-        //->where('r2.rate', '<>', 0)
         ->select(
             'movies.id as movie_id',
-            'r2.rate as XXX',
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
