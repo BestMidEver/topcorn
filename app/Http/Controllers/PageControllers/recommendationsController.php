@@ -164,7 +164,7 @@ class recommendationsController extends Controller
         )
         ->groupBy('movies.id')
         ->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
-        ->orderBy('p2', 'desc');
+        ->orderBy('point', 'desc');
 
         if($request->f_genre != []){
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
