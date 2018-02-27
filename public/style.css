@@ -57,6 +57,13 @@ button:focus{box-shadow: none!important;}
 .underlined{border-bottom: 5px solid #5BC0EB;}
 .z-1041{z-index: 1041;}
 .tooltip-x{font-size:1rem;}
+#darken-cover {
+   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+  -webkit-background-size: cover;
+  -moz-background-size:  cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
