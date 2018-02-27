@@ -150,7 +150,7 @@ class recommendationsController extends Controller
             //'recommendations.movie_id as mother_movie_id',
             'movies.'.$hover_title.' as original_title',
             DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
-            DB::raw('COUNT(movies.id) as count'),
+            DB::raw('sum(rateds.rate-3)/COUNT(movies.id) as count'),
             'movies.vote_average',
             'movies.release_date',
             'movies.'.Auth::User()->lang.'_title as title',
@@ -162,7 +162,7 @@ class recommendationsController extends Controller
         )
         ->groupBy('movies.id')
         ->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
-        ->orderBy('count', 'desc');
+        ->orderBy('point', 'desc');
 
         if($request->f_genre != []){
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
