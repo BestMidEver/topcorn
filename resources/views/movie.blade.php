@@ -18,7 +18,7 @@
 							<div class="col p-2 text-right">
 								<div ng-if="user_movie_record.percent > 0">
 									<small class="text-white">Film zevkine göre</small>
-									<div><span class="text-warning display-4 h6">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span></div>
+									<div><span class="text-warning display-4 h6 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h6 h6 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span></div>
 									<div><span class="text-white"><small>@{{user_movie_record.point}}</small></span><span class="text-white"> <small>puan</small></span></div>
 								</div>
 							</div>
