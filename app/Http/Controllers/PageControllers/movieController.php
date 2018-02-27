@@ -51,7 +51,7 @@ class movieController extends Controller
         })
         ->leftjoin('recommendations', 'recommendations.this_id', '=', 'movies.id')
         ->leftjoin('rateds as r2', function ($join) {
-            $join->on('r2.movie_id', '=', 'movies.id')
+            $join->on('r2.movie_id', '=', 'recommendations.movie_id')
             ->where('r2.user_id', Auth::user()->id);
         })
         ->select(
@@ -60,7 +60,7 @@ class movieController extends Controller
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id',
-            DB::raw('sum((r2.rate-3)*recommendations.is_similar) AS points'),
+            DB::raw('sum((r2.rate-3)*recommendations.is_similar) AS point'),
             DB::raw('COUNT(movies.id) as count')
             //DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as percent'),
             //DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(movies.id) as p2')
