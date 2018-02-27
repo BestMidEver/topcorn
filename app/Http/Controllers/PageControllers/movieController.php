@@ -60,8 +60,8 @@ class movieController extends Controller
             DB::raw('COUNT(movies.id) as count')
             //DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as percent'),
             //DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(movies.id) as p2')
-        )
-        ->groupBy('movies.id');
+        );
+        //->groupBy('movies.id');
 
         return response()->json($return_val->first());
     }
