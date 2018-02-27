@@ -20,6 +20,12 @@
 							</div>
 						</div>
 					</div>
+					<div class="p-2 text-right moviecard-percent" ng-if="movie.percent > 0">
+						<div><span class="badge btn-verydark text-white">@{{movie.percent}}%</span></div>
+					</div>
+					<div class="p-2 text-right moviecard-rating" ng-if="movie.vote_average > 0">
+						<div><span class="badge btn-verydark text-white">@{{movie.vote_average}}</span></div>
+					</div>
 				</div>
 				<div class="card-block">
 					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{movie.title}} <small class="text-muted d-block pt-1" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
