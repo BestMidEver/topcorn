@@ -7,7 +7,7 @@
 					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
 							<div class="text-white">
-								<span class="h5">@{{movie.percent}}</span> %
+								<span class="h4">@{{movie.percent}}</span> %
 							</div>
 						</div>
 					</div>
