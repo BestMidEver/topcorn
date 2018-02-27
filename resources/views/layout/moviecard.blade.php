@@ -17,7 +17,7 @@
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
 							<div class="text-white">
 								<span class="d-block"><span class="h5 text-warning">@{{movie.vote_average}}</span><small>/10</small></span>
-								<small>@{{movie.vote_count}} oy</small>
+								<small ng-if="movie.vote_count > 0">@{{movie.vote_count}} oy</small>
 							</div>
 						</div>
 					</div>
