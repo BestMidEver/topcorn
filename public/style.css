@@ -42,6 +42,7 @@ button:focus{box-shadow: none!important;}
 .darken-cover{filter: brightness(50%);}
 .custom-over-layer{position: absolute;width: 100%;top:0;}
 .custom-over-layer-bottom{position: absolute;width: 100%;bottom:0;}
+.moviecard .custom-over-layer, .moviecard .custom-over-layer-bottom{display: none!important;}
 .trailer{max-height: 500px;}
 .fa22 .fa{font-size: 22px!important;}
 .fa40 .fa{font-size: 40px!important;}
@@ -49,6 +50,7 @@ button:focus{box-shadow: none!important;}
 .moviecard-rating{position: absolute;bottom: 0;right: 0;}
 .moviecard-percent{position: absolute;bottom: 30px;right: 0;}
 .moviecard a:hover .moviecard-percent, .moviecard a:hover  .moviecard-rating{display: none!important;}
+.moviecard a:hover .custom-over-layer{display:flex!important;}
 .loginbuttonfa{position: absolute;    left: 28px;    top: 10px;}
 .moviecard_5{    color: #fff;    background-color: #28a745;    border-color: #28a745;}
 .moviecard_4{    color: #fff;    background-color: #17a2b8;    border-color: #17a2b8;}
