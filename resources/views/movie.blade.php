@@ -11,11 +11,11 @@
 				<div id="collapseCover" class="collapse show" data-parent="#accordion">
 					<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
-						<div class="d-flex flex-row p-2">
-							<div class="col">
+						<div class="d-flex flex-row no-gutters">
+							<div class="col pt-2 pl-2">
 								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
 							</div>
-							<div class="col pt-2 pr-2 text-right">
+							<div class="col p-2 text-right">
 								<div ng-if="movie.vote_average > 0">
 									<div><span class="text-warning display-4 h6">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span></div>
 									<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small>puan</small></span></div>
