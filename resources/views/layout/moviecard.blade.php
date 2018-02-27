@@ -7,7 +7,7 @@
 					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
 							<div class="text-white">
-								<span class="d-block"><span class="h5 text-warning">@{{movie.percent}}</span><small>% eşleşme</small></span>
+								<span class="d-block"><small>%</small><span class="h5 text-warning">@{{movie.percent}}</span><small> eşleşme</small></span>
 								<small>@{{movie.point}} puan</small>
 							</div>
 						</div>
