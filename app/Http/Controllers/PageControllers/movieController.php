@@ -57,7 +57,7 @@ class movieController extends Controller
         //->where('r2.rate', '<>', 0)
         ->select(
             'movies.id as movie_id',
-            'r2.rate',
+            'r2.rate as XXX',
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
