@@ -49,7 +49,8 @@ button:focus{box-shadow: none!important;}
 .lead-small{font-size: 1rem;}
 .moviecard-rating{position: absolute;bottom: 0;right: 0;}
 .moviecard-percent{position: absolute;bottom: 30px;right: 0;}
-.moviecard a:hover .moviecard-percent, .moviecard-rating{display: none!important;}
+.moviecard a:hover .moviecard-percent, .moviecard a:hover  .moviecard-rating{display: none!important;}
+.moviecard a:hover .custom-over-layer{display: block!important;}
 .loginbuttonfa{position: absolute;    left: 28px;    top: 10px;}
 .moviecard_5{    color: #fff;    background-color: #28a745;    border-color: #28a745;}
 .moviecard_4{    color: #fff;    background-color: #17a2b8;    border-color: #17a2b8;}
