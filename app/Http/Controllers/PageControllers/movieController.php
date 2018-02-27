@@ -50,10 +50,10 @@ class movieController extends Controller
             ->where('bans.user_id', '=', Auth::user()->id);
         })
         ->leftjoin('recommendations', 'recommendations.this_id', '=', 'movies.id')
-        /*->leftjoin('rateds as r2', function ($join) {
+        ->leftjoin('rateds as r2', function ($join) {
             $join->on('r2.movie_id', '=', 'recommendations.movie_id')
             ->where('r2.user_id', Auth::user()->id);
-        })*/
+        })
         //->where('r2.rate', '<>', 0)
         ->select(
             'movies.id as movie_id',
