@@ -13,10 +13,10 @@
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row p-2">
 							<div>
-								<span class="text-white h6 lead lead-small">@{{movie.tagline}}@{{movie.percent}}@{{movie.point}}</span>
+								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
 							</div>
 							<div>
-								
+								@{{user_movie_record.percent}}@{{user_movie_record.point}}
 							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
