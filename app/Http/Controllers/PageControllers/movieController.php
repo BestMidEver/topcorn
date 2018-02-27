@@ -41,6 +41,7 @@ class movieController extends Controller
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->where('rateds.user_id', '=', Auth::user()->id);
         })
+        ->where('rateds.rate', '<>', 0)
         ->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::user()->id);
