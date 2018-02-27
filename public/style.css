@@ -45,6 +45,7 @@ button:focus{box-shadow: none!important;}
 .fa40 .fa{font-size: 40px!important;}
 .lead-small{font-size: 1rem;}
 .moviecard-rating{position: absolute;bottom: 0;right: 0;}
+.moviecard-percent{position: absolute;bottom: 0;left: 0;}
 .loginbuttonfa{position: absolute;    left: 28px;    top: 10px;}
 .moviecard_5{    color: #fff;    background-color: #28a745;    border-color: #28a745;}
 .moviecard_4{    color: #fff;    background-color: #17a2b8;    border-color: #17a2b8;}
