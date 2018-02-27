@@ -7,14 +7,14 @@
 					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
 							<div class="text-white">
-								<span class="h5">@{{movie.percent}}</span><i class="fas fa-percent"></i>
+								<span class="h5">@{{movie.percent}}%</span>
 							</div>
 						</div>
 					</div>
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
 							<div class="text-white">
-								<span class="h5">@{{movie.vote_average}}</span><i class="fas fa-star"></i>
+								<span class="h6">@{{movie.vote_average}}/10</span>
 							</div>
 						</div>
 					</div>
