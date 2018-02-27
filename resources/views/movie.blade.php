@@ -18,7 +18,7 @@
 							<div class="col p-2 text-right">
 								<div ng-if="user_movie_record.percent > 0">
 									<small class="text-white">Film zevkine göre</small>
-									<div><span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h6 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span></div>
+									<div><span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span></div>
 									<div><span class="text-white"><small>@{{user_movie_record.point}}</small></span><span class="text-white"> <small>puan</small></span></div>
 								</div>
 							</div>
@@ -28,7 +28,7 @@
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right">
 							<div ng-if="movie.vote_average > 0">
-								<div><span class="text-warning display-4 d-none d-md-inline">@{{movie.vote_average}}</span><span class="text-warning h6 d-md-none">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+								<div><span class="text-warning display-4 d-none d-md-inline">@{{movie.vote_average}}</span><span class="text-warning h5 d-md-none">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
 								<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
 							</div>
 						</div>
@@ -37,8 +37,19 @@
 			</div>
 			<div>
 				<div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="movie.videos.results.length > 0">
-					<div class="d-flex flex-row background-black pl-2 pt-2 pb-3">
-						<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
+					<div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
+						<div class="col">
+							<div class="h-100 d-flex flex-column justify-content-center pl-2">
+								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
+							</div>
+						</div>
+						<div class="col pb-2 pr-2 text-right">
+							<div ng-if="user_movie_record.percent > 0">
+								<small class="text-white">Film zevkine göre</small>
+								<div><span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span></div>
+								<div><span class="text-white"><small>@{{user_movie_record.point}}</small></span><span class="text-white"> <small>puan</small></span></div>
+							</div>
+						</div>
 					</div>
 					<div class="embed-responsive embed-responsive-1by1 trailer">
 						<iframe class="embed-responsive-item" ng-src="@{{trailerurl}}" allowfullscreen></iframe>
@@ -61,7 +72,7 @@
 						</div>
 						<div class="col pb-2 pr-2 text-right">
 							<div ng-if="movie.vote_average > 0">
-								<div><span class="text-warning display-4 d-none d-md-inline">@{{movie.vote_average}}</span><span class="text-warning h6 d-md-none">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+								<div><span class="text-warning display-4 d-none d-md-inline">@{{movie.vote_average}}</span><span class="text-warning h5 d-md-none">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
 								<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
 							</div>
 						</div>
@@ -77,7 +88,7 @@
 <div class="d-flex flex-wrap justify-content-between">
 	<div>
 		<div class="d-flex flex-column">
-			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2"><i class="fas fa-external-link-alt"></i> @{{movie.title}}</h1></a></div>
+			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2">@{{movie.title}}</h1></a></div>
 		</div>
 	</div>
 	@if(Auth::check())
