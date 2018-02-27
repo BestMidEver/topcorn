@@ -39,6 +39,7 @@ button:focus{box-shadow: none!important;}
 .profilepicsmall{object-fit: cover;    width: 100px;    height: 100px; border-radius: 100px;}
 .profilepicmedium{object-fit: cover;    width: 200px;    height: 200px; border-radius: 100px;}
 .trailercover{object-fit: cover;width: 100%; max-height: 300px; min-height: 150px;filter: brightness(50%);}
+.darkencover{filter: brightness(50%);}
 .custom-over-layer{position: absolute;width: 100%;top:0;}
 .trailer{max-height: 500px;}
 .fa22 .fa{font-size: 22px!important;}
@@ -57,13 +58,6 @@ button:focus{box-shadow: none!important;}
 .underlined{border-bottom: 5px solid #5BC0EB;}
 .z-1041{z-index: 1041;}
 .tooltip-x{font-size:1rem;}
-#darken-cover {
-   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
-  -webkit-background-size: cover;
-  -moz-background-size:  cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}

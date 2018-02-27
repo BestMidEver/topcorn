@@ -3,13 +3,13 @@
 		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-sm-2">
 			<a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 				<div class="position-relative">
-					<img id="darken-cover" class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+					<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-center">
-						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
-							<div><span class="badge btn-verydark text-white">@{{movie.percent}}%</span></div>
+						<div class="d-flex flex-row justify-content-center pb-3" ng-if="movie.percent > 0">
+							<div><span class="h4 text-white">@{{movie.percent}}%</span></div>
 						</div>
-						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
-							<div><span class="badge btn-verydark text-white">@{{movie.vote_average}}</span></div>
+						<div class="d-flex flex-row justify-content-center pt-3" ng-if="movie.vote_average > 0">
+							<div><span class="h4 text-white">@{{movie.vote_average}}</span></div>
 						</div>
 					</div>
 				</div>
