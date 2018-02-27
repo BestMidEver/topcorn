@@ -55,6 +55,7 @@ class movieController extends Controller
             ->where('r2.user_id', Auth::user()->id);
         })
         ->where('r2.rate', '>', 0)
+        ->orWhere('r2.rate', '=', null)
         ->select(
             'movies.id as movie_id',
             'rateds.id as rated_id',
