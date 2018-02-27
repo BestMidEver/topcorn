@@ -16,7 +16,7 @@
 								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
 							</div>
 							<div class="col p-2 text-right">
-								<div ng-if="movie.vote_average > 0">
+								<div ng-if="user_movie_record.percent > 0">
 									<small class="text-white">Film zevkine göre</small>
 									<div><span class="text-warning display-4 h6">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span></div>
 									<div><span class="text-white"><small>@{{user_movie_record.point}}</small></span><span class="text-white"> <small>puan</small></span></div>
