@@ -42,6 +42,7 @@ button:focus{box-shadow: none!important;}
 .darken-cover{filter: brightness(50%);}
 .darken-cover:hover{filter: brightness(100%)!important;}
 .custom-over-layer{position: absolute;width: 100%;top:0;}
+.custom-over-layer-bottom{position: absolute;width: 100%;bottom:0;}
 .trailer{max-height: 500px;}
 .fa22 .fa{font-size: 22px!important;}
 .fa40 .fa{font-size: 40px!important;}
