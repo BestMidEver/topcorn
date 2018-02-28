@@ -152,7 +152,7 @@ class recommendationsController extends Controller
             'movies.'.$hover_title.' as original_title',
             DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
             DB::raw('COUNT(movies.id) as count'),
-            DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as percent'),
+            DB::raw('(sum(rateds.rate*recommendations.is_similar)*4 + sum(rateds.rate)*40) DIV (COUNT(movies.id)*3) as percent'),
             DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(movies.id) as p2'),
             'movies.vote_average',
             'movies.vote_count',
