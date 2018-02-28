@@ -134,8 +134,8 @@ class recommendationsController extends Controller
         ->leftjoin('rateds as r2', function ($join) use ($request) {
             $join->on('r2.movie_id', '=', 'movies.id')
             ->whereIn('r2.user_id', $request->f_users);
+            ->where('r2.rate', '>', 0)
         })
-        ->where('r2.rate', '<>', 0)
         ->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::user()->id);
