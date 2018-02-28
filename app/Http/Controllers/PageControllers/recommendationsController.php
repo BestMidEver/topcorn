@@ -167,7 +167,7 @@ class recommendationsController extends Controller
         ->groupBy('movies.id')
         ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 9 AND sum(rateds.rate)*20 DIV COUNT(movies.id) > 70 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
         ->orderBy('point', 'desc')
-        ->orderBy('percent', 'desc');
+        ->orderBy('p2', 'desc');
 
         if($request->f_genre != []){
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
