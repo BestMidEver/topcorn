@@ -185,22 +185,40 @@
 			</div>
 		</div>
 	</div>
-	<div class="collapse" id="collapseCast" ng-if="movie.credits.cast.length > 6">
-		<div class="d-flex flex-wrap">
-			<div class="col-4 col-lg-2 mt-2 px-1" ng-repeat="person in movie.credits.cast | limitTo:100:6">
-				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
-					<a href="/person/@{{person.id}}" target={{$target}}>
-						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-						<div class="card-block text-center">
-							<h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
-						</div>
-					</a>
-					<div class="card-title px-1 text-muted text-center mb-0"><small ng-if="person.character.length > 0">@{{person.character}}</small></div>
+	<div class="collapse" id="collapseCast">
+		<div ng-if="movie.credits.cast.length > 6">
+			<div class="d-flex flex-wrap">
+				<div class="col-4 col-lg-2 mt-2 px-1" ng-repeat="person in movie.credits.cast | limitTo:100:6">
+					<div class="card moviecard h-100 d-flex flex-column justify-content-between">
+						<a href="/person/@{{person.id}}" target={{$target}}>
+							<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+							<div class="card-block text-center">
+								<h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
+							</div>
+						</a>
+						<div class="card-title px-1 text-muted text-center mb-0"><small ng-if="person.character.length > 0">@{{person.character}}</small></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="px-3 px-md-0" ng-if="movie.credits.crew.length > 0"><div class="h5">Set Ekibi</div></div>
+		<div ng-if="movie.credits.crew.length > 0">
+			<div class="d-flex flex-wrap">
+				<div class="col-4 col-lg-2 mt-2 px-1" ng-repeat="person in movie.credits.cast | limitTo:100:6">
+					<div class="card moviecard h-100 d-flex flex-column justify-content-between">
+						<a href="/person/@{{person.id}}" target={{$target}}>
+							<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+							<div class="card-block text-center">
+								<h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
+							</div>
+						</a>
+						<div class="card-title px-1 text-muted text-center mb-0"><small ng-if="person.job.length > 0">@{{person.job}}</small></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div ng-if="movie.credits.cast.length > 6">
+	<div ng-if="movie.credits.cast.length > 6 || movie.credits.crew.length > 0">
 		<div class="text-center pt-1" ng-hide="iscast">
 			<button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><small>{{ __('general.show_everyone') }}</small></button>
 		</div>
