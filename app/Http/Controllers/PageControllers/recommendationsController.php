@@ -152,8 +152,8 @@ class recommendationsController extends Controller
             'movies.'.$hover_title.' as original_title',
             DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
             DB::raw('COUNT(movies.id) as count'),
-            DB::raw('50 + sum(rateds.rate*recommendations.is_similar)*2 DIV COUNT(movies.id) as percent'),
-            DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as p2'),
+            DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as percent'),
+            DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(movies.id) as p2'),
             'movies.vote_average',
             'movies.vote_count',
             'movies.release_date',
@@ -165,9 +165,9 @@ class recommendationsController extends Controller
             'bans.id as ban_id'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(movies.id) > 70 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
+        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(movies.id) > 74 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
         ->orderBy('point', 'desc')
-        ->orderBy('percent', 'desc');
+        ->orderBy('p2', 'desc');
 
         if($request->f_genre != []){
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
