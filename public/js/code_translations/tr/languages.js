@@ -148,6 +148,10 @@ languages=[
 		"o":"Norveççe"
 	},
 	{
+		"i":"nb",
+		"o":"Norveççe"
+	},
+	{
 		"i":"fa",
 		"o":"Farsça"
 	},
