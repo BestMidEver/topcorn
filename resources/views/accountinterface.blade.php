@@ -216,7 +216,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="pemosu_mode" ng-mouseenter="hovering_pemo=true" ng-mouseleave="hovering_pemo=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pemosu_mode') }}">Benim Zevkime Göre Sıralama <span ng-show="!hovering_pemo"><i class="far fa-question-circle"></i></span><span ng-show="hovering_pemo"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="pemosu_mode" ng-mouseenter="hovering_pemo=true" ng-mouseleave="hovering_pemo=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pemosu_mode') }}">Benim Zevkime Göre Tavsiyeler - Sıralama <span ng-show="!hovering_pemo"><i class="far fa-question-circle"></i></span><span ng-show="hovering_pemo"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
