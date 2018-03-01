@@ -14,7 +14,9 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 			console.log(response.data);
 			$scope.person=response.data;
 			if($scope.person.birthday){
-				$scope.age=getAge($scope.person.birthday, $scope.person.deathday);
+				$scope.age='('+getAge($scope.person.birthday, $scope.person.deathday)+')';
+			}else{
+				$scope.age='';
 			}
 			$scope.row_cast=$scope.person.movie_credits.cast;
 			_.each($scope.person.movie_credits.crew,function(person){
