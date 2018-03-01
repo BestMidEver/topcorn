@@ -188,9 +188,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-align-justify"></i></div>
 				                </div>
 				                <select class="form-control" id="pagination" name="pagination" ng-model="pagination" ng-change="check_save_disabled()">
-									<option value=48>48</option>
-									<option value=24>24</option>
-									<option value=12>12</option>
+									<option value=48>Bir sayfada 48 sonuç</option>
+									<option value=24>Bir sayfada 24 sonuç</option>
+									<option value=12>Bir sayfada 12 sonuç</option>
 								</select>
 				            </div>
 				        </div>
