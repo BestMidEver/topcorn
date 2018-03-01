@@ -107,7 +107,7 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-paint-brush"></i></div>
 				                </div>
 				                <select class="form-control" id="theme" name="theme" ng-model="theme" ng-change="check_save_disabled()">
-									<option value=2 {{ Auth::User()->theme == 2 ? 'selected' : '' }}>{{ Auth::User()->theme}}Zifiri Karanlık</option>
+									<option value=2 {{ Auth::User()->theme == 2 ? 'selected' : '' }}>{{ Auth::User()->theme == 0}}Zifiri Karanlık</option>
 									<option value=1 {{ Auth::User()->theme == 1 ? 'selected' : '' }}>Karanlık</option>
 									<option value=0 {{ Auth::User()->theme == 0 ? 'selected' : '' }}>Aydınlık</option>
 								</select>
