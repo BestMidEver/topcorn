@@ -45,9 +45,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
 				                <select class="form-control" id="lang" name="lang" ng-model="lang" ng-change="check_save_disabled()" autofocus>
-									<option value="tr" {{ Auth::User()->lang == 'tr' ? 'selected' : '' }}>Türkçe</option>
-									<option value="en" {{ Auth::User()->lang == 'en' ? 'selected' : '' }}>English</option>
-									<option value="hu" {{ Auth::User()->lang == 'hu' ? 'selected' : '' }}>Magyar</option>
+									<option value="tr">Türkçe</option>
+									<option value="en">English</option>
+									<option value="hu">Magyar</option>
 								</select>
 				            </div>
 				        </div>
@@ -64,9 +64,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
 				                <select class="form-control" id="secondary_lang" name="secondary_lang" ng-model="secondary_lang" ng-change="check_save_disabled()">
-									<option value="tr" {{ Auth::User()->secondary_lang == 'tr' ? 'selected' : '' }}>Türkçe</option>
-									<option value="en" {{ Auth::User()->secondary_lang == 'en' ? 'selected' : '' }}>English</option>
-									<option value="hu" {{ Auth::User()->secondary_lang == 'hu' ? 'selected' : '' }}>Magyar</option>
+									<option value="tr">Türkçe</option>
+									<option value="en">English</option>
+									<option value="hu">Magyar</option>
 								</select>
 				            </div>
 				        </div>
@@ -83,8 +83,8 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-mouse-pointer"></i></div>
 				                </div>
 				                <select class="form-control" id="hover_title_language" name="hover_title_language" ng-model="hover_title_language" ng-change="check_save_disabled()">
-									<option value=1 {{ Auth::User()->hover_title_language == 1 ? 'selected' : '' }}>{{ __('general.movies_original_language') }}</option>
-									<option value=0 {{ Auth::User()->hover_title_language == 0 ? 'selected' : '' }}>{{ __('general.my_secondary_language') }}</option>
+									<option value=1>{{ __('general.movies_original_language') }}</option>
+									<option value=0>{{ __('general.my_secondary_language') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -126,9 +126,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="far fa-image"></i></div>
 				                </div>
 				                <select class="form-control" id="image_quality" name="image_quality" ng-model="image_quality" ng-change="check_save_disabled()">
-									<option value=2 {{ Auth::User()->image_quality == 2 ? 'selected' : '' }}>{{ __('general.high') }}</option>
-									<option value=1 {{ Auth::User()->image_quality == 1 ? 'selected' : '' }}>{{ __('general.medium') }}</option>
-									<option value=0 {{ Auth::User()->image_quality == 0 ? 'selected' : '' }}>{{ __('general.low') }}</option>
+									<option value=2>{{ __('general.high') }}</option>
+									<option value=1>{{ __('general.medium') }}</option>
+									<option value=0>{{ __('general.low') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -145,9 +145,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-expand-arrows-alt"></i></div>
 				                </div>
 				                <select class="form-control" id="margin_x_setting" name="margin_x_setting" ng-model="margin_x_setting" ng-change="check_save_disabled()">
-									<option value=2 {{ Auth::User()->margin_x_setting == 2 ? 'selected' : '' }}>{{ __('general.active') }}</option>
-									<option value=1 {{ Auth::User()->margin_x_setting == 1 ? 'selected' : '' }}>{{ __('general.standard') }}</option>
-									<option value=0 {{ Auth::User()->margin_x_setting == 0 ? 'selected' : '' }}>{{ __('general.disabled') }}</option>
+									<option value=2>{{ __('general.active') }}</option>
+									<option value=1>{{ __('general.standard') }}</option>
+									<option value=0>{{ __('general.disabled') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -164,8 +164,8 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-external-link-alt"></i></div>
 				                </div>
 				                <select class="form-control" id="open_new_tab" name="open_new_tab" ng-model="open_new_tab" ng-change="check_save_disabled()">
-									<option value=1 {{ Auth::User()->open_new_tab == 1 ? 'selected' : '' }}>{{ __('general.active') }}</option>
-									<option value=0 {{ Auth::User()->open_new_tab == 0 ? 'selected' : '' }}>{{ __('general.disabled') }}</option>
+									<option value=1>{{ __('general.active') }}</option>
+									<option value=0>{{ __('general.disabled') }}</option>
 								</select>
 				            </div>
 				        </div>
