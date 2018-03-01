@@ -6,6 +6,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.image_quality=pass.image_quality;
 	$scope.margin_x_setting=pass.margin_x_setting;
 	$scope.theme=pass.theme;
+	$scope.pagination=pass.pagination;
 	$scope.open_new_tab=pass.open_new_tab;
 	$scope.is_save_disabled = true;
 
@@ -18,6 +19,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 			|| pass.image_quality != $scope.image_quality
 			|| pass.margin_x_setting != $scope.margin_x_setting
 			|| pass.theme != $scope.theme
+			|| pass.pagination != $scope.pagination
 			|| pass.open_new_tab != $scope.open_new_tab)
 		){
 			$scope.is_save_disabled = false;

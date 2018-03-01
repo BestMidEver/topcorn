@@ -153,6 +153,12 @@
 				        </div>
 				    </div>
 				</div>
+
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+						<div class="h6 text-muted">Seçenekler</div>
+				    </div>
+				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
 				        <label for="open_new_tab" ng-mouseenter="hovering_open=true" ng-mouseleave="hovering_open=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_open_new_tab') }}">{{ __('general.open_new_tab') }} <span ng-show="!hovering_open"><i class="far fa-question-circle"></i></span><span ng-show="hovering_open"><i class="fas fa-question-circle"></i></span></label>
@@ -171,10 +177,23 @@
 				        </div>
 				    </div>
 				</div>
-
-				<div class="row mt-3">
+				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Görüntü</div>
+				        <label for="pagination" ng-mouseenter="hovering_pagi=true" ng-mouseleave="hovering_pagi=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pagination') }}">Sayfalama <span ng-show="!hovering_pagi"><i class="far fa-question-circle"></i></span><span ng-show="hovering_pagi"><i class="fas fa-question-circle"></i></span></label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-external-link-alt"></i></div>
+				                </div>
+				                <select class="form-control" id="pagination" name="pagination" ng-model="pagination" ng-change="check_save_disabled()">
+									<option value=48>48</option>
+									<option value=24>24</option>
+									<option value=12>12</option>
+								</select>
+				            </div>
+				        </div>
 				    </div>
 				</div>
 
