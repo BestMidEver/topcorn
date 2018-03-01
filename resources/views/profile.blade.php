@@ -26,7 +26,7 @@
 	@if(Auth::check())
 	<div class="right-top">
 		@if($profile_user_id == Auth::user()->id)
-		<a class="btn btn-link mt-2 mr-2 text-light" href="/account"><i class="fa fa-cog" aria-hidden="true"></i> {{ __('navbar.account') }}</a>
+		<a class="btn btn-link mt-2 mr-2 text-light" href="/account"><i class="fa fa-cog" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.account') }}</span></a>
 		@else
 		<a class="btn btn-link mt-2 mr-2 text-light" href="/recommendations/{{$profile_user_id}}"><i class="fa fa-plus" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('general.watch_together') }}</span></a>
 		@endif
