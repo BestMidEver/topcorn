@@ -11,7 +11,6 @@
 				<div class="d-flex flex-row align-items-center">
 					<img ng-src="{{ $profile_profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicsmall" alt="Responsive image">
 					<h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
-					<h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
 				</div>
 			</div>
 		</div>
@@ -19,9 +18,17 @@
 	<div class="coveroverlayermedium d-none d-md-inline">
 		<div class="d-flex flex-column">
 			<div class="d-flex flex-row align-items-center">
-				<img ng-src="{{ $profile_profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicmedium" alt="Responsive image">
-				<h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
-				<div><h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5></div>
+				<div class="d-flex flex-column">
+					<img ng-src="{{ $profile_profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicmedium" alt="Responsive image">
+				</div>
+				<div class="d-flex flex-column">
+					<div class="d-flex flex-row align-items-center">
+						<h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
+					</div>
+					<div class="d-flex flex-row align-items-center">
+						<h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
