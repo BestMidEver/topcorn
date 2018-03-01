@@ -4,6 +4,7 @@ pass={
 	"angular_module_array":[], 
 	"lang":"{{ App::getlocale() }}",
 	"profile_user_id":"{{ $profile_user_id }}", 
+	"profile_watched_movie_number":"{{ $profile_watched_movie_number }}", 
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
