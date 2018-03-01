@@ -29,7 +29,11 @@
 		<div class="col-12 col-xl-10">
 			<form id="the_form" class="form-horizontal" role="form" method="POST" action="/account/interface">
 				{{ csrf_field() }}
-				<div class="pt-3"><div class="h6 text-muted">Dil</div></div>
+				<div class="row">
+				    <div class="col-md-3 pt-3">
+						<div class="h6 text-muted">Dil</div>
+				    </div>
+				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
 				        <label for="lang">{{ __('general.primary_language') }}</label>
