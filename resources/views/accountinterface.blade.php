@@ -188,9 +188,27 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-align-justify"></i></div>
 				                </div>
 				                <select class="form-control" id="pagination" name="pagination" ng-model="pagination" ng-change="check_save_disabled()">
-									<option value=48>Bir sayfada 48 sonuç</option>
-									<option value=24>Bir sayfada 24 sonuç</option>
-									<option value=12>Bir sayfada 12 sonuç</option>
+									<option value=48>48</option>
+									<option value=24>24</option>
+									<option value=12>12</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="show_crew" ng-mouseenter="hovering_crew=true" ng-mouseleave="hovering_crew=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_show_crew') }}">Sayfalama <span ng-show="!hovering_crew"><i class="far fa-question-circle"></i></span><span ng-show="hovering_crew"><i class="fas fa-question-circle"></i></span></label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-align-justify"></i></div>
+				                </div>
+				                <select class="form-control" id="show_crew" name="show_crew" ng-model="show_crew" ng-change="check_save_disabled()">
+									<option value=1>{{ __('general.active') }}</option>
+									<option value=0>{{ __('general.disabled') }}</option>
 								</select>
 				            </div>
 				        </div>

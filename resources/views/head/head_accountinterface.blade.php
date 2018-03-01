@@ -9,6 +9,7 @@ pass={
 	"margin_x_setting":"{{ Auth::User()->margin_x_setting }}", 
 	"open_new_tab":"{{ Auth::User()->open_new_tab }}", 
 	"pagination":"{{ Auth::User()->pagination }}", 
+	"show_crew":"{{ Auth::User()->show_crew }}", 
 	"theme":"{{ Auth::User()->theme }}", 
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},

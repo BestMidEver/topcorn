@@ -8,6 +8,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.theme=pass.theme;
 	$scope.pagination=pass.pagination;
 	$scope.open_new_tab=pass.open_new_tab;
+	$scope.show_crew=pass.show_crew;
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
@@ -20,6 +21,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 			|| pass.margin_x_setting != $scope.margin_x_setting
 			|| pass.theme != $scope.theme
 			|| pass.pagination != $scope.pagination
+			|| pass.show_crew != $scope.show_crew
 			|| pass.open_new_tab != $scope.open_new_tab)
 		){
 			$scope.is_save_disabled = false;
