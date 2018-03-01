@@ -18,7 +18,7 @@
 					<i class="fas fa-map-marker"></i><div class="d-inline pl-1" >@{{person.place_of_birth}}</div>
 				</div>
 				<div class="d-flex flex-row align-items-center text-light ml-2" ng-if="person.deathday">
-					<i class="fas fa-hand-peace"></i><div class="d-inline pl-1" >@{{person.deathday}}</div>
+					<i class="fab fa-studiovinari"></i><div class="d-inline pl-1" >@{{person.deathday}}</div>
 				</div>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 						<i class="fas fa-map-marker"></i><div class="d-inline pl-1" >@{{person.place_of_birth}}</div>
 					</div>
 					<div class="d-flex flex-row align-items-center text-light ml-2" ng-if="person.deathday">
-						<i class="fas fa-hand-peace"></i><div class="d-inline pl-1" >@{{person.deathday}}</div>
+						<i class="fab fa-studiovinari"></i><div class="d-inline pl-1" >@{{person.deathday}}</div>
 					</div>
 				</div>
 			</div>
