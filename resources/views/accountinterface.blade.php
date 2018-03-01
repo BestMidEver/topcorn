@@ -30,7 +30,7 @@
 			<form id="the_form" class="form-horizontal" role="form" method="POST" action="/account/interface">
 				{{ csrf_field() }}
 				<div class="row">
-				    <div class="col-md-3 pt-3">
+				    <div class="col-md-3 field-label-responsive">
 						<div class="h6 text-muted">Dil</div>
 				    </div>
 				</div>
