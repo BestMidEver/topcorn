@@ -201,6 +201,7 @@
 				</div>
 			</div>
 		</div>
+		@if(Auth::User()->show_crew)
 		<div class="px-3 px-md-0 mt-5" ng-if="movie.credits.crew.length > 0"><div class="h5">Set Ekibi</div></div>
 		<div ng-if="movie.credits.crew.length > 0">
 			<div class="d-flex flex-wrap">
@@ -217,6 +218,7 @@
 				</div>
 			</div>
 		</div>
+		@endif
 	</div>
 	<div ng-if="movie.credits.cast.length > 6 || movie.credits.crew.length > 0">
 		<div class="text-center pt-1" ng-hide="iscast">
