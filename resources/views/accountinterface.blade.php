@@ -98,6 +98,25 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
+				        <label for="theme" ng-mouseenter="hovering_them=true" ng-mouseleave="hovering_them=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_theme') }}">Tema <span ng-show="!hovering_them"><i class="far fa-question-circle"></i></span><span ng-show="hovering_them"><i class="fas fa-question-circle"></i></span></label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="far fa-image"></i></div>
+				                </div>
+				                <select class="form-control" id="theme" name="theme" ng-model="theme" ng-change="check_save_disabled()">
+									<option value=2 {{ Auth::User()->theme == 2 ? 'selected' : '' }}>Zifiri Karanlık</option>
+									<option value=1 {{ Auth::User()->theme == 1 ? 'selected' : '' }}>Karanlık</option>
+									<option value=0 {{ Auth::User()->theme == 0 ? 'selected' : '' }}>Aydınlık</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
 				        <label for="image_quality" ng-mouseenter="hovering_imag=true" ng-mouseleave="hovering_imag=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_image_quality') }}">{{ __('general.image_quality') }} <span ng-show="!hovering_imag"><i class="far fa-question-circle"></i></span><span ng-show="hovering_imag"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
@@ -152,6 +171,13 @@
 				        </div>
 				    </div>
 				</div>
+
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+						<div class="h6 text-muted">Görüntü</div>
+				    </div>
+				</div>
+
 				<div class="row">
 				    <div class="col-md-3"></div>
 				    <div class="col-md-6">
