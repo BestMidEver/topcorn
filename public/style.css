@@ -36,6 +36,7 @@ button:focus{box-shadow: none!important;}
 .coverpic{object-fit: cover;width: 100%; max-height: 300px; min-height: 150px;}
 .coveroverlayersmall{position: absolute;    bottom: 1rem;    width: 100%;}
 .coveroverlayermedium{position: absolute;    bottom: 1rem;    left: 2rem;}
+.right-top{position: absolute;    right: 0;   top: 0;}
 .profilepicsmall{object-fit: cover;    width: 100px;    height: 100px; border-radius: 100px;}
 .profilepicmedium{object-fit: cover;    width: 200px;    height: 200px; border-radius: 100px;}
 .trailercover{object-fit: cover;width: 100%; max-height: 500px; min-height: 150px;filter: brightness(50%);}
