@@ -5,6 +5,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.hover_title_language=pass.hover_title_language;
 	$scope.image_quality=pass.image_quality;
 	$scope.margin_x_setting=pass.margin_x_setting;
+	$scope.theme=pass.theme;
 	$scope.open_new_tab=pass.open_new_tab;
 	$scope.is_save_disabled = true;
 
@@ -16,6 +17,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 			|| pass.hover_title_language != $scope.hover_title_language
 			|| pass.image_quality != $scope.image_quality
 			|| pass.margin_x_setting != $scope.margin_x_setting
+			|| pass.theme != $scope.theme
 			|| pass.open_new_tab != $scope.open_new_tab)
 		){
 			$scope.is_save_disabled = false;

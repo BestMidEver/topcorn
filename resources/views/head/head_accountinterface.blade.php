@@ -8,6 +8,7 @@ pass={
 	"image_quality":"{{ Auth::User()->image_quality }}", 
 	"margin_x_setting":"{{ Auth::User()->margin_x_setting }}", 
 	"open_new_tab":"{{ Auth::User()->open_new_tab }}", 
+	"theme":"{{ Auth::User()->theme }}", 
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
