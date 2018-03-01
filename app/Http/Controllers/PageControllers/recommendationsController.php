@@ -127,6 +127,14 @@ class recommendationsController extends Controller
             $hover_title = 'original_title';
         }
 
+        if(Auth::User()->pemosu_mode == 0){
+            $primary_order = 'point';
+            $secondary_order = 'p2';
+        }else{
+            $primary_order = 'p2';
+            $secondary_order = 'point';
+        }
+
         $return_val = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
         ->where('rateds.rate', '>', 0)
@@ -166,8 +174,8 @@ class recommendationsController extends Controller
         )
         ->groupBy('movies.id')
         ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(movies.id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
-        ->orderBy('point', 'desc')
-        ->orderBy('p2', 'desc');
+        ->orderBy($primary_order, 'desc')
+        ->orderBy($secondary_order, 'desc');
 
         if($request->f_genre != []){
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
