@@ -113,7 +113,7 @@ class recommendationsController extends Controller
             $return_val = $return_val->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
-        return $return_val->paginate(24);
+        return $return_val->paginate(Auth::User()->pagination);
     }
 
 

@@ -87,7 +87,7 @@ class ProfileController extends Controller
             $return_val = $return_val->where('rateds.rate', $rate);
         }
 
-        return $return_val->paginate(24);
+        return $return_val->paginate(Auth::User()->pagination);
     }    
 
 
@@ -134,7 +134,7 @@ class ProfileController extends Controller
         )
         ->orderBy('laters.updated_at', 'desc');
 
-        return $return_val->paginate(24);
+        return $return_val->paginate(Auth::User()->pagination);
     }    
 
 
@@ -181,6 +181,6 @@ class ProfileController extends Controller
         )
         ->orderBy('bans.updated_at', 'desc');
 
-        return $return_val->paginate(24);
+        return $return_val->paginate(Auth::User()->pagination);
     }
 }
