@@ -12,7 +12,15 @@
 					<img ng-src="{{ $profile_profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicsmall" alt="Responsive image">
 					<h5><span class="badge badge-light ml-2 yeswrap text-left">{{ $profile_user_name }}</span></h5>
 				</div>
-				
+				@if(Auth::check())
+				<div class="d-flex flex-row">
+					@if($profile_user_id == Auth::user()->id)
+					<a class="btn btn-warning mt-1 btn-block text-white" href="/account"><i class="fa fa-cog" aria-hidden="true"></i> {{ __('navbar.account') }}</a>
+					@else				
+					<a class="btn btn-warning mt-1 btn-block text-white" href="/recommendations/{{$profile_user_id}}"><i class="fa fa-plus" aria-hidden="true"></i> {{ __('general.watch_together') }}</a>
+					@endif
+				</div>
+				@endif
 			</div>
 		</div>
 	</div>
@@ -22,16 +30,17 @@
 				<img ng-src="{{ $profile_profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicmedium" alt="Responsive image">
 				<h5><span class="badge badge-light ml-2 yeswrap text-left">{{ $profile_user_name }}</span></h5>
 			</div>
-			@if(Auth::check())
-			<div class="d-flex flex-row">
-				@if($profile_user_id == Auth::user()->id)
-				<a class="btn btn-warning mt-2 btn-block text-white" href="/account"><i class="fa fa-cog" aria-hidden="true"></i> {{ __('navbar.account') }}</a>
-				@else
-				<a class="btn btn-warning mt-2 btn-block text-white" href="/recommendations/{{$profile_user_id}}"><i class="fa fa-plus" aria-hidden="true"></i> {{ __('general.watch_together') }}</a>
-				@endif
-			</div>
+			
+		</div>
+		@if(Auth::check())
+		<div class="right-top">
+			@if($profile_user_id == Auth::user()->id)
+			<a class="btn btn-warning mt-2 btn-block text-white" href="/account"><i class="fa fa-cog" aria-hidden="true"></i> {{ __('navbar.account') }}</a>
+			@else
+			<a class="btn btn-warning mt-2 btn-block text-white" href="/recommendations/{{$profile_user_id}}"><i class="fa fa-plus" aria-hidden="true"></i> {{ __('general.watch_together') }}</a>
 			@endif
 		</div>
+		@endif
 	</div>
 </div>
 
