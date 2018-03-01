@@ -16,7 +16,7 @@ button:focus{box-shadow: none!important;}
 .text-dark{color:#212529!important;}
 .text-middle-light{color:#999!important;}
 .text-light{color:#eee!important;}
-a: hover .text-light{color: #eee;}
+a: hover .text-light{color: #eee!important;}
 .hover-white:hover{color:#fff!important;}
 .form-control{height: calc(2.25rem + 4px)!important;}
 .position-relative{position: relative;}
