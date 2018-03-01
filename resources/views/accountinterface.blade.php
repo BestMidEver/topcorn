@@ -214,15 +214,21 @@
 				        </div>
 				    </div>
 				</div>
+
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+						<div class="h6 text-muted">Gelişmiş Tavsiye Ayarları</div>
+				    </div>
+				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="pemosu_mode" ng-mouseenter="hovering_pemo=true" ng-mouseleave="hovering_pemo=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pemosu_mode') }}">Tavsiyeler Sıralama <span ng-show="!hovering_pemo"><i class="fas fa-sort-amount-down"></i></span><span ng-show="hovering_pemo"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="pemosu_mode" ng-mouseenter="hovering_pemo=true" ng-mouseleave="hovering_pemo=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pemosu_mode') }}">Sıralama <span ng-show="!hovering_pemo"><i class="far fa-question-circle"></i></span><span ng-show="hovering_pemo"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-align-justify"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort-amount-down"></i></div>
 				                </div>
 				                <select class="form-control" id="pemosu_mode" name="pemosu_mode" ng-model="pemosu_mode" ng-change="check_save_disabled()">
 									<option value=1>Eşleşme Yüzdesine Göre</option>
