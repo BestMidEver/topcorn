@@ -185,7 +185,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-external-link-alt"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-align-justify"></i></div>
 				                </div>
 				                <select class="form-control" id="pagination" name="pagination" ng-model="pagination" ng-change="check_save_disabled()">
 									<option value=48>48</option>
