@@ -90,6 +90,12 @@
 				        </div>
 				    </div>
 				</div>
+
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+						<div class="h6 text-muted">Görüntü</div>
+				    </div>
+				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
 				        <label for="image_quality" ng-mouseenter="hovering_imag=true" ng-mouseleave="hovering_imag=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_image_quality') }}">{{ __('general.image_quality') }} <span ng-show="!hovering_imag"><i class="far fa-question-circle"></i></span><span ng-show="hovering_imag"><i class="fas fa-question-circle"></i></span></label>
