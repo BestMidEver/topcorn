@@ -26,7 +26,7 @@
 						<h5><span class="yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
 					</div>
 					<div class="d-flex flex-row align-items-center text-light ml-2">
-						<i class="fas fa-check"></i> {{ $profile_watched_movie_number }}
+						<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
 					</div>
 				</div>
 			</div>
