@@ -204,7 +204,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-align-justify"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-users"></i></div>
 				                </div>
 				                <select class="form-control" id="show_crew" name="show_crew" ng-model="show_crew" ng-change="check_save_disabled()">
 									<option value=1>{{ __('general.active') }}</option>
@@ -246,7 +246,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort-amount-down"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-filter"></i></div>
 				                </div>
 				                <select class="form-control" id="min_vote_count" name="min_vote_count" ng-model="min_vote_count" ng-change="check_save_disabled()">
 									<option value=100>500</option>
