@@ -26,7 +26,7 @@
 						<h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
 					</div>
 					<div class="d-flex flex-row align-items-center">
-						<h5><span class="ml-2 yeswrap text-left text-white">{{ $profile_user_name }}</span></h5>
+						<i class="fas fa-check"></i> {{$profile_watched_movie_number}}
 					</div>
 				</div>
 			</div>

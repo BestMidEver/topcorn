@@ -25,6 +25,7 @@ class ProfileController extends Controller
             $target = '_self';
             $watched_movie_number = null;
         }
+        $profile_watched_movie_number = Rated::where('user_id', $profile_user_id)->where('rate', '<>', 0)->count();
 
         $user = User::where(['id' => $profile_user_id])->first();
         if(!$user) return redirect('/not-found');
@@ -37,7 +38,7 @@ class ProfileController extends Controller
         }
 
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number'));
 	}
 
     public function get_rateds($rate, $user, $lang)
