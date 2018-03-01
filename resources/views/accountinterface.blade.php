@@ -240,7 +240,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="min_vote_count" ng-mouseenter="hovering_vote=true" ng-mouseleave="hovering_vote=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_min_vote_count') }}">Sıralama <span ng-show="!hovering_vote"><i class="far fa-question-circle"></i></span><span ng-show="hovering_vote"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="min_vote_count" ng-mouseenter="hovering_vote=true" ng-mouseleave="hovering_vote=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_min_vote_count') }}">Minimum Oy Sayısı <span ng-show="!hovering_vote"><i class="far fa-question-circle"></i></span><span ng-show="hovering_vote"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
