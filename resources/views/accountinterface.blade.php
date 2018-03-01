@@ -238,6 +238,27 @@
 				        </div>
 				    </div>
 				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="min_vote_count" ng-mouseenter="hovering_vote=true" ng-mouseleave="hovering_vote=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_min_vote_count') }}">Sıralama <span ng-show="!hovering_vote"><i class="far fa-question-circle"></i></span><span ng-show="hovering_vote"><i class="fas fa-question-circle"></i></span></label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort-amount-down"></i></div>
+				                </div>
+				                <select class="form-control" id="min_vote_count" name="min_vote_count" ng-model="min_vote_count" ng-change="check_save_disabled()">
+									<option value=100>500</option>
+									<option value=50>250</option>
+									<option value=20>100</option>
+									<option value=10>50</option>
+									<option value=4>20</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
 
 				<div class="row">
 				    <div class="col-md-3"></div>

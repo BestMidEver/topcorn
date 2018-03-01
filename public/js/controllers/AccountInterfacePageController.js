@@ -10,6 +10,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.open_new_tab=pass.open_new_tab;
 	$scope.show_crew=pass.show_crew;
 	$scope.pemosu_mode=pass.pemosu_mode;
+	$scope.min_vote_count=pass.min_vote_count;
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
@@ -24,6 +25,7 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 			|| pass.pagination != $scope.pagination
 			|| pass.show_crew != $scope.show_crew
 			|| pass.pemosu_mode != $scope.pemosu_mode
+			|| pass.min_vote_count != $scope.min_vote_count
 			|| pass.open_new_tab != $scope.open_new_tab)
 		){
 			$scope.is_save_disabled = false;

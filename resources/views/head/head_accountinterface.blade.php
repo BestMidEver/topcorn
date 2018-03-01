@@ -11,6 +11,7 @@ pass={
 	"pagination":"{{ Auth::User()->pagination }}", 
 	"show_crew":"{{ Auth::User()->show_crew }}", 
 	"pemosu_mode":"{{ Auth::User()->pemosu_mode }}", 
+	"min_vote_count":"{{ Auth::User()->min_vote_count }}", 
 	"theme":"{{ Auth::User()->theme }}", 
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
