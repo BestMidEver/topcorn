@@ -23,8 +23,17 @@
 	<div class="coveroverlayermedium d-none d-md-inline">
 		<div class="d-flex flex-column">
 			<div class="d-flex flex-row align-items-center">
-				<img ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicmedium" alt="Responsive image">
-				<h5><a ng-href="http://www.google.com/search?q=@{{person.name}}" target="_blank" class="badge badge-light ml-2 yeswrap text-left">@{{person.name}} @{{age}} - {{ __('general.hismovies') }}</a></h5>
+				<div class="d-flex flex-column">
+					<img ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicmedium" alt="Responsive image">
+				</div>
+				<div class="d-flex flex-column">
+					<div class="d-flex flex-row align-items-center ml-2">
+						<h5><a ng-href="http://www.google.com/search?q=@{{person.name}}" target="_blank"><span class="yeswrap text-left text-light">{{config('constants.gabar')}}@{{person.name}} @{{age}} - {{ __('general.hismovies') }}</span></a></h5>
+					</div>
+					<div class="d-flex flex-row align-items-center text-light ml-2">
+						<i class="fas fa-birthday-cake"></i><div class="d-inline pl-1" >@{{person.place_of_birth}}</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
