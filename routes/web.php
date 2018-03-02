@@ -190,57 +190,11 @@ Route::get('suckData', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	if(true){
-	    $hover_title = Auth::User()->secondary_lang.'_title';
-	}else{
-	    $hover_title = 'original_title';
-	}
+	$start = microtime(true);
 
-	$return_val = DB::table('rateds')
-	->whereIn('rateds.user_id', [7])
-	->where('rateds.rate', '<>', 3)
-	->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
-	->join('movies', 'movies.id', '=', 'recommendations.this_id')
-	->leftjoin('rateds as r2', function ($join){
-	    $join->on('r2.movie_id', '=', 'movies.id')
-	    ->whereIn('r2.user_id', [7]);
-	})
-	->leftjoin('laters', function ($join) {
-	    $join->on('laters.movie_id', '=', 'movies.id')
-	    ->where('laters.user_id', '=', Auth::user()->id);
-	})
-	//->where('laters.id', '=', null)
-	->leftjoin('bans', function ($join){
-	    $join->on('bans.movie_id', '=', 'movies.id')
-	    ->whereIn('bans.user_id', [7]);
-	})
-	->where('bans.id', '=', null)
-	->select(
-	    'recommendations.this_id as id',
-	    'recommendations.movie_id as mother_movie_id',
-	    'movies.'.$hover_title.' as original_title',
-	    DB::raw('sum(IF(recommendations.is_similar, 1, 3)*(rateds.rate-3)) AS point'),
-	    DB::raw('COUNT(*) as count'),
-	    'movies.vote_average',
-	    'movies.release_date',
-	    'movies.tr_title as title',
-	    'movies.tr_poster_path as poster_path',
-	    'r2.id as rated_id',
-	    'r2.rate as rate_code',
-	    'laters.id as later_id',
-	    'bans.id as ban_id'
-	)
-	->groupBy('movies.id')
-	->havingRaw('sum(IF(recommendations.is_similar, 1, 3)*(rateds.rate-3)) > 4 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
-	->orderBy('point', 'desc');
+	$return_val = DB::table('movies');
 
-	if([18] != []){
-	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
-	    ->whereIn('genre_id', [18]);
-	}
-
-	return $return_val->paginate(24);
-
+	return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
