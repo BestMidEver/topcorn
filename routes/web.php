@@ -221,8 +221,8 @@ Route::get('test', function(){
 	->select(
 		'movies.original_title',
 		'ss.point'
-	);
-	//->having('percent', '>', 75);
+	)
+	->having('ss.point', '>', 75);
 
 	return [$return_val->paginate(10), microtime(true) - $start];
 });
