@@ -198,7 +198,8 @@ Route::get('test', function(){
         $query->DB::table('rateds')
         ->whereIn('user_id', [7])
         ->select('movie_id as rated_movie_ids')
-    })
+    });
+    
 	return [$return_val->paginate(5), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
