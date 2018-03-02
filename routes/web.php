@@ -195,7 +195,7 @@ Route::get('test', function(){
 	$subquery = DB::table('rateds')
     ->whereIn('rateds.user_id', [7])
     ->where('rateds.rate', '>', 0)
-    ->whereIn('original_language', 'en')
+    ->whereIn('original_language', ['en'])
     ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
     ->select(
         'recommendations.this_id as id',
