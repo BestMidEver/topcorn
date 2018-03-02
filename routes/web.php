@@ -218,7 +218,11 @@ Route::get('test', function(){
              ->addBinding($subq->getBindings());  
         }
 	)
-	->having('percent', '>', 75);
+	->select(
+		'movies.original_title',
+		'ss.point'
+	);
+	//->having('percent', '>', 75);
 
 	return [$return_val->paginate(10), microtime(true) - $start];
 });
