@@ -201,7 +201,8 @@ Route::get('test', function(){
         DB::raw('COUNT(recommendations.this_id) as count'),
         DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
         DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2')
-    );
+    )
+    ->groupBy('recommendations.this_id');
 
 	/*$return_val = DB::table('movies')
 	->whereIn('id',
