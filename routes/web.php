@@ -196,7 +196,7 @@ Route::get('test', function(){
 	->whereIn('id',
 		DB::table('rateds')
 		->where('rateds.user_id', '=', 7)
-		->pluck('rateds.id');
+		->pluck('rateds.movie_id')
 	);
 
 	return [$return_val->paginate(5), microtime(true) - $start];
