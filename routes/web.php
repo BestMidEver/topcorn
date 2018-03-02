@@ -192,22 +192,26 @@ Route::get('suckData', function(){
 Route::get('test', function(){
 	$start = microtime(true);
 
-	$return_val = DB::table('movies')
-	->select(
-		'movies.id',
-		DB::table('rateds')
-		->whereIn('rateds.user_id', [7])
-		->where('rateds.rate', '>', 0)
-		->get()
-	);
-	/*->whereIn('id',
+	$subquery = DB::table('rateds')
+    ->whereIn('rateds.user_id', [7])
+    ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
+    ->select(
+        'recommendations.this_id as id',
+        DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
+        DB::raw('COUNT(recommendations.this_id) as count'),
+        DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
+        DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2')
+    );
+
+	/*$return_val = DB::table('movies')
+	->whereIn('id',
 		DB::table('rateds')
 		->whereIn('rateds.user_id', [7])
 		->where('rateds.rate', '>', 0)
 		->pluck('rateds.movie_id')
 	);*/
 
-	return [$return_val->paginate(5), microtime(true) - $start];
+	return [$subquery->paginate(5), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
