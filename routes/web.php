@@ -195,10 +195,9 @@ Route::get('test', function(){
 	$return_val = DB::table('movies')
 	->whereIn('id', function($query)
     {
-        DB::table('rateds')
-        ->whereIn('user_id', [7])
-        ->select('movie_id as rated_movie_ids')
-        ->get();
+        $query->select(DB::raw(1))
+        ->from('rateds')
+        ->whereRaw('rateds.user_id = 7');
     });
 
 	return [$return_val->paginate(5), microtime(true) - $start];
