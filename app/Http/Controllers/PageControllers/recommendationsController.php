@@ -142,7 +142,7 @@ class recommendationsController extends Controller
         ->where('rateds.rate', '>', 0)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        /*->leftjoin('rateds as r2', function ($join) use ($request) {
+        ->leftjoin('rateds as r2', function ($join) use ($request) {
             $join->on('r2.movie_id', '=', 'movies.id')
             ->whereIn('r2.user_id', $request->f_users);
         })
@@ -155,7 +155,7 @@ class recommendationsController extends Controller
             $join->on('bans.movie_id', '=', 'movies.id')
             ->whereIn('bans.user_id', $request->f_users);
         })
-        ->where('bans.id', '=', null)*/
+        ->where('bans.id', '=', null)
         ->select(
             'recommendations.this_id as id',
             //'recommendations.movie_id as mother_movie_id',
