@@ -193,12 +193,11 @@ Route::get('test', function(){
 	$start = microtime(true);
 
 	$return_val = DB::table('movies')
-	->whereIn('id', function($query)
-    {
-        $query->select(DB::raw(1))
-        ->from('rateds')
-        ->whereRaw('rateds.user_id = 7');
-    });
+	->whereIn('id',
+		DB::table('rateds')
+		->where('rateds.user_id', '=', 7)
+		->pluck('rateds.id');
+	);
 
 	return [$return_val->paginate(5), microtime(true) - $start];
 });
