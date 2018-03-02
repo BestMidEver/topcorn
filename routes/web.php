@@ -204,10 +204,7 @@ Route::get('test', function(){
         DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2')
     )
     ->groupBy('recommendations.this_id')
-    /*->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75')
-    ->orderBy('point', 'desc')
-    ->orderBy('p2', 'desc')
-    ->get()*/;
+    ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75');
     $qqSql = $subq->toSql();
 
 	$return_val = DB::table('movies')
@@ -215,7 +212,7 @@ Route::get('test', function(){
 		DB::raw('(' . $qqSql. ') AS ss'),
 		function($join) use ($subq) {
             $join->on('movies.id', '=', 'ss.id')
-             ->addBinding($subq->getBindings());  
+            ->addBinding($subq->getBindings());  
         }
 	)
 	->select(
