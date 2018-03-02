@@ -215,10 +215,10 @@ Route::get('test', function(){
 		DB::raw('(' . $qqSql. ') AS ss'),
 		function($join) use ($subq) {
             $join->on('movies.id', '=', 'ss.id')
-                 //->on('s.last_scan_at', '=', 'ss.last_scan')
              ->addBinding($subq->getBindings());  
         }
-	);
+	)
+	->having('percent', '>', 75);
 
 	return [$subq->paginate(10), microtime(true) - $start];
 });
