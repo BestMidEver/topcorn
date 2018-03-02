@@ -217,10 +217,10 @@ Route::get('test', function(){
             $join->on('movies.id', '=', 'ss.id')
              ->addBinding($subq->getBindings());  
         }
-	)
-	->having('ss.percent', 75);
+	);
+	//->having('ss.percent', 75);
 
-	return [$subq->paginate(10), microtime(true) - $start];
+	return [$return_val->paginate(10), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
