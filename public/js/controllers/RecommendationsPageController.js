@@ -184,12 +184,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
 		.then(function(response){
 			console.log(response)
-			$scope.movies=response.data.data;
-			$scope.pagination=response.data.last_page;
-			$scope.current_page=response.data.current_page;
-			$scope.from=response.data.from;
-			$scope.to=response.data.to;
-			$scope.in=response.data.total;
+			$scope.movies=response.data[0].data;
+			$scope.pagination=response.data[0].last_page;
+			$scope.current_page=response.data[0].current_page;
+			$scope.from=response.data[0].from;
+			$scope.to=response.data[0].to;
+			$scope.in=response.data[0].total;
 			$(".tooltip").hide();
 			$scope.is_waiting=false;
 		});
