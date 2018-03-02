@@ -192,7 +192,7 @@ Route::get('suckData', function(){
 Route::get('test', function(){
 	$start = microtime(true);
 
-	$subquery = DB::table('rateds')
+	$subq = DB::table('rateds')
     ->whereIn('rateds.user_id', [7])
     ->where('rateds.rate', '>', 0)
     ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
@@ -206,17 +206,21 @@ Route::get('test', function(){
     ->groupBy('recommendations.this_id')
     /*->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75')
     ->orderBy('point', 'desc')
-    ->orderBy('p2', 'desc')*/;
+    ->orderBy('p2', 'desc')
+    ->get()*/;
+    $qqSql = $subq->toSql();
 
-	/*$return_val = DB::table('movies')
-	->whereIn('id',
-		DB::table('rateds')
-		->whereIn('rateds.user_id', [7])
-		->where('rateds.rate', '>', 0)
-		->pluck('rateds.movie_id')
-	);*/
+	$return_val = DB::table('movies')
+	->join(
+		DB::raw('(' . $qqSql. ') AS ss'),
+		function(JoinClause $join) use ($subq) {
+            $join->on('movies.id', '=', 'ss.id')
+                 //->on('s.last_scan_at', '=', 'ss.last_scan')
+                 ->addBinding($subq->getBindings());  
+        }
+	);
 
-	return [$subquery->paginate(10), microtime(true) - $start];
+	return [$subq->paginate(10), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
