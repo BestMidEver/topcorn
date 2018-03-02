@@ -218,7 +218,7 @@ Route::get('test', function(){
              ->addBinding($subq->getBindings());  
         }
 	)
-	->having('ss.percent', '>', 75);
+	->having('percent', '>', 75);
 
 	return [$return_val->paginate(10), microtime(true) - $start];
 });
