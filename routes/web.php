@@ -203,7 +203,10 @@ Route::get('test', function(){
         DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
         DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2')
     )
-    ->groupBy('recommendations.this_id');
+    ->groupBy('recommendations.this_id')
+    ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75')
+    ->orderBy('point', 'desc')
+    ->orderBy('p2', 'desc');
 
 	/*$return_val = DB::table('movies')
 	->whereIn('id',
