@@ -222,7 +222,8 @@ Route::get('test', function(){
 		'movies.original_title',
 		'ss.point'
 	)
-	->having('ss.point', '>', 75);
+    ->orderBy('point', 'desc')
+    ->orderBy('p2', 'desc');
 
 	return [$return_val->paginate(10), microtime(true) - $start];
 });
