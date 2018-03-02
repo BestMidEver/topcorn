@@ -192,8 +192,13 @@ Route::get('suckData', function(){
 Route::get('test', function(){
 	$start = microtime(true);
 
-	$return_val = DB::table('movies');
-
+	$return_val = DB::table('movies')
+	->whereIn('id', function($query)
+    {
+        $query->DB::table('rateds')
+        ->whereIn('user_id', [7])
+        ->select('movie_id as rated_movie_ids')
+    })
 	return [$return_val->paginate(5), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
