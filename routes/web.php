@@ -195,7 +195,8 @@ Route::get('test', function(){
 	$return_val = DB::table('movies')
 	->whereIn('id',
 		DB::table('rateds')
-		->where('rateds.user_id', '=', 7)
+		->whereIn('rateds.user_id', '=', [7])
+		->where('rateds.rate', '>', 0)
 		->pluck('rateds.movie_id')
 	);
 
