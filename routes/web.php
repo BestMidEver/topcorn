@@ -201,11 +201,11 @@ Route::get('test', function(){
         ->whereIn('r2.user_id', [7]);
     })
     ->leftjoin('laters', function ($join) {
-        $join->on('laters.movie_id', '=', 'movies.id')
+        $join->on('laters.movie_id', '=', 'recommendations.this_id')
         ->where('laters.user_id', '=', Auth::user()->id);
     })
     ->leftjoin('bans', function ($join) {
-        $join->on('bans.movie_id', '=', 'movies.id')
+        $join->on('bans.movie_id', '=', 'recommendations.this_id')
         ->whereIn('bans.user_id', [7]);
     })
     ->where('bans.id', '=', null)
