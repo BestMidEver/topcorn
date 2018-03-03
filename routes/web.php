@@ -217,6 +217,19 @@ Route::get('test', function(){
 	)
 	->join('genres', 'genres.movie_id', '=', 'ss.id')
     ->whereIn('genre_id', [53,80])
+    ->leftjoin('rateds as r2', function ($join) {
+        $join->on('r2.movie_id', '=', 'movies.id')
+        ->whereIn('r2.user_id', [7]);
+    })
+    ->leftjoin('laters', function ($join) {
+        $join->on('laters.movie_id', '=', 'movies.id')
+        ->where('laters.user_id', '=', Auth::user()->id);
+    })
+    ->leftjoin('bans', function ($join) {
+        $join->on('bans.movie_id', '=', 'movies.id')
+        ->whereIn('bans.user_id', [7]);
+    })
+    ->where('bans.id', '=', null)
 	->select(
 		'movies.original_title',
 		'ss.point'
