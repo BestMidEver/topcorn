@@ -222,7 +222,7 @@ Route::get('test', function(){
 
 
 
-	->join('genres', 'genres.movie_id', '=', 'ss.id')
+	/*->join('genres', 'genres.movie_id', '=', 'ss.id')
     ->whereIn('genre_id', [53,80])
     ->leftjoin('rateds as r2', function ($join) {
         $join->on('r2.movie_id', '=', 'movies.id')
@@ -236,7 +236,7 @@ Route::get('test', function(){
         $join->on('bans.movie_id', '=', 'movies.id')
         ->whereIn('bans.user_id', [7]);
     })
-    ->where('bans.id', '=', null)
+    ->where('bans.id', '=', null)*/
 	->select(
 		'movies.original_title',
 		'ss.point',
@@ -245,7 +245,7 @@ Route::get('test', function(){
     ->orderBy('point', 'desc')
     ->orderBy('p2', 'desc');
 
-	return [$return_val->paginate(48), microtime(true) - $start];
+	return [$subq->get(), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
