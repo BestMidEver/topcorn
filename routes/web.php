@@ -215,6 +215,8 @@ Route::get('test', function(){
             ->addBinding($subq->getBindings());  
         }
 	)
+	->join('genres', 'genres.movie_id', '=', 'ss.id')
+    ->whereIn('genre_id', [53]);
 	->select(
 		'movies.original_title',
 		'ss.point'
