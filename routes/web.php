@@ -198,6 +198,13 @@ Route::get('test', function(){
         $hover_title = 'original_title';
     }
 
+    if(Auth::User()->pemosu_mode == 0){
+        $primary_order = 'point';
+        $secondary_order = 'p2';
+    }else{
+        $primary_order = 'p2';
+        $secondary_order = 'point';
+    }
 
 	$subq = DB::table('rateds')
     ->whereIn('rateds.user_id', [7])
@@ -257,8 +264,8 @@ Route::get('test', function(){
         'laters.id as later_id',
         'bans.id as ban_id'
 	)
-    ->orderBy('point', 'desc')
-    ->orderBy('p2', 'desc');
+    ->orderBy($primary_order, 'desc')
+    ->orderBy($secondary_order, 'desc');
 
 	if([53,80] != [])
 	{
