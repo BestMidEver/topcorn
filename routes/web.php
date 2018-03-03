@@ -196,6 +196,10 @@ Route::get('test', function(){
     ->whereIn('rateds.user_id', [7])
     ->where('rateds.rate', '>', 0)
     ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
+    ->leftjoin('rateds as r2', function ($join) {
+        $join->on('r2.movie_id', '=', 'movies.id')
+        ->whereIn('r2.user_id', [7]);
+    })
     ->select(
         'recommendations.this_id as id',
         DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
@@ -205,7 +209,7 @@ Route::get('test', function(){
         'recommendations.this_id as gabar'
     )
     ->groupBy('recommendations.this_id')
-    ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75');
+    ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
     $qqSql = $subq->toSql();
 
 	$return_val = DB::table('movies')
@@ -226,10 +230,6 @@ Route::get('test', function(){
     ->whereIn('genre_id', [53,80])
     ->groupBy('movies.id')
     ->havingRaw('COUNT(movies.id)='.count([53,80]))
-    /*->leftjoin('rateds as r2', function ($join) {
-        $join->on('r2.movie_id', '=', 'movies.id')
-        ->whereIn('r2.user_id', [7]);
-    })
     ->leftjoin('laters', function ($join) {
         $join->on('laters.movie_id', '=', 'movies.id')
         ->where('laters.user_id', '=', Auth::user()->id);
@@ -238,7 +238,7 @@ Route::get('test', function(){
         $join->on('bans.movie_id', '=', 'movies.id')
         ->whereIn('bans.user_id', [7]);
     })
-    ->where('bans.id', '=', null)*/
+    ->where('bans.id', '=', null)
 	->select(
 		'movies.original_title',
 		'movies.id',
