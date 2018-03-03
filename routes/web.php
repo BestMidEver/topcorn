@@ -222,10 +222,9 @@ Route::get('test', function(){
 		'ss.point'
 	)
     ->orderBy('point', 'desc')
-    ->orderBy('p2', 'desc')
-    ->get();
+    ->orderBy('p2', 'desc');
 
-	return [$return_val, microtime(true) - $start];
+	return [$return_val->paginate(48), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
