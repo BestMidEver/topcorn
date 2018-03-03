@@ -243,7 +243,7 @@ Route::get('test', function(){
 		$return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
 	    ->whereIn('genre_id', [53,80])
 	    ->groupBy('movies.id')
-    	->havingRaw('COUNT(movies.id)='.count([53,80]))
+    	->havingRaw('COUNT(movies.id)='.count([53,80]));
 	}
 	
 
