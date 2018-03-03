@@ -192,106 +192,65 @@ Route::get('suckData', function(){
 Route::get('test', function(){
 	$start = microtime(true);
 
-	if(Auth::User()->hover_title_language == 0){
-        $hover_title = Auth::User()->secondary_lang.'_title';
-    }else{
-        $hover_title = 'original_title';
-    }
-
-    if(Auth::User()->pemosu_mode == 0){
-        $primary_order = 'point';
-        $secondary_order = 'p2';
-    }else{
-        $primary_order = 'p2';
-        $secondary_order = 'point';
-    }
-
-	$subq = DB::table('rateds')
-    ->whereIn('rateds.user_id', [7])
-    ->where('rateds.rate', '>', 0)
-    ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
-    ->leftjoin('rateds as r2', function ($join) {
-        $join->on('r2.movie_id', '=', 'recommendations.this_id')
-        ->whereIn('r2.user_id', [7]);
-    })
-    ->select(
-        'recommendations.this_id as id',
-        DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
-        DB::raw('COUNT(recommendations.this_id) as count'),
-        DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
-        DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2'),
-        'r2.id as rated_id',
-        'r2.rate as rate_code'
-    )
-    ->groupBy('recommendations.this_id')
-    ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
-    $qqSql = $subq->toSql();
-
-
-
-	$return_val = DB::table('movies')
-	->join(
-		DB::raw('(' . $qqSql. ') AS ss'),
-		function($join) use ($subq) {
-            $join->on('movies.id', '=', 'ss.id')
-            ->addBinding($subq->getBindings());  
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
         }
-	)
-    ->leftjoin('laters', function ($join) {
-        $join->on('laters.movie_id', '=', 'movies.id')
-        ->where('laters.user_id', '=', Auth::user()->id);
-    })
-    ->leftjoin('bans', function ($join) {
-        $join->on('bans.movie_id', '=', 'movies.id')
-        ->whereIn('bans.user_id', [7]);
-    })
-    ->where('bans.id', '=', null)
-	->select(
-		'ss.id',
-		'movies.original_title',
-		'movies.'.$hover_title.' as original_title',
-		'ss.point',
-		'ss.count',
-		'ss.percent',
-		'ss.p2',
-		'movies.vote_average',
-        'movies.vote_count',
-        'movies.release_date',
-        'movies.'.Auth::User()->lang.'_title as title',
-        'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-        'ss.rated_id',
-        'ss.rate_code',
-        'laters.id as later_id',
-        'bans.id as ban_id'
-	)
-    ->orderBy($primary_order, 'desc')
-    ->orderBy($secondary_order, 'desc');
 
-	if([53,80] != [])
-	{
-		$return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
-	    ->whereIn('genre_id', [53,80])
-	    ->groupBy('movies.id')
-    	->havingRaw('COUNT(movies.id)='.count([53,80]));
-	}
+        if(Auth::User()->pemosu_mode == 0){
+            $primary_order = 'point';
+            $secondary_order = 'p2';
+        }else{
+            $primary_order = 'p2';
+            $secondary_order = 'point';
+        }
 
-	if(['en'] != [])
-    {
-        $return_val = $return_val->whereIn('original_language', ['en']);
-    }
+        $return_val = DB::table('rateds')
+        ->whereIn('rateds.user_id', [7])
+        ->where('rateds.rate', '>', 0)
+        ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
+        ->join('movies', 'movies.id', '=', 'recommendations.this_id')
+        ->leftjoin('rateds as r2', function ($join){
+            $join->on('r2.movie_id', '=', 'movies.id')
+            ->whereIn('r2.user_id', [7]);
+        })
+        ->leftjoin('laters', function ($join) {
+            $join->on('laters.movie_id', '=', 'movies.id')
+            ->where('laters.user_id', '=', Auth::user()->id);
+        })
+        //->where('laters.id', '=', null)
+        ->leftjoin('bans', function ($join){
+            $join->on('bans.movie_id', '=', 'movies.id')
+            ->whereIn('bans.user_id', [7]);
+        })
+        ->where('bans.id', '=', null)
+        ->select(
+            'recommendations.this_id as id',
+            //'recommendations.movie_id as mother_movie_id',
+            'movies.'.$hover_title.' as original_title',
+            DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
+            DB::raw('COUNT(movies.id) as count'),
+            DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as percent'),
+            DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(movies.id) as p2'),
+            'movies.vote_average',
+            'movies.vote_count',
+            'movies.release_date',
+            'movies.'.Auth::User()->lang.'_title as title',
+            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+            'r2.id as rated_id',
+            'r2.rate as rate_code',
+            'laters.id as later_id',
+            'bans.id as ban_id'
+        )
+        ->groupBy('movies.id')
+        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(movies.id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
+        ->orderBy($primary_order, 'desc')
+        ->orderBy($secondary_order, 'desc');
 
-    if(2003 != 1917)
-    {
-        $return_val = $return_val->where('movies.release_date', '>=', Carbon::create(2003,1,1));
-    }
 
-    if(2015 != 2018)
-    {
-        $return_val = $return_val->where('movies.release_date', '<=', Carbon::create(2015,12,31));
-    }
-	
 
-	return [$return_val->paginate(48), microtime(true) - $start];
+        return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
