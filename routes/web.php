@@ -260,7 +260,7 @@ Route::get('test', function(){
     ->orderBy('point', 'desc')
     ->orderBy('p2', 'desc');
 
-	if([] != [])
+	if([53,80] != [])
 	{
 		$return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
 	    ->whereIn('genre_id', [53,80])
@@ -284,7 +284,7 @@ Route::get('test', function(){
     }
 	
 
-	return [$return_val->get(), microtime(true) - $start];
+	return [$return_val->paginate(48), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
