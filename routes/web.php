@@ -224,6 +224,8 @@ Route::get('test', function(){
 
 	->join('genres', 'genres.movie_id', '=', 'ss.id')
     ->whereIn('genre_id', [53,80])
+    ->groupBy('movies.id')
+    ->havingRaw('COUNT(movies.id)='.count([53,80]))
     /*->leftjoin('rateds as r2', function ($join) {
         $join->on('r2.movie_id', '=', 'movies.id')
         ->whereIn('r2.user_id', [7]);
