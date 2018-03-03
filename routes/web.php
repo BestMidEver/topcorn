@@ -241,6 +241,7 @@ Route::get('test', function(){
     ->where('bans.id', '=', null)*/
 	->select(
 		'movies.original_title',
+		'movies.id',
 		'ss.point'
 	)
     ->orderBy('point', 'desc')
