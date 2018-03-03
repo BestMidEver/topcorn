@@ -217,16 +217,16 @@ Route::get('test', function(){
 	)
 	->join('genres', 'genres.movie_id', '=', 'ss.id')
     ->whereIn('genre_id', [53,80])
-    ->leftjoin('rateds as r2', function ($join) {
+    ->join('rateds as r2', function ($join) {
         $join->on('r2.movie_id', '=', 'movies.id')
         ->whereIn('r2.user_id', [7]);
     })
-    ->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
-    ->leftjoin('laters', function ($join) {
+    //->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0')
+    ->join('laters', function ($join) {
         $join->on('laters.movie_id', '=', 'movies.id')
         ->where('laters.user_id', '=', Auth::user()->id);
     })
-    ->leftjoin('bans', function ($join) {
+    ->join('bans', function ($join) {
         $join->on('bans.movie_id', '=', 'movies.id')
         ->whereIn('bans.user_id', [7]);
     })
