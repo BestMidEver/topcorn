@@ -216,7 +216,7 @@ Route::get('test', function(){
         }
 	)
 	->join('genres', 'genres.movie_id', '=', 'ss.id')
-    ->whereIn('genre_id', [53]);
+    ->whereIn('genre_id', [53])
 	->select(
 		'movies.original_title',
 		'ss.point'
