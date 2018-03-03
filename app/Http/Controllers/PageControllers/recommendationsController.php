@@ -48,7 +48,7 @@ class recommendationsController extends Controller
     public function get_top_rateds($tab, Request $request)
     {
          $start = microtime(true);
-         
+
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
@@ -214,8 +214,9 @@ class recommendationsController extends Controller
             'laters.id as later_id',
             'bans.id as ban_id'
         )
-        ->orderBy($primary_order, 'desc')
-        ->orderBy($secondary_order, 'desc');
+        ->orderBy('vote_average', 'desc')
+        /*->orderBy($primary_order, 'desc')
+        ->orderBy($secondary_order, 'desc')*/;
 
         if($request->f_genre != [])
         {
