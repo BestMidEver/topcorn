@@ -214,6 +214,7 @@ class recommendationsController extends Controller
             'laters.id as later_id',
             'bans.id as ban_id'
         )
+        ->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
         ->orderBy('vote_average', 'desc')
         /*->orderBy($primary_order, 'desc')
         ->orderBy($secondary_order, 'desc')*/;
