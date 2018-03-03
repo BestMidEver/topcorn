@@ -200,15 +200,6 @@ Route::get('test', function(){
         $join->on('r2.movie_id', '=', 'recommendations.this_id')
         ->whereIn('r2.user_id', [7]);
     })
-    ->leftjoin('laters', function ($join) {
-        $join->on('laters.movie_id', '=', 'recommendations.this_id')
-        ->where('laters.user_id', '=', Auth::user()->id);
-    })
-    ->leftjoin('bans', function ($join) {
-        $join->on('bans.movie_id', '=', 'recommendations.this_id')
-        ->whereIn('bans.user_id', [7]);
-    })
-    ->where('bans.id', '=', null)
     ->select(
         'recommendations.this_id as id',
         DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
@@ -231,16 +222,15 @@ Route::get('test', function(){
             ->addBinding($subq->getBindings());  
         }
 	)
-
-
-
-
-
-
-	->join('genres', 'genres.movie_id', '=', 'ss.id')
-    ->whereIn('genre_id', [53,80])
-    ->groupBy('movies.id')
-    ->havingRaw('COUNT(movies.id)='.count([53,80]))
+    ->leftjoin('laters', function ($join) {
+        $join->on('laters.movie_id', '=', 'movies.id')
+        ->where('laters.user_id', '=', Auth::user()->id);
+    })
+    ->leftjoin('bans', function ($join) {
+        $join->on('bans.movie_id', '=', 'movies.id')
+        ->whereIn('bans.user_id', [7]);
+    })
+    ->where('bans.id', '=', null)
 	->select(
 		'movies.original_title',
 		'movies.id',
@@ -248,6 +238,14 @@ Route::get('test', function(){
 	)
     ->orderBy('point', 'desc')
     ->orderBy('p2', 'desc');
+
+	if([53,80] != []){
+		$return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
+	    ->whereIn('genre_id', [53,80])
+	    ->groupBy('movies.id')
+    	->havingRaw('COUNT(movies.id)='.count([53,80]))
+	}
+	
 
 	return [$return_val->paginate(48), microtime(true) - $start];
 });
