@@ -226,10 +226,6 @@ Route::get('test', function(){
 
 
 
-	->join('genres', 'genres.movie_id', '=', 'ss.id')
-    ->whereIn('genre_id', [])
-    ->groupBy('movies.id')
-    ->havingRaw('COUNT(movies.id)='.count([]))
     ->leftjoin('laters', function ($join) {
         $join->on('laters.movie_id', '=', 'movies.id')
         ->where('laters.user_id', '=', Auth::user()->id);
