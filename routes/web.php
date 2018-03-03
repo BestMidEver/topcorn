@@ -226,9 +226,73 @@ Route::get('test', function(){
     )
     ->groupBy('recommendations.this_id')
     ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
-    
+    $qqSql = $subq->toSql();
 
-	return [$subq->paginate(48), microtime(true) - $start];
+
+
+	$return_val = DB::table('movies')
+	->join(
+		DB::raw('(' . $qqSql. ') AS ss'),
+		function($join) use ($subq) {
+            $join->on('movies.id', '=', 'ss.id')
+            ->addBinding($subq->getBindings());  
+        }
+	)
+    ->leftjoin('laters', function ($join) {
+        $join->on('laters.movie_id', '=', 'movies.id')
+        ->where('laters.user_id', '=', Auth::user()->id);
+    })
+    ->leftjoin('bans', function ($join) {
+        $join->on('bans.movie_id', '=', 'movies.id')
+        ->whereIn('bans.user_id', [7]);
+    })
+    ->where('bans.id', '=', null)
+	->select(
+		'ss.id',
+		'movies.original_title',
+		'movies.'.$hover_title.' as original_title',
+		'ss.point',
+		'ss.count',
+		'ss.percent',
+		'ss.p2',
+		'movies.vote_average',
+        'movies.vote_count',
+        'movies.release_date',
+        'movies.'.Auth::User()->lang.'_title as title',
+        'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+        'ss.rated_id',
+        'ss.rate_code',
+        'laters.id as later_id',
+        'bans.id as ban_id'
+	)
+    ->orderBy($primary_order, 'desc')
+    ->orderBy($secondary_order, 'desc');
+
+	if([53,80] != [])
+	{
+		$return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
+	    ->whereIn('genre_id', [53,80])
+	    ->groupBy('movies.id')
+    	->havingRaw('COUNT(movies.id)='.count([53,80]));
+	}
+
+	if(['en'] != [])
+    {
+        $return_val = $return_val->whereIn('original_language', ['en']);
+    }
+
+    if(2003 != 1917)
+    {
+        $return_val = $return_val->where('movies.release_date', '>=', Carbon::create(2003,1,1));
+    }
+
+    if(2015 != 2018)
+    {
+        $return_val = $return_val->where('movies.release_date', '<=', Carbon::create(2015,12,31));
+    }
+	
+
+	return [$return_val->paginate(48), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
