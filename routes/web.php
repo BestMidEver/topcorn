@@ -273,14 +273,14 @@ Route::get('test', function(){
         $return_val = $return_val->whereIn('original_language', ['en']);
     }
 
-    if([2003] != 1917)
+    if(2003 != 1917)
     {
-        $return_val = $return_val->where('movies.release_date', '>=', Carbon::create([2003],1,1));
+        $return_val = $return_val->where('movies.release_date', '>=', Carbon::create(2003,1,1));
     }
 
-    if([2015] != 2018)
+    if(2015 != 2018)
     {
-        $return_val = $return_val->where('movies.release_date', '<=', Carbon::create([2015],12,31));
+        $return_val = $return_val->where('movies.release_date', '<=', Carbon::create(2015,12,31));
     }
 	
 
