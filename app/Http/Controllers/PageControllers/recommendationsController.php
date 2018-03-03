@@ -157,6 +157,22 @@ class recommendationsController extends Controller
         )
         ->groupBy('recommendations.this_id')
         ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+
+        if($request->f_lang != [])
+        {
+            $subq = $subq->whereIn('original_language', $request->f_lang);
+        }
+
+        if($request->f_min != 1917)
+        {
+            $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1));
+        }
+
+        if($request->f_max != 2018)
+        {
+            $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
+        }
+
         $qqSql = $subq->toSql();
 
 
@@ -205,21 +221,6 @@ class recommendationsController extends Controller
             ->whereIn('genre_id', $request->f_genre)
             ->groupBy('movies.id')
             ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
-        }
-
-        if($request->f_lang != [])
-        {
-            $return_val = $return_val->whereIn('original_language', $request->f_lang);
-        }
-
-        if($request->f_min != 1917)
-        {
-            $return_val = $return_val->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1));
-        }
-
-        if($request->f_max != 2018)
-        {
-            $return_val = $return_val->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
         
 
