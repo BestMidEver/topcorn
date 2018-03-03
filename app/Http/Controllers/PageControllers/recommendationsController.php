@@ -48,7 +48,7 @@ class recommendationsController extends Controller
     public function get_top_rateds($tab, Request $request)
     {
          $start = microtime(true);
-
+         
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
@@ -158,7 +158,7 @@ class recommendationsController extends Controller
             'r2.rate as rate_code'
         )
         ->groupBy('recommendations.this_id')
-        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
         if($request->f_lang != [])
         {
