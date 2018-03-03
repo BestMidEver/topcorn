@@ -197,7 +197,7 @@ Route::get('test', function(){
     ->where('rateds.rate', '>', 0)
     ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
     ->leftjoin('rateds as r2', function ($join) {
-        $join->on('r2.movie_id', '=', 'movies.id')
+        $join->on('r2.movie_id', '=', 'recommendations.this_id')
         ->whereIn('r2.user_id', [7]);
     })
     ->select(
