@@ -221,7 +221,6 @@ Route::get('test', function(){
         $join->on('r2.movie_id', '=', 'movies.id')
         ->whereIn('r2.user_id', [7]);
     })
-    
     ->leftjoin('laters', function ($join) {
         $join->on('laters.movie_id', '=', 'movies.id')
         ->where('laters.user_id', '=', Auth::user()->id);
