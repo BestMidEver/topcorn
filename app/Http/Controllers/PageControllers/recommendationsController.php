@@ -150,7 +150,7 @@ class recommendationsController extends Controller
         })
         ->select(
             'recommendations.this_id as id',
-            DB::raw('sum((rateds.rate-3)*recommendations.is_similar) AS point'),
+            DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' AS point'),
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
             DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2'),
@@ -158,7 +158,7 @@ class recommendationsController extends Controller
             'r2.rate as rate_code'
         )
         ->groupBy('recommendations.this_id')
-        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > '.(count($request->f_users)*7).' AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
         if($request->f_lang != [])
         {
