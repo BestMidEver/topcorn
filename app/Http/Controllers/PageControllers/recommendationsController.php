@@ -47,6 +47,8 @@ class recommendationsController extends Controller
 
     public function get_top_rateds($tab, Request $request)
     {
+         $start = microtime(true);
+         
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
@@ -113,7 +115,7 @@ class recommendationsController extends Controller
             $return_val = $return_val->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
-        return $return_val->paginate(Auth::User()->pagination);
+        return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
     }
 
 
@@ -224,6 +226,6 @@ class recommendationsController extends Controller
         }
         
 
-        return [$return_val->paginate(48), microtime(true) - $start];
+        return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
     }
 }
