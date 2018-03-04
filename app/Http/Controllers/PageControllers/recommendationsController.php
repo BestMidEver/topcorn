@@ -149,11 +149,12 @@ class recommendationsController extends Controller
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
             DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2'),
+            DB::raw('sum(if(r2.id IS NULL OR r2.rate = 0, 0, 1)) as is_watched'),
             'r2.id as rated_id',
             'r2.rate as rate_code'
         )
-        ->groupBy('recommendations.this_id')
-        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->groupBy('recommendations.this_id');
+        //->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
         //FİLTRE FİLMİN ORİJİNAL DİLİ
         if($request->f_lang != [])
@@ -226,9 +227,14 @@ class recommendationsController extends Controller
             }
             
         }
+        //TOP RATED GENERAL LIST
         else if($tab_mode == 'top_rated')
         {
-            $return_val = $return_val->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+            $return_val = $return_val->rightjoin('movies as m2', function ($join) {
+                $join->on('m2.id', '=', 'movies.id')
+                ->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
+                ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
+            )}
             ->leftjoin('laters', function ($join) {
                 $join->on('laters.movie_id', '=', 'm2.id')
                 ->where('laters.user_id', '=', Auth::user()->id);
@@ -255,10 +261,11 @@ class recommendationsController extends Controller
                 'laters.id as later_id',
                 'bans.id as ban_id'
             )
+            ->havingRaw('ss.is_watched = 0');
             ->orderBy('m2.vote_average', 'desc');
         }
 
-
+        //FİLMİN TÜRÜ SEÇİLİR
         if($request->f_genre != [])
         {
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
