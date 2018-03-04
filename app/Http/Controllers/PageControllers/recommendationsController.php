@@ -192,7 +192,7 @@ class recommendationsController extends Controller
         ->orderBy('m2.vote_average', 'desc')*/;
 
         $tab_mode = 'top_rated';
-        if($tab_mode == 'point' || $tab_mode == 'percent' || $tab_mode == 'top_rated')
+        if($tab_mode == 'point' || $tab_mode == 'percent' || $tab_mode == 'top_rated' || $tab_mode == 'most_popular')
         {
             $return_val = $return_val->select(
                 'ss.id',
@@ -222,6 +222,10 @@ class recommendationsController extends Controller
                 ->orderBy('vote_average', 'desc');
             }else if($tab_mode == 'top_rated'){
                 $return_val = $return_val->orderBy('vote_average', 'desc')
+                ->orderBy('point', 'desc')
+                ->orderBy('p2', 'desc');
+            }else if($tab_mode == 'most_popular'){
+                $return_val = $return_val->orderBy('popularity', 'desc')
                 ->orderBy('point', 'desc')
                 ->orderBy('p2', 'desc');
             }
