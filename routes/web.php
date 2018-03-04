@@ -282,12 +282,12 @@ Route::get('test', function(){
     ->orderBy('point', 'desc')
     ->orderBy('p2', 'desc');
 
-	if($request->f_genre != [])
+	if([] != [])
 	{
 	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
-	    ->whereIn('genre_id', $request->f_genre)
+	    ->whereIn('genre_id', [])
 	    ->groupBy('movies.id')
-	    ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
+	    ->havingRaw('COUNT(movies.id)='.count([]));
 	}
 	
 
