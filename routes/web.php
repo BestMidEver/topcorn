@@ -256,34 +256,31 @@ Route::get('test', function(){
 	    ->whereIn('bans.user_id', [7]);
 	})
 	->where('bans.id', '=', null)
-	->rightjoin('movies as m2', function($join){
-		$join->on('m2.id', '=', 'movies.id')
-		->where('m2.vote_count', '>', 100);
-	})
-	->where('m2.vote_count', '>', 100);
+	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5);
 	//->orderBy('m2.vote_average', 'desc');
 
     $return_val = $return_val->select(
         'ss.id',
         'ss.is_watched',
-        'm2.'.$hover_title.' as original_title',
+        'movies.'.$hover_title.' as original_title',
         'ss.point',
         'ss.count',
         'ss.percent',
         'ss.p2',
-        'm2.vote_average',
-        'm2.vote_count',
-        'm2.release_date',
-        'm2.'.Auth::User()->lang.'_title as title',
-        'm2.'.Auth::User()->lang.'_poster_path as poster_path',
+        'movies.vote_average',
+        'movies.vote_count',
+        'movies.release_date',
+        'movies.'.Auth::User()->lang.'_title as title',
+        'movies.'.Auth::User()->lang.'_poster_path as poster_path',
         'ss.rated_id',
         'ss.rate_code',
         'laters.id as later_id',
         'bans.id as ban_id'
     )
     ->orderBy('m2.vote_average', 'desc')
-    /*->orderBy('point', 'desc')
-    ->orderBy('p2', 'desc')*/;
+    ->orderBy('point', 'desc')
+    ->orderBy('p2', 'desc');
 
 	if([] != [])
 	{
