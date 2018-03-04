@@ -259,7 +259,7 @@ Route::get('test', function(){
 	->rightjoin('movies as m2', function($join){
 		$join->on('m2.id', '=', 'movies.id')
 		->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
-        ->where('vote_average', '>', config('constants.suck_page.min_vote_average'));
+        ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
 	});
 	//->orderBy('m2.vote_average', 'desc');
 
