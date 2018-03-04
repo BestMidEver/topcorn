@@ -225,7 +225,7 @@ class recommendationsController extends Controller
         {
             $return_val = $return_val->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
             ->select(
-                'ss.id',
+                'm2.id',
                 'm2.original_title',
                 'm2.'.$hover_title.' as original_title',
                 'ss.point',
