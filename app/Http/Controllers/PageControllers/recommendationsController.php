@@ -123,14 +123,17 @@ class recommendationsController extends Controller
 
     public function get_pemosu(Request $request)
     {
+        //ZAMAN BAŞLAR
         $start = microtime(true);
 
+        //FİLMİN İSMİNİN DİLİ SEÇİLİR
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
             $hover_title = 'original_title';
         }
 
+        //ÖNERİLECEK FİLMLER İÇİN SUB QUERY
         $subq = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
         ->where('rateds.rate', '>', 0)
@@ -152,25 +155,28 @@ class recommendationsController extends Controller
         ->groupBy('recommendations.this_id')
         ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
+        //FİLTRE FİLMİN ORİJİNAL DİLİ
         if($request->f_lang != [])
         {
             $subq = $subq->whereIn('original_language', $request->f_lang);
         }
 
+        //FİLTRE MİN YEAR
         if($request->f_min != 1917)
         {
             $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
+        //FİLTRE MAX YEAR
         if($request->f_max != 2018)
         {
             $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
+        //SUBQUERY MYSQLE ÇEVİRİLİR
         $qqSql = $subq->toSql();
 
-
-
+        //SUBQUERY BİRLEŞİR
         $return_val = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') AS ss'),
@@ -179,9 +185,9 @@ class recommendationsController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
-        ->orderBy('m2.vote_average', 'desc')*/;
+        ->where('bans.id', '=', null);
 
+        //TAVSİYELER SEKMELERİNE GÖRE QUERY DEĞİŞİR
         $tab_mode = 'top_rated';
         if($tab_mode == 'point' || $tab_mode == 'percent')
         {
@@ -193,7 +199,6 @@ class recommendationsController extends Controller
                 $join->on('bans.movie_id', '=', 'movies.id')
                 ->whereIn('bans.user_id', $request->f_users);
             })
-            ->where('bans.id', '=', null)
             ->select(
                 'ss.id',
                 'movies.original_title',
@@ -232,7 +237,6 @@ class recommendationsController extends Controller
                 $join->on('bans.movie_id', '=', 'm2.id')
                 ->whereIn('bans.user_id', $request->f_users);
             })
-            ->where('bans.id', '=', null)
             ->select(
                 'm2.id',
                 'm2.original_title',
@@ -253,6 +257,7 @@ class recommendationsController extends Controller
             )
             ->orderBy('m2.vote_average', 'desc');
         }
+
 
         if($request->f_genre != [])
         {
