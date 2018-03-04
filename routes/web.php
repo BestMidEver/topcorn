@@ -256,8 +256,8 @@ Route::get('test', function(){
 	    ->whereIn('bans.user_id', [7]);
 	})
 	->where('bans.id', '=', null)
-	/*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
-	->orderBy('m2.vote_average', 'desc')*/;
+	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id');
+	//->orderBy('m2.vote_average', 'desc');
 
     $return_val = $return_val->select(
         'ss.id',
@@ -277,7 +277,7 @@ Route::get('test', function(){
         'laters.id as later_id',
         'bans.id as ban_id'
     )
-    ->orderBy('vote_average', 'desc')
+    ->orderBy('m2.vote_average', 'desc')
     ->orderBy('point', 'desc')
     ->orderBy('p2', 'desc');
 
