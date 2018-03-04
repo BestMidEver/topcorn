@@ -256,7 +256,8 @@ Route::get('test', function(){
 	    ->whereIn('bans.user_id', [7]);
 	})
 	->where('bans.id', '=', null)
-	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id');
+	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+	->where('m2.vote_count', '>', 100);
 	//->where('m2.vote_count', '>', Auth::User()->min_vote_count*5);
 	//->orderBy('m2.vote_average', 'desc');
 
