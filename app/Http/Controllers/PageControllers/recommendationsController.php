@@ -261,7 +261,7 @@ class recommendationsController extends Controller
                 'laters.id as later_id',
                 'bans.id as ban_id'
             )
-            ->havingRaw('ss.is_watched = 0');
+            ->havingRaw('ss.is_watched = 0')
             ->orderBy('m2.vote_average', 'desc');
         }
 
