@@ -263,7 +263,7 @@ Route::get('test', function(){
 	//->orderBy('m2.vote_average', 'desc');
 
     $return_val = $return_val->select(
-        'ss.id',
+        'm2.id',
         'ss.is_watched',
         'm2.'.$hover_title.' as original_title',
         'ss.point',
