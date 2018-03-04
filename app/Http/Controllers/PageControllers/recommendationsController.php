@@ -191,7 +191,7 @@ class recommendationsController extends Controller
         /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
         ->orderBy('m2.vote_average', 'desc')*/;
 
-        $tab_mode = 'percent';
+        $tab_mode = 'top_rated';
         if($tab_mode == 'point' || $tab_mode == 'percent' || $tab_mode == 'top_rated')
         {
             $return_val = $return_val->select(
@@ -222,8 +222,8 @@ class recommendationsController extends Controller
                 ->orderBy('vote_average', 'desc');
             }else if($tab_mode == 'top_rated'){
                 $return_val = $return_val->orderBy('vote_average', 'desc')
-                /*->orderBy('point', 'desc')
-                ->orderBy('p2', 'desc')*/;
+                ->orderBy('point', 'desc')
+                ->orderBy('p2', 'desc');
             }
             
         }
