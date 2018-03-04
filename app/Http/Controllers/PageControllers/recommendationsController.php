@@ -196,7 +196,6 @@ class recommendationsController extends Controller
         {
             $return_val = $return_val->select(
                 'ss.id',
-                'movies.original_title',
                 'movies.'.$hover_title.' as original_title',
                 'ss.point',
                 'ss.count',

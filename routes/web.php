@@ -262,9 +262,8 @@ Route::get('test', function(){
     $return_val = $return_val->select(
         'ss.id',
         'ss.is_watched',
-        'movies.original_title',
-        /*'movies.'.$hover_title.' as original_title',
-        'ss.point',
+        'movies.'.$hover_title.' as original_title',
+        /*'ss.point',
         'ss.count',
         'ss.percent',
         'ss.p2',
