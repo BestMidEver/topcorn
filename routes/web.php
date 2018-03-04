@@ -263,7 +263,7 @@ Route::get('test', function(){
         'ss.id',
         'ss.is_watched',
         'movies.'.$hover_title.' as original_title',
-        /*'ss.point',
+        'ss.point',
         'ss.count',
         'ss.percent',
         'ss.p2',
@@ -271,7 +271,7 @@ Route::get('test', function(){
         'movies.vote_count',
         'movies.release_date',
         'movies.'.Auth::User()->lang.'_title as title',
-        'movies.'.Auth::User()->lang.'_poster_path as poster_path',*/
+        'movies.'.Auth::User()->lang.'_poster_path as poster_path',
         'ss.rated_id',
         'ss.rate_code',
         'laters.id as later_id',
