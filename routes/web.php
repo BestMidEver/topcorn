@@ -247,6 +247,7 @@ Route::get('test', function(){
 	        ->addBinding($subq->getBindings());  
 	    }
 	)
+	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
 	->leftjoin('laters', function ($join) {
 	    $join->on('laters.movie_id', '=', 'm2.id')
 	    ->where('laters.user_id', '=', Auth::user()->id);
@@ -256,7 +257,6 @@ Route::get('test', function(){
 	    ->whereIn('bans.user_id', [7]);
 	})
 	->where('bans.id', '=', null)
-	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
 	->where('m2.vote_count', '>', 100)
 	->whereRaw('ss.is_watched = 0 OR ss.is_watched IS NULL');
 	//->where('m2.vote_count', '>', Auth::User()->min_vote_count*5);
