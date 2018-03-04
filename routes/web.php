@@ -258,7 +258,7 @@ Route::get('test', function(){
 	->where('bans.id', '=', null)
 	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
 	->where('m2.vote_count', '>', 100)
-	->whereRaw('NOT ss.is_watched > 0');
+	->whereRaw('ss.is_watched = 0 OR ss.is_watched = NULL');
 	//->where('m2.vote_count', '>', Auth::User()->min_vote_count*5);
 	//->orderBy('m2.vote_average', 'desc');
 
