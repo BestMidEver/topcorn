@@ -212,10 +212,7 @@ Route::get('test', function(){
 	    DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' AS point'),
 	    DB::raw('COUNT(recommendations.this_id) as count'),
 	    DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
-	    DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2'),
-	    DB::raw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) as is_watched'),
-	    'r2.id as rated_id',
-	    'r2.rate as rate_code'
+	    DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2')
 	)
 	->groupBy('recommendations.this_id');
 	//->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
@@ -248,6 +245,10 @@ Route::get('test', function(){
 	    }
 	)
 	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+	->leftjoin('rateds', function ($join) {
+	    $join->on('rateds.movie_id', '=', 'm2.id')
+	    ->where('rateds.user_id', '=', Auth::user()->id);
+	})
 	->leftjoin('laters', function ($join) {
 	    $join->on('laters.movie_id', '=', 'm2.id')
 	    ->where('laters.user_id', '=', Auth::user()->id);
@@ -276,14 +277,14 @@ Route::get('test', function(){
         'm2.release_date',
         'm2.'.Auth::User()->lang.'_title as title',
         'm2.'.Auth::User()->lang.'_poster_path as poster_path',
-        'ss.rated_id',
-        'ss.rate_code',
+        'rateds.id asrated_id',
+        'rateds.rate as rate_code',
         'laters.id as later_id',
         'bans.id as ban_id'
     )
     ->orderBy('m2.vote_average', 'desc')
-    ->orderBy('point', 'desc')
-    ->orderBy('p2', 'desc');
+    /*->orderBy('point', 'desc')
+    ->orderBy('p2', 'desc')*/;
 
 	if([] != [])
 	{
