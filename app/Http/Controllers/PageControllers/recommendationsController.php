@@ -179,22 +179,22 @@ class recommendationsController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'movies.id')
-            ->where('laters.user_id', '=', Auth::user()->id);
-        })
-        ->leftjoin('bans', function ($join) use ($request) {
-            $join->on('bans.movie_id', '=', 'movies.id')
-            ->whereIn('bans.user_id', $request->f_users);
-        })
-        ->where('bans.id', '=', null)
         /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
         ->orderBy('m2.vote_average', 'desc')*/;
 
         $tab_mode = 'top_rated';
         if($tab_mode == 'point' || $tab_mode == 'percent')
         {
-            $return_val = $return_val->select(
+            $return_val = $return_val->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', '=', 'movies.id')
+                ->where('laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('bans', function ($join) use ($request) {
+                $join->on('bans.movie_id', '=', 'movies.id')
+                ->whereIn('bans.user_id', $request->f_users);
+            })
+            ->where('bans.id', '=', null)
+            ->select(
                 'ss.id',
                 'movies.original_title',
                 'movies.'.$hover_title.' as original_title',
@@ -224,6 +224,15 @@ class recommendationsController extends Controller
         else if($tab_mode == 'top_rated')
         {
             $return_val = $return_val->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+            ->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', '=', 'm2.id')
+                ->where('laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('bans', function ($join) use ($request) {
+                $join->on('bans.movie_id', '=', 'm2.id')
+                ->whereIn('bans.user_id', $request->f_users);
+            })
+            ->where('bans.id', '=', null)
             ->select(
                 'm2.id',
                 'm2.original_title',
