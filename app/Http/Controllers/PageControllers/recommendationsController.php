@@ -191,7 +191,7 @@ class recommendationsController extends Controller
         /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
         ->orderBy('m2.vote_average', 'desc')*/;
 
-        $tab_mode = 'percent';
+        $tab_mode = 'top_rated';
         if($tab_mode == 'point' || $tab_mode == 'percent')
         {
             $return_val = $return_val->select(
@@ -220,6 +220,29 @@ class recommendationsController extends Controller
                 ->orderBy('point', 'desc');
             }
             
+        }
+        else if($tab_mode == 'top_rated')
+        {
+            $return_val = $return_val->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+            ->select(
+                'ss.id',
+                'm2.original_title',
+                'm2.'.$hover_title.' as original_title',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'ss.p2',
+                'm2.vote_average',
+                'm2.vote_count',
+                'm2.release_date',
+                'm2.'.Auth::User()->lang.'_title as title',
+                'm2.'.Auth::User()->lang.'_poster_path as poster_path',
+                'ss.rated_id',
+                'ss.rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            )
+            ->orderBy('m2.vote_average', 'desc');
         }
 
         if($request->f_genre != [])
