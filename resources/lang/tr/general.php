@@ -79,7 +79,7 @@ return [
     'next' => 'Sonraki',                                                                //pagination,
     'no_result' => 'Sonuç bulunamadı.',                                                 //profile, search
     'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                //movie
-    'not_sure' => 'Eh işte',                                                         //ratemodal, profile,
+    'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
     'open_new_tab' => 'Yeni Sekme',                                                     //accountinterface,

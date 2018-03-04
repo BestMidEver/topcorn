@@ -131,14 +131,6 @@ class recommendationsController extends Controller
             $hover_title = 'original_title';
         }
 
-        if(Auth::User()->pemosu_mode == 0){
-            $primary_order = 'point';
-            $secondary_order = 'p2';
-        }else{
-            $primary_order = 'p2';
-            $secondary_order = 'point';
-        }
-
         $subq = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
         ->where('rateds.rate', '>', 0)
@@ -196,28 +188,39 @@ class recommendationsController extends Controller
             ->whereIn('bans.user_id', $request->f_users);
         })
         ->where('bans.id', '=', null)
-        ->select(
-            'ss.id',
-            'movies.original_title',
-            'movies.'.$hover_title.' as original_title',
-            'ss.point',
-            'ss.count',
-            'ss.percent',
-            'ss.p2',
-            'movies.vote_average',
-            'movies.vote_count',
-            'movies.release_date',
-            'movies.'.Auth::User()->lang.'_title as title',
-            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-            'ss.rated_id',
-            'ss.rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
-        )
         /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
-        ->orderBy('m2.vote_average', 'desc')*/
-        ->orderBy($primary_order, 'desc')
-        ->orderBy($secondary_order, 'desc');
+        ->orderBy('m2.vote_average', 'desc')*/;
+
+        $tab_mode = 'point';
+        if($tab_mode == 'point' || $tab_mode == 'percent')
+        {
+            $return_val = $return_val->select(
+                'ss.id',
+                'movies.original_title',
+                'movies.'.$hover_title.' as original_title',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'ss.p2',
+                'movies.vote_average',
+                'movies.vote_count',
+                'movies.release_date',
+                'movies.'.Auth::User()->lang.'_title as title',
+                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+                'ss.rated_id',
+                'ss.rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            );
+            if($tab_mode == 'point'){
+                $return_val = $return_val->orderBy('point', 'desc')
+                ->orderBy('p2', 'desc');
+            }else{
+                $return_val = $return_val->orderBy('p2', 'desc')
+                ->orderBy('point', 'desc');
+            }
+            
+        }
 
         if($request->f_genre != [])
         {
