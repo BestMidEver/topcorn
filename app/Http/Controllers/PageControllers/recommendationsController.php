@@ -214,13 +214,16 @@ class recommendationsController extends Controller
             );
             if($tab_mode == 'point'){
                 $return_val = $return_val->orderBy('point', 'desc')
-                ->orderBy('p2', 'desc');
-            }else if($tab_mode == 'percent'{
+                ->orderBy('p2', 'desc')
+                ->orderBy('vote_average', 'desc');
+            }else if($tab_mode == 'percent'){
                 $return_val = $return_val->orderBy('p2', 'desc')
-                ->orderBy('point', 'desc');
+                ->orderBy('point', 'desc')
+                ->orderBy('vote_average', 'desc');
             }else if($tab_mode == 'top_rated'){
                 $return_val = $return_val->orderBy('vote_average', 'desc')
-                ->orderBy('point', 'desc');
+                ->orderBy('point', 'desc')
+                ->orderBy('p2', 'desc');
             }
             
         }
