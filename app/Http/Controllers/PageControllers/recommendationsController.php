@@ -222,8 +222,8 @@ class recommendationsController extends Controller
                 ->orderBy('vote_average', 'desc');
             }else if($tab_mode == 'top_rated'){
                 $return_val = $return_val->orderBy('vote_average', 'desc')
-                ->orderBy('point', 'desc')
-                ->orderBy('p2', 'desc');
+                /*->orderBy('point', 'desc')
+                ->orderBy('p2', 'desc')*/;
             }
             
         }
