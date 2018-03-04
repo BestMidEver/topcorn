@@ -217,8 +217,8 @@ Route::get('test', function(){
 	    'r2.id as rated_id',
 	    'r2.rate as rate_code'
 	)
-	->groupBy('recommendations.this_id')
-	->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75');
+	->groupBy('recommendations.this_id');
+	//->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
 	if([] != [])
 	{
