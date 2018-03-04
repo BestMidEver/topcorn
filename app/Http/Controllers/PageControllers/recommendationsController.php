@@ -123,17 +123,14 @@ class recommendationsController extends Controller
 
     public function get_pemosu(Request $request)
     {
-        //ZAMAN BAŞLAR
         $start = microtime(true);
 
-        //FİLMİN İSMİNİN DİLİ SEÇİLİR
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
             $hover_title = 'original_title';
         }
 
-        //ÖNERİLECEK FİLMLER İÇİN SUB QUERY
         $subq = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
         ->where('rateds.rate', '>', 0)
@@ -149,35 +146,31 @@ class recommendationsController extends Controller
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
             DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2'),
-            DB::raw('sum(if(r2.id IS NULL OR r2.rate = 0, 0, 1)) as is_watched'),
             'r2.id as rated_id',
             'r2.rate as rate_code'
         )
-        ->groupBy('recommendations.this_id');
-        //->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->groupBy('recommendations.this_id')
+        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
-        //FİLTRE FİLMİN ORİJİNAL DİLİ
         if($request->f_lang != [])
         {
             $subq = $subq->whereIn('original_language', $request->f_lang);
         }
 
-        //FİLTRE MİN YEAR
         if($request->f_min != 1917)
         {
             $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
-        //FİLTRE MAX YEAR
         if($request->f_max != 2018)
         {
             $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
-        //SUBQUERY MYSQLE ÇEVİRİLİR
         $qqSql = $subq->toSql();
 
-        //SUBQUERY BİRLEŞİR
+
+
         $return_val = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') AS ss'),
@@ -186,21 +179,22 @@ class recommendationsController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->where('bans.id', '=', null);
+        ->leftjoin('laters', function ($join) {
+            $join->on('laters.movie_id', '=', 'movies.id')
+            ->where('laters.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('bans', function ($join) use ($request) {
+            $join->on('bans.movie_id', '=', 'movies.id')
+            ->whereIn('bans.user_id', $request->f_users);
+        })
+        ->where('bans.id', '=', null)
+        /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+        ->orderBy('m2.vote_average', 'desc')*/;
 
-        //TAVSİYELER SEKMELERİNE GÖRE QUERY DEĞİŞİR
-        $tab_mode = 'top_rated';
+        $tab_mode = 'percent';
         if($tab_mode == 'point' || $tab_mode == 'percent')
         {
-            $return_val = $return_val->leftjoin('laters', function ($join) {
-                $join->on('laters.movie_id', '=', 'movies.id')
-                ->where('laters.user_id', '=', Auth::user()->id);
-            })
-            ->leftjoin('bans', function ($join) use ($request) {
-                $join->on('bans.movie_id', '=', 'movies.id')
-                ->whereIn('bans.user_id', $request->f_users);
-            })
-            ->select(
+            $return_val = $return_val->select(
                 'ss.id',
                 'movies.original_title',
                 'movies.'.$hover_title.' as original_title',
@@ -227,45 +221,11 @@ class recommendationsController extends Controller
             }
             
         }
-        //TOP RATED GENERAL LIST
         else if($tab_mode == 'top_rated')
         {
-            $return_val = $return_val->rightjoin('movies as m2', function ($join) {
-                $join->on('m2.id', '=', 'movies.id')
-                ->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
-                ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
-            })
-            ->leftjoin('laters', function ($join) {
-                $join->on('laters.movie_id', '=', 'm2.id')
-                ->where('laters.user_id', '=', Auth::user()->id);
-            })
-            ->leftjoin('bans', function ($join) use ($request) {
-                $join->on('bans.movie_id', '=', 'm2.id')
-                ->whereIn('bans.user_id', $request->f_users);
-            })
-            ->select(
-                'm2.id',
-                'm2.original_title',
-                'm2.'.$hover_title.' as original_title',
-                'ss.point',
-                'ss.count',
-                'ss.percent',
-                'ss.p2',
-                'm2.vote_average',
-                'm2.vote_count',
-                'm2.release_date',
-                'm2.'.Auth::User()->lang.'_title as title',
-                'm2.'.Auth::User()->lang.'_poster_path as poster_path',
-                'ss.rated_id',
-                'ss.rate_code',
-                'laters.id as later_id',
-                'bans.id as ban_id'
-            )
-            ->havingRaw('ss.is_watched = 0')
-            ->orderBy('m2.vote_average', 'desc');
+            
         }
 
-        //FİLMİN TÜRÜ SEÇİLİR
         if($request->f_genre != [])
         {
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
