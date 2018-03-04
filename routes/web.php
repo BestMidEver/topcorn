@@ -203,7 +203,7 @@ Route::get('test', function(){
 	->where('rateds.rate', '>', 0)
 	->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
 	->join('movies', 'movies.id', '=', 'recommendations.this_id')
-	->leftjoin('rateds as r2', function ($join) use ($request) {
+	->leftjoin('rateds as r2', function ($join){
 	    $join->on('r2.movie_id', '=', 'movies.id')
 	    ->whereIn('r2.user_id', [7]);
 	})
@@ -251,7 +251,7 @@ Route::get('test', function(){
 	    $join->on('laters.movie_id', '=', 'movies.id')
 	    ->where('laters.user_id', '=', Auth::user()->id);
 	})
-	->leftjoin('bans', function ($join) use ($request) {
+	->leftjoin('bans', function ($join){
 	    $join->on('bans.movie_id', '=', 'movies.id')
 	    ->whereIn('bans.user_id', [7]);
 	})
