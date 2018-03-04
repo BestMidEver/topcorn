@@ -190,7 +190,108 @@ Route::get('suckData', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
+	$start = microtime(true);
+
+	if(Auth::User()->hover_title_language == 0){
+	    $hover_title = Auth::User()->secondary_lang.'_title';
+	}else{
+	    $hover_title = 'original_title';
+	}
+
+	$subq = DB::table('rateds')
+	->whereIn('rateds.user_id', [7])
+	->where('rateds.rate', '>', 0)
+	->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
+	->join('movies', 'movies.id', '=', 'recommendations.this_id')
+	->leftjoin('rateds as r2', function ($join) use ($request) {
+	    $join->on('r2.movie_id', '=', 'movies.id')
+	    ->whereIn('r2.user_id', [7]);
+	})
+	->select(
+	    'recommendations.this_id as id',
+	    DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' AS point'),
+	    DB::raw('COUNT(recommendations.this_id) as count'),
+	    DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
+	    DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2'),
+	    DB::raw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) as is_watched'),
+	    'r2.id as rated_id',
+	    'r2.rate as rate_code'
+	)
+	->groupBy('recommendations.this_id')
+	->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+
+	if([] != [])
+	{
+	    $subq = $subq->whereIn('original_language', []);
+	}
+
+	if(1917 != 1917)
+	{
+	    $subq = $subq->where('movies.release_date', '>=', Carbon::create(1917,1,1));
+	}
+
+	if(2018 != 2018)
+	{
+	    $subq = $subq->where('movies.release_date', '<=', Carbon::create(2018,12,31));
+	}
+
+	$qqSql = $subq->toSql();
+
+
+
+	$return_val = DB::table('movies')
+	->join(
+	    DB::raw('(' . $qqSql. ') AS ss'),
+	    function($join) use ($subq) {
+	        $join->on('movies.id', '=', 'ss.id')
+	        ->addBinding($subq->getBindings());  
+	    }
+	)
+	->leftjoin('laters', function ($join) {
+	    $join->on('laters.movie_id', '=', 'movies.id')
+	    ->where('laters.user_id', '=', Auth::user()->id);
+	})
+	->leftjoin('bans', function ($join) use ($request) {
+	    $join->on('bans.movie_id', '=', 'movies.id')
+	    ->whereIn('bans.user_id', [7]);
+	})
+	->where('bans.id', '=', null)
+	/*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+	->orderBy('m2.vote_average', 'desc')*/;
+
+    $return_val = $return_val->select(
+        'ss.id',
+        'ss.is_watched',
+        'movies.original_title',
+        /*'movies.'.$hover_title.' as original_title',
+        'ss.point',
+        'ss.count',
+        'ss.percent',
+        'ss.p2',
+        'movies.vote_average',
+        'movies.vote_count',
+        'movies.release_date',
+        'movies.'.Auth::User()->lang.'_title as title',
+        'movies.'.Auth::User()->lang.'_poster_path as poster_path',*/
+        'ss.rated_id',
+        'ss.rate_code',
+        'laters.id as later_id',
+        'bans.id as ban_id'
+    )
+    ->orderBy('vote_average', 'desc')
+    ->orderBy('point', 'desc')
+    ->orderBy('p2', 'desc');
+
+	if($request->f_genre != [])
+	{
+	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
+	    ->whereIn('genre_id', $request->f_genre)
+	    ->groupBy('movies.id')
+	    ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
+	}
 	
+
+	return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
