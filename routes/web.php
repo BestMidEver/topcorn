@@ -260,7 +260,7 @@ Route::get('test', function(){
 	->where('m2.vote_count', '>', 100)
 	->whereRaw('ss.is_watched = 0 OR ss.is_watched IS NULL')
 	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
-    ->where('vote_average', '>', config('constants.suck_page.min_vote_average'));
+    ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
 	//->orderBy('m2.vote_average', 'desc');
 
     $return_val = $return_val->select(
