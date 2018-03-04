@@ -278,7 +278,7 @@ Route::get('test', function(){
         'm2.release_date',
         'm2.'.Auth::User()->lang.'_title as title',
         'm2.'.Auth::User()->lang.'_poster_path as poster_path',
-        'rateds.id asrated_id',
+        'rateds.id as rated_id',
         'rateds.rate as rate_code',
         'laters.id as later_id',
         'bans.id as ban_id'
