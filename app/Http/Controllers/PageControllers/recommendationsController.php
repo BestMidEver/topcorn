@@ -234,7 +234,7 @@ class recommendationsController extends Controller
                 $join->on('m2.id', '=', 'movies.id')
                 ->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
                 ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
-            )}
+            })
             ->leftjoin('laters', function ($join) {
                 $join->on('laters.movie_id', '=', 'm2.id')
                 ->where('laters.user_id', '=', Auth::user()->id);
