@@ -310,16 +310,16 @@ Route::get('test', function(){
     )
     
 
-    ->orderBy('m2.vote_average', 'desc')
+    ->orderBy('movies.vote_average', 'desc')
     /*->orderBy('point', 'desc')
     ->orderBy('p2', 'desc')*/;
 
 
 	if([] != [])
 	{
-	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'm2.id')
+	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
 	    ->whereIn('genre_id', [])
-	    ->groupBy('m2.id')
+	    ->groupBy('movies.id')
 	    ->havingRaw('COUNT(movies.id)='.count([]));
 	}
 
