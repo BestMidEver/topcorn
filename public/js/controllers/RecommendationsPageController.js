@@ -208,7 +208,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	}
 
     $scope.get_first_page_data = function()
-    {
+    {console.log($scope.slider_vote_count, $scope.sort_by)
     	$scope.page=1;
     	$scope.get_page_data();
 	}
