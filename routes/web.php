@@ -256,7 +256,7 @@ Route::get('test', function(){
     ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
 
-	if([53,878] != [])
+	if([] != [])
 	{
 	    $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'm2.id')
 	    ->whereIn('genre_id', [53,878])
