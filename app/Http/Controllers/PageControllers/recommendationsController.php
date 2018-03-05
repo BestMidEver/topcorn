@@ -128,7 +128,7 @@ class recommendationsController extends Controller
                 ->addBinding($subq_2->getBindings());  
             }
         )
-        ->leftjoin('rateds', function ($join) {
+        ->leftjoin('rateds', function ($join) use ($request) {
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->whereIn('rateds.user_id', $request->f_users);
         })
@@ -136,7 +136,7 @@ class recommendationsController extends Controller
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::user()->id);
         })
-        ->leftjoin('bans', function ($join){
+        ->leftjoin('bans', function ($join) use ($request) {
             $join->on('bans.movie_id', '=', 'movies.id')
             ->whereIn('bans.user_id', $request->f_users);
         })
