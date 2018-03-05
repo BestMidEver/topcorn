@@ -310,12 +310,12 @@ class recommendationsController extends Controller
         })
         ->where('bans.id', '=', null)
         ->select(
-            'ss.id',
             'movies.'.$hover_title.' as original_title',
             'ss.point',
             'ss.count',
             'ss.percent',
             'ss.p2',
+            'ss.id',
             'movies.vote_average',
             'movies.vote_count',
             'movies.release_date',
