@@ -277,15 +277,15 @@ Route::get('test', function(){
 	    }
 	)
 	->leftjoin('rateds', function ($join) {
-	    $join->on('rateds.movie_id', '=', 'm2.id')
+	    $join->on('rateds.movie_id', '=', 'movies.id')
 	    ->whereIn('rateds.user_id', [7]);
 	})
 	->leftjoin('laters', function ($join) {
-	    $join->on('laters.movie_id', '=', 'm2.id')
+	    $join->on('laters.movie_id', '=', 'movies.id')
 	    ->where('laters.user_id', '=', Auth::user()->id);
 	})
 	->leftjoin('bans', function ($join){
-	    $join->on('bans.movie_id', '=', 'm2.id')
+	    $join->on('bans.movie_id', '=', 'movies.id')
 	    ->whereIn('bans.user_id', [7]);
 	})
 	->select(
@@ -305,7 +305,7 @@ Route::get('test', function(){
         'laters.id as later_id',
         'bans.id as ban_id'
     )
-    ->groupBy('m2.id')
+    ->groupBy('movies.id')
     ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0')
     ->orderBy('movies.vote_average', 'desc');
     
