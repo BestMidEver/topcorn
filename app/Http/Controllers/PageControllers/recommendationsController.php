@@ -89,7 +89,7 @@ class recommendationsController extends Controller
             'ss.percent',
             'ss.p2'
         )
-        ->where('m2.vote_count', '>', $request->f_vote)
+        ->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
         ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
 
