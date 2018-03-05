@@ -265,7 +265,7 @@ class recommendationsController extends Controller
         })
         ->select(
             'recommendations.this_id as id',
-            DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' AS point'),
+            DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' AS point'),
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent'),
             DB::raw('(sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar)*100/sum(4*recommendations.is_similar) DIV 2) + 50 as p2'),
