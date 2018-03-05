@@ -267,13 +267,13 @@ class recommendationsController extends Controller
             'recommendations.this_id as id',
             DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' AS point'),
             DB::raw('COUNT(recommendations.this_id) as count'),
-            DB::raw('sum(rateds.rate-1)*25 DIV COUNT(recommendations.this_id) as percent'),
-            DB::raw('sum(POWER((rateds.rate-3), 3)*recommendations.is_similar)*2.5 DIV COUNT(recommendations.this_id) as p2'),
+            DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent'),
+            DB::raw('sum(POWER((rateds.rate-3), 3)*recommendations.is_similar)*2.5 DIV COUNT(movies.id) as p2'),
             'r2.id as rated_id',
             'r2.rate as rate_code'
         )
-        ->groupBy('recommendations.this_id')
-        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' > 7 AND sum(rateds.rate-1)*25 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->groupBy('movies.id')
+        ->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' > 7 AND sum(rateds.rate-1)*25 DIV COUNT(movies.id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
         if($request->f_lang != [])
         {
