@@ -32,11 +32,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	};
 	$scope.slider_vote_count={};
 	$scope.slider_vote_count = {
-		minValue: 0,
-		maxValue: 100,
+		value: 200,
 		options: {
-			floor: 0,
-			ceil: 1000
+	        floor: 25,
+	        ceil: 5000,
+	        step: 25
 		}
 	};
     $scope.drawslider=function(){
