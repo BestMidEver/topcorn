@@ -236,7 +236,7 @@ Route::get('test', function(){
 
 /////////////////////////////////////////////////////////
 
-	$subqq = DB::table('movies')
+	$subq_2 = DB::table('movies')
 	->join(
 	    DB::raw('(' . $qqSql. ') AS ss'),
 	    function($join) use ($subq) {
@@ -254,22 +254,22 @@ Route::get('test', function(){
 
 	if([] != [])
 	{
-	    $subqq = $subqq->join('genres', 'genres.movie_id', '=', 'ss.id')
+	    $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'ss.id')
 	    ->whereIn('genre_id', [])
 	    ->groupBy('movies.id')
 	    ->havingRaw('COUNT(movies.id)='.count([]));
 	}
 
-	$qqSql_2 = $subqq->toSql();
+	$qqSql_2 = $subq_2->toSql();
 
 /////////////////////////////////////////////////////////
 
 	$return_val = DB::table('movies')
 	->join(
 	    DB::raw('(' . $qqSql_2. ') AS ss'),
-	    function($join) use ($subq) {
+	    function($join) use ($subq_2) {
 	        $join->on('movies.id', '=', 'ss.id')
-	        ->addBinding($subqq->getBindings());  
+	        ->addBinding($subq_2->getBindings());  
 	    }
 	)
 	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
