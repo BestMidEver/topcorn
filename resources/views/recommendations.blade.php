@@ -86,7 +86,7 @@
 		<p class="h6 text-muted">SIRALA</p>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="point" checked> Eşleşme Puanına Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="point"> Eşleşme Puanına Göre
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
@@ -101,7 +101,7 @@
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptionss" ng-model="sort_by" value="popularity"> Popülerliğine Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="popularity"> Popülerliğine Göre
 			</label>
 		</div>
 	</div>
