@@ -82,18 +82,41 @@
 		rz-slider-high="slider.maxValue"
 		rz-slider-options="slider.options"></rzslider>
 	</div>
+	<div class="mt-3 pb-3">
+		<p class="h6 text-muted">SIRALA</p>
+		<div class="form-check form-check-inline">
+			<label class="form-check-label">
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="point"> Eşleşme Puanına Göre
+			</label>
+		</div>
+		<div class="form-check form-check-inline">
+			<label class="form-check-label">
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="percent"> Eşleşme Yüzdesine Göre
+			</label>
+		</div>
+		<div class="form-check form-check-inline">
+			<label class="form-check-label">
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="top_rated"> Oyuna Göre
+			</label>
+		</div>
+		<div class="form-check form-check-inline">
+			<label class="form-check-label">
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="top_rated"> Popülerliğine Göre
+			</label>
+		</div>
+	</div>
 	<div class="text-center pb-1">
 		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseFilter"><i class="fa fa-angle-up" ng-click="scroll_to_filter()"></i></button>
 	</div>
 </div>
 
 <div id="scroll_top_point">
-<div class="p-5" ng-show="movies.length==0">
-	<div class="text-muted text-center"><span ng-if="!is_waiting">{{ __('general.no_result') }}</span><span ng-if="is_waiting">Aranıyor...</span></div>
-</div>
+	<div class="p-5" ng-show="movies.length==0">
+		<div class="text-muted text-center"><span ng-if="!is_waiting">{{ __('general.no_result') }}</span><span ng-if="is_waiting">Aranıyor...</span></div>
+	</div>
 	@include('layout.moviecard')
 </div>
 
-	@include('layout.pagination', ['suffix' => ''])
+@include('layout.pagination', ['suffix' => ''])
 
 @endsection
