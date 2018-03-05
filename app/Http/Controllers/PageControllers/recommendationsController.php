@@ -268,7 +268,7 @@ class recommendationsController extends Controller
             DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' AS point'),
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent'),
-            DB::raw('sum(((rateds.rate-3)*recommendations.is_similar)/(5*recommendations.is_similar))*100 DIV COUNT(movies.id) as p2'),
+            DB::raw('sum((rateds.rate-3)*recommendations.is_similar)*100 DIV sum(2*recommendations.is_similar) as p2'),
             'r2.id as rated_id',
             'r2.rate as rate_code'
         )
