@@ -103,17 +103,17 @@ class recommendationsController extends Controller
 
         if($request->f_lang != [])
         {
-            $subq = $subq->whereIn('m2.original_language', $request->f_lang);
+            $subq_2 = $subq_2->whereIn('m2.original_language', $request->f_lang);
         }
 
         if($request->f_min != 1917)
         {
-            $subq = $subq->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1));
+            $subq_2 = $subq_2->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
         if($request->f_max != 2018)
         {
-            $subq = $subq->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31));
+            $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
         $qqSql_2 = $subq_2->toSql();
