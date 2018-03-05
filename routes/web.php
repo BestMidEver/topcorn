@@ -253,7 +253,8 @@ Route::get('test', function(){
         'ss.p2'
     )
 	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
-    ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
+    ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'))
+    ->orderBy('movies.vote_average', 'desc');
 
 
 	if([] != [])
@@ -306,8 +307,7 @@ Route::get('test', function(){
         'bans.id as ban_id'
     )
     ->groupBy('movies.id')
-    ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0')
-    ->orderBy('movies.vote_average', 'desc');
+    ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0');
     
 
 
