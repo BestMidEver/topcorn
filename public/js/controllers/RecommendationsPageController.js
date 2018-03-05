@@ -162,6 +162,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
     $scope.get_page_data = function()
     {
     	$scope.movies=[];
+    	$scope.pagination=0;
     	$scope.is_waiting=true;
     	var f_lang = [];
         var temp = _.pairs($scope.f_lang_model);
