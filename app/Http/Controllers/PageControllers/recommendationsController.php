@@ -268,7 +268,7 @@ class recommendationsController extends Controller
             DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' AS point'),
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent'),
-            DB::raw('(sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar)*100/sum(4*recommendations.is_similar) DIV 2) + 50 as p2'),
+            DB::raw('sum(4*recommendations.is_similar) as p2'),
             'r2.id as rated_id',
             'r2.rate as rate_code'
         )
@@ -333,7 +333,7 @@ class recommendationsController extends Controller
             ->orderBy('percent', 'desc')
             ->orderBy('vote_average', 'desc');
         }else if($request->f_sort == 'percent'){
-            $return_val = $return_val->orderBy('p2', 'desc')
+            $return_val = $return_val->orderBy('percent', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('vote_average', 'desc');
         }else if($request->f_sort == 'top_rated'){
