@@ -86,7 +86,7 @@
 		<p class="h6 text-muted">SIRALA</p>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="point" selected> Eşleşme Puanına Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="point" checked="true"> Eşleşme Puanına Göre
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
