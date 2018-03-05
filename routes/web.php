@@ -244,34 +244,6 @@ Route::get('test', function(){
 	        ->addBinding($subq->getBindings());  
 	    }
 	)
-    ->select(
-        'movies.id',
-        'ss.point',
-        'ss.count',
-        'ss.percent',
-        'ss.p2'
-    );
-
-	if([] != [])
-	{
-	    $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'ss.id')
-	    ->whereIn('genre_id', [])
-	    ->groupBy('movies.id')
-	    ->havingRaw('COUNT(movies.id)='.count([]));
-	}
-
-	$qqSql_2 = $subq_2->toSql();
-
-/////////////////////////////////////////////////////////
-
-	$return_val = DB::table('movies')
-	->join(
-	    DB::raw('(' . $qqSql_2. ') AS ss'),
-	    function($join) use ($subq_2) {
-	        $join->on('movies.id', '=', 'ss.id')
-	        ->addBinding($subq_2->getBindings());  
-	    }
-	)
 	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
 	->leftjoin('rateds', function ($join) {
 	    $join->on('rateds.movie_id', '=', 'm2.id')
@@ -287,6 +259,37 @@ Route::get('test', function(){
 	})
 	->select(
         'm2.id',
+        'ss.point',
+        'ss.count',
+        'ss.percent',
+        'ss.p2',
+        'laters.id as later_id'
+    )
+    ->groupBy('m2.id')
+	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
+    ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'))
+    ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0');
+
+
+
+
+    
+
+
+	$qqSql_2 = $subq_2->toSql();
+
+/////////////////////////////////////////////////////////
+
+	$return_val = DB::table('movies')
+	->join(
+	    DB::raw('(' . $qqSql_2. ') AS ss'),
+	    function($join) use ($subq_2) {
+	        $join->on('movies.id', '=', 'ss.id')
+	        ->addBinding($subq_2->getBindings());  
+	    }
+	)
+	->select(
+        'm2.id',
         'm2.'.$hover_title.' as original_title',
         'ss.point',
         'ss.count',
@@ -299,16 +302,23 @@ Route::get('test', function(){
         'm2.'.Auth::User()->lang.'_poster_path as poster_path',
         'rateds.id as rated_id',
         'rateds.rate as rate_code',
-        'laters.id as later_id',
+        'ss.later_id',
         'bans.id as ban_id'
     )
-    ->groupBy('m2.id')
-	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
-    ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'))
-    ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0')
+    
+
     ->orderBy('m2.vote_average', 'desc')
     /*->orderBy('point', 'desc')
     ->orderBy('p2', 'desc')*/;
+
+
+	if([] != [])
+	{
+	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'm2.id')
+	    ->whereIn('genre_id', [])
+	    ->groupBy('m2.id')
+	    ->havingRaw('COUNT(movies.id)='.count([]));
+	}
 
 	return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
 });
