@@ -30,6 +30,13 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			ceil: parseInt(pass.constants_angular_slider_max_value)
 		}
 	};
+	$scope.slider_vote_count={};
+	$scope.slider_vote_count = {
+		value: 1000,
+		options: {
+			showSelectionBar: true
+		}
+	};
     $scope.drawslider=function(){
     	$scope.refreshSlider();
     }
@@ -44,7 +51,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.genres=_.sortBy(genres, 'o');
 	console.log($scope.genres, genres)
 	$scope.genres.pop();
-	$scope.sort_by='percent';
+	$scope.sort_by='point';
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -83,6 +83,11 @@
 		rz-slider-options="slider.options"></rzslider>
 	</div>
 	<div class="mt-3 pb-3">
+		<p class="h6 text-muted">OY SAYISI</p>
+		<rzslider class="" rz-slider-model="slider_vote_count.value"
+		rz-slider-options="slider_vote_count.options"></rzslider>
+	</div>
+	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">SIRALA</p>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
@@ -101,7 +106,7 @@
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="popularity"> Popülerliğine Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="most_popular"> Popülerliğine Göre
 			</label>
 		</div>
 	</div>
