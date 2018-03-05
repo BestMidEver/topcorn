@@ -78,13 +78,13 @@
 	@include('layout.recommendations_genres')
 	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">YIL</p>
-		<rzslider class="" rz-slider-model="slider.minValue"
+		<rzslider rz-slider-model="slider.minValue"
 		rz-slider-high="slider.maxValue"
 		rz-slider-options="slider.options"></rzslider>
 	</div>
 	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">MİNİMUM OY SAYISI</p>
-		<rzslider class="" rz-slider-model="slider_vote_count.value"
+		<rzslider rz-slider-model="slider_vote_count.value"
 		rz-slider-options="slider_vote_count.options"></rzslider>
 	</div>
 	<div class="mt-3 pb-3">
