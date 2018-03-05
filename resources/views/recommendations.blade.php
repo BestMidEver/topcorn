@@ -91,22 +91,22 @@
 		<p class="h6 text-muted">SIRALA</p>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="point"> Eşleşme Puanına Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="point"> Eşleşme Puanına Göre
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="percent"> Eşleşme Yüzdesine Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="percent"> Eşleşme Yüzdesine Göre
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="top_rated"> Oyuna Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="top_rated"> Oyuna Göre
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" value="most_popular"> Popülerliğine Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="most_popular"> Popülerliğine Göre
 			</label>
 		</div>
 	</div>
