@@ -7,6 +7,7 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"constants_angular_slider_min_value":"{{config('constants.angular_slider.min_value')}}",
 	"constants_angular_slider_max_value":"{{config('constants.angular_slider.max_value')}}",
+	"constants_angular_slider_min_vote_count":"{{config('constants.angular_slider.vote_count')}}",
 	"with_user_id":"{!! session('with_user_id') !!}",
 	"with_user_name":"{!! session('with_user_name') !!}",
 	@if(Auth::check())

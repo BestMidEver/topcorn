@@ -76,6 +76,7 @@ return array(
 
     'min_value' => 1917,
     'max_value' => 2018,
+    'vote_count' => 100
 
   ),
 
