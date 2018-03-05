@@ -292,8 +292,6 @@ class recommendationsController extends Controller
 
         $qqSql = $subq->toSql();
 
-
-
         $return_val = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') AS ss'),
@@ -311,47 +309,41 @@ class recommendationsController extends Controller
             ->whereIn('bans.user_id', $request->f_users);
         })
         ->where('bans.id', '=', null)
-        /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
-        ->orderBy('m2.vote_average', 'desc')*/;
+        ->select(
+            'ss.id',
+            'movies.'.$hover_title.' as original_title',
+            'ss.point',
+            'ss.count',
+            'ss.percent',
+            'ss.p2',
+            'movies.vote_average',
+            'movies.vote_count',
+            'movies.release_date',
+            'movies.'.Auth::User()->lang.'_title as title',
+            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+            'ss.rated_id',
+            'ss.rate_code',
+            'laters.id as later_id',
+            'bans.id as ban_id'
+        )
+        ->where('movies.vote_count', '>', $request->f_vote);
 
-        $tab_mode = 'most_popular';
-        if($tab_mode == 'point' || $tab_mode == 'percent' || $tab_mode == 'top_rated' || $tab_mode == 'most_popular')
-        {
-            $return_val = $return_val->select(
-                'ss.id',
-                'movies.'.$hover_title.' as original_title',
-                'ss.point',
-                'ss.count',
-                'ss.percent',
-                'ss.p2',
-                'movies.vote_average',
-                'movies.vote_count',
-                'movies.release_date',
-                'movies.'.Auth::User()->lang.'_title as title',
-                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-                'ss.rated_id',
-                'ss.rate_code',
-                'laters.id as later_id',
-                'bans.id as ban_id'
-            );
-            if($tab_mode == 'point'){
-                $return_val = $return_val->orderBy('point', 'desc')
-                ->orderBy('percent', 'desc')
-                ->orderBy('vote_average', 'desc');
-            }else if($tab_mode == 'percent'){
-                $return_val = $return_val->orderBy('percent', 'desc')
-                ->orderBy('point', 'desc')
-                ->orderBy('vote_average', 'desc');
-            }else if($tab_mode == 'top_rated'){
-                $return_val = $return_val->orderBy('vote_average', 'desc')
-                ->orderBy('point', 'desc')
-                ->orderBy('percent', 'desc');
-            }else if($tab_mode == 'most_popular'){
-                $return_val = $return_val->orderBy('popularity', 'desc')
-                ->orderBy('point', 'desc')
-                ->orderBy('percent', 'desc');
-            }
-            
+        if($request->f_sort == 'point'){
+            $return_val = $return_val->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc')
+            ->orderBy('vote_average', 'desc');
+        }else if($request->f_sort == 'percent'){
+            $return_val = $return_val->orderBy('percent', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('vote_average', 'desc');
+        }else if($request->f_sort == 'top_rated'){
+            $return_val = $return_val->orderBy('vote_average', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc');
+        }else if($request->f_sort == 'most_popular'){
+            $return_val = $return_val->orderBy('popularity', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc');
         }
 
         if($request->f_genre != [])

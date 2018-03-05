@@ -189,7 +189,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			"f_lang": f_lang,
 			"f_genre": f_genre,
 			"f_min": $scope.slider.minValue,
-			"f_max": $scope.slider.maxValue
+			"f_max": $scope.slider.maxValue,
+			"f_sort": $scope.sort_by,
+			"f_vote": $scope.slider_vote_count
 		}
 
 		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
@@ -214,7 +216,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	}
 	$scope.get_first_page_data();
 	$scope.slider.options.onEnd = $scope.get_first_page_data;
-	$scope.slider_vote_count.options.onEnd = $scope.get_first_page_data();
+	$scope.slider_vote_count.options.onEnd = $scope.get_first_page_data;
 
 	$scope.reset_add_person_input = function()
 	{
