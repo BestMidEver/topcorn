@@ -273,7 +273,7 @@ class recommendationsController extends Controller
             'r2.rate as rate_code'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) > 70 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
         if($request->f_lang != [])
         {
