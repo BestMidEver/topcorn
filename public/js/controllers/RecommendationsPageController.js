@@ -32,7 +32,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	};
 	$scope.slider_vote_count={};
 	$scope.slider_vote_count = {
-		value: 200,
+		value: 100,
 		options: {
 	        floor: 25,
 	        ceil: 5000,
