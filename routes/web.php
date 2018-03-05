@@ -315,12 +315,12 @@ Route::get('test', function(){
     ->orderBy('p2', 'desc')*/;
 
 
-	if([53] != [])
+	if([53,878] != [])
 	{
 	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
-	    ->whereIn('genre_id', [53])
+	    ->whereIn('genre_id', [53,878])
 	    ->groupBy('movies.id')
-	    ->havingRaw('COUNT(movies.id)='.count([53]));
+	    ->havingRaw('COUNT(movies.id)='.count([53,878]));
 	}
 
 	return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
