@@ -305,7 +305,7 @@ Route::get('test', function(){
     ->groupBy('m2.id')
 	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
     ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'))
-    ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(laters.id IS NULL, 0, 1)) = 0')
+    ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0')
     ->orderBy('m2.vote_average', 'desc')
     /*->orderBy('point', 'desc')
     ->orderBy('p2', 'desc')*/;
