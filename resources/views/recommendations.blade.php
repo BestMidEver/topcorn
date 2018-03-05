@@ -101,7 +101,7 @@
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="top_rated"> Popülerliğine Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" value="popularity"> Popülerliğine Göre
 			</label>
 		</div>
 	</div>
