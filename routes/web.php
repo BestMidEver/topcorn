@@ -203,19 +203,18 @@ Route::get('test', function(){
 	->where('rateds.rate', '>', 0)
 	->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
 	->join('movies', 'movies.id', '=', 'recommendations.this_id')
-	->leftjoin('rateds as r2', function ($join){
+	/*->leftjoin('rateds as r2', function ($join){
 	    $join->on('r2.movie_id', '=', 'movies.id')
 	    ->whereIn('r2.user_id', [7]);
-	})
+	})*/
 	->select(
 	    'recommendations.this_id as id',
 	    DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' AS point'),
 	    DB::raw('COUNT(recommendations.this_id) as count'),
 	    DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
-	    DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2'),
-	    DB::raw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) as is_watched')
+	    DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2')
 	)
-	->groupBy('recommendations.this_id');
+	->groupBy('movies.id');
 	//->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
 	if([] != [])
@@ -235,9 +234,9 @@ Route::get('test', function(){
 
 	$qqSql = $subq->toSql();
 
+/////////////////////////////////////////////////////////
 
-
-	$return_val = DB::table('movies')
+	$subq_2 = DB::table('movies')
 	->join(
 	    DB::raw('(' . $qqSql. ') AS ss'),
 	    function($join) use ($subq) {
@@ -245,10 +244,38 @@ Route::get('test', function(){
 	        ->addBinding($subq->getBindings());  
 	    }
 	)
+    ->select(
+        'movies.id',
+        'ss.point',
+        'ss.count',
+        'ss.percent',
+        'ss.p2'
+    );
+
+	if([] != [])
+	{
+	    $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'ss.id')
+	    ->whereIn('genre_id', [])
+	    ->groupBy('movies.id')
+	    ->havingRaw('COUNT(movies.id)='.count([]));
+	}
+
+	$qqSql_2 = $subq_2->toSql();
+
+/////////////////////////////////////////////////////////
+
+	$return_val = DB::table('movies')
+	->join(
+	    DB::raw('(' . $qqSql_2. ') AS ss'),
+	    function($join) use ($subq) {
+	        $join->on('movies.id', '=', 'ss.id')
+	        ->addBinding($subq_2->getBindings());  
+	    }
+	)
 	->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
 	->leftjoin('rateds', function ($join) {
 	    $join->on('rateds.movie_id', '=', 'm2.id')
-	    ->where('rateds.user_id', '=', Auth::user()->id);
+	    ->whereIn('rateds.user_id', [7]);
 	})
 	->leftjoin('laters', function ($join) {
 	    $join->on('laters.movie_id', '=', 'm2.id')
@@ -258,16 +285,8 @@ Route::get('test', function(){
 	    $join->on('bans.movie_id', '=', 'm2.id')
 	    ->whereIn('bans.user_id', [7]);
 	})
-	->where('bans.id', '=', null)
-	->where('m2.vote_count', '>', 100)
-	->whereRaw('ss.is_watched = 0 OR ss.is_watched IS NULL')
-	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
-    ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
-	//->orderBy('m2.vote_average', 'desc');
-
-    $return_val = $return_val->select(
+	->select(
         'm2.id',
-        'ss.is_watched',
         'm2.'.$hover_title.' as original_title',
         'ss.point',
         'ss.count',
@@ -283,18 +302,13 @@ Route::get('test', function(){
         'laters.id as later_id',
         'bans.id as ban_id'
     )
+    ->groupBy('m2.id')
+	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
+    ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'))
+    ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(laters.id IS NULL, 0, 1)) = 0')
     ->orderBy('m2.vote_average', 'desc')
     /*->orderBy('point', 'desc')
     ->orderBy('p2', 'desc')*/;
-
-	if([] != [])
-	{
-	    $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
-	    ->whereIn('genre_id', [])
-	    ->groupBy('movies.id')
-	    ->havingRaw('COUNT(movies.id)='.count([]));
-	}
-	
 
 	return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
 });
