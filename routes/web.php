@@ -203,34 +203,15 @@ Route::get('test', function(){
 	->where('rateds.rate', '>', 0)
 	->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
 	->join('movies', 'movies.id', '=', 'recommendations.this_id')
-	/*->leftjoin('rateds as r2', function ($join){
-	    $join->on('r2.movie_id', '=', 'movies.id')
-	    ->whereIn('r2.user_id', [7]);
-	})*/
 	->select(
-	    'recommendations.this_id as id',
-	    DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' AS point'),
-	    DB::raw('COUNT(recommendations.this_id) as count'),
-	    DB::raw('sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) as percent'),
-	    DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(recommendations.this_id) as p2')
+	    'movies.id',
+	    DB::raw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' as point'),
+	    DB::raw('COUNT(movies.id) as count'),
+	    DB::raw('sum(rateds.rate)*20 DIV COUNT(movies.id) as percent'),
+	    DB::raw('sum(rateds.rate*recommendations.is_similar)*4 DIV COUNT(movies.id) as p2')
 	)
 	->groupBy('movies.id');
 	//->havingRaw('sum((rateds.rate-3)*recommendations.is_similar) DIV '.count([7]).' > 7 AND sum(rateds.rate)*20 DIV COUNT(recommendations.this_id) > 75 AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
-
-	if([] != [])
-	{
-	    $subq = $subq->whereIn('original_language', []);
-	}
-
-	if(1917 != 1917)
-	{
-	    $subq = $subq->where('movies.release_date', '>=', Carbon::create(1917,1,1));
-	}
-
-	if(2018 != 2018)
-	{
-	    $subq = $subq->where('movies.release_date', '<=', Carbon::create(2018,12,31));
-	}
 
 	$qqSql = $subq->toSql();
 
@@ -238,7 +219,7 @@ Route::get('test', function(){
 
 	$subq_2 = DB::table('movies')
 	->join(
-	    DB::raw('(' . $qqSql. ') AS ss'),
+	    DB::raw('(' . $qqSql. ') as ss'),
 	    function($join) use ($subq) {
 	        $join->on('movies.id', '=', 'ss.id')
 	        ->addBinding($subq->getBindings());  
@@ -256,13 +237,28 @@ Route::get('test', function(){
     ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
 
-	if([] != [])
+	if([53,878] != [])
 	{
 	    $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'm2.id')
 	    ->whereIn('genre_id', [53,878])
 	    ->groupBy('m2.id')
 	    ->havingRaw('COUNT(m2.id)='.count([53,878]));
 	};
+
+	if(['tr'] != [])
+	{
+	    $subq = $subq->whereIn('movies.original_language', ['tr']);
+	}
+
+	if(1955 != 1917)
+	{
+	    $subq = $subq->where('movies.release_date', '>=', Carbon::create(1917,1,1));
+	}
+
+	if(2013 != 2018)
+	{
+	    $subq = $subq->where('movies.release_date', '<=', Carbon::create(2018,12,31));
+	}
 
 	$qqSql_2 = $subq_2->toSql();
 
