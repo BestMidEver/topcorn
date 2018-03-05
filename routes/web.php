@@ -263,7 +263,10 @@ Route::get('test', function(){
         'ss.count',
         'ss.percent',
         'ss.p2',
-        'laters.id as later_id'
+        'rateds.id as rated_id',
+        'rateds.rate as rate_code',
+        'laters.id as later_id',
+        'bans.id as ban_id'
     )
     ->groupBy('m2.id')
 	->where('m2.vote_count', '>', Auth::User()->min_vote_count*5)
@@ -300,10 +303,10 @@ Route::get('test', function(){
         'movies.release_date',
         'movies.'.Auth::User()->lang.'_title as title',
         'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-        'rateds.id as rated_id',
-        'rateds.rate as rate_code',
+        'ss.rated_id',
+        'ss.rate_code',
         'ss.later_id',
-        'bans.id as ban_id'
+        'ss.ban_id'
     )
     
 
