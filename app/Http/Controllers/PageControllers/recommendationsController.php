@@ -314,7 +314,7 @@ class recommendationsController extends Controller
         /*->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
         ->orderBy('m2.vote_average', 'desc')*/;
 
-        $tab_mode = 'point';
+        $tab_mode = 'percent';
         if($tab_mode == 'point' || $tab_mode == 'percent' || $tab_mode == 'top_rated' || $tab_mode == 'most_popular')
         {
             $return_val = $return_val->select(
