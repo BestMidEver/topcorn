@@ -83,7 +83,7 @@
 		rz-slider-options="slider.options"></rzslider>
 	</div>
 	<div class="mt-3 pb-3">
-		<p class="h6 text-muted">OY SAYISI</p>
+		<p class="h6 text-muted">MİNİMUM OY SAYISI</p>
 		<rzslider class="" rz-slider-model="slider_vote_count.value"
 		rz-slider-options="slider_vote_count.options"></rzslider>
 	</div>
