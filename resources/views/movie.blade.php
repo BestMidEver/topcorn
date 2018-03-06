@@ -6,12 +6,12 @@
 <!--Trailer Section-->
 <div class="mt-md-4">
 	<div class="position-relative">
-		<div id="accordion">
-			<div
+		<div id="accordion"
 							@if(Auth::User()->tt_movie < 50)
                             data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
                             @endif
 							>
+			<div>
 				<div id="collapseCover" class="collapse show" data-parent="#accordion">
 					<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
