@@ -30,7 +30,11 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman" ><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
+							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman" ><i class="far fa-play-circle mr-2"
+							@if(Auth::User()->tt_movie < 50)
+                            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
+                            @endif
+							></i><small>{{ __('general.trailer') }}</small></button>
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right">
 							<div ng-if="movie.vote_average > 0">
@@ -99,11 +103,7 @@
 <div class="d-flex flex-wrap justify-content-between">
 	<div>
 		<div class="d-flex flex-column">
-			<div class="px-3 px-md-0"
-							@if(Auth::User()->tt_movie < 50)
-                            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
-                            @endif
-							><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2">@{{movie.title}}</h1></a></div>
+			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2">@{{movie.title}}</h1></a></div>
 		</div>
 	</div>
 	@if(Auth::check())
