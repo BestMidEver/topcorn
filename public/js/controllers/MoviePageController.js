@@ -433,7 +433,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$("[data-toggle=popover]").popover('hide');
 				setTimeout(function() {
 					$('#share').popover('show');
-				}, 500);
+				}, 2500);
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
