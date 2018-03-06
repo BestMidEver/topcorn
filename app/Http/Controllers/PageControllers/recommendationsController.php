@@ -234,7 +234,6 @@ class recommendationsController extends Controller
             'ss.p2',
             'ss.count',
             'ss.percent',
-            'ss.percent',
             'rateds.id as rated_id',
             'rateds.rate as rate_code'
         )
