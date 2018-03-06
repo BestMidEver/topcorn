@@ -431,6 +431,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				});
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('tooltip-movie-trailer')>-1){
+				console.log('göstersene')
 				$("[data-toggle=popover]").popover('hide');
 				$('#trailer').popover('show');
 				///////////////////MOVIE///////////////////////
