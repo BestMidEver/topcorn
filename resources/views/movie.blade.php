@@ -16,7 +16,11 @@
 								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
 							</div>
 							<div class="col p-2 text-right">
-								<div ng-if="user_movie_record.percent > 0">
+								<div ng-if="user_movie_record.percent > 0"
+			@if(Auth::User()->tt_movie < 50)
+            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
+            @endif
+			>
 									<small class="text-white">Film zevkine göre</small>
 									<div>
 										<span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span>
@@ -90,13 +94,8 @@
 					</div>
 				</div>
 			</div>
-		</div><div
-			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
-            @endif
-			></div>
+		</div>
 	</div>
-	
 </div>
 <!--Trailer Section-->
 
