@@ -77,7 +77,6 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
-		if($scope.current_level == 100) $scope.level_up(101);
 	};
 
 	$scope.get_quick_rate=function()
