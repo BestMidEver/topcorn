@@ -56,17 +56,11 @@
 						</div>
 						<div class="d-flex flex-row justify-content-between align-items-end">
 							<div class="faderdiv">
-								<button type="button" class="btn btn-verydark btn-lg float-left border-circle text-white" ng-show="modalmovie.is_quick_rate">
-									<i class="fa fa-clock-o" aria-hidden="true"></i>
-								</button>
 							</div>
 							<div class="faderdiv">
 								<button class="btn btn-verydark btn-lg border-circle text-white" ng-click="this_rate(null)">{{ __('general.havent_seen') }}</button>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-verydark btn-lg float-left border-circle" ng-show="modalmovie.is_quick_rate">
-									<i class="fa fa-ban" aria-hidden="true"></i>
-								</button>
 							</div>
 						</div>
 					</div>
