@@ -7,11 +7,7 @@
 <div class="mt-md-4">
 	<div class="position-relative">
 		<div id="accordion">
-			<div
-							@if(Auth::User()->tt_movie < 50)
-                            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
-                            @endif
-							>
+			<div>
 				<div id="collapseCover" class="collapse show" data-parent="#accordion">
 					<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
@@ -34,7 +30,11 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
+							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"
+							@if(Auth::User()->tt_movie < 50)
+                            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
+                            @endif
+							></i><small>{{ __('general.trailer') }}</small></button>
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right">
 							<div ng-if="movie.vote_average > 0">
@@ -292,7 +292,7 @@
 <div id="popover-content-trailer" class="d-none">
     <p>Fragmanı izlemek için buraya tıkla.</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">Bu Sayfanın İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-search">Anladım</a>
     </div>
 </div>
