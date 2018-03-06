@@ -7,15 +7,12 @@
 					<div class="text-center h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row justify-content-between">
 							<div class="faderdiv">
-								<!--<button type="button" class="btn btn-secondary btn-sm badge-light float-left" data-toggle="tooltip" data-placement="bottom" title="{{ __('long_texts.the_question') }}">
-									<i class="fa fa-question" aria-hidden="true"></i>
-								</button>-->
 							</div>
 							<div class="faderdiv">
-								<h4><a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title}}"><span class="badge badge-light yeswrap p-1">@{{movie.title}} <small><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span></a></h4>
+								<div class="h4 mr-3" data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title}}"><a ng-href="/movie/@{{movie.id}}" target={{$target}}><span class="badge btn-verydark yeswrap text-white">@{{movie.title}} <small><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span></a></div>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-right" data-dismiss="modal" aria-label="Close">
+								<button type="button" class="btn btn-verydark btn-lg float-right border-circle text-white" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
 								</button>
 							</div>
@@ -59,15 +56,15 @@
 						</div>
 						<div class="d-flex flex-row justify-content-between align-items-end">
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-left" ng-show="modalmovie.is_quick_rate">
+								<button type="button" class="btn btn-verydark btn-lg float-left border-circle text-white" ng-show="modalmovie.is_quick_rate">
 									<i class="fa fa-clock-o" aria-hidden="true"></i>
 								</button>
 							</div>
 							<div class="faderdiv">
-								<button class="btn btn-secondary badge-light btn-lg p-1" ng-click="this_rate(null)">{{ __('general.havent_seen') }}</button>
+								<button class="btn btn-verydark btn-lg border-circle text-white" ng-click="this_rate(null)">{{ __('general.havent_seen') }}</button>
 							</div>
 							<div class="faderdiv">
-								<button type="button" class="btn btn-secondary btn-sm badge-light float-left" ng-show="modalmovie.is_quick_rate">
+								<button type="button" class="btn btn-verydark btn-lg float-left border-circle" ng-show="modalmovie.is_quick_rate">
 									<i class="fa fa-ban" aria-hidden="true"></i>
 								</button>
 							</div>
