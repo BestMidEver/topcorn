@@ -281,7 +281,7 @@
 		</div>
 	</div>
 	<div class="p-5" ng-if="!movie.reviews.results.length>0">
-		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
+		<div class="text-muted text-center">{{ __('general.no_result_review') }} {{Auth::User()->tt_movie}}</div>
 	</div>
 </div>
 <!--Review Section-->
