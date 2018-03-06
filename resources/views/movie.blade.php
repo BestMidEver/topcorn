@@ -5,12 +5,11 @@
 @section('body')
 <!--Trailer Section-->
 <div class="mt-md-4">
-	<div class="position-relative">
-		<div class="mt-5" 
-							@if(Auth::User()->tt_movie < 50)
-                            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
-                            @endif
-							>s</div>
+	<div class="position-relative"
+			@if(Auth::User()->tt_movie < 50)
+            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
+            @endif
+			>
 		<div id="accordion">
 			<div>
 				<div id="collapseCover" class="collapse show" data-parent="#accordion">
@@ -291,7 +290,7 @@
 
 @if(Auth::User()->tt_movie < 50)
 <div id="popover-content-trailer" class="d-none">
-    <p>Fragmanı izlemek için buraya tıkla.</p>
+    <p>Fragmanları buradan izleyebilirsin.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-search">Anladım</a>
