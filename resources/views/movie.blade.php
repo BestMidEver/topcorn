@@ -30,7 +30,7 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"
+							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman" 
 							@if(Auth::User()->tt_movie < 50)
                             data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
                             @endif
@@ -281,7 +281,7 @@
 		</div>
 	</div>
 	<div class="p-5" ng-if="!movie.reviews.results.length>0">
-		<div class="text-muted text-center">{{ __('general.no_result_review') }} {{Auth::User()->tt_movie}}</div>
+		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
 	</div>
 </div>
 <!--Review Section-->
