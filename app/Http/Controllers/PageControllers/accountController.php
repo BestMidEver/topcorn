@@ -162,9 +162,8 @@ class accountController extends Controller
 		$user->image_quality = $request->image_quality;
 		$user->margin_x_setting = $request->margin_x_setting;
 		$user->open_new_tab = $request->open_new_tab;
-		$user->min_vote_count = $request->min_vote_count;
+		$user->advanced_filter = $request->advanced_filter;
 		$user->theme = $request->theme;
-		$user->pemosu_mode = $request->pemosu_mode;
 		$user->show_crew = $request->show_crew;
 		$user->pagination = $request->pagination;
 		$user->save();

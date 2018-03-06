@@ -36,10 +36,9 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('tt_quickvote')->default(0);
             $table->tinyInteger('tt_profile')->default(0);
             $table->tinyInteger('tt_account')->default(0);
-            $table->tinyInteger('min_vote_count')->default(20);
+            $table->tinyInteger('advanced_filter')->default(0);
             $table->tinyInteger('show_crew')->default(0);
             $table->tinyInteger('pagination')->default(24);
-            $table->tinyInteger('pemosu_mode')->default(0);
             $table->tinyInteger('theme')->default(0);
         });
     }

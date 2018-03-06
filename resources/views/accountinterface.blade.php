@@ -214,33 +214,9 @@
 				        </div>
 				    </div>
 				</div>
-
-				<div class="row mt-3">
-				    <div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Gelişmiş Tavsiye Ayarları</div>
-				    </div>
-				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="pemosu_mode" ng-mouseenter="hovering_pemo=true" ng-mouseleave="hovering_pemo=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pemosu_mode') }}">Sıralama <span ng-show="!hovering_pemo"><i class="far fa-question-circle"></i></span><span ng-show="hovering_pemo"><i class="fas fa-question-circle"></i></span></label>
-				    </div>
-				    <div class="col-md-6">
-				        <div class="form-group">
-				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort-amount-down"></i></div>
-				                </div>
-				                <select class="form-control" id="pemosu_mode" name="pemosu_mode" ng-model="pemosu_mode" ng-change="check_save_disabled()">
-									<option value=1>Eşleşme Yüzdesine Göre</option>
-									<option value=0>Eşleşme Puanına Göre</option>
-								</select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
-				        <label for="min_vote_count" ng-mouseenter="hovering_vote=true" ng-mouseleave="hovering_vote=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_min_vote_count') }}">Minimum Oy Sayısı <span ng-show="!hovering_vote"><i class="far fa-question-circle"></i></span><span ng-show="hovering_vote"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="advanced_filter" ng-mouseenter="hovering_adva=true" ng-mouseleave="hovering_adva=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_advanced_filter') }}">Gelişmiş Tavsiye Ayarları <span ng-show="!hovering_adva"><i class="far fa-question-circle"></i></span><span ng-show="hovering_adva"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -248,12 +224,9 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-filter"></i></div>
 				                </div>
-				                <select class="form-control" id="min_vote_count" name="min_vote_count" ng-model="min_vote_count" ng-change="check_save_disabled()">
-									<option value=100>500</option>
-									<option value=50>250</option>
-									<option value=20>100</option>
-									<option value=10>50</option>
-									<option value=4>20</option>
+				                <select class="form-control" id="advanced_filter" name="advanced_filter" ng-model="advanced_filter" ng-change="check_save_disabled()">
+									<option value=1>{{ __('general.active') }}</option>
+									<option value=0>{{ __('general.disabled') }}</option>
 								</select>
 				            </div>
 				        </div>
