@@ -60,7 +60,7 @@ return array(
   'suck_page' => array(
 
     'min_vote_average' => 5.5,
-    'min_vote_count' => 20,
+    'min_vote_count' => 25,
 
   ),
 
