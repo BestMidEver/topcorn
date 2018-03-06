@@ -265,15 +265,15 @@ class recommendationsController extends Controller
         })
         ->select(
             'recommendations.this_id as id',
-            DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) DIV '.count($request->f_users).' AS point'),
+            DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) AS point'),
+            DB::raw('sum(4*recommendations.is_similar) as p2'),
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent'),
-            DB::raw('sum(4*recommendations.is_similar) as p2'),
             'r2.id as rated_id',
             'r2.rate as rate_code'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->havingRaw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15*'.count($request->f_users).' AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
         if($request->f_lang != [])
         {
