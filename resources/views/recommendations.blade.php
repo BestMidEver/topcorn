@@ -82,7 +82,7 @@
 		rz-slider-high="slider.maxValue"
 		rz-slider-options="slider.options"></rzslider>
 	</div>
-	@if(Auth::User->advanced_filter)
+	@if(Auth::User()->advanced_filter)
 	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">MİNİMUM OY SAYISI</p>
 		<rzslider rz-slider-model="slider_vote_count.value"
