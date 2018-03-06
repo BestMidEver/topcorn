@@ -110,7 +110,7 @@
 			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id!=null}" ng-click="this_ban()"><div><i class="fa fa-ban"></i></div>{{ __('general.ban') }}</button>
 			<a ng-href="{{config('constants.facebook.share_website')}}/movie/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook"
 			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
+            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="share"
             @endif
 			><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</a>
 		</div>
@@ -289,8 +289,8 @@
 @include('layout.this_ratemodal')
 
 @if(Auth::User()->tt_movie < 50)
-<div id="popover-content-trailer" class="d-none">
-    <p>Fragmanları buradan izleyebilirsin.</p>
+<div id="popover-content-share" class="d-none">
+    <p>Filmi buradan facebookta paylaş.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-search">Anladım</a>

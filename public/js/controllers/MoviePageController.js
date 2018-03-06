@@ -432,7 +432,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('tooltip-movie-trailer')>-1){
 				$("[data-toggle=popover]").popover('hide');
-				$('#trailer').popover('show');
+				setTimeout(function() {
+					$('#trailer').popover('show');
+				}, 500);
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
