@@ -47,6 +47,10 @@ class LevelController extends Controller
             $user->tt_profile = $request->level;
         }
         else if($request->column == 'account')
+        {
+            $user->tt_account = $request->level;
+        }
+        else if($request->column == 'movie')
     	{
 			$user->tt_account = $request->level;
     	}

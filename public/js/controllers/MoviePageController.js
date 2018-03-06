@@ -379,23 +379,21 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-	if(pass.tt_navbar < 50){
-		switch(pass.tt_navbar){
-			case 0:
-				location.hash="tooltip-quickvote";
-				break;
-			case 1:
-				location.hash="tooltip-search";
-				break;
-			case 2:
-				location.hash="tooltip-recommendations";
-				break;
-			case 3:
-				location.hash="tooltip-profile";
-				break;
-			case 4:
-				location.hash="tooltip-percentage";
-				break;
+	if(pass.tt_navbar < 50 || pass.tt_movie < 50){
+		if(pass.tt_navbar<50){
+			if(pass.tt_navbar==0)location.hash="tooltip-quickvote";
+			else if(pass.tt_navbar==1)location.hash="tooltip-search";
+			else if(pass.tt_navbar==2)location.hash="tooltip-recommendations";
+			else if(pass.tt_navbar==3)location.hash="tooltip-profile";
+			else if(pass.tt_navbar==4)location.hash="tooltip-percentage";
+		}else if(location.href.indexOf('topcorn.io/movie/')>-1){
+			if(pass.tt_movie<50){
+				if(pass.tt_movie==0)location.hash="tooltip-movie-trailer";
+				else if(pass.tt_movie==1)location.hash="tooltip-movie-share";
+				else if(pass.tt_movie==2)location.hash="tooltip-movie-search";
+				else if(pass.tt_movie==3)location.hash="tooltip-movie-cast";
+				else if(pass.tt_movie==4)location.hash="tooltip-movie-review";
+			}
 		}
 
 		window.addEventListener("hashchange", function(){ 
@@ -404,7 +402,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$("[data-toggle=popover]").popover('hide');
 				$('#quickvote').popover('show');
 			}else if(location.hash.indexOf('tooltip-search')>-1){
-				console.log("muhaha")
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 1)
 				.then(function(response){
@@ -432,6 +429,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					$('#percentage').popover('show');
 				});
+				///////////////////MOVIE///////////////////////
+			}else if(location.hash.indexOf('tooltip-movie-trailer')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				$('#trailer').popover('show');
+				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 50)
