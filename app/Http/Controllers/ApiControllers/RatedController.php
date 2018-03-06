@@ -123,6 +123,7 @@ class RatedController extends Controller
         }
 
         $return_val = DB::table('rateds')
+        ->where('rateds.rate', '>', 0)
         ->join('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('rateds as r2', function ($join) {
             $join->on('r2.movie_id', '=', 'movies.id')
