@@ -273,7 +273,7 @@ class recommendationsController extends Controller
             'r2.rate as rate_code'
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15*'.count($request->f_users).' AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) > 74 AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15*'.count($request->f_users).' AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
 
         if($request->f_lang != [])
         {
