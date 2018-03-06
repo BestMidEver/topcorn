@@ -6,7 +6,7 @@
 <!--Trailer Section-->
 <div class="mt-md-4">
 	<div class="position-relative">
-		<div
+		<div style="margin-top: 20px;"
 							@if(Auth::User()->tt_movie < 50)
                             data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
                             @endif
