@@ -5,11 +5,7 @@
 @section('body')
 <!--Trailer Section-->
 <div class="mt-md-4">
-	<div class="position-relative"
-			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
-            @endif
-			>
+	<div class="position-relative">
 		<div id="accordion">
 			<div>
 				<div id="collapseCover" class="collapse show" data-parent="#accordion">
@@ -96,6 +92,11 @@
 			</div>
 		</div>
 	</div>
+	<div
+			@if(Auth::User()->tt_movie < 50)
+            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
+            @endif
+			></div>
 </div>
 <!--Trailer Section-->
 
