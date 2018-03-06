@@ -141,7 +141,7 @@ class RatedController extends Controller
         })
         ->where('bans.id', '=', null)
         ->groupBy('movies.id')
-        ->orderBy('count', 'DESC')
+        ->orderBy('count', 'ASC')
         ->select(
             'movies.id as id',
             'movies.'.$hover_title.' as original_title',
