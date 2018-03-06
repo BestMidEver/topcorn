@@ -38,7 +38,7 @@ $(document).ready(function() {
 		$(this).popover({
 			container: 'body',
 			html: true,
-			placement: 'auto',
+			placement: 'bottom',
 			trigger: 'manual',
 			content: function() {
 				var id = $(this).attr('id')
