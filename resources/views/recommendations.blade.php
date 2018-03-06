@@ -82,6 +82,7 @@
 		rz-slider-high="slider.maxValue"
 		rz-slider-options="slider.options"></rzslider>
 	</div>
+	@if(Auth::User->advanced_filter)
 	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">MİNİMUM OY SAYISI</p>
 		<rzslider rz-slider-model="slider_vote_count.value"
@@ -110,6 +111,7 @@
 			</label>
 		</div>
 	</div>
+	@endif
 	<div class="text-center pb-1">
 		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseFilter"><i class="fa fa-angle-up" ng-click="scroll_to_filter()"></i></button>
 	</div>
