@@ -65,7 +65,7 @@ class recommendationsController extends Controller
             DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) AS point'),
             DB::raw('sum(4*recommendations.is_similar) as p2'),
             DB::raw('COUNT(recommendations.this_id) as count'),
-            DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent'),
+            DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
         )
         ->groupBy('movies.id');
 
