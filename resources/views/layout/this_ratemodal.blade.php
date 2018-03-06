@@ -7,12 +7,9 @@
 					<div class="text-center h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row justify-content-between">
 							<div class="faderdiv">
-								<!--<button type="button" class="btn btn-secondary btn-sm badge-light float-left" data-toggle="tooltip" data-placement="bottom" title="{{ __('long_texts.the_question') }}">
-									<i class="fa fa-question" aria-hidden="true"></i>
-								</button>-->
 							</div>
 							<div class="faderdiv">
-								<h4><a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title}}"><span class="badge badge-light yeswrap p-1">@{{movie.title}} <small><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span></a></h4>
+								<div class="h4 mr-3" data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title}}"><a ng-href="/movie/@{{movie.id}}" target={{$target}}><span class="badge btn-verydark yeswrap text-white">@{{movie.title}} <small><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span></a></div>
 							</div>
 							<div class="faderdiv">
 								<button type="button" class="btn btn-secondary btn-sm badge-light float-right" data-dismiss="modal" aria-label="Close">
