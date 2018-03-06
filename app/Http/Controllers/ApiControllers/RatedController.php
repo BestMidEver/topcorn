@@ -116,28 +116,34 @@ class RatedController extends Controller
 
     public function get_quick_rate($lang)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+
         $return_val = DB::table('rateds')
         ->join('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('rateds as r2', function ($join) {
-            $join->on('r2.movie_id', '=', 'rateds.movie_id')
+            $join->on('r2.movie_id', '=', 'movies.id')
             ->where('r2.user_id', Auth::id());
         })
         ->where('r2.user_id', null)
         ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'rateds.movie_id')
+            $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', Auth::id());
         })
         ->where('laters.id', '=', null)
         ->leftjoin('bans', function ($join) {
-            $join->on('bans.movie_id', '=', 'rateds.movie_id')
+            $join->on('bans.movie_id', '=', 'movies.id')
             ->where('bans.user_id', Auth::id());
         })
         ->where('bans.id', '=', null)
-        ->groupBy('rateds.movie_id')
-        ->orderBy(DB::raw('count(*)'), 'DESC')
+        ->groupBy('movies.id')
+        ->orderBy('count', 'DESC')
         ->select(
-            'rateds.movie_id as id',
-            'movies.original_title',
+            'movies.id as id',
+            'movies.'.$hover_title.' as original_title',
             DB::raw('COUNT(*) as count'),
             'movies.vote_average',
             'movies.release_date',
