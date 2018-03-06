@@ -31,10 +31,10 @@
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
 							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"
-							@if(Auth::User()->tt_movie > 50)
+							@if(Auth::User()->tt_movie < 50)
                             data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
                             @endif
-							 data-toggle="tooltip" data-container="body" title="first tooltip"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
+							><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right">
 							<div ng-if="movie.vote_average > 0">
