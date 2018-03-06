@@ -60,10 +60,10 @@ class movieController extends Controller
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id',
-            DB::raw('sum(ABS(r2.rate-3)*(r2.rate-3)*recommendations.is_similar) AS point'),
-            DB::raw('sum(4*recommendations.is_similar) as p2'),
+            DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*recommendations.is_similar, 0)) AS point'),
+            DB::raw('sum(IF(r2.rate > 0, 4*recommendations.is_similar, 0)) as p2'),
             DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
-            DB::raw('sum(r2.rate-1)*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
+            DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
         )
         ->groupBy('movies.id');
 
