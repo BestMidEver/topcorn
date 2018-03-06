@@ -10,8 +10,7 @@ pass={
 	"open_new_tab":"{{ Auth::User()->open_new_tab }}", 
 	"pagination":"{{ Auth::User()->pagination }}", 
 	"show_crew":"{{ Auth::User()->show_crew }}", 
-	"pemosu_mode":"{{ Auth::User()->pemosu_mode }}", 
-	"min_vote_count":"{{ Auth::User()->min_vote_count }}", 
+	"advanced_filter":"{{ Auth::User()->advanced_filter }}", 
 	"theme":"{{ Auth::User()->theme }}", 
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
