@@ -8,7 +8,11 @@
 	<div class="position-relative">
 		<div id="accordion">
 			<div>
-				<div id="collapseCover" class="collapse show" data-parent="#accordion">
+				<div id="collapseCover" class="collapse show" data-parent="#accordion"
+							@if(Auth::User()->tt_movie < 50)
+                            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
+                            @endif
+							>
 					<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row no-gutters">
@@ -30,11 +34,7 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"
-							@if(Auth::User()->tt_movie < 50)
-                            data-toggle="popover" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="trailer"
-                            @endif
-							><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
+							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right">
 							<div ng-if="movie.vote_average > 0">
