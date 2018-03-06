@@ -72,14 +72,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		//window.location.replace("/not-found");
 	});
 
-	$http({
-		method: 'GET',
-		url: 'https://api.themoviedb.org/3/movie/popular?api_key='+pass.api_key+'&language=tr&page=7'
-	}).then(function successCallback(response) {
-		$scope.movies=response.data.results;
-	}, function errorCallback(response) {
-	});
-
 	$scope.merge_movie_data = function(desireddata, secondarydata){
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
 		if(!desireddata.overview) desireddata.overview=secondarydata.overview;
