@@ -388,11 +388,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			else if(pass.tt_navbar==4)location.hash="tooltip-percentage";
 		}else if(location.href.indexOf('topcorn.io/movie/')>-1){
 			if(pass.tt_movie<50){
-				if(pass.tt_movie==0)location.hash="tooltip-movie-trailer";
-				else if(pass.tt_movie==1)location.hash="tooltip-movie-share";
-				else if(pass.tt_movie==2)location.hash="tooltip-movie-search";
-				else if(pass.tt_movie==3)location.hash="tooltip-movie-cast";
-				else if(pass.tt_movie==4)location.hash="tooltip-movie-review";
+				if(pass.tt_movie==0)location.hash="tooltip-movie-share";
+				else if(pass.tt_movie==1)location.hash="tooltip-movie-search";
+				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
+				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
 			}
 		}
 
@@ -430,10 +429,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$('#percentage').popover('show');
 				});
 				///////////////////MOVIE///////////////////////
-			}else if(location.hash.indexOf('tooltip-movie-trailer')>-1){
+			}else if(location.hash.indexOf('tooltip-movie-share')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				setTimeout(function() {
-					$('#trailer').popover('show');
+					$('#share').popover('show');
 				}, 500);
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
