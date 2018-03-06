@@ -169,76 +169,6 @@ class recommendationsController extends Controller
 
 
         return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
-
-        /*$start = microtime(true);
-         
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
-        
-        $return_val = DB::table('movies')
-        ->where('vote_count', '>', Auth::User()->min_vote_count*5)
-        ->where('vote_average', '>', config('constants.suck_page.min_vote_average'))
-        ->leftjoin('rateds', function ($join) use ($request) {
-            $join->on('rateds.movie_id', '=', 'movies.id')
-            ->whereIn('rateds.user_id', $request->f_users);
-        })
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'movies.id')
-            ->where('laters.user_id', '=', Auth::user()->id);
-        })
-        //->where('laters.id', '=', null)
-        ->leftjoin('bans', function ($join) use ($request) {
-            $join->on('bans.movie_id', '=', 'movies.id')
-            ->whereIn('bans.user_id', $request->f_users);
-        })
-        ->where('bans.id', '=', null)
-        ->select(
-            'movies.id as id',
-            'movies.'.$hover_title.' as original_title',
-            'movies.vote_average',
-            'movies.vote_count',
-            'movies.release_date',
-            'movies.'.Auth::User()->lang.'_title as title',
-            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-            'rateds.id as rated_id',
-            'rateds.rate as rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
-        )
-        ->groupBy('movies.id')
-        ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0');
-
-        if($tab=='popular'){
-            $return_val = $return_val->orderBy('popularity', 'desc');
-        }else{
-            $return_val = $return_val->orderBy('vote_average', 'desc');
-        }
-
-        if($request->f_genre != []){
-            $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'movies.id')
-            ->whereIn('genre_id', $request->f_genre)
-            ->havingRaw('COUNT(*)='.count($request->f_genre));
-        }
-
-        if($request->f_lang != [])
-        {
-            $return_val = $return_val->whereIn('original_language', $request->f_lang);
-        }
-
-        if($request->f_min != 1917)
-        {
-            $return_val = $return_val->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1));
-        }
-
-        if($request->f_max != 2018)
-        {
-            $return_val = $return_val->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
-        }
-
-        return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];*/
     }
 
 
@@ -259,21 +189,15 @@ class recommendationsController extends Controller
         ->where('rateds.rate', '>', 0)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        ->leftjoin('rateds as r2', function ($join) use ($request) {
-            $join->on('r2.movie_id', '=', 'movies.id')
-            ->whereIn('r2.user_id', $request->f_users);
-        })
         ->select(
             'recommendations.this_id as id',
             DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) AS point'),
             DB::raw('sum(4*recommendations.is_similar) as p2'),
             DB::raw('COUNT(recommendations.this_id) as count'),
-            DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent'),
-            'r2.id as rated_id',
-            'r2.rate as rate_code'
+            DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) > 74 AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15*'.count($request->f_users).' AND sum(IF(r2.id IS NULL OR r2.rate = 0, 0, 1)) = 0');
+        ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) > 74 AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15*'.count($request->f_users));
 
         if($request->f_lang != [])
         {
@@ -291,13 +215,40 @@ class recommendationsController extends Controller
         }
 
         $qqSql = $subq->toSql();
-
-        $return_val = DB::table('movies')
+    ////////////////////////////////////////////////////
+        $subq_2 = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') AS ss'),
             function($join) use ($subq) {
                 $join->on('movies.id', '=', 'ss.id')
                 ->addBinding($subq->getBindings());  
+            }
+        )
+        ->leftjoin('rateds', function ($join) use ($request) {
+            $join->on('rateds.movie_id', '=', 'movies.id')
+            ->whereIn('rateds.user_id', $request->f_users);
+        })
+        ->select(
+            'ss.id',
+            'ss.point',
+            'ss.p2',
+            'ss.count',
+            'ss.percent',
+            'ss.percent',
+            'rateds.id as rated_id',
+            'rateds.rate as rate_code'
+        )
+        ->groupBy('movies.id')
+        ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0');
+
+        $qqSql_2 = $subq_2->toSql();
+    ////////////////////////////////////////////////////
+        $return_val = DB::table('movies')
+        ->join(
+            DB::raw('(' . $qqSql_2. ') AS ss'),
+            function($join) use ($subq_2) {
+                $join->on('movies.id', '=', 'ss.id')
+                ->addBinding($subq_2->getBindings());  
             }
         )
         ->leftjoin('laters', function ($join) {
