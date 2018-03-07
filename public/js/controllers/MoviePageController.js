@@ -442,6 +442,28 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 						$('#google').popover('show');
 					}, 2500);
 				});
+			}else if(location.hash.indexOf('tooltip-movie-cast')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 2)
+				.then(function(response){
+					setTimeout(function() {
+						$('#cast').popover('show');
+					}, 2500);
+				});
+			}else if(location.hash.indexOf('tooltip-movie-review')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 3)
+				.then(function(response){
+					setTimeout(function() {
+						$('#review').popover('show');
+					}, 2500);
+				});
+			}else if(location.hash.indexOf('movie-tooltips-done')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 50)
+				.then(function(response){
+					console.log(response);
+				});
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
 				$("[data-toggle=popover]").popover('hide');

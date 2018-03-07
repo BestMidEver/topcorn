@@ -188,7 +188,11 @@
 <!--Poster Plot Details Section-->
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="cast" ng-if="movie.credits.cast.length > 0">
+<div class="container-fluid px-0 mt-5" id="cast" ng-if="movie.credits.cast.length > 0"
+			@if(Auth::User()->tt_movie < 50)
+            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="cast"
+            @endif
+			>
 	<div class="px-3 px-md-0"><div class="h5">{{ __('general.actors') }}</div></div>
 	<div class="">
 		<div class="d-flex flex-wrap">
@@ -305,6 +309,20 @@
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-cast">Anladım</a>
+    </div>
+</div>
+<div id="popover-content-cast" class="d-none">
+    <p>Filmin kadrosunu da buradan görebilirsin.</p>
+    <div class="text-right">
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-review">Anladım</a>
+    </div>
+</div>
+<div id="popover-content-review" class="d-none">
+    <p>Filme dair görüşünü buradan paylaş.</p>
+    <div class="text-right">
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline" href="#movie-tooltips-done">Anladım</a>
     </div>
 </div>
 @endif
