@@ -61,6 +61,6 @@ class LevelController extends Controller
 
 		$user->save();
 
-		return response($user->tt_movie, 200);
+		return response($request->column, 200);
     }  
 }
