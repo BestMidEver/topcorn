@@ -438,6 +438,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('movie', 1)
 				.then(function(response){
+					console.log('movi')
 					setTimeout(function() {
 						$('#search').popover('show');
 					}, 2500);
