@@ -296,6 +296,13 @@
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-search">Anladım</a>
     </div>
 </div>
+<div id="popover-content-share" class="d-none">
+    <p>Filmin ismine tıklayarak arat.</p>
+    <div class="text-right">
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-cast">Anladım</a>
+    </div>
+</div>
 @endif
 
 @endsection

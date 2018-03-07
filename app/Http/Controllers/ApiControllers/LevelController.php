@@ -52,7 +52,7 @@ class LevelController extends Controller
         }
         else if($request->column == 'movie')
     	{
-			$user->tt_account = $request->level;
+            if($user->tt_movie < $request->level) $user->tt_movie = $request->level;
     	}
     	else
     	{

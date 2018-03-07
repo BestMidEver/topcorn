@@ -434,12 +434,21 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				setTimeout(function() {
 					$('#share').popover('show');
 				}, 2500);
+			}else if(location.hash.indexOf('tooltip-movie-search')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 1)
+				.then(function(response){
+					setTimeout(function() {
+						$('#search').popover('show');
+					}, 2500);
+				});
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 50)
 				.then(function(response){
 					console.log(response);
+					//BURDA location.hash'i manüpüle et
 				});
 			}else if(location.hash.indexOf('cancel-tooltips')>-1){
 				$("[data-toggle=popover]").popover('hide');
