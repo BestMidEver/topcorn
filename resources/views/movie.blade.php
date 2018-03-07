@@ -23,7 +23,7 @@
 									</div>
 									@if(Auth::User()->advanced_filter)
 									<div>
-										<span class="text-white"><small>@{{user_movie_record.point}}/@{{user_movie_record.p2}}</small></span><span class="text-white"> <small>puan</small></span>
+										<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>puan</small></span>
 									</div>
 									@endif
 								</div>
@@ -56,7 +56,7 @@
 								</div>
 								@if(Auth::User()->advanced_filter)
 								<div>
-									<span class="text-white"><small>@{{user_movie_record.point}}/@{{user_movie_record.p2}}</small></span><span class="text-white"> <small>puan</small></span>
+									<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>puan</small></span>
 								</div>
 								@endif
 							</div>
