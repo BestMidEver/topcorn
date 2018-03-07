@@ -5,8 +5,8 @@ pass={
 	"lang":"{{ App::getlocale() }}", 
 	"movieid":{{$id}}, 
 	"secondary_lang":"{{ Session::get('secondary_lang') }}", 
-	"is_auth":"{{  Auth::Check()  }}",
 	"api_key":"{{config('constants.api_key')}}",
+	"is_auth":"{{  Auth::Check()  }}",
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"tt_movie":{{ Auth::User()->tt_movie }},

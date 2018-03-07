@@ -142,7 +142,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
-		if($scope.current_level == 100) $scope.level_up(101);
 	};
 
 	$scope.get_quick_rate=function()
@@ -215,7 +214,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					//$('#myModal').modal('hide');
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 				}
 			});
 		}else if(rate_code == null){
@@ -229,7 +228,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					//$('#myModal').modal('hide');
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 				}
 			});
 		}
@@ -331,8 +330,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.status == 201){
 					$scope.user_movie_record.rated_id=response.data.data.rated_id;
 					$scope.user_movie_record.rate_code=response.data.data.rate;
-				}else{
-					$('#this_movie_modal').modal('show');
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 				}
 			});
 		}else if(rate_code == null){
@@ -342,8 +340,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.status == 204){
 					$scope.user_movie_record.rated_id=null;
 					$scope.user_movie_record.rate_code=null;
-				}else{
-					$('#this_movie_modal').modal('show');
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 				}
 			});
 		}
@@ -490,6 +487,12 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			}
 		}, false);
 
+		$scope.show_tooltip_quickvote = function(){
+			$("[data-toggle=popover]").popover('hide');
+			setTimeout(function() {
+				$('#quickvote').popover('show');
+			}, 2500);
+		}
 	}
 
 	if(pass.watched_movie_number < 50){

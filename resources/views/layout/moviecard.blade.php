@@ -10,7 +10,7 @@
 								<small>Film zevkine göre</small>
 								<span class="d-block"><span class="h5 text-warning">%@{{movie.percent}}</span><small> eşleşme</small></span>
 								@if(Auth::User()->advanced_filter)
-								<small><span class="h5 text-warning">@{{movie.point}}</span>/@{{movie.p2}} puan</small>
+								<small><span class="h5 text-warning">@{{movie.point+movie.p2}}</span>/@{{movie.p2*2}} puan</small>
 								@endif
 							</div>
 						</div>

@@ -67,7 +67,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 							});
 						}
 						$scope.inside_get_page_data_movie(response);
-						if($scope.current_level == 201)$scope.level_up(202);
 					});
 					break;
 				case 'person':
@@ -163,7 +162,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	{
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
-		if($scope.current_level == 100) $scope.level_up(101);//NEW NEW NEW
 	};
 
 	$scope.get_quick_rate=function()
@@ -236,9 +234,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					if($scope.current_level == 101) $scope.get_watched_movie_number(102);		//NEW NEW
-					else if($scope.current_level==400) $scope.get_watched_movie_number(401);		//NEW NEW
-					//$('#myModal').modal('hide');
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 				}
 			});
 		}else if(rate_code == null){
@@ -252,7 +248,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					//$('#myModal').modal('hide');
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 				}
 			});
 		}
@@ -400,11 +396,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'later_id':null,
 						'ban_id':null
 					}, 'rate')
-				}else{
-					$('#myModal').modal('show');
 				}
-				if($scope.current_level==202) $scope.level_up(203);		//TUTORIAL RATE SEARCHED MOVIE
-				else if($scope.current_level==400) $scope.get_watched_movie_number(401);		//NEW NEW NEW
+				if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 			});
 		}else if(rate_code == null){
 			var temp = $scope.movies[index];
@@ -421,9 +414,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						'later_id':temp.later_id,
 						'ban_id':temp.ban_id
 					}, 'rate');
-				}else{
-					$('#myModal').modal('show');
 				}
+				if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 			});
 		}
 	};
