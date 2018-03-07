@@ -306,28 +306,28 @@
 <div id="popover-content-share" class="d-none">
     <p>Filmi buradan facebookta paylaş.</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-search">Anladım</a>
     </div>
 </div>
 <div id="popover-content-google" class="d-none">
     <p>Filmin ismine tıklayarak arat.</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-cast">Anladım</a>
     </div>
 </div>
 <div id="popover-content-cast" class="d-none">
     <p>Filmin kadrosunu da buradan görebilirsin.</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-review">Anladım</a>
     </div>
 </div>
 <div id="popover-content-review" class="d-none">
     <p>Filme dair görüşünü buradan paylaş.</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
         <a class="btn btn-sm btn-link d-inline" href="#movie-tooltips-done">Anladım</a>
     </div>
 </div>

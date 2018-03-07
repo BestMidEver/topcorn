@@ -477,7 +477,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				.then(function(response){
 					console.log(response);
 				});
-			}else if(location.hash.indexOf('cancel-tooltips-movie')>-1){
+			}else if(location.hash.indexOf('cancel-movie-tooltips')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('movie', 100)
 				.then(function(response){
