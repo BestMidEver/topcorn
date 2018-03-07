@@ -36,7 +36,7 @@ class LevelController extends Controller
         }
         else if($request->column == 'search')
         {
-            $user->tt_search = $request->level;
+            if($user->tt_search < $request->level) $user->tt_search = $request->level;
         }
         else if($request->column == 'quickvote')
         {

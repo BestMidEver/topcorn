@@ -486,15 +486,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$("[data-toggle=popover]").popover('hide');
 			}
 		}, false);
-
-		$scope.show_tooltip_quickvote = function(){
-			$("[data-toggle=popover]").popover('hide');
-			setTimeout(function() {
-				$('#quickvote').popover('show');
-			}, 2500);
-		}
 	}
 
+	$scope.watched_movie_number = pass.watched_movie_number;
 	if(pass.watched_movie_number < 50){
 		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
@@ -505,7 +499,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			});
 		}
 
-		$scope.watched_movie_number = pass.watched_movie_number;
 		$scope.calculate_percentage = function(){
 			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number*2 : $scope.watched_movie_number*2+'%';
 		}

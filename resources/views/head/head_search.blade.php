@@ -7,7 +7,7 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"constants_api_key":"{{config('constants.api_key')}}",
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
-	"tt_movie":{{ Auth::User()->tt_movie }},
+	"tt_search":{{ Auth::User()->tt_search }},
 	"watched_movie_number":{{ $watched_movie_number }}
 };
 </script>
