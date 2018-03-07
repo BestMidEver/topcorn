@@ -67,7 +67,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 							});
 						}
 						$scope.inside_get_page_data_movie(response);
-						location.hash="#tooltip-search-vote";
+						location.hash="tooltip-search-vote";
 					});
 					break;
 				case 'person':
