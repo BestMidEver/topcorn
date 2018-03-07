@@ -188,11 +188,7 @@
 <!--Poster Plot Details Section-->
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="cast" ng-if="movie.credits.cast.length > 0"
-			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="cast"
-            @endif
-			>
+<div class="container-fluid px-0 mt-5" id="cast" ng-if="movie.credits.cast.length > 0">
 	<div class="px-3 px-md-0"><div class="h5">{{ __('general.actors') }}</div></div>
 	<div class="">
 		<div class="d-flex flex-wrap">
@@ -252,6 +248,11 @@
 			<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><i class="fa fa-angle-up"></i></button>
 		</div>
 	</div>
+	<div
+			@if(Auth::User()->tt_movie < 50)
+            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="cast"
+            @endif
+			></div>
 </div>
 <!--Cast Section-->
 
