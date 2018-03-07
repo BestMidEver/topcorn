@@ -583,6 +583,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				}, 2500);
 			}else if(location.hash.indexOf('tooltip-search-watchlater')>-1){
 				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('search', 1)
 				.then(function(response){
 					setTimeout(function() {
 						$('#watchlater').popover('show');
@@ -590,6 +591,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				});
 			}else if(location.hash.indexOf('tooltip-search-ban')>-1){
 				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('search', 2)
 				.then(function(response){
 					setTimeout(function() {
 						$('#ban').popover('show');
@@ -597,6 +599,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				});
 			}else if(location.hash.indexOf('tooltip-search-movieinfo')>-1){
 				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('search', 3)
 				.then(function(response){
 					setTimeout(function() {
 						$('#movieinfo').popover('show');
