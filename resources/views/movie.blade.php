@@ -99,7 +99,11 @@
 <div class="d-flex flex-wrap justify-content-between">
 	<div>
 		<div class="d-flex flex-column">
-			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2">@{{movie.title}}</h1></a></div>
+			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2"
+			@if(Auth::User()->tt_movie < 50)
+            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="google"
+            @endif
+			>@{{movie.title}}</h1></a></div>
 		</div>
 	</div>
 	@if(Auth::check())
@@ -296,7 +300,7 @@
         <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-search">Anladım</a>
     </div>
 </div>
-<div id="popover-content-share" class="d-none">
+<div id="popover-content-google" class="d-none">
     <p>Filmin ismine tıklayarak arat.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips-movie">İpuçlarını Gösterme</a>
