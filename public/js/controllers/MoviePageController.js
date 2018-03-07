@@ -428,6 +428,19 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					$('#percentage').popover('show');
 				});
+			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('navbar', 50)
+				.then(function(response){
+					console.log(response);
+					//BURDA location.hash'i manüpüle et
+				});
+			}else if(location.hash.indexOf('cancel-tooltips')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('navbar', 100)
+				.then(function(response){
+					console.log(response);
+				});
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('tooltip-movie-share')>-1){
 				$("[data-toggle=popover]").popover('hide');
@@ -464,20 +477,14 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				.then(function(response){
 					console.log(response);
 				});
+			}else if(location.hash.indexOf('cancel-tooltips-movie')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 100)
+				.then(function(response){
+					console.log(response);
+				});
 				///////////////////MOVIE///////////////////////
-			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('navbar', 50)
-				.then(function(response){
-					console.log(response);
-					//BURDA location.hash'i manüpüle et
-				});
-			}else if(location.hash.indexOf('cancel-tooltips')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('navbar', 100)
-				.then(function(response){
-					console.log(response);
-				});
+			
 			}else if(location.hash.indexOf('close-tooltip')>-1){
 				$("[data-toggle=popover]").popover('hide');
 			}
