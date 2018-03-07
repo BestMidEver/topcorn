@@ -65,9 +65,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 									$scope.inside_get_page_data_person(response);
 								}
 							});
-						}
-						$scope.inside_get_page_data_movie(response);
-						location.hash="tooltip-search-vote";
+						}else $scope.inside_get_page_data_movie(response);
 					});
 					break;
 				case 'person':
@@ -85,8 +83,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 									$scope.inside_get_page_data_movie(response);
 								}
 							});
-						}
-						$scope.inside_get_page_data_person(response);
+						}else $scope.inside_get_page_data_person(response);
 					});
 					break;
 				case 'user':
@@ -116,6 +113,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.from=(response.data.page-1)*20+1;
 		$scope.to=(response.data.page-1)*20+response.data.results.length;
 		$scope.in=response.data.total_results;
+		location.hash="#tooltip-search-vote";
 	}
 
 	$scope.inside_get_page_data_person = function(response){
