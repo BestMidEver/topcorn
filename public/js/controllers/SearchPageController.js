@@ -20,7 +20,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.image_url_prefix_movie_card = pass.image_url_prefix_movie_card;
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
 	$scope.user_id = pass.user_id;
-	$scope.model={};
 	$scope.active_tab='movie';
 	$scope.page=1;
 
@@ -38,17 +37,14 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.movies=null;
 		$scope.people=null;
 		$scope.users=null
-		$scope.model.movie='';
-		$scope.model.person='';
-		$scope.model.user='';
 	}
 
 	$scope.get_page_data = function()
 	{
-		if($scope.model[$scope.active_tab].length == 0){
+		if($scope.generalinput.length == 0){
 			$scope.reset_tab();
 		}else{
-			var temp=$scope.model[$scope.active_tab].replace(/ /g , "%20");
+			var temp=$scope.generalinput.replace(/ /g , "%20");
 			switch($scope.active_tab) {
 				case 'movie':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
@@ -60,8 +56,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 								if(response.data.results.length>0){
 									$scope.active_tab='person';
 									$scope.setFocus('input_person');
-									$scope.model.person=$scope.model.movie;
-									$scope.model.movie='';
 									$scope.inside_get_page_data_person(response);
 								}
 							});
@@ -78,8 +72,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 								if(response.data.results.length>0){
 									$scope.active_tab='movie';
 									$scope.setFocus('input_movie');
-									$scope.model.movie=$scope.model.person;
-									$scope.model.person='';
 									$scope.inside_get_page_data_movie(response);
 								}
 							});
