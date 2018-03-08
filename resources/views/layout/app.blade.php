@@ -209,7 +209,7 @@
                     <div class=" h-100 d-flex flex-column justify-content-between">
                         <div class="py-2 small">
                             <div class="text-dark pb-1"
-                            @if(Auth::User()->tt_navbar < 60)
+                            @if(Auth::User()->tt_navbar < 100)
                             data-toggle="popover" data-placement="left" title='Bize Yardım Et<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="like"
                             @endif
                             >{{ __('navbar.like_us_on_facebook') }}</div>
@@ -228,7 +228,7 @@
 
 @include('layout.ratemodal')
 
-@if(Auth::User()->tt_navbar < 50)
+@if(Auth::User()->tt_navbar < 100)
 <div id="popover-content-quickvote" class="d-none">
     <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
     <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
