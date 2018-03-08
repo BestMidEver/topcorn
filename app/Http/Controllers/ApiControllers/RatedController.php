@@ -154,7 +154,8 @@ class RatedController extends Controller
             'r2.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
-        )->take(10)->get();
+        )
+        ->take(10)->get();
 
         if($return_val->count()) return $return_val;
         else{
@@ -173,6 +174,19 @@ class RatedController extends Controller
                 $join->on('bans.movie_id', '=', 'movies.id')
                 ->where('bans.user_id', Auth::id());
             })
+            ->select(
+                'movies.id as id',
+                'movies.'.$hover_title.' as original_title',
+                DB::raw('COUNT(*) as count'),
+                'movies.vote_average',
+                'movies.release_date',
+                'movies.'.$lang.'_title as title',
+                'movies.'.$lang.'_poster_path as poster_path',
+                'r2.id as rated_id',
+                'r2.rate as rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            )
             ->where('bans.id', '=', null)
             ->inRandomOrder();
 
