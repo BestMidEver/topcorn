@@ -378,7 +378,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.watched_movie_number = pass.watched_movie_number;
 
-	if(pass.tt_navbar < 70 || pass.tt_movie < 50){
+	if(pass.tt_navbar < 70 || pass.tt_movie < 50 || pass.tt_navbar < 80){
 		if(pass.tt_navbar<50){
 			if(pass.tt_navbar==0)location.hash="tooltip-navbar-quickvote";
 			else if(pass.tt_navbar==1)location.hash="tooltip-navbar-search";
