@@ -278,7 +278,7 @@
     </div>
 </div>
 <div id="popover-content-donate" class="d-none">
-    <p>200 film oyladın, artık usta bir topcorn.io kullanıcısısın. Faydalı olduğumuzu düşünüyorsan, bize bağış yapmayı buradan düşünebilirsin.</p>
+    <p>200 film oyladın, artık usta bir topcorn.io kullanıcısısın. Faydalı olduğumuzu düşünüyorsan, bize buradan bağış yapmayı düşünebilirsin.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-all-done">Anladım</a>
     </div>
