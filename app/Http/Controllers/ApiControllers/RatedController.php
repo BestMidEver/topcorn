@@ -177,13 +177,12 @@ class RatedController extends Controller
             ->select(
                 'movies.id as id',
                 'movies.'.$hover_title.' as original_title',
-                DB::raw('COUNT(*) as count'),
                 'movies.vote_average',
                 'movies.release_date',
                 'movies.'.$lang.'_title as title',
                 'movies.'.$lang.'_poster_path as poster_path',
-                'r2.id as rated_id',
-                'r2.rate as rate_code',
+                'rateds.id as rated_id',
+                'rateds.rate as rate_code',
                 'laters.id as later_id',
                 'bans.id as ban_id'
             )
