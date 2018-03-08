@@ -393,8 +393,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
 			}
 		}else if(pass.tt_navbar<100){
-			if(pass.watched_movie_number>49)location.hash="tooltip-movie-like";
-			else if(pass.watched_movie_number>199)location.hash="tooltip-movie-donate";
+			if(pass.watched_movie_number>49)location.hash="tooltip-navbar-like";
+			else if(pass.watched_movie_number>199)location.hash="tooltip-navbar-donate";
 		}
 
 		window.addEventListener("hashchange", function(){ 
@@ -444,7 +444,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				}, 2500);
 			}else if(location.hash.indexOf('tooltip-footer-donate')>-1){
 				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('movie', 70)
+				rate.tt_manipulate('navbar', 70)
 				.then(function(response){
 					setTimeout(function() {
 						$('#donate').popover('show');
