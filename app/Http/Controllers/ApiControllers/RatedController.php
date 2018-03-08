@@ -158,6 +158,7 @@ class RatedController extends Controller
 
         if($return_val) return $return_val;
         else{
+            return 'gabar';
             $return_val = DB::table('movies')
             ->leftjoin('rateds as rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'movies.id')
