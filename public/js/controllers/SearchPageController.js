@@ -465,7 +465,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-console.log(location.href)
 	$scope.watched_movie_number = pass.watched_movie_number;
 
 	if(pass.tt_navbar < 50 || pass.tt_movie < 50 || pass.tt_search < 50){
@@ -521,8 +520,8 @@ console.log(location.href)
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 50)
 				.then(function(response){
-					console.log(response);
-					//BURDA location.hash'i manüpüle et
+					if(location.href.indexOf('topcorn.io/movie')>-1) location.hash='#tooltip-movie-share';
+					else if(location.href.indexOf('topcorn.io/search')>-1) location.hash='#tooltip-search-vote';
 				});
 			}else if(location.hash.indexOf('cancel-tooltips')>-1){
 				$("[data-toggle=popover]").popover('hide');
