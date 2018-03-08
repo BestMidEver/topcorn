@@ -393,8 +393,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
 			}
 		}else if(pass.tt_navbar<100){
-			if(pass.watched_movie_number>49)location.hash="tooltip-navbar-like";
-			else if(pass.watched_movie_number>199)location.hash="tooltip-navbar-donate";
+			if(pass.watched_movie_number>49)location.hash="tooltip-footer-like";
+			else if(pass.watched_movie_number>199)location.hash="tooltip-footer-donate";
 		}
 
 		window.addEventListener("hashchange", function(){ 
@@ -527,7 +527,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			if($scope.watched_movie_number>49 && pass.tt_navbar < 100) {location.hash="tooltip-footer-like";console.log("AHA");}
 			else if($scope.watched_movie_number>199 && pass.tt_navbar < 100) location.hash="tooltip-footer-donate";
 		}
-		$scope.cry_for_help();
+		if(pass.tt_navbar>49)$scope.cry_for_help();
 
 		$scope.calculate_percentage = function(){
 			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number*2 : $scope.watched_movie_number*2+'%';
