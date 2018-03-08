@@ -58,7 +58,7 @@
 </div>
 
 @if(Auth::User()->tt_movie < 50)
-<div id="popover-content-vote" class="d-none">
+<div id="popover-content-vote0" class="d-none">
     <p>Filmi izlediysen buradan oyla.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
