@@ -585,7 +585,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			}else if(location.hash.indexOf('tooltip-search-vote')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				setTimeout(function() {
-					$('#vote1').popover('show');
+					$('#vote0').popover('show');
 				}, 2500);
 			}else if(location.hash.indexOf('tooltip-search-watchlater')>-1){
 				$("[data-toggle=popover]").popover('hide');
