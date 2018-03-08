@@ -113,7 +113,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.from=(response.data.page-1)*20+1;
 		$scope.to=(response.data.page-1)*20+response.data.results.length;
 		$scope.in=response.data.total_results;
-		location.hash="#tooltip-search-vote";
 	}
 
 	$scope.inside_get_page_data_person = function(response){
@@ -467,7 +466,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.watched_movie_number = pass.watched_movie_number;
 
-	if(pass.tt_navbar < 50 || pass.tt_movie < 50 || pass.tt_search < 50){
+	if(pass.tt_navbar < 50 || pass.tt_movie < 50){
 		if(pass.tt_navbar<50){
 			if(pass.tt_navbar==0)location.hash="tooltip-navbar-quickvote";
 			else if(pass.tt_navbar==1)location.hash="tooltip-navbar-search";
@@ -477,13 +476,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		}else if(location.href.indexOf('topcorn.io/movie/')>-1){
 			if(pass.tt_movie<50){
 				if(pass.tt_movie==0)location.hash="tooltip-movie-share";
-				else if(pass.tt_movie==1)location.hash="tooltip-movie-search";
-				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
-				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
-			}
-		}else if(location.href.indexOf('topcorn.io/search/')>-1){
-			if(pass.tt_movie<50){
-				if(pass.tt_movie==0)location.hash="tooltip-search-vote";
 				else if(pass.tt_movie==1)location.hash="tooltip-movie-search";
 				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
 				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
@@ -529,7 +521,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				rate.tt_manipulate('navbar', 50)
 				.then(function(response){
 					if(location.href.indexOf('topcorn.io/movie')>-1) location.hash='#tooltip-movie-share';
-					else if(location.href.indexOf('topcorn.io/search')>-1) location.hash='#tooltip-search-vote';
 				});
 			}else if(location.hash.indexOf('cancel-tooltips')>-1){
 				$("[data-toggle=popover]").popover('hide');
@@ -580,50 +571,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					console.log(response);
 				});
 				///////////////////MOVIE///////////////////////
-
-				//////////////////SEARCH///////////////////////
-			}else if(location.hash.indexOf('tooltip-search-vote')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				setTimeout(function() {
-					$('#vote').popover('show');
-				}, 2500);
-			}else if(location.hash.indexOf('tooltip-search-watchlater')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('search', 1)
-				.then(function(response){
-					setTimeout(function() {
-						$('#watchlater').popover('show');
-					}, 2500);
-				});
-			}else if(location.hash.indexOf('tooltip-search-ban')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('search', 2)
-				.then(function(response){
-					setTimeout(function() {
-						$('#ban').popover('show');
-					}, 2500);
-				});
-			}else if(location.hash.indexOf('tooltip-search-movieinfo')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('search', 3)
-				.then(function(response){
-					setTimeout(function() {
-						$('#movieinfo').popover('show');
-					}, 2500);
-				});
-			}else if(location.hash.indexOf('search-tooltips-done')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('search', 50)
-				.then(function(response){
-					console.log(response);
-				});
-			}else if(location.hash.indexOf('cancel-search-tooltips')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('search', 100)
-				.then(function(response){
-					console.log(response);
-				});
-				//////////////////SEARCH///////////////////////
 			}else if(location.hash.indexOf('close-tooltip')>-1){
 				$("[data-toggle=popover]").popover('hide');
 			}
