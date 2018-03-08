@@ -512,7 +512,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				console.log(response);
 				$scope.watched_movie_number=response.data;
 				if($scope.watched_movie_number<50) $scope.calculate_percentage();
-				else if($scope.watched_movie_number>49 && pass.tt_navbar < 80) location.hash="tooltip-footer-like";
+				else if($scope.watched_movie_number>49 && pass.tt_navbar < 80) {location.hash="tooltip-footer-like";console.log("AHA");}
 				else if($scope.watched_movie_number>199 && pass.tt_navbar < 80) location.hash="tooltip-footer-donate";
 			});
 		}
