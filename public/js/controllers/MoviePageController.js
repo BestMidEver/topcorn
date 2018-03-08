@@ -392,6 +392,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
 				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
 			}
+		}else if(pass.tt_navbar<80){
+			if(pass.watched_movie_number>49)location.hash="tooltip-movie-like";
+			else if(pass.watched_movie_number>199)location.hash="tooltip-movie-donate";
 		}
 
 		window.addEventListener("hashchange", function(){ 
