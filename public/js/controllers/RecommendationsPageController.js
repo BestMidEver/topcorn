@@ -382,7 +382,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		if(user.user_id==pass.user_id) return;
 		$scope.party_members=_.uniq( _.union($scope.party_members, [user]),'user_id' );
 		f_users=_.union(_.pluck($scope.party_members, 'user_id'), [pass.user_id]);
-		$scope.get_page_data();
+		$scope.get_first_page_data();
 		$scope.add_to_history(user.user_id);
 	}
 	
@@ -399,7 +399,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		    return item.user_id !== user_id
 		});
 		f_users=_.union(_.pluck($scope.party_members, 'user_id'), [pass.user_id]);
-		$scope.get_page_data();
+		$scope.get_first_page_data();
 	}
 
 	$scope.remove_from_history = function(user_id){
