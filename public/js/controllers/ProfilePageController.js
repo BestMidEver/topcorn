@@ -30,8 +30,6 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 		case '':
 			$scope.active_tab = 'get_rateds/5';
 			break;
-		default:
-			window.location.replace("/not-found");
 	}
 
     $scope.get_page_data = function()
