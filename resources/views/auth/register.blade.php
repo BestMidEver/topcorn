@@ -113,7 +113,7 @@ pass={
                 <div class="form-group">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-prepend">
-                            <div class="input-group-text" style="width: 2.6rem"><i class="fa fa-repeat"></i></div>
+                            <div class="input-group-text" style="width: 2.6rem"><i class="fas fa-redo"></i></div>
                         </div>
                         <input type="text" name="email_confirmation" class="form-control" id="email-confirmation" value="{{ old('email_confirmation') }}" required autofocus>
                     </div>
@@ -160,7 +160,7 @@ pass={
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                         <div class="input-group-prepend">
                             <div class="input-group-text" style="width: 2.6rem">
-                                <i class="fa fa-repeat"></i>
+                                <i class="fas fa-redo"></i>
                             </div>
                         </div>
                         <input type="password" name="password_confirmation" class="form-control"
