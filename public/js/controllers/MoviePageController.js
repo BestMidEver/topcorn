@@ -378,7 +378,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.watched_movie_number = pass.watched_movie_number;
 
-	if(pass.tt_navbar < 70 || pass.tt_movie < 50 || pass.tt_navbar < 80){
+	if(pass.tt_navbar < 100 || pass.tt_movie < 50){
 		if(pass.tt_navbar<50){
 			if(pass.tt_navbar==0)location.hash="tooltip-navbar-quickvote";
 			else if(pass.tt_navbar==1)location.hash="tooltip-navbar-search";
@@ -392,7 +392,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
 				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
 			}
-		}else if(pass.tt_navbar<80){
+		}else if(pass.tt_navbar<100){
 			if(pass.watched_movie_number>49)location.hash="tooltip-movie-like";
 			else if(pass.watched_movie_number>199)location.hash="tooltip-movie-donate";
 		}
@@ -495,7 +495,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				});
 			}else if(location.hash.indexOf('tooltip-footer-donate')>-1){
 				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('movie', 80)
+				rate.tt_manipulate('movie', 100)
 				.then(function(response){
 					setTimeout(function() {
 						$('#donate').popover('show');
@@ -508,15 +508,15 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}, false);
 	}
 
-	if(pass.tt_navbar < 80){
+	if(pass.tt_navbar < 100){
 		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
 			.then(function(response){
 				console.log(response);
 				$scope.watched_movie_number=response.data;
 				if($scope.watched_movie_number<50) $scope.calculate_percentage();
-				else if($scope.watched_movie_number>49 && pass.tt_navbar < 80) {location.hash="tooltip-footer-like";console.log("AHA");}
-				else if($scope.watched_movie_number>199 && pass.tt_navbar < 80) location.hash="tooltip-footer-donate";
+				else if($scope.watched_movie_number>49 && pass.tt_navbar < 100) {location.hash="tooltip-footer-like";console.log("AHA");}
+				else if($scope.watched_movie_number>199 && pass.tt_navbar < 100) location.hash="tooltip-footer-donate";
 			});
 		}
 
