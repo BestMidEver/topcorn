@@ -43,7 +43,7 @@
 					<div class="col-7">
 						<button type="button" class="btn btn-sm btn-block border-0" ng-class="rate_class(movie.rate_code)" ng-click="votemodal($index, movie)"
 						@if(Auth::User()->tt_search < 50)
-			            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' ng-attr-id="vote{{$index}}"
+			            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' ng-attr-id="vote@{{$index}}"
 			            @endif
 						><span ng-show="!movie.rate_code>0"><i class="far fa-star"></i></span><span ng-show="movie.rate_code>0"><i class="fas fa-check"></i></span> {{ __('general.seen') }}</button>
 					</div>
