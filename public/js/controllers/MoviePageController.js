@@ -214,7 +214,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+					if(pass.watched_movie_number<200) $scope.get_watched_movie_number();
 				}
 			});
 		}else if(rate_code == null){
@@ -228,7 +228,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$(".tooltip").hide();
 					$scope.modify_movies($scope.previous_quick_rate_movie);
 					$scope.next_quick_rate();
-					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+					if(pass.watched_movie_number<200) $scope.get_watched_movie_number();
 				}
 			});
 		}
@@ -330,7 +330,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.status == 201){
 					$scope.user_movie_record.rated_id=response.data.data.rated_id;
 					$scope.user_movie_record.rate_code=response.data.data.rate;
-					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+					if(pass.watched_movie_number<200) $scope.get_watched_movie_number();
 				}
 			});
 		}else if(rate_code == null){
@@ -340,7 +340,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.status == 204){
 					$scope.user_movie_record.rated_id=null;
 					$scope.user_movie_record.rate_code=null;
-					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+					if(pass.watched_movie_number<200) $scope.get_watched_movie_number();
 				}
 			});
 		}
@@ -378,7 +378,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.watched_movie_number = pass.watched_movie_number;
 
-	if(pass.tt_navbar < 50 || pass.tt_movie < 50){
+	if(pass.tt_navbar < 70 || pass.tt_movie < 50){
 		if(pass.tt_navbar<50){
 			if(pass.tt_navbar==0)location.hash="tooltip-navbar-quickvote";
 			else if(pass.tt_navbar==1)location.hash="tooltip-navbar-search";
@@ -478,9 +478,25 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				});
 			}else if(location.hash.indexOf('cancel-movie-tooltips')>-1){
 				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('movie', 100)
+				rate.tt_manipulate('movie', 60)
 				.then(function(response){
 					console.log(response);
+				});
+			}else if(location.hash.indexOf('tooltip-footer-like')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 70)
+				.then(function(response){
+					setTimeout(function() {
+						$('#like').popover('show');
+					}, 2500);
+				});
+			}else if(location.hash.indexOf('tooltip-footer-donate')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 80)
+				.then(function(response){
+					setTimeout(function() {
+						$('#donate').popover('show');
+					}, 2500);
 				});
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('close-tooltip')>-1){
@@ -489,13 +505,15 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}, false);
 	}
 
-	if(pass.watched_movie_number < 50){
+	if(pass.watched_movie_number < 200){
 		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
 			.then(function(response){
 				console.log(response);
 				$scope.watched_movie_number=response.data;
-				$scope.calculate_percentage();
+				if($scope.watched_movie_number<50) $scope.calculate_percentage();
+				else if($scope.watched_movie_number>49 && pass.tt_navbar < 80) location.hash="tooltip-footer-like";
+				else if($scope.watched_movie_number>199 && pass.tt_navbar < 80) location.hash="tooltip-footer-donate";
 			});
 		}
 
