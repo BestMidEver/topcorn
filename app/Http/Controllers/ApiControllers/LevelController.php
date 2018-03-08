@@ -26,7 +26,7 @@ class LevelController extends Controller
             if($user->tt_navbar < $request->level) $user->tt_navbar = $request->level;
             if($user->tt_navbar == 4){ //50 filmden çok oylayanlara navbardaki % tooltipini göstermemek için.
                 if(Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count() > 49){
-                    $user->tt_navbar = 5;
+                    $user->tt_navbar = 50;
                 }
             }
         }
