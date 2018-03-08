@@ -4,7 +4,7 @@
 			<a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 				<div class="position-relative text-center">
 					<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap"
-						@if(Auth::User()->tt_search == 50)
+						@if(Auth::User()->tt_search < 50)
 			            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="movieinfo"
 			            @endif
 						>
@@ -43,7 +43,7 @@
 				<div class="row no-gutters">
 					<div class="col">
 						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)"
-						@if(Auth::User()->tt_search == 50)
+						@if(Auth::User()->tt_search < 50)
 			            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="watchlater"
 			            @endif
 						><span ng-show="movie.later_id!=null"><i class="fas fa-clock"></i></span><span ng-show="movie.later_id==null"><i class="far fa-clock"></i></span></button>
@@ -57,7 +57,7 @@
 					</div>
 					<div class="col">
 						<button type="button" class="btn btn-outline-secondary btn-sm btn-block addban border-0" ng-class="{'text-danger':movie.ban_id!=null}" ng-click="ban($index)"
-						@if(Auth::User()->tt_search == 50)
+						@if(Auth::User()->tt_search < 50)
 			            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="ban"
 			            @endif
 						><i class="fa fa-ban"></i></button>
