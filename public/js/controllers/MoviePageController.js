@@ -516,10 +516,15 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				console.log(response);
 				$scope.watched_movie_number=response.data;
 				if($scope.watched_movie_number<50) $scope.calculate_percentage();
-				else if($scope.watched_movie_number>49 && pass.tt_navbar < 100) {location.hash="tooltip-footer-like";console.log("AHA");}
-				else if($scope.watched_movie_number>199 && pass.tt_navbar < 100) location.hash="tooltip-footer-donate";
+				$scope.cry_for_help();
 			});
 		}
+
+		$scope.cry_for_help = function(){
+			if($scope.watched_movie_number>49 && pass.tt_navbar < 100) {location.hash="tooltip-footer-like";console.log("AHA");}
+			else if($scope.watched_movie_number>199 && pass.tt_navbar < 100) location.hash="tooltip-footer-donate";
+		}
+		$scope.cry_for_help();
 
 		$scope.calculate_percentage = function(){
 			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number*2 : $scope.watched_movie_number*2+'%';
