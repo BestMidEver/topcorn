@@ -509,6 +509,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 
 	if(pass.tt_navbar < 100){
+		console.log(pass)
 		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
 			.then(function(response){
