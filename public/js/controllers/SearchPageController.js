@@ -100,7 +100,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.inside_get_page_data_movie = function(response){
 		external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
 		$scope.movies=response.data.results;
-		if($scope.movies.length==0) $scope.reset_tab();
+		if(!$scope.movies.length>0) $scope.reset_tab();
 		$(".tooltip").hide();
 		if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
 		else $scope.pagination=1000;
