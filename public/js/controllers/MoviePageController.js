@@ -437,9 +437,28 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				.then(function(response){
 					if(location.href.indexOf('topcorn.io/movie')>-1) location.hash='#tooltip-movie-share';
 				});
-			}else if(location.hash.indexOf('cancel-tooltips')>-1){
+			}else if(location.hash.indexOf('tooltip-footer-like')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				setTimeout(function() {
+					$('#like').popover('show');
+				}, 2500);
+			}else if(location.hash.indexOf('tooltip-footer-donate')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('movie', 70)
+				.then(function(response){
+					setTimeout(function() {
+						$('#donate').popover('show');
+					}, 2500);
+				});
+			}else if(location.hash.indexOf('navbar-tooltips-all-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 100)
+				.then(function(response){
+					console.log(response);
+				});
+			}else if(location.hash.indexOf('cancel-tooltips')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('navbar', 50)
 				.then(function(response){
 					console.log(response);
 				});
@@ -484,22 +503,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				rate.tt_manipulate('movie', 60)
 				.then(function(response){
 					console.log(response);
-				});
-			}else if(location.hash.indexOf('tooltip-footer-like')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('movie', 70)
-				.then(function(response){
-					setTimeout(function() {
-						$('#like').popover('show');
-					}, 2500);
-				});
-			}else if(location.hash.indexOf('tooltip-footer-donate')>-1){
-				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('movie', 100)
-				.then(function(response){
-					setTimeout(function() {
-						$('#donate').popover('show');
-					}, 2500);
 				});
 				///////////////////MOVIE///////////////////////
 			}else if(location.hash.indexOf('close-tooltip')>-1){

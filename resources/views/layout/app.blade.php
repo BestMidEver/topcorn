@@ -276,13 +276,13 @@
 <div id="popover-content-like" class="d-none">
     <p>50 film oyladın! topcorn.io'yu kullanmak için hazırsın. Gelişmelerden haberdar olmak için bizi takip et.</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-done">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-donate">Anladım</a>
     </div>
 </div>
 <div id="popover-content-donate" class="d-none">
     <p>200 film oyladın, artık usta bir topcorn.io kullanıcısısın. Faydalı olduğumuzu düşünüyorsan, bize bağış yapmayı buradan düşünebilirsin.</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-done">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-all-done">Anladım</a>
     </div>
 </div>
 @endif
