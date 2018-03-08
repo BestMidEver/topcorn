@@ -209,8 +209,8 @@
                     <div class=" h-100 d-flex flex-column justify-content-between">
                         <div class="py-2 small">
                             <div class="text-dark pb-1"
+                            <div
                             @if(Auth::User()->tt_navbar < 100)>{{ __('navbar.like_us_on_facebook') }}</div>
-                            <div class="d-inline"
                             data-toggle="popover" data-placement="left" title='Bize Yardım Et<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="like"
                             @endif
                             ><div class="fb-like mr-1 mb-2" data-href="https://www.facebook.com/topcorn.io/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div></div>
