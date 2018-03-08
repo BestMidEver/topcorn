@@ -176,7 +176,7 @@ class RatedController extends Controller
             ->where('bans.id', '=', null)
             ->inRandomOrder();
 
-            return $return_val->take(10)->get();
+            return $return_val->take(50)->get();
         }
         
     }
