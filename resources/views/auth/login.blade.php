@@ -77,7 +77,7 @@ pass={
             <div class="col-md-3">
                 <div class="form-control-feedback">
                     @if ($errors->has('email'))
-                        <span class="text-danger align-middle">
+                        <span class="text-danger align-middle float-right float-md-none">
                             <i class="fas fa-exclamation-circle"></i> {{ $errors->first('email') }}
                         </span>
                     @endif
@@ -102,7 +102,7 @@ pass={
             <div class="col-md-3">
                 <div class="form-control-feedback">
                     @if ($errors->has('password'))
-                        <span class="text-danger align-middle">
+                        <span class="text-danger align-middle float-right float-md-none">
                             <i class="fas fa-exclamation-circle"></i> {{ $errors->first('password') }}
                         </span>
                     @endif

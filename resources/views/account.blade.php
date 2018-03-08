@@ -86,7 +86,7 @@
 				        <div class="form-control-feedback">
 				            @if ($errors->has('name'))
 				                <span class="text-danger align-middle float-right float-md-none">
-				                    <i class="fa fa-close"> {{ $errors->first('name') }}</i>
+				                    <i class="fas fa-exclamation-circle"></i> {{ $errors->first('name') }}
 				                </span>
 				            @endif
 				        </div>

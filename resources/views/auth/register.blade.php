@@ -73,7 +73,7 @@ pass={
             </div>
             <div class="col-md-3">
                 <div class="form-control-feedback">
-                    <span class="text-danger align-middle">
+                    <span class="text-danger align-middle float-right float-md-none">
                         @if ($errors->has('name'))
                             <i class="fas fa-exclamation-circle"></i> {{ $errors->first('name') }}
                         @endif
@@ -97,7 +97,7 @@ pass={
             </div>
             <div class="col-md-3">
                 <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
+                        <span class="text-danger align-middle float-right float-md-none">
                             @if ($errors->has('email'))
                                 <i class="fas fa-exclamation-circle"></i> {{ $errors->first('email') }}
                             @endif
@@ -143,11 +143,11 @@ pass={
             </div>
             <div class="col-md-3">
                 <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
-                            @if ($errors->has('password'))
-                                <i class="fas fa-exclamation-circle"></i> {{ $errors->first('password') }}
-                            @endif
-                        </span>
+                    <span class="text-danger align-middle float-right float-md-none">
+                        @if ($errors->has('password'))
+                            <i class="fas fa-exclamation-circle"></i> {{ $errors->first('password') }}
+                        @endif
+                    </span>
                 </div>
             </div>
         </div>
