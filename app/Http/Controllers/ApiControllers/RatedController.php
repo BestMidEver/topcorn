@@ -154,9 +154,31 @@ class RatedController extends Controller
             'r2.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
-        );
+        )->take(10)->get();
 
-        return $return_val->take(10)->get();
+        if($return_val) return $return_val;
+        else{
+            $return_val = DB::table('movies')
+            ->leftjoin('rateds as rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'movies.id')
+            ->where('rateds.user_id', Auth::id());
+            })
+            ->where('rateds.user_id', null)
+            ->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', '=', 'movies.id')
+                ->where('laters.user_id', Auth::id());
+            })
+            ->where('laters.id', '=', null)
+            ->leftjoin('bans', function ($join) {
+                $join->on('bans.movie_id', '=', 'movies.id')
+                ->where('bans.user_id', Auth::id());
+            })
+            ->where('bans.id', '=', null)
+            ->inRandomOrder();
+
+            return $return_val->take(10)->get()
+        }
+        
     }
 
 
