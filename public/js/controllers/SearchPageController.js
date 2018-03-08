@@ -466,7 +466,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.watched_movie_number = pass.watched_movie_number;
 
-	if(pass.tt_navbar < 50 || pass.tt_movie < 50){
+	if(pass.tt_navbar < 100 || pass.tt_movie < 50){
 		if(pass.tt_navbar<50){
 			if(pass.tt_navbar==0)location.hash="tooltip-navbar-quickvote";
 			else if(pass.tt_navbar==1)location.hash="tooltip-navbar-search";
@@ -480,6 +480,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
 				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
 			}
+		}else if(pass.tt_navbar<100){
+			if(pass.watched_movie_number>49)location.hash="tooltip-footer-like";
+			else if(pass.watched_movie_number>199)location.hash="tooltip-footer-donate";
 		}
 
 		window.addEventListener("hashchange", function(){ 
@@ -522,9 +525,28 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				.then(function(response){
 					if(location.href.indexOf('topcorn.io/movie')>-1) location.hash='#tooltip-movie-share';
 				});
-			}else if(location.hash.indexOf('cancel-tooltips')>-1){
+			}else if(location.hash.indexOf('tooltip-footer-like')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				setTimeout(function() {
+					$('#like').popover('show');
+				}, 2500);
+			}else if(location.hash.indexOf('tooltip-footer-donate')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('navbar', 70)
+				.then(function(response){
+					setTimeout(function() {
+						$('#donate').popover('show');
+					}, 2500);
+				});
+			}else if(location.hash.indexOf('navbar-tooltips-all-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 100)
+				.then(function(response){
+					console.log(response);
+				});
+			}else if(location.hash.indexOf('cancel-tooltips')>-1){
+				$("[data-toggle=popover]").popover('hide');
+				rate.tt_manipulate('navbar', 50)
 				.then(function(response){
 					console.log(response);
 				});
@@ -566,7 +588,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				});
 			}else if(location.hash.indexOf('cancel-movie-tooltips')>-1){
 				$("[data-toggle=popover]").popover('hide');
-				rate.tt_manipulate('movie', 100)
+				rate.tt_manipulate('movie', 60)
 				.then(function(response){
 					console.log(response);
 				});
@@ -577,15 +599,23 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		}, false);
 	}
 
-	if(pass.watched_movie_number < 50){
+	if(pass.tt_navbar < 100){
+		console.log(pass)
 		$scope.get_watched_movie_number = function(){
 			rate.get_watched_movie_number()
 			.then(function(response){
 				console.log(response);
 				$scope.watched_movie_number=response.data;
-				$scope.calculate_percentage();
+				if($scope.watched_movie_number<50) $scope.calculate_percentage();
+				$scope.cry_for_help();
 			});
 		}
+
+		$scope.cry_for_help = function(){
+			if($scope.watched_movie_number>49 && pass.tt_navbar < 70) location.hash="tooltip-footer-like";
+			else if($scope.watched_movie_number>199 && pass.tt_navbar < 100) location.hash="tooltip-footer-donate";
+		}
+		if(pass.tt_navbar>49)$scope.cry_for_help();
 
 		$scope.calculate_percentage = function(){
 			$scope.percentage = pass.lang=='tr' ? '%'+$scope.watched_movie_number*2 : $scope.watched_movie_number*2+'%';

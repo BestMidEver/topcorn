@@ -10,10 +10,8 @@ pass={
 	"constants_angular_slider_min_vote_count":"{{config('constants.angular_slider.vote_count')}}",
 	"with_user_id":"{!! session('with_user_id') !!}",
 	"with_user_name":"{!! session('with_user_name') !!}",
-	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
-	@endif
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/genres.js"></script>

@@ -12,10 +12,8 @@ pass={
 	"show_crew":"{{ Auth::User()->show_crew }}", 
 	"advanced_filter":"{{ Auth::User()->advanced_filter }}", 
 	"theme":"{{ Auth::User()->theme }}", 
-	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
-	@endif
 };
 </script>
 @endsection

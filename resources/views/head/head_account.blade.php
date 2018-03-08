@@ -11,10 +11,8 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"api_key":"{{config('constants.api_key')}}",
 	"with_message":"{{session()->has('tutorial_504')}}",
-	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
-	@endif
 };
 </script>
 @endsection
