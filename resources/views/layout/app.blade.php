@@ -230,28 +230,28 @@
     <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-search">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-search">Anladım</a>
     </div>
 </div>
 <div id="popover-content-search" class="d-none">
     <p>"Yok benim belli filmlerim var. Beni oradan tanı." dersen de, hemen sol üstten dilediğin filmi aratıp izledim butonuyla oylama yapabilirsin.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-recommendations">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-recommendations">Anladım</a>
     </div>
 </div>
 <div id="popover-content-recommendations" class="d-none">
     <p>İşte en güzel yerdeyiz! Bu linkten tam senlik filmlere sol baştan sıralı olarak ulaşabilirsin.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-profile">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-profile">Anladım</a>
     </div>
 </div>
 <div id="popover-content-profile" class="d-none">
     <p>Profilini sevdiğin filmlerin görselleriyle kişiselleştirebilirsin. Ama unutma, ne kadar çok film oylarsan, o kadar çok verim alırsın.</p>
     <div class="text-right">
         <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-percentage">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-percentage">Anladım</a>
     </div>
 </div>
 <div id="popover-content-percentage" class="d-none">
