@@ -469,14 +469,21 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 	if(pass.tt_navbar < 50 || pass.tt_movie < 50 || pass.tt_search < 50){
 		if(pass.tt_navbar<50){
-			if(pass.tt_navbar==0)location.hash="tooltip-quickvote";
-			else if(pass.tt_navbar==1)location.hash="tooltip-search";
-			else if(pass.tt_navbar==2)location.hash="tooltip-recommendations";
-			else if(pass.tt_navbar==3)location.hash="tooltip-profile";
-			else if(pass.tt_navbar==4)location.hash="tooltip-percentage";
+			if(pass.tt_navbar==0)location.hash="tooltip-navbar-quickvote";
+			else if(pass.tt_navbar==1)location.hash="tooltip-navbar-search";
+			else if(pass.tt_navbar==2)location.hash="tooltip-navbar-recommendations";
+			else if(pass.tt_navbar==3)location.hash="tooltip-navbar-profile";
+			else if(pass.tt_navbar==4)location.hash="tooltip-navbar-percentage";
 		}else if(location.href.indexOf('topcorn.io/movie/')>-1){
 			if(pass.tt_movie<50){
 				if(pass.tt_movie==0)location.hash="tooltip-movie-share";
+				else if(pass.tt_movie==1)location.hash="tooltip-movie-search";
+				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
+				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
+			}
+		}else if(location.href.indexOf('topcorn.io/search/')>-1){
+			if(pass.tt_movie<50){
+				if(pass.tt_movie==0)location.hash="tooltip-search-vote";
 				else if(pass.tt_movie==1)location.hash="tooltip-movie-search";
 				else if(pass.tt_movie==2)location.hash="tooltip-movie-cast";
 				else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
@@ -485,36 +492,37 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 		window.addEventListener("hashchange", function(){ 
 			console.log(location.hash)
-			if(location.hash.indexOf('tooltip-quickvote')>-1){
+			if(location.hash.indexOf('tooltip-navbar-quickvote')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				$('#quickvote').popover('show');
-			}else if(location.hash.indexOf('tooltip-search')>-1){
+			}else if(location.hash.indexOf('tooltip-navbar-search')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 1)
 				.then(function(response){
 					console.log(response);
 					$('#search').popover('show');
 				});
-			}else if(location.hash.indexOf('tooltip-recommendations')>-1){
+			}else if(location.hash.indexOf('tooltip-navbar-recommendations')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 2)
 				.then(function(response){
 					console.log(response);
 					$('#recommendations').popover('show');
 				});
-			}else if(location.hash.indexOf('tooltip-profile')>-1){
+			}else if(location.hash.indexOf('tooltip-navbar-profile')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 3)
 				.then(function(response){
 					console.log(response);
 					$('#profile').popover('show');
 				});
-			}else if(location.hash.indexOf('tooltip-percentage')>-1){
+			}else if(location.hash.indexOf('tooltip-navbar-percentage')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				rate.tt_manipulate('navbar', 4)
 				.then(function(response){
 					console.log(response);
-					$('#percentage').popover('show');
+					if(pass.watched_movie_number>49) $('#percentage').popover('show');
+					else location.hash="#navbar-tooltips-done";
 				});
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
 				$("[data-toggle=popover]").popover('hide');
@@ -577,7 +585,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			}else if(location.hash.indexOf('tooltip-search-vote')>-1){
 				$("[data-toggle=popover]").popover('hide');
 				setTimeout(function() {
-					$('#vote').popover('show');
+					$('#vote1').popover('show');
 				}, 2500);
 			}else if(location.hash.indexOf('tooltip-search-watchlater')>-1){
 				$("[data-toggle=popover]").popover('hide');
