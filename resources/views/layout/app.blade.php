@@ -194,7 +194,7 @@
                     <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __('navbar.privacy') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/donation"
                     @if(Auth::User()->tt_navbar < 100)
-                    data-toggle="popover" data-placement="right" title='Bize Yardım Et<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="donate"
+                    data-toggle="popover" data-placement="top" title='Bize Yardım Et<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="donate"
                     @endif
                     >{{ __('navbar.donation') }}</a></div>
                 </div>
