@@ -513,7 +513,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				rate.tt_manipulate('navbar', 4)
 				.then(function(response){
 					console.log(response);
-					if(pass.watched_movie_number>49) $('#percentage').popover('show');
+					if(pass.watched_movie_number<50) $('#percentage').popover('show');
 					else location.hash="#navbar-tooltips-done";
 				});
 			}else if(location.hash.indexOf('navbar-tooltips-done')>-1){
