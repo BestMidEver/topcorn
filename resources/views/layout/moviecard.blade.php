@@ -7,10 +7,10 @@
 					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
 							<div class="text-white">
-								<small>Film zevkine göre</small>
-								<span class="d-block"><span class="h5 text-warning">%@{{movie.percent}}</span><small> eşleşme</small></span>
+								<small>{{ __('general.according_to_your_taste') }}</small>
+								<span class="d-block"><span class="h5 text-warning">%@{{movie.percent}}</span><small> {{ __('general.match') }}</small></span>
 								@if(Auth::User()->advanced_filter)
-								<small><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} puan</small>
+								<small><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
 								@endif
 							</div>
 						</div>
@@ -52,34 +52,3 @@
 		</div>
 	</div>
 </div>
-
-@if(Auth::User()->tt_movie < 50)
-<div id="popover-content-vote" class="d-none">
-    <p>Filmi izlediysen buradan oyla.</p>
-    <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-search">Anladım</a>
-    </div>
-</div>
-<div id="popover-content-watchlater" class="d-none">
-    <p>Sonra izleme listene eklemek için buraya tıkla.</p>
-    <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-cast">Anladım</a>
-    </div>
-</div>
-<div id="popover-content-ban" class="d-none">
-    <p>Filmi banlamak için buraya tıkla..</p>
-    <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-review">Anladım</a>
-    </div>
-</div>
-<div id="popover-content-movieinfo" class="d-none">
-    <p>Daha detaylı bilgi için ise resme tıkla.</p>
-    <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#movie-tooltips-done">Anladım</a>
-    </div>
-</div>
-@endif

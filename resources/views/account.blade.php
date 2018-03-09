@@ -94,7 +94,7 @@
 				</div>
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="image_quality" ng-mouseenter="hovering_cove=true" ng-mouseleave="hovering_cove=false" data-toggle="tooltip" data-placement="top" title="{{ __('general.cover_photo_help') }}">{{ __('general.cover_photo') }} <span ng-show="!hovering_cove"><i class="far fa-question-circle"></i></span><span ng-show="hovering_cove"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="image_quality" ng-mouseenter="hovering_cove=true" ng-mouseleave="hovering_cove=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_cover_photo') }}">{{ __('general.cover_photo') }} <span ng-show="!hovering_cove"><i class="far fa-question-circle"></i></span><span ng-show="hovering_cove"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -111,7 +111,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="image_quality" ng-mouseenter="hovering_prof=true" ng-mouseleave="hovering_prof=false" data-toggle="tooltip" data-placement="top" title="{{ __('general.profile_photo_help') }}">{{ __('general.profile_photo') }} <span ng-show="!hovering_prof"><i class="far fa-question-circle"></i></span><span ng-show="hovering_prof"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="image_quality" ng-mouseenter="hovering_prof=true" ng-mouseleave="hovering_prof=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_profile_pic') }}">{{ __('general.profile_photo') }} <span ng-show="!hovering_prof"><i class="far fa-question-circle"></i></span><span ng-show="hovering_prof"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">

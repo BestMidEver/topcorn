@@ -194,7 +194,7 @@
                     <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __('navbar.privacy') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/donation"
                     @if(Auth::User()->tt_navbar < 100)
-                    data-toggle="popover" data-placement="top" title='Bize Yardım Et<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="donate"
+                    data-toggle="popover" data-placement="top" title='{{ __("tutorial.cry_for_help") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="donate"
                     @endif
                     >{{ __('navbar.donation') }}</a></div>
                 </div>
@@ -215,7 +215,7 @@
                             <div class="text-dark pb-1">{{ __('navbar.like_us_on_facebook') }}</div>
                             <div class="d-inline"
                             @if(Auth::User()->tt_navbar < 100)
-                            data-toggle="popover" data-placement="left" title='Bize Yardım Et<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="like"
+                            data-toggle="popover" data-placement="left" title='{{ __("tutorial.cry_for_help") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="like"
                             @endif
                             >
                                 <div class="fb-like mr-1 mb-2" data-href="https://www.facebook.com/topcorn.io/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
@@ -236,51 +236,51 @@
 
 @if(Auth::User()->tt_navbar < 100)
 <div id="popover-content-quickvote" class="d-none">
-    <p>Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.</p>
-    <p>Tek yapman gereken, filmi izlediysen sana yakın gelen şeçeneği işaretlemek.</p>
+    <p>{{ __("tutorial.quickvote1") }}</p>
+    <p>{{ __("tutorial.quickvote2") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-search">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-search">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-search" class="d-none">
-    <p>"Yok benim belli filmlerim var. Beni oradan tanı." dersen de, hemen sol üstten dilediğin filmi aratıp izledim butonuyla oylama yapabilirsin.</p>
+    <p>{{ __("tutorial.search") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-recommendations">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-recommendations">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-recommendations" class="d-none">
-    <p>İşte en güzel yerdeyiz! Bu linkten tam senlik filmlere sol baştan sıralı olarak ulaşabilirsin.</p>
+    <p>{{ __("tutorial.recommendations") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-profile">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-profile">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-profile" class="d-none">
-    <p>Profilini sevdiğin filmlerin görselleriyle kişiselleştirebilirsin. Ama unutma, ne kadar çok film oylarsan, o kadar çok verim alırsın.</p>
+    <p>{{ __("tutorial.profile") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-percentage">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-navbar-percentage">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-percentage" class="d-none">
-    <p>Profilini tamamlamak için en az 50 film oylamalısın. Korkma hepsini şimdi oylamak zorunda değilsin.</p>
+    <p>{{ __("tutorial.percentage") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-done">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-done">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-like" class="d-none">
-    <p>50 film oyladın! topcorn.io'yu kullanmak için hazırsın. Gelişmelerden haberdar olmak için bizi takip et.</p>
+    <p>{{ __("tutorial.like") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-footer-donate">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-footer-donate">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-donate" class="d-none">
-    <p>200 film oyladın, artık usta bir topcorn.io kullanıcısısın. Faydalı olduğumuzu düşünüyorsan, bize buradan bağış yapmayı düşünebilirsin.</p>
+    <p>{{ __("tutorial.donate") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-all-done">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-all-done">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 @endif

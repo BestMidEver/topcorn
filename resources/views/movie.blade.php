@@ -17,13 +17,13 @@
 							</div>
 							<div class="col p-2 text-right">
 								<div ng-if="user_movie_record.percent > 0">
-									<small class="text-white">Film zevkine göre</small>
+									<small class="text-white">{{ __("general.according_to_your_taste") }}</small>
 									<div>
-										<span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span>
+										<span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
 									</div>
 									@if(Auth::User()->advanced_filter)
 									<div>
-										<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>puan</small></span>
+										<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
 									</div>
 									@endif
 								</div>
@@ -52,11 +52,11 @@
 						<div class="col pb-2 pr-2 text-right">
 							<div ng-if="user_movie_record.percent > 0">
 								<div>
-									<small class="text-white">Film zevkine göre </small><span class="text-warning h4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>eşleşme</small></span>
+									<small class="text-white">{{ __("general.according_to_your_taste") }} </small><span class="text-warning h4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
 								</div>
 								@if(Auth::User()->advanced_filter)
 								<div>
-									<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>puan</small></span>
+									<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
 								</div>
 								@endif
 							</div>
@@ -101,7 +101,7 @@
 		<div class="d-flex flex-column">
 			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2"
 			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="google"
+            data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="google"
             @endif
 			>@{{movie.title}}</h1></a></div>
 		</div>
@@ -114,7 +114,7 @@
 			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id!=null}" ng-click="this_ban()"><div><i class="fa fa-ban"></i></div>{{ __('general.ban') }}</button>
 			<a ng-href="{{config('constants.facebook.share_website')}}/movie/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook"
 			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="share"
+            data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="share"
             @endif
 			><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</a>
 		</div>
@@ -190,7 +190,7 @@
 <!--Cast Section-->
 <div
 			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="cast"
+            data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="cast"
             @endif
 			>
 <div class="container-fluid px-0 mt-5" id="cast" ng-if="movie.credits.cast.length > 0">
@@ -263,7 +263,7 @@
 		<span class="h5 mb-0 pr-2">{{ __('general.reviews') }}</span>
 		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"
 			@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" data-placement="bottom" title='İpucu<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
+            data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             @endif
 			><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</a>
 	</div>
@@ -304,31 +304,31 @@
 
 @if(Auth::User()->tt_movie < 50)
 <div id="popover-content-share" class="d-none">
-    <p>Filmi buradan facebookta paylaş.</p>
+    <p>{{ __("tutorial.share") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-search">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-search">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-google" class="d-none">
-    <p>Filmin ismine tıklayarak arat.</p>
+    <p>{{ __("tutorial.google") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-cast">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-cast">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-cast" class="d-none">
-    <p>Filmin kadrosunu da buradan görebilirsin.</p>
+    <p>{{ __("tutorial.cast") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-review">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-review">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-review" class="d-none">
-    <p>Filme dair görüşünü buradan paylaş.</p>
+    <p>{{ __("tutorial.review") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">İpuçlarını Gösterme</a>
-        <a class="btn btn-sm btn-link d-inline" href="#movie-tooltips-done">Anladım</a>
+        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#movie-tooltips-done">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 @endif

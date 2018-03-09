@@ -4,6 +4,7 @@ return [
     '404' => 'Sayfa bulunamadı.',
     'a_z' => 'A -> Z',
     'according_to_my_taste' => 'Benim Zevkime Göre',                                    //recommendations,
+    'according_to_your_taste' => 'Film zevkine göre',                                   //recommendations,  //////////////
     'acting' => 'Oyunculuk',            
     'active' => 'Etkin',                                                                //accountinterface,
     'actor' => 'Oyuncu',            
@@ -11,6 +12,7 @@ return [
     'add' => 'Ekle',                                                                    //recommendations,
     'add_person' => 'Kullanıcı Ekle',                                                   //recommendations,
     'add_review' => 'Eleştiri Ekle',                                                    //movie,
+    'advanced_recommendations' => 'Gelişmiş Tavsiye Ayarları',                          //accountinterface,     //////////
     'all' => 'Hepsi',                                                                   //profile,
     'author' => 'Yaratıcı',         
     'ban' => 'Banla',           
@@ -28,7 +30,6 @@ return [
     'continue_without_facebook' => 'Facebook Olmadan Devam Et',                         //home
     'country' => 'Ülke',                                                                //donation,
     'cover_photo' => 'Kapak Fotoğrafı',                                                 //account,
-    'cover_photo_help' => '"Bayıldım" Dediklerinden',                            //account,
     'create_new_password' => 'Yeni Şifre Oluştur',                                      //reset,
     'crew' => 'Set Ekibi',          
     'current_password' => 'Şimdiki Şifre',                                              //accountpassword,
@@ -36,6 +37,7 @@ return [
     'director' => 'Yönetmen',
     'directors' => 'Yönetmenler',
     'disabled' => 'Devre Dışı',                                                         //accountinterface,
+    'display' => 'Görüntü',                                                             //accountinterface,   ///////////////
     'definitely_dont_recommend' => 'Sakın',                                 //ratemodal, profile,
     'definitely_recommend' => 'Bayıldım',                                        //ratemodal, profile,
     'dollar_account' => 'Dolar Hesabı',                                                 //donation,
@@ -59,10 +61,12 @@ return [
     'image_quality' => 'Görsel Kalitesi',                                               //accountinterface,
     'interface' => 'Arayüz',                                                            //account,
     'its_title' => 'Adı',
+    'lang' => 'Dil',                                                                    //accountinterface, ///////////////////
     'language' => 'ORİJİNAL DİL',                                                       //recommendations_languages,
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
     'm' => 'dk.',
+    'match' => 'eşleşme',                                                               //recommendations, ///////////////////
     'margin_x_setting' => 'Tam Ekran',                                                  //accountinterface,
     'medium' => 'Orta',                                                                 //accountinterface,
     'minute' => 'dakika',
@@ -83,9 +87,11 @@ return [
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
     'open_new_tab' => 'Yeni Sekme',                                                     //accountinterface,
+    'options' => 'Seçenekler',                                                          //accountinterface,   //////////
     'or' => 'VEYA',                                                                     //login, register,
     'original_title' => 'Orijinal Adı',
     'original_language' => 'Orijinal Dili',
+    'pagination' => 'Sayfalama',                                                        //accountinterface, //////////
     'pagination_info' => 
         '{{in:suffix}} <span class="pr-2"> sonuç içinde</span> {{from:suffix}} - {{to:suffix}}',             //pagination,
     'password' => 'Şifre',                                                              //login, register, account,
@@ -93,6 +99,7 @@ return [
     'person' => 'Kişi',         
     'person_time' => 'oy',                                                              //movie,
     'person_times' => 'oy',                                                             //movie,
+    'point' => 'puan',                                                                  //recommendations, //////////////////////
     'previous' => 'Önceki',                                                             //pagination,
     'previous_parties' => 'Geçmiş Partiler',                                            //recommendations,
     'production' => 'Yapımcılık',           
@@ -100,7 +107,6 @@ return [
     'producer_country' => 'Yapımcı Ülke',           
     'profile' => 'Profil',                                                              //account,
     'profile_photo' => 'Profil Fotoğrafı',                                              //account,
-    'profile_photo_help' => '(Kapaktaki Filmin Oyuncularından)',                        //account,
     'read_all' => 'Hepsini oku',            
     'recipient_name' => 'Alıcının Adı',                                                 //donation,
     'recommend' => 'Başarılı',                                                          //ratemodal, profile,
@@ -122,8 +128,13 @@ return [
     'seen_movies' => 'İzlenilen Filmler',                                               //profile,
     'send_instructions' => 'Talimatları Gönder',                                        //email,
     'share' => 'Paylaş',            
+    'show_crew' => 'Film Ekibini Göster',                                               //accountinterface,   //////////////        
     'show_everyone' => 'Herkesi Göster',            
     'standard' => 'Standart',                                                           //accountinterface,  
+    'theme' => 'Tema',                                                                  //accountinterface,   /////////////
+    'theme_verydark' => 'Zifiri Karanlık',                                              //accountinterface,   /////////////
+    'theme_dark' => 'Karanlık',                                                         //accountinterface,   /////////////
+    'theme_light' => 'Aydınlık',                                                        //accountinterface,   /////////////
     'top_rated' => 'En Yüksek Oy Alan',         
     'trailer' => 'FRAGMAN',         
     'try_account' => 'Türk Lirası Hesabı',                                              //donation,

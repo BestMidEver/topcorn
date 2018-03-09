@@ -58,7 +58,7 @@ pass={
                 <div class="form-control-feedback">
                         <span class="text-danger align-middle">
                             @if ($errors->has('email'))
-                                <i class="fa fa-close"> {{ $errors->first('email') }}</i>
+                                <i class="fas fa-exclamation-circle"></i> {{ $errors->first('email') }}
                             @endif
                         </span>
                 </div>

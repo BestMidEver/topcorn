@@ -31,7 +31,7 @@
 				{{ csrf_field() }}
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Dil</div>
+						<div class="h6 text-muted">{{ __('general.lang') }}</div>
 				    </div>
 				</div>
 				<div class="row">
@@ -93,12 +93,12 @@
 
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Görüntü</div>
+						<div class="h6 text-muted">{{ __('general.display') }}</div>
 				    </div>
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="theme" ng-mouseenter="hovering_them=true" ng-mouseleave="hovering_them=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_theme') }}">Tema <span ng-show="!hovering_them"><i class="far fa-question-circle"></i></span><span ng-show="hovering_them"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="theme" ng-mouseenter="hovering_them=true" ng-mouseleave="hovering_them=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_theme') }}">{{ __('general.theme') }} <span ng-show="!hovering_them"><i class="far fa-question-circle"></i></span><span ng-show="hovering_them"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -107,9 +107,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-paint-brush"></i></div>
 				                </div>
 				                <select class="form-control" id="theme" name="theme" ng-model="theme" ng-change="check_save_disabled()">
-									<option value=2>Zifiri Karanlık</option>
-									<option value=1>Karanlık</option>
-									<option value=0>Aydınlık</option>
+									<option value=2>{{ __('general.theme_verydark') }}</option>
+									<option value=1>{{ __('general.theme_dark') }}</option>
+									<option value=0>{{ __('general.theme_light') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -156,7 +156,7 @@
 
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Seçenekler</div>
+						<div class="h6 text-muted">{{ __('general.options') }}</div>
 				    </div>
 				</div>
 				<div class="row">
@@ -179,7 +179,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="pagination" ng-mouseenter="hovering_pagi=true" ng-mouseleave="hovering_pagi=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pagination') }}">Sayfalama <span ng-show="!hovering_pagi"><i class="far fa-question-circle"></i></span><span ng-show="hovering_pagi"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="pagination" ng-mouseenter="hovering_pagi=true" ng-mouseleave="hovering_pagi=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_pagination') }}">{{ __('general.pagination') }} <span ng-show="!hovering_pagi"><i class="far fa-question-circle"></i></span><span ng-show="hovering_pagi"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -198,7 +198,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="show_crew" ng-mouseenter="hovering_crew=true" ng-mouseleave="hovering_crew=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_show_crew') }}">Film Ekibini Göster <span ng-show="!hovering_crew"><i class="far fa-question-circle"></i></span><span ng-show="hovering_crew"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="show_crew" ng-mouseenter="hovering_crew=true" ng-mouseleave="hovering_crew=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_show_crew') }}">{{ __('general.show_crew') }} <span ng-show="!hovering_crew"><i class="far fa-question-circle"></i></span><span ng-show="hovering_crew"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -216,7 +216,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="advanced_filter" ng-mouseenter="hovering_adva=true" ng-mouseleave="hovering_adva=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_advanced_filter') }}">Gelişmiş Tavsiye Ayarları <span ng-show="!hovering_adva"><i class="far fa-question-circle"></i></span><span ng-show="hovering_adva"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="advanced_filter" ng-mouseenter="hovering_adva=true" ng-mouseleave="hovering_adva=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_advanced_filter') }}">{{ __('general.advanced_recommendations') }} <span ng-show="!hovering_adva"><i class="far fa-question-circle"></i></span><span ng-show="hovering_adva"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
