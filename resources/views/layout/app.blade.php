@@ -50,8 +50,10 @@
 </head>
 
 
-
-<body>
+@if(Auth::User->theme==0) $theme='';
+@elseif(Auth::User->theme==1) $theme='drk';
+@elseif(Auth::User->theme==2) $theme='ptc';
+<body class="{{$theme}}">
 
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
