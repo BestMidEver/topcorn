@@ -175,6 +175,19 @@ class accountController extends Controller
 
 
 
+	public function change_interface($mode = '')
+	{
+		$user = Auth::User();
+		if($mode == 'drk') $user->theme=0;
+		else $user->theme=1;
+		$user->save();
+
+		return back();
+	}
+
+
+
+
     public function get_cover_pics($lang)
     {
     	$return_val = DB::table('rateds')
