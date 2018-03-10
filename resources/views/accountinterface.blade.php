@@ -107,7 +107,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-paint-brush"></i></div>
 				                </div>
 				                <select class="form-control" id="theme" name="theme" ng-model="theme" ng-change="check_save_disabled()">
+				                	@if(1==2)
 									<option value=2>{{ __('general.theme_verydark') }}</option>
+									@endif
 									<option value=1>{{ __('general.theme_dark') }}</option>
 									<option value=0>{{ __('general.theme_light') }}</option>
 								</select>
