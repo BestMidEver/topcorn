@@ -163,7 +163,6 @@ class accountController extends Controller
 		$user->margin_x_setting = $request->margin_x_setting;
 		$user->open_new_tab = $request->open_new_tab;
 		$user->advanced_filter = $request->advanced_filter;
-		$user->theme = $request->theme;
 		$user->show_crew = $request->show_crew;
 		$user->pagination = $request->pagination;
 		$user->save();

@@ -98,27 +98,6 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="theme" ng-mouseenter="hovering_them=true" ng-mouseleave="hovering_them=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_theme') }}">{{ __('general.theme') }} <span ng-show="!hovering_them"><i class="far fa-question-circle"></i></span><span ng-show="hovering_them"><i class="fas fa-question-circle"></i></span></label>
-				    </div>
-				    <div class="col-md-6">
-				        <div class="form-group">
-				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-paint-brush"></i></div>
-				                </div>
-				                <select class="form-control" id="theme" name="theme" ng-model="theme" ng-change="check_save_disabled()">
-				                	@if(1==2)
-									<option value=2>{{ __('general.theme_verydark') }}</option>
-									@endif
-									<option value=1>{{ __('general.theme_dark') }}</option>
-									<option value=0>{{ __('general.theme_light') }}</option>
-								</select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
 				        <label for="image_quality" ng-mouseenter="hovering_imag=true" ng-mouseleave="hovering_imag=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_image_quality') }}">{{ __('general.image_quality') }} <span ng-show="!hovering_imag"><i class="far fa-question-circle"></i></span><span ng-show="hovering_imag"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
