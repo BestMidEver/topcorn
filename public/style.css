@@ -101,8 +101,8 @@ body.drk .card{background: #000!important;    border-color: #000!important; colo
 body.drk .card-footer{background: #242424!important;border-color: #000;}
 body.drk .text-muted{color: #888!important;}
 body.drk .nav-link.active{color: #dcdcdc!important;}
-body.drk .btn-outline-secondary{color: #888!important;}
-body.drk .btn-outline-secondary:hover{background: #000!important;color:#dcdcdc;}
+body.drk .btn-outline-secondary{color: #888;}
+body.drk .btn-outline-secondary:hover{background: #000;color:#dcdcdc;}
 body.drk .rz-bubble{color:#dcdcdc!important;}
 body.drk .text-dark{color:#dcdcdc!important;}
 body.drk .card a:hover{text-decoration-color: #888;}
