@@ -55,8 +55,8 @@ if(Auth::user()->margin_x_setting == 2) $full_screen = '-fluid px-1';
 else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
 else $full_screen = '';
 
-if(Auth::User()->theme==0) $theme='drk';
-elseif(Auth::User()->theme==1) $theme='ptc';
+if(Auth::User()->theme==1) $theme='drk';
+elseif(Auth::User()->theme==2) $theme='ptc';
 else $theme='';
 ?>
 <body class="{{$theme}}">
