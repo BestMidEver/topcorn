@@ -99,3 +99,4 @@ body.drk .card{background: #000!important;    border-color: #000!important; colo
 body.drk .card-footer{background: #242424!important;}
 body.drk .text-muted{color: #888!important;}
 body.drk .nav-link.active{color: #dcdcdc!important;}
+body .nav-link.active{color: #111!important;}
