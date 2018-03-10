@@ -50,7 +50,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
 					.then(function(response){
 						console.log(response.data);
-						if(!response.data.results.length>0){
+						/*if(!response.data.results.length>0){
 							$scope.reset_tab();
 							rate.search_people(pass.constants_api_key, pass.lang, temp, $scope.page)
 							.then(function(response){
@@ -60,14 +60,14 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 									$scope.inside_get_page_data_person(response);
 								}
 							});
-						}else $scope.inside_get_page_data_movie(response);
+						}else */$scope.inside_get_page_data_movie(response);
 					});
 					break;
 				case 'person':
 					rate.search_people(pass.constants_api_key, pass.lang, temp, $scope.page)
 					.then(function(response){
 						console.log(response.data);
-						if(!response.data.results.length>0){
+						/*if(!response.data.results.length>0){
 							$scope.reset_tab();
 							rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
 							.then(function(response){
@@ -77,7 +77,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 									$scope.inside_get_page_data_movie(response);
 								}
 							});
-						}else $scope.inside_get_page_data_person(response);
+						}else */$scope.inside_get_page_data_person(response);
 					});
 					break;
 				case 'user':
