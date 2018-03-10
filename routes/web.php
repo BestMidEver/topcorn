@@ -148,7 +148,7 @@ Route::get('account/interface/{lang?}', 'PageControllers\accountController@inter
 Route::post('account', 'PageControllers\accountController@change_profile');
 Route::post('account/password', 'PageControllers\accountController@change_password');
 Route::post('account/interface', 'PageControllers\accountController@change_interface');
-Route::get('theme/{mode}', 'PageControllers\accountController@theme');
+Route::get('theme/{mode?}', 'PageControllers\accountController@theme');
 Route::get('api/get_cover_pics/{lang}','PageControllers\accountController@get_cover_pics')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 //////////////////////////////////////////////////////////////////////////////////////////
