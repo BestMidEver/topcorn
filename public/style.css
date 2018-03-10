@@ -91,5 +91,7 @@ button:focus{box-shadow: none!important;}
 	.nowrap {  white-space: nowrap;}
 	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }
 }
-body.drk{background: #111;color: #9d9d9d;}
+body.drk{background: #111;color: #dcd9dc;}
 body.drk .background-lightgrey{background: #242424!important;}
+body.drk input{background: #000!important;    border-color: #000!important;}
+body.drk .input-group-text{background: #111!important;    border-color: #111!important;}
