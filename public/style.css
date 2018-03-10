@@ -101,3 +101,4 @@ body.drk .text-muted{color: #888!important;}
 body.drk .nav-link.active{color: #dcdcdc!important;}
 body .nav-link.active{color: #111!important;}
 body .btn-outline-secondary{color: #888!important;}
+body .btn-outline-secondary:hover{background: #000!important;}
