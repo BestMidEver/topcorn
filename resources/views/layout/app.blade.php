@@ -57,7 +57,7 @@ else $full_screen = '';
 
 if(Auth::User()->theme==0) $theme='drk';
 elseif(Auth::User()->theme==1) $theme='ptc';
-else(Auth::User()->theme==2) $theme='';
+else $theme='';
 ?>
 <body class="{{$theme}}">
 
