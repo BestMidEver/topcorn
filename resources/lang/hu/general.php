@@ -12,7 +12,7 @@ return [
     'add' => 'Hozzáad',                                                     //recommendations,
     'add_person' => 'Felhasználó hozzáadása',                               //recommendations,
     'add_review' => 'Vélemény hozzáadása',                                  //movie,
-	'advanced_recommendations' => 'Fejlesztett ajánlások'
+	'advanced_recommendations' => 'Fejlesztett ajánlások',
     'all' => 'Mind',                                                        //profile,
     'author' => 'Szerző',                                                   //movie
     'ban' => 'Tiltás',                                                      //movie
@@ -61,7 +61,7 @@ return [
     'image_quality' => 'Képminőség',                                        //accountinterface,
     'interface' => 'Kezelőfelület',                                         //account,
     'its_title' => 'cím',                                                   //movie
-	'lang' => 'Nyelv'
+	'lang' => 'Nyelv',
     'language' => 'EREDETI NYELV',                                          //recommendations_languages,
     'login_via_facebook' => 'Belépés Facebook-on keresztül',                //login, register,
     'low' => 'Alacsony adatforgalom',                                       //accountinterface,
@@ -87,7 +87,7 @@ return [
     'novel' => 'Regény',                                                    //person,
     'official_website' => 'Hivatalos honlap',                               //movie,
     'open_new_tab' => 'Megnyitás új lapon',                                 //accountinterface,
-	'options' => 'Lehetőségek'
+	'options' => 'Lehetőségek',
     'or' => 'VAGY',                                                         //login, register,
     'original_title' => 'Eredeti cím',                                      //movie,
     'original_language' => 'Eredeti nyelv',                                 //movie,
