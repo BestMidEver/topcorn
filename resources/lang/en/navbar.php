@@ -20,4 +20,6 @@ return [
     'privacy' => 'Privacy Policy',
     'like_us_on_facebook' => 'Like Us on Facebook',
     'all_rights_reserved' => 'All Rights Reserved.',  
+    'activate_nightmode' => 'Activate Night Mode',  
+    'deactivate_nightmode' => 'Deactivate Night Mode',  
 ];

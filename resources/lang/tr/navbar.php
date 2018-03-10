@@ -19,5 +19,7 @@ return [
     'donation' => 'Bağış',
     'privacy' => 'Gizlilik Politikası',
     'like_us_on_facebook' => 'Bizi Facebook\'ta Beğenin',
-    'all_rights_reserved' => 'Her Hakkı Saklıdır.',                                
+    'all_rights_reserved' => 'Her Hakkı Saklıdır.',    
+    'activate_nightmode' => 'Gece Moduna Geç',  
+    'deactivate_nightmode' => 'Gece Modundan Çık',                              
 ];
