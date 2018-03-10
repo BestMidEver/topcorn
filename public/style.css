@@ -22,7 +22,7 @@ body .nav-link.active{color: #111!important;}
 .position-relative{position: relative;}
 .addban:hover {color:#d9534f;background-color: #ececec;}, .fa{color:#d9534f;}
 .addseen:hover {color:#5cb85c;background-color: #ececec;}, .fa{color:#5cb85c;}
-.addlater:hover {color:#f0ad4e!important;background-color: #ececec;}, .fa{color:#f0ad4e;}
+.addlater:hover {color:#f0ad4e!important;background-color: #ececec;}, .fa{color:#f0ad4e!important;}
 .addfacebook:hover {color:#4267b2;background-color: #ececec;}, .fa{color:#4267b2;}
 .btn-vot{background: #fff!important;color: #000!important;}
 .divfooter{position: absolute;bottom: .5rem!important;width: 100%;}
