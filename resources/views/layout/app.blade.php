@@ -50,9 +50,9 @@
 </head>
 
 
-@if(Auth::User()->theme==0) $theme='';
-@elseif(Auth::User()->theme==1) $theme='drk';
-@elseif(Auth::User()->theme==2) $theme='ptc';
+@if(Auth::User()->theme==0) $theme='drk';
+@elseif(Auth::User()->theme==1) $theme='ptc';
+@else(Auth::User()->theme==2) $theme='';
 @endif
 <body class="{{$theme}}">
 
