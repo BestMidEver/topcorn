@@ -23,7 +23,7 @@ body .nav-link.active{color: #111!important;}
 .addban:hover {color:#d9534f!important;background-color: #ececec;}, .fa{color:#d9534f!important;}
 .addseen:hover {color:#5cb85c!important;background-color: #ececec;}, .fa{color:#5cb85c!important;}
 .addlater:hover {color:#f0ad4e!important;background-color: #ececec;}, .fa{color:#f0ad4e!important;}
-.addfacebook:hover {color:#4267b2;background-color: #ececec;}, .fa{color:#4267b2;}
+.addfacebook:hover {color:#4267b2!important;background-color: #ececec;}, .fa{color:#4267b2!important;}
 .btn-vot{background: #fff!important;color: #000!important;}
 .divfooter{position: absolute;bottom: .5rem!important;width: 100%;}
 .votecard .card-img{z-index: 5;}
