@@ -56,7 +56,6 @@ else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-
 else $full_screen = '';
 
 if(Auth::User()->theme==1) $theme='drk';
-elseif(Auth::User()->theme==2) $theme='ptc';
 else $theme='';
 ?>
 <body class="{{$theme}}">
@@ -127,6 +126,9 @@ else $theme='';
                     </li>
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/account">{{ __('navbar.account') }}</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a class="nav-link" href="/theme/{{$theme}}">{{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
