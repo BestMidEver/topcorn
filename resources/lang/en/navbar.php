@@ -19,7 +19,5 @@ return [
     'donation' => 'Donate',
     'privacy' => 'Privacy Policy',
     'like_us_on_facebook' => 'Like Us on Facebook',
-    'all_rights_reserved' => 'All Rights Reserved.',
-    'graduate' => 'Continue the Tutorial',                                
-    'start_course' => 'Start the Tutorial',    
+    'all_rights_reserved' => 'All Rights Reserved.',  
 ];

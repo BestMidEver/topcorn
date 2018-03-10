@@ -19,7 +19,5 @@ return [
     'donation' => 'Bağış',
     'privacy' => 'Gizlilik Politikası',
     'like_us_on_facebook' => 'Bizi Facebook\'ta Beğenin',
-    'all_rights_reserved' => 'Her Hakkı Saklıdır.',
-    'graduate' => 'Kursa Devam',                                   
-    'start_course' => 'Kursa Başla',                                   
+    'all_rights_reserved' => 'Her Hakkı Saklıdır.',                                
 ];

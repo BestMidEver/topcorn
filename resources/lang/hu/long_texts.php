@@ -7,5 +7,10 @@ return [
     'hint_image_quality' => 'Kiválaszthatod a képminőséget az internetkapcsolatnak megfelelően. Ez a beállítás nem érinti a filmelőzeteseket.',
     'hint_full_screen' => 'Csökkentheted az oldal jobb és bal szélén lévő helyet.',
     'hint_open_new_tab' => 'A film, az emberek és a felhasználók megnyitása új lapon.',
-    'the_question' => 'Tegyük fel, hogy ezt a filmet még nem láttad! Szeretnéd, hogy a Topcorn ajánlja neked?',
+    'hint_theme' => 'Tercihinize göre sitenin arka planının rengini değiştirebilirsiniz.',////////////////
+    'hint_pagination' => 'Tavsiyeler sayfasında bir sayfada gösterilen film sayısıdır.',////////////////
+    'hint_show_crew' => 'Film detay sayfasında oyunculara ilave olarak film ekibini de gösterir.',////////////////
+    'hint_advanced_filter' => 'Daha detaylı tavsiye almanızı sağlar.',////////////////
+    'hint_cover_photo' => 'Bayıldığın filmlerden birisinin kapak fotoğrafını seç.',                            ////////////
+    'hint_profile_pic' => 'Facebook profil resmini veya bir oyuncunun fotoğrafını profil fotoğrafın olarak seç.'//////////
 ]; 
