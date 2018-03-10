@@ -50,10 +50,15 @@
 </head>
 
 
-@if(Auth::User()->theme==0) $theme='drk';
-@elseif(Auth::User()->theme==1) $theme='ptc';
-@else(Auth::User()->theme==2) $theme='';
-@endif
+<?php
+if(Auth::user()->margin_x_setting == 2) $full_screen = '-fluid px-1';
+else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
+else $full_screen = '';
+
+if(Auth::User()->theme==0) $theme='drk';
+elseif(Auth::User()->theme==1) $theme='ptc';
+else(Auth::User()->theme==2) $theme='';
+?>
 <body class="{{$theme}}">
 
     <div id="fb-root"></div>
@@ -67,11 +72,6 @@
 
 
 
-    <?php
-    if(Auth::user()->margin_x_setting == 2) $full_screen = '-fluid px-1';
-    else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
-    else $full_screen = '';
-    ?>
     <nav class="navbar navbar-expand-md navbar-dark bg-night px-md-0 z-1041" ng-init="start_course='{{ __('navbar.start_course') }}';graduate='{{ __('navbar.graduate') }}'">
         <div class="container{{ $full_screen }}">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
