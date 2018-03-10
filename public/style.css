@@ -95,7 +95,7 @@ body .nav-link.active{color: #111!important;}
 }
 body.drk{background: #111;color: #dcdcdc;}
 body.drk .background-lightgrey{background: #242424!important;}
-body.drk input{background: #000!important;    border-color: #000!important;}
+body.drk input{background: #000!important;    border-color: #000!important;color:#dcdcdc;}
 body.drk .input-group-text{background: #222!important;    border-color: #000!important;}
 body.drk .card{background: #000!important;    border-color: #000!important; color:#dcdcdc;}
 body.drk .card-footer{background: #242424!important;border-color: #000;}
