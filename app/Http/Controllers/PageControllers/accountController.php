@@ -175,7 +175,7 @@ class accountController extends Controller
 
 
 
-	public function change_interface($mode = '')
+	public function theme($mode = '')
 	{
 		$user = Auth::User();
 		if($mode == 'drk') $user->theme=0;
