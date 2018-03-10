@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 return [
     'donation' => 'A Topcorn.io, egy olyan projekt, ami a filmkedvelők segítségével működik.  Támogass te is minket, hogy jobb eredményeket és hasznos élményt nyújtson.',
@@ -7,10 +7,10 @@ return [
     'hint_image_quality' => 'Kiválaszthatod a képminőséget az internetkapcsolatnak megfelelően. Ez a beállítás nem érinti a filmelőzeteseket.',
     'hint_full_screen' => 'Csökkentheted az oldal jobb és bal szélén lévő helyet.',
     'hint_open_new_tab' => 'A film, az emberek és a felhasználók megnyitása új lapon.',
-    'hint_theme' => 'A weboldal háttérszíneit a Te preferenciád szerint módosíthatod.',
-    'hint_pagination' => 'Az ajánlások oldalán megjelenő filmek száma.',
-    'hint_show_crew' => 'A film oldalán a szereplőkön kívül a stáb összes tagját is mutassa.',
-    'hint_advanced_filter' => 'Az ajánlások oldalon még több részletet és opciót kínál számodra.',
-    'hint_cover_photo' => 'Válasssz borítóképet a kedvenc filmjeid közül.',   
-    'hint_profile_pic' => 'Profilképként beállíthatod a Facebook profilképedet vagy egy színész fotóját.'
+    'hint_theme' => 'Tercihinize göre sitenin arka planının rengini değiştirebilirsiniz.',////////////////
+    'hint_pagination' => 'Tavsiyeler sayfasında bir sayfada gösterilen film sayısıdır.',////////////////
+    'hint_show_crew' => 'Film detay sayfasında oyunculara ilave olarak film ekibini de gösterir.',////////////////
+    'hint_advanced_filter' => 'Daha detaylı tavsiye almanızı sağlar.',////////////////
+    'hint_cover_photo' => 'Bayıldığın filmlerden birisinin kapak fotoğrafını seç.',                            ////////////
+    'hint_profile_pic' => 'Facebook profil resmini veya bir oyuncunun fotoğrafını profil fotoğrafın olarak seç.'//////////
 ]; 

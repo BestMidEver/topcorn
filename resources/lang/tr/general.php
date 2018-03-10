@@ -109,7 +109,7 @@ return [
     'profile_photo' => 'Profil Fotoğrafı',                                              //account,
     'read_all' => 'Hepsini oku',            
     'recipient_name' => 'Alıcının Adı',                                                 //donation,
-    'recommend' => 'İyi',                                                               //ratemodal, profile,
+    'recommend' => 'Güzel',                                                             //ratemodal, profile,
     'remember_me' => 'Beni hatırla',                                                    //login,
     'remove' => 'Sil',                                                                  //recommendations,
     'revenue' => 'Gelir',           

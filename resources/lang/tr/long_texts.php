@@ -12,6 +12,6 @@ return [
     'hint_pagination' => 'Tavsiyeler sayfasında bir sayfada gösterilen film sayısıdır.',
     'hint_show_crew' => 'Film detay sayfasında oyunculara ilave olarak film ekibini de gösterir.',
     'hint_advanced_filter' => 'Tavsiyelerde daha fazla seçenek ve bilgi yükler.',
-    'hint_cover_photo' => 'Bayıldığın filmlerden birisinin kapak fotoğrafını seç.',                            
+    'hint_cover_photo' => 'Efsanevi filmlerinden birisini seç.',                            
     'hint_profile_pic' => 'Facebook profil resmini veya bir oyuncunun fotoğrafını profil fotoğrafın olarak seç.'
 ];
