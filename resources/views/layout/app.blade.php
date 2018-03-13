@@ -70,16 +70,16 @@ else $theme='';
     }(document, 'script', 'facebook-jssdk'));</script>
 
 
-    <a class="d-xl-inline" href="/">
+    <!--<a class="d-xl-inline" href="/">
         <img src="/images/topcorn_logo.png" class="indian-spot" alt="">
-    </a>
+    </a>-->
     <nav class="navbar navbar-expand-md navbar-dark bg-night px-md-0 z-1041" ng-init="start_course='{{ __('navbar.start_course') }}';graduate='{{ __('navbar.graduate') }}'">
         <div class="container{{ $full_screen }}">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand ml-auto d-none d-md-inline d-xl-none" href="/">
-                <img src="/images/topcorn_logo.png" width="50" height="50" alt="">
+            <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
+                <img src="/images/topcorn_logo.png" width="77" height="77">
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
