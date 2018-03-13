@@ -71,7 +71,7 @@ else $theme='';
 
 
     <a class="d-xl-inline indian-spot" href="/">
-        <img src="/images/topcorn_logo.png" width="100" height="100" alt="">
+        <img src="/images/topcorn_logo.png" alt="">
     </a>
     <nav class="navbar navbar-expand-md navbar-dark bg-night px-md-0 z-1041" ng-init="start_course='{{ __('navbar.start_course') }}';graduate='{{ __('navbar.graduate') }}'">
         <div class="container{{ $full_screen }}">
