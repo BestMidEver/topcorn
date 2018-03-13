@@ -79,7 +79,7 @@ else $theme='';
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
-                <img src="/images/topcorn_logo.png" width="77" height="77">
+                <img src="/images/topcorn_logo.png" width="66" height="66">
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
