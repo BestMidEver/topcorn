@@ -70,8 +70,8 @@ else $theme='';
     }(document, 'script', 'facebook-jssdk'));</script>
 
 
-    <a class="d-xl-inline indian-spot" href="/">
-        <img src="/images/topcorn_logo.png" width="80" height="80" alt="">
+    <a class="d-xl-inline" href="/">
+        <img src="/images/topcorn_logo.png" class="indian-spot" alt="">
     </a>
     <nav class="navbar navbar-expand-md navbar-dark bg-night px-md-0 z-1041" ng-init="start_course='{{ __('navbar.start_course') }}';graduate='{{ __('navbar.graduate') }}'">
         <div class="container{{ $full_screen }}">
