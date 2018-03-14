@@ -86,4 +86,4 @@
 		</div>
 	</div>
 </div>
-<img ng-if="modalmovie.is_quick_rate" class="d-none" ng-src="{{config('constants.image.rate_modal')[$image_quality]}}@{{next_modalmovie.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
+<img class="d-none" ng-src="{{config('constants.image.rate_modal')[$image_quality]}}@{{next_modalmovie.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
