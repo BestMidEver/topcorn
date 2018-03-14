@@ -106,6 +106,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 			}
 		});
 	};
+	$scope.get_quick_rate();
 
 	$scope.next_quick_rate=function()
 	{
@@ -120,7 +121,6 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 			$scope.get_quick_rate();
 		}
 	};
-	$scope.next_quick_rate();
 
 	$scope.previous_quick_rate_movie=null;
 	$scope.previous_quick_rate=function()
