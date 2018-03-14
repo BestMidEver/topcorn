@@ -101,10 +101,15 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 			}
 		});
 	};
+	$scope.get_quick_rate();
 
 	$scope.next_quick_rate=function()
 	{
-		if($scope.modalmovies.length>0){
+		if($scope.modalmovies.length>1){
+			$scope.modalmovie = $scope.modalmovies[0];
+			$scope.next_modalmovie = $scope.modalmovies[1];
+			$scope.modalmovie.is_quick_rate=true;
+		}else if($scope.modalmovies.length==1){
 			$scope.modalmovie = $scope.modalmovies[0];
 			$scope.modalmovie.is_quick_rate=true;
 		}else{
