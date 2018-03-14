@@ -108,6 +108,9 @@ body .tab1 .nav-link.active{color: #111!important;}
 	.review{column-count:3;}
 	.nowrap {  white-space: nowrap;}
 	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }
+	.card-columns {
+        column-count: 2;
+    }
 }
 body.drk{background: #111;color: #dcdcdc;}
 body.drk .background-lightgrey{background: #242424!important;}
