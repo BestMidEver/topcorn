@@ -112,6 +112,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		if($scope.modalmovies.length>1){
 			$scope.modalmovie = $scope.modalmovies[0];
 			$scope.next_modalmovie = $scope.modalmovies[1];
+			console.log($scope.next_modalmovie)
 			$scope.modalmovie.is_quick_rate=true;
 		}else if($scope.modalmovies.length==1){
 			$scope.modalmovie = $scope.modalmovies[0];
