@@ -112,7 +112,6 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		if($scope.modalmovies.length>1){
 			$scope.modalmovie = $scope.modalmovies[0];
 			$scope.next_modalmovie = $scope.modalmovies[1];
-			console.log($scope.next_modalmovie)
 			$scope.modalmovie.is_quick_rate=true;
 		}else if($scope.modalmovies.length==1){
 			$scope.modalmovie = $scope.modalmovies[0];
@@ -121,6 +120,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 			$scope.get_quick_rate();
 		}
 	};
+	$scope.next_quick_rate();
 
 	$scope.previous_quick_rate_movie=null;
 	$scope.previous_quick_rate=function()
