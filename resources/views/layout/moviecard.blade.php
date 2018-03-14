@@ -1,5 +1,5 @@
 <div class="no-gutters">
-	<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in movies">
+	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in movies">
 		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-sm-2">
 			<a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 				<div class="position-relative text-center">
