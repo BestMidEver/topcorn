@@ -90,6 +90,12 @@ body .tab1 .nav-link.active{color: #111!important;}
 	.nowrap {  white-space: normal;}
 	.left_0-right-0{left: 0;right: 0;}
 	.popover{	display:none!important; }
+	.card-group {
+	    -webkit-box-orient: horizontal;
+	    -webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	    flex-flow: row wrap;
+	}
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.review{column-count:2;}
