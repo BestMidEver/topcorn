@@ -5,6 +5,7 @@ return [
     'a_z' => 'A -> Z',                                                      //person,
     'according_to_my_taste' => 'According to My Taste',                     //recommendations,
     'according_to_your_taste' => 'According to your taste',                 //recommendations,
+    'according_to_themoviedb' => 'According to everyone',                   //recommendations,
     'acting' => 'Acting',                                                   //person,
     'active' => 'Active',                                                   //accountinterface,
     'actor' => 'Actor',
