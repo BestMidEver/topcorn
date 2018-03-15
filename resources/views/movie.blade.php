@@ -21,10 +21,12 @@
 									<div>
 										<span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
 									</div>
-									@if(Auth::User()->advanced_filter)
+									@if(Auth::check())
+										@if(Auth::User()->advanced_filter)
 									<div>
 										<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
 									</div>
+										@endif
 									@endif
 								</div>
 							</div>
@@ -54,10 +56,12 @@
 								<div>
 									<small class="text-white">{{ __("general.according_to_your_taste") }} </small><span class="text-warning h4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
 								</div>
-								@if(Auth::User()->advanced_filter)
+								@if(Auth::check())
+									@if(Auth::User()->advanced_filter)
 								<div>
 									<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
-								</div>
+									</div>
+									@endif
 								@endif
 							</div>
 						</div>
