@@ -5,9 +5,11 @@
 @section('body')
 <div class="col mt-1 mb-2 mt-md-4">
 	<h5 class="d-inline align-middle my-2">{{ __('navbar.recommendations') }}</h5>
+	@if(auth::check())
 	<button class="btn btn-warning btn-sm text-white ml-3 my-2" type="button" disabled>{{ Auth::user()->name }}</button>
 	<button class="btn btn-warning btn-sm text-white mx-1 my-2" type="button" ng-repeat="user in party_members" ng-click="remove_from_party(user.user_id);">@{{user.name}} <i class="fa fa-times"></i></button>
 	<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i> {{ __('general.add_person') }}</button>
+	@endif
 </div>
 
 <div class="collapse container-fluid background-lightgrey" id="collapseAdd">
@@ -82,7 +84,8 @@
 		rz-slider-high="slider.maxValue"
 		rz-slider-options="slider.options"></rzslider>
 	</div>
-	@if(Auth::User()->advanced_filter)
+	@if(auth::check())
+		@if(Auth::User()->advanced_filter)
 	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">MİNİMUM OY SAYISI</p>
 		<rzslider rz-slider-model="slider_vote_count.value"
@@ -111,6 +114,7 @@
 			</label>
 		</div>
 	</div>
+		@endif
 	@endif
 	<div class="text-center pb-1">
 		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseFilter"><i class="fa fa-angle-up" ng-click="scroll_to_filter()"></i></button>
