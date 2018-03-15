@@ -32,10 +32,14 @@ class recommendationsController extends Controller
 
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-            return view('recommendations', compact('image_quality', 'target', 'watched_movie_number'));
         }else{
-            return view('recommendations');
+            $image_quality = 1;
+            $target = '_blank';
+            $watched_movie_number = 0;
         }
+
+
+        return view('recommendations', compact('image_quality', 'target', 'watched_movie_number'));
     }
 
     
