@@ -9,8 +9,10 @@
 							<div class="text-white">
 								<small>{{ __('general.according_to_your_taste') }}</small>
 								<span class="d-block"><span class="h5 text-warning">%@{{movie.percent}}</span><small> {{ __('general.match') }}</small></span>
-								@if(Auth::User()->advanced_filter)
+								@if(Auth::check())
+									@if(Auth::User()->advanced_filter)
 								<small><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
+									@endif
 								@endif
 							</div>
 						</div>
