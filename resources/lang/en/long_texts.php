@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'donation' => 'Topcorn.io is a project that has survived with the support of the people who loves cinema. Help us to provide you better results and more useful experience.',
+    'donation' => 'topcorn.io is a project that has survived with the support of the people who loves cinema. Help us to provide you better results and more useful experience.',
     'hint_secondary_language' => 'If there is information that can not be found in the \'Primary Language\', they are going to be filled in with this language. You will also see the reviews which are written in this language and the trailers in this language too.',
     'hint_hover_title' => 'When you hover your mouse cursor over the movie links, you can see the title of the movie in the original language of the movie or in your secondary language. This setting does not affect the search page.',
     'hint_image_quality' => 'You can choose the image quality according to your internet connection. This setting does not affect trailers.',
@@ -15,15 +15,15 @@ return [
     'hint_profile_pic' => 'Choose an actor/actress from your cover movie.',
     'home' => array(
       'h1' => 'Too many movies, no time!',
-      't11' => 'Topcorn.io understands your movie taste and recommends movies according to it. Let\'s get started!',
-      't12' => 'With Topcorn.io it\'s now easy to make the right choice from any kind of movies.',
+      't11' => 'topcorn.io understands your movie taste and recommends movies according to it. Let\'s get started!',
+      't12' => 'With topcorn.io it\'s now easy to make the right choice from any kind of movies.',
 
       'h2' => 'Let\'s get to know each other!',
       't21' => 'The more movies you have, the better we know you. And of course the movie list we will prepare for you will be so accurate.',
       't22' => 'Quick Vote can accelerate this process, you can be buried in the movies right away.',
 
       'h3' => 'Special films for you, they wait for you!',
-      't31' => 'topCorn.io has been specially developed for moviegoers who know what they want and watch.',
+      't31' => 'topcorn.io has been specially developed for moviegoers who know what they want and watch.',
       't32' => 'To know you better, vote the movies that you have watched and leave the rest to topcorn.io.',
 
       'h4' => 'Completely free!',
