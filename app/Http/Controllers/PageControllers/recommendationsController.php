@@ -178,8 +178,8 @@ class recommendationsController extends Controller
                 'movies.vote_average',
                 'movies.vote_count',
                 'movies.release_date',
-                'movies.tr_title as title',
-                'movies.tr_poster_path as poster_path'
+                'movies.'.App::getlocale().'_title as title',
+                'movies.'.App::getlocale().'_poster_path as poster_path'
             )
             ->where('movies.vote_count', '>', 1500)
             ->where('movies.vote_average', '>', config('constants.suck_page.min_vote_average'));
