@@ -20,11 +20,9 @@ pass={
 <script src="/js/code_translations/{{ App::getlocale() }}/languages.js"></script>
 @endsection
 
-@if(Auth::check())
-	@section('angular_slider')
-	@include('cdn.angular_slider')
-	@endsection
-@endif
+@section('angular_slider')
+@include('cdn.angular_slider')
+@endsection
 
 @section('underscore')
 @include('cdn.underscore')

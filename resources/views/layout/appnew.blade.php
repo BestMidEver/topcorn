@@ -30,6 +30,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script>window.angular || document.write('<script src="/js/fallbackcdn/angular.min.js"><\/script>')</script>
     
+    @yield('angular_slider')
+    
     @yield('underscore')
 
     @yield('angular_sanitize')
