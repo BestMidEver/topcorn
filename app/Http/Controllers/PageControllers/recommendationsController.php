@@ -181,7 +181,7 @@ class recommendationsController extends Controller
                 'movies.tr_title as title',
                 'movies.tr_poster_path as poster_path'
             )
-            ->where('movies.vote_count', '>', $request->f_vote)
+            ->where('movies.vote_count', '>', 1500)
             ->where('movies.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
             if($tab=='popular'){
