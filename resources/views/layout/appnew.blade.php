@@ -77,12 +77,12 @@
         <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
             <img src="/images/topcorn_logo.png" width="50" height="50" alt="">
         </a>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link d-md-none" href="/home"><i class="fa fa-home" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.home') }}</span></a>
             </li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list"></i><span class="d-none d-sm-inline"> {{ __('navbar.recommendations') }}</span></a>
             </li>
