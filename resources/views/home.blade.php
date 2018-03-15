@@ -9,10 +9,10 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Film çok, zaman yok!</h1>
-						<p class="lead">Topcorn.io senin film zevkini anlar, senin seveceğini anladığı filmleri sana sıralar. Hazırsan başlayalım!</p>
+						<h1 class="display-4">{{ __('long_texts.home.h1') }}</h1>
+						<p class="lead">{{ __('long_texts.home.t11') }}</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">Topcorn.io ile her türden, her dilden filmler arasından EN doğru seçimi yapmak artık çok kolay.</p>
+						<p class="my-4 text-muted">{{ __('long_texts.home.t12') }}</p>
 						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/@{{fb_remember}}"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
 						<p class="text-center mb-0"><a class="btn btn-link text-black" href="/register">{{ __('general.continue_without_facebook') }}</a></p>
 					</div>
@@ -39,10 +39,10 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Tanışalım!</h1>
-						<p class="lead">Ne kadar film oylarsan, seni o kadar iyi tanırız. Ve tabii sana hazırlayacağımız filmlistesi de o kadar isabetli olur.</p>
+						<h1 class="display-4">{{ __('long_texts.home.h2') }}</h1>
+						<p class="lead">{{ __('long_texts.home.t21') }}</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">Peş peşe oylama bu süreci hızlandırabilir, hemen filmlere gömülebilirsin.</p>
+						<p class="my-4 text-muted">{{ __('long_texts.home.t22') }}</p>
 					</div>
 				</div>
 			</div>
@@ -53,10 +53,10 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Sana özel filmler, seni bekler!</h1>
-						<p class="lead">topcorn.io ne istediğini ve ne izlediğini bilen filmseverler için özel olarak geliştirilmiştir.</p>
+						<h1 class="display-4">{{ __('long_texts.home.h3') }}</h1>
+						<p class="lead">{{ __('long_texts.home.t31') }}</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">Sizi daha yakından tanımamız için filmleri oylayın, gerisini topcorn.io'ya bırakın.</p>
+						<p class="my-4 text-muted">{{ __('long_texts.home.t32') }}</p>
 					</div>
 				</div>
 			</div>
@@ -81,8 +81,8 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Tamamen ücretsiz!</h1>
-						<p class="lead">Daha ne duruyorsun?</p>
+						<h1 class="display-4">{{ __('long_texts.home.h4') }}</h1>
+						<p class="lead">{{ __('long_texts.home.t41') }}</p>
 						<hr class="my-4">
 						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/@{{fb_remember}}" role="button"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
 						<p class="text-center mb-0"><a class="btn btn-link text-black" href="/register" role="button">{{ __('general.continue_without_facebook') }}</a></p>
