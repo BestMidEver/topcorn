@@ -16,22 +16,26 @@ class recommendationsController extends Controller
 {
     public function recommendations($user = '')
     {
-        if($user != ''){
-            $with_user = User::where(['id' => $user])->first();
-            if($with_user){
-                Session::flash('with_user_id', $user);
-                Session::flash('with_user_name', $with_user->name);
+        if(Auth::check()){
+            if($user != ''){
+                $with_user = User::where(['id' => $user])->first();
+                if($with_user){
+                    Session::flash('with_user_id', $user);
+                    Session::flash('with_user_name', $with_user->name);
+                }
+                return redirect('/recommendations');
             }
-            return redirect('/recommendations');
+
+            $image_quality = Auth::User()->image_quality;
+
+            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+
+            $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+            return view('recommendations', compact('image_quality', 'target', 'watched_movie_number'));
+        }else{
+            return view('recommendations');
         }
-
-        $image_quality = Auth::User()->image_quality;
-
-        $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
-
-        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
-
-        return view('recommendations', compact('image_quality', 'target', 'watched_movie_number'));
     }
 
     
