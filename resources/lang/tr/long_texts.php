@@ -20,7 +20,7 @@ return [
       't12' => 'Topcorn.io ile her türden, her dilden filmler arasından EN doğru seçimi yapmak artık çok kolay.',
 
       'h2' => 'Tanışalım!',
-      't21' => 'Ne kadar film oylarsan, seni o kadar iyi tanırız. Ve tabii sana hazırlayacağımız filmlistesi de o kadar isabetli olur.'
+      't21' => 'Ne kadar film oylarsan, seni o kadar iyi tanırız. Ve tabii sana hazırlayacağımız filmlistesi de o kadar isabetli olur.',
       't22' => 'Peş peşe oylama bu süreci hızlandırabilir, hemen filmlere gömülebilirsin.',
 
       'h3' => 'Sana özel filmler, seni bekler!',
@@ -28,6 +28,6 @@ return [
       't32' => 'Sizi daha yakından tanımamız için filmleri oylayın, gerisini topcorn.io\'ya bırakın.',
 
       'h4' => 'Tamamen ücretsiz!',
-      't41' => 'Daha ne duruyorsun?',
+      't41' => 'Daha ne duruyorsun?'
     ),
 ];
