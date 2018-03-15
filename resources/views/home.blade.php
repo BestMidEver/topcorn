@@ -39,10 +39,10 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Profilini güçlendir</h1>
-						<p class="lead">Peşpeşe oylama özelliği, en sıklıkla oylanan filmleri sana arka arkaya sorarak profilini hızla güçlendirmeni sağlar.</p>
+						<h1 class="display-4">Tanışalım!</h1>
+						<p class="lead">Ne kadar film oylarsan, seni o kadar iyi tanırız. Ve tabii sana hazırlayacağımız filmlistesi de o kadar isabetli olur.</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">Kendi belli başlı filmlerini de arama yaparak ekleyebilirsin tabi!</p>
+						<p class="my-4 text-muted">Peş peşe oylama bu süreci hızlandırabilir, hemen filmlere gömülebilirsin.</p>
 					</div>
 				</div>
 			</div>
@@ -53,10 +53,10 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Zevkine uygun bütün filmleri gör!</h1>
-						<p class="lead">Topcorn.io, seçici filmseverler için oluşturulmuş bir platformdur. Film zevkinizi modülümüzden oylayın, gerisini bize bırakın!</p>
+						<h1 class="display-4">Sana özel filmler, seni bekler!</h1>
+						<p class="lead">topcorn.io ne istediğini ve ne izlediğini bilen filmseverler için özel olarak geliştirilmiştir.</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">Tavsiye listesini isteğinize göre daraltmak için film süzgecini kullanabilirsin!</p>
+						<p class="my-4 text-muted">Sizi daha yakından tanımamız için filmleri oylayın, gerisini topcorn.io'ya bırakın.</p>
 					</div>
 				</div>
 			</div>
