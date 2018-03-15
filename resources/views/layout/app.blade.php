@@ -1,8 +1,5 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}" ng-app="MyApp" ng-controller="@yield('controllername')">
-<?php
-  header("Cache-Control: max-age=2592000"); //30days (60sec * 60min * 24hours * 30days)
-?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
