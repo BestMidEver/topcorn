@@ -49,8 +49,10 @@ class ProfileController extends Controller
             }else{
                 $hover_title = 'original_title';
             }
+            $pagin=Auth::User()->pagination;
         }else{
             $hover_title = 'original_title';
+            $pagin=24;
         }
 
         $return_val = DB::table('rateds')
@@ -88,7 +90,7 @@ class ProfileController extends Controller
             $return_val = $return_val->where('rateds.rate', $rate);
         }
 
-        return $return_val->paginate(Auth::User()->pagination);
+        return $return_val->paginate($pagin);
     }    
 
 
