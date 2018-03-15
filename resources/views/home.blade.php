@@ -12,8 +12,8 @@
 						<h1 class="display-4">Film çok, zaman yok!</h1>
 						<p class="lead">Topcorn.io senin film zevkini anlar, senin seveceğini anladığı filmleri sana sıralar. Hazırsan başlayalım!</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">Topcorn.io ile her türden, her dilden filmler arasından EN doğru seçimi yapmak, filmfiltre ile senin elinde</p>
-						<p class="text-center"><a class="btn btn-warning btn-lg" href="/login"><i class="fa fa-facebook text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
+						<p class="my-4 text-muted">Topcorn.io ile her türden, her dilden filmler arasından EN doğru seçimi yapmak artık çok kolay.</p>
+						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/@{{fb_remember}}"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
 						<p class="text-center mb-0"><a class="btn btn-link text-black" href="/register">{{ __('general.continue_without_facebook') }}</a></p>
 					</div>
 				</div>
@@ -39,10 +39,10 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Pek Akıllı.</h1>
-						<p class="lead">Peşpeşe oylama özelliği, yeni tanıştığınız biriyle sinema zevkiniz üzerine sohbet etmek gibidir. Hangi filmleri izlemiş olabileceğini tahmin ederek profilini geliştirmene yardımcı olur.</p>
+						<h1 class="display-4">Profilini güçlendir</h1>
+						<p class="lead">Peşpeşe oylama özelliği, en sıklıkla oylanan filmleri sana arka arkaya sorarak profilini hızla güçlendirmeni sağlar.</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">İşin ilginci, tamamen ücretsiz! Filmseversen, bizi de seversin. Hoş geldin!</p>
+						<p class="my-4 text-muted">Kendi belli başlı filmlerini de arama yaparak ekleyebilirsin tabi!</p>
 					</div>
 				</div>
 			</div>
@@ -53,10 +53,10 @@
 			<div class="col-12 col-lg-6">
 				<div class="h-100 d-flex flex-column justify-content-center">
 					<div>
-						<h1 class="display-4">Zevkinize göre!</h1>
+						<h1 class="display-4">Zevkine uygun bütün filmleri gör!</h1>
 						<p class="lead">Topcorn.io, seçici filmseverler için oluşturulmuş bir platformdur. Film zevkinizi modülümüzden oylayın, gerisini bize bırakın!</p>
 						<hr class="my-4">
-						<p class="my-4 text-muted">Zevkler ve renkler tartışılmaz!</p>
+						<p class="my-4 text-muted">Tavsiye listesini isteğinize göre daraltmak için film süzgecini kullanabilirsin!</p>
 					</div>
 				</div>
 			</div>
@@ -84,7 +84,7 @@
 						<h1 class="display-4">Tamamen ücretsiz!</h1>
 						<p class="lead">Daha ne duruyorsun?</p>
 						<hr class="my-4">
-						<p class="text-center"><a class="btn btn-warning btn-lg" href="/login" role="button"><i class="fa fa-facebook text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
+						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/@{{fb_remember}}" role="button"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
 						<p class="text-center mb-0"><a class="btn btn-link text-black" href="/register" role="button">{{ __('general.continue_without_facebook') }}</a></p>
 					</div>
 				</div>
