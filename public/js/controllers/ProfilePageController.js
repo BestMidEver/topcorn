@@ -71,137 +71,139 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-	$scope.quickvote=function()
-	{
-		$scope.get_quick_rate();
-		$('#myModal').modal('show');
-	};
-
-	$scope.get_quick_rate=function()
-	{
-		rate.get_quick_rate(pass.lang)
-		.then(function(response){
-			console.log(response.data)
-			if(response.data.length>0){
-				$scope.modalmovies=response.data;
-				$scope.next_quick_rate();
-				$("body").tooltip({ selector: '[data-toggle=tooltip]' });
-			}else{
-				$('#myModal').modal('hide');
-			}
-		});
-	};
-	$scope.get_quick_rate();
-
-	$scope.next_quick_rate=function()
-	{
-		if($scope.modalmovies.length>1){
-			$scope.modalmovie = $scope.modalmovies[0];
-			$scope.next_modalmovie = $scope.modalmovies[1];
-			$scope.modalmovie.is_quick_rate=true;
-		}else if($scope.modalmovies.length==1){
-			$scope.modalmovie = $scope.modalmovies[0];
-			$scope.modalmovie.is_quick_rate=true;
-		}else{
+	if(pass.is_auth==1)
+		$scope.quickvote=function()
+		{
 			$scope.get_quick_rate();
-		}
-	};
+			$('#myModal').modal('show');
+		};
 
-	$scope.previous_quick_rate_movie=null;
-	$scope.previous_quick_rate=function()
-	{
-		$scope.modalmovies.unshift($scope.previous_quick_rate_movie);
-		$scope.modalmovie = $scope.previous_quick_rate_movie;
+		$scope.get_quick_rate=function()
+		{
+			rate.get_quick_rate(pass.lang)
+			.then(function(response){
+				console.log(response.data)
+				if(response.data.length>0){
+					$scope.modalmovies=response.data;
+					$scope.next_quick_rate();
+					$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+				}else{
+					$('#myModal').modal('hide');
+				}
+			});
+		};
+		$scope.get_quick_rate();
+
+		$scope.next_quick_rate=function()
+		{
+			if($scope.modalmovies.length>1){
+				$scope.modalmovie = $scope.modalmovies[0];
+				$scope.next_modalmovie = $scope.modalmovies[1];
+				$scope.modalmovie.is_quick_rate=true;
+			}else if($scope.modalmovies.length==1){
+				$scope.modalmovie = $scope.modalmovies[0];
+				$scope.modalmovie.is_quick_rate=true;
+			}else{
+				$scope.get_quick_rate();
+			}
+		};
+
 		$scope.previous_quick_rate_movie=null;
-	};
+		$scope.previous_quick_rate=function()
+		{
+			$scope.modalmovies.unshift($scope.previous_quick_rate_movie);
+			$scope.modalmovie = $scope.previous_quick_rate_movie;
+			$scope.previous_quick_rate_movie=null;
+		};
 
-	$scope.quick_later=function()
-	{
-		if($scope.modalmovie.later_id == null){
-			rate.add_later($scope.modalmovie.id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.modalmovie.later_id=response.data.data.later_id;
-					$scope.modify_movies($scope.modalmovie);
-				}
-			});
-		}else{
-			rate.un_later($scope.modalmovie.later_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204){
-					$scope.modalmovie.later_id=null;
-					$scope.modify_movies($scope.modalmovie);
-				}
-			});
-		}
-	};
+		$scope.quick_later=function()
+		{
+			if($scope.modalmovie.later_id == null){
+				rate.add_later($scope.modalmovie.id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.modalmovie.later_id=response.data.data.later_id;
+						$scope.modify_movies($scope.modalmovie);
+					}
+				});
+			}else{
+				rate.un_later($scope.modalmovie.later_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204){
+						$scope.modalmovie.later_id=null;
+						$scope.modify_movies($scope.modalmovie);
+					}
+				});
+			}
+		};
 
-	$scope.quick_rate=function(rate_code)
-	{
-		console.log(rate_code)
-		if(rate_code != null){
-			rate.add_rate($scope.modalmovie.id, rate_code)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.modalmovie.rated_id=response.data.data.rated_id;
-					$scope.modalmovie.rate_code=response.data.data.rate;
-					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
-					$(".tooltip").hide();
-					$scope.modify_movies($scope.previous_quick_rate_movie);
-					$scope.next_quick_rate();
-					if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
-				}
-			});
-		}else if(rate_code == null){
-			rate.un_rate($scope.modalmovie.rated_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204){
-					$scope.modalmovie.rated_id=null;
-					$scope.modalmovie.rate_code=null;
-					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
-					$(".tooltip").hide();
-					$scope.modify_movies($scope.previous_quick_rate_movie);
-					$scope.next_quick_rate();
-					if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
-				}
-			});
-		}
-	};
+		$scope.quick_rate=function(rate_code)
+		{
+			console.log(rate_code)
+			if(rate_code != null){
+				rate.add_rate($scope.modalmovie.id, rate_code)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.modalmovie.rated_id=response.data.data.rated_id;
+						$scope.modalmovie.rate_code=response.data.data.rate;
+						$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
+						$(".tooltip").hide();
+						$scope.modify_movies($scope.previous_quick_rate_movie);
+						$scope.next_quick_rate();
+						if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
+					}
+				});
+			}else if(rate_code == null){
+				rate.un_rate($scope.modalmovie.rated_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204){
+						$scope.modalmovie.rated_id=null;
+						$scope.modalmovie.rate_code=null;
+						$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
+						$(".tooltip").hide();
+						$scope.modify_movies($scope.previous_quick_rate_movie);
+						$scope.next_quick_rate();
+						if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
+					}
+				});
+			}
+		};
 
-	$scope.quick_ban=function()
-	{
-		if($scope.modalmovie.ban_id == null){
-			rate.add_ban($scope.modalmovie.id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.modalmovie.ban_id=response.data.data.ban_id;
-					$scope.modify_movies($scope.modalmovie);
-				}
-			});
-		}else{
-			rate.un_ban($scope.modalmovie.ban_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204){
-					$scope.modalmovie.ban_id=null;
-					$scope.modify_movies($scope.modalmovie);
-				}
-			});
-		}
-	};
+		$scope.quick_ban=function()
+		{
+			if($scope.modalmovie.ban_id == null){
+				rate.add_ban($scope.modalmovie.id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.modalmovie.ban_id=response.data.data.ban_id;
+						$scope.modify_movies($scope.modalmovie);
+					}
+				});
+			}else{
+				rate.un_ban($scope.modalmovie.ban_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204){
+						$scope.modalmovie.ban_id=null;
+						$scope.modify_movies($scope.modalmovie);
+					}
+				});
+			}
+		};
 
-	$scope.modify_movies=function(movie){
-		if(_.where($scope.movies, {id:movie.id}).length>0){
-			temp=_.where($scope.movies, {id:movie.id})[0];
-			temp.ban_id=movie.ban_id;
-			temp.later_id=movie.later_id;
-			temp.rated_id=movie.rated_id;
-			temp.rate_code=movie.rate_code;
+		$scope.modify_movies=function(movie){
+			if(_.where($scope.movies, {id:movie.id}).length>0){
+				temp=_.where($scope.movies, {id:movie.id})[0];
+				temp.ban_id=movie.ban_id;
+				temp.later_id=movie.later_id;
+				temp.rated_id=movie.rated_id;
+				temp.rate_code=movie.rate_code;
+			}
 		}
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
