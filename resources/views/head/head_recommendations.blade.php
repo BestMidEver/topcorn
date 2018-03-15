@@ -10,11 +10,11 @@ pass={
 	"with_user_name":"{!! session('with_user_name') !!}",
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	@endif
-	"watched_movie_number":{{ $watched_movie_number }}
+	"watched_movie_number":{{ $watched_movie_number }},
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"constants_angular_slider_min_value":"{{config('constants.angular_slider.min_value')}}",
 	"constants_angular_slider_max_value":"{{config('constants.angular_slider.max_value')}}",
-	"constants_angular_slider_min_vote_count":"{{config('constants.angular_slider.vote_count')}}",
+	"constants_angular_slider_min_vote_count":"{{config('constants.angular_slider.vote_count')}}"
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/genres.js"></script>
