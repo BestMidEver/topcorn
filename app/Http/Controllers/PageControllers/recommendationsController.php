@@ -49,126 +49,151 @@ class recommendationsController extends Controller
     {
         $start = microtime(true);
 
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
-
-        $subq = DB::table('rateds')
-        ->whereIn('rateds.user_id', $request->f_users)
-        ->where('rateds.rate', '>', 0)
-        ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
-        ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        ->select(
-            'movies.id',
-            DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) AS point'),
-            DB::raw('sum(4*recommendations.is_similar) as p2'),
-            DB::raw('COUNT(recommendations.this_id) as count'),
-            DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
-        )
-        ->groupBy('movies.id');
-
-        $qqSql = $subq->toSql();
-
-    /////////////////////////////////////////////////////////
-
-        $subq_2 = DB::table('movies')
-        ->join(
-            DB::raw('(' . $qqSql. ') as ss'),
-            function($join) use ($subq) {
-                $join->on('movies.id', '=', 'ss.id')
-                ->addBinding($subq->getBindings());  
+        if(auth::check()){
+            if(Auth::User()->hover_title_language == 0){
+                $hover_title = Auth::User()->secondary_lang.'_title';
+            }else{
+                $hover_title = 'original_title';
             }
-        )
-        ->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
-        ->select(
-            'm2.id',
-            'ss.point',
-            'ss.count',
-            'ss.percent',
-            'ss.p2'
-        )
-        ->where('m2.vote_count', '>', $request->f_vote)
-        ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
+
+            $subq = DB::table('rateds')
+            ->whereIn('rateds.user_id', $request->f_users)
+            ->where('rateds.rate', '>', 0)
+            ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
+            ->join('movies', 'movies.id', '=', 'recommendations.this_id')
+            ->select(
+                'movies.id',
+                DB::raw('sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) AS point'),
+                DB::raw('sum(4*recommendations.is_similar) as p2'),
+                DB::raw('COUNT(recommendations.this_id) as count'),
+                DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
+            )
+            ->groupBy('movies.id');
+
+            $qqSql = $subq->toSql();
+
+        /////////////////////////////////////////////////////////
+
+            $subq_2 = DB::table('movies')
+            ->join(
+                DB::raw('(' . $qqSql. ') as ss'),
+                function($join) use ($subq) {
+                    $join->on('movies.id', '=', 'ss.id')
+                    ->addBinding($subq->getBindings());  
+                }
+            )
+            ->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+            ->select(
+                'm2.id',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'ss.p2'
+            )
+            ->where('m2.vote_count', '>', $request->f_vote)
+            ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
 
-        if($request->f_genre != [])
-        {
-            $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'm2.id')
-            ->whereIn('genre_id', $request->f_genre)
-            ->groupBy('m2.id')
-            ->havingRaw('COUNT(m2.id)='.count($request->f_genre));
-        };
+            if($request->f_genre != [])
+            {
+                $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'm2.id')
+                ->whereIn('genre_id', $request->f_genre)
+                ->groupBy('m2.id')
+                ->havingRaw('COUNT(m2.id)='.count($request->f_genre));
+            };
 
-        if($request->f_lang != [])
-        {
-            $subq_2 = $subq_2->whereIn('m2.original_language', $request->f_lang);
-        }
-
-        if($request->f_min != 1917)
-        {
-            $subq_2 = $subq_2->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1));
-        }
-
-        if($request->f_max != 2018)
-        {
-            $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31));
-        }
-
-        $qqSql_2 = $subq_2->toSql();
-
-    /////////////////////////////////////////////////////////
-
-        $return_val = DB::table('movies')
-        ->join(
-            DB::raw('(' . $qqSql_2. ') AS ss'),
-            function($join) use ($subq_2) {
-                $join->on('movies.id', '=', 'ss.id')
-                ->addBinding($subq_2->getBindings());  
+            if($request->f_lang != [])
+            {
+                $subq_2 = $subq_2->whereIn('m2.original_language', $request->f_lang);
             }
-        )
-        ->leftjoin('rateds', function ($join) use ($request) {
-            $join->on('rateds.movie_id', '=', 'movies.id')
-            ->whereIn('rateds.user_id', $request->f_users);
-        })
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'movies.id')
-            ->where('laters.user_id', '=', Auth::user()->id);
-        })
-        ->leftjoin('bans', function ($join) use ($request) {
-            $join->on('bans.movie_id', '=', 'movies.id')
-            ->whereIn('bans.user_id', $request->f_users);
-        })
-        ->select(
-            'movies.id',
-            'movies.'.$hover_title.' as original_title',
-            'ss.point',
-            'ss.count',
-            'ss.percent',
-            'ss.p2',
-            'movies.vote_average',
-            'movies.vote_count',
-            'movies.release_date',
-            'movies.'.Auth::User()->lang.'_title as title',
-            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-            'rateds.id as rated_id',
-            'rateds.rate as rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
-        )
-        ->groupBy('movies.id')
-        ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0');
 
-        if($tab=='popular'){
-            $return_val = $return_val->orderBy('movies.popularity', 'desc');
+            if($request->f_min != 1917)
+            {
+                $subq_2 = $subq_2->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1));
+            }
+
+            if($request->f_max != 2018)
+            {
+                $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31));
+            }
+
+            $qqSql_2 = $subq_2->toSql();
+
+        /////////////////////////////////////////////////////////
+
+            $return_val = DB::table('movies')
+            ->join(
+                DB::raw('(' . $qqSql_2. ') AS ss'),
+                function($join) use ($subq_2) {
+                    $join->on('movies.id', '=', 'ss.id')
+                    ->addBinding($subq_2->getBindings());  
+                }
+            )
+            ->leftjoin('rateds', function ($join) use ($request) {
+                $join->on('rateds.movie_id', '=', 'movies.id')
+                ->whereIn('rateds.user_id', $request->f_users);
+            })
+            ->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', '=', 'movies.id')
+                ->where('laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('bans', function ($join) use ($request) {
+                $join->on('bans.movie_id', '=', 'movies.id')
+                ->whereIn('bans.user_id', $request->f_users);
+            })
+            ->select(
+                'movies.id',
+                'movies.'.$hover_title.' as original_title',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'ss.p2',
+                'movies.vote_average',
+                'movies.vote_count',
+                'movies.release_date',
+                'movies.'.Auth::User()->lang.'_title as title',
+                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+                'rateds.id as rated_id',
+                'rateds.rate as rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            )
+            ->groupBy('movies.id')
+            ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0');
+
+            if($tab=='popular'){
+                $return_val = $return_val->orderBy('movies.popularity', 'desc');
+            }else{
+                $return_val = $return_val->orderBy('movies.vote_average', 'desc')
+                ->orderBy('movies.vote_count', 'desc');
+            }
+
+
+            return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
         }else{
-            $return_val = $return_val->orderBy('movies.vote_average', 'desc')
-            ->orderBy('movies.vote_count', 'desc');
+            $return_val = DB::table('movies')
+            ->select(
+                'movies.id',
+                'movies.original_title as original_title',
+                'movies.vote_average',
+                'movies.vote_count',
+                'movies.release_date',
+                'movies.tr_title as title',
+                'movies.tr_poster_path as poster_path'
+            )
+            ->where('movies.vote_count', '>', $request->f_vote)
+            ->where('movies.vote_average', '>', config('constants.suck_page.min_vote_average'));
+
+            if($tab=='popular'){
+                $return_val = $return_val->orderBy('movies.popularity', 'desc');
+            }else{
+                $return_val = $return_val->orderBy('movies.vote_average', 'desc')
+                ->orderBy('movies.vote_count', 'desc');
+            }
+
+
+            return [$return_val->paginate(24), microtime(true) - $start];
         }
-
-
-        return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
     }
 
 
