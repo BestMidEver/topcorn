@@ -12,5 +12,21 @@ return [
     'hint_show_crew' => 'Activate this to see the casts of the movies too.',
     'hint_advanced_filter' => 'It gives you advanced information and options on recommendations page.',
     'hint_cover_photo' => 'Choose a movie to use it\'s cover photo as your cover photo.',
-    'hint_profile_pic' => 'Choose an actor/actress from your cover movie.'
+    'hint_profile_pic' => 'Choose an actor/actress from your cover movie.',
+    'home' => array(
+      'h1' => 'Too many movies, no time!',
+      't11' => 'Topcorn.io understands your movie taste and recommends movies according to it. Let\'s get started!',
+      't12' => 'With Topcorn.io it\'s now easy to make the right choice from any kind of movies.',
+
+      'h2' => 'Let\'s get to know each other!',
+      't21' => 'The more movies you have, the better we know you. And of course the movie list we will prepare for you will be so accurate.',
+      't22' => 'Quick Vote can accelerate this process, you can be buried in the movies right away.',
+
+      'h3' => 'Special films for you, they wait for you!',
+      't31' => 'topCorn.io has been specially developed for moviegoers who know what they want and watch.',
+      't32' => 'To know you better, vote the movies that you have watched and leave the rest to topcorn.io.',
+
+      'h4' => 'Completely free!',
+      't41' => 'What are you waiting for?',
+    ),
 ];

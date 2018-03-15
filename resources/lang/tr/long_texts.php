@@ -28,6 +28,6 @@ return [
       't32' => 'Sizi daha yakından tanımamız için filmleri oylayın, gerisini topcorn.io\'ya bırakın.',
 
       'h4' => 'Tamamen ücretsiz!',
-      't41' => 'Daha ne duruyorsun?'
+      't41' => 'Daha ne duruyorsun?',
     ),
 ];
