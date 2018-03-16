@@ -19,11 +19,11 @@ return [
       't12' => 'With topcorn.io it\'s now easy to make the right choice from any kind of movies.',
 
       'h2' => 'Let\'s get to know each other!',
-      't21' => 'The more movies you have, the better we know you. And of course the movie list we will prepare for you will be so accurate.',
+      't21' => 'The more movies you have, the better we know you. And of course the movie list we will prepare for you will be more accurate.',
       't22' => 'Quick Vote can accelerate this process, you can be buried in the movies right away.',
 
       'h3' => 'Special films for you, they wait for you!',
-      't31' => 'topcorn.io has been specially developed for moviegoers who know what they want and watch.',
+      't31' => 'topcorn.io has been specially developed for conscious moviegoers.',
       't32' => 'To know you better, vote the movies that you have watched and leave the rest to topcorn.io.',
 
       'h4' => 'Completely free!',
