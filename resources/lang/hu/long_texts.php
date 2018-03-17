@@ -14,19 +14,19 @@ return [
     'hint_cover_photo' => 'Válasssz borítóképet a kedvenc filmjeid közül.',   
     'hint_profile_pic' => 'Profilképként beállíthatod a Facebook profilképedet vagy egy színész fotóját.',
     'home' => array(
-      'h1' => 'Too many movies, no time!',
-      't11' => 'topcorn.io understands your movie taste and recommends movies according to it. Let\'s get started!',
-      't12' => 'With topcorn.io it\'s now easy to make the right choice from any kind of movies.',
+      'h1' => 'Túl sok film, kevés idő!',
+      't11' => 'A topcorn.io kiismeri az ízlésedet és ennek megfelelően ajánlja a filmeket . Lássunk neki!',
+      't12' => 'A topcorn.io segítségével most már könnyű választani bármilyen típusú film közül.',
 
-      'h2' => 'Let\'s get to know each other!',
-      't21' => 'The more movies you have, the better we know you. And of course the movie list we will prepare for you will be so accurate.',
-      't22' => 'Quick Vote can accelerate this process, you can be buried in the movies right away.',
+      'h2' => 'Ismerjük meg egymást!',
+      't21' => 'Minél több film, annál jobban ismerünk. Természetesen a filmlista, amelyet készítünk Neked, még pontosabb lesz.',
+      't22' => 'A gyors szavazás felgyorsíthatja ezt a folyamatot, és máris elkezdheted a búvárkodást a filmek tengerében.',
 
-      'h3' => 'Special films for you, they wait for you!',
-      't31' => 'topcorn.io has been specially developed for moviegoers who know what they want and watch.',
-      't32' => 'To know you better, vote the movies that you have watched and leave the rest to topcorn.io.',
+      'h3' => 'Különleges filmek várnak rád!',
+      't31' => 'A topcorn.io kifejezetten a tudatos filmrajongók számára lett kifejlesztve.',
+      't32' => 'Hogy jobban megismerjünk, szavazz a filmekre, amelyeket megnéztél, a többit pedig hagy topcorn.io-ra.',
 
-      'h4' => 'Completely free!',
-      't41' => 'What are you waiting for?',
+      'h4' => 'Teljesen ingyenes!',
+      't41' => 'Mire vársz?',
     ),
 ]; 
