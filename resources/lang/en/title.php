@@ -5,7 +5,7 @@ return [
     'donation' => 'Donate - Topcorn',
     'email' => 'Forgot My Password - Topcorn',
     'faq' => 'FAQ - Topcorn',
-    'home' => 'Topcorn - Customized Movie Recommendations',
+    'home' => 'Topcorn - Customized Movie Recommendation Engine',
     'login' => 'Login - Topcorn',
     'movie' => ' - Topcorn',
     'register' => 'Register - Topcorn',
@@ -13,6 +13,6 @@ return [
     'person' => ' - Topcorn',
     'privacypolicy' => 'Privacy Policy - Topcorn',
     'profile' => ' - Topcorn',
-    'recommendations' => 'Customized Movie Recommendations - Topcorn',
+    'recommendations' => 'Personelized Movie Recommendations - Topcorn',
     'search' => 'Search - Movie | Person | User - Topcorn',
 ];
