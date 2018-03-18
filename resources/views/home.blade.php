@@ -13,7 +13,7 @@
 						<p class="lead">{{ __('long_texts.home.t11') }}</p>
 						<hr class="my-4">
 						<p class="my-4 text-muted">{{ __('long_texts.home.t12') }}</p>
-						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/@{{fb_remember}}"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
+						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/false"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
 						<p class="text-center mb-0"><a class="btn btn-link text-black" href="/register">{{ __('general.continue_without_facebook') }}</a></p>
 					</div>
 				</div>
@@ -84,7 +84,7 @@
 						<h1 class="display-4">{{ __('long_texts.home.h4') }}</h1>
 						<p class="lead">{{ __('long_texts.home.t41') }}</p>
 						<hr class="my-4">
-						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/@{{fb_remember}}" role="button"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
+						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/false" role="button"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
 						<p class="text-center mb-0"><a class="btn btn-link text-black" href="/register" role="button">{{ __('general.continue_without_facebook') }}</a></p>
 					</div>
 				</div>
