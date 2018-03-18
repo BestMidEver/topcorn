@@ -13,6 +13,6 @@ return [
     'person' => ' - Topcorn',
     'privacypolicy' => 'Privacy Policy - Topcorn',
     'profile' => ' - Topcorn',
-    'recommendations' => 'Personelized Movie Recommendations - Topcorn',
+    'recommendations' => 'Movie Recommendations Based on Your Taste - Topcorn',
     'search' => 'Search - Movie | Person | User - Topcorn',
 ];

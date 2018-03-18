@@ -37,3 +37,7 @@ pass={
 @section('title')
 {{ __('title.recommendations') }}
 @endsection
+
+@section('meta_description')
+{{ __('long_texts.meta_description.recommendations') }}
+@endsection

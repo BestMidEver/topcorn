@@ -15,7 +15,7 @@ return [
     'hint_profile_pic' => 'Choose an actor/actress from your cover movie.',
     'home' => array(
       'h1' => 'Too many movies, no time!',
-      't11' => 'topcorn.io understands your movie taste and recommends movies according to it. Let\'s get started!',
+      't11' => 'topcorn.io understands your movie taste and recommends movies based on it. Let\'s get started!',
       't12' => 'With topcorn.io it\'s now easy to make the right choice from any kind of movies.',
 
       'h2' => 'Let\'s get to know each other!',
@@ -28,5 +28,8 @@ return [
 
       'h4' => 'Completely free!',
       't41' => 'What are you waiting for?',
+    ),
+    'meta_description' => array(
+      'recommendations' => 'Too many movies, no time! topcorn.io understands your movie taste and recommends movies based on it. With topcorn.io it\'s now easy to make the right choice from any kind of movies.',
     ),
 ];
