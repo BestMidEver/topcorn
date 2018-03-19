@@ -185,14 +185,14 @@ Route::get('suckData', function(){
 Route::get('refreshSitemap', function(){
 	RefreshSitemapJob::dispatch()->onQueue("low");
 	$myfile = fopen("newfile.xml", "w") or die("Unable to open file!");
-    $xml = '<?xml version="1.0" encoding="utf-8"?>\n'.
-    		'<urlset'.
-    		'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'.
-    		'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'.
+    $xml = '<?xml version="1.0" encoding="utf-8"?> '.
+    		'<urlset '.
+    		'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '.
+    		'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '.
     		'xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9'.
-    		'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'.
-    		'<url> <loc>https://topcorn.io/movie/77-Memento</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>0.7</priority> </url>'.
-    		'</urlset>';
+    		'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"> '.
+    		'<url> <loc>https://topcorn.io/movie/77-Memento</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>0.7</priority> </url> '.
+    		'</urlset> ';
     fwrite($myfile, $xml);
     fclose($myfile);
 	return 'refreshing sitemap.';
