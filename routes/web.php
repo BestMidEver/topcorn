@@ -194,7 +194,7 @@ Route::get('refreshSitemap', function(){
 <url> <loc>https://topcorn.io/privacy-policy</loc> <lastmod>2018-03-19</lastmod> <changefreq>monthly</changefreq> <priority>0.60</priority> </url>
 <url> <loc>https://topcorn.io/donation</loc> <lastmod>2018-03-19</lastmod> <changefreq>monthly</changefreq> <priority>0.60</priority> </url>
 <url> <loc>https://topcorn.io/password/reset</loc> <lastmod>2018-03-19</lastmod> <changefreq>monthly</changefreq> <priority>0.60</priority> </url>
-';
+'; 
 
         $movies = DB::table('movies')
         ->select(
