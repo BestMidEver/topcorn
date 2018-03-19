@@ -19,8 +19,7 @@ class movieController extends Controller
     	if($secondary_lang != '') session(['secondary_lang' => $secondary_lang]);
 
     	$id=explode("-", $id)[0];
-        if(is_numeric($id)){
-        }else{
+        if(!is_numeric($id)){
             return redirect('/not-found');
         }
 
