@@ -179,7 +179,11 @@ Route::post('api/tooltip','ApiControllers\LevelController@tt_manipulate');
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('suckData', function(){
 	//SuckDataJob::dispatch()->onQueue("low");
-	return 'it\'s been started.';
+	return 'sucking data.';
+});
+Route::get('refreshSitemap', function(){
+	RefreshSitemapJob::dispatch()->onQueue("low");
+	return 'refreshing sitemap.';
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////

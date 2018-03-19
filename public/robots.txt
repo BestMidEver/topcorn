@@ -3,4 +3,4 @@
 User-agent: *
 Disallow: /profile/*
 
-Sitemap: https://topcorn.io/sitemap.xml
+# Sitemap: https://topcorn.io/sitemap.xml
