@@ -2,5 +2,6 @@
 
 User-agent: *
 Disallow: /profile/*
+Disallow: /movie/%7B%7Bmovie.id%7D%7D
 
 # Sitemap: https://topcorn.io/sitemap.xml
