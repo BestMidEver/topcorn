@@ -183,7 +183,7 @@ Route::get('suckData', function(){
 	return 'sucking data.';
 });
 Route::get('refreshSitemap', function(){
-	RefreshSitemapJob::dispatch()->onQueue("low"); 
+	RefreshSitemapJob::dispatch()->onQueue("high"); 
 	return 'refreshing sitemap.';
 });
 //////////////////////////////////////////////////////////////////////////////////////////
