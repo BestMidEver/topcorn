@@ -59,5 +59,5 @@ class RefreshSitemapJob implements ShouldQueue
         $xml = $xml . '</urlset> ';
         fwrite($myfile, $xml);
         fclose($myfile);
-        }
+    }
 }
