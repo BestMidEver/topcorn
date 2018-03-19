@@ -196,7 +196,7 @@ Route::get('refreshSitemap', function(){
 
     $movies = Movie::All();
     foreach ($movies as $movie) {
-    	$xml = $xml.'<url> <loc>https://topcorn.io/home</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url> ';
+    	$xml = $xml.'<url> <loc>https://topcorn.io/movie/'.$movie->id.'</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> ';
 	}
 
     $xml = $xml . '</urlset> ';
