@@ -32,7 +32,7 @@ class Architect extends Controller
         )
         ->get();
         foreach ($movies as $movie) {
-            $xml = $xml.'<url> <loc>https://topcorn.io/movie/'.$movie->id.'-'.str_replace(array(' ','/','?','#'), '-', $movie->original_title).'</loc> <lastmod>'.substr($movie->updated_at, 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> 
+            $xml = $xml.'<url> <loc>https://topcorn.io/movie/'.$movie->id.'-'.str_replace(array(' ','/','?','#','&'), '-', $movie->original_title).'</loc> <lastmod>'.substr($movie->updated_at, 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> 
 ';
         }
 
