@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class Architect extends Controller
 {
-	public function index()
+	public function refreshSitemap()
     {
         $myfile = fopen("sitemap.xml", "w") or die("Unable to open file!");
         $xml = '<?xml version="1.0" encoding="utf-8"?>
