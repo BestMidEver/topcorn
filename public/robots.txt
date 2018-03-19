@@ -1,2 +1,6 @@
+# robots.txt for topcorn properties
+
 User-agent: *
-Disallow:
+Disallow: /profile/*
+
+Sitemap: http://topcorn.io/sitemap.xml
