@@ -182,10 +182,7 @@ Route::get('suckData', function(){
 	//SuckDataJob::dispatch()->onQueue("low");
 	return 'sucking data.';
 });
-Route::get('refreshSitemap', function(){
-	RefreshSitemapJob::dispatch()->onQueue("high"); 
-	return 'refreshing sitemap.';
-});
+Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
