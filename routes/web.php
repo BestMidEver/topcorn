@@ -191,7 +191,7 @@ Route::get('refreshSitemap', function(){
     		'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'.
     		'xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9'.
     		'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'.
-    		''.
+    		'<url> <loc>https://topcorn.io/movie/77-Memento</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>0.7</priority> </url>'.
     		'</urlset>';
     fwrite($myfile, $txt);
     fclose($myfile);
