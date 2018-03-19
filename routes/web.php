@@ -1,5 +1,6 @@
 <?php
 
+use App\Jobs\RefreshSitemapJob;
 use App\Jobs\SuckDataJob;
 use App\Jobs\SuckMovieJob;
 use App\Model\Genre;
