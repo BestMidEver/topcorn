@@ -185,19 +185,16 @@ Route::get('suckData', function(){
 Route::get('refreshSitemap', function(){
 	RefreshSitemapJob::dispatch()->onQueue("low");
 	$myfile = fopen("newfile.xml", "w") or die("Unable to open file!");
-    $xml = '<?xml version="1.0" encoding="utf-8"?> 
-    '.
-    		'<urlset '.
-    		'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '.
-    		'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '.
-    		'xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9'.
-    		'http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"> '.
-    		'<url> <loc>https://topcorn.io/recommendations</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url> '.
-    		'<url> <loc>https://topcorn.io/home</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url> ';
+    $xml = '<?xml version="1.0" encoding="utf-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url> <loc>https://topcorn.io/recommendations</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url>
+	<url> <loc>https://topcorn.io/home</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url>
+	';
 
     $movies = Movie::All();
     foreach ($movies as $movie) {
-    	$xml = $xml.'<url> <loc>https://topcorn.io/movie/'.$movie->id.'-'.str_replace(array(' ','/','?','#'), '-', $movie->original_title).'</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> ';
+    	$xml = $xml.'<url> <loc>https://topcorn.io/movie/'.$movie->id.'-'.str_replace(array(' ','/','?','#'), '-', $movie->original_title).'</loc> <lastmod>2018-03-19</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> 
+    	';
 	}
 
     $xml = $xml . '</urlset> ';
