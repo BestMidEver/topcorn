@@ -11,7 +11,7 @@ return [
     'actor' => 'Actor',
     'actors' => 'Actors',                                                   //movie,
     'add' => 'Add',                                                         //recommendations,
-    'add_person' => 'Add User',                                             //recommendations,
+    'add_person' => 'Watch Together',                                       //recommendations,
     'add_review' => 'Add Review',                                           //movie,
     'advanced_recommendations' => 'Advanced Recommendations',               //accountinterface,
     'all' => 'All',                                                         //profile,

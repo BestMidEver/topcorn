@@ -11,7 +11,7 @@ return [
     'actor' => 'Oyuncu',            
     'actors' => 'Oyuncular',            
     'add' => 'Ekle',                                                                    //recommendations,
-    'add_person' => 'Kullanıcı Ekle',                                                   //recommendations,
+    'add_person' => 'Beraber İzle',                                                     //recommendations,
     'add_review' => 'Eleştiri Ekle',                                                    //movie,
     'advanced_recommendations' => 'Gelişmiş Tavsiyeler',                                //accountinterface,
     'all' => 'Hepsi',                                                                   //profile,
