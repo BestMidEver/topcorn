@@ -72,7 +72,7 @@ return [
     'medium' => 'Közepes adatforgalom',                                     //accountinterface,
     'minute' => 'perc',                                                     //movie,
     'movie' => 'Film',                          
-    'moviecard_percent' => '{{movie.percent}} %-os',                        //recommendations,  
+    'moviecard_percent' => '{{movie.percent}}%-os',                        //recommendations,  
     'movies' => 'Film',                         
     'movie_details' => 'Film részletei',                                    //movie,
     'most_rated' => 'Legnépszerűbb',
