@@ -20,6 +20,6 @@ return [
     'privacy' => 'Adatvédelem',
     'like_us_on_facebook' => 'Kedvelj minket Facebook-on!',
     'all_rights_reserved' => 'Minden jog fenntartva',
-    'activate_nightmode' => 'Éjszakai üzemmód bekapcsolása',  
-    'deactivate_nightmode' => 'Éjszakai üzemmód kikapcsolása',  
+    'activate_nightmode' => 'Sötét háttér',  
+    'deactivate_nightmode' => 'Világos háttér',  
 ];
