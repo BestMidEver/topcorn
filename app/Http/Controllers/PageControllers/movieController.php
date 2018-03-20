@@ -27,8 +27,10 @@ class movieController extends Controller
             if($movie->count() > 0){
                 $movie = $movie->first();
                 $movie_title = $movie->original_title;
+                $movie_year = substr($movie->release_date,0 ,4);
             }else{
-
+                $movie_title = '';
+                $movie_year = '';
             }
         }
 

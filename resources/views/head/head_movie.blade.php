@@ -37,5 +37,5 @@ pass={
 @endsection
 
 @section('meta_description')
-Watch trailer of {{$movie_title}}
+Watch trailer of {{$movie_title}} ({{$movie_year}})
 @endsection
