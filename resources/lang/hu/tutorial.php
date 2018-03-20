@@ -2,7 +2,7 @@
 
 return [
     'hint' => 'Tipp',
-    'cry_for_Help' => 'Gratulálunk!',
+    'cry_for_help' => 'Gratulálunk!',
     'dont_show_hints' => 'Ne mutasd a tippeket!',
     'understood' => 'Rendben',
     'quickvote1' => 'Minél több filmre szavazol, a Topcorn annál jobban megismeri az ízlésedet. A gyors szavazás lehetővé teszi a gyorsabb azonosítást.',

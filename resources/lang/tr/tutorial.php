@@ -2,7 +2,7 @@
 
 return [
     'hint' => 'İpucu',
-    'cry_for_Help' => 'Tebrikler',
+    'cry_for_help' => 'Tebrikler',
     'dont_show_hints' => 'İpuçlarını Gösterme',
     'understood' => 'Tamam',
     'quickvote1' => 'Sen ne kadar çok film oylarsan, seni o kadar iyi tanırız. Peş Peşe Oylama da seni daha hızlı tanımamızı sağlıyor.',

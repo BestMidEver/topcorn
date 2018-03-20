@@ -211,7 +211,7 @@ else $theme='';
                 <div class="col col-sm-3 d-none d-sm-inline">
                     <div class="py-2 small"><a class="text-dark" href="/faq">{{ __('navbar.faq') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="https://www.facebook.com/topcorn.io/" target="_blank">{{ __('navbar.contact_us') }}</a></div>
-                    <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __("navbar.privacy") }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __('navbar.privacy') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/donation"
                     @if(Auth::User()->tt_navbar < 100)
                     data-toggle="popover" data-placement="top" title='{{ __("tutorial.cry_for_help") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="donate"

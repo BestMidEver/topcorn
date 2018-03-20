@@ -2,7 +2,7 @@
 
 return [
     'hint' => 'Hint',
-    'cry_for_Help' => 'Congragulations',
+    'cry_for_help' => 'Congragulations',
     'dont_show_hints' => 'Don\'t show hints',
     'understood' => 'Okay',
     'quickvote1' => 'The more movies you vote, the better we know you. Quick Vote helps usto know you faster.',
