@@ -21,6 +21,15 @@ class movieController extends Controller
     	$id=explode("-", $id)[0];
         if(!is_numeric($id)){
             return redirect('/not-found');
+        }else{
+            $movie = DB::table('movies')
+            ->where('movies.id', '=', $id);
+            if($movie->count() > 0){
+                $movie = $movie->first();
+                $movie_title = $movie->original_title;
+            }else{
+
+            }
         }
 
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
@@ -33,7 +42,7 @@ class movieController extends Controller
             $watched_movie_number = null;
         }
 
-    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number'));
+    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number', 'movie_title'));
     }
 
     public function get_user_movie_record($movie)

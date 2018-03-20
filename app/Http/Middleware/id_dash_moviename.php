@@ -24,7 +24,7 @@ class id_dash_moviename
         $correct_url = $movie->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"'), '-', $movie->original_title);
         
         if($request->id == $correct_url){
-            return $next($request)->with('movie_title', $movie->original_title);
+            return $next($request);
         }else{
             return redirect('/movie/'.$correct_url);
         }
