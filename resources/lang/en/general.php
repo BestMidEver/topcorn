@@ -146,6 +146,7 @@ return [
     'theme_light' => 'Light',                                               //accountinterface,   
     'top_rated' => 'Top Rated',                                             //recommendations,
     'trailer' => 'TRAILER',                                                 //movie,
+    'tr' => 'Turkey',                                                               //donation
     'try_account' => 'TRY Account',                                         //donation,
     'understand_my_taste' => 'Let\'s Get Started',                         //home,
     'user' => 'User',

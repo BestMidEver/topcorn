@@ -83,7 +83,7 @@
 				<div>
 					<div class="h5">{{ __('general.dollar_account') }}</div>
 					<p><span class="text-muted">{{ __('general.recipient_name') }}:</span> Uygar Yılmaz</p>
-					<p><span class="text-muted">{{ __('general.country') }}:</span> {{ __('countries.TR') }}</p>
+					<p><span class="text-muted">{{ __('general.country') }}:</span> {{ __('general.tr') }}</p>
 					<p><span class="text-muted">{{ __('general.bank') }}:</span> {{ __('general.bank_') }}</p>
 					<p><span class="text-muted">{{ __('general.bank_address') }}:</span> {{ __('general.bank_address_') }}</p>
 					<p><span class="text-muted">IBAN:</span> TR 6400 0100 0065 6253 0283 5004</p>
@@ -97,7 +97,7 @@
 				<div>
 					<div class="h5">{{ __('general.euro_account') }}</div>
 					<p><span class="text-muted">{{ __('general.recipient_name') }}:</span> Uygar Yılmaz</p>
-					<p><span class="text-muted">{{ __('general.country') }}:</span> {{ __('countries.TR') }}</p>
+					<p><span class="text-muted">{{ __('general.country') }}:</span> {{ __('general.tr') }}</p>
 					<p><span class="text-muted">{{ __('general.bank') }}:</span> {{ __('general.bank_') }}</p>
 					<p><span class="text-muted">{{ __('general.bank_address') }}:</span> {{ __('general.bank_address_') }}</p>
 					<p><span class="text-muted">IBAN:</span> TR 5400 0100 1900 6253 0283 5002</p>
@@ -111,7 +111,7 @@
 				<div>
 					<div class="h5">{{ __('general.try_account') }}</div>
 					<p><span class="text-muted">{{ __('general.recipient_name') }}:</span> Uygar Yılmaz</p>
-					<p><span class="text-muted">{{ __('general.country') }}:</span> {{ __('countries.TR') }}</p>
+					<p><span class="text-muted">{{ __('general.country') }}:</span> {{ __('general.tr') }}</p>
 					<p><span class="text-muted">{{ __('general.bank') }}:</span> {{ __('general.bank_') }}</p>
 					<p><span class="text-muted">{{ __('general.bank_address') }}:</span> {{ __('general.bank_address_') }}</p>
 					<p><span class="text-muted">IBAN:</span> TR 8100 0100 1900 6253 0283 5001</p>

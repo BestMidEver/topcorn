@@ -145,6 +145,7 @@ return [
 	'theme_dark' => 'Sötét',
 	'theme_light' => 'Világos',
     'top_rated' => 'Legjobban értékelt',                                    //recommendations,
+    'tr' => 'Törökország',         
     'trailer' => 'FILMELŐZETES',                                            //movie
     'try_account' => 'TRY számla',                                          //donation,
     'understand_my_taste' => 'Ismerd meg az ízlésemet!',                    //home,

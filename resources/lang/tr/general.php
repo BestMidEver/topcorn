@@ -143,6 +143,7 @@ return [
     'theme_verydark' => 'Zifiri Karanlık',                                              //accountinterface,   
     'theme_dark' => 'Karanlık',                                                         //accountinterface,   
     'theme_light' => 'Aydınlık',                                                        //accountinterface,   
+    'tr' => 'Türkiye',         
     'top_rated' => 'En Yüksek Oy Alan',         
     'trailer' => 'FRAGMAN',         
     'try_account' => 'Türk Lirası Hesabı',                                              //donation,
