@@ -14,8 +14,8 @@ return [
     'hint_cover_photo' => 'Válasssz borítóképet a kedvenc filmjeid közül.',   
     'hint_profile_pic' => 'Profilképként beállíthatod a Facebook profilképedet vagy egy színész fotóját.',
     'home' => array(
-      'h1' => 'Túl sok film, kevés idő!',
-      't11' => 'A topcorn.io kiismeri az ízlésedet és ennek megfelelően ajánlja a filmeket . Lássunk neki!',
+      'h1' => 'Túl sok a jó film ahhoz, hogy az idődet rossz filmekre pazarold.',
+      't11' => 'A topcorn.io megismeri az ízlésedet és ennek megfelelően ajánl újabb filmeket számodra. Lássunk neki!',
       't12' => 'A topcorn.io segítségével most már könnyű választani bármilyen típusú film közül.',
 
       'h2' => 'Ismerjük meg egymást!',
