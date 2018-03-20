@@ -28,9 +28,11 @@ class movieController extends Controller
                 $movie = $movie->first();
                 $movie_title = $movie->original_title;
                 $movie_year = substr($movie->release_date,0 ,4);
+                $movie_plot = $movie->overview;
             }else{
                 $movie_title = '';
                 $movie_year = '';
+                $movie_plot = '';
             }
         }
 
@@ -44,7 +46,7 @@ class movieController extends Controller
             $watched_movie_number = null;
         }
 
-    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_year'));
+    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_year', 'plot'));
     }
 
     public function get_user_movie_record($movie)
