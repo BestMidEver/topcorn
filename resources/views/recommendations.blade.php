@@ -105,12 +105,12 @@
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="top_rated"> Oyuna Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="top_rated"> {{ __('general.sort_by_tmdb') }}
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="most_popular"> Popülerliğine Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="most_popular"> {{ __('general.sort_by_pop') }}
 			</label>
 		</div>
 	</div>
