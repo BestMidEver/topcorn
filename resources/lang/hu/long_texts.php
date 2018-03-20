@@ -19,7 +19,7 @@ return [
       't12' => 'A topcorn.io segítségével most már könnyű választani bármilyen típusú film közül.',
 
       'h2' => 'Ismerjük meg egymást!',
-      't21' => 'Minél több film, annál jobban ismerünk. Természetesen a filmlista, amelyet készítünk Neked, még pontosabb lesz.',
+      't21' => 'Minél több filmet értékelsz, a topcorn.io annál jobban megismer és a neked készült lista is annál személyre szabottabb lesz.',
       't22' => 'A gyors szavazás felgyorsíthatja ezt a folyamatot, és máris elkezdheted a búvárkodást a filmek tengerében.',
 
       'h3' => 'Különleges filmek várnak rád!',
