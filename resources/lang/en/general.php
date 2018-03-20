@@ -134,6 +134,7 @@ return [
     'share' => 'Share',                                                     //movie,
     'show_crew' => 'Show Crew',                                             //accountinterface,  
     'show_everyone' => 'Show Full Cast',                                    //movie,
+    'sort_by' => 'SORT BY',                                                              //recommendations, 
     'standard' => 'Standard',                                               //accountinterface,    
     'theme' => 'Theme',                                                     //accountinterface,
     'theme_verydark' => 'Pitch Dark',                                       //accountinterface,   

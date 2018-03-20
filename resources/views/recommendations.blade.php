@@ -92,7 +92,7 @@
 		rz-slider-options="slider_vote_count.options"></rzslider>
 	</div>
 	<div class="mt-3 pb-3" ng-show="active_tab=='pemosu'">
-		<p class="h6 text-muted">SIRALA</p>
+		<p class="h6 text-muted">{{ __('general.sort_by') }}</p>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
 				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="point"> Eşleşme Puanına Göre

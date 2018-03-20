@@ -134,6 +134,7 @@ return [
     'share' => 'Megosztás',                                                 //movie
 	'show crew' => 'Mutassa a stábot!',
     'show_everyone' => 'Mutass mindenkit',                                  //movie
+    'sort_by' => 'RENDEZÉS',                                                              //recommendations, 
     'standard' => 'Alapértelmezett',                                        //accountinterface,
 	'theme' => 'Téma',
 	'theme_verydark' => 'Koromsötét',

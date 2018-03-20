@@ -133,6 +133,7 @@ return [
     'share' => 'Paylaş',            
     'show_crew' => 'Film Ekibini Göster',                                               //accountinterface,        
     'show_everyone' => 'Herkesi Göster',            
+    'sort_by' => 'SIRALA',                                                              //recommendations,      
     'standard' => 'Standart',                                                           //accountinterface,  
     'theme' => 'Tema',                                                                  //accountinterface,   
     'theme_verydark' => 'Zifiri Karanlık',                                              //accountinterface,   
