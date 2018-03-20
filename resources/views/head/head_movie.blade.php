@@ -34,7 +34,7 @@ pass={
 
 @section('title')
 @if($movie_title != '')
-{{$movie_title}} ($movie_en_title) {{$movie_year}} - topcorn.io
+{{$movie_title}} {{$movie_en_title != '' ? '('.$movie_en_title.')' : ''}} {{$movie_year}} - topcorn.io
 @else
 @{{movie.title}}@{{ movie.release_date ? ' (' + movie.release_date.substring(0, 4) + ')' : ''}}{{ __('title.movie') }}
 @endif
