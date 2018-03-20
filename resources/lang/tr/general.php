@@ -4,7 +4,7 @@ return [
     '404' => 'Sayfa bulunamadı.',
     'a_z' => 'A -> Z',
     'according_to_my_taste' => 'Benim Zevkime Göre',                                    //recommendations,
-    'according_to_themoviedb' => 'TMDB puanı',                                          //recommendations,
+    'according_to_themoviedb' => 'TMDb puanı',                                          //recommendations,
     'according_to_your_taste' => 'Senin zevkine göre',                                   //recommendations,
     'acting' => 'Oyunculuk',            
     'active' => 'Etkin',                                                                //accountinterface,

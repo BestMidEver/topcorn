@@ -14,7 +14,7 @@ return [
     'hint_cover_photo' => 'Choose a movie to use it\'s cover photo as your cover photo.',
     'hint_profile_pic' => 'Choose an actor/actress from your cover movie.',
     'home' => array(
-      'h1' => 'Too many movies, no time!',
+      'h1' => 'No time to waste on bad movies!',
       't11' => 'topcorn.io understands your movie taste and recommends movies based on it. Let\'s get started!',
       't12' => 'With topcorn.io it\'s now easy to make the right choice from any kind of movies.',
 

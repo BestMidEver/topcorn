@@ -5,7 +5,7 @@ return [
     'a_z' => 'A -> Z',                                                      //person,
     'according_to_my_taste' => 'Az én ízlésem szerint',                     //recommendations,
 	'according_to_your_taste' => 'A Te ízlésed szerint',
-    'according_to_themoviedb' => 'TMDB pontszám',                           //recommendations,
+    'according_to_themoviedb' => 'TMDb pontszám',                           //recommendations,
     'acting' => 'Szereplő',                                                 //person,                       
     'active' => 'Aktív',                                                    //accountinterface,                     
     'actor' => 'Színész',                           
