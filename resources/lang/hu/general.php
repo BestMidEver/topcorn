@@ -11,7 +11,7 @@ return [
     'actor' => 'Színész',                           
     'actors' => 'Színészek',                                                //movie,
     'add' => 'Hozzáad',                                                     //recommendations,
-    'add_person' => 'Felhasználó hozzáadása',                               //recommendations,
+    'add_person' => 'Nézzük együtt',                               //recommendations,
     'add_review' => 'Vélemény hozzáadása',                                  //movie,
 	'advanced_recommendations' => 'Fejlesztett ajánlások',
     'all' => 'Mind',                                                        //profile,
