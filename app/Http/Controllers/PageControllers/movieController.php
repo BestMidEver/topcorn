@@ -18,6 +18,7 @@ class movieController extends Controller
     	if($lang != '') App::setlocale($lang);
     	if($secondary_lang != '') session(['secondary_lang' => $secondary_lang]);
 
+        $id_dash_title=$id;
     	$id=explode("-", $id)[0];
         if(!is_numeric($id)){
             return redirect('/not-found');
@@ -52,7 +53,7 @@ class movieController extends Controller
             $watched_movie_number = null;
         }
 
-    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'));
+    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'));
     }
 
     public function get_user_movie_record($movie)
