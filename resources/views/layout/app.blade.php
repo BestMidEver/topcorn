@@ -70,7 +70,7 @@ else $full_screen = '';
 if(Auth::User()->theme==1) $theme='drk';
 else $theme='';
 ?>
-<body class="{{$theme}}">
+<body class="{{$theme}}" ng-cloak>
 
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
