@@ -42,3 +42,8 @@ pass={
 
 @section('meta_description')
 Watch trailer of movie {{$movie_title}} {{$movie_year}}. Read summary, reviews and every detail. See full cast, director, writer, original title, original language, producers, budget, revenue, official website. English {{$movie_en_title}}, Türkçe {{$movie_tr_title}}, Magyar {{$movie_hu_title}}@endsection
+
+@section('og_tags')
+<meta property="og:image" content="http://image.tmdb.org/t/p/w185/hY39e7Svr1rDxNwjQkUZSL83NZz.jpg"/>
+<meta property="og:image:secure_url" content="https://image.tmdb.org/t/p/w185/hY39e7Svr1rDxNwjQkUZSL83NZz.jpg"/>
+@endsection
