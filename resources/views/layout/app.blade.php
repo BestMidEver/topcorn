@@ -294,7 +294,7 @@ else $theme='';
 <div id="popover-content-like" class="d-none">
     <p>{{ __("tutorial.like") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline" href="#">{{ __("tutorial.understood") }}</a>
+        <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-done">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-donate" class="d-none">
