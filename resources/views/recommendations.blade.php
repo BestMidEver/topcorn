@@ -95,12 +95,12 @@
 		<p class="h6 text-muted">{{ __('general.sort_by') }}</p>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="point"> Eşleşme Puanına Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="point"> {{ __('general.sort_by_match') }}
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
 			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="percent"> Eşleşme Yüzdesine Göre
+				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="percent"> {{ __('general.sort_by_percent') }}
 			</label>
 		</div>
 		<div class="form-check form-check-inline">
