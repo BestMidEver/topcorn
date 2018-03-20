@@ -70,6 +70,7 @@ return [
 	'match' => '-os egyezés',
     'margin_x_setting' => 'Teljes képernyő',                                //accountinterface,
     'medium' => 'Közepes adatforgalom',                                     //accountinterface,
+    'min_vote_count' => 'MINIMUM SZAVAZATSZÁM',                             //recommendations,
     'minute' => 'perc',                                                     //movie,
     'movie' => 'Film',
     'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,  

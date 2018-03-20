@@ -70,6 +70,7 @@ return [
     'match' => 'eşleşme',                                                               //recommendations,
     'margin_x_setting' => 'Tam Ekran',                                                  //accountinterface,
     'medium' => 'Orta',                                                                 //accountinterface,
+    'min_vote_count' => 'MİNİMUM OY SAYISI',                                            //recommendations,
     'minute' => 'dakika',
     'movie' => 'Film',
     'moviecard_percent' => '%{{movie.percent}}',                                        //recommendations,

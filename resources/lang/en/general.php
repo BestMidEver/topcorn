@@ -70,6 +70,7 @@ return [
     'match' => 'match',                                                     //recommendations,
     'margin_x_setting' => 'Full Screen',                                    //accountinterface,
     'medium' => 'Medium',                                                   //accountinterface,
+    'min_vote_count' => 'MINIMUM VOTE COUNT',                               //recommendations,
     'minute' => 'minute',                                                   //movie,
     'movie' => 'Movie',
     'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,
