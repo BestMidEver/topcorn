@@ -35,3 +35,7 @@ pass={
 @section('title')
 @{{movie.title}}@{{ movie.release_date ? ' (' + movie.release_date.substring(0, 4) + ')' : ''}}{{ __('title.movie') }}
 @endsection
+
+@section('meta_description')
+Watch trailer of {{$movie_title}}
+@endsection
