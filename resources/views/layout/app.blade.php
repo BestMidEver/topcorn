@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('meta_description')">
+    <meta property="og:image" content="@yield('fb_image')">
 
     <title>
         @section('title')
