@@ -147,6 +147,8 @@ return [
     'theme_light' => 'Aydınlık',                                                        //accountinterface,   
     'tr' => 'Türkiye',         
     'top_rated' => 'En Yüksek Oy Alan',         
+    'tooltip_watchlater' => 'Sonra İzle',                                               //recommendations,
+    'tooltip_ban' => 'Banla',                                                           //recommendations,
     'trailer' => 'FRAGMAN',         
     'try_account' => 'Türk Lirası Hesabı',                                              //donation,
     'understand_my_taste' => 'Haydi Başlayalım',                                              //home,       

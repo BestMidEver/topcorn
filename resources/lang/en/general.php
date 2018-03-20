@@ -147,6 +147,8 @@ return [
     'theme_dark' => 'Dark',                                                 //accountinterface,   
     'theme_light' => 'Light',                                               //accountinterface,   
     'top_rated' => 'Top Rated',                                             //recommendations,
+    'tooltip_watchlater' => 'Watch Later',                                               //recommendations,
+    'tooltip_ban' => 'Ban',                                                           //recommendations,
     'trailer' => 'TRAILER',                                                 //movie,
     'tr' => 'Turkey',                                                               //donation
     'try_account' => 'TRY Account',                                         //donation,
