@@ -47,6 +47,6 @@ $(document).ready(function() {
 	});
 $('[data-toggle="tooltip"]').tooltip({
 	trigger : 'hover',
-	delay: { "show": 50000, "hide": 10000 }
+	delay: { "show": 500, "hide": 100 }
 });
 });
