@@ -137,7 +137,7 @@ return [
     'sort_by' => 'SORREND',                                                              //recommendations, 
     'sort_by_match' => 'Egyezési pontszám alapján',                                                     //recommendations,      
     'sort_by_percent' => 'Egyezési százalék szerint',                                                     //recommendations,      
-    'sort_by_tmdb' => 'TMDb puanı',                                                     //recommendations,      
+    'sort_by_tmdb' => 'TMDb pontszám szerint',                                                     //recommendations,      
     'sort_by_pop' => 'Népszerűség szerint',                                                     //recommendations,      
     'standard' => 'Alapértelmezett',                                        //accountinterface,
 	'theme' => 'Téma',
