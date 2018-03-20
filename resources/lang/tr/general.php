@@ -60,6 +60,7 @@ return [
     'hismovies' => 'Filmleri',
     'hover_title_language' => 'Film İpucu',                                             //accountinterface,
     'image_quality' => 'Görsel Kalitesi',                                               //accountinterface,
+    'info_updated' => 'Bilgileriniz başarıyla güncellendis.',                            //account,
     'interface' => 'Arayüz',                                                            //account,
     'its_title' => 'Adı',
     'lang' => 'Dil',                                                                    //accountinterface,

@@ -62,7 +62,7 @@ class accountController extends Controller
 		}
 		$user->save();
 
-		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');
+		$request->session()->flash('status', __('general.info_updated'));
 
 
 		return redirect('/account');
@@ -167,7 +167,7 @@ class accountController extends Controller
 		$user->pagination = $request->pagination;
 		$user->save();
 
-		$request->session()->flash('status', 'Bilgileriniz başarıyla güncellendi.');
+		$request->session()->flash('status', __('general.info_updated'));
 		return redirect('/account/interface');
 	}
 

@@ -24,7 +24,7 @@ return [
 
       'h3' => 'Különleges filmek várnak rád!',
       't31' => 'A topcorn.io kifejezetten a tudatos filmrajongók számára lett kifejlesztve.',
-      't32' => 'Hogy jobban megismerjünk, szavazz a filmekre, amelyeket megnéztél, a többit pedig hagy topcorn.io-ra.',
+      't32' => 'Hogy jobban megismerjünk, szavazz a filmekre, amelyeket megnéztél, a többit pedig hagyd topcorn.io-ra.',
 
       'h4' => 'Teljesen ingyenes!',
       't41' => 'Mire vársz?',
