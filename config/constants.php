@@ -4,8 +4,8 @@ return array(
 
   'image' => array(
 
-    'fb_http' => 'http://image.tmdb.org/t/p/w185',
-    'fb_https' => 'https://image.tmdb.org/t/p/w185',
+    'fb_http' => 'http://image.tmdb.org/t/p/w300',
+    'fb_https' => 'https://image.tmdb.org/t/p/w300',
 
     'cover' => array(
       'https://image.tmdb.org/t/p/w300',
