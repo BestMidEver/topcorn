@@ -132,7 +132,7 @@ return [
     'seen_movies' => 'Megnézett filmek',                                    //profile,
     'send_instructions' => 'Utasítások küldése',                            //email,
     'share' => 'Megosztás',                                                 //movie
-	'show_crew' => 'Mutassa a stábot!',
+	'show_crew' => 'Mutassa a stábot',
     'show_everyone' => 'Mutass mindenkit',                                  //movie
     'sort_by' => 'SORREND',                                                              //recommendations, 
     'sort_by_match' => 'Egyezési pontszám alapján',                                                     //recommendations,      
