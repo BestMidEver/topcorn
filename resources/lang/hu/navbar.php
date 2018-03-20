@@ -10,7 +10,7 @@ return [
     'watchlater' => 'Később megnézem',
     'profile' => 'Profilom',
     'register' => 'Regisztráció',
-    'contact_us' => 'Lépjen kapcsolatba velünk',
+    'contact_us' => 'Lépj kapcsolatba velünk',
     'account' => 'Beállítások',
     'faq' => 'Gyakran Ismételt Kérdések',
     'faq_long' => 'Gyakran Ismételt Kérdések',
