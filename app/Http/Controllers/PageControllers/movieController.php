@@ -31,12 +31,14 @@ class movieController extends Controller
                 $movie_tr_title = $movie->tr_title != $movie_title ? ($movie->tr_title != $movie_en_title ? $movie->tr_title :'') : '';
                 $movie_hu_title = $movie->hu_title != $movie_title ? ($movie->hu_title != $movie_en_title ? ($movie->hu_title != $movie_tr_title ? $movie->hu_title :'') :'') : '';
                 $movie_year = substr($movie->release_date,0 ,4);
+                $poster_path = $movie->en_poster_path;
             }else{
                 $movie_title = '';
                 $movie_en_title = '';
                 $movie_tr_title = '';
                 $movie_hu_title = '';
                 $movie_year = '';
+                $poster_path = '';
             }
         }
 
@@ -50,7 +52,7 @@ class movieController extends Controller
             $watched_movie_number = null;
         }
 
-    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year'));
+    	return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'));
     }
 
     public function get_user_movie_record($movie)
