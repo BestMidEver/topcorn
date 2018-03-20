@@ -87,7 +87,7 @@
 	@if(auth::check())
 		@if(Auth::User()->advanced_filter)
 	<div class="mt-3 pb-3">
-		<p class="h6 text-muted">MİNİMUM OY SAYISI</p>
+		<p class="h6 text-muted">{{ __('general.min_vote_count') }}</p>
 		<rzslider rz-slider-model="slider_vote_count.value"
 		rz-slider-options="slider_vote_count.options"></rzslider>
 	</div>
