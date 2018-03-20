@@ -140,7 +140,7 @@ return [
     'top_rated' => 'En Yüksek Oy Alan',         
     'trailer' => 'FRAGMAN',         
     'try_account' => 'Türk Lirası Hesabı',                                              //donation,
-    'understand_my_taste' => 'Başlayalım',                                              //home,                        NEW NEW NEW
+    'understand_my_taste' => 'Haydi Başlayalım',                                              //home,                        NEW NEW NEW
     'user' => 'Kullanıcı',          
     'user_name' => 'Kullanıcı Adı',                                                     //register, account,
     'watch_later' => 'Sonra İzle',          
@@ -148,4 +148,5 @@ return [
     'writer' => 'Yazar',
     'writers' => 'Yazarlar',
     'writing' => 'Senaryo',
+    'year' => 'YIL',                                                                    //recommendations
 ];

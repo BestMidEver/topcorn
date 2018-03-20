@@ -79,7 +79,7 @@
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="mt-3 pb-3">
-		<p class="h6 text-muted">YIL</p>
+		<p class="h6 text-muted">{{ __('general.year') }}</p>
 		<rzslider rz-slider-model="slider.minValue"
 		rz-slider-high="slider.maxValue"
 		rz-slider-options="slider.options"></rzslider>

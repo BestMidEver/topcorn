@@ -141,7 +141,7 @@ return [
     'top_rated' => 'Top Rated',                                             //recommendations,
     'trailer' => 'TRAILER',                                                 //movie,
     'try_account' => 'TRY Account',                                         //donation,
-    'understand_my_taste' => 'Understand My Taste',                         //home,
+    'understand_my_taste' => 'Let\'s Get Started',                         //home,
     'user' => 'User',
     'user_name' => 'User Name',                                             //register, account,
     'watch_later' => 'Watch Later',
@@ -149,4 +149,5 @@ return [
     'writer' => 'Writer',
     'writers' => 'Writers',
     'writing' => 'Writing',
+    'year' => 'YEAR',                                                                    //recommendations
 ];

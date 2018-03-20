@@ -149,4 +149,5 @@ return [
     'writer' => 'Író',
     'writers' => 'Írók',
     'writing' => 'Író',
+    'year' => 'ÉV',                                                                    //recommendations
 ];
