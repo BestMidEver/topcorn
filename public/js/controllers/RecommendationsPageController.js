@@ -82,7 +82,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 					else if(pass.tt_movie==3)location.hash="tooltip-movie-review";
 				}
 			}else if(pass.tt_navbar<100){
-				if(pass.watched_movie_number>49)location.hash="tooltip-footer-like";
+				if(pass.watched_movie_number>49&&pass.tt_navbar<70)location.hash="tooltip-footer-like";
 				else if(pass.watched_movie_number>199)location.hash="tooltip-footer-donate";
 			}
 
@@ -137,9 +137,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 					rate.tt_manipulate('navbar', 70)
 					.then(function(response){
 						pass.tt_navbar=70;
-						setTimeout(function() {
-							$('#donate').popover('show');
-						}, 2500);
+						if($scope.watched_movie_number>199){
+							setTimeout(function() {
+								$('#donate').popover('show');
+							}, 2500);
+						}
 					});
 				}else if(location.hash.indexOf('navbar-tooltips-all-done')>-1){
 					$("[data-toggle=popover]").popover('hide');
