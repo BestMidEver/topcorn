@@ -60,6 +60,7 @@ return [
     'hismovies' => 'Filmjei',                                               //person
     'hover_title_language' => 'Buboréksúgó',                                //accountinterface,
     'image_quality' => 'Képminőség',                                        //accountinterface,
+    'info_updated' => 'Sikeresen mentetted a változásokat.',                            //account,
     'interface' => 'Kezelőfelület',                                         //account,
     'its_title' => 'cím',                                                   //movie
 	'lang' => 'Nyelv',
@@ -109,6 +110,7 @@ return [
     'producer_countries' => 'Gyártó országok',                              //movie
     'producer_country' => 'Gyártó ország',                                  //movie
     'profile' => 'Profil',                                                  //account,
+    'pw_updated' => 'Sikeresen megváltoztattad a jelszavadat.',             //account,
     'profile_photo' => 'Profilkép',                                         //account,
     'profile_photo_help' => '(A film szereplői közül)',                     //account,
     'read_all' => 'Több',                                                   //movie

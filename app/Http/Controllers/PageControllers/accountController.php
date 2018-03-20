@@ -107,7 +107,7 @@ class accountController extends Controller
 			$user->password = Hash::make($request->new_password);
 			$user->save();
 
-			$request->session()->flash('status', 'Şifreniz başarıyla güncellendi.');
+			$request->session()->flash('status', __('general.pw_updated'));
 
 			return redirect('/account/password');
 
@@ -121,7 +121,7 @@ class accountController extends Controller
 			$user->password = Hash::make($request->new_password);
 			$user->save();
 
-			$request->session()->flash('status', 'Şifreniz başarıyla güncellendi.');
+			$request->session()->flash('status', __('general.pw_updated'));
 
 			return redirect('/account/password');
 
