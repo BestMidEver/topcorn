@@ -135,7 +135,7 @@ return [
     'show_crew' => 'Show Crew',                                             //accountinterface,  
     'show_everyone' => 'Show Full Cast',                                    //movie,
     'sort_by' => 'SORT BY',                                                              //recommendations, 
-    'sort_by_match' => 'Match Point',                                                     //recommendations,      
+    'sort_by_match' => 'Match Score',                                                     //recommendations,      
     'sort_by_percent' => 'Match Percentage',                                                     //recommendations,      
     'sort_by_tmdb' => 'TMDb score',                                                     //recommendations,      
     'sort_by_pop' => 'Popularity',                                                     //recommendations,      
