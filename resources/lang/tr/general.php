@@ -72,6 +72,7 @@ return [
     'medium' => 'Orta',                                                                 //accountinterface,
     'minute' => 'dakika',
     'movie' => 'Film',
+    'moviecard_percent' => '%{{movie.percent}}',                                        //recommendations,
     'movies' => 'Film',                                                                 //person,
     'movie_details' => 'Film Detayları',
     'most_rated' => 'En Çok Oylanan',

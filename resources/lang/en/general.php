@@ -72,6 +72,7 @@ return [
     'medium' => 'Medium',                                                   //accountinterface,
     'minute' => 'minute',                                                   //movie,
     'movie' => 'Movie',
+    'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,
     'movies' => 'movies',                                                   //person,
     'movie_details' => 'Movie Details',                                     //movie,
     'most_rated' => 'Most Rated',                                           //person,
