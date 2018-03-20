@@ -3,9 +3,9 @@
 return [
     '404' => 'Page not found.',                                             //404,
     'a_z' => 'A -> Z',                                                      //person,
-    'according_to_my_taste' => 'According to My Taste',                     //recommendations,
-    'according_to_your_taste' => 'According to your taste',                 //recommendations,
-    'according_to_themoviedb' => 'According to everyone',                   //recommendations,
+    'according_to_my_taste' => 'Based on my Taste',                     //recommendations,
+    'according_to_your_taste' => 'Based on your taste',                 //recommendations,
+    'according_to_themoviedb' => 'TMDb score',                              //recommendations,
     'acting' => 'Acting',                                                   //person,
     'active' => 'Active',                                                   //accountinterface,
     'actor' => 'Actor',
