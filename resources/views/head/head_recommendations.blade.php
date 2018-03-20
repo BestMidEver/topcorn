@@ -39,5 +39,4 @@ pass={
 @endsection
 
 @section('meta_description')
-{{ __('long_texts.meta_description.recommendations') }}
-@endsection
+Get movie recommendations from all over the world based on your unique taste. topcorn.io learns your taste and gives movie advices accordingly. You can filter movies with original languages, years and genres. See movie rating based on your taste. @endsection
