@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('meta_description')">
 
-<meta property="og:image" content="http://image.tmdb.org/t/p/w300_and_h450_bestv2/hY39e7Svr1rDxNwjQkUZSL83NZz.jpg"/>
-<meta property="og:image:secure_url" content="https://image.tmdb.org/t/p/w300_and_h450_bestv2/hY39e7Svr1rDxNwjQkUZSL83NZz.jpg" />
+<meta property="og:image" content="http://image.tmdb.org/t/p/w185/hY39e7Svr1rDxNwjQkUZSL83NZz.jpg"/>
+<meta property="og:image:secure_url" content="https://image.tmdb.org/t/p/w185/hY39e7Svr1rDxNwjQkUZSL83NZz.jpg" />
 
     <title>
         @section('title')
