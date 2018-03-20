@@ -45,8 +45,9 @@ $(document).ready(function() {
 			}
 		});
 	});
-$('[data-toggle="tooltip"]').tooltip({
-	animation: true,
-    delay: {show: 500, hide: 100}
 });
+
+$('[data-toggle="tooltip"]').tooltip({
+	trigger : 'hover',
+	delay: { "show": 5000, "hide": 1000 }
 });
