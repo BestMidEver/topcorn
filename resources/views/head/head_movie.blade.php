@@ -37,5 +37,5 @@ pass={
 @endsection
 
 @section('meta_description')
-Watch trailer of movie {{$movie_title}} {{$movie_year}}. Read summary, reviews. See full cast. English, Türkçe, Magyar. {{$movie_plot}}
+Watch trailer of movie {{$movie_title}} {{$movie_year}}. Read summary, reviews. See full cast. English, Türkçe, Magyar. 
 @endsection
