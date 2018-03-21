@@ -311,7 +311,7 @@
 	</div>
 </div>
 
-<div class="fb-comments" data-href="https://topcorn.io/movie/250-I-Kina-spiser-de-hunde" data-width="100%" data-numposts="10"></div>
+<div class="fb-comments" data-href="https://topcorn.io/movie/{{$id_dash_title}}" data-width="100%" data-numposts="6"></div>
 <!--Review Section-->
 
 @include('layout.this_ratemodal')
