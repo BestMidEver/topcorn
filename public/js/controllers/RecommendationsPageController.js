@@ -374,7 +374,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		}
 
 
-		$scope.search_get_first = function(page)
+		$scope.search_get_first = function()
 		{
 			$scope.page_search = 1;
 			$scope.search_users();
