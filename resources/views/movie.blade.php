@@ -311,7 +311,7 @@
 	</div>
 
 	<span class="mt-5 h5 mb-0">{{ __('general.fb_comments') }}</span>
-	<div class="fb-comments mx-0 px-0" data-href="https://topcorn.io/movie/{{$id_dash_title}}" data-width="100%" data-numposts="6"></div>
+	<div class="fb-comments" data-href="https://topcorn.io/movie/{{$id_dash_title}}" data-width="100%" data-numposts="6"></div>
 </div>
 <!--Review Section-->
 
