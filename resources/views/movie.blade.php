@@ -310,6 +310,8 @@
 		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
 	</div>
 </div>
+
+<div class="fb-comments" data-href="https://topcorn.io/movie/250-I-Kina-spiser-de-hunde" data-width="100%" data-numposts="10"></div>
 <!--Review Section-->
 
 @include('layout.this_ratemodal')
