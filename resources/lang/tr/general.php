@@ -50,6 +50,7 @@ return [
     'ethereum_address' => 'Ethereum Adresimiz',                                         //donation,
     'euro_account' => 'Euro Hesabı',                                                    //donation,
     'facebook_profile_photo' => 'Facebook Profil Resimi',                               //account,
+    'fb_comments' => 'Facebook Yorumları',                                              //movie,
     'filter' => 'SÜZGEÇ',                                                               //recommendations,
     'primary_language' => 'Ana Dil',                                                    //accountinterface,
     'forgot_my_password' => 'Şifremi Unuttum',                                          //email, login,

@@ -50,6 +50,7 @@ return [
     'ethereum_address' => 'Ethereum címünk',                                //donation,
     'euro_account' => 'Euro számla',                                        //donation,
     'facebook_profile_photo' => 'Facebook profilkép',                       //account,
+    'fb_comments' => 'Ezt meg kell néznem!',                                //movie,
     'filter' => 'SZŰRŐ',                                                    //recommendations,
     'primary_language' => 'Elsődleges nyelv',                               //accountinterface,
     'forgot_my_password' => 'Elfelejtettem a jelszavam',                    //email, login,

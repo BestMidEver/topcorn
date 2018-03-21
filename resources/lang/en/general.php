@@ -50,6 +50,7 @@ return [
     'ethereum_address' => 'Our Ethereum Address',                           //donation,
     'euro_account' => 'Euro Account',                                       //donation,
     'facebook_profile_photo' => 'Facebook Profile Picture',                 //account,
+    'fb_comments' => 'Facebook Comments',                                   //movie,
     'filter' => 'FILTER',                                                   //recommendations,
     'primary_language' => 'Primary Language',                               //accountinterface,
     'forgot_my_password' => 'I Forgot My Password',                         //email, login,
