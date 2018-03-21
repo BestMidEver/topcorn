@@ -97,7 +97,7 @@ return [
     'original_language' => 'Eredeti nyelv',                                 //movie,
 	'pagination' => 'Lapszámozás',
     'pagination_info' =>
-        '{{from}} - {{to}} <span class="px-2">/</span> {{in}} találat',     //pagination,
+        '{{from:suffix}} - {{to:suffix}} <span class="px-2">/</span> {{in:suffix}} találat',     //pagination,
     'password' => 'Jelszó',                                                 //login, register, account,
     'password_confirmation' => 'Jelszó megerősítése',                       //register,
     'person' => 'Személy',                                                  //search,

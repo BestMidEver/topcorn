@@ -97,7 +97,7 @@ return [
     'original_language' => 'Original Language',                             //movie,
     'pagination' => 'Pagination',                                           //accountinterface,
     'pagination_info' => 
-        '{{from}} - {{to}} <span class="px-2">of</span> {{in}}',            //pagination,
+        '{{from:suffix}} - {{to:suffix}} <span class="px-2">of</span> {{in:suffix}}',            //pagination,
     'password' => 'Password',                                               //login, register, account,
     'password_confirmation' => 'Password Confirmation',                     //register,
     'person' => 'Person',                                                   //search,
