@@ -37,6 +37,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.movies=null;
 		$scope.people=null;
 		$scope.users=null
+		$(".tooltip").hide();
 	}
 
 	$scope.generalinput='';
