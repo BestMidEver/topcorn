@@ -19,7 +19,7 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
 			</div>
-			<input type="text" id="input_user" class="form-control" placeholder="{{ __('general.search_user') }}" aria-describedby="basic-addon1" ng-model="search_text" ng-change="search_users()" ng-model-options="{debounce: 750}">
+			<input type="text" id="input_user" class="form-control" placeholder="{{ __('general.search_user') }}" aria-describedby="basic-addon1" ng-model="search_text" ng-change="search_get_first()" ng-model-options="{debounce: 750}">
 		</div>
 		<div class="col"></div>
 	</div>

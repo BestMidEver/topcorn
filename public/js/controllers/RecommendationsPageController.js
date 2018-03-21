@@ -373,6 +373,13 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.search_users();
 		}
 
+
+		$scope.search_get_first = function(page)
+		{
+			$scope.page_search = 1;
+			$scope.search_users();
+		}
+
 		$scope.add_to_history = function(user_id)
 		{
 			rate.add_to_history(user_id)
