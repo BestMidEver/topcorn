@@ -39,9 +39,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.users=null
 	}
 
+	$scope.generalinput='';
 	$scope.get_page_data = function()
 	{
-		console.log($scope.generalinput)
 		if($scope.generalinput.length == 0){
 			$scope.reset_tab();
 		}else{
