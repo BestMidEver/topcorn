@@ -82,12 +82,12 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					});
 					break;
 				case 'user':
-					rate.search_users(temp, $scope.page_search)
+					rate.search_users(temp, $scope.page)
 					.then(function(response){
 						console.log(response.data);
 						$scope.users=response.data.data;
-						$scope.pagination_search=response.data.last_page;
-						$scope.current_page_search=response.data.current_page;
+						$scope.pagination=response.data.last_page;
+						$scope.current_page=response.data.current_page;
 						$scope.from=response.data.from;
 						$scope.to=response.data.to;
 						$scope.in=response.data.total;
