@@ -125,7 +125,7 @@
 
 
 
-    <div class="container-fluid px-1 px-md-3 px-lg-5">
+    <div class="container">
         @section('body')
         @show
     </div>
