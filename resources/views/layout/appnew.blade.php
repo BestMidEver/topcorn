@@ -77,46 +77,48 @@
 
 
     <nav class="navbar navbar-expand-md navbar-dark bg-night py-md-0">
-        <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
-            <img src="/images/topcorn_logo.png" width="66" height="66">
-        </a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link d-md-none {{ Request::segment(1) === 'home' ? 'active' : null }}" href="/home"><i class="fa fa-home" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.home') }}</span></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/home"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.recommendations') }}</span></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto pr-3">
-            <li class="nav-item">
-                <a class="nav-link d-md-none text-warning" href="/register"><i class="fa fa-plus" aria-hidden="true"></i><span class=""> {{ __('navbar.register') }}</span></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link d-md-none text-white" href="/login"><i class="fa fa-sign-in-alt" aria-hidden="true"></i><span class=""> {{ __('navbar.login') }}</span></a>
-            </li>
-        </ul>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
+        <div class="container">
+            <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
+                <img src="/images/topcorn_logo.png" width="66" height="66">
+            </a>
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::segment(1) === 'home' ? 'active' : null }}" href="/home"><i class="fa fa-home d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.home') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'home' ? 'active' : null }}" href="/home"><i class="fa fa-home" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.home') }}</span></a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto d-none d-md-flex">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-warning" href="/register"><i class="fa fa-plus d-none d-md-inline" aria-hidden="true"></i> <span class="">{{ __('navbar.register') }}</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/login"><i class="fa fa-sign-in-alt" aria-hidden="true"></i> <span class="">{{ __('navbar.login') }}</span></a>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/home"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.recommendations') }}</span></a>
                 </li>
             </ul>
+            <ul class="navbar-nav ml-auto pr-3">
+                <li class="nav-item">
+                    <a class="nav-link d-md-none text-warning" href="/register"><i class="fa fa-plus" aria-hidden="true"></i><span class=""> {{ __('navbar.register') }}</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link d-md-none text-white" href="/login"><i class="fa fa-sign-in-alt" aria-hidden="true"></i><span class=""> {{ __('navbar.login') }}</span></a>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) === 'home' ? 'active' : null }}" href="/home"><i class="fa fa-home d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.home') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline" aria-hidden="true"></i> {{ __('navbar.recommendations') }}</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto d-none d-md-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="/register"><i class="fa fa-plus d-none d-md-inline" aria-hidden="true"></i> <span class="">{{ __('navbar.register') }}</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/login"><i class="fa fa-sign-in-alt" aria-hidden="true"></i> <span class="">{{ __('navbar.login') }}</span></a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
