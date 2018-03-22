@@ -86,7 +86,7 @@
 								-->
 							</div>
 						</div>
-						<div class="embed-responsive embed-responsive-1by1 listtrailer">
+						<div class="embed-responsive embed-responsive-1by1 trailer">
 							<iframe class="embed-responsive-item" ng-src="https://www.youtube.com/embed/UMlYWZgCIgo" allowfullscreen></iframe>
 						</div>
 						<div class="d-flex flex-row background-black no-gutters">
