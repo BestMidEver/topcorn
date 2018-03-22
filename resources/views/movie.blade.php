@@ -13,7 +13,7 @@
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row no-gutters">
 							<div class="col pt-2 pl-2">
-								<span class="text-white h6 lead lead-small">@{{movie.tagline}}</span>
+								<span class="text-white h6 lead lead-small">@{{movie.tagline}} - @{{trailerurl}}</span>
 							</div>
 							<div class="col p-2 text-right">
 								<div ng-if="user_movie_record.percent > 0">
