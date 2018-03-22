@@ -14,64 +14,67 @@
 	</a>
 </div>
 
+<div class="container-fluid mt-3">
 
-<div class="mt-md-4">
-	<div class="position-relative">
-		<div id="accordion">
-			<div>
-				<div id="collapseCover" class="collapse show" data-parent="#accordion">
-					<img ng-src="https://image.tmdb.org/t/p/w1280/2gJDuPxrZBns5ab47HQbyU2l6Im.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
-					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
-						<div class="d-flex flex-row no-gutters">
-							<div class="col pt-2 pl-2">
-								<span class="text-white h6 lead lead-small">1. Elveda Las Vegas (1995)</span>
+	<!--Trailer-->
+	<div class="mt-md-4">
+		<div class="position-relative">
+			<div id="accordion">
+				<div>
+					<div id="collapseCover" class="collapse show" data-parent="#accordion">
+						<img ng-src="https://image.tmdb.org/t/p/w1280/2gJDuPxrZBns5ab47HQbyU2l6Im.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
+						<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
+							<div class="d-flex flex-row no-gutters">
+								<div class="col pt-2 pl-2">
+									<span class="text-white h6 lead lead-small">1. Elveda Las Vegas (1995)</span>
+								</div>
+								<div class="col p-2 text-right"></div>
 							</div>
-							<div class="col p-2 text-right"></div>
+							<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
+								<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
+							</div>
+							<div class="d-flex flex-row justify-content-end p-2 text-right"></div>
 						</div>
-						<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
-							<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
-						</div>
-						<div class="d-flex flex-row justify-content-end p-2 text-right"></div>
 					</div>
 				</div>
-			</div>
-			<div>
-				<div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="1 > 0">
-					<div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
-						<div class="col">
-							<div class="h-100 d-flex flex-column justify-content-center pl-2">
-								<span class="text-white h6 lead lead-small">1. Elveda Las Vegas (1995)</span>
-							</div>
-						</div>
-						<div class="col pb-2 pr-2 text-right"></div>
-					</div>
-					<div class="embed-responsive embed-responsive-1by1 trailer">
-						<iframe class="embed-responsive-item" ng-src="https://www.youtube.com/embed/UMlYWZgCIgo" allowfullscreen></iframe>
-					</div>
-					<div class="d-flex flex-row background-black no-gutters">
-						<div class="col">
-							<div class="h-100 d-flex flex-column justify-content-center pl-2">
-								<div ng-if="2 > 1">
-									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="false" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
-									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="false" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
+				<div>
+					<div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="1 > 0">
+						<div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
+							<div class="col">
+								<div class="h-100 d-flex flex-column justify-content-center pl-2">
+									<span class="text-white h6 lead lead-small">1. Elveda Las Vegas (1995)</span>
 								</div>
 							</div>
+							<div class="col pb-2 pr-2 text-right"></div>
 						</div>
-						<div class="col">
-							<div class="h-100 d-flex flex-column justify-content-center text-center">
-								<div>
-									<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-target="#collapseCover" aria-expanded="true" aria-controls="collapseCover"><i class="fa fa-angle-up"></i></button>
+						<div class="embed-responsive embed-responsive-1by1 trailer">
+							<iframe class="embed-responsive-item" ng-src="https://www.youtube.com/embed/UMlYWZgCIgo" allowfullscreen></iframe>
+						</div>
+						<div class="d-flex flex-row background-black no-gutters">
+							<div class="col">
+								<div class="h-100 d-flex flex-column justify-content-center pl-2">
+									<div ng-if="2 > 1">
+										<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="false" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
+										<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="false" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
+									</div>
 								</div>
 							</div>
+							<div class="col">
+								<div class="h-100 d-flex flex-column justify-content-center text-center">
+									<div>
+										<button class="btn btn-outline-secondary border-0 btn-lg fa40 text-muted hover-white" ng-click="isfragman = false" data-toggle="collapse" data-target="#collapseCover" aria-expanded="true" aria-controls="collapseCover"><i class="fa fa-angle-up"></i></button>
+									</div>
+								</div>
+							</div>
+							<div class="col pb-2 pr-2 text-right"></div>
 						</div>
-						<div class="col pb-2 pr-2 text-right"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!--Trailer-->
+
+	<div class="lead lead-small">Film karakter çatışması yaşayan bir kadının bir arkadaş grubuna dahil olup yatla gezintiye çıkmasıyla başlar.Ancak bu gezinin sonunun bu şekilde sonuçlanacağından hiçbirisinin haberi yoktur. Psikolojik gerilimin farklı bir tarzı değişik bir film seyretmek isteyenlerin mutlaka izlemesi gereken bir film olduğunu düşünüyorum.İyi seyirler...</div>
 </div>
-
-
-
 @endsection
