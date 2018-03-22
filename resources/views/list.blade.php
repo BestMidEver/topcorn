@@ -29,35 +29,12 @@
 								<div class="col pt-2 pl-2">
 									<span class="text-white h6 lead lead-small">1. Elveda Las Vegas (1995)</span>
 								</div>
-								<div class="col p-2 text-right">
-									<!--
-									<div ng-if="user_movie_record.percent > 0">
-										<small class="text-white">{{ __("general.according_to_your_taste") }}</small>
-										<div>
-											<span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
-										</div>
-										@if(Auth::check())
-											@if(Auth::User()->advanced_filter)
-										<div>
-											<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
-										</div>
-											@endif
-										@endif
-									</div>
-									-->
-								</div>
+								<div class="col p-2 text-right"></div>
 							</div>
 							<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
 								<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
 							</div>
-							<div class="d-flex flex-row justify-content-end p-2 text-right">
-								<!--
-								<div ng-if="movie.vote_average > 0">
-									<div><span class="text-warning display-4 d-none d-md-inline">@{{movie.vote_average}}</span><span class="text-warning h5 d-md-none">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-									<div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
-								</div>
-								-->
-							</div>
+							<div class="d-flex flex-row justify-content-end p-2 text-right"></div>
 						</div>
 					</div>
 				</div>
@@ -69,22 +46,7 @@
 									<span class="text-white h6 lead lead-small">1. Elveda Las Vegas (1995)</span>
 								</div>
 							</div>
-							<div class="col pb-2 pr-2 text-right">
-								<!--
-								<div ng-if="user_movie_record.percent > 0">
-									<div>
-										<small class="text-white">{{ __("general.according_to_your_taste") }} </small><span class="text-warning h4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
-									</div>
-									@if(Auth::check())
-										@if(Auth::User()->advanced_filter)
-									<div>
-										<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
-										</div>
-										@endif
-									@endif
-								</div>
-								-->
-							</div>
+							<div class="col pb-2 pr-2 text-right"></div>
 						</div>
 						<div class="embed-responsive embed-responsive-1by1 trailer">
 							<iframe class="embed-responsive-item" ng-src="https://www.youtube.com/embed/UMlYWZgCIgo" allowfullscreen></iframe>
@@ -105,6 +67,7 @@
 									</div>
 								</div>
 							</div>
+							<div class="col pb-2 pr-2 text-right"></div>
 						</div>
 					</div>
 				</div>
