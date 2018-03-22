@@ -14,7 +14,7 @@
 	</a>
 </div>
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-5">
 
 	<!--Trailer-->
 	<div class="mt-md-4">
@@ -78,7 +78,7 @@
 	<div class="lead lead-small mt-2">Film karakter çatışması yaşayan bir kadının bir arkadaş grubuna dahil olup yatla gezintiye çıkmasıyla başlar.Ancak bu gezinin sonunun bu şekilde sonuçlanacağından hiçbirisinin haberi yoktur. Psikolojik gerilimin farklı bir tarzı değişik bir film seyretmek isteyenlerin mutlaka izlemesi gereken bir film olduğunu düşünüyorum.İyi seyirler...</div>
 </div>
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-5">
 
 	<!--Trailer-->
 	<div class="mt-md-4">
