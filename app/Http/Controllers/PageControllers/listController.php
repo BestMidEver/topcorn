@@ -22,6 +22,6 @@ class listController extends Controller
         }
 
 
-		return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number'));
+		return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number'));
 	}
 }
