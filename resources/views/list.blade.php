@@ -17,7 +17,7 @@
 <div class="container-fluid mt-3">
 	<span class="text-dark h6">10. Elveda Las Vegas (1995)</span>
 	<!--Trailer-->
-	<div class="mt-md-4">
+	<div class="mt-md-2">
 		<div class="position-relative">
 			<div id="accordion">
 				<div>
@@ -77,7 +77,7 @@
 	<span class="text-dark h6">10. Memento (2000)</span>
 								
 	<!--Trailer-->
-	<div class="mt-md-4">
+	<div class="mt-md-2">
 		<div class="position-relative">
 			<div id="accordion">
 				<div>
