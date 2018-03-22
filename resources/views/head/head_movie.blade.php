@@ -44,5 +44,6 @@ pass={
 Watch trailer of movie {{$movie_title}} {{$movie_year}}. Read summary, reviews and every detail. See full cast, director, writer, original title, original language, producers, budget, revenue, official website. English {{$movie_en_title}}, Türkçe {{$movie_tr_title}}, Magyar {{$movie_hu_title}}@endsection
 
 @section('og_tags')
+<meta property="og:url" content="{{url('/')}}/movie/{{$id_dash_title}}" />
 <meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
 @endsection
