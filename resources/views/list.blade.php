@@ -13,4 +13,9 @@
 		<span class="text-dark">Szofijjja</span>
 	</a>
 </div>
+
+<div class="container-fluid mt-3">
+	<span class="h6">1. Elveda Las Vegas (1995)</span>
+	<img src="https://image.tmdb.org/t/p/w1280/2gJDuPxrZBns5ab47HQbyU2l6Im.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid coverpic" alt="Responsive image">
+</div>
 @endsection
