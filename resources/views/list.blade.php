@@ -3,7 +3,7 @@
 @include('head.head_list')
 
 @section('body')
-<h1 class="h4 text-center text-md-left col mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
+<h1 class="h3 text-center text-md-left col mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
 <div class="text-muted col"><small>5 ay önce eklendi, en son 23 gün önce güncellendi.</small></div>
 
@@ -15,7 +15,7 @@
 </div>
 
 <div class="container-fluid mt-3">
-	<span class="text-dark h6">10. Elveda Las Vegas (1995)</span>
+	<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
 	<!--Trailer-->
 	<div class="mt-md-2">
 		<div class="position-relative">
@@ -74,7 +74,7 @@
 
 <div class="container-fluid mt-5">
 
-	<span class="text-dark h6">10. Memento (2000)</span>
+	<span class="text-dark h5">10. Memento (2000)</span>
 								
 	<!--Trailer-->
 	<div class="mt-md-2">
