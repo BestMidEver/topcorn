@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\PageControllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class listController extends Controller
 {
