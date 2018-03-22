@@ -89,7 +89,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if(!$scope.movie.backdrop_path)	$scope.movie.backdrop_path=$scope.movie.poster_path;
 		if($scope.movie.videos.results.length>0){
 			$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.movie.videos.results[0].key);
-			console.log($scope.trailerurl)
+			console.log($scope.trailerurl + ':D')
 		}
 		$scope.directors=_.where($scope.movie.credits.crew, {department:'Directing',job:"Director"});
 		$scope.writers=_.filter($scope.movie.credits.crew, function(crew){
