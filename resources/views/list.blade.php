@@ -14,7 +14,7 @@
 	</a>
 </div>
 
-<div class="card-group mt-3">
+<div class="card-columns mt-3">
 	<div class="col-6">
 		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
 		<!--Trailer-->
