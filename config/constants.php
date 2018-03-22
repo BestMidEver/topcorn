@@ -44,6 +44,7 @@ return array(
 
     'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
     'password_spice' => 'Sp1cEe',
+    'app_id' => '525225627985884',
 
   ),
 
