@@ -47,8 +47,8 @@
 									-->
 								</div>
 							</div>
-							<div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
-								<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
+							<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
+								<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
 							</div>
 							<div class="d-flex flex-row justify-content-end p-2 text-right">
 								<!--
@@ -62,7 +62,7 @@
 					</div>
 				</div>
 				<div>
-					<div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="movie.videos.results.length > 0">
+					<div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="1 > 0">
 						<div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
 							<div class="col">
 								<div class="h-100 d-flex flex-column justify-content-center pl-2">
@@ -92,7 +92,7 @@
 						<div class="d-flex flex-row background-black no-gutters">
 							<div class="col">
 								<div class="h-100 d-flex flex-column justify-content-center pl-2">
-									<div ng-if="movie.videos.results.length > 1">
+									<div ng-if="2 > 1">
 										<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="false" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
 										<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="false" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
 									</div>
