@@ -45,5 +45,6 @@ Watch trailer of movie {{$movie_title}} {{$movie_year}}. Read summary, reviews a
 
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/movie/{{$id_dash_title}}" />
+<meta property="og:type" content="video.movie" />
 <meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
 @endsection
