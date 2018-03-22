@@ -15,7 +15,7 @@
 </div>
 
 <div class="card-columns mt-3">
-	<div class="">
+	<div class="mt-3">
 		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
 		<!--Trailer-->
 		<div class="mt-md-2">
@@ -73,7 +73,7 @@
 		<div class="lead lead-small mt-2">Film karakter çatışması yaşayan bir kadının bir arkadaş grubuna dahil olup yatla gezintiye çıkmasıyla başlar.Ancak bu gezinin sonunun bu şekilde sonuçlanacağından hiçbirisinin haberi yoktur.seyirler...</div>
 	</div>
 
-	<div class="">
+	<div class="mt-3">
 
 		<span class="text-dark h5">10. Memento (2000)</span>
 									
@@ -135,7 +135,7 @@
 		<div class="lead lead-small mt-2">Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...</div>
 	</div>
 
-	<div class="">
+	<div class="mt-3">
 
 		<span class="text-dark h5">8. Davaro (2000)</span>
 									
@@ -197,7 +197,7 @@
 		<div class="lead lead-small mt-2">Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...</div>
 	</div>
 
-	<div class="">
+	<div class="mt-3">
 
 		<span class="text-dark h5">8. Davaro (2000)</span>
 									
