@@ -14,9 +14,6 @@
 	</a>
 </div>
 
-<div class="container-fluid mt-3">
-
-
 
 	<div class="mt-md-4">
 		<div class="position-relative">
@@ -77,7 +74,4 @@
 
 
 
-
-
-</div>
 @endsection
