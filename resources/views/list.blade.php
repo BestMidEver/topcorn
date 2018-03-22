@@ -81,7 +81,7 @@
 		<div id="accordion">
 			<div>
 				<div id="collapseCover" class="collapse show" data-parent="#accordion">
-					<img src="https://image.tmdb.org/t/p/w1280/2gJDuPxrZBns5ab47HQbyU2l6Im.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w1280/2gJDuPxrZBns5ab47HQbyU2l6Im.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row no-gutters">
 							<div class="col pt-2 pl-2">
