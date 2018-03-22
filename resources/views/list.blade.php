@@ -7,5 +7,7 @@
 
 <div class="text-muted col"><small>5 ay önce eklendi, en son 23 gün önce güncellendi.</small></div>
 
-<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicsmall" alt="Responsive image">
+<div class="col">
+	<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail" alt="Responsive image">
+</div>
 @endsection
