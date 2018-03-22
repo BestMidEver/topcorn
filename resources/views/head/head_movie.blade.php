@@ -46,7 +46,7 @@ Watch trailer of movie {{$movie_title}} {{$movie_year}}. Read summary, reviews a
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/movie/{{$id}}"/>
 <meta property="og:title" content="{{$movie_title}} ({{$movie_year}})"/>
-<meta property="og:description" content="Check every detail of {{$movie_title}} ({{$movie_year}}). Read reviews. Find out movie score based on your taste. And so on..."/>
+<meta property="og:description" content="Check every detail of {{$movie_title}} ({{$movie_year}}). Read reviews, watch trailers. Find out movie score based on your taste. And so on..."/>
 <meta property="og:type" content="video.movie"/>
 <meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
