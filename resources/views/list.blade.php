@@ -15,7 +15,7 @@
 </div>
 
 <div class="container-fluid">
-	<div class="col-6">
+	<div class="col-6 d-inline">
 		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
 		<!--Trailer-->
 		<div class="mt-md-2">
@@ -73,7 +73,7 @@
 		<div class="lead lead-small mt-2">Film karakter çatışması yaşayan bir kadının bir arkadaş grubuna dahil olup yatla gezintiye çıkmasıyla başlar.Ancak bu gezinin sonunun bu şekilde sonuçlanacağından hiçbirisinin haberi yoktur. Psikolojik gerilimin farklı bir tarzı değişik bir film seyretmek isteyenlerin mutlaka izlemesi gereken bir film olduğunu düşünüyorum.İyi seyirler...</div>
 	</div>
 
-	<div class="col-6">
+	<div class="col-6 d-inline">
 
 		<span class="text-dark h5">10. Memento (2000)</span>
 									
