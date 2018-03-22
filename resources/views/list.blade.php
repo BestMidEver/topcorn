@@ -8,7 +8,9 @@
 <div class="text-muted col"><small>5 ay önce eklendi, en son 23 gün önce güncellendi.</small></div>
 
 <div class="col mt-2">
-	<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
-	<span>YellowWölf</span>
+	<a href="#">
+		<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
+		<span class="text-dark">YellowWölf</span>
+	</a>
 </div>
 @endsection
