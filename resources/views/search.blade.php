@@ -3,7 +3,7 @@
 @include('head.head_search')
 
 @section('body')
-<h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('general.search') }}</h5>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('general.search') }}</h1>
 
 <div class="container-fluid mt-3">
 	<ul class="nav justify-content-md-center tab1">
