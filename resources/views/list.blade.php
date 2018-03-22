@@ -15,7 +15,7 @@
 </div>
 
 <div class="container-fluid mt-3">
-
+	<span class="text-dark h6">10. Elveda Las Vegas (1995)</span>
 	<!--Trailer-->
 	<div class="mt-md-4">
 		<div class="position-relative">
@@ -25,9 +25,7 @@
 						<img ng-src="https://image.tmdb.org/t/p/w1280/2gJDuPxrZBns5ab47HQbyU2l6Im.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
 						<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 							<div class="d-flex flex-row no-gutters">
-								<div class="col pt-2 pl-2">
-									<span class="text-white h6">10. Elveda Las Vegas (1995)</span>
-								</div>
+								<div class="col pt-2 pl-2"></div>
 								<div class="col p-2 text-right"></div>
 							</div>
 							<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
@@ -40,11 +38,7 @@
 				<div>
 					<div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="1 > 0">
 						<div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
-							<div class="col">
-								<div class="h-100 d-flex flex-column justify-content-center pl-2">
-									<span class="text-white h6 lead lead-small">10. Elveda Las Vegas (1995)</span>
-								</div>
-							</div>
+							<div class="col"></div>
 							<div class="col pb-2 pr-2 text-right"></div>
 						</div>
 						<div class="embed-responsive embed-responsive-1by1 trailer">
@@ -80,6 +74,8 @@
 
 <div class="container-fluid mt-5">
 
+	<span class="text-dark h6">10. Memento (2000)</span>
+								
 	<!--Trailer-->
 	<div class="mt-md-4">
 		<div class="position-relative">
@@ -89,9 +85,7 @@
 						<img ng-src="https://image.tmdb.org/t/p/w1280/oBUznaSdjkY3HtQUzAxgdIZqh4w.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
 						<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 							<div class="d-flex flex-row no-gutters">
-								<div class="col pt-2 pl-2">
-									<span class="text-white h6">9. Memento (2000)</span>
-								</div>
+								<div class="col pt-2 pl-2"></div>
 								<div class="col p-2 text-right"></div>
 							</div>
 							<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
@@ -105,9 +99,7 @@
 					<div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="1 > 0">
 						<div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
 							<div class="col">
-								<div class="h-100 d-flex flex-column justify-content-center pl-2">
-									<span class="text-white h6 lead lead-small">9. Elveda Las Vegas (2000)</span>
-								</div>
+								<div class="h-100 d-flex flex-column justify-content-center pl-2"></div>
 							</div>
 							<div class="col pb-2 pr-2 text-right"></div>
 						</div>
