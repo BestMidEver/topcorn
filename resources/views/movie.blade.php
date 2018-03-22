@@ -67,7 +67,7 @@
 						</div>
 					</div>
 					<div class="embed-responsive embed-responsive-1by1 trailer">
-						<iframe class="embed-responsive-item" ng-src="@{{trailerurl}}" allowfullscreen></iframe>
+						<iframe class="embed-responsive-item" ng-src="https://www.youtube.com/embed/Rq9eM4ZXRgs" allowfullscreen></iframe>
 					</div>
 					<div class="d-flex flex-row background-black no-gutters">
 						<div class="col">
