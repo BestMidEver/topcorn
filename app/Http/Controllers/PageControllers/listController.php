@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Http\Controllers\PageControllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+class listController extends Controller
+{
+	public function list($id)
+	{
+        $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
+
+        if(Auth::check()){
+            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+            $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+        }else{
+            $target = '_self';
+            $watched_movie_number = null;
+        }
+
+
+		return view('movie', compact('id', 'image_quality', 'target', 'watched_movie_number'));
+	}
+}
