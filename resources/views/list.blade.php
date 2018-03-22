@@ -16,7 +16,7 @@
 
 <div class="card-columns mt-3">
 	<div class="mt-3">
-		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
+		<span class="text-dark h5">11111 (1995)</span>
 		<!--Trailer-->
 		<div class="mt-md-2">
 			<div class="position-relative">
@@ -70,12 +70,12 @@
 		</div>
 		<!--Trailer-->
 
-		<div class="lead lead-small mt-2">Film karakter çatışması yaşayan bir kadının bir arkadaş grubuna dahil olup yatla gezintiye çıkmasıyla başlar.Ancak bu gezinin sonunun bu şekilde sonuçlanacağından hiçbirisinin haberi yoktur.seyirler...</div>
+		<div class="lead lead-small mt-2">111111111111111111111 1 1  111111111111111111111111111 1 1 1 1 11111111111111111111111111</div>
 	</div>
 
 	<div class="mt-3">
 
-		<span class="text-dark h5">10. Memento (2000)</span>
+		<span class="text-dark h5">2222o (2000)</span>
 									
 		<!--Trailer-->
 		<div class="mt-md-2">
@@ -137,7 +137,7 @@
 
 	<div class="mt-3">
 
-		<span class="text-dark h5">8. Davaro (2000)</span>
+		<span class="text-dark h5">33333333333333 (2000)</span>
 									
 		<!--Trailer-->
 		<div class="mt-md-2">
@@ -194,12 +194,12 @@
 		</div>
 		<!--Trailer-->
 
-		<div class="lead lead-small mt-2">Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...</div>
+		<div class="lead lead-small mt-2">33333333333333333333333333333333333333 3 333333333333333333333333333333 3 333333333333333333333333333333 3 333333333333333333333333333333 3 333333333333333333333333333333 3 333333333333333333333333333333 3 333333333333333333333333333333 3 3 3 3.</div>
 	</div>
 
 	<div class="mt-3">
 
-		<span class="text-dark h5">8. Davaro (2000)</span>
+		<span class="text-dark h5">44444444 (2000)</span>
 									
 		<!--Trailer-->
 		<div class="mt-md-2">
@@ -256,7 +256,7 @@
 		</div>
 		<!--Trailer-->
 
-		<div class="lead lead-small mt-2">Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...</div>
+		<div class="lead lead-small mt-2">444444444444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4444444444444444444444 4 4 4 4 4</div>
 	</div>
 </div>
 @endsection
