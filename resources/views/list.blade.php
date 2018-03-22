@@ -26,7 +26,7 @@
 						<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 							<div class="d-flex flex-row no-gutters">
 								<div class="col pt-2 pl-2">
-									<span class="text-white h6 lead">1. Elveda Las Vegas (1995)</span>
+									<span class="text-white h6">1. Elveda Las Vegas (1995)</span>
 								</div>
 								<div class="col p-2 text-right"></div>
 							</div>
