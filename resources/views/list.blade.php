@@ -5,12 +5,11 @@
 @section('body')
 <h1 class="h3 text-center text-md-left col mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
-<div class="text-muted col"><small>5 ay önce eklendi, en son 23 gün önce güncellendi.</small></div>
-
 <div class="col mt-2">
 	<a href="#">
 		<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
 		<span class="text-dark">Szofijjja</span>
+		<div class="text-muted col"><small>5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
 	</a>
 </div>
 
@@ -19,7 +18,7 @@
 		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
 		<div class="row">
 			<!--Trailer-->
-			<div class="mt-md-2 col-7">
+			<div class="mt-md-2 col-6">
 				<div class="position-relative">
 					<div id="accordion">
 						<div>
