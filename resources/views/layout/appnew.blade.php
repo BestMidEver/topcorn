@@ -47,8 +47,6 @@
 
     <script src="/js/functions/rate_by_index.js"></script>  
 
-    @yield('external_internal_data_merger')
-
     @yield('angular_controller_js')
     
     <!-- Global site tag (gtag.js) - Google Analytics -->
