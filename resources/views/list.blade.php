@@ -12,7 +12,7 @@
 				<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
 			</div>
 			<div class="d-flex flex-column">
-				<span class="text-dark">Szofijjja</span>
+				<div><span class="text-dark">Szofijjja</span></div>
 				<div class="text-muted col"><small>5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
 			</div>
 		</div>
