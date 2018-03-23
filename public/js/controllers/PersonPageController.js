@@ -36,12 +36,16 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		});
 	}
 
-	rate.get_user_movies()
-	.then(function(response){
-		console.log(response.data);
-		$scope.user_movies = response.data;
+	if(pass.is_auth==1){
+		rate.get_user_movies()
+		.then(function(response){
+			console.log(response.data);
+			$scope.user_movies = response.data;
+			$scope.get_page_data();
+		});
+	}else{
 		$scope.get_page_data();
-	});
+	}
 
 	$scope.filter = function(mod,name){
 		switch(mod) {
