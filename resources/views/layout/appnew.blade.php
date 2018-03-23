@@ -39,6 +39,8 @@
 
     @yield('angular_sanitize')
 
+    @yield('age_calculator')
+    
     @yield('passdata')
 
     <script src="/js/app.js"></script>
