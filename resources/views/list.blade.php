@@ -5,7 +5,7 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col px-0 mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
-<div class="row no-gutters">
+<div class="card-group no-gutters">
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card">
 			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
