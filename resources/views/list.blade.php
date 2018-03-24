@@ -6,7 +6,7 @@
 <h1 class="h3 text-center text-md-left col px-0 mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
 <div class="row no-gutters">
-	<div class="px-1 mt-4 col-12 col-xl-6">
+	<div class="mx-2 mt-4 col-12 col-xl-6">
 		<div class="card">
 			<span class="text-dark h5">10. Jackie Brown (1997)</span>
 			<div class="row no-gutters pt-2">
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="px-1 mt-4 col-12 col-xl-6">
+	<div class="mx-2 mt-4 col-12 col-xl-6">
 		<div class="card">
 			<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
 			<div class="row no-gutters pt-2">
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="px-1 mt-4 col-12 col-xl-6">
+	<div class="mx-2 mt-4 col-12 col-xl-6">
 		<div class="card">
 			<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
 			<div class="row no-gutters pt-2">
