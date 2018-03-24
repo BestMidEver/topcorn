@@ -7,8 +7,8 @@
 
 <div class="container-fluid px-md-2">
 	<div class="mt-5">
-		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
-		<div class="row">
+		<span class="text-dark h5">10. Jackie Brown (1997)</span>
+		<div class="row pt-2">
 			<div class="col-6 col-md-3 col-xl-2">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
