@@ -6,7 +6,7 @@
 <h1 class="h3 text-center text-md-left col px-0 mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
 <div class="row no-gutters">
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -18,7 +18,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -41,7 +41,7 @@
 				<div class="pl-3">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
 			</div>
 		</div>
-	</div><div class="mt-5 col-12 col-xl-6 card moviecard">
+	</div><div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -65,7 +65,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -76,7 +76,7 @@
 				<div class="pl-3">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
 			</div>
 		</div>
-	</div><div class="mt-5 col-12 col-xl-6 card moviecard">
+	</div><div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -88,7 +88,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -100,7 +100,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -111,7 +111,7 @@
 				<div class="pl-3">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
 			</div>
 		</div>
-	</div><div class="mt-5 col-12 col-xl-6 card moviecard">
+	</div><div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -123,7 +123,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
@@ -135,7 +135,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 col-12 col-xl-6 card moviecard">
+	<div class="mt-5 col-12 col-xl-6 card">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
 		<div class="row no-gutters pt-2">
 			<div class="col-4">
