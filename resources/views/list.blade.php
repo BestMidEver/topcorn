@@ -6,7 +6,7 @@
 <h1 class="h3 text-center text-md-left col mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
 <div class="col mt-2">
-	<a href="#">
+	<a href="#" class="text-no-decoration">
 		<div class="d-flex flex-row">
 			<div class="d-flex flex-column">
 				<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
