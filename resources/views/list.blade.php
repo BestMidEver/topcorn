@@ -15,7 +15,7 @@
 				</div>
 
 				<div class="col-8">
-					<div class="pl-3 pr-2">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
+					<div class="pl-3 pr-1 pb-1">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
 				</div>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
+					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
 				</div>
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
+					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
 				</div>
 			</div>
 		</div>
@@ -57,7 +57,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
+					<div class="pl-3 pr-1 pb-1">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
 				</div>
 			</div>
 		</div>
@@ -71,7 +71,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
+					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
 				</div>
 			</div>
 		</div>
@@ -85,7 +85,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
+					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
 				</div>
 			</div>
 		</div>
@@ -99,7 +99,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
+					<div class="pl-3 pr-1 pb-1">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
 				</div>
 			</div>
 		</div>
@@ -113,7 +113,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
+					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
 				</div>
 			</div>
 		</div>
@@ -127,7 +127,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
+					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
 				</div>
 			</div>
 		</div>
@@ -141,7 +141,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
+					<div class="pl-3 pr-1 pb-1">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
 				</div>
 			</div>
 		</div>
@@ -155,7 +155,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
+					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
 				</div>
 			</div>
 		</div>
@@ -169,7 +169,7 @@
 				</div>
 
 				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-2">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
+					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
 				</div>
 			</div>
 		</div>
