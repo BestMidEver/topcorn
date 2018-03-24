@@ -19,7 +19,7 @@
 	</a>
 </div>
 
-<div class="container-fluid px-5">
+<div class="container-fluid px-md-2">
 	<div class="mt-3">
 		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
 		<div class="row">
