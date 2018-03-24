@@ -8,7 +8,7 @@
 <div class="row no-gutters">
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -18,7 +18,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -28,7 +28,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -37,7 +37,7 @@
 		</div>
 	</div><div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -47,7 +47,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -57,7 +57,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -66,7 +66,7 @@
 		</div>
 	</div><div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -76,7 +76,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -86,7 +86,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -95,7 +95,7 @@
 		</div>
 	</div><div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">10. Jackie Brown (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -105,7 +105,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
@@ -115,7 +115,7 @@
 	</div>
 	<div class="mt-5 col-12 col-xl-6">
 		<span class="text-dark h5">8. Elveda Las Vegas (1995)</span>
-		<div class="row pt-2">
+		<div class="row no-gutters pt-2">
 			<div class="col-4">
 				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 			</div>
