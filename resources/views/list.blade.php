@@ -8,11 +8,11 @@
 <div class="col mt-2">
 	<a href="#" class="text-no-decoration">
 		<div class="d-flex flex-row">
-			<div class="d-flex flex-column text-hover-underline">
+			<div class="d-flex flex-column">
 				<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
 			</div>
 			<div class="d-flex flex-column ml-2">
-				<h6 class="text-dark">Szofijjja</h6>
+				<h6 class="text-dark text-hover-underline">Szofijjja</h6>
 				<div class="text-muted"><small class="text-no-decoration">5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
 			</div>
 		</div>
