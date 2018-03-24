@@ -3,12 +3,12 @@
 @include('head.head_list')
 
 @section('body')
-<h1 class="h3 text-center text-md-left col px-0 mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
+<h1 class="h5 text-center text-md-left col px-0 mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
 <div class="row no-gutters">
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card">
-			<span class="text-dark h5 p-1">10. Jackie Brown (1997)</span>
+			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -22,7 +22,7 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card">
-			<span class="text-dark h5 p-1">9. Başka Bir Dünya (1997)</span>
+			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -36,7 +36,7 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card">
-			<span class="text-dark h5 p-1">8. Elveda Las Vegas (1995)</span>
+			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
