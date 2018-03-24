@@ -5,7 +5,7 @@
 @section('body')
 <h1 class="h3 text-center text-md-left col px-0 mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
-<div class="row px-md-2">
+<div class="row px-md-2 no-gutters">
 	<div class="col-6 col-md-8 col-xl-9 mt-3">
 		<a href="#" class="text-no-decoration">
 			<div class="d-flex flex-row">
