@@ -79,19 +79,12 @@ else $theme='';
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.12&appId=525225627985884&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    <!--<script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
       js.src = 'https://connect.facebook.net/{{ app()->getLocale() }}_{{ strtoupper(app()->getLocale()) }}/sdk.js#xfbml=1&version=v2.11';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
 
-    <a class="d-xl-inline" href="/">
+    <!--<a class="d-xl-inline" href="/">
         <img src="/images/topcorn_logo.png" class="indian-spot" alt="">
     </a>-->
     <nav class="navbar navbar-expand-md navbar-dark bg-night px-md-0 py-md-0 z-1041" ng-init="start_course='{{ __('navbar.start_course') }}';graduate='{{ __('navbar.graduate') }}'">
