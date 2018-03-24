@@ -139,7 +139,7 @@
 			</div>
 		</a>
 	</div>
-	<div class="col-6 col-md-4 col-xl-3 mt-3 float-right">
+	<div class="col-6 col-md-4 col-xl-3 mt-3 float-right pl-0">
 		<div class="float-right">
 			<div class="fb-like" data-href="https://topcorn.io/list/1" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 
