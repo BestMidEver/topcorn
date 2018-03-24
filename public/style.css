@@ -14,6 +14,7 @@ button:focus{box-shadow: none!important;}
 .btn-facebook:hover{background-color:#3b5998; border-color:#3b5998;}
 .text-black{color:#000!important;}
 .text-dark{color:#212529!important;}
+.text-no-decoration{text-decoration: none!important;}
 .text-middle-light{color:#999!important;}
 .text-light{color:#eee!important;}
 .hover-white:hover{color:#fff!important;}
