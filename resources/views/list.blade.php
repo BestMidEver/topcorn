@@ -39,7 +39,7 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<div class="row mt-2">
 		<div class="col-6 col-md-8 col-xl-9 mt-3">
 			<a href="#" class="text-no-decoration">
 				<div class="d-flex flex-row">
