@@ -4,7 +4,7 @@
 
 @section('body')
 <h1 class="h3 text-center text-md-left col mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
-<div class="fb-share-button" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
+
 <div class="col mt-3">
 	<a href="#" class="text-no-decoration">
 		<div class="d-flex flex-row">
@@ -15,9 +15,7 @@
 				<h6 class="text-dark text-hover-underline mb-0">Szofijjja</h6>
 				<div class="text-muted"><small class="text-no-decoration">5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
 			</div>
-			<div class="d-flex flex-column ml-2">
-				
-			</div>
+				<div class="fb-share-button" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
 		</div>
 	</a>
 </div>
