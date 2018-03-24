@@ -125,7 +125,7 @@
 	</div>
 </div>
 
-<div class="row mt-5">
+<div class="row mt-5 no-gutters">
 	<div class="col-6 col-md-8 col-xl-9 mt-3">
 		<a href="#" class="text-no-decoration">
 			<div class="d-flex flex-row">
@@ -146,5 +146,10 @@
 			<div class="fb-share-button ml-2" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
 		</div>
 	</div>
+</div>
+
+<div class="container-fluid px-0 pt-5">
+	<span class="h5 mb-0">{{ __('general.fb_comments') }}</span>
+	<div class="fb-comments" data-href="https://topcorn.io/list/1" data-width="100%" data-numposts="6" data-colorscheme="{{Auth::check()?(Auth::User()->theme==1?'dark':'light'):''}}"></div>
 </div>
 @endsection
