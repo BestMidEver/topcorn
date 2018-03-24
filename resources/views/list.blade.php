@@ -19,8 +19,8 @@
 	</a>
 </div>
 
-<div>
-	<div class="container-fluid mt-3 px-0">
+<div class="container-fluid px-1">
+	<div class="mt-3">
 		<span class="text-dark h5">10. Elveda Las Vegas (1995)</span>
 		<div class="row">
 			<!--Trailer-->
