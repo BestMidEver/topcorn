@@ -7,19 +7,25 @@
 
 <div class="container-fluid px-md-2">
 	<div class="mt-5">
-		<span class="text-dark h5">10. Jackie Brown (1997)</span>
-		<div class="row pt-2">
-			<div class="col-6 col-md-3 col-xl-2">
-				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+		<div class="col">
+			<span class="text-dark h5">10. Jackie Brown (1997)</span>
+			<div class="row pt-2">
+				<div class="col-6 col-md-3 col-xl-2">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+				</div>
+
+				<div class="col-3 lead lead-small mt-2">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
 			</div>
+		</div>
+		<div class="col">
+			<span class="text-dark h5">9. Başka Bir Dünya (1997)</span>
+			<div class="row pt-2">
+				<div class="col-6 col-md-3 col-xl-2">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+				</div>
 
-			<div class="col-3 lead lead-small mt-2">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
-
-			<div class="col-6 col-md-3 col-xl-2">
-				<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+				<div class="col-3 lead lead-small mt-2">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
 			</div>
-
-			<div class="col-3 lead lead-small mt-2">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
 		</div>
 	</div>
 
