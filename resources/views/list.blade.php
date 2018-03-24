@@ -67,8 +67,6 @@
 	</div>
 
 	<div class="container-fluid mt-5">
-
-		<span class="text-dark h5">10. Memento (2000)</span>
 									
 		<div class="mt-md-2">
 			<div class="position-relative">
@@ -76,11 +74,11 @@
 					<img ng-src="https://image.tmdb.org/t/p/w1280/oBUznaSdjkY3HtQUzAxgdIZqh4w.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
 					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row no-gutters">
-							<div class="col pt-2 pl-2"></div>
+							<a href="#"><div class="col pt-2 pl-2"><span class="text-white h5">10. Memento (2000)</span></div></a>
 							<div class="col p-2 text-right"></div>
 						</div>
-						<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
-							
+						<div class="d-flex flex-row">
+							Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right"></div>
 					</div>
@@ -88,7 +86,7 @@
 			</div>
 		</div>
 
-		<div class="lead lead-small mt-2">Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...</div>
+		<div class="lead lead-small mt-2"></div>
 	</div>
 
 <div class="row">
