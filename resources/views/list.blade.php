@@ -12,7 +12,7 @@
 				<div class="d-flex flex-column">
 					<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
 				</div>
-				<div class="d-flex flex-column ml-2">
+				<div class="d-flex flex-column justify-content-center ml-2">
 					<h6 class="text-dark text-hover-underline mb-0">Szofijjja</h6>
 					<div class="text-muted"><small class="text-no-decoration">5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
 				</div>
