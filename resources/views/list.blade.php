@@ -6,7 +6,7 @@
 <h1 class="h3 text-center text-md-left col mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
 <div class="row">
-	<div class="col-8 col-md-9 col-xl-10 mt-3">
+	<div class="col-6 col-md-8 col-xl-9 mt-3">
 		<a href="#" class="text-no-decoration">
 			<div class="d-flex flex-row">
 				<div class="d-flex flex-column">
@@ -19,8 +19,10 @@
 			</div>
 		</a>
 	</div>
-	<div class="col-4 col-md-3 col-xl-2 mt-3 float-right">
+	<div class="col-6 col-md-4 col-xl-3 mt-3 float-right">
 		<div class="float-right">
+			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div>
+
 			<div class="fb-share-button" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
 		</div>
 	</div>
