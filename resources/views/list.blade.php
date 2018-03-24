@@ -13,7 +13,7 @@
 			</div>
 			<div class="d-flex flex-column ml-2">
 				<h6 class="text-dark">Szofijjja</h6>
-				<div class="text-muted text-no-decoration"><small>5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
+				<div class="text-muted"><small class="text-no-decoration">5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
 			</div>
 		</div>
 	</a>
