@@ -77,8 +77,8 @@
 							<a href="#"><div class="col pt-2 pl-2"><span class="text-white h5">10. Memento (2000)</span></div></a>
 							<div class="col p-2 text-right"></div>
 						</div>
-						<div class="d-flex flex-row">
-							Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...
+						<div class="d-flex flex-row justify-content-center">
+							<div class="lead lead-small mt-2">Kısaca Deja Vu olarak bilinen olayın rahatsız edici gizemini herkes bir şekilde deneyimlemiştir. Birisiyle yeni tanıştığınızda sanki onu yıllardır tanıyormuş gibi bir hisse kapılırsınız. Veya herhangi bir yere ilk defa gittiğiniz halde sanki orada daha önce bulunmuş gibi hissedersiniz. Kısacası Deja Vu adı verilen duyguyu bilmeyen yoktur denilebilir. Peki, ya bu tuhaf ve tüyler ürpertici duygu aslında geçmişten gönderilen bir uyarıysa… Veya bilinmeyen geleceğe dair ipuçlarını barındırıyorsa...</div>
 						</div>
 						<div class="d-flex flex-row justify-content-end p-2 text-right"></div>
 					</div>
@@ -86,7 +86,7 @@
 			</div>
 		</div>
 
-		<div class="lead lead-small mt-2"></div>
+		
 	</div>
 
 <div class="row">
