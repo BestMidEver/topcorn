@@ -21,7 +21,7 @@
 	</div>
 	<div class="col-6 col-md-4 col-xl-3 mt-3 float-right">
 		<div class="float-right">
-			<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div>
+			<div class="fb-like" data-href="https://topcorn.io/list/1" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
 
 			<div class="fb-share-button" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
 		</div>
