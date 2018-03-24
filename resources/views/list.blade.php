@@ -61,7 +61,7 @@
 	</div>
 </div>
 
-<div class="container-fluid pt-5">
+<div class="container-fluid px-0 pt-5">
 	<span class="h5 mb-0">{{ __('general.fb_comments') }}</span>
 	<div class="fb-comments" data-href="https://topcorn.io/list/1" data-width="100%" data-numposts="6" data-colorscheme="{{Auth::check()?(Auth::User()->theme==1?'dark':'light'):''}}"></div>
 </div>
