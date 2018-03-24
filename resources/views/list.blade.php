@@ -72,19 +72,17 @@
 									
 		<div class="mt-md-2">
 			<div class="position-relative">
-				<div id="accordion">
-					<div id="collapseCover" class="collapse show" data-parent="#accordion">
-						<img ng-src="https://image.tmdb.org/t/p/w1280/oBUznaSdjkY3HtQUzAxgdIZqh4w.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
-						<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
-							<div class="d-flex flex-row no-gutters">
-								<div class="col pt-2 pl-2"></div>
-								<div class="col p-2 text-right"></div>
-							</div>
-							<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
-								<button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
-							</div>
-							<div class="d-flex flex-row justify-content-end p-2 text-right"></div>
+				<div>
+					<img ng-src="https://image.tmdb.org/t/p/w1280/oBUznaSdjkY3HtQUzAxgdIZqh4w.jpg" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid listtrailercover" alt="Responsive image">
+					<div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
+						<div class="d-flex flex-row no-gutters">
+							<div class="col pt-2 pl-2"></div>
+							<div class="col p-2 text-right"></div>
 						</div>
+						<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
+							
+						</div>
+						<div class="d-flex flex-row justify-content-end p-2 text-right"></div>
 					</div>
 				</div>
 			</div>
