@@ -14,10 +14,10 @@
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
 			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
-				<div>
+				<div class="d-inline">
 					<span class="text-dark h6 p-1">10.</span>
 				</div>
-				<div class="text-center">
+				<div class="d-inline text-center">
 					<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
 				</div>
 			</a>
