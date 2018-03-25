@@ -16,7 +16,7 @@
 			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
 				<div class="d-flex flex-row justify-content-between">
 					<div class="d-flex flex-column">
-						<span class="text-dark h6 p-1">10.</span>
+						<span class="text-dark h5 p-1">10.</span>
 					</div>
 					<div class="d-flex flex-column">
 						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
