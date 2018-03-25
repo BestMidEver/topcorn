@@ -37,7 +37,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -51,7 +61,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -65,7 +85,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -79,7 +109,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -93,7 +133,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -107,7 +157,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -121,7 +181,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -135,7 +205,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -149,7 +229,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -163,7 +253,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
@@ -177,7 +277,17 @@
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
+			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column">
+						<span class="text-dark h5 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
+					<div class="d-flex flex-column"></div>
+				</div>
+			</a>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
 					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
