@@ -14,11 +14,13 @@
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
 			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
-				<div class="d-inline">
-					<span class="text-dark h6 p-1">10.</span>
-				</div>
-				<div class="d-inline text-center">
-					<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+				<div class="d-flex flex-row">
+					<div class="d-flex flex-column">
+						<span class="text-dark h6 p-1">10.</span>
+					</div>
+					<div class="d-flex flex-column justify-content-center">
+						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
+					</div>
 				</div>
 			</a>
 			<div class="row no-gutters pt-2">
