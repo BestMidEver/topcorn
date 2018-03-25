@@ -125,6 +125,7 @@
 	<div class="p-5" ng-show="movies.length==0">
 		<div class="text-muted text-center"><span ng-if="!is_waiting">{{ __('general.no_result') }}</span><span ng-if="is_waiting">Aranıyor...</span></div>
 	</div>
+	<i class="fas fa-long-arrow-alt-right"></i>
 	@include('layout.moviecard')
 </div>
 
