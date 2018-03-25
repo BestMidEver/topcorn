@@ -21,6 +21,7 @@
 					<div class="d-flex flex-column">
 						<span class="text-dark h6 p-1">Jackie Brown (1997)</span>
 					</div>
+					<div class="d-flex flex-column"></div>
 				</div>
 			</a>
 			<div class="row no-gutters pt-2">
