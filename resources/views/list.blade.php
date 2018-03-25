@@ -199,8 +199,6 @@
 	</div>
 	<div class="d-flex flex-column mt-3 ml-1">
 		<div class="d-flex flex-row">
-			<div class="fb-like" data-href="https://topcorn.io/list/1" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
-
 			<div class="fb-share-button ml-2" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
 		</div>
 	</div>
