@@ -197,7 +197,7 @@
 			</div>
 		</a>
 	</div>
-	<div class="d-flex flex-column mt-3 pl-0">
+	<div class="d-flex flex-column mt-3 ml-1">
 		<div class="d-flex flex-row">
 			<div class="fb-like" data-href="https://topcorn.io/list/1" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 
