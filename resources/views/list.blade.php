@@ -183,7 +183,7 @@
 	</div>
 </div>
 
-<div class="mt-5 d-flex flex-row justify-content-betweem">
+<div class="mt-5 d-flex flex-row justify-content-between">
 	<div class="d-flex flex-column">
 		<a href="#" class="text-no-decoration">
 			<div class="d-flex flex-row">
