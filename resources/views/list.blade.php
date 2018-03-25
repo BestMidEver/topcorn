@@ -6,9 +6,9 @@
 <h1 class="h5 text-center text-md-left col px-0 mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
 
 <div class="py-3">
-	<p class="lead">Film önerisi mi lazım? Hangi filmi izlesem diye kara kara düşünüyor musun?
+	<h6 class="lead">Film önerisi mi lazım? Hangi filmi izlesem diye kara kara düşünüyor musun?
 
-20 farklı kategori, 140'ın üzerinde farklı liste, binlerce farklı film... Sinemasever okurlarımıza yaz havaları gelmişken ne hediye versek diye düşündük, izle izle bitiremeyeceğiniz devasa bir film arşivini layık gördük. İzlenebilecek filmler arıyorsanız doğru yerdesiniz. Bu listenin tamamını bitirmek aylar alıyor! </p>
+20 farklı kategori, 140'ın üzerinde farklı liste, binlerce farklı film... Sinemasever okurlarımıza yaz havaları gelmişken ne hediye versek diye düşündük, izle izle bitiremeyeceğiniz devasa bir film arşivini layık gördük. İzlenebilecek filmler arıyorsanız doğru yerdesiniz. Bu listenin tamamını bitirmek aylar alıyor! </h6>
 </div>
 
 <div class="card-group no-gutters">
