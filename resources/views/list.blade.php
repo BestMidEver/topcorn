@@ -14,7 +14,7 @@
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
 			<a href="#" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
-				<div class="d-flex flex-row">
+				<div class="d-flex flex-row justify-content-center">
 					<div class="d-flex flex-column">
 						<span class="text-dark h6 p-1">10.</span>
 					</div>
