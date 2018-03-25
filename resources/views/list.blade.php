@@ -13,11 +13,11 @@
 
 <div class="card-group no-gutters">
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -27,11 +27,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -41,11 +41,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -55,11 +55,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -69,11 +69,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -83,11 +83,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -97,11 +97,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -111,11 +111,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -125,11 +125,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -139,11 +139,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -153,11 +153,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
@@ -167,11 +167,11 @@
 		</div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card">
+		<div class="card h-100">
 			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
 			<div class="row no-gutters pt-2">
 				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card h-100-img-top" alt="Responsive image">
 				</div>
 
 				<div class="col-8 lead lead-small">
