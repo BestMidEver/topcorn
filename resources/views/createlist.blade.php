@@ -74,7 +74,7 @@
 
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Etiket</div>
+						<div class="h6 text-muted">Başlık & Giriş & Sonuç</div>
 				    </div>
 				</div>
 				<div class="row">
@@ -116,12 +116,6 @@
 				        </div>
 				    </div>
 				</div>
-				<div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text">With textarea</span>
-  </div>
-  <textarea class="form-control" aria-label="With textarea"></textarea>
-</div>
 
 				<!--<div class="row">
 				    <div class="col-md-6">
