@@ -111,11 +111,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
 				                </div>
-				                <input type="text" class="form-control" id="name" name="name" required>
-				                <div class="input-group-prepend">
-			                    	<span class="input-group-text">With textarea</span>
-				                </div>
-			                    <textarea class="form-control" aria-label="With textarea"></textarea>
+				                <textarea type="text" class="form-control" id="name" name="name" required></textarea>
 				            </div>
 				        </div>
 				    </div>
