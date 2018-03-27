@@ -116,6 +116,12 @@
 				        </div>
 				    </div>
 				</div>
+				<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">With textarea</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
 
 				<!--<div class="row">
 				    <div class="col-md-6">
