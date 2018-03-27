@@ -117,7 +117,7 @@
 				    </div>
 				</div>
 
-				<div class="row">
+				<!--<div class="row">
 				    <div class="col-md-6">
 				    	<button type="submit" class="btn btn-link btn-block" ng-disabled="is_save_disabled">Kaydet</button>
 				    </div>
@@ -125,6 +125,7 @@
 				        <button type="submit" class="btn btn-primary btn-block" ng-disabled="is_save_disabled">Paylaş</button>
 				    </div>
 				</div>
+			-->
 			</form>
 		</div>
 		<div class="col"></div>
