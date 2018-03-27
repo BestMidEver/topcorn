@@ -5,6 +5,7 @@ pass={
 	"lang":"{{ App::getlocale() }}",
 	"personid":{{$id}}, 
 	"api_key":"{{config('constants.api_key')}}",
+	"is_auth":"{{  Auth::Check()  }}",
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
