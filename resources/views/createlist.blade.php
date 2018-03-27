@@ -133,6 +133,6 @@
 </div>
 
 
-  <textarea></textarea>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
 
 @endsection
