@@ -116,6 +116,21 @@
 				        </div>
 				    </div>
 				</div>
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="current_password">Sonuç Yazısı</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+				                </div>
+				                <textarea type="text" class="form-control" id="name" name="name" required></textarea>
+				            </div>
+				        </div>
+				    </div>
+				</div>
 
 				<!--<div class="row">
 				    <div class="col-md-6">
