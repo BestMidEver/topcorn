@@ -193,7 +193,7 @@
 
 
 				<!-- Submit -->
-				<div class="row">
+				<div class="row mt-2">
 				    <div class="col-md-3"></div>
 				    <div class="col-md-6">
 				        <button type="submit" class="btn btn-primary btn-block" ng-disabled="is_save_disabled">Kaydet</button>
