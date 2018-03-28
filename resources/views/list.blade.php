@@ -11,9 +11,10 @@
 </div>
 
 <div class="card-group no-gutters">
-	<div class="px-2 mt-4 col-12 col-xl-6">
+	<div class="px-2 mt-4">
+		<div class="col"></div>
 		<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
-			<div class="card h-100">
+			<div class="card h-100 col-12 col col-lg-8 col-xl-6">
 					<span class="text-dark h6 p-1 text-hover-underline">10. Jackie Brown (1997)</span>
 				<div class="row no-gutters pt-2">
 					<div class="col-4">
@@ -26,6 +27,7 @@
 				</div>
 			</div>
 		</a>
+		<div class="col"></div>
 	</div>
 	<div class="px-2 mt-4 col-12 col-xl-6">
 		<div class="card h-100">
