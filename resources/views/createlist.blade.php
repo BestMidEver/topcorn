@@ -153,13 +153,13 @@
 						<div class="row">
 							<div class="input-group mb-3 col-3">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">#</span>
+									<span class="input-group-text" id="basic-addon1">Sırası</span>
 								</div>
 								<input type="number" class="form-control" aria-describedby="basic-addon1">
 							</div>
 							<div class="input-group mb-3 col-9">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">#</span>
+									<span class="input-group-text" id="basic-addon1">Filmin Adı</span>
 								</div>
 								<input type="text" class="form-control" aria-describedby="basic-addon1">
 							</div>
@@ -171,7 +171,7 @@
 
 							<div class="input-group col-8">
 							  <div class="input-group-prepend">
-							    <span class="input-group-text">With textarea</span>
+							    <span class="input-group-text">Açıklama</span>
 							  </div>
 							  <textarea class="form-control" aria-label="With textarea"></textarea>
 							</div>
