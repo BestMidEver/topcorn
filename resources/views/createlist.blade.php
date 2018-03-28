@@ -143,7 +143,7 @@
 
 
 				<!-- Filmler -->
-				<div class="row mt-3">
+				<div class="row mt-5">
 					<div class="col-md-3 field-label-responsive">
 						<div class="h6 text-muted">Filmler</div>
 					</div>
