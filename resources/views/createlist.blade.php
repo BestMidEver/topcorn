@@ -13,7 +13,7 @@
 				{{ csrf_field() }}
 				<!-- Başlık & Giriş & Sonuç -->
 				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 						<div class="h6 text-muted">Başlık & Giriş & Sonuç</div>
 				    </div>
 				</div>
@@ -42,10 +42,10 @@
 				    </div>
 				</div>
 				<div class="row mt-3">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 				        <label for="current_password">Giriş Yazısı</label>
 				    </div>
-				    <div class="col-md-6">
+				    <div class="col-12">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				            	<div class="input-group-prepend">
@@ -57,10 +57,10 @@
 				    </div>
 				</div>
 				<div class="row mt-3">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 				        <label for="current_password">Sonuç Yazısı</label>
 				    </div>
-				    <div class="col-md-6">
+				    <div class="col-12">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				            	<div class="input-group-prepend">
@@ -78,15 +78,15 @@
 
 				<!-- Liste Özellikleri -->
 				<div class="row mt-5">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 						<div class="h6 text-muted">Liste Özellikleri</div>
 				    </div>
 				</div>
 				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 				        <label for="lang">Kimler Görebilir?</label>
 				    </div>
-				    <div class="col-md-6">
+				    <div class="col-12">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
@@ -101,10 +101,10 @@
 				    </div>
 				</div>
 				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 				        <label for="lang">Filmlere Açıklama Ekle</label>
 				    </div>
-				    <div class="col-md-6">
+				    <div class="col-12">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
@@ -119,10 +119,10 @@
 				    </div>
 				</div>
 				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 				        <label for="lang">Sıralama</label>
 				    </div>
-				    <div class="col-md-6">
+				    <div class="col-12">
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
@@ -144,7 +144,7 @@
 
 				<!-- Filmler -->
 				<div class="row mt-3">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 						<div class="h6 text-muted">Filmler</div>
 				    </div>
 				</div>
@@ -177,10 +177,10 @@
 							    </div>
 							</div>
 							<div class="row mt-3">
-							    <div class="col-md-3 field-label-responsive">
+							    <div class="col-12">
 							        <label for="current_password">Adı</label>
 							    </div>
-							    <div class="col-md-6">
+							    <div class="col-12">
 							        <div class="">
 							            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 							            	<div class="input-group-prepend">
@@ -207,10 +207,10 @@
 
 								<div class="col-8 lead lead-small">
 									<div class="row mt-3">
-									    <div class="col-md-3 field-label-responsive">
+									    <div class="col-12">
 									        <label for="current_password">Açıklama</label>
 									    </div>
-									    <div class="col-md-6">
+									    <div class="col-12">
 									        <div class="">
 									            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 									            	<div class="input-group-prepend">
@@ -235,7 +235,7 @@
 				<!-- Submit -->
 				<div class="row mt-2">
 				    <div class="col-md-3"></div>
-				    <div class="col-md-6">
+				    <div class="col-12">
 				        <button type="submit" class="btn btn-primary btn-block" ng-disabled="is_save_disabled">Kaydet</button>
 				    </div>
 				</div>
