@@ -153,10 +153,10 @@
 					<div class="col-12 col-lg-10 col-xl-8">
 						<div class="card h-100">
 							<div class="row">
-							    <div class="field-label-responsive">
+							    <div class="col-12 field-label-responsive">
 							        <label for="current_password">Sırası</label>
 							    </div>
-							    <div>
+							    <div class="col-12">
 							        <div class="">
 							            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 							            	<div class="input-group-prepend">
@@ -166,7 +166,7 @@
 							            </div>
 							        </div>
 							    </div>
-							    <div>
+							    <div class="col-12">
 							        <div class="form-control-feedback">
 							            @if ($errors->has('name'))
 							                <span class="text-danger align-middle float-right float-md-none">
