@@ -150,6 +150,9 @@
 				</div>
 				<div class="row mt-5">
 					<div class="card h-100 p-2 col-12">
+						<div class="row text-right">
+							<button href="#" class="btn btn-link"><i class="far fa-times-circle"></i></button>
+						</div>
 						<div class="row">
 							<div class="input-group mb-3 col-3">
 								<div class="input-group-prepend">
