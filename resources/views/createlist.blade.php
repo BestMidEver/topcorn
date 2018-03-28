@@ -150,10 +150,8 @@
 				</div>
 				<div class="row mt-5">
 					<div class="card h-100 p-2 col-12">
-						<div class="row">
-							<button type="button" class="btn btn-verydark btn-lg float-right border-circle text-white" data-dismiss="modal" data-backdrop="false" aria-label="Close">
-														<span><i class="fa fa-times"></i></span>
-													</button>
+						<div class="row text-right">
+							<button href="#" class="btn btn-link float-right"><i class="far fa-times-circle"></i></button>
 						</div>
 						<div class="row">
 							<div class="input-group mb-3 col-3">
