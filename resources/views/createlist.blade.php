@@ -27,7 +27,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
 				                </div>
-				                <input type="text" class="form-control" id="name" name="name" required>
+				                <input type="text" class="form-control" id="name" name="name" required autofocus>
 				            </div>
 				        </div>
 				    </div>
@@ -75,7 +75,7 @@
 
 
 
-				
+
 				<!-- Liste Özellikleri -->
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
@@ -92,7 +92,7 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
 				                </div>
-				                <select class="form-control" id="lang" name="lang" ng-model="lang" autofocus>
+				                <select class="form-control" id="lang" name="lang" ng-model="lang">
 									<option value="tr">Herkes</option>
 									<option value="en">Sadece Ben</option>
 								</select>
