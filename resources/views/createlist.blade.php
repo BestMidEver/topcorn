@@ -151,7 +151,7 @@
 				<div class="row mt-5">
 					<div class="card h-100 p-2 col-12">
 						<div class="d-flex flex-row justify-content-end">
-							<button href="#" class="btn btn-verydark border-circle text-white"><i class="far fa-times"></i></button>
+							<button href="#" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
 						</div>
 						<div class="row">
 							<div class="input-group mb-3 col-3">
