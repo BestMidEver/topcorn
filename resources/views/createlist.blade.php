@@ -148,7 +148,7 @@
 						<div class="h6 text-muted">Filmler</div>
 				    </div>
 				</div>
-				<div class="card">
+				<div class="card py-5">
 					<div class="row">
 					    <div class="col-md-3 field-label-responsive">
 					        <label for="current_password">Sırası</label>
