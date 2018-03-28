@@ -5,7 +5,7 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Liste Oluştur</h1>
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-5">
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-12 col-xl-10">
