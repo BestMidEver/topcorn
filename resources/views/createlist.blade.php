@@ -148,7 +148,7 @@
 						<div class="h6 text-muted">Filmler</div>
 					</div>
 				</div>
-				<div class="row mt-5">
+				<div class="row mt-3">
 					<div class="card h-100 p-2 col-12">
 						<div class="d-flex flex-row justify-content-end">
 							<button href="#" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
