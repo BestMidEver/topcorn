@@ -11,7 +11,7 @@
 </div>
 
 <div class="container-fluid mt-3">
-	<div class="row mt-3">
+	<div class="row mt-5">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
 			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
@@ -31,7 +31,7 @@
 		</div>
 		<div class="col"></div>
 	</div>
-	<div class="row mt-3">
+	<div class="row mt-5">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
 			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
