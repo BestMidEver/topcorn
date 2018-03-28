@@ -149,7 +149,7 @@
 					</div>
 				</div>
 				<div class="row mt-5">
-					<div class="card h-100 p-2">
+					<div class="card h-100 p-2 col-12">
 						<div class="row">
 							<div class="input-group mb-3 col-3">
 								<div class="input-group-prepend">
