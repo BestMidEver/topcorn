@@ -54,22 +54,23 @@
 </div>
 
 <div class="mt-5 d-flex flex-row justify-content-between">
-<div class="d-flex flex-column">
-	<a href="#" class="text-no-decoration">
+	<div class="d-flex flex-column">
+		<a href="#" class="text-no-decoration">
+			<div class="d-flex flex-row">
+				<div class="d-flex flex-column">
+					<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
+				</div>
+				<div class="d-flex flex-column justify-content-center ml-2">
+					<h6 class="text-dark text-hover-underline mb-0">Szofijjja</h6>
+					<div class="text-muted"><small class="text-no-decoration">5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="d-flex flex-column mt-3 ml-1">
 		<div class="d-flex flex-row">
-			<div class="d-flex flex-column">
-				<img src="https://graph.facebook.com/v2.10/10211736611553891/picture?type=normal" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
-			</div>
-			<div class="d-flex flex-column justify-content-center ml-2">
-				<h6 class="text-dark text-hover-underline mb-0">Szofijjja</h6>
-				<div class="text-muted"><small class="text-no-decoration">5 ay önce ekledi, en son 23 gün önce güncelledi.</small></div>
-			</div>
+			<div class="fb-share-button ml-2" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
 		</div>
-	</a>
-</div>
-<div class="d-flex flex-column mt-3 ml-1">
-	<div class="d-flex flex-row">
-		<div class="fb-share-button ml-2" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
 	</div>
 </div>
 
