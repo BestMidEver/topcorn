@@ -150,17 +150,19 @@
 				</div>
 				<div class="row mt-5">
 					<div class="card h-100">
-						<div class="input-group mb-3 col-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">#</span>
+						<div class="row">
+							<div class="input-group mb-3 col-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">#</span>
+								</div>
+								<input type="number" class="form-control" aria-describedby="basic-addon1">
 							</div>
-							<input type="number" class="form-control" aria-describedby="basic-addon1">
-						</div>
-						<div class="input-group mb-3 col-9">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">#</span>
+							<div class="input-group mb-3 col-9">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">#</span>
+								</div>
+								<input type="text" class="form-control" aria-describedby="basic-addon1">
 							</div>
-							<input type="number" class="form-control" aria-describedby="basic-addon1">
 						</div>
 						<div class="row no-gutters pt-2">
 							<div class="col-4 col-xl-3">
