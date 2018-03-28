@@ -153,7 +153,7 @@
 					<div class="col-12 col-lg-10 col-xl-8">
 						<div class="card h-100">
 							<div class="row">
-							    <div class="col-md-3 field-label-responsive">
+							    <div class="field-label-responsive">
 							        <label for="current_password">Sırası</label>
 							    </div>
 							    <div class="col-md-6">
