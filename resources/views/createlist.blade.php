@@ -161,7 +161,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-film"></i></span>
 								</div>
-								<input type="text" class="form-control" aria-describedby="basic-addon1">
+								<input type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Filmin adını giriniz.">
 							</div>
 						</div>
 						<div class="row no-gutters pt-2">
@@ -173,7 +173,7 @@
 							  <div class="input-group-prepend pl-3">
 							    <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
 							  </div>
-							  <textarea class="form-control" aria-label="With textarea"></textarea>
+							  <textarea class="form-control" aria-label="With textarea" class="Açıklamanızı buraya yazınız."></textarea>
 							</div>
 						</div>
 					</div>
