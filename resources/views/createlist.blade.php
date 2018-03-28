@@ -170,7 +170,7 @@
 							</div>
 
 							<div class="input-group col-8">
-							  <div class="input-group-prepend">
+							  <div class="input-group-prepend pl-3">
 							    <span class="input-group-text">Açıklama</span>
 							  </div>
 							  <textarea class="form-control" aria-label="With textarea"></textarea>
