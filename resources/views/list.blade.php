@@ -11,7 +11,7 @@
 </div>
 
 <div class="container-fluid mt-3">
-	<div class="row">
+	<div class="row mt-3">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
 			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
@@ -31,159 +31,25 @@
 		</div>
 		<div class="col"></div>
 	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
+	<div class="row mt-3">
+		<div class="col"></div>
+		<div class="col-12 col-lg-10 col-xl-8">
+			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+				<div class="card h-100">
+						<span class="text-dark h6 p-1 text-hover-underline">10. Jackie Brown (1997)</span>
+					<div class="row no-gutters pt-2">
+						<div class="col-4 col-xl-3">
+							<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+						</div>
 
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
+						<div class="col-8 lead lead-small">
+							<div class="pl-3 pr-1 pb-1 text-dark">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolün sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
+						</div>
+					</div>
 				</div>
-			</div>
+			</a>
 		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">10. Jackie Brown (1997)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Amerika'nın en uyduruk havayollarından birinde hava hostesi olan Jackie Brown'ın emekliliği giderek yaklaşmaktadır. Hostesimiz ayın sonunu getirebilmek için silah kaçakçısı Ordell için çalışmaktadır. Polis durumdan haberdardır. Ordell de polisin haberdar olduğundan ve dolayısıyla Jackie'nin hayatının bıçak sırtında olduğundan.Olaylar ortaya çıktığuında Jackie ve Ordell cephelerine yeni yardımcılar katılır ve herkes yarım milyon doların peşine düşer.Yönetmen Tarantino, hayranı olduğu, 70'li yılların kült zenci dizisi "Foxy Brown"ın kadın oyuncusu Palm Grier'e Jackie Brown rolünü vererek tam onikiden vuruyor.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">9. Başka Bir Dünya (1997)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gJy7LMq4b5qO5fsSUSoBgm24BHf.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Kanada'nın taşrasında geçiyor olay. Yıllarca okul otobüsü ile, yitik evlerden topladığı çocukları okula götürüp getiren ve sahip olamadığı çocukların tüm sevgisini onlara vermiş kadın şöför Dolores, (Gabrielle Rose) o gün bir kaza yapıyor. Tüm çocuklar, buzun kapladığı bir gölün derin sularında boğularak ölüyor. Korkunç kazadan sonra Stephens adında bir Avukat çıkageliyor (Ian Holm) ve üzüntülü anne - babaları hukuk nezdinde temsil edip kazaya bir sorumlu aramak ve onlardan yüklü bir tazminat koparmak gayesiyle kolları sıvıyor.</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="px-2 mt-4 col-12 col-xl-6">
-		<div class="card h-100">
-			<span class="text-dark h6 p-1">8. Elveda Las Vegas (1995)</span>
-			<div class="row no-gutters pt-2">
-				<div class="col-4">
-					<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/37qHRJxnSh5YkuaN9FgfNnMl3Tj.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-				</div>
-
-				<div class="col-8 lead lead-small">
-					<div class="pl-3 pr-1 pb-1">Alkol sorunları yüzünden herşeyini kaybetmiş olan Hollywood senaristi Ben Sanderson ( Cage) ölümüne içmek için Las Vegas'a gelir. Burada tesadüfen tanışacağı hayat kadını Sera ( Shue ) ile aşka dönüşen ilişkisi ise artık hayata farklı bir açıdan bakmasına sebep olacaktır</div>
-				</div>
-			</div>
-		</div>
+		<div class="col"></div>
 	</div>
 </div>
 
