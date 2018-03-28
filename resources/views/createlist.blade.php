@@ -161,7 +161,7 @@
 								<input type="number" class="form-control" aria-describedby="basic-addon1">
 							</div>
 							<div class="input-group col">
-								<div class="input-group-prepend">
+								<div class="input-group-prepend pl-3">
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-film"></i></span>
 								</div>
 								<input type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Filmin adını giriniz.">
