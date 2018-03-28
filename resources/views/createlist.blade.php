@@ -102,24 +102,6 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="lang">Filmlere Açıklama Ekle</label>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-								<div class="input-group-prepend">
-									<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
-								</div>
-								<select class="form-control" id="lang" name="lang" ng-model="lang">
-									<option value="tr">Etkin</option>
-									<option value="en">Devre Dışı</option>
-								</select>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-3 field-label-responsive">
 						<label for="lang">Sıralama</label>
 					</div>
 					<div class="col-md-6">
