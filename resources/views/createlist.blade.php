@@ -18,10 +18,10 @@
 				    </div>
 				</div>
 				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
+				    <div class="col-12">
 				        <label for="current_password">Başlık</label>
 				    </div>
-				    <div class="col-md-6">
+				    <div class="col-12">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				            	<div class="input-group-prepend">
@@ -31,8 +31,8 @@
 				            </div>
 				        </div>
 				    </div>
-				    <div class="col-md-3">
-				        <div class="form-control-feedback">
+				    <div class="col-12">
+				        <div class="">
 				            @if ($errors->has('name'))
 				                <span class="text-danger align-middle float-right float-md-none">
 				                    <i class="fas fa-exclamation-circle"></i> {{ $errors->first('name') }}
