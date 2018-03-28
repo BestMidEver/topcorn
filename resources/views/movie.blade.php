@@ -255,7 +255,15 @@
 			@endif
 		@endif
 	</div>
+	@if(Auth::check())
+		@if(Auth::User()->show_crew)
 	<div ng-if="movie.credits.cast.length > 6 || movie.credits.crew.length > 0">
+		@else
+	<div ng-if="movie.credits.cast.length > 6">
+		@endif
+	@else
+	<div ng-if="movie.credits.cast.length > 6">
+	@endif
 		<div class="text-center pt-1" ng-hide="iscast">
 			<button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><small>{{ __('general.show_everyone') }}</small></button>
 		</div>
