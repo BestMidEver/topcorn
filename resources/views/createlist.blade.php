@@ -153,7 +153,7 @@
 						<div class="d-flex flex-row justify-content-end">
 							<button href="#" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
 						</div>
-						<div class="row">
+						<div class="row no-gutters">
 							<div class="input-group mb-3 col-4 col-xl-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-hashtag"></i></span>
