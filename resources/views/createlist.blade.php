@@ -25,7 +25,7 @@
 						<div class="">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
-									<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heading"></i></div>
 								</div>
 								<input type="text" class="form-control" id="name" name="name" required autofocus>
 							</div>
@@ -49,7 +49,7 @@
 						<div class="">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
-									<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
 								<textarea type="text" class="form-control" id="name" name="name" required></textarea>
 							</div>
@@ -64,7 +64,7 @@
 						<div class="">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
-									<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
 								<textarea type="text" class="form-control" id="name" name="name" required></textarea>
 							</div>
@@ -90,7 +90,7 @@
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
-									<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-eye"></i></div>
 								</div>
 								<select class="form-control" id="lang" name="lang" ng-model="lang">
 									<option value="tr">Herkes</option>
@@ -108,7 +108,7 @@
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
-									<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort"></i></div>
 								</div>
 								<select class="form-control" id="lang" name="lang" ng-model="lang">
 									<option value="tr">Büyükten Küçüğe</option>
@@ -157,7 +157,7 @@
 							  <div class="input-group-prepend">
 							    <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
 							  </div>
-							  <textarea class="form-control" aria-label="With textarea" placeholder="Listede filmin özetinin görünmesini istiyorsanız boş bırakın."></textarea>
+							  <textarea class="form-control" aria-label="With textarea" placeholder="Boş bırakırsanız açıklamada filmin özeti yazar."></textarea>
 							</div>
 						</div>
 					</div>
