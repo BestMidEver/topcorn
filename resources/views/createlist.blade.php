@@ -162,7 +162,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="d-flex flex-row justify-content-center mt-5">
+				<div class="d-flex flex-row justify-content-center mt-4">
 					<button href="#" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
 				</div>
 				<!-- Filmler -->
