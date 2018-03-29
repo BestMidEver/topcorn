@@ -162,8 +162,10 @@
 						</div>
 					</div>
 				</div>
-				<div>
-					<button href="#" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i></button>
+				<div class="row mt-3">
+					<div class="text-center">
+						<button href="#" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
+					</div>
 				</div>
 				<!-- Filmler -->
 
