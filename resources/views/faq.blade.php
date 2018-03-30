@@ -9,7 +9,7 @@
 	What Is This Website About?
 </div>
 <div class="quote-line lead">
-	Topcorn.io is a personalized movie recommendation engine. In other words, topcorn.io understands your unique taste and suggest you movies accordingly.
+	Topcorn.io is a personalized movie recommendation engine. In other words, topcorn.io understands your unique taste and suggests you movies accordingly.
 </div>
 
 <div class="h6 mt-4">
