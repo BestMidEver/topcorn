@@ -24,8 +24,8 @@
 </div>
 <div class="quote-line lead lead-small">
 	<ul>
-		<li></li>adf
-		<li></li>asdf
+		<li>adf</li>
+		<li>asdf</li>
 	</ul>
 </div>
 
