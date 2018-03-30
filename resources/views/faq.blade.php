@@ -5,5 +5,13 @@
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.faq_long') }}</h5>
 
+<div class="h6">
+	What is this website about?
+</div>
+<div class="quote-line lead">
+	Topcorn.io is a personalized movie recommendation engine. In other words, topcorn.io understands your unique taste and gives you movie suggestions based on it.
+</div>
+
+
 <p>This product uses the TMDb API but is not endorsed or certified by TMDb.<a href="https://www.themoviedb.org/" target="_blank"><img class="tmdblogo ml-2" src="/images/tmdb.svg"></a></p>
 @endsection
