@@ -23,16 +23,18 @@
 	Can You Mention About Some Features About This Site?
 </div>
 <div class="quote-line lead">
-	Quick Vote: You can vote the most often voted movies consecutively.
-</div>
-<div class="quote-line lead">
-	Watch Together: You can get movie recommendations&scores for your movie group too.
-</div>
-<div class="quote-line lead mt-3">
-	Watch Later: Save movies that you decided to watch later. Don't forget "The palest ink is better than the sharpest memory".
-</div>
-<div class="quote-line lead mt-3">
-	Filter: Narrow down the movie recommendation list with genre, language and year filters.
+	<div class="">
+		Quick Vote: You can vote the most often voted movies consecutively.
+	</div>
+	<div class="mt-3">
+		Watch Together: You can get movie recommendations&scores for your movie group too.
+	</div>
+	<div class="mt-3">
+		Watch Later: Save movies that you decided to watch later. Don't forget "The palest ink is better than the sharpest memory".
+	</div>
+	<div class="mt-3">
+		Filter: Narrow down the movie recommendation list with genre, language and year filters.
+	</div>
 </div>
 
 <p class="mt-5 text-muted">This product uses the TMDb API but is not endorsed or certified by TMDb.<a href="https://www.themoviedb.org/" target="_blank"><img class="tmdblogo ml-2" src="/images/tmdb.svg"></a></p>
