@@ -23,11 +23,11 @@
 	Can You Mention About Some Features About This Site?
 </div>
 <div class="quote-line lead">
-	Quick Vote: It brings you the most often voted movies consecutively.
+	Quick Vote: You can the most often voted movies consecutively.
 </div>
 <div class="py-2"></div>
 <div class="quote-line lead">
-	Watch Together: You can get recommendations for 
+	Watch Together: You can get movie recommendations&scores for your movie group too.
 </div>
 
 <p class="mt-5 text-muted">This product uses the TMDb API but is not endorsed or certified by TMDb.<a href="https://www.themoviedb.org/" target="_blank"><img class="tmdblogo ml-2" src="/images/tmdb.svg"></a></p>
