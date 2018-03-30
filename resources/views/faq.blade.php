@@ -23,7 +23,10 @@
 	Can You Mention About Some Features About This Site?
 </div>
 <div class="quote-line lead lead-small">
-	<i class="fas fa-circle"></i> 
+	<ul>
+		<li></li>adf
+		<li></li>asdf
+	</ul>
 </div>
 
 <p class="mt-5 text-muted">This product uses the TMDb API but is not endorsed or certified by TMDb.<a href="https://www.themoviedb.org/" target="_blank"><img class="tmdblogo ml-2" src="/images/tmdb.svg"></a></p>
