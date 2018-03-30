@@ -12,7 +12,7 @@
 	Topcorn.io is a personalized movie recommendation engine. In other words, topcorn.io understands your unique taste and suggest you movies accordingly.
 </div>
 
-<div class="h6 mt-3">
+<div class="h6 mt-4">
 	Why Is This Different From Other Movie Review Sites?
 </div>
 <div class="quote-line lead">
