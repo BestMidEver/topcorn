@@ -19,5 +19,12 @@
 	Unlike Rotten Tomatoes, Metacritic, IMDB or a list which is made by some individual; topcorn.io shows customized lists for you.
 </div>
 
+<div class="h6 mt-4">
+	Can You Mention About Some Features About This Site?
+</div>
+<div class="quote-line lead lead-small">
+	Topcorn.io has 
+</div>
+
 <p class="mt-5 text-muted">This product uses the TMDb API but is not endorsed or certified by TMDb.<a href="https://www.themoviedb.org/" target="_blank"><img class="tmdblogo ml-2" src="/images/tmdb.svg"></a></p>
 @endsection
