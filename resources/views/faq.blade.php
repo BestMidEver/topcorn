@@ -23,7 +23,7 @@
 	Can You Mention About Some Features About This Site?
 </div>
 <div class="quote-line lead">
-	Quick Vote: You can the most often voted movies consecutively.
+	Quick Vote: You can vote the most often voted movies consecutively.
 </div>
 <div class="py-2"></div>
 <div class="quote-line lead">
