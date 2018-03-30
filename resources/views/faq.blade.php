@@ -25,6 +25,7 @@
 <div class="quote-line lead">
 	Quick Vote: It brings you the most often voted movies consecutively.
 </div>
+
 <div class="quote-line lead">
 	Watch Together: You can get recommendations for 
 </div>
