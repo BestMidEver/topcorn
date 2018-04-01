@@ -147,7 +147,7 @@
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-film"></i></span>
 								</div>
 								<input type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Filmin adını giriniz." ng-focus="search_1=true" ng-blur="search_1=false">
-								<div ng-if="search_1" class="search-movie-results background-white py-3">
+								<div ng-if="!search_1" class="search-movie-results background-white py-3">
 									<div class="result">Memento (2000)</div>
 									<div class="result">Yüzük (1999)</div>
 									<div class="result">Gab (2000)</div>
