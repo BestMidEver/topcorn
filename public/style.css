@@ -21,7 +21,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .text-light{color:#eee!important;}
 .hover-white:hover{color:#fff!important;}
 /*.form-control{height: calc(2.25rem + 4px)!important;}*/
-.search-movie-results{position: absolute; left: calc(1rem + 42px); top:41px; z-index: 10; width: calc(100% - 1rem - 42px); border:1px solid #7A9CD3;}
+.search-movie-results{position: absolute; left: calc(1rem + 42px); top:38px; z-index: 10; width: calc(100% - 1rem - 42px); border:1px solid #7A9CD3;}
 .search-movie-results .result:hover{background-color: #1E90FF; color:#fff;    cursor: default;}
 .position-relative{position: relative;}
 .addban:hover {color:#d9534f!important;background-color: #ececec;}, .fa{color:#d9534f!important;}
