@@ -21,7 +21,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .text-light{color:#eee!important;}
 .hover-white:hover{color:#fff!important;}
 /*.form-control{height: calc(2.25rem + 4px)!important;}*/
-.search-movie-results{position: absolute; left: 1rem; top:38px;}
+.search-movie-results{position: absolute; left: 1rem; top:38px; z-index: 10; width: calc(100% - 1rem);}
 .position-relative{position: relative;}
 .addban:hover {color:#d9534f!important;background-color: #ececec;}, .fa{color:#d9534f!important;}
 .addseen:hover {color:#5cb85c!important;background-color: #ececec;}, .fa{color:#5cb85c!important;}
