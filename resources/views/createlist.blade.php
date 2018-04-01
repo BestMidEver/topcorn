@@ -148,7 +148,7 @@
 								</div>
 								<input type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Filmin adını giriniz." ng-focus="search_1=true" ng-blur="search_1=false">
 							</div>
-							<div ng-show="search_1">
+							<div ng-show="!search_1">
 								<div>Memento (2000)</div>
 								<div>Yüzük (1999)</div>
 								<div>Gab (2000)</div>
