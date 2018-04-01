@@ -42,8 +42,8 @@
 							<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 						</div>
 
-						<div class="col-8 lead lead-small quote-line">
-							<div class="pl-3 pr-1 pb-1 text-dark">Birbirini hiç tanımayan dört matematikçi, gizemli biri tarafından büyük bir bulmacayı çözmeleri için davet edilir. Kendilerine yöneltilen soruları zamanında ve doğru olarak çözemezlerse, içinde bulundukları oda bir anda ölüm tuzağına dönüşecektir. Bunun yanı sıra çözmeleri gereken en önemli problem ise, kendilerini buraya getiren sebep ve aralarındaki ilişki olacaktır.</div>
+						<div class="col-8 lead lead-small">
+							<div class="pl-3 pr-1 pb-1 text-dark quote-line">Birbirini hiç tanımayan dört matematikçi, gizemli biri tarafından büyük bir bulmacayı çözmeleri için davet edilir. Kendilerine yöneltilen soruları zamanında ve doğru olarak çözemezlerse, içinde bulundukları oda bir anda ölüm tuzağına dönüşecektir. Bunun yanı sıra çözmeleri gereken en önemli problem ise, kendilerini buraya getiren sebep ve aralarındaki ilişki olacaktır.</div>
 						</div>
 					</div>
 				</div>
