@@ -43,7 +43,7 @@
 						</div>
 
 						<div class="col-8 lead lead-small">
-							<div class="pl-3 pr-1 pb-1 text-dark quote-line">Birbirini hiç tanımayan dört matematikçi, gizemli biri tarafından büyük bir bulmacayı çözmeleri için davet edilir. Kendilerine yöneltilen soruları zamanında ve doğru olarak çözemezlerse, içinde bulundukları oda bir anda ölüm tuzağına dönüşecektir. Bunun yanı sıra çözmeleri gereken en önemli problem ise, kendilerini buraya getiren sebep ve aralarındaki ilişki olacaktır.</div>
+							<div class="pr-1 pb-1 text-dark quote-line">Birbirini hiç tanımayan dört matematikçi, gizemli biri tarafından büyük bir bulmacayı çözmeleri için davet edilir. Kendilerine yöneltilen soruları zamanında ve doğru olarak çözemezlerse, içinde bulundukları oda bir anda ölüm tuzağına dönüşecektir. Bunun yanı sıra çözmeleri gereken en önemli problem ise, kendilerini buraya getiren sebep ve aralarındaki ilişki olacaktır.</div>
 						</div>
 					</div>
 				</div>
