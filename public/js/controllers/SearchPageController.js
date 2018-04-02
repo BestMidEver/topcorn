@@ -43,10 +43,10 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.generalinput='';
 	$scope.get_page_data = function()
 	{
-		if($scope.generalinput.length == 0){
+		var temp=$scope.generalinput.replace(/ /g , "%20");
+		if(temp.length == 0){
 			$scope.reset_tab();
 		}else{
-			var temp=$scope.generalinput.replace(/ /g , "%20");
 			switch($scope.active_tab) {
 				case 'movie':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
