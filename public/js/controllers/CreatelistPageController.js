@@ -17,6 +17,11 @@ MyApp.controller('CreatelistPageController', function($scope, $http, rate)
 		console.log(index)
 	}
 
+	$scope.set_focus = function(index){
+		console.log(index)
+		angular.element('#back_of_vitrin_'+index).focus();
+	}
+
 	if(pass.is_auth==1){
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
