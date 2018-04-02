@@ -1,4 +1,4 @@
-MyApp.controller('CreatelistPageController', function($scope, $http, rate)
+MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
 {
 	$scope.search_movie = function(index){
 		var temp=$scope['input_'+index].replace(/ /g , "%20");
