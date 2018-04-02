@@ -1,7 +1,11 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, rate)
 {
 	$scope.search_movie = function(index){
-		console.log(index, $scope['input_'+index])
+		var temp=$scope['input_'+index].replace(/ /g , "%20");
+		rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
+		.then(function(response){
+			console.log(response.data);
+		});
 	}
 
 	if(pass.is_auth==1){
