@@ -19,7 +19,9 @@ MyApp.controller('CreatelistPageController', function($scope, $http, rate)
 
 	$scope.set_focus = function(index){
 		console.log(index)
-		angular.element('#back_of_vitrin_'+index).focus();
+		$timeout(function () {
+	       angular.element('#back_of_vitrin_'+index).focus();
+	    });
 	}
 
 	if(pass.is_auth==1){
