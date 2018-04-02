@@ -1,6 +1,5 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, rate)
 {
-		console.log(index, $scope['input_'+index])
 	$scope.search_movie = function(index){
 		console.log(index, $scope['input_'+index])
 	}
