@@ -13,8 +13,10 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		}
 	}
 
-	$scope.choose_movie = function(index, movie_id){
+	$scope.choose_movie = function(index, movie_id, movie_name){
 		console.log(index)
+		$scope['title_chosen_'+index]=movie_name;
+		$scope['id_chosen_'+index]=movie_id;
 	}
 
 	$scope.set_focus = function(index){
