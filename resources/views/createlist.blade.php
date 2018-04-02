@@ -146,7 +146,7 @@
 								<div class="input-group-prepend pl-3">
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-film"></i></span>
 								</div>
-								<input id="vitrin_1" ng-show="!searchmode_1" type="text" class="form-control" ng-click="searchmode_1=true;set_focus(1)" ng-change="searchmode_1=false" ng-model="title_chosen_1" placeholder="Filmin adını giriniz.">
+								<input id="vitrin_1" ng-show="!searchmode_1" type="text" class="form-control" ng-click="searchmode_1=true;set_focus(1)" ng-model="title_chosen_1" placeholder="Filmin adını giriniz.">
 								<input id="movie_id_1" ng-show="false" type="text" class="form-control" ng-model="id_chosen_1">
 								<input id="back_of_vitrin_1" ng-show="searchmode_1" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="search_1=true" ng-blur="search_1=false" ng-model="input_1" ng-change="search_movie(1)" ng-model-options="{debounce: 750}">
 								<div ng-show="(search_1 || choosing_1) && movies_1.length > 0" class="search-movie-results background-white py-3" ng-mouseenter="choosing_1=true" ng-mouseleave="choosing_1=false">
