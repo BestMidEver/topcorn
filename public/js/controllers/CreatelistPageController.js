@@ -2,11 +2,15 @@ MyApp.controller('CreatelistPageController', function($scope, $http, rate)
 {
 	$scope.search_movie = function(index){
 		var temp=$scope['input_'+index].replace(/ /g , "%20");
-		rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
-		.then(function(response){
-			console.log(response.data);
-			$scope['movies_'+index]=response.data.results.slice(0, 10);
-		});
+		if(temp.length == 0){
+			$scope['movies_'+index]=[];
+		}else{
+			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
+			.then(function(response){
+				console.log(response.data);
+				$scope['movies_'+index]=response.data.results.slice(0, 10);
+			});
+		}
 	}
 
 	if(pass.is_auth==1){

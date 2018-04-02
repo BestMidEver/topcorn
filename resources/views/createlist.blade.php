@@ -147,7 +147,7 @@
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-film"></i></span>
 								</div>
 								<input type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Filmin adını giriniz." ng-focus="search_1=true"  ng-blur="search_1=false" ng-model="input_1" ng-change="search_movie(1)" ng-model-options="{debounce: 750}">
-								<div ng-show="search_1" class="search-movie-results background-white py-3">
+								<div ng-show="search_1 && movies_1.length > 0" class="search-movie-results background-white py-3">
 									<div class="result py-1" ng-repeat="movie in movies_1">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
 								</div>
 							</div>
