@@ -11,9 +11,9 @@ pass={
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/ListPageController.js"></script>
+<script src="/js/controllers/CreatelistPageController.js"></script>
 @endsection
-@section('controllername','ListPageController')
+@section('controllername','CreatelistPageController')
 
 @section('title')
 {{ __('title.list') }}
