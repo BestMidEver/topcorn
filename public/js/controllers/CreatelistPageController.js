@@ -13,7 +13,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, rate)
 		}
 	}
 
-	$scope.choose_movie = function(index){
+	$scope.choose_movie = function(index, movie_id){
 		console.log(index)
 	}
 
