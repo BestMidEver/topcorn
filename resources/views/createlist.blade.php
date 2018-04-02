@@ -1,6 +1,6 @@
 @extends(Auth::user() ? 'layout.app' : 'layout.appnew')
 
-@include('head.head_list')
+@include('head.head_createlist')
 
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Liste Oluştur</h1>

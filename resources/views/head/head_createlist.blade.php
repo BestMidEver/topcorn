@@ -9,7 +9,7 @@ pass={
 };
 </script>
 @endsection
-asd
+
 @section('angular_controller_js')
 <script src="/js/controllers/CreatelistPageController.js"></script>
 @endsection
