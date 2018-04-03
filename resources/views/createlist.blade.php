@@ -156,7 +156,7 @@
 						</div>
 						<div class="row no-gutters mt-3">
 							<div class="col-4 col-xl-3">
-								<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{poster_path_1}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">
 							</div>
 							<div class="input-group col pl-3">
 							  <div class="input-group-prepend">

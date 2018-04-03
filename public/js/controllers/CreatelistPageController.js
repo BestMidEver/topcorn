@@ -4,6 +4,9 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		var temp=$scope['input_'+index].replace(/ /g , "%20");
 		if(temp.length == 0){
 			$scope['movies_'+index]=[];
+			$scope['title_chosen_'+index]=[];
+			$scope['id_chosen_'+index]=[];
+			$scope['poster_path_'+index]='';
 		}else{
 			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
 			.then(function(response){
@@ -18,6 +21,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		$scope['title_chosen_'+index]=movie_name;
 		$scope['id_chosen_'+index]=movie_id;
 		$scope['searchmode_'+index]=false;
+		$scope['poster_path_'+index]=movie.poster_path;
 	}
 
 	$scope.set_focus = function(index){
