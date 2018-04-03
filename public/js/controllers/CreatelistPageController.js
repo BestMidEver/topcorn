@@ -34,7 +34,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	}
 
 	$scope.choose_movie = function(index, movie){
-		console.log(index, movie, 3);
+		console.log(index, movie);
 		$scope.model['title_chosen_'+index]=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
 		$scope.model['id_chosen_'+index]=movie.id;
 		$scope.model['searchmode_'+index]=false;
@@ -42,7 +42,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	}
 
 	$scope.set_focus = function(index){
-		console.log(index)
+		console.log(index, model)
 		$timeout(function () {
 	       angular.element('#back_of_vitrin_'+index).focus();
 	    });
