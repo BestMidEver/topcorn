@@ -133,14 +133,14 @@
 				<div class="row mt-3" ng-repeat="l in list">
 					<div class="card h-100 p-2 col-12">
 						<div class="d-flex flex-row justify-content-end">
-							<button href="#" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i>@{{l}}</button>
+							<button href="#" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
 						</div>
 						<div class="row no-gutters mt-3">
 							<div class="input-group col-4 col-xl-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-hashtag"></i></span>
 								</div>
-								<input type="number" ng-model="position_0" ng-init="position_0=10" class="form-control">
+								<input type="number" ng-model="position_0" ng-init="position_0=l.position" class="form-control">
 							</div>
 							<div class="input-group col">
 								<div class="input-group-prepend pl-3">

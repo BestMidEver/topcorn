@@ -5,11 +5,11 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	$scope.refresh_list = function(){
 		if($scope.list.length == 0){
 			$scope.list.push( {
-				'position_0':1,
-				'title_chosen_0':'muhaha',
-				'id_chosen_0':'',
-				'poster_path_':'',
-				'input_0':''
+				'position':1,
+				'movie_title':'muhaha',
+				'movie_id':'',
+				'poster_path':'',
+				'user_text':''
 			} );
 		}
 		console.log($scope.list)
