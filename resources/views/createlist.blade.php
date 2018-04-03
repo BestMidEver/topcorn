@@ -133,7 +133,7 @@
 				<div class="row mt-3" ng-repeat="l in list">
 					<div class="card h-100 p-2 col-12">
 						<div class="d-flex flex-row justify-content-end">
-							<button href="#" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
+							<button ng-click="remove_from_list($index)" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
 						</div>
 						<div class="row no-gutters mt-3">
 							<div class="input-group col-4 col-xl-3">
