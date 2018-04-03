@@ -146,10 +146,10 @@
 								<div class="input-group-prepend pl-3">
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
 								</div>
-								<input ng-attr-id="vitrin_@{{$index}}" dynamic-show="'!searchmode_'+$index" type="text" class="form-control" ng-click="searchmode_1=true;set_focus($index)" dynamic-model="'title_chosen_'+$index" placeholder="Filmin adını giriniz.">
-								<input id="movie_id_1" ng-show="false" type="text" class="form-control" ng-model="id_chosen_1">
-								<input id="back_of_vitrin_1" ng-show="searchmode_1" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="search_1=true" ng-blur="search_1=false" ng-model="input_1" ng-change="search_movie(1)" ng-model-options="{debounce: 750}">
-								<div ng-show="(search_1 || choosing_1) && movies_1.length > 0 && searchmode_1" class="search-movie-results background-white py-3" ng-mouseenter="choosing_1=true" ng-mouseleave="choosing_1=false">
+								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!model['searchmode_'+$index]" type="text" class="form-control" ng-click="model['searchmode_'+$index]=true;set_focus($index)" ng-model="model['title_chosen_'+$index]" ng-value="l.movie_title" placeholder="Filmin adını giriniz.">
+								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="model['id_chosen_'+$index]" ng-value="l.movie_id">
+								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="model['searchmode_'+$index]" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="model['searchmode_'+$index]=true" ng-blur="model['searchmode_'+$index]=false" ng-model="model['input_'+$index]" ng-change="search_movie($index)" ng-model-options="{debounce: 750}">
+								<div ng-show="(model['searchmode_'+$index] || choosing_1) && movies_1.length > 0 && searchmode_1" class="search-movie-results background-white py-3" ng-mouseenter="choosing_1=true" ng-mouseleave="choosing_1=false">
 									<div class="result py-1" ng-repeat="movie in movies_1" ng-click="choose_movie(1, movie)">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
 								</div>
 							</div>
@@ -159,10 +159,10 @@
 								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{poster_path_1}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">
 							</div>
 							<div class="input-group col pl-3">
-							  <div class="input-group-prepend">
-							    <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
-							  </div>
-							  <textarea class="form-control" aria-label="With textarea" placeholder="Boş bırakırsanız açıklamada filmin özeti yazar."></textarea>
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+								</div>
+								<textarea class="form-control" aria-label="With textarea" placeholder="Boş bırakırsanız açıklamada filmin özeti yazar."></textarea>
 							</div>
 						</div>
 					</div>
