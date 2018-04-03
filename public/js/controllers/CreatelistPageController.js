@@ -1,5 +1,21 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
 {
+	$scope.list=[];
+
+	$scope.refresh_list = function(){
+		if($scope.list.length == 0){
+			$scope.list.push( {
+				'position_0':1,
+				'title_chosen_0':'muhaha',
+				'id_chosen_0':'',
+				'poster_path_':'',
+				'input_0':''
+			} );
+		}
+		console.log($scope.list)
+	}
+	$scope.refresh_list();
+
 	$scope.search_movie = function(index){
 		var temp=$scope['input_'+index].replace(/ /g , "%20");
 		$scope['title_chosen_'+index]=[];
