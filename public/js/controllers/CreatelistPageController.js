@@ -7,7 +7,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		if($scope.list.length == 0){
 			$scope.list.push( {
 				'position':1,
-				'movie_title':'muhaha',
+				'movie_title':'',
 				'movie_id':'',
 				'poster_path':'',
 				'user_text':''
@@ -47,6 +47,16 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		$timeout(function () {
 	       angular.element('#back_of_vitrin_'+index).focus();
 	    });
+	}
+
+	$scope.new_list = function(){
+		$scope.list.push( {
+			'position':$scope.list.length+2,
+			'movie_title':'',
+			'movie_id':'',
+			'poster_path':'',
+			'user_text':''
+		} );
 	}
 
 	if(pass.is_auth==1){

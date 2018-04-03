@@ -168,7 +168,7 @@
 					</div>
 				</div>
 				<div class="d-flex flex-row justify-content-center mt-4">
-					<button href="#" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
+					<button ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
 				</div>
 				<!-- Filmler -->
 
