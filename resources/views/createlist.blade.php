@@ -156,13 +156,13 @@
 						</div>
 						<div class="row no-gutters mt-3">
 							<div class="col-4 col-xl-3">
-								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{poster_path_1}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">
+								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{model['poster_path_'+$index]}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">
 							</div>
 							<div class="input-group col pl-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
 								</div>
-								<textarea class="form-control" aria-label="With textarea" placeholder="Boş bırakırsanız açıklamada filmin özeti yazar."></textarea>
+								<textarea class="form-control" aria-label="With textarea" placeholder="@{{model['plot_'+$index]}}"></textarea>
 							</div>
 						</div>
 					</div>

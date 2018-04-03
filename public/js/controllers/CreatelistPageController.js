@@ -39,6 +39,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		$scope.model['id_chosen_'+index]=movie.id;
 		$scope.model['searchmode_'+index]=false;
 		$scope.model['poster_path_'+index]=movie.poster_path;
+		$scope.model['plot_'+index]=movie.overview;
 	}
 
 	$scope.set_focus = function(index){
