@@ -150,7 +150,7 @@
 								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="model['id_chosen_'+$index]" ng-value="l.movie_id">
 								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="model['searchmode_'+$index]" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="model['searchmode_'+$index]=true" ng-blur="model['searchmode_'+$index]=false" ng-model="model['input_'+$index]" ng-change="search_movie($index)" ng-model-options="{debounce: 750}">
 								<div ng-show="(model['searchmode_'+$index] || model['choosing_'+$index]) && model['movies_'+$index].length > 0 && model['searchmode_'+$index]" class="search-movie-results background-white py-3" ng-mouseenter="model['choosing_'+$index]=true" ng-mouseleave="model['choosing_'+$index]=false">
-									<div class="result py-1" ng-repeat="movie in model['movies_'+$index]" ng-click="choose_movie(1, movie)">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
+									<div class="result py-1" ng-repeat="movie in model['movies_'+$index]" ng-click="choose_movie($index, movie)">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
 								</div>
 							</div>
 						</div>
