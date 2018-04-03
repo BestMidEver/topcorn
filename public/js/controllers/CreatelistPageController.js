@@ -2,11 +2,11 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 {
 	$scope.search_movie = function(index){
 		var temp=$scope['input_'+index].replace(/ /g , "%20");
+		$scope['title_chosen_'+index]=[];
+		$scope['id_chosen_'+index]=[];
+		$scope['poster_path_'+index]='';
 		if(temp.length == 0){
 			$scope['movies_'+index]=[];
-			$scope['title_chosen_'+index]=[];
-			$scope['id_chosen_'+index]=[];
-			$scope['poster_path_'+index]='';
 		}else{
 			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
 			.then(function(response){
@@ -18,7 +18,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.choose_movie = function(index, movie){
 		console.log(index, movie.id, movie.title, movie.poster_path);
-		$scope['title_chosen_'+index]=movie.title;
+		$scope['title_chosen_'+index]=movie.title + movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '';
 		$scope['id_chosen_'+index]=movie.id;
 		$scope['searchmode_'+index]=false;
 		$scope['poster_path_'+index]=movie.poster_path;
