@@ -51,7 +51,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.new_list = function(){
 		$scope.list.push( {
-			'position':$scope.list.length+2,
+			'position':$scope.list.length+1,
 			'movie_title':'',
 			'movie_id':'',
 			'poster_path':'',
