@@ -19,11 +19,11 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.search_movie = function(index){
 		var temp=$scope.model['input_'+index].replace(/ /g , "%20");
-		$scope.model['title_chosen_'+index]=[];
-		$scope.model['id_chosen_'+index]=[];
+		$scope.model['title_chosen_'+index]='';
+		$scope.model['id_chosen_'+index]='';
 		$scope.model['poster_path_'+index]='';
 		if(temp.length == 0){
-			$scope['movies_'+index]=[];
+			$scope['movies_'+index]='';
 		}else{
 			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
 			.then(function(response){
