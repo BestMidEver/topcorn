@@ -1,5 +1,6 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
 {
+	$scope.model={};
 	$scope.list=[];
 
 	$scope.refresh_list = function(){
