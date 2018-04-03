@@ -140,7 +140,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1"><i class="fas fa-hashtag"></i></span>
 								</div>
-								<input type="number" class="form-control">
+								<input type="number" ng-model="position_0" class="form-control">
 							</div>
 							<div class="input-group col">
 								<div class="input-group-prepend pl-3">
