@@ -28,6 +28,19 @@ var MyApp = angular.module('MyApp', pass.angular_module_array)
         }
     };
 }])
+.directive('dynamicShow', ['$compile', '$parse', function ($compile, $parse) {
+    return {
+        restrict: 'A',
+        terminal: true,
+        priority: 100000,
+        link: function (scope, elem) {
+            var name = $parse(elem.attr('dynamic-show'))(scope);
+            elem.removeAttr('dynamic-show');
+            elem.attr('ng-show', name);
+            $compile(elem)(scope);
+        }
+    };
+}])
 .filter('range', function() {
 	return function(input, total) {
 		total = parseInt(total);

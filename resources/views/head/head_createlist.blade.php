@@ -18,5 +18,5 @@ pass={
 @section('controllername','CreatelistPageController')
 
 @section('title')
-{{ __('title.list') }}
+{{ __('title.createlist') }}
 @endsection
