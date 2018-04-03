@@ -61,6 +61,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.remove_from_list = function(index){
 		$scope.list.splice(index, 1);
+		$scope.refresh_list();
 	}
 
 	if(pass.is_auth==1){
