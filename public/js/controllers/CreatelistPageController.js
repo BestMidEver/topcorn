@@ -42,7 +42,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	}
 
 	$scope.set_focus = function(index){
-		console.log(index, model)
+		console.log(index, $scope.model)
 		$timeout(function () {
 	       angular.element('#back_of_vitrin_'+index).focus();
 	    });
