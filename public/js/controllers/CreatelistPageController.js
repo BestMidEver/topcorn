@@ -57,9 +57,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 			'poster_path':'',
 			'user_text':''
 		} );
-		var temp = $scope.list;
-		$scope.list = [];
-		$scope.list = temp;
+		$scope.$apply();
 	}
 
 	$scope.remove_from_list = function(index){
