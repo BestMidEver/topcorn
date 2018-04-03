@@ -28,19 +28,6 @@ var MyApp = angular.module('MyApp', pass.angular_module_array)
         }
     };
 }])
-.directive('dynamicInıt', ['$compile', '$parse', function ($compile, $parse) {
-    return {
-        restrict: 'A',
-        terminal: true,
-        priority: 100000,
-        link: function (scope, elem) {
-            var name = $parse(elem.attr('dynamic-init'))(scope);
-            elem.removeAttr('dynamic-init');
-            elem.attr('ng-init', name);
-            $compile(elem)(scope);
-        }
-    };
-}])
 .filter('range', function() {
 	return function(input, total) {
 		total = parseInt(total);
