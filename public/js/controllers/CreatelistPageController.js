@@ -18,7 +18,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	$scope.refresh_list();
 
 	$scope.search_movie = function(index){
-		var temp=$scope['input_'+index].replace(/ /g , "%20");
+		var temp=$scope.model['input_'+index].replace(/ /g , "%20");
 		$scope.model['title_chosen_'+index]=[];
 		$scope.model['id_chosen_'+index]=[];
 		$scope.model['poster_path_'+index]='';
