@@ -18,7 +18,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.choose_movie = function(index, movie){
 		console.log(index, movie.id, movie.title, movie.poster_path);
-		$scope['title_chosen_'+index]=movie.title + movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '';
+		$scope['title_chosen_'+index]=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
 		$scope['id_chosen_'+index]=movie.id;
 		$scope['searchmode_'+index]=false;
 		$scope['poster_path_'+index]=movie.poster_path;
