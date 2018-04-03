@@ -27,8 +27,8 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		}else{
 			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
 			.then(function(response){
-				console.log(response.data);
 				$scope.model['movies_'+index]=response.data.results.slice(0, 10);
+				console.log(response.data, $scope.model);
 			});
 		}
 	}
