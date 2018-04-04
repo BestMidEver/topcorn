@@ -60,6 +60,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	}
 
 	$scope.remove_from_list = function(index){
+		$scope.model={};
 		$scope.list=$scope.list.splice(index, 1);
 		console.log(index, $scope.list)
 		$scope.refresh_list();
