@@ -172,7 +172,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
 								</div>
-								<textarea class="form-control" aria-label="With textarea" placeholder="@{{movie.overview}}"></textarea>
+								<textarea class="form-control" aria-label="With textarea" placeholder="@{{l.overview}}"></textarea>
 							</div>
 						</div>
 					</div>
