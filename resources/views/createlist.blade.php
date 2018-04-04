@@ -130,7 +130,7 @@
 						<div class="h6 text-muted">Filmler</div>
 					</div>
 				</div>
-				<div class="row mt-3" ng-repeat="l in list">
+				<div class="row mt-3 mb-4" ng-repeat="l in list">
 					<div class="card h-100 p-2 col-12">
 						<!-- Remove from list -->
 						<div class="d-flex flex-row justify-content-end">
@@ -139,7 +139,7 @@
 						<!-- Remove from list -->
 
 
-						<div class="row no-gutters mt-3 mb-4">
+						<div class="row no-gutters mt-3">
 							<!-- Order number -->
 							<div class="input-group col-12 col-md-4 col-xl-3">
 								<div class="input-group-prepend">
