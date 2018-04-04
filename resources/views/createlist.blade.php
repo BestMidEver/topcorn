@@ -165,7 +165,7 @@
 
 
 						<div class="row no-gutters mt-3" ng-if="l.movie_title.length>0">
-							<div class="col-4 col-xl-3">
+							<div class="col-3 col-md-4 col-xl-3">
 								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{l.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">
 							</div>
 							<div class="input-group col pl-3">
