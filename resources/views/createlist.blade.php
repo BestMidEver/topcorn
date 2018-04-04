@@ -169,7 +169,7 @@
 								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{l.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">
 							</div>
 							<div class="input-group col pl-3">
-								<div class="input-group-prepend">
+								<div class="input-group-prepend d-none d-md-flex">
 									<span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
 								</div>
 								<textarea class="form-control" aria-label="With textarea" placeholder="@{{l.overview}}"></textarea>
