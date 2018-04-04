@@ -150,8 +150,8 @@
 							<!-- Order number -->
 
 							
-							<div class="input-group col">
-								<div class="input-group-prepend pl-md-3 mt-2 mt-md-0">
+							<div class="input-group col mt-3">
+								<div class="input-group-prepend pl-md-3">
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
 								</div>
 								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!l.searchmode" type="text" class="form-control" ng-click="l.searchmode=true;set_focus($index)" ng-model="l.movie_title" placeholder="Filmin adını giriniz.">
