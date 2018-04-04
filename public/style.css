@@ -90,6 +90,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 	    -ms-flex-flow: row wrap;
 	    flex-flow: row wrap;
 	}
+	.search-movie-results{position: absolute; left: calc(1rem + 42px); top:38px; z-index: 10; width: calc(100% - 42px); border:1px solid #7A9CD3;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.review{column-count:2;}
