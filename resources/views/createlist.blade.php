@@ -139,7 +139,7 @@
 						<!-- Remove from list -->
 
 
-						<div class="row no-gutters mt-3">
+						<div class="row no-gutters mt-3 mb-4">
 							<!-- Order number -->
 							<div class="input-group col-12 col-md-4 col-xl-3">
 								<div class="input-group-prepend">
@@ -177,7 +177,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="d-flex flex-row justify-content-center mt-4">
+				<div class="d-flex flex-row justify-content-center">
 					<button ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
 				</div>
 				<!-- Filmler -->
