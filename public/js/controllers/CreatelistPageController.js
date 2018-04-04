@@ -26,6 +26,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		$scope.model['searchmode_'+index]=false;
 		$scope.list[index].overview=movie.overview;
 		$scope.list[index].poster_path=movie.poster_path;
+		$scope.list[index].movie_title=movie.title;
 	}
 
 	$scope.refresh_list = function(){
@@ -56,7 +57,8 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 			'movie_title':'',
 			'movie_id':'',
 			'poster_path':'',
-			'user_text':''
+			'user_text':'',
+			'overview':''
 		} );
 	}
 
