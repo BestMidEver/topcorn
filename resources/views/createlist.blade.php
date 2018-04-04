@@ -130,7 +130,7 @@
 						<div class="h6 text-muted">Filmler</div>
 					</div>
 				</div>
-				<div class="row mt-3 pb-4" ng-repeat="l in list">
+				<div class="row mt-3 pb-4 mb-2" ng-repeat="l in list">
 					<div class="card h-100 p-2 col-12">
 						<!-- Remove from list -->
 						<div class="d-flex flex-row justify-content-end">
