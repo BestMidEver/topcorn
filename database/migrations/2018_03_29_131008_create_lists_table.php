@@ -15,11 +15,12 @@ class CreateListsTable extends Migration
     {
         Schema::create('lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('visibility')->default(1);
-            $table->tinyInteger('sort')->default(1);
+            $table->integer('user_id');
             $table->string('title');
             $table->text('entry_1');
             $table->text('entry_2');
+            $table->tinyInteger('visibility')->default(1);
+            $table->tinyInteger('sort')->default(1);
             $table->mediumInteger('fb_comment_count')->default(0);
             $table->mediumInteger('fb_share_count')->default(0);
             $table->mediumInteger('like_count')->default(0);
