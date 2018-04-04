@@ -132,16 +132,24 @@
 				</div>
 				<div class="row mt-3" ng-repeat="l in list">
 					<div class="card h-100 p-2 col-12">
+						<!-- Remove from list -->
 						<div class="d-flex flex-row justify-content-end">
 							<button ng-click="remove_from_list($index)" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
 						</div>
+						<!-- Remove from list -->
+
+
 						<div class="row no-gutters mt-3">
+							<!-- Order number -->
 							<div class="input-group col-4 col-xl-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-hashtag"></i></span>
 								</div>
 								<input type="number" ng-model="model['position_'+$index]" ng-value="l.position" class="form-control">
 							</div>
+							<!-- Order number -->
+
+							
 							<div class="input-group col">
 								<div class="input-group-prepend pl-3">
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
@@ -150,10 +158,12 @@
 								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="model['id_chosen_'+$index]" ng-value="l.movie_id">
 								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="model['searchmode_'+$index]" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="model['search_'+$index]=true" ng-blur="model['search_'+$index]=false" ng-model="model['input_'+$index]" ng-change="search_movie($index)" ng-model-options="{debounce: 750}">
 								<div ng-show="(model['search_'+$index] || model['choosing_'+$index]) && model['movies_'+$index].length > 0 && model['searchmode_'+$index]" class="search-movie-results background-white py-3" ng-mouseenter="model['choosing_'+$index]=true" ng-mouseleave="model['choosing_'+$index]=false">
-									<div class="result py-1" ng-repeat="movie in model['movies_'+$index]" ng-click="choose_movie($index, movie)">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
+									<div class="result py-1" ng-repeat="movie in model['movies_'+$index]" ng-click="choose_movie($parent.$index, movie)">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
 								</div>
 							</div>
 						</div>
+
+
 						<div class="row no-gutters mt-3">
 							<div class="col-4 col-xl-3">
 								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{model['poster_path_'+$index]}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">

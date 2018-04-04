@@ -3,20 +3,6 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	$scope.model={};
 	$scope.list=[];
 
-	$scope.refresh_list = function(){
-		if($scope.list.length == 0){
-			$scope.list.push( {
-				'position':1,
-				'movie_title':'',
-				'movie_id':'',
-				'poster_path':'',
-				'user_text':''
-			} );
-		}
-		console.log($scope.list)
-	}
-	$scope.refresh_list();
-
 	$scope.search_movie = function(index){
 		var temp=$scope.model['input_'+index].replace(/ /g , "%20");
 		$scope.model['title_chosen_'+index]='';
@@ -41,6 +27,20 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		$scope.model['poster_path_'+index]=movie.poster_path;
 		$scope.model['plot_'+index]=movie.overview;
 	}
+
+	$scope.refresh_list = function(){
+		if($scope.list.length == 0){
+			$scope.list.push( {
+				'position':1,
+				'movie_title':'',
+				'movie_id':'',
+				'poster_path':'',
+				'user_text':''
+			} );
+		}
+		console.log($scope.list)
+	}
+	$scope.refresh_list();
 
 	$scope.set_focus = function(index){
 		console.log(index, $scope.model)
