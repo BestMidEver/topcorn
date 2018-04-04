@@ -24,8 +24,8 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		$scope.model['title_chosen_'+index]=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
 		$scope.model['id_chosen_'+index]=movie.id;
 		$scope.model['searchmode_'+index]=false;
-		$scope.model['poster_path_'+index]=movie.poster_path;
 		$scope.list[index].overview=movie.overview;
+		$scope.list[index].poster_path=movie.poster_path;
 	}
 
 	$scope.refresh_list = function(){
