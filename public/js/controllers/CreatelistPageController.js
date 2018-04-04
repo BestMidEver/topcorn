@@ -1,20 +1,19 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
 {
-	$scope.model={};
 	$scope.list=[];
 
 	$scope.search_movie = function(index){
-		var temp=$scope.model['input_'+index].replace(/ /g , "%20");
-		$scope.model['title_chosen_'+index]='';
-		$scope.model['id_chosen_'+index]='';
-		$scope.model['poster_path_'+index]='';
+		var temp=$scope.list[index].input.replace(/ /g , "%20");
+		$scope.list[index].movie_title='';
+		$scope.list[index].movie_id='';
+		$scope.list[index].poster_path='';
 		if(temp.length == 0){
-			$scope['movies_'+index]='';
+			$scope.list[index].movies='';
 		}else{
 			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
 			.then(function(response){
-				$scope.model['movies_'+index]=response.data.results.slice(0, 10);
-				console.log(response.data, $scope.model);
+				console.log(response.data);
+				$scope.list[index].movies=response.data.results.slice(0, 10);
 			});
 		}
 	}
@@ -44,7 +43,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	$scope.refresh_list();
 
 	$scope.set_focus = function(index){
-		console.log(index, $scope.model)
+		console.log(index)
 		$timeout(function () {
 	       angular.element('#back_of_vitrin_'+index).focus();
 	    });
