@@ -36,7 +36,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 				'movie_id':'',
 				'poster_path':'',
 				'user_text':'',
-				'overview':''
+				'overview':':D'
 			} );
 		}
 		console.log($scope.list)
