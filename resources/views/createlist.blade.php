@@ -154,17 +154,17 @@
 								<div class="input-group-prepend pl-3">
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
 								</div>
-								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!model['searchmode_'+$index]" type="text" class="form-control" ng-click="model['searchmode_'+$index]=true;set_focus($index)" ng-value="l.movie_title" placeholder="Filmin adını giriniz.">
-								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="model['id_chosen_'+$index]" ng-value="l.movie_id">
-								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="model['searchmode_'+$index]" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="model['search_'+$index]=true" ng-blur="model['search_'+$index]=false" ng-model="model['input_'+$index]" ng-change="search_movie($index)" ng-model-options="{debounce: 750}">
-								<div ng-show="(model['search_'+$index] || model['choosing_'+$index]) && model['movies_'+$index].length > 0 && model['searchmode_'+$index]" class="search-movie-results background-white py-3" ng-mouseenter="model['choosing_'+$index]=true" ng-mouseleave="model['choosing_'+$index]=false">
+								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!l.searchmode" type="text" class="form-control" ng-click="l.searchmode=true;set_focus($index)" ng-model="l.movie_title" placeholder="Filmin adını giriniz.">
+								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="l.movie_id">
+								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="l.searchmode" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="model['search_'+$index]=true" ng-blur="model['search_'+$index]=false" ng-model="model['input_'+$index]" ng-change="search_movie($index)" ng-model-options="{debounce: 750}">
+								<div ng-show="(model['search_'+$index] || model['choosing_'+$index]) && model['movies_'+$index].length > 0 && l.searchmode" class="search-movie-results background-white py-3" ng-mouseenter="model['choosing_'+$index]=true" ng-mouseleave="model['choosing_'+$index]=false">
 									<div class="result py-1" ng-repeat="movie in model['movies_'+$index]" ng-click="choose_movie($parent.$index, movie)">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
 								</div>
 							</div>
 						</div>
 
 
-						<div class="row no-gutters mt-3">
+						<div class="row no-gutters mt-3" ng-if="l.movie_title.length>0">
 							<div class="col-4 col-xl-3">
 								<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{l.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top" alt="Responsive image">
 							</div>
