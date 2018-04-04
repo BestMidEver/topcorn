@@ -150,7 +150,7 @@
 							<!-- Order number -->
 
 							
-							<div class="input-group col mt-3">
+							<div class="input-group col mt-3 mt-md-0">
 								<div class="input-group-prepend pl-md-3">
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
 								</div>
