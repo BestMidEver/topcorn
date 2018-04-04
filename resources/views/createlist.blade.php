@@ -141,7 +141,7 @@
 
 						<div class="row no-gutters mt-3">
 							<!-- Order number -->
-							<div class="input-group col-4 col-xl-3">
+							<div class="input-group col-12 col-md-4 col-xl-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-hashtag"></i></span>
 								</div>
