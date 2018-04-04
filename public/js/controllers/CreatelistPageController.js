@@ -21,12 +21,11 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.choose_movie = function(index, movie){
 		console.log(index, movie);
-		$scope.model['title_chosen_'+index]=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
-		$scope.model['id_chosen_'+index]=movie.id;
-		$scope.model['searchmode_'+index]=false;
+		$scope.list[index].movie_id=movie.id;
+		$scope.list[index].searchmode=false;
 		$scope.list[index].overview=movie.overview;
 		$scope.list[index].poster_path=movie.poster_path;
-		$scope.list[index].movie_title=movie.title;
+		$scope.list[index].movie_title=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
 	}
 
 	$scope.refresh_list = function(){
