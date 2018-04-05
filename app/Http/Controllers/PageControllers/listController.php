@@ -61,10 +61,12 @@ class listController extends Controller
         ->where('id', '=', 2);
 
         if($return_val->count()>0){
+            return "var";
             $liste = Liste::where('user_id', '=', 15)
             ->where('id', '=', $request->list_id)
             ->first();
         }else{
+            return "yok";
             $liste = new Liste;  
         }
 
