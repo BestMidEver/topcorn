@@ -77,7 +77,7 @@ class listController extends Controller
         }
         $json = $json_encode($json);*/
 
-        return $request->lists;//$json;
+        return $request->all();//$json;
 
         /*$user = Auth::User();
         $user->name=$request->name;
