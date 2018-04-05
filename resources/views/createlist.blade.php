@@ -27,15 +27,15 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heading"></i></div>
 								</div>
-								<input type="text" class="form-control" id="name" name="name" required autofocus>
+								<input type="text" class="form-control" id="name" name="header" required autofocus>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-control-feedback">
-							@if ($errors->has('name'))
+							@if ($errors->has('header'))
 							<span class="text-danger align-middle float-right float-md-none">
-								<i class="fas fa-exclamation-circle"></i> {{ $errors->first('name') }}
+								<i class="fas fa-exclamation-circle"></i> {{ $errors->first('header') }}
 							</span>
 							@endif
 						</div>
@@ -51,7 +51,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control" id="name" name="name" required></textarea>
+								<textarea type="text" class="form-control" id="entry_1" name="entry_1"></textarea>
 							</div>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control" id="name" name="name" required></textarea>
+								<textarea type="text" class="form-control" id="entry_2" name="entry_2"></textarea>
 							</div>
 						</div>
 					</div>
@@ -84,7 +84,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="lang">Kimler Görebilir?</label>
+						<label for="visibility">Kimler Görebilir?</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
@@ -92,9 +92,9 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-eye"></i></div>
 								</div>
-								<select class="form-control" id="lang" name="lang" ng-model="lang">
-									<option value="tr">Herkes</option>
-									<option value="en">Sadece Ben</option>
+								<select class="form-control" id="visibility" name="visibility" ng-model="visibility">
+									<option value="1">Herkes</option>
+									<option value="0">Sadece Ben</option>
 								</select>
 							</div>
 						</div>
@@ -102,7 +102,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="lang">Sıralama</label>
+						<label for="sort_by">Sıralama</label>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
@@ -110,10 +110,10 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort"></i></div>
 								</div>
-								<select class="form-control" id="lang" name="lang" ng-model="lang">
-									<option value="tr">Büyükten Küçüğe</option>
-									<option value="en">Küçükten Büyüğe</option>
-									<option value="fd">Devre Dışı</option>
+								<select class="form-control" id="sort_by" name="sort_by" ng-model="sort_by">
+									<option value="2">Büyükten Küçüğe</option>
+									<option value="1">Küçükten Büyüğe</option>
+									<option value="0">Devre Dışı</option>
 								</select>
 							</div>
 						</div>
