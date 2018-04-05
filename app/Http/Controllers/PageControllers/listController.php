@@ -47,7 +47,7 @@ class listController extends Controller
 
 
 
-	public function post_createlist($request)
+	public function post_createlist(Request $request)
 	{
 
         return print_r($request);
