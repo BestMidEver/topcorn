@@ -28,8 +28,8 @@ class listController extends Controller
 
 
 
-	public function createlist($user, $id = 0)
-	{
+    public function createlist($user, $id = 0)
+    {
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
         if(Auth::check()){
@@ -41,6 +41,42 @@ class listController extends Controller
         }
 
 
-		return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number'));
+        return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number'));
+    }
+
+
+
+
+	public function post_createlist($request)
+	{
+
+        return print_r($request);
+
+        /*$request->validate([
+            'name' => 'required|min:6',
+        ]);
+
+        $user = Auth::User();
+        $user->name=$request->name;
+        if($request->profile_pic != '? string: ?'){
+            if($request->profile_pic == "number:0"){
+                $user->profile_pic = '';
+            }else{
+                $user->profile_pic = '/'.explode("/", $request->profile_pic)[1];
+            }
+        }
+        if($request->cover_pic != '? string: ?'){
+            $user->cover_pic = '/'.explode("/", $request->cover_pic)[1];
+        }
+        if($user->level == 503){
+            $user->level = 504;
+            $request->session()->flash('tutorial_504', 'level up');
+        }
+        $user->save();
+
+        $request->session()->flash('status', __('general.info_updated'));
+
+
+        return redirect('/account');*/
 	}
 }
