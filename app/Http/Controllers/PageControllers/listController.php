@@ -50,13 +50,14 @@ class listController extends Controller
 	public function post_createlist(Request $request)
 	{
 
-        return $request->all();
-
-        /*$request->validate([
-            'name' => 'required|min:6',
+        $request->validate([
+            'header' => 'required'
         ]);
 
-        $user = Auth::User();
+
+        return $request->all();
+
+        /*$user = Auth::User();
         $user->name=$request->name;
         if($request->profile_pic != '? string: ?'){
             if($request->profile_pic == "number:0"){
