@@ -57,7 +57,7 @@ class listController extends Controller
             'header' => 'required'
         ]);
 
-        Liste::updateOrCreate(
+        $liste = Liste::updateOrCreate(
             ['user_id' => Auth::id(),
             'id' => $request->list_id],
             ['title' => $request->header,
@@ -66,6 +66,7 @@ class listController extends Controller
             'visibility' => $request->visibility,
             'sort' => $request->sort_by]
         );
+        $request->list_id = $liste->id;
 
         Listitem::where(['list_id' => $request->list_id])->delete();
 
