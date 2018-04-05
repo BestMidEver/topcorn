@@ -94,8 +94,8 @@
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-eye"></i></div>
 								</div>
 								<select class="form-control" id="visibility" name="visibility">
-									<option value="1" selected>Herkes</option>
-									<option value="0">Sadece Ben</option>
+									<option value="1" {{ $liste != 'empty' ? ($liste->visibility == 1 ? 'selected' : '') : 'selected' }}>Herkes</option>
+									<option value="0" {{ $liste != 'empty' ? ($liste->visibility == 0 ? 'selected' : '') : '' }}>Sadece Ben</option>
 								</select>
 							</div>
 						</div>
@@ -112,9 +112,9 @@
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort"></i></div>
 								</div>
 								<select class="form-control" id="sort_by" name="sort_by">
-									<option value="2">Büyükten Küçüğe</option>
-									<option value="1">Küçükten Büyüğe</option>
-									<option value="0">Devre Dışı</option>
+									<option value="2" {{ $liste != 'empty' ? ($liste->sort == 2 ? 'selected' : '') : 'selected' }}>Büyükten Küçüğe</option>
+									<option value="1" {{ $liste != 'empty' ? ($liste->sort == 1 ? 'selected' : '') : '' }}>Küçükten Büyüğe</option>
+									<option value="0" {{ $liste != 'empty' ? ($liste->sort == 0 ? 'selected' : '') : '' }}>Devre Dışı</option>
 								</select>
 							</div>
 						</div>
