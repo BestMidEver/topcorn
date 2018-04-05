@@ -145,7 +145,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-hashtag"></i></span>
 								</div>
-								<input type="number" name="position_@{{l.position}}" ng-model="l.position" class="form-control">
+								<input type="number" name="position_@{{@index}}" ng-model="l.position" class="form-control">
 							</div>
 							<!-- Order number -->
 
@@ -155,7 +155,7 @@
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
 								</div>
 								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!l.searchmode" type="text" class="form-control" ng-click="l.searchmode=true;set_focus($index)" ng-model="l.movie_title" placeholder="Filmin adını giriniz.">
-								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="l.movie_id">
+								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="l.movie_id" name="movie_id_@{{@index}}">
 								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="l.searchmode" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="l.search=true" ng-blur="l.search=false" ng-model="l.input" ng-change="search_movie($index)" ng-model-options="{debounce: 750}">
 								<div ng-show="(l.search || l.choosing) && l.movies.length > 0 && l.searchmode" class="search-movie-results background-white py-3" ng-mouseenter="l.choosing=true" ng-mouseleave="l.choosing=false">
 									<div class="result py-1" ng-repeat="movie in l.movies" ng-click="choose_movie($parent.$index, movie)">@{{movie.title}} <small ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></div>
@@ -172,7 +172,7 @@
 								<div class="input-group-prepend d-none d-md-flex">
 									<span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
 								</div>
-								<textarea class="form-control" aria-label="With textarea" placeholder="@{{l.overview}}"></textarea>
+								<textarea class="form-control" aria-label="With textarea" placeholder="@{{l.overview}}" name="explanation_@{{@index}}"></textarea>
 							</div>
 						</div>
 					</div>
