@@ -71,7 +71,7 @@ class listController extends Controller
 
         $json=[];
         foreach ($fruits as $key) {
-            array_push($json, {'position':$key[0]})
+            array_push($json, {'position' => $key[0]})
         }
 
         return $json;
