@@ -76,7 +76,7 @@ class listController extends Controller
             $json = $json.'{"position":'.$value[0].',"movie_id":'.$value[1].',"explanation":"'.$explanation.'"}';
         }
         $json = json_decode($json.']');
-        usort(array(array('a'=>3),array('a'=>1),array('a'=>2)), function($a, $b) { //Sort the array using a user defined function
+        usort(array(array('a'=>3, 'b'=>1),array('a'=>1, 'b'=>1),array('a'=>2, 'b'=>1)), function($a, $b) { //Sort the array using a user defined function
             return $a->a > $b->a ? -1 : 1; //Compare the scores
         });
 
