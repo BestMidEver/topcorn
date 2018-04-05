@@ -83,11 +83,13 @@ class listController extends Controller
         print_r($temp2);
         print_r($temp3);
         foreach ($temp2 as $index=>$value) {
-            $listitem = new Listitem;
-            $listitem->movie_id = $value;
-            $listitem->position = $index;
-            $listitem->explanation = $temp3[$index];
-            $listitem->save();
+            if($value > 0){
+                $listitem = new Listitem;
+                $listitem->movie_id = $value;
+                $listitem->position = $index;
+                $listitem->explanation = $temp3[$index];
+                $listitem->save();
+            }
         }
         return $request->items;
         //return $temp;
