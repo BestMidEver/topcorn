@@ -173,7 +173,7 @@
 								<div class="input-group-prepend d-none d-md-flex">
 									<span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
 								</div>
-								<textarea class="form-control" aria-label="With textarea" placeholder="@{{l.overview}}" name="items[@{{$index}}][2]"></textarea>
+								<textarea class="form-control" aria-label="With textarea" placeholder="@{{l.overview}}" name="items[@{{$index}}][2]" value=""></textarea>
 							</div>
 						</div>
 					</div>
