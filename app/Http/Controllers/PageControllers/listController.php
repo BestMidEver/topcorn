@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\List;
 use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,9 +60,15 @@ class listController extends Controller
         ->where('user_id', '=', Auth::id())
         ->where('id', '=', $request->list_id);
 
-        if($return_val->count()) return 'a';        
-        else return 'b';        
+        if($return_val->count()){
+            $list = new List;     
+        }else{
+            $list = List::where('user_id', '=', Auth::id())
+            ->where('id', '=', $request->list_id);
+        }
 
+        $list->user_id = Auth::id();
+        $list->save();
 
         return $request->all();
 
