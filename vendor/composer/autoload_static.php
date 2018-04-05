@@ -406,6 +406,7 @@ class ComposerStaticInitc1d52f4c3200949e1abe2578ee50dff0
         'App\\Model\\Genre' => __DIR__ . '/../..' . '/app/Model/Genre.php',
         'App\\Model\\Later' => __DIR__ . '/../..' . '/app/Model/Later.php',
         'App\\Model\\List' => __DIR__ . '/../..' . '/app/Model/List.php',
+        'App\\Model\\Liste' => __DIR__ . '/../..' . '/app/Model/Liste.php',
         'App\\Model\\Listitem' => __DIR__ . '/../..' . '/app/Model/Listitem.php',
         'App\\Model\\Movie' => __DIR__ . '/../..' . '/app/Model/Movie.php',
         'App\\Model\\Partie' => __DIR__ . '/../..' . '/app/Model/Partie.php',
