@@ -67,7 +67,7 @@ class listController extends Controller
             $liste = Liste::where('user_id', '=', Auth::id())
             ->where('id', '=', $request->list_id)
             ->first();
-            return $liste;   
+            return "$liste";   
         }
 
         $liste->user_id = Auth::id();
