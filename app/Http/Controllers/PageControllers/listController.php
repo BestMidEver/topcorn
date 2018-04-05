@@ -43,8 +43,17 @@ class listController extends Controller
             $watched_movie_number = null;
         }
 
+        $liste = DB::table('listes')
+        ->where('id', '=', $id)
+        ->where('user_id', '=', Auth::id());
 
-        return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number'));
+        if($liste->count()>0){
+            $liste = $liste->first();
+        }else{
+            $liste = [];
+        }
+        return $liste;
+        return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste'));
     }
 
 
