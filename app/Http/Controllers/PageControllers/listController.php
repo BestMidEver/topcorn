@@ -52,7 +52,7 @@ class listController extends Controller
         }else{
             $liste = [];
         }*/
-        return $liste->first();
+        return print_r($liste->first());
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste'));
     }
 
