@@ -72,7 +72,8 @@ class listController extends Controller
         $json = '[';
         foreach ($request->items as $index=>$value) {
             if($index!=0) $json = $json.',';
-            $json = $json.'{"position":"'.$value[0].'","movie_id":"'.$value[1].'","explanation":"'.count($value)>1?$value[2]:'';.'"}';
+            $explanation = count($value)>1 ? $value[2]: '';
+            $json = $json.'{"position":"'.$value[0].'","movie_id":"'.$value[1].'","explanation":"'.$explanation.'"}';
         }
         $json = json_encode($json.']');
 
