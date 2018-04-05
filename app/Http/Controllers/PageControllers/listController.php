@@ -4,6 +4,7 @@ namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\Liste;
+use App\Model\Listitem;
 use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -59,10 +60,20 @@ class listController extends Controller
         Liste::updateOrCreate(
             ['user_id' => Auth::id(),
             'id' => $request->list_id],
-            ['title' => ':D',
-            'entry_1' => ':(']
+            ['title' => $request->header,
+            'entry_1' => $request->entry_1,
+            'entry_2' => $request->entry_2,
+            'visibility' => $request->visibility,
+            'sort' => $request->sort_by]
         );
 
+        Listitem::where(['list_id' => $request->list_id])->delete();
+
+        $a='';
+        foreach ($request->all() as $key) {
+            $a = $a + '<br>' + $key;
+        }
+        return $a;
         return $request->all();
 
         /*$user = Auth::User();

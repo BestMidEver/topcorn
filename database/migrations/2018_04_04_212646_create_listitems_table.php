@@ -15,7 +15,7 @@ class CreateListitemsTable extends Migration
     {
         Schema::create('listitems', function (Blueprint $table) {
             $table->integer('id')->primary();
-            $table->integer('user_id');
+            $table->integer('list_id');
             $table->integer('movie_id');
             $table->text('explanation');
             $table->timestamps();
