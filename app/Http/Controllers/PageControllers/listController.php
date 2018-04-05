@@ -69,11 +69,6 @@ class listController extends Controller
 
         Listitem::where(['list_id' => $request->list_id])->delete();
 
-        $a='';
-        foreach ($request->all() as $key) {
-            $a = $a + '<br>' + $key;
-        }
-        return $a;
         return $request->all();
 
         /*$user = Auth::User();
