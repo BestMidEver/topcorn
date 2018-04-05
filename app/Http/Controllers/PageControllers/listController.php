@@ -56,20 +56,12 @@ class listController extends Controller
             'header' => 'required'
         ]);
 
-        $return_val = DB::table('listes')
-        ->where('user_id', '=', 9)
-        ->where('id', '=', 2);
-
-        if($return_val->count()>0){
-            $liste = Liste::where('user_id', '=', 15)
-            ->where('id', '=', $request->list_id)
-            ->first();
-        }else{
-            $liste = new Liste;  
-        }
-
-        $liste->user_id = 15;
-        $liste->save();
+        Liste::updateOrCreate(
+            ['user_id' => Auth::id(),
+            'id' => $request->list_id],
+            ['title' => ':D',
+            'entry_1' => ':(']
+        );
 
         return $request->all();
 
