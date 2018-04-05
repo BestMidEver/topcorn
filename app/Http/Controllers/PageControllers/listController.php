@@ -73,9 +73,12 @@ class listController extends Controller
         foreach ($request->items as $index=>$value) {
             if($index!=0) $json = $json.',';
             $explanation = count($value)>2 ? $value[2]: '';
-            $json = $json.'{"position":"'.$value[0].'","movie_id":"'.$value[1].'","explanation":"'.$explanation.'"}';
+            $json = $json.'{"position":'.$value[0].',"movie_id":'.$value[1].',"explanation":"'.$explanation.'"}';
         }
         $json = json_decode($json.']');
+        usort($json, function($a, $b) { //Sort the array using a user defined function
+            return $a->position > $b->position ? -1 : 1; //Compare the scores
+        });
 
         return $json;
 
