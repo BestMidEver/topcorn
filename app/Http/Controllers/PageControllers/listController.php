@@ -57,18 +57,18 @@ class listController extends Controller
         ]);
 
         $return_val = DB::table('listitems')
-        ->where('user_id', '=', Auth::id())
+        ->where('user_id', '=', 7)
         ->where('id', '=', $request->list_id);
 
         if($return_val->count()>0){
-            $liste = Liste::where('user_id', '=', Auth::id())
+            $liste = Liste::where('user_id', '=', 15)
             ->where('id', '=', $request->list_id)
             ->first();
         }else{
             $liste = new Liste;  
         }
 
-        $liste->user_id = 9;
+        $liste->user_id = 15;
         $liste->save();
 
         return $request->all();
