@@ -70,17 +70,16 @@ class listController extends Controller
         Listitem::where(['list_id' => $request->list_id])->delete();
 
         $json = '[';
+        $temp = [];
         foreach ($request->items as $index=>$value) {
+            $temp = array_push($temp, $value[0]);
             if($index!=0) $json = $json.',';
             $explanation = count($value)>2 ? $value[2]: '';
             $json = $json.'{"position":'.$value[0].',"movie_id":'.$value[1].',"explanation":"'.$explanation.'"}';
         }
         $json = json_decode($json.']');
-        usort(array(array('a'=>3, 'b'=>1),array('a'=>1, 'b'=>1),array('a'=>2, 'b'=>1)), function($a, $b) { //Sort the array using a user defined function
-            return $a->a > $b->a ? -1 : 1; //Compare the scores
-        });
 
-        return $json;
+        return $temp;
 
         /*$user = Auth::User();
         $user->name=$request->name;
