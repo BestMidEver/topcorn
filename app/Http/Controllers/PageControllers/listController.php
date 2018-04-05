@@ -74,7 +74,7 @@ class listController extends Controller
             if($index!=0) $json = $json.',';
             $json = $json.'{"position":"'.$value[0].'","movie_id":"'.$value[0].'"}';
         }
-        $json = $json_encode($json.']');
+        $json = json_encode($json.']');
 
         return $json;
 
