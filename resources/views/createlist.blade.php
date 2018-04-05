@@ -15,7 +15,7 @@
 				<!-- Başlık & Giriş & Sonuç -->
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Başlık & Giriş & Sonuç{{  $liste }}</div>
+						<div class="h6 text-muted">Başlık & Giriş & Sonuç</div>
 					</div>
 				</div>
 				<div class="row">
