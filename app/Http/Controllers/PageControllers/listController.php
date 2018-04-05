@@ -44,8 +44,8 @@ class listController extends Controller
         }
 
         $liste = DB::table('listes')
-        ->where('id', '=', $id)
-        ->where('user_id', '=', Auth::id());
+        ->where('listes.id', '=', $id)
+        ->where('listes.user_id', '=', Auth::id());
 
         if($liste->count()>0){
             $liste = $liste
