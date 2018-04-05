@@ -69,16 +69,15 @@ class listController extends Controller
 
         Listitem::where(['list_id' => $request->list_id])->delete();
 
-        $json = 'start';
+        $json = array();
         foreach ($request->items as $index=>$value) {
-           /*$json[$index*1]->position = $value[0];
-           $json[$index*1]->movie_id = $value[1];
-           $json[$index*1]->explanation = $value[2];*/
-           $json = $json . '<br>' . $index . '=>' . $value[0] . ',' . $value[1];
+           $json[$index]->position = $value[0];
+           $json[$index]->movie_id = $value[1];
+           //$json[$index]->explanation = $value[2];
         }
-        //$json = $json_encode($json);
+        $json = $json_encode($json);
 
-        return $request->items;
+        return $json;
 
         /*$user = Auth::User();
         $user->name=$request->name;
