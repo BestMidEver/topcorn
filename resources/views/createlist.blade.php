@@ -52,7 +52,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control" id="entry_1" name="entry_1" value="{{ $liste != 'empty' ? $liste->title : '' }}"></textarea>
+								<textarea type="text" class="form-control" id="entry_1" name="entry_1" value="asdasd"></textarea>
 							</div>
 						</div>
 					</div>
