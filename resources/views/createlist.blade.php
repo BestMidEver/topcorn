@@ -28,7 +28,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heading"></i></div>
 								</div>
-								<input type="text" class="form-control" id="header" name="header" value="{{ $liste != 'empty' ? $liste->title : ''; }}" required autofocus>
+								<input type="text" class="form-control" id="header" name="header" value="{{ $liste != 'empty' ? $liste->title : '' }}" required autofocus>
 							</div>
 						</div>
 					</div>
