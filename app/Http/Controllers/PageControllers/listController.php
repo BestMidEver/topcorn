@@ -68,7 +68,7 @@ class listController extends Controller
             $liste = new Liste;  
         }
 
-        $liste->user_id = Auth::id();
+        $liste->user_id = 9;
         $liste->save();
 
         return $request->all();
