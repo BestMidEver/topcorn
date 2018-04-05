@@ -71,6 +71,7 @@ class listController extends Controller
 
         $json = array();
         foreach ($request->items as $index=>$value) {
+            $json[]=array();
            $json[]->position = $value[0];
            $json[]->movie_id = $value[1];
            //$json[$index]->explanation = $value[2];
