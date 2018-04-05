@@ -94,7 +94,7 @@
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-eye"></i></div>
 								</div>
 								<select class="form-control" id="visibility" name="visibility" ng-model="visibility">
-									<option value="1" {{ $liste != 'empty' ? ($liste->visibility == 1 ? 'selected' : 'selected') : 'selected' }}>Herkes</option>
+									<option value="1" {{ $liste != 'empty' ? ($liste->visibility == 1 ? 'selected' : '') : 'selected' }}>Herkes</option>
 									<option value="0" {{ $liste != 'empty' ? ($liste->visibility == 0 ? 'selected' : '') : '' }}>Sadece Ben</option>
 								</select>
 							</div>
