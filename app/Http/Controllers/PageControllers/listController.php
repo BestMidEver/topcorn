@@ -82,7 +82,7 @@ class listController extends Controller
 
         return $temp;*/
 
-        $return $request->items;
+        return $request->items;
 
         /*$user = Auth::User();
         $user->name=$request->name;
