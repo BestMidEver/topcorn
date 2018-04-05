@@ -81,7 +81,9 @@ class listController extends Controller
         sort($temp);
 
         return $temp;*/
-        usort($request->items);  
+        usort($request->items, function($a, $b) { //Sort the array using a user defined function
+            return $a[0] <=> $b[0];
+        });  
 
         return $request->items;
 
