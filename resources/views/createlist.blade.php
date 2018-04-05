@@ -134,7 +134,7 @@
 					<div class="card h-100 p-2 col-12">
 						<!-- Remove from list -->
 						<div class="d-flex flex-row justify-content-end">
-							<button ng-click="remove_from_list($index)" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
+							<button type="button" ng-click="remove_from_list($index)" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
 						</div>
 						<!-- Remove from list -->
 
@@ -178,7 +178,7 @@
 					</div>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
-					<button ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
+					<button type="button" ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
 				</div>
 				<!-- Filmler -->
 
