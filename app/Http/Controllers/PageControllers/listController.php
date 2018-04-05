@@ -31,7 +31,7 @@ class listController extends Controller
 
 
 
-    public function createlist($user, $id = 0)
+    public function createlist($user, $id = 1)
     {
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
@@ -59,7 +59,7 @@ class listController extends Controller
 
         $liste = Liste::updateOrCreate(
             ['user_id' => Auth::id(),
-            'id' => 1],
+            'id' => $request->list_id],
             ['title' => $request->header,
             'entry_1' => $request->entry_1,
             'entry_2' => $request->entry_2,
@@ -93,7 +93,6 @@ class listController extends Controller
             }
         }
         return $request->items;
-        //return $temp;
 
         /*$user = Auth::User();
         $user->name=$request->name;
