@@ -48,11 +48,19 @@ class listController extends Controller
         ->where('user_id', '=', Auth::id());
 
         if($liste->count()>0){
-            $liste = $liste->first();
+            $liste = $liste
+            ->leftjoin('listitems', 'listitems.list_id', '=', 'liste.id')
+            ->select(
+                'liste.*',
+                'listitems.movie_id',
+                'listitems.position',
+                'listitems.explanation'
+            )
+            ->first();
         }else{
             $liste = 'empty';
         }
-        
+
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste'));
     }
 
