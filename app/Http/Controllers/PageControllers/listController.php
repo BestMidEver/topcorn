@@ -69,13 +69,12 @@ class listController extends Controller
 
         Listitem::where(['list_id' => $request->list_id])->delete();
 
-        ksort($request->items);
-        $temp='';
-        foreach ($fruits as $key => $val) {
-            $temp= $temp+ "$key = $val\n";
+        $json=[];
+        foreach ($fruits as $key) {
+            array_push($json, {'position':$key[0]})
         }
 
-        return $temp;
+        return $json;
 
         /*$user = Auth::User();
         $user->name=$request->name;
