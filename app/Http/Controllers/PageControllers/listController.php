@@ -58,7 +58,7 @@ class listController extends Controller
 
         Liste::updateOrCreate(
             ['user_id' => Auth::id(),
-            'id' => null],
+            'id' => $request->list_id],
             ['title' => ':D',
             'entry_1' => ':(']
         );
