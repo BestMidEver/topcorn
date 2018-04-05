@@ -57,8 +57,8 @@ class listController extends Controller
         ]);
 
         $return_val = DB::table('listitems')
-        ->where('user_id', '=', 7)
-        ->where('id', '=', $request->list_id);
+        ->where('user_id', '=', 9)
+        ->where('id', '=', 2);
 
         if($return_val->count()>0){
             $liste = Liste::where('user_id', '=', 15)
