@@ -145,7 +145,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-hashtag"></i></span>
 								</div>
-								<input type="number" ng-model="l.position" class="form-control">
+								<input type="number" name="position_@{{l.position}}" ng-model="l.position" class="form-control">
 							</div>
 							<!-- Order number -->
 
