@@ -58,7 +58,7 @@ class listController extends Controller
                 'listitems.explanation',
                 'movies.original_title as movie_title',
                 'movies.en_poster_path as poster_path',
-                '"false" as searchmode'
+                 DB::raw('false as searchmode')
             )
             ->get()->toArray();
         }else{
