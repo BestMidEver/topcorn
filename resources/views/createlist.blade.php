@@ -93,8 +93,8 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-eye"></i></div>
 								</div>
-								<select class="form-control" id="visibility" name="visibility" ng-model="visibility"  ng-init="visibility={{ $liste != 'empty' ? $liste->visibility : 1 }}">
-									<option value="1">Herkes</option>
+								<select class="form-control" id="visibility" name="visibility" ng-model="visibility">
+									<option value="1" {{ $liste != 'empty' ? ($liste->visibility == 1 ? 'selected' : '') : 'selected' }}>Herkes</option>
 									<option value="0">Sadece Ben</option>
 								</select>
 							</div>
