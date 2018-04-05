@@ -49,9 +49,9 @@ class listController extends Controller
 
         if($liste->count()>0){
             $liste = $liste
-            ->leftjoin('listitems', 'listitems.list_id', '=', 'liste.id')
+            ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
             ->select(
-                'liste.*',
+                'listes.*',
                 'listitems.movie_id',
                 'listitems.position',
                 'listitems.explanation'
