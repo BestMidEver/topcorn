@@ -52,7 +52,7 @@ class listController extends Controller
         }else{
             $liste = [];
         }*/
-        $liste = $liste->first()->toArray();
+        $liste = $liste->first();
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste'));
     }
 
