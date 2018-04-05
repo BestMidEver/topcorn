@@ -50,7 +50,7 @@ class listController extends Controller
 	public function post_createlist(Request $request)
 	{
 
-        return print_r($request);
+        return $request->all();
 
         /*$request->validate([
             'name' => 'required|min:6',
