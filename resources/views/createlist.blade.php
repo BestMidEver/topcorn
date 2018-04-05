@@ -15,7 +15,7 @@
 				<!-- Başlık & Giriş & Sonuç -->
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Başlık & Giriş & Sonuç{{  $liste[0]->title }}</div>
+						<div class="h6 text-muted">Başlık & Giriş & Sonuç</div>
 					</div>
 				</div>
 				<div class="row">
@@ -28,7 +28,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heading"></i></div>
 								</div>
-								<input type="text" class="form-control" id="header" name="header" required autofocus>
+								<input type="text" class="form-control" id="header" name="header" value="{{ $liste!='empty':$liste->title : ''; }}" required autofocus>
 							</div>
 						</div>
 					</div>

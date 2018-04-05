@@ -48,13 +48,11 @@ class listController extends Controller
         ->where('user_id', '=', Auth::id());
 
         if($liste->count()>0){
-            return 'var';
             $liste = $liste->first();
         }else{
-            return 'yok';
-            $liste = [];
+            $liste = 'empty';
         }
-        $liste = $liste->get()->toArray();
+        //$liste = $liste->get()->toArray();
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste'));
     }
 
