@@ -1,5 +1,5 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
-{
+{console.log(pass)
 	$scope.list=[];
 
 	$scope.search_movie = function(index){
