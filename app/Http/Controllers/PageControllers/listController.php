@@ -56,17 +56,15 @@ class listController extends Controller
             'header' => 'required'
         ]);
 
-        $return_val = DB::table('listitems')
+        $return_val = DB::table('listes')
         ->where('user_id', '=', 9)
         ->where('id', '=', 2);
 
         if($return_val->count()>0){
-            return "var";
             $liste = Liste::where('user_id', '=', 15)
             ->where('id', '=', $request->list_id)
             ->first();
         }else{
-            return "yok";
             $liste = new Liste;  
         }
 
