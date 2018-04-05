@@ -1,6 +1,10 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
-{console.log(pass)
+{console.log(pass.liste)
 	$scope.list=[];
+
+	for(var l in pass.liste){
+		console.log(l)
+	}
 
 	$scope.search_movie = function(index){
 		var temp=$scope.list[index].input.replace(/ /g , "%20");
