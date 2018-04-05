@@ -50,11 +50,15 @@ class listController extends Controller
         if($liste->count()>0){
             $liste = $liste
             ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
+            ->join('movies', 'listitems.movie_id', '=', 'movies.id')
             ->select(
                 'listes.*',
                 'listitems.movie_id',
                 'listitems.position',
-                'listitems.explanation'
+                'listitems.explanation',
+                'movies.original_title as movie_title',
+                'movies.en_poster_path as poster_path',
+                'false as searchmode'
             )
             ->get()->toArray();
         }else{
