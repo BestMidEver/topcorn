@@ -66,10 +66,8 @@ class listController extends Controller
             'visibility' => $request->visibility,
             'sort' => $request->sort_by]
         );
-        $request->list_id = $liste->id;
-        echo $liste->id;
 
-        Listitem::where(['list_id' => $request->list_id])->delete();
+        Listitem::where(['list_id' => $liste->id])->delete();
 
         $temp = array();
         $temp2 = array();
@@ -87,6 +85,7 @@ class listController extends Controller
         foreach ($temp2 as $index=>$value) {
             if($value > 0){
                 $listitem = new Listitem;
+                $listitem->list_id = $liste->id;
                 $listitem->movie_id = $value;
                 $listitem->position = $index;
                 $listitem->explanation = $temp3[$index];
