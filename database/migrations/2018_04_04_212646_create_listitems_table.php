@@ -18,7 +18,7 @@ class CreateListitemsTable extends Migration
             $table->integer('list_id');
             $table->integer('movie_id');
             $table->integer('position');
-            $table->text('explanation');
+            $table->text('explanation')->nullable();
             $table->timestamps();
         });
     }
