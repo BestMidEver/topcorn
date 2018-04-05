@@ -31,7 +31,7 @@ class listController extends Controller
 
 
 
-    public function createlist($user, $id = 1)
+    public function createlist($id = 1)
     {
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
