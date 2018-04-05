@@ -56,7 +56,7 @@ class listController extends Controller
                 'listitems.position',
                 'listitems.explanation'
             )
-            ->all();
+            ->get()->toArray();
         }else{
             $liste = 'empty';
         }
