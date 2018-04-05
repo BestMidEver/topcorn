@@ -83,7 +83,7 @@ class listController extends Controller
         array_multisort($temp,$temp2);
         print_r($temp);
         print_r($temp2);
-
+        print_r($request->items);
         //return $temp;
 
         /*$user = Auth::User();
