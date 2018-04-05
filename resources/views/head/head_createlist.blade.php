@@ -6,7 +6,7 @@ pass={
 	"lang":"{{ App::getlocale() }}",
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }},
-	"liste":{!! $liste !!}
+	"liste":{!! json_encode($liste) !!}
 };
 </script>
 @endsection
