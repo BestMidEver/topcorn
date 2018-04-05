@@ -59,7 +59,7 @@ class listController extends Controller
         ->where('user_id', '=', Auth::id())
         ->where('id', '=', $request->list_id);
 
-        if($return_val) return 'a';        
+        if($return_val->count()) return 'a';        
         else return 'b';        
 
 
