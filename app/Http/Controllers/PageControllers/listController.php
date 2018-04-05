@@ -78,6 +78,7 @@ class listController extends Controller
             $json = $json.'{"position":'.$value[0].',"movie_id":'.$value[1].',"explanation":"'.$explanation.'"}';
         }
         $json = json_decode($json.']');
+        sort($temp);
 
         return $temp;
 
