@@ -61,14 +61,14 @@ class listController extends Controller
         ->where('id', '=', $request->list_id);
 
         if($return_val->count()){
-            $list = new List;     
+            $liste = new Liste;     
         }else{
-            $list = List::where('user_id', '=', Auth::id())
+            $liste = Liste::where('user_id', '=', Auth::id())
             ->where('id', '=', $request->list_id);
         }
 
-        $list->user_id = Auth::id();
-        $list->save();
+        $liste->user_id = Auth::id();
+        $liste->save();
 
         return $request->all();
 
