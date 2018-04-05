@@ -67,6 +67,7 @@ class listController extends Controller
             'sort' => $request->sort_by]
         );
         $request->list_id = $liste->id;
+        echo $liste->id;
 
         Listitem::where(['list_id' => $request->list_id])->delete();
 
