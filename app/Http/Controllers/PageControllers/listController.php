@@ -75,7 +75,7 @@ class listController extends Controller
             $explanation = count($value)>2 ? $value[2]: '';
             $json = $json.'{"position":"'.$value[0].'","movie_id":"'.$value[1].'","explanation":"'.$explanation.'"}';
         }
-        $json = json_encode($json.']');
+        $json = json_decode($json.']');
 
         return $json;
 
