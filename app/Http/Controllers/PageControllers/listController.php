@@ -55,7 +55,12 @@ class listController extends Controller
             'header' => 'required'
         ]);
 
-        $return_val = DB::table('movies');
+        $return_val = DB::table('listitems')
+        ->where('user_id', '=', Auth::id())
+        ->where('id', '=', $request->list_id);
+
+        if($return_val) return 'a';        
+        else return 'b';        
 
 
         return $request->all();

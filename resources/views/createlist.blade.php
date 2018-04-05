@@ -11,7 +11,7 @@
 		<div class="col-12 col-xl-10">
 			<form id="the_form" class="form-horizontal" role="form" method="POST" action="/createlist">
 				{{ csrf_field() }}
-				<input type="number" class="d-none" name="list_id" value="1990">
+				<input type="number" class="d-none" name="list_id" value="">
 				<!-- Başlık & Giriş & Sonuç -->
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
