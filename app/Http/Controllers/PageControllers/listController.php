@@ -74,7 +74,7 @@ class listController extends Controller
             ->get()
             ->toArray();
         }else{
-            $liste = 'empty';
+            $liste = '[]';
         }
 
         return $movies;
