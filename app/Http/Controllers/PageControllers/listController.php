@@ -54,7 +54,7 @@ class listController extends Controller
         ->where('listes.id', '=', $id)
         ->where('listes.user_id', '=', Auth::id());
 
-        if($liste->count()>0){
+        if($temp->count()>0){
             $liste = $temp
             ->get()
             ->toArray();
