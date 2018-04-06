@@ -9,7 +9,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		if(
 			($scope.user_name != undefined && pass.user_name != $scope.user_name)
 			|| ($scope.cover_path != '' && pass.cover_src != $scope.cover_path)
-			|| ($scope.profile_path != '' && pass.profile_src != $scope.profile_path)
+			|| (($scope.profile_path != '' || $scope.profile_path == 0) && pass.profile_src != $scope.profile_path)
 		){
 			$scope.is_save_disabled = false;
 		}else{
@@ -55,7 +55,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 		$scope.cover_src=pass.constants_image_cover+$scope.cover_path;
 		$scope.check_save_disabled();
 		movie_id = _.where($scope.cover_movies, {cover_path:$scope.cover_path})[0].movie_id;
-		if($scope.current_level == 501) $scope.level_up(502);
+		//if($scope.current_level == 501) $scope.level_up(502);
 		$http({
 			method: 'GET',
 			url: 'https://api.themoviedb.org/3/movie/'+movie_id+'/credits?api_key='+pass.api_key,
@@ -81,7 +81,7 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 			$scope.profile_src = pass.constants_image_thumb_nail+$scope.profile_path;
 		}
 		$scope.check_save_disabled();
-		if($scope.current_level == 502) $scope.level_up(503);
+		//if($scope.current_level == 502) $scope.level_up(503);
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
