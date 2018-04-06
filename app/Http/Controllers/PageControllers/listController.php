@@ -15,6 +15,12 @@ class listController extends Controller
 {
     public function list($id)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+        
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
         if(Auth::check()){
