@@ -77,7 +77,7 @@ class listController extends Controller
             $liste = 'empty';
         }
 
-        return $liste;
+        return $movies;
 
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
     }
