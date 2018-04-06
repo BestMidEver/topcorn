@@ -8,6 +8,7 @@ use App\Model\Liste;
 use App\Model\Listitem;
 use App\Model\Rated;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
