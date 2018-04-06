@@ -10,7 +10,8 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 			'movie_id':pass.liste[index].movie_id,
 			'poster_path':pass.liste[index].poster_path,
 			'user_text':pass.liste[index].title,
-			'overview':pass.liste[index].overview
+			'overview':pass.liste[index].overview,
+			'explanation':pass.liste[index].explanation
 		} );
 	}
 	console.log($scope.list)
