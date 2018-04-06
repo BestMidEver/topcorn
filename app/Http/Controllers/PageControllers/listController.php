@@ -53,7 +53,7 @@ class listController extends Controller
         $liste = DB::table('listes')
         ->where('listes.id', '=', $id)
         ->where('listes.user_id', '=', Auth::id());
-        return $liste->count();
+        return $liste->count()>0;
         if($liste->count()>0){
             $liste = $liste
             ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
