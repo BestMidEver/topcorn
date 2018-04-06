@@ -5,6 +5,7 @@ namespace App\Jobs;
 use App\Jobs\RestartJob;
 use App\Jobs\SuckMovieJob;
 use App\Jobs\SuckPageJob;
+use App\Model\Listitem;
 use App\Model\Rated;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -56,6 +57,9 @@ class SuckDataJob implements ShouldQueue
             SuckMovieJob::dispatch($id, false)->onQueue("low");
         }
         foreach(Ban::All()->pluck('movie_id')->unique() as $id){
+            SuckMovieJob::dispatch($id, false)->onQueue("low");
+        }
+        foreach(Listitem::All()->pluck('movie_id')->unique() as $id){
             SuckMovieJob::dispatch($id, false)->onQueue("low");
         }
 
