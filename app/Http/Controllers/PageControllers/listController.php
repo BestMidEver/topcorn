@@ -15,17 +15,16 @@ class listController extends Controller
 {
     public function list($id)
     {
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
-        
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+            if(Auth::User()->hover_title_language == 0){
+                $hover_title = Auth::User()->secondary_lang.'_title';
+            }else{
+                $hover_title = 'original_title';
+            }
         }else{
             $target = '_self';
             $watched_movie_number = null;
@@ -48,9 +47,9 @@ class listController extends Controller
                 'listitems.position',
                 'listitems.explanation',
                 'movies.'.$hover_title.' as original_title',
-                'movies.'.Auth::User()->lang.'_title as movie_title',
-                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-                'movies.'.Auth::User()->lang.'_plot as overview'
+                'movies.'.App::getlocale().'_title as movie_title',
+                'movies.'.App::getlocale().'_poster_path as poster_path',
+                'movies.'.App::getlocale().'_plot as overview'
             )
             ->get()
             ->toArray();
@@ -66,17 +65,17 @@ class listController extends Controller
 
     public function createlist($id = 1)
     {
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
-
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+            if(Auth::User()->hover_title_language == 0){
+                $hover_title = Auth::User()->secondary_lang.'_title';
+            }else{
+                $hover_title = 'original_title';
+            }
         }else{
             $target = '_self';
             $watched_movie_number = null;
@@ -100,9 +99,9 @@ class listController extends Controller
                 'listitems.position',
                 'listitems.explanation',
                 'movies.'.$hover_title.' as original_title',
-                'movies.'.Auth::User()->lang.'_title as movie_title',
-                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-                'movies.'.Auth::User()->lang.'_plot as overview'
+                'movies.'.App::getlocale().'_title as movie_title',
+                'movies.'.App::getlocale().'_poster_path as poster_path',
+                'movies.'.App::getlocale().'_plot as overview'
             )
             ->get()
             ->toArray();
