@@ -21,9 +21,11 @@
 							<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
 						</div>
 
-						<div class="col-8">
-							<div class="pl-3 pr-1 pb-1 text-dark" ng-if="!movie.explanation">@{{ movie.overview }}</div>
-							<div class="pr-1 pb-1 text-dark quote-line" ng-if="movie.explanation">@{{ movie.explanation }}</div>
+						<div class="col-8" ng-if="!movie.explanation">
+							<div class="pl-3 pr-1 pb-1 text-dark">@{{ movie.overview }}</div>
+						</div>
+						<div class="col-8 lead lead-small" ng-if="movie.explanation">
+							<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.explanation }}</div>
 						</div>
 					</div>
 				</div>
