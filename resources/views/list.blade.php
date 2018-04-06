@@ -10,12 +10,12 @@
 </div>
 
 <div class="container-fluid mt-3">
-	<div class="row mt-5" ng-repeat="film in films">
+	<div class="row mt-5" ng-repeat="movie in movies">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
 			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
 				<div class="card h-100">
-						<span class="text-dark h6 p-1 text-hover-underline"><span>@{{ film.position }}.<span> Jackie Brown (1997)</span>
+						<span class="text-dark h6 p-1 text-hover-underline"><span>@{{ movie.position }}.<span> Jackie Brown (1997)</span>
 					<div class="row no-gutters pt-2">
 						<div class="col-4 col-xl-3">
 							<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
