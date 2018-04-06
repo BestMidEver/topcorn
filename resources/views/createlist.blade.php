@@ -32,15 +32,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3">
-						<div class="form-control-feedback">
-							@if ($errors->has('header'))
-							<span class="text-danger align-middle float-right float-md-none">
-								<i class="fas fa-exclamation-circle"></i> {{ $errors->first('header') }}
-							</span>
-							@endif
-						</div>
-					</div>
 				</div>
 				<div class="row mt-3">
 					<div class="col-md-3 field-label-responsive">
