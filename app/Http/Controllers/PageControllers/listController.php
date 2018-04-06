@@ -53,8 +53,9 @@ class listController extends Controller
         $liste = DB::table('listes')
         ->where('listes.id', '=', $id)
         ->where('listes.user_id', '=', Auth::id());
-        return $liste->count()>0;
+
         if($liste->count()>0){
+            return 'var';
             $liste = $liste
             ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
             ->join('movies', 'listitems.movie_id', '=', 'movies.id')
@@ -70,6 +71,7 @@ class listController extends Controller
             )
             ->get()->toArray();
         }else{
+            return 'yok';
             $liste = 'empty';
         }
 
