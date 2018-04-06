@@ -18,7 +18,7 @@
 						<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} (1997)</span>
 					<div class="row no-gutters pt-2">
 						<div class="col-4 col-xl-3">
-							<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
+							<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
 						</div>
 
 						<div class="col-8" ng-if="!movie.explanation">
@@ -26,26 +26,6 @@
 						</div>
 						<div class="col-8 lead lead-small" ng-if="movie.explanation">
 							<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.explanation }}</div>
-						</div>
-					</div>
-				</div>
-			</a>
-		</div>
-		<div class="col"></div>
-	</div>
-	<div class="row mt-5">
-		<div class="col"></div>
-		<div class="col-12 col-lg-10 col-xl-8">
-			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
-				<div class="card h-100">
-						<span class="text-dark h6 p-1 text-hover-underline">9. Jackie Brown (1997)</span>
-					<div class="row no-gutters pt-2">
-						<div class="col-4 col-xl-3">
-							<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4XVPYOdMAizdNMSwS0SK3fPJcvR.jpg" on-error-src="" class="card-img-top" alt="Responsive image">
-						</div>
-
-						<div class="col-8 lead lead-small">
-							<div class="pr-1 pb-1 text-dark quote-line">Birbirini hiç tanımayan dört matematikçi, gizemli biri tarafından büyük bir bulmacayı çözmeleri için davet edilir. Kendilerine yöneltilen soruları zamanında ve doğru olarak çözemezlerse, içinde bulundukları oda bir anda ölüm tuzağına dönüşecektir. Bunun yanı sıra çözmeleri gereken en önemli problem ise, kendilerini buraya getiren sebep ve aralarındaki ilişki olacaktır.</div>
 						</div>
 					</div>
 				</div>
