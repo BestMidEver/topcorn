@@ -34,6 +34,12 @@ class listController extends Controller
 
     public function createlist($id = 1)
     {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
+        }else{
+            $hover_title = 'original_title';
+        }
+
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
         if(Auth::check()){
@@ -57,8 +63,10 @@ class listController extends Controller
                 'listitems.movie_id',
                 'listitems.position',
                 'listitems.explanation',
-                'movies.original_title as movie_title',
-                'movies.en_poster_path as poster_path'
+                'movies.'.$hover_title.' as original_title',
+                'movies.'.Auth::User()->lang.'_title as movie_title',
+                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+                'movies.'.Auth::User()->lang.'_plot as overview'
             )
             ->get()->toArray();
         }else{
