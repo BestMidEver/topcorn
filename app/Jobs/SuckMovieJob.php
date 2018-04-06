@@ -84,6 +84,9 @@ class SuckMovieJob implements ShouldQueue
                 'en_cover_path' => $movie['backdrop_path'],
                 'tr_cover_path' => $movie_tr['backdrop_path'],
                 'hu_cover_path' => $movie_hu['backdrop_path'],
+                'en_plot' => $movie['overview'],
+                'tr_plot' => $movie_tr['overview'],
+                'hu_plot' => $movie_hu['overview'],
                 'vote_count' => $movie['vote_count']]
             );
             Genre::where(['movie_id' => $this->id])->delete();
@@ -114,6 +117,9 @@ class SuckMovieJob implements ShouldQueue
                 'en_cover_path' => $movie['backdrop_path'],
                 'tr_cover_path' => $movie_tr['backdrop_path'],
                 'hu_cover_path' => $movie_hu['backdrop_path'],
+                'en_plot' => $movie['overview'],
+                'tr_plot' => $movie_tr['overview'],
+                'hu_plot' => $movie_hu['overview'],
                 'vote_count' => $movie['vote_count']]
             );
             Genre::where(['movie_id' => $this->id])->delete();

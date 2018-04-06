@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SuckMovieJob;
 use App\Model\Liste;
 use App\Model\Listitem;
 use App\Model\Rated;
@@ -110,6 +111,7 @@ class listController extends Controller
                 $listitem->position = $index;
                 $listitem->explanation = $temp3[$index];
                 $listitem->save();
+                SuckMovieJob::dispatch($value, false)->onQueue("high");
             }
         }
         return $request->items;

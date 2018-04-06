@@ -30,7 +30,10 @@ class Movie extends Model
         'hu_poster_path',
         'en_cover_path',
         'tr_cover_path',
-    	'hu_cover_path',
+        'hu_cover_path',
+        'en_plot',
+        'tr_plot',
+    	'hu_plot',
     ];
 
     public function genre(){

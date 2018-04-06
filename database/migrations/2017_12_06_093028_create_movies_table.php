@@ -30,6 +30,9 @@ class CreateMoviesTable extends Migration
             $table->string('en_cover_path')->nullable();
             $table->string('tr_cover_path')->nullable();
             $table->string('hu_cover_path')->nullable();
+            $table->text('en_plot')->nullable();
+            $table->text('tr_plot')->nullable();
+            $table->text('hu_plot')->nullable();
             $table->timestamps();
         });
     }
