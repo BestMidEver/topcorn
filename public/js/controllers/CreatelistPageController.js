@@ -5,7 +5,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	for(var index in pass.liste){
 		console.log(pass.liste)
 		$scope.list.push( {
-			'position':index+1,
+			'position':pass.liste[index].position,
 			'movie_title':pass.liste[index].movie_title,
 			'movie_id':pass.liste[index].movie_id,
 			'poster_path':pass.liste[index].poster_path,

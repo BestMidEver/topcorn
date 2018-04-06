@@ -116,7 +116,7 @@ class listController extends Controller
                 $listitem = new Listitem;
                 $listitem->list_id = $liste->id;
                 $listitem->movie_id = $value;
-                $listitem->position = $index;
+                $listitem->position = $index+1;
                 $listitem->explanation = $temp3[$index];
                 $listitem->save();
                 SuckMovieJob::dispatch($value, false)->onQueue("high");
