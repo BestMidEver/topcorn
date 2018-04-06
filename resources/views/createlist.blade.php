@@ -8,7 +8,7 @@
 <div class="container-fluid mt-3">
 	<div class="row">
 		<div class="col"></div>
-		<div class="col-12 col-xl-10">
+		<div class="col-12 col-xl-8">
 			<form id="the_form" class="form-horizontal" role="form" method="POST" action="/createlist">
 				{{ csrf_field() }}
 				<input type="number" class="d-none" name="list_id" value="{{  $id }}">
@@ -132,8 +132,7 @@
 					</div>
 				</div>
 				<div class="row mt-3 mb-5" ng-repeat="l in list">
-					<div class="col"></div>
-					<div class="card h-100 p-2 col-12 col-xl-8">
+					<div class="card h-100 p-2 col-12">
 						<!-- Remove from list -->
 						<div class="d-flex flex-row justify-content-end">
 							<button type="button" ng-click="remove_from_list($index)" class="btn btn-verydark border-circle text-white"><i class="fa fa-times"></i></button>
@@ -178,7 +177,6 @@
 							</div>
 						</div>
 					</div>
-					<div class="col"></div>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
 					<button type="button" ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
