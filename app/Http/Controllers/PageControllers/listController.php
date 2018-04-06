@@ -70,7 +70,7 @@ class listController extends Controller
             )
             ->get()->toArray();
         }else{
-            $liste = 'e';
+            $liste = 'empty';
         }
 
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste'));
