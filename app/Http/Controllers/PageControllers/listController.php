@@ -59,14 +59,7 @@ class listController extends Controller
             ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
             ->join('movies', 'listitems.movie_id', '=', 'movies.id')
             ->select(
-                'listes.*',
-                'listitems.movie_id',
-                'listitems.position',
-                'listitems.explanation',
-                'movies.'.$hover_title.' as original_title',
-                'movies.'.Auth::User()->lang.'_title as movie_title',
-                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
-                'movies.'.Auth::User()->lang.'_plot as overview'
+                'listes.*'
             )
             ->get()->toArray();
         }else{
