@@ -26,7 +26,33 @@ class listController extends Controller
         }
 
 
-        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number'));
+        $temp = DB::table('listes')
+        ->where('listes.id', '=', $id);
+
+        if($temp->count()>0){
+            $liste = $temp
+            ->get()
+            ->toArray();
+
+            $movies = $temp
+            ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
+            ->join('movies', 'listitems.movie_id', '=', 'movies.id')
+            ->select(
+                'listitems.movie_id',
+                'listitems.position',
+                'listitems.explanation',
+                'movies.'.$hover_title.' as original_title',
+                'movies.'.Auth::User()->lang.'_title as movie_title',
+                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+                'movies.'.Auth::User()->lang.'_plot as overview'
+            )
+            ->get()
+            ->toArray();
+        }else{
+            return redirect('/not-found');
+        }
+
+        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
     }
 
 
@@ -49,6 +75,7 @@ class listController extends Controller
             $target = '_self';
             $watched_movie_number = null;
         }
+
 
         $temp = DB::table('listes')
         ->where('listes.id', '=', $id)

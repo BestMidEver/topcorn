@@ -1,1 +1,3 @@
-{{ __('general.404') }}
+@extends('errors::layout')
+
+@section('title', '{{ __('general.404') }}')
