@@ -3,7 +3,7 @@
 @include('head.head_list')
 
 @section('body')
-<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">2000'lerin en iyi bilim kurgu filmleri</h1>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ $liste[0]->title }}</h1>
 
 <div class="py-3 col">
 	<h6 class="lead">Film önerisi mi lazım? Hangi filmi izlesem diye kara kara düşünüyor musun?
