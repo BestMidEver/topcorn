@@ -1,1 +1,1 @@
-<a href="/"><--</a> {{ __('general.404') }}
+{{ __('general.404') }}<a href="/">{{ __('navbar.home') }}</a>
