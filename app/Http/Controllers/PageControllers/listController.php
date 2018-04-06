@@ -50,25 +50,36 @@ class listController extends Controller
             $watched_movie_number = null;
         }
 
-        $liste = DB::table('listes')
+        $temp = DB::table('listes')
         ->where('listes.id', '=', $id)
         ->where('listes.user_id', '=', Auth::id());
 
         if($liste->count()>0){
-            $liste = $liste
+            $liste = $temp
+            ->get()
+            ->toArray();
+
+            $movies = $temp
             ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
             ->join('movies', 'listitems.movie_id', '=', 'movies.id')
             ->select(
-                'listes.*'
+                'listitems.movie_id',
+                'listitems.position',
+                'listitems.explanation',
+                'movies.'.$hover_title.' as original_title',
+                'movies.'.Auth::User()->lang.'_title as movie_title',
+                'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+                'movies.'.Auth::User()->lang.'_plot as overview'
             )
-            ->get()->toArray();
+            ->get()
+            ->toArray();
         }else{
             $liste = 'empty';
         }
 
         return $liste;
 
-        return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste'));
+        return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
     }
 
 
