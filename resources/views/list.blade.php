@@ -22,7 +22,8 @@
 						</div>
 
 						<div class="col-8">
-							<div class="pl-3 pr-1 pb-1 text-dark">@{{ ((movie.explanation != 'No overview found.') || movie.explanation) ? movie.explanation : movie.overview }}</div>
+							<div class="pl-3 pr-1 pb-1 text-dark" ng-if="!movie.explanation">@{{ movie.overview }}</div>
+							<div class="pr-1 pb-1 text-dark quote-line" ng-if="movie.explanation">@{{ movie.explanation }}</div>
 						</div>
 					</div>
 				</div>
