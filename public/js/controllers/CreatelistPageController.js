@@ -2,7 +2,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 {console.log(pass.liste)
 	$scope.list=[];
 
-	for(var index in pass.liste){
+	/*for(var index in pass.liste){
 		console.log(pass.liste)
 		$scope.list.push( {
 			'position':index+1,
@@ -12,7 +12,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 			'user_text':pass.liste[index].,
 			'overview':pass.liste[index].
 		} );
-	}
+	}*/
 
 	$scope.search_movie = function(index){
 		var temp=$scope.list[index].input.replace(/ /g , "%20");
