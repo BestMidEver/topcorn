@@ -26,6 +26,7 @@ class listController extends Controller
                 $hover_title = 'original_title';
             }
         }else{
+            $hover_title = 'original_title';
             $target = '_self';
             $watched_movie_number = null;
         }
