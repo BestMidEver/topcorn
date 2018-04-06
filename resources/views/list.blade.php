@@ -6,8 +6,7 @@
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ $liste[0]->title }}</h1>
 
 <div class="py-3 col">
-	<h6 class="lead">Film önerisi mi lazım? Hangi filmi izlesem diye kara kara düşünüyor musun?
-20 farklı kategori, 140'ın üzerinde farklı liste, binlerce farklı film... Sinemasever okurlarımıza yaz havaları gelmişken ne hediye versek diye düşündük, izle izle bitiremeyeceğiniz devasa bir film arşivini layık gördük. İzlenebilecek filmler arıyorsanız doğru yerdesiniz. Bu listenin tamamını bitirmek aylar alıyor! </h6>
+	<h6 class="lead">{{ $liste[0]->entry_1 }}</h6>
 </div>
 
 <div class="container-fluid mt-3">
@@ -51,6 +50,10 @@
 		</div>
 		<div class="col"></div>
 	</div>
+</div>
+
+<div class="py-3 col">
+	<h6 class="lead">{{ $liste[0]->entry_2 }}</h6>
 </div>
 
 <div class="mt-5 d-flex flex-row justify-content-between">
