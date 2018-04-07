@@ -65,6 +65,7 @@ class listController extends Controller
                     'movies.'.App::getlocale().'_title as movie_title',
                     'movies.'.App::getlocale().'_poster_path as poster_path',
                     'movies.'.App::getlocale().'_plot as overview',
+                    'movies.release_date',
                     'rateds.id as rated_id',
                     'rateds.rate as rate_code',
                     'laters.id as later_id',
@@ -83,7 +84,8 @@ class listController extends Controller
                     'movies.'.$hover_title.' as original_title',
                     'movies.'.App::getlocale().'_title as movie_title',
                     'movies.'.App::getlocale().'_poster_path as poster_path',
-                    'movies.'.App::getlocale().'_plot as overview'
+                    'movies.'.App::getlocale().'_plot as overview',
+                    'movies.release_date'
                 )
                 ->get()
                 ->toArray();
