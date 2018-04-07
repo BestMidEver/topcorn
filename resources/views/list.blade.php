@@ -18,8 +18,12 @@
 					<div>
 						<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span>
 					</div>
-					<div>
-						muhahah
+					<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
+						<div class="d-flex flex-row justify-content-between text-center">
+							<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':user_movie_record.later_id!=null}" ng-click="this_later()"><div><span ng-show="user_movie_record.later_id!=null"><i class="fas fa-clock"></i></span><span ng-show="user_movie_record.later_id==null"><i class="far fa-clock"></i></span></div>{{ __('general.watch_later') }}</button>
+							<button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><div><span ng-show="!user_movie_record.rate_code>0"><i class="far fa-star"></i></span><span ng-show="user_movie_record.rate_code>0"><i class="fas fa-check"></i></span></div>{{ __('general.seen') }}</button>
+							<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id!=null}" ng-click="this_ban()"><div><i class="fa fa-ban"></i></div>{{ __('general.ban') }}</button>
+						</div>
 					</div>
 				</div>
 				<div class="row no-gutters pt-2">
