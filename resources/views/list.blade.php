@@ -30,7 +30,20 @@
 				</div>
 				<div class="row no-gutters pt-2">
 					<div class="col-4 col-xl-3">
-							<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
+						<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
+						<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
+							<div class="d-flex flex-row justify-content-center" ng-if="1 > 0">
+								<div class="text-white">
+									<small>{{ __('general.according_to_your_taste') }}</small>
+									<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
+									@if(Auth::check())
+										@if(Auth::User()->advanced_filter)
+									<small><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
+										@endif
+									@endif
+								</div>
+							</div>
+						</div>
 					</div>
 
 					<div class="col-8" ng-if="!movie.explanation">
