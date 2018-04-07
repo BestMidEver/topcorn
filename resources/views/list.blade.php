@@ -13,7 +13,7 @@
 	<div class="row mt-5" ng-repeat="movie in movies">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
-			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="Jackie Brown">
+			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" data-original-title="@{{movie.original_title}}">
 				<div class="card h-100">
 						<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} (1997)</span>
 					<div class="row no-gutters pt-2">

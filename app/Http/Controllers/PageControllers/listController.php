@@ -47,7 +47,6 @@ class listController extends Controller
             ->select(
                 'listitems.movie_id',
                 'listitems.position',
-                'listitems.explanation',
                 'movies.'.$hover_title.' as original_title',
                 'movies.'.App::getlocale().'_title as movie_title',
                 'movies.'.App::getlocale().'_poster_path as poster_path',
@@ -161,28 +160,5 @@ class listController extends Controller
             }
         }
         return $request->items;
-
-        /*$user = Auth::User();
-        $user->name=$request->name;
-        if($request->profile_pic != '? string: ?'){
-            if($request->profile_pic == "number:0"){
-                $user->profile_pic = '';
-            }else{
-                $user->profile_pic = '/'.explode("/", $request->profile_pic)[1];
-            }
-        }
-        if($request->cover_pic != '? string: ?'){
-            $user->cover_pic = '/'.explode("/", $request->cover_pic)[1];
-        }
-        if($user->level == 503){
-            $user->level = 504;
-            $request->session()->flash('tutorial_504', 'level up');
-        }
-        $user->save();
-
-        $request->session()->flash('status', __('general.info_updated'));
-
-
-        return redirect('/account');*/
     }
 }
