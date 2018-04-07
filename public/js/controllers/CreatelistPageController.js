@@ -29,7 +29,6 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 			.then(function(response){
 				console.log(response.data);
 				movie.movies=response.data.results.slice(0, 10);
-		console.log(movie)
 			});
 		}
 	}
