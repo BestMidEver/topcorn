@@ -41,20 +41,53 @@ class listController extends Controller
             ->get()
             ->toArray();
 
-            $movies = $temp
-            ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
-            ->join('movies', 'listitems.movie_id', '=', 'movies.id')
-            ->select(
-                'listitems.id',
-                'listitems.position',
-                'listitems.explanation',
-                'movies.'.$hover_title.' as original_title',
-                'movies.'.App::getlocale().'_title as movie_title',
-                'movies.'.App::getlocale().'_poster_path as poster_path',
-                'movies.'.App::getlocale().'_plot as overview'
-            )
-            ->get()
-            ->toArray();
+            if(auth::check()){
+                $movies = $temp
+                ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
+                ->join('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->leftjoin('rateds', function ($join) use ($request) {
+                    $join->on('rateds.movie_id', '=', 'movies.id')
+                    ->whereIn('rateds.user_id', $request->f_users);
+                })
+                ->leftjoin('laters', function ($join) {
+                    $join->on('laters.movie_id', '=', 'movies.id')
+                    ->where('laters.user_id', '=', Auth::user()->id);
+                })
+                ->leftjoin('bans', function ($join) use ($request) {
+                    $join->on('bans.movie_id', '=', 'movies.id')
+                    ->whereIn('bans.user_id', $request->f_users);
+                })
+                ->select(
+                    'listitems.id',
+                    'listitems.position',
+                    'listitems.explanation',
+                    'movies.'.$hover_title.' as original_title',
+                    'movies.'.App::getlocale().'_title as movie_title',
+                    'movies.'.App::getlocale().'_poster_path as poster_path',
+                    'movies.'.App::getlocale().'_plot as overview',
+                    'rateds.id as rated_id',
+                    'rateds.rate as rate_code',
+                    'laters.id as later_id',
+                    'bans.id as ban_id'
+                )
+                ->get()
+                ->toArray();
+            }else{
+                $movies = $temp
+                ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
+                ->join('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->select(
+                    'listitems.id',
+                    'listitems.position',
+                    'listitems.explanation',
+                    'movies.'.$hover_title.' as original_title',
+                    'movies.'.App::getlocale().'_title as movie_title',
+                    'movies.'.App::getlocale().'_poster_path as poster_path',
+                    'movies.'.App::getlocale().'_plot as overview'
+                )
+                ->get()
+                ->toArray();
+            }
         }else{
             return redirect('/not-found');
         }
