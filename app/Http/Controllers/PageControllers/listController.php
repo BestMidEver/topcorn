@@ -45,17 +45,17 @@ class listController extends Controller
                 $movies = $temp
                 ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
                 ->join('movies', 'listitems.movie_id', '=', 'movies.id')
-                ->leftjoin('rateds', function ($join) use ($request) {
+                ->leftjoin('rateds', function ($join) {
                     $join->on('rateds.movie_id', '=', 'movies.id')
-                    ->whereIn('rateds.user_id', $request->f_users);
+                    ->whereIn('rateds.user_id', Auth::id());
                 })
                 ->leftjoin('laters', function ($join) {
                     $join->on('laters.movie_id', '=', 'movies.id')
-                    ->where('laters.user_id', '=', Auth::user()->id);
+                    ->where('laters.user_id', '=', Auth::id());
                 })
-                ->leftjoin('bans', function ($join) use ($request) {
+                ->leftjoin('bans', function ($join) {
                     $join->on('bans.movie_id', '=', 'movies.id')
-                    ->whereIn('bans.user_id', $request->f_users);
+                    ->whereIn('bans.user_id', Auth::id());
                 })
                 ->select(
                     'listitems.id',
