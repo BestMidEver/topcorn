@@ -14,9 +14,10 @@
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
 			<div class="card h-100">
+						<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 				<div class="d-flex flex-wrap justify-content-between">
 					<div class="p-1">
-						<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span>
+						<h6 class="text-dark p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
 					</div>
 					<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 						<div class="d-flex flex-row justify-content-between text-center">
@@ -28,9 +29,7 @@
 				</div>
 				<div class="row no-gutters pt-2">
 					<div class="col-4 col-xl-3">
-						<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 							<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
-						</a>
 					</div>
 
 					<div class="col-8" ng-if="!movie.explanation">
@@ -40,6 +39,7 @@
 						<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.explanation }}</div>
 					</div>
 				</div>
+						</a>
 			</div>
 		</div>
 		<div class="col"></div>
