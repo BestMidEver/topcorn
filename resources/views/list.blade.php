@@ -17,7 +17,7 @@
 				<div class="d-flex flex-wrap justify-content-between">
 					<div class="p-1">
 						<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
-						<h6 class="text-dark p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
+							<h6 class="text-dark p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
 						</a>
 					</div>
 					<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
@@ -29,36 +29,8 @@
 					</div>
 				</div>
 				<div class="row no-gutters pt-2">
-					<div class="col-4 col-xl-3 position-relative moviecard">
-						<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top darken-cover" alt="Responsive image">
-						<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
-							<div class="d-flex flex-row justify-content-center" ng-if="!movie.percent > 0">
-								<div class="text-white">
-									<small>{{ __('general.according_to_your_taste') }}</small>
-									<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
-									@if(Auth::check())
-										@if(Auth::User()->advanced_filter)
-									<small><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
-										@endif
-									@endif
-								</div>
-							</div>
-							<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
-								<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
-									<div class="text-white">
-										<small>{{ __('general.according_to_themoviedb') }}</small>
-										<span class="d-block"><span class="h5 text-warning">@{{movie.vote_average}}</span><small>/10</small></span>
-										<small ng-if="movie.vote_count > 0">@{{movie.vote_count}} <span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small>
-									</div>
-								</div>
-							</div>
-							<div class="p-2 text-right moviecard-percent" ng-if="movie.percent > 0">
-								<div><span class="badge btn-verydark text-white">{{ __('general.moviecard_percent') }}</span></div>
-							</div>
-							<div class="p-2 text-right moviecard-rating" ng-if="movie.vote_average > 0">
-								<div><span class="badge btn-verydark text-white">@{{movie.vote_average}}</span></div>
-							</div>
-						</div>
+					<div class="col-4 col-xl-3">
+						<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
 					</div>
 
 					<div class="col-8" ng-if="!movie.explanation">
