@@ -16,7 +16,6 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 			'explanation':pass.liste[index].explanation
 		} );
 	}
-	console.log($scope.list)
 
 	$scope.search_movie = function(movie){
 		var temp=movie.input.replace(/ /g , "%20");
@@ -32,6 +31,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 				movie.movies=response.data.results.slice(0, 10);
 			});
 		}
+		console.log(movie)
 	}
 
 	$scope.choose_movie = function(index, movie){
