@@ -13,23 +13,23 @@
 	<div class="row mt-5" ng-repeat="movie in movies">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
-			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
-				<div class="card h-100">
-						<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span>
-					<div class="row no-gutters pt-2">
+			<div class="card h-100">
+					<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span>
+				<div class="row no-gutters pt-2">
+					<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 						<div class="col-4 col-xl-3">
 							<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
 						</div>
+					</a>
 
-						<div class="col-8" ng-if="!movie.explanation">
-							<div class="pl-3 pr-1 pb-1 text-dark">@{{ movie.overview }}</div>
-						</div>
-						<div class="col-8 lead lead-small" ng-if="movie.explanation">
-							<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.explanation }}</div>
-						</div>
+					<div class="col-8" ng-if="!movie.explanation">
+						<div class="pl-3 pr-1 pb-1 text-dark">@{{ movie.overview }}</div>
+					</div>
+					<div class="col-8 lead lead-small" ng-if="movie.explanation">
+						<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.explanation }}</div>
 					</div>
 				</div>
-			</a>
+			</div>
 		</div>
 		<div class="col"></div>
 	</div>
