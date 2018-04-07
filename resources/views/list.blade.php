@@ -32,7 +32,7 @@
 					<div class="col-4 col-xl-3 position-relative moviecard">
 						<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top darken-cover" alt="Responsive image">
 						<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
-							<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
+							<div class="d-flex flex-row justify-content-center" ng-if="!movie.percent > 0">
 								<div class="text-white">
 									<small>{{ __('general.according_to_your_taste') }}</small>
 									<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
