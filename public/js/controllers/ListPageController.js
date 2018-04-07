@@ -2,6 +2,24 @@ MyApp.controller('ListPageController', function($scope, $http, rate)
 {console.log(pass)
 	$scope.movies = pass.movies;
 
+	$scope.rate_class = function(is_rated)
+	{
+		switch(is_rated) {
+			case 5:
+				return 'btn-success';
+			case 4:
+				return 'btn-info';
+			case 3:
+				return 'btn-secondary';
+			case 2:
+				return 'btn-warning text-white';
+			case 1:
+				return 'btn-danger';
+			default:
+				return 'btn-outline-secondary addlarter';
+		}
+	}
+	
 	if(pass.is_auth==1){
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
