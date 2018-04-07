@@ -28,7 +28,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row no-gutters pt-2">
+				<div class="row no-gutters pt-3 pt-md-2">
 					<div class="col-4 col-xl-3">
 						<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
 					</div>
