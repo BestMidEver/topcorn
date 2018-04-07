@@ -40,7 +40,7 @@ class SuckMovieJob implements ShouldQueue
         $is_recent = Movie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
-        //if($is_recent) return;
+        if($is_recent) return;
 
         if($this->isWithRecommendation){
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations%2Csimilar'), true);
