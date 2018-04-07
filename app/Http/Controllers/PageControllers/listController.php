@@ -45,8 +45,9 @@ class listController extends Controller
             ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
             ->join('movies', 'listitems.movie_id', '=', 'movies.id')
             ->select(
-                'listitems.movie_id',
+                'listitems.id',
                 'listitems.position',
+                'listitems.explanation',
                 'movies.'.$hover_title.' as original_title',
                 'movies.'.App::getlocale().'_title as movie_title',
                 'movies.'.App::getlocale().'_poster_path as poster_path',

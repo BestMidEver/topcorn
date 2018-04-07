@@ -13,9 +13,9 @@
 	<div class="row mt-5" ng-repeat="movie in movies">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">
-			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" data-original-title="@{{movie.original_title}}">
+			<a href="#" class="text-no-decoration" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 				<div class="card h-100">
-						<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} (1997)</span>
+						<span class="text-dark h6 p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span>
 					<div class="row no-gutters pt-2">
 						<div class="col-4 col-xl-3">
 							<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
