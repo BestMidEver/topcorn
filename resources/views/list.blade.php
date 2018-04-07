@@ -29,7 +29,7 @@
 					</div>
 				</div>
 				<div class="row no-gutters pt-2">
-					<div class="col-4 col-xl-3 position-relative">
+					<div class="col-4 col-xl-3 position-relative moviecard">
 						<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top darken-cover" alt="Responsive image">
 						<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 							<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
