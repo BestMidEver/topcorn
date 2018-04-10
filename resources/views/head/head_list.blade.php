@@ -5,6 +5,7 @@ pass={
 	"liste":{!! json_encode($liste) !!},
 	"movies":{!! json_encode($movies) !!},
 	"is_auth":"{{  Auth::Check()  }}",
+	"lang":"{{ App::getlocale() }}",
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
