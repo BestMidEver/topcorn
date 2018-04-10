@@ -53,6 +53,8 @@
 			<h6 class="lead">{{ $liste[0]->entry_2 }}</h6>
 		</div>
 
+		@include('layout.pagination', ['suffix' => ''])
+
 		<div class="mt-5 d-flex flex-row justify-content-between">
 			<div class="d-flex flex-column">
 				<a href="#" class="text-no-decoration">
