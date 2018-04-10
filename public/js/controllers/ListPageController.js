@@ -5,7 +5,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate)
 	$scope.show_tooltip = function(movie_id){
 		console.log(1,movie_id)
 	}
-	$scope.show_tooltip = function(movie_id){
+	$scope.hide_tooltip = function(movie_id){
 		console.log(2,movie_id)
 	}
 
