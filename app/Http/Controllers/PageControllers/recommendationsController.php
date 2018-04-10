@@ -192,7 +192,7 @@ class recommendationsController extends Controller
             }
 
 
-            return [$return_val->paginate(24), microtime(true) - $start];
+            return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
         }
     }
 

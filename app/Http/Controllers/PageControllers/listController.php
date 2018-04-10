@@ -71,7 +71,7 @@ class listController extends Controller
                     'laters.id as later_id',
                     'bans.id as ban_id'
                 )
-                ->get()
+                ->paginate(Auth::User()->pagination)
                 ->toArray();
             }else{
                 $movies = $temp
@@ -87,7 +87,7 @@ class listController extends Controller
                     'movies.'.App::getlocale().'_plot as overview',
                     'movies.release_date'
                 )
-                ->get()
+                ->paginate(Auth::User()->pagination)
                 ->toArray();
             }
         }else{
