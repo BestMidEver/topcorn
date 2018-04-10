@@ -58,7 +58,7 @@ class listController extends Controller
                     ->where('bans.user_id', Auth::id());
                 })
                 ->select(
-                    'listitems.id',
+                    'listitems.movie_id as id',
                     'listitems.position',
                     'listitems.explanation',
                     'movies.'.$hover_title.' as original_title',
