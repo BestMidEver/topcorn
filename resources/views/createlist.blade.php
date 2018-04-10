@@ -22,7 +22,7 @@
 					<div class="col-md-3 field-label-responsive">
 						<label for="current_password">Başlık</label>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-9">
 						<div class="">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
@@ -37,7 +37,7 @@
 					<div class="col-md-3 field-label-responsive">
 						<label for="current_password">Giriş Yazısı</label>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-9">
 						<div class="">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
@@ -52,7 +52,7 @@
 					<div class="col-md-3 field-label-responsive">
 						<label for="current_password">Sonuç Yazısı</label>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-9">
 						<div class="">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
@@ -78,7 +78,7 @@
 					<div class="col-md-3 field-label-responsive">
 						<label for="visibility">Kimler Görebilir?</label>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-9">
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
@@ -96,7 +96,7 @@
 					<div class="col-md-3 field-label-responsive">
 						<label for="sort_by">Sıralama</label>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-9">
 						<div class="form-group">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
