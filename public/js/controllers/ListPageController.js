@@ -1,11 +1,11 @@
 MyApp.controller('ListPageController', function($scope, $http, rate)
 {console.log(pass)
-	$scope.movies = pass.data.movies;
-	$scope.pagination=pass.last_page;
-	$scope.current_page=pass.current_page;
-	$scope.from=pass.from;
-	$scope.to=pass.to;
-	$scope.in=pass.total;
+	$scope.movies = pass.movies.data;
+	$scope.pagination=pass.movies.last_page;
+	$scope.current_page=pass.movies.current_page;
+	$scope.from=pass.movies.from;
+	$scope.to=pass.movies.to;
+	$scope.in=pass.movies.total;
 	
 	$scope.show_tooltip = function(movie_id){
 		$('#'+movie_id).tooltip('show');
