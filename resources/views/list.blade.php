@@ -18,7 +18,7 @@
 					<div class="card h-100">
 						<div class="d-flex flex-wrap justify-content-between">
 							<div class="p-1">
-								<a ng-href="/movie/@{{movie.id}}" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
+								<a ng-href="/movie/@{{movie.id}}" ng-attr-id="movie-@{{movie.id}}" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 									<h6 class="text-dark p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
 								</a>
 							</div>
@@ -32,7 +32,7 @@
 						</div>
 						<div class="row no-gutters pt-3 pt-md-2">
 							<div class="col-4 col-xl-3">
-								<a ng-href="/movie/@{{movie.id}}">
+								<a ng-href="/movie/@{{movie.id}}" ng-mouseover="show_tooltip('movie-'+movie.id)" ng-mouseleave="hide_tooltip('movie-'+movie.id)()">
 									<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
 								</a>
 							</div>
