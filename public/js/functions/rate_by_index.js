@@ -113,7 +113,6 @@ MyApp.factory('rate', function($http) {
 
     add_ban = function(movie_id) 
     {
-    	console.log(movie_id);
         return $http({
 			method: 'POST',
 			url: '/api/bans',
