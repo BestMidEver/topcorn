@@ -3,11 +3,9 @@ MyApp.controller('ListPageController', function($scope, $http, rate)
 	$scope.movies = pass.movies;
 	
 	$scope.show_tooltip = function(movie_id){
-		console.log(1,movie_id)
 		$('#'+movie_id).tooltip('show');
 	}
 	$scope.hide_tooltip = function(movie_id){
-		console.log(2,movie_id)
 		$('#'+movie_id).tooltip('hide');
 	}
 
