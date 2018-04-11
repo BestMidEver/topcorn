@@ -41,10 +41,17 @@ class listController extends Controller
             ->join('users', 'users.id', '=', 'user_id')
             ->select(
                     'listes.*',
-                    'users.name'
+                    'users.name',
+                    DB::raw('IF(users.profile_pic IS NULL OR users.profile_pic = "", users.facebook_profile_pic, CONCAT("'.config('constants.image.thumb_nail')[$image_quality].'", users.profile_pic) as profile_pic')
                 )
             ->get()
             ->toArray();
+
+            if($liste[0]->profile_pic == ''){
+                $profile_profile_pic = $user->facebook_profile_pic;
+            }else{
+                $profile_profile_pic = config('constants.image.thumb_nail')[$image_quality].$user->profile_pic;
+            }
 
             if(auth::check()){
                 $movies = $temp
