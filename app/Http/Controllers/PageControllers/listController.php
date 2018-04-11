@@ -124,7 +124,7 @@ class listController extends Controller
 
 
 
-    public function createlist($id = 1)
+    public function createlist($id = 'new')
     {
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
 
@@ -142,33 +142,36 @@ class listController extends Controller
             $watched_movie_number = null;
         }
 
-
-        $temp = DB::table('listes')
-        ->where('listes.id', '=', $id)
-        ->where('listes.user_id', '=', Auth::id());
-
-        if($temp->count()>0){
-            $liste = $temp
-            ->get()
-            ->toArray();
-
-            $movies = $temp
-            ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
-            ->join('movies', 'listitems.movie_id', '=', 'movies.id')
-            ->select(
-                'listitems.movie_id',
-                'listitems.position',
-                'listitems.explanation',
-                'movies.'.$hover_title.' as original_title',
-                'movies.'.App::getlocale().'_title as movie_title',
-                'movies.'.App::getlocale().'_poster_path as poster_path',
-                'movies.'.App::getlocale().'_plot as overview'
-            )
-            ->get()
-            ->toArray();
-        }else{
+        if($id == 'new'){
             $liste = '[]';
             $movies = '[]';
+        else{
+            $temp = DB::table('listes')
+            ->where('listes.id', '=', $id)
+            ->where('listes.user_id', '=', Auth::id());
+
+            if($temp->count()>0){
+                $liste = $temp
+                ->get()
+                ->toArray();
+
+                $movies = $temp
+                ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
+                ->join('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->select(
+                    'listitems.movie_id',
+                    'listitems.position',
+                    'listitems.explanation',
+                    'movies.'.$hover_title.' as original_title',
+                    'movies.'.App::getlocale().'_title as movie_title',
+                    'movies.'.App::getlocale().'_poster_path as poster_path',
+                    'movies.'.App::getlocale().'_plot as overview'
+                )
+                ->get()
+                ->toArray();
+            }else{
+                return redirect('/not-found');
+            }
         }
 
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
