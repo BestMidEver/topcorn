@@ -37,7 +37,7 @@
 								</a>
 							</div>
 
-							<div class="col-8" ng-if="!movie.explanation">
+							<div class="col-8 lead lead-small" ng-if="!movie.explanation">
 								<div class="pl-3 pr-1 pb-1 text-dark">@{{ movie.overview }}</div>
 							</div>
 							<div class="col-8 lead lead-small" ng-if="movie.explanation">
@@ -52,8 +52,6 @@
 		<div class="py-3 col mt-5">
 			<h6 class="lead">{{ $liste[0]->entry_2 }}</h6>
 		</div>
-
-		@include('layout.pagination', ['suffix' => ''])
 
 		<div class="mt-5 d-flex flex-row justify-content-between">
 			<div class="d-flex flex-column">
