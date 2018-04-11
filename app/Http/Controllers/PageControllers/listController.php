@@ -47,6 +47,10 @@ class listController extends Controller
             ->get()
             ->toArray();
 
+            if($liste[0]->visibility == 0 && $liste[0]->user_id != Auth::id()){
+                return redirect('/not-found');
+            }
+
             if(auth::check()){
                 $movies = $temp
                 ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
