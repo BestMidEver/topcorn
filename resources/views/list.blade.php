@@ -64,7 +64,7 @@
 						</div>
 						<div class="d-flex flex-column justify-content-center ml-2">
 							<h6 class="text-dark text-hover-underline mb-0">{{ $liste[0]->name }}</h6>
-							<div class="text-muted"><small class="text-no-decoration">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($liste[0]->created_at))->diffForHumans() }} ay önce ekledi, en son {{ \Carbon\Carbon::createFromTimeStamp(strtotime($liste[0]->updated_at))->diffForHumans() }} gün önce güncelledi.</small></div>
+							<div class="text-muted"><small class="text-no-decoration">{{ $created_at[0] }}-{{ $created_at[1] }} ay önce ekledi, en son {{ \Carbon\Carbon::createFromTimeStamp(strtotime($liste[0]->updated_at))->diffForHumans() }} gün önce güncelledi.</small></div>
 						</div>
 					</div>
 				</a>

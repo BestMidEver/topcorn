@@ -7,6 +7,7 @@ use App\Jobs\SuckMovieJob;
 use App\Model\Liste;
 use App\Model\Listitem;
 use App\Model\Rated;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -46,6 +47,12 @@ class listController extends Controller
                 )
             ->get()
             ->toArray();
+
+            $created_at = Carbon::createFromTimeStamp(strtotime($liste[0]->created_at))->diffForHumans();
+            $created_at = explode(' ', $created_at);
+
+            $updated_at = Carbon::createFromTimeStamp(strtotime($liste[0]->updated_at))->diffForHumans();
+            $updated_at = explode(' ', $updated_at);
 
             if($liste[0]->visibility == 0 && $liste[0]->user_id != Auth::id()){
                 return redirect('/not-found');
@@ -104,7 +111,7 @@ class listController extends Controller
             return redirect('/not-found');
         }
 
-        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
+        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies', 'created_at', 'updated_at'));
     }
 
 
