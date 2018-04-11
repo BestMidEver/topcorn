@@ -198,9 +198,6 @@ class listController extends Controller
             array_push($temp3, $explanation);
         }
         array_multisort($temp,$temp2,$temp3);
-        print_r($temp);
-        print_r($temp2);
-        print_r($temp3);
         foreach ($temp2 as $index=>$value) {
             if($value > 0){
                 $listitem = new Listitem;
@@ -212,6 +209,9 @@ class listController extends Controller
                 SuckMovieJob::dispatch($value, false)->onQueue("high");
             }
         }
-        return $request->items;
+        $request->session()->flash('status', __('general.info_updated'));
+
+
+        return redirect('/createlist/'.$liste->id);
     }
 }
