@@ -58,6 +58,12 @@ class listController extends Controller
                 return redirect('/not-found');
             }
 
+            if($liste[0]->sort == 0 || $liste[0]->sort == 2){
+                $order_mode = 'DESC';
+            }else if($liste[0]->sort == 1){
+                $order_mode = 'ASC';
+            }
+
             if(auth::check()){
                 $movies = $temp
                 ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
@@ -88,6 +94,7 @@ class listController extends Controller
                     'laters.id as later_id',
                     'bans.id as ban_id'
                 )
+                ->orderBy('listitems.position', $order_mode)
                 ->get()
                 ->toArray();
             }else{
