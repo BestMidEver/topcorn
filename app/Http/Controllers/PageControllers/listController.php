@@ -38,6 +38,11 @@ class listController extends Controller
 
         if($temp->count()>0){
             $liste = $temp
+            ->join('users', 'users.id', '=', 'user_id')
+            ->select(
+                    'listes.*',
+                    'users.name'
+                )
             ->get()
             ->toArray();
 
