@@ -69,7 +69,6 @@ return array(
     'App\\Model\\Ban' => $baseDir . '/app/Model/Ban.php',
     'App\\Model\\Genre' => $baseDir . '/app/Model/Genre.php',
     'App\\Model\\Later' => $baseDir . '/app/Model/Later.php',
-    'App\\Model\\List' => $baseDir . '/app/Model/List.php',
     'App\\Model\\Liste' => $baseDir . '/app/Model/Liste.php',
     'App\\Model\\Listitem' => $baseDir . '/app/Model/Listitem.php',
     'App\\Model\\Movie' => $baseDir . '/app/Model/Movie.php',

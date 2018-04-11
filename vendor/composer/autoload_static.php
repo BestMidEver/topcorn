@@ -19,6 +19,7 @@ class ComposerStaticInitc1d52f4c3200949e1abe2578ee50dff0
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'b4e3f29b106af37a2bb239f73cdf68c7' => __DIR__ . '/../..' . '/app/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -405,7 +406,6 @@ class ComposerStaticInitc1d52f4c3200949e1abe2578ee50dff0
         'App\\Model\\Ban' => __DIR__ . '/../..' . '/app/Model/Ban.php',
         'App\\Model\\Genre' => __DIR__ . '/../..' . '/app/Model/Genre.php',
         'App\\Model\\Later' => __DIR__ . '/../..' . '/app/Model/Later.php',
-        'App\\Model\\List' => __DIR__ . '/../..' . '/app/Model/List.php',
         'App\\Model\\Liste' => __DIR__ . '/../..' . '/app/Model/Liste.php',
         'App\\Model\\Listitem' => __DIR__ . '/../..' . '/app/Model/Listitem.php',
         'App\\Model\\Movie' => __DIR__ . '/../..' . '/app/Model/Movie.php',
