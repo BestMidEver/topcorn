@@ -47,12 +47,6 @@ class listController extends Controller
             ->get()
             ->toArray();
 
-            if($liste[0]->profile_pic == ''){
-                $profile_profile_pic = $user->facebook_profile_pic;
-            }else{
-                $profile_profile_pic = config('constants.image.thumb_nail')[$image_quality].$user->profile_pic;
-            }
-
             if(auth::check()){
                 $movies = $temp
                 ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
