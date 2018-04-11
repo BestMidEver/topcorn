@@ -143,7 +143,7 @@ class listController extends Controller
         }
 
         if($id == 'new'){
-            $liste = '[]';
+            $liste = 'empty';
             $movies = '[]';
          }else{
             $temp = DB::table('listes')
