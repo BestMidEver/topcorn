@@ -32,7 +32,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heading"></i></div>
 								</div>
-								<input type="text" class="form-control" id="header" name="header" value="{{ $liste != 'empty' ? $liste[0]->title : '' }}" required autofocus>
+								<input type="text" class="form-control" id="header" name="header" value="{{ $liste != [] ? $liste[0]->title : '' }}" required autofocus>
 							</div>
 						</div>
 					</div>
@@ -47,7 +47,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control" id="entry_1" name="entry_1">{{ $liste != 'empty' ? $liste[0]->entry_1 : '' }}</textarea>
+								<textarea type="text" class="form-control" id="entry_1" name="entry_1">{{ $liste != [] ? $liste[0]->entry_1 : '' }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -62,7 +62,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control" id="entry_2" name="entry_2">{{ $liste != 'empty' ? $liste[0]->entry_2 : '' }}</textarea>
+								<textarea type="text" class="form-control" id="entry_2" name="entry_2">{{ $liste != [] ? $liste[0]->entry_2 : '' }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -89,8 +89,8 @@
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-eye"></i></div>
 								</div>
 								<select class="form-control" id="visibility" name="visibility">
-									<option value="1" {{ $liste != 'empty' ? ($liste[0]->visibility == 1 ? 'selected' : '') : 'selected' }}>Herkes</option>
-									<option value="0" {{ $liste != 'empty' ? ($liste[0]->visibility == 0 ? 'selected' : '') : '' }}>Sadece Ben</option>
+									<option value="1" {{ $liste != [] ? ($liste[0]->visibility == 1 ? 'selected' : '') : 'selected' }}>Herkes</option>
+									<option value="0" {{ $liste != [] ? ($liste[0]->visibility == 0 ? 'selected' : '') : '' }}>Sadece Ben</option>
 								</select>
 							</div>
 						</div>
@@ -107,9 +107,9 @@
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort"></i></div>
 								</div>
 								<select class="form-control" id="sort_by" name="sort_by">
-									<option value="2" {{ $liste != 'empty' ? ($liste[0]->sort == 2 ? 'selected' : '') : 'selected' }}>Büyükten Küçüğe</option>
-									<option value="1" {{ $liste != 'empty' ? ($liste[0]->sort == 1 ? 'selected' : '') : '' }}>Küçükten Büyüğe</option>
-									<option value="0" {{ $liste != 'empty' ? ($liste[0]->sort == 0 ? 'selected' : '') : '' }}>Devre Dışı</option>
+									<option value="2" {{ $liste != [] ? ($liste[0]->sort == 2 ? 'selected' : '') : 'selected' }}>Büyükten Küçüğe</option>
+									<option value="1" {{ $liste != [] ? ($liste[0]->sort == 1 ? 'selected' : '') : '' }}>Küçükten Büyüğe</option>
+									<option value="0" {{ $liste != [] ? ($liste[0]->sort == 0 ? 'selected' : '') : '' }}>Devre Dışı</option>
 								</select>
 							</div>
 						</div>
