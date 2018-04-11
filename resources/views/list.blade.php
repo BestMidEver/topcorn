@@ -22,6 +22,7 @@
 									<h6 class="text-dark p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
 								</a>
 							</div>
+							@if(Auth::check())
 							<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 								<div class="d-flex flex-row justify-content-between text-center">
 									<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)" title="{{ __('general.tooltip_watchlater') }}" data-toggle="tooltip" data-placement="top"><div><span ng-show="movie.later_id!=null"><i class="fas fa-clock"></i></span><span ng-show="movie.later_id==null"><i class="far fa-clock"></i></span></div></button>
@@ -29,6 +30,7 @@
 									<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':movie.ban_id!=null}" ng-click="ban($index)" title="{{ __('general.tooltip_ban') }}" data-toggle="tooltip" data-placement="top"><div><i class="fas fa-ban"></i></div></button>
 								</div>
 							</div>
+							@endif
 						</div>
 						<div class="row no-gutters pt-3 pt-md-2">
 							<div class="col-4 col-xl-3">
