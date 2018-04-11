@@ -168,6 +168,7 @@ class listController extends Controller
             ->toArray();
         }else{
             $liste = '[]';
+            $movies = '[]';
         }
 
         return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
