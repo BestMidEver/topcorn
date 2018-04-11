@@ -58,9 +58,9 @@ class listController extends Controller
                 return redirect('/not-found');
             }
 
-            if($liste[0]->sort == 0 || $liste[0]->sort == 2){
+            if($liste[0]->sort == 2){
                 $order_mode = 'DESC';
-            }else if($liste[0]->sort == 1){
+            }else if($liste[0]->sort == 0 || $liste[0]->sort == 1){
                 $order_mode = 'ASC';
             }
 
