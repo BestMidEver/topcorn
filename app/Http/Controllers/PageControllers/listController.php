@@ -191,7 +191,8 @@ class listController extends Controller
             'entry_2' => $request->entry_2,
             'visibility' => $request->visibility,
             'sort' => $request->sort_by]
-        );
+        )
+        ->increment('fb_comment_count');
 
         Listitem::where(['list_id' => $liste->id])->delete();
 
