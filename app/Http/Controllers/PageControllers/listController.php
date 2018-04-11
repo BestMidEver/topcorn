@@ -42,7 +42,7 @@ class listController extends Controller
             ->select(
                     'listes.*',
                     'users.name',
-                    DB::raw('IF(users.profile_pic IS NULL OR users.profile_pic = "", users.facebook_profile_pic, users.profile_pic as profile_pic')
+                    DB::raw('IF(users.profile_pic IS NULL OR users.profile_pic = "", users.facebook_profile_pic, CONCAT("'.config('constants.image.thumb_nail')[$image_quality].'", users.profile_pic)) as profile_pic')
                 )
             ->get()
             ->toArray();
