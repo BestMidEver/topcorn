@@ -64,7 +64,7 @@
 						</div>
 						<div class="d-flex flex-column justify-content-center ml-2">
 							<h6 class="text-dark text-hover-underline mb-0">{{ $liste[0]->name }}</h6>
-							<div class="text-muted"><small class="text-no-decoration">{{ timeAgo($created_at[0]) }} önce ekledi, en son {{ timeAgo($updated_at[0]) }} önce güncelledi.</small></div>
+							<div class="text-muted"><small class="text-no-decoration">{{ timeAgo($created_at) }} önce ekledi, en son {{ timeAgo($updated_at) }} önce güncelledi.</small></div>
 						</div>
 					</div>
 				</a>
