@@ -104,8 +104,10 @@ class ProfileController extends Controller
             }else{
                 $hover_title = 'original_title';
             }
+            $pagin=Auth::User()->pagination;
         }else{
             $hover_title = 'original_title';
+            $pagin=24;
         }
 
         $return_val = DB::table('laters')
@@ -137,7 +139,7 @@ class ProfileController extends Controller
         )
         ->orderBy('laters.updated_at', 'desc');
 
-        return $return_val->paginate(Auth::User()->pagination);
+        return $return_val->paginate($pagin);
     }    
 
 
@@ -151,8 +153,10 @@ class ProfileController extends Controller
             }else{
                 $hover_title = 'original_title';
             }
+            $pagin=Auth::User()->pagination;
         }else{
             $hover_title = 'original_title';
+            $pagin=24;
         }
 
         $return_val = DB::table('bans')
@@ -184,6 +188,6 @@ class ProfileController extends Controller
         )
         ->orderBy('bans.updated_at', 'desc');
 
-        return $return_val->paginate(Auth::User()->pagination);
+        return $return_val->paginate($pagin);
     }
 }
