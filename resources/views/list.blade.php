@@ -19,7 +19,11 @@
 						<div class="d-flex flex-wrap justify-content-between">
 							<div class="p-1">
 								<a ng-href="/movie/@{{movie.id}}" ng-attr-id="movie-@{{movie.id}}" data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
-									<h6 class="text-dark p-1 text-hover-underline"><span ng-if="movie.position">@{{ movie.position }}.</span> @{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
+									<h6 class="text-dark p-1 text-hover-underline">
+										@if($liste[0]->sort != 0)
+										<span>@{{ movie.position }}.</span> 
+										@endif
+										@{{ movie.movie_title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
 								</a>
 							</div>
 							@if(Auth::check())
