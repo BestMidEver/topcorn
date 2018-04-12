@@ -17,7 +17,7 @@
 
 	<div class="jumbotron">
 		<a href="#">
-			<h1 class="display-4 text-dark">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film</h1>
+			<div class="h6 text-dark">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film</div>
 		</a>
 		<p class="lead">
 			İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film
@@ -43,7 +43,7 @@
 				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 		</div>
-		<p>2 gün önce ekledi, en son 5 saat önce güncelledi.</p>
+		<p class="text-muted"><small>2 gün önce ekledi, en son 5 saat önce güncelledi.</small></p>
 	</div>
 
 
