@@ -54,7 +54,7 @@ class listController extends Controller
             $updated_at = Carbon::createFromTimeStamp(strtotime($liste[0]->updated_at))->diffForHumans();
             $updated_at = explode(' ', $updated_at);
 
-            if($liste[0]->visibility == 0 && $liste[0]->user_id != Auth::id()){
+            if($liste[0]->visibility == 0 && ($liste[0]->user_id != Auth::id() || Auth::check() != true)){
                 return redirect('/not-found');
             }
 

@@ -190,4 +190,53 @@ class ProfileController extends Controller
 
         return $return_val->paginate($pagin);
     }
+
+
+
+
+    public function get_lists($user)
+    {
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0){
+                $hover_title = Auth::User()->secondary_lang.'_title';
+            }else{
+                $hover_title = 'original_title';
+            }
+            $pagin=Auth::User()->pagination;
+        }else{
+            $hover_title = 'original_title';
+            $pagin=24;
+        }
+
+        $return_val = DB::table('bans')
+        ->where('bans.user_id', $user)
+        ->join('movies', 'movies.id', '=', 'bans.movie_id')
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'movies.id')
+            ->where('rateds.user_id', '=', Auth::id());
+        })
+        ->leftjoin('laters', function ($join) {
+            $join->on('laters.movie_id', '=', 'movies.id')
+            ->where('laters.user_id', '=', Auth::id());
+        })
+        ->leftjoin('bans as b2', function ($join) {
+            $join->on('b2.movie_id', '=', 'movies.id')
+            ->where('b2.user_id', Auth::id());
+        })
+        ->select(
+            'movies.id as id',
+            'movies.'.$lang.'_title as title',
+            'movies.'.$hover_title.' as original_title',
+            'movies.release_date as release_date',
+            'movies.'.$lang.'_poster_path as poster_path',
+            'movies.vote_average as vote_average',
+            'rateds.id as rated_id',
+            'rateds.rate as rate_code',
+            'laters.id as later_id',
+            'b2.id as ban_id'
+        )
+        ->orderBy('bans.updated_at', 'desc');
+
+        return $return_val->paginate($pagin);
+    }
 }
