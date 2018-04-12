@@ -1,1 +1,1 @@
-<div ng-if="active_tab == 'get_lists' && lists.length==0"></div>
+<div ng-if="active_tab == 'get_lists'"></div>
