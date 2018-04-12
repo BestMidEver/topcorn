@@ -73,7 +73,7 @@
 	</ul>
 </div>
 
-<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans'">
+<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'">
 	<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.definitely_recommend') }}'">
 		<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{mod_title}}
