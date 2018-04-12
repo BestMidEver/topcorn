@@ -43,26 +43,7 @@
 				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 		</div>
-		<div class="mt-5 d-flex flex-row justify-content-between">
-			<div class="d-flex flex-column">
-				<a href="#" class="text-no-decoration">
-					<div class="d-flex flex-row">
-						<div class="d-flex flex-column">
-							<img src="https://image.tmdb.org/t/p/w300_and_h300_bestv2/ofNrWiA2KDdqiNxFTLp51HcXUlp.jpg" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
-						</div>
-						<div class="d-flex flex-column justify-content-center ml-2">
-							<h6 class="text-dark text-hover-underline mb-0">Uygar Yılmaz</h6>
-							<div class="text-muted"><small class="text-no-decoration">2 gün önce ekledi, en son 5 saat önce güncelledi.</small></div>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="d-flex flex-column mt-3 ml-1">
-				<div class="d-flex flex-row">
-					<div class="fb-share-button ml-2" data-href="https://topcorn.io/list/1" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2Flist%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Paylaş</a></div>
-				</div>
-			</div>
-		</div>
+		<p>2 gün önce ekledi, en son 5 saat önce güncelledi.</p>
 	</div>
 
 
