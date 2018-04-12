@@ -15,7 +15,7 @@
 
 
 
-	<div class="jumbotron">
+	<div class="jumbotron p-0">
 		<a href="#">
 			<div class="h6 text-dark">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film</div>
 		</a>
