@@ -144,6 +144,7 @@ Route::get('api/get_laters/{user}/{lang}','PageControllers\ProfileController@get
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::get('api/get_bans/{user}/{lang}','PageControllers\ProfileController@get_bans')
 	->where('lang', config('constants.supported_languages.for_web_php'));
+Route::get('api/get_lists/{user}','PageControllers\ProfileController@get_lists');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// PROFILE PAGE (PUBLIC) ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -196,7 +197,7 @@ Route::get('suckData', function(){
 	//SuckDataJob::dispatch()->onQueue("low");
 	return 'sucking data.';
 });
-Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
+//Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
