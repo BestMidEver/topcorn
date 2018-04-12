@@ -92,10 +92,11 @@
 </div>
 
 <div id="scroll_top_point">
-<div class="p-5" ng-show="movies.length==0">
+<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && lists.length==0)">
 	<div class="text-muted text-center">{{ __('general.no_result') }}</div>
 </div>
 @include('layout.moviecard')
+@include('layout.listcard')
 </div>
 
 @include('layout.pagination', ['suffix' => ''])
