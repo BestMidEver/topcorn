@@ -34,24 +34,28 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 
     $scope.get_page_data = function()
     {
-		$http({
-			method: 'GET',
-			url: '/api/'+$scope.active_tab+'/'+pass.profile_user_id+'/'+pass.lang+'?page='+$scope.page,
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept' : 'application/json'
-			}
-		}).then(function successCallback(response) {
-			console.log(response.data.data)
-			$scope.movies=response.data.data;
-			$scope.pagination=response.data.last_page;
-			$scope.current_page=response.data.current_page;
-			$scope.from=response.data.from;
-			$scope.to=response.data.to;
-			$scope.in=response.data.total;
-			$(".tooltip").hide();
-		}, function errorCallback(response) {
-		});
+    	if($scope.active_tab == 'get_lists'){
+
+    	}else{
+			$http({
+				method: 'GET',
+				url: '/api/'+$scope.active_tab+'/'+pass.profile_user_id+'/'+pass.lang+'?page='+$scope.page,
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept' : 'application/json'
+				}
+			}).then(function successCallback(response) {
+				console.log(response.data.data)
+				$scope.movies=response.data.data;
+				$scope.pagination=response.data.last_page;
+				$scope.current_page=response.data.current_page;
+				$scope.from=response.data.from;
+				$scope.to=response.data.to;
+				$scope.in=response.data.total;
+				$(".tooltip").hide();
+			}, function errorCallback(response) {
+			});
+		}
 	}
 
     $scope.get_first_page_data = function()

@@ -63,6 +63,13 @@
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_bans'}" ng-click="active_tab='get_bans';get_first_page_data();">{{ __('general.banneds') }}</button>
 		</li>
+		@if(Auth::check())
+			@if(Auth::id() == 7)
+		<li class="nav-item">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';get_page_data();">{{ __('general.banneds') }}</button>
+		</li>	
+			@endif
+		@endif
 	</ul>
 </div>
 
