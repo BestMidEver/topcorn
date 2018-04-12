@@ -35,7 +35,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     $scope.get_page_data = function()
     {
     	if($scope.active_tab == 'get_lists'){
-
+    		console.log('muhah')
     	}else{
 			$http({
 				method: 'GET',
