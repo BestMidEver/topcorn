@@ -19,7 +19,7 @@
 		<a href="#">
 			<div class="h6 text-dark">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film</div>
 		</a>
-		<p class="lead">
+		<p class="lead lead-small">
 			İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film
 		'Mind Blowing Movies' izlerken kan akışınızı hızlandıran, aklınızı başından alan filmler olarak tanımlanabilir.. Bir filmi izlerken belirli aralıklarla vay arkadaş!', 'harika kurgu!' ya da 'abi süper film olmuş' gibi cümleler kuruyorsanız işte o film 'Mind Blowing Movies' kategorisine alınabilir.</p>
 		<hr class="my-4">
