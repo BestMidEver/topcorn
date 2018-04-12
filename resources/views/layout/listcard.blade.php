@@ -1,1 +1,1 @@
-MUHAHUAHUAH
+<div ng-if="active_tab == 'get_lists' && lists.length==0"></div>
