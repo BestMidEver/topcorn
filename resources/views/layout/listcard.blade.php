@@ -26,19 +26,19 @@
 				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 			<div class="col-6 col-md-4 col-lg-3 col-xl-2 p-2">
-				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/wShp6RwmmC5V6uhz9X0zMfs4740.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 			<div class="col-6 col-md-4 col-lg-3 col-xl-2 p-2">
-				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/aTG2EvePwRx34MwCg70Q20INzQM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 			<div class="col-6 col-md-4 col-lg-3 col-xl-2 p-2">
-				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/ybQLA0vUHFCPsnuJ6rCRev9YFcV.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 			<div class="col-6 col-md-4 col-lg-3 col-xl-2 p-2">
-				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/g8qWglC2XXCIN8P51eCljFvCNNJ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 			<div class="col-6 col-md-4 col-lg-3 col-xl-2 p-2">
-				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+				<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			</div>
 		</div>
 		<p class="lead">
