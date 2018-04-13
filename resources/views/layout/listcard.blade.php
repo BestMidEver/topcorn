@@ -15,7 +15,7 @@
 
 
 
-	<div class="card py-4 px-0">
+	<div class="card py-2 px-0">
 		<a href="#">
 			<div class="h6 text-dark px-2">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film</div>
 		</a>
