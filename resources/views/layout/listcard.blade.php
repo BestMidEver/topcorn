@@ -59,9 +59,8 @@
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center">
 							<div class="text-white">
-								<small>Listenin beğeni sayısı</small>
-								<span class="d-block"><span class="h5 text-warning">35</span></span>
-								<small>@{{movie.vote_count}}</small>
+								<span class="d-block"><span class="h5 text-warning">35</span> <small>beğeni</small></span>
+								
 							</div>
 						</div>
 					</div>
