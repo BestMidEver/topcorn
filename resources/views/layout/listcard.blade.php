@@ -44,7 +44,7 @@
 							</div>
 						</div>
 					<!--<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
-						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
+						<div class="d-flex flex-row justify-content-center">
 							<div class="text-white">
 								<small>{{ __('general.according_to_your_taste') }}</small>
 								<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
@@ -55,22 +55,22 @@
 								@endif
 							</div>
 						</div>
-					</div>
+					</div>-->
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
-						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
+						<div class="d-flex flex-row justify-content-center">
 							<div class="text-white">
-								<small>{{ __('general.according_to_themoviedb') }}</small>
-								<span class="d-block"><span class="h5 text-warning">@{{movie.vote_average}}</span><small>/10</small></span>
-								<small ng-if="movie.vote_count > 0">@{{movie.vote_count}} <span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small>
+								<small>Listenin beğeni sayısı</small>
+								<span class="d-block"><span class="h5 text-warning">35</span></span>
+								<small>@{{movie.vote_count}}</small>
 							</div>
 						</div>
 					</div>
-					<div class="p-2 text-right moviecard-percent">
+					<!--<div class="p-2 text-right moviecard-percent">
 						<div><span class="badge btn-verydark text-white">44</span></div>
-					</div>
-					<div class="p-2 text-right moviecard-rating">
-						<div><span class="badge btn-verydark text-white">12</span></div>
 					</div>-->
+					<div class="p-2 text-right moviecard-rating">
+						<div><span class="badge btn-verydark text-white">35</span></div>
+					</div>
 				</div>
 				<div class="card-block">
 					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film <small class="text-muted d-block pt-1"><em>(5 saat önce)</em></small></h6>
