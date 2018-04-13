@@ -24,7 +24,7 @@
 		'Mind Blowing Movies' izlerken kan akışınızı hızlandıran, aklınızı başından alan filmler olarak tanımlanabilir.. Bir filmi izlerken belirli aralıklarla vay arkadaş!', 'harika kurgu!' ya da 'abi süper film olmuş' gibi cümleler kuruyorsanız işte o film 'Mind Blowing Movies' kategorisine alınabilir.</p>
 		<div class="row">
 			<div class="col"></div>
-				<div class="col-3 card-group no-gutters">
+				<div class="col-4 card-group no-gutters">
 					<div class="col-4">
 						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
