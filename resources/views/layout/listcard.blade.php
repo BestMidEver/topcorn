@@ -24,24 +24,24 @@
 		'Mind Blowing Movies' izlerken kan akışınızı hızlandıran, aklınızı başından alan filmler olarak tanımlanabilir.. Bir filmi izlerken belirli aralıklarla vay arkadaş!', 'harika kurgu!' ya da 'abi süper film olmuş' gibi cümleler kuruyorsanız işte o film 'Mind Blowing Movies' kategorisine alınabilir.</p>
 		<div class="row">
 			<div class="col"></div>
-				<div class="col-6 card-group no-gutters">
-					<div class="col-2 col-md-2 col-lg-2 col-xl-2">
-						<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+				<div class="col-3 card-group no-gutters">
+					<div class="col-4">
+						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
-					<div class="col-2 col-md-2 col-lg-2 col-xl-2">
-						<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/wShp6RwmmC5V6uhz9X0zMfs4740.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+					<div class="col-4">
+						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/wShp6RwmmC5V6uhz9X0zMfs4740.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
-					<div class="col-2 col-md-2 col-lg-2 col-xl-2">
-						<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/aTG2EvePwRx34MwCg70Q20INzQM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+					<div class="col-4">
+						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/aTG2EvePwRx34MwCg70Q20INzQM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
-					<div class="col-2 col-md-2 col-lg-2 col-xl-2">
-						<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/ybQLA0vUHFCPsnuJ6rCRev9YFcV.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+					<div class="col-4">
+						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/ybQLA0vUHFCPsnuJ6rCRev9YFcV.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
-					<div class="col-2 col-md-2 col-lg-2 col-xl-2">
-						<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/g8qWglC2XXCIN8P51eCljFvCNNJ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+					<div class="col-4">
+						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/g8qWglC2XXCIN8P51eCljFvCNNJ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
-					<div class="col-2 col-md-2 col-lg-2 col-xl-2">
-						<img class="card-img-top" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+					<div class="col-4">
+						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
 				</div>
 			<div class="col"></div>
