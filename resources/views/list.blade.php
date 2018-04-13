@@ -27,7 +27,7 @@
 								</a>
 							</div>
 							@if(Auth::check())
-							<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
+							<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto ml-auto">
 								<div class="d-flex flex-row justify-content-between text-center">
 									<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':movie.later_id!=null}" ng-click="later($index)" title="{{ __('general.tooltip_watchlater') }}" data-toggle="tooltip" data-placement="top"><div><span ng-show="movie.later_id!=null"><i class="fas fa-clock"></i></span><span ng-show="movie.later_id==null"><i class="far fa-clock"></i></span></div></button>
 									<button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-class="rate_class(movie.rate_code)" ng-click="votemodal($index, movie)" title="İzledim" data-toggle="tooltip" data-placement="top"><div><span ng-show="!movie.rate_code>0"><i class="far fa-star"></i></span><span ng-show="movie.rate_code>0"><i class="fas fa-check"></i></span></div></button>
