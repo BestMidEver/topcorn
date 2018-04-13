@@ -52,8 +52,8 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .custom-over-layer-bottom{position: absolute;width: 100%;bottom:0;}
 .moviecard .custom-over-layer, .moviecard .custom-over-layer-bottom{display: none!important;}
 .trailer{max-height: 500px;}
-.fa22 .fa{font-size: 22px!important;}
-.fa40 .fa{font-size: 40px!important;}
+.fa22 i{font-size: 22px!important;}
+.fa40 i{font-size: 40px!important;}
 .lead-small{font-size: 1rem;}
 .moviecard-rating{position: absolute;bottom: 0;right: 0;}
 .moviecard-percent{position: absolute;bottom: 30px;right: 0;}
