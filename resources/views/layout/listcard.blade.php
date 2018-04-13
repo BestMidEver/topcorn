@@ -23,7 +23,7 @@
 			<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
 				<a href="#" target={{$target}}>
 					<div class="position-relative text-center">
-						<div class="card-group no-gutters">
+						<div class="card-group no-gutters darken-cover">
 							<div class="col-6">
 								<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 							</div>
