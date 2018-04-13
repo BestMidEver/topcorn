@@ -15,37 +15,6 @@
 
 
 
-	<div class="card py-2 px-0">
-		<a href="#">
-			<div class="h6 text-dark px-2">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film <small class="text-muted d-block pt-1"><em>(5 saat önce)</em></small></div>
-		</a>
-		<div class="row">
-			<div class="col"></div>
-				<div class="col-4 card-group no-gutters">
-					<div class="col-4">
-						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-					</div>
-					<div class="col-4">
-						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/wShp6RwmmC5V6uhz9X0zMfs4740.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-					</div>
-					<div class="col-4">
-						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/aTG2EvePwRx34MwCg70Q20INzQM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-					</div>
-					<div class="col-4">
-						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/ybQLA0vUHFCPsnuJ6rCRev9YFcV.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-					</div>
-					<div class="col-4">
-						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/g8qWglC2XXCIN8P51eCljFvCNNJ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-					</div>
-					<div class="col-4">
-						<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-					</div>
-				</div>
-			<div class="col"></div>
-		</div>
-		<div class="text-muted text-right px-2"><small>2 gün önce ekledi, en son 5 saat önce güncelledi.</small></div>
-	</div>
-
 
 
 
