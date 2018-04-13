@@ -1,7 +1,7 @@
 <div class="card-group no-gutters">
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in movies">
 		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
-			<a href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
+			<a ng-href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
 				<div class="position-relative text-center">
 					<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
