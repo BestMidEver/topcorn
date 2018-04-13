@@ -74,14 +74,16 @@
 				</a>
 			</div>
 			<div class="d-flex flex-column mt-3 ml-1">
-				<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban">
-					<div><i class="far fa-heart"></i> {{ $liste[0]->like_count }}</div>
-					Beğen
-				</button>
-				<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban">
-					<div><i class="far fa-heart"></i> {{ $liste[0]->like_count }}</div>
-					Beğen
-				</button>
+				<div class="d-flex flex-row">
+					<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban">
+						<div><i class="far fa-heart"></i> {{ $liste[0]->like_count }}</div>
+						Beğen
+					</button>
+					<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban">
+						<div><i class="fas fa-share"></i> 4</div>
+						Paylaş
+					</button>
+				</div>
 			</div>
 		</div>
 
