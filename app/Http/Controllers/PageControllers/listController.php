@@ -235,10 +235,14 @@ class listController extends Controller
     {
         $q = DB::table('listes')
         ->where('listes.user_id', '=', Auth::id())
-        ->where('listes.id', '=', $liste)
-        ->count();
-        
-        return $q;
+        ->where('listes.id', '=', $liste);
+
+        if($q->count() > 0){
+            $q->delete();
+            DB::table('listitems')
+            ->where('listitems.list_id')
+            ->delete();
+        }
        
         return redirect('/profile/'.Auth::id().'#!#Lists');
     }
