@@ -57,6 +57,13 @@
 		</div>
 	</div>
 
+	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4">
+		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
+			<div class="d-flex flex-row justify-content-center">
+				<button type="button" ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Yeni Liste Oluştur</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 
