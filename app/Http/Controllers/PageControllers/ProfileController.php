@@ -253,7 +253,9 @@ class ProfileController extends Controller
         ->get();
 
         foreach ($return_val as $row) {
-            return timeAgo($row->updated_at);
+            $row->updated_at = timeAgo($row->updated_at);
         }
+
+        return $return_val;
     }
 }
