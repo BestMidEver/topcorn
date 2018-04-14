@@ -207,27 +207,27 @@ class ProfileController extends Controller
         ->join('movies', 'movies.id', '=', 'bans.movie_id')
         ->leftjoin('listitems as l1', function ($join) {
             $join->on('l1.list_id', '=', 'listes.id')
-            ->where('l1.position', '=', 1;
+            ->where('l1.position', '=', 1);
         })
         ->leftjoin('listitems as l2', function ($join) {
             $join->on('l2.list_id', '=', 'listes.id')
-            ->where('l2.position', '=', 2;
+            ->where('l2.position', '=', 2);
         })
         ->leftjoin('listitems as l3', function ($join) {
             $join->on('l3.list_id', '=', 'listes.id')
-            ->where('l3.position', '=', 3;
+            ->where('l3.position', '=', 3);
         })
         ->leftjoin('listitems as l4', function ($join) {
             $join->on('l4.list_id', '=', 'listes.id')
-            ->where('l4.position', '=', 4;
+            ->where('l4.position', '=', 4);
         })
         ->leftjoin('listitems as l5', function ($join) {
             $join->on('l5.list_id', '=', 'listes.id')
-            ->where('l5.position', '=', 5;
+            ->where('l5.position', '=', 5);
         })
         ->leftjoin('listitems as l6', function ($join) {
             $join->on('l6.list_id', '=', 'listes.id')
-            ->where('l6.position', '=', 6;
+            ->where('l6.position', '=', 6);
         })
         ->select(
             'listes.*',
