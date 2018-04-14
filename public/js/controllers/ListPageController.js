@@ -12,7 +12,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 	$scope.confirm_delete = function(list_id, message){
 		var r = confirm(message);
 		if (r == true) {
-		    $window.location.href = '/createlist/'+list_id;
+		    $window.location.href = '/deletelist/'+list_id;
 		}
 	}
 

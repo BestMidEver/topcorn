@@ -236,15 +236,17 @@ class listController extends Controller
 
     public function deletelist($liste)
     {
-        $q = DB::table('listes')
-        ->where('listes.user_id', '=', Auth::id())
-        ->where('listes.id', '=', $liste);
+        if($liste != 'new'){
+            $q = DB::table('listes')
+            ->where('listes.user_id', '=', Auth::id())
+            ->where('listes.id', '=', $liste);
 
-        if($q->count() > 0){
-            $q->delete();
-            DB::table('listitems')
-            ->where('listitems.list_id', '=', $liste)
-            ->delete();
+            if($q->count() > 0){
+                $q->delete();
+                DB::table('listitems')
+                ->where('listitems.list_id', '=', $liste)
+                ->delete();
+            }
         }
        
         return redirect('/profile/'.Auth::id().'#!#Lists');
