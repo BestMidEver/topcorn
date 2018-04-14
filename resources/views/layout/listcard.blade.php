@@ -1,48 +1,28 @@
-<div ng-if="active_tab == 'get_lists'">
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<div class="card-group no-gutters">
-		<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4">
-			<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
-				<a href="#" target={{$target}}>
-					<div class="position-relative text-center">
-						<div class="card-group no-gutters darken-cover">
-							<div class="col-6">
-								<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/fQMSaP88cf1nz4qwuNEEFtazuDM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-							</div>
-							<div class="col-6">
-								<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/wShp6RwmmC5V6uhz9X0zMfs4740.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-							</div>
-							<div class="col-6">
-								<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/aTG2EvePwRx34MwCg70Q20INzQM.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-							</div>
-							<div class="col-6">
-								<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/ybQLA0vUHFCPsnuJ6rCRev9YFcV.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-							</div>
-							<div class="col-6">
-								<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/g8qWglC2XXCIN8P51eCljFvCNNJ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-							</div>
-							<div class="col-6">
-								<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-							</div>
+<div class="card-group no-gutters">
+	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="list in listes">
+		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
+			<a href="#" target={{$target}}>
+				<div class="position-relative text-center">
+					<div class="card-group no-gutters darken-cover">
+						<div class="col-6">
+							<img class="card-img-top border-no-radius" ng-if="list.m1_poster_path != null" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m1_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						</div>
+						<div class="col-6">
+							<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/wShp6RwmmC5V6uhz9X0zMfs4740.jpg" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+						</div>
+						<div class="col-6">
+							<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/aTG2EvePwRx34MwCg70Q20INzQM.jpg" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+						</div>
+						<div class="col-6">
+							<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/ybQLA0vUHFCPsnuJ6rCRev9YFcV.jpg" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+						</div>
+						<div class="col-6">
+							<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/g8qWglC2XXCIN8P51eCljFvCNNJ.jpg" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+						</div>
+						<div class="col-6">
+							<img class="card-img-top border-no-radius" ng-src="https://image.tmdb.org/t/p/w100_and_h100_bestv2/gornum2ob13CQrYt1SjfnnLhkUQ.jpg" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+						</div>
+					</div>
 					<!--<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center">
 							<div class="text-white">
@@ -86,11 +66,3 @@
 
 
 
-
-
-
-
-
-
-
-</div>

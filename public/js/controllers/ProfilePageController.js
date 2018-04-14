@@ -49,7 +49,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				}
 			}).then(function successCallback(response) {
 				console.log(response.data)
-				//$scope.movies=response.data.data;
+				$scope.listes=response.data;
 				$(".tooltip").hide();
 			}, function errorCallback(response) {
 			});
@@ -78,6 +78,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     $scope.get_first_page_data = function()
     {
     	$scope.movies=null;
+    	$scope.listes=null;
     	$scope.page=1;
     	$scope.get_page_data();
 	}
