@@ -10,7 +10,7 @@
 			<h1 class="h5 text-center text-md-left col mt-3 mt-md-4 d-inline">{{ $liste[0]->title }}</h1>
 			<div class="btn-group">
 				<button type="button" class="text-right btn btn-outline-secondary border-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="fas fa-ellipsis-v px-2"></i>
+					<i class="fas fa-ellipsis-v"></i>
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
 					<button class="dropdown-item" type="button">Düzenle</button>
