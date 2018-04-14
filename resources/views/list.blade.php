@@ -6,7 +6,10 @@
 <div class="row no-gutters">
 	<div class="col"></div>
 	<div class="col-12 col-lg-10 col-xl-8">
-		<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ $liste[0]->title }}</h1>
+		<div class="row">
+			<h1 class="h5 text-center text-md-left col mt-3 mt-md-4 d-inline">{{ $liste[0]->title }}</h1>
+			<button class="text-right"><i class="fas fa-ellipsis-v"></i></button>
+		</div>
 
 		<div class="py-3">
 			<h6 class="lead">{{ $liste[0]->entry_1 }}</h6>
