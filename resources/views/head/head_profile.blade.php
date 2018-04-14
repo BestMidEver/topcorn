@@ -17,10 +17,6 @@ pass={
 @include('cdn.underscore')
 @endsection
 
-@section('age_calculator')
-<script src="/js/functions/age_calculator.js"></script>
-@endsection
-
 @section('angular_controller_js')
 <script src="/js/controllers/ProfilePageController.js"></script>
 @endsection

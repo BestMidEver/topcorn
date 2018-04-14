@@ -249,8 +249,11 @@ class ProfileController extends Controller
             'm5.'.App::getlocale().'_poster_path as m5_poster_path',
             'm6.'.App::getlocale().'_poster_path as m6_poster_path'
         )
-        ->orderBy('listes.updated_at', 'desc');
+        ->orderBy('listes.updated_at', 'desc')
+        ->get();
 
-        return $return_val->get();
+        foreach ($return_val as $row) {
+            return $row->updated_at;
+        }
     }
 }
