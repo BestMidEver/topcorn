@@ -39,8 +39,7 @@
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center">
 							<div class="text-white">
-								<span class="d-block"><span class="h5 text-warning">35</span> <small>beğeni</small></span>
-								
+								<span class="d-block"><span class="h5 text-warning">@{{list.like_count}}</span> <small>beğeni</small></span>
 							</div>
 						</div>
 					</div>
@@ -48,11 +47,11 @@
 						<div><span class="badge btn-verydark text-white">44</span></div>
 					</div>-->
 					<div class="p-2 text-right moviecard-rating">
-						<div><span class="badge btn-verydark text-white">35</span></div>
+						<div><span class="badge btn-verydark text-white">@{{list.like_count}}</span></div>
 					</div>
 				</div>
 				<div class="card-block">
-					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">İzlerken Aklınızı Başınızdan Alacak 32 Muhteşem Film <small class="text-muted d-block pt-1"><em>(5 saat önce)</em></small></h6>
+					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{list.title}} <small class="text-muted d-block pt-1"><em>(5 saat önce)</em></small></h6>
 				</div>
 			</a>
 		</div>
