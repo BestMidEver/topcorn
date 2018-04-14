@@ -18,5 +18,5 @@ pass={
 @section('controllername','CreatelistPageController')
 
 @section('title')
-{{ __('title.createlist') }}
+{{ $liste != '[]' ? $liste[0]->title : __('title.createlist') }}
 @endsection
