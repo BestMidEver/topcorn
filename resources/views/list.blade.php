@@ -9,13 +9,12 @@
 		<div class="row">
 			<h1 class="h5 text-center text-md-left col mt-3 mt-md-4 d-inline">{{ $liste[0]->title }}</h1>
 			<div class="btn-group">
-				<button type="button" class="text-right btn btn-outline-secondary border-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button type="button" class="text-right btn btn-outline-secondary border-0 px-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fas fa-ellipsis-v"></i>
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
-					<button class="dropdown-item" type="button">Action</button>
-					<button class="dropdown-item" type="button">Another action</button>
-					<button class="dropdown-item" type="button">Something else here</button>
+					<button class="dropdown-item" type="button">Düzenle</button>
+					<button class="dropdown-item" type="button">Sil</button>
 				</div>
 			</div>
 		</div>
