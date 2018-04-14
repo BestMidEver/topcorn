@@ -18,7 +18,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.timeago = function(time){
-		return timeAgo(time);
+		return timeago(time);
 	}
 	switch(location.hash){
 		case '#!#Rated':
