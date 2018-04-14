@@ -40,6 +40,24 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     	if($scope.active_tab == 'get_lists'){
     		$scope.movies=null;
     		$scope.pagination=0;
+    		$http({
+				method: 'GET',
+				url: '/api/'+$scope.active_tab+'/'+pass.profile_user_id,
+				headers: {
+					'Content-Type': 'application/json',
+					'Accept' : 'application/json'
+				}
+			}).then(function successCallback(response) {
+				console.log(response.data.data)
+				$scope.movies=response.data.data;
+				$scope.pagination=response.data.last_page;
+				$scope.current_page=response.data.current_page;
+				$scope.from=response.data.from;
+				$scope.to=response.data.to;
+				$scope.in=response.data.total;
+				$(".tooltip").hide();
+			}, function errorCallback(response) {
+			});
     	}else{
 			$http({
 				method: 'GET',

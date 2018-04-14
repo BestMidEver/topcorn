@@ -245,6 +245,6 @@ class ProfileController extends Controller
         )
         ->orderBy('listes.updated_at', 'desc');
 
-        return $return_val->paginate($pagin);
+        return $return_val->get();
     }
 }
