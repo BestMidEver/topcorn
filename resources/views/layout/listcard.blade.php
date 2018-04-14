@@ -51,7 +51,7 @@
 					</div>
 				</div>
 				<div class="card-block">
-					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{list.title}} <small class="text-muted d-block pt-1"><em>(@{{list.updated_at}})</em></small></h6>
+					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{list.title}} <small class="text-muted d-block pt-1"><em>(@{{timeago(list.updated_at)}})</em></small></h6>
 				</div>
 			</a>
 		</div>
