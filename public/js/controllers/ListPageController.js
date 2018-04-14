@@ -1,4 +1,4 @@
-MyApp.controller('ListPageController', function($scope, $http, rate)
+MyApp.controller('ListPageController', function($scope, $http, rate, $location)
 {console.log(pass)
 	$scope.movies = pass.movies;
 	
