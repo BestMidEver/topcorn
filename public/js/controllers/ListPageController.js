@@ -10,10 +10,9 @@ MyApp.controller('ListPageController', function($scope, $http, rate)
 	}
 
 	$scope.confirm_delete = function(list_id, message){
-		console.log(list_id, message)
 		var r = confirm(message);
 		if (r == true) {
-		    //$location.path('/createlist/'+list_id);
+		    $location.path('/createlist/'+list_id);
 		}
 	}
 
