@@ -134,25 +134,20 @@ class listController extends Controller
 
     public function createlist($id = 'new')
     {
-        $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
+        $image_quality = Auth::User()->image_quality;
 
-        if(Auth::check()){
-            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
-            $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+        $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-            if(Auth::User()->hover_title_language == 0){
-                $hover_title = Auth::User()->secondary_lang.'_title';
-            }else{
-                $hover_title = 'original_title';
-            }
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_title';
         }else{
-            $target = '_self';
-            $watched_movie_number = null;
+            $hover_title = 'original_title';
         }
 
         if($id == 'new'){
-            $liste = '[]';
-            $movies = '[]';
+            $liste = [];
+            $movies = [];
          }else{
             $temp = DB::table('listes')
             ->where('listes.id', '=', $id)
