@@ -15,6 +15,14 @@ use Illuminate\Support\Facades\DB;
 
 class listController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['list'/*, 'anotherMethod'*/]]);
+    }
+
+
+
+
     public function list($id)
     {
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
