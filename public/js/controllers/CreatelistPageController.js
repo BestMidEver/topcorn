@@ -35,16 +35,16 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.choose_movie = function(index, movie){
 		console.log(index, movie);
-		$scope.list[index].movie_id=movie.id;
-		$scope.list[index].searchmode=false;
-		$scope.list[index].overview=movie.overview;
-		$scope.list[index].poster_path=movie.poster_path;
-		$scope.list[index].movie_title=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
+		$scope.movies[index].movie_id=movie.id;
+		$scope.movies[index].searchmode=false;
+		$scope.movies[index].overview=movie.overview;
+		$scope.movies[index].poster_path=movie.poster_path;
+		$scope.movies[index].movie_title=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
 	}
 
 	$scope.refresh_list = function(){
-		if($scope.list.length == 0){
-			$scope.list.push( {
+		if($scope.movies.length == 0){
+			$scope.movies.push( {
 				'position':1,
 				'movie_title':'',
 				'movie_id':'',
@@ -53,7 +53,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 				'overview':''
 			} );
 		}
-		console.log($scope.list)
+		console.log($scope.movies)
 	}
 	$scope.refresh_list();
 
@@ -76,8 +76,8 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	}
 
 	$scope.remove_from_list = function(index){
-		$scope.list.splice(index, 1);
-		console.log(index, $scope.list)
+		$scope.movies.splice(index, 1);
+		console.log(index, $scope.movies)
 		$scope.refresh_list();
 	}
 
