@@ -208,32 +208,32 @@ class ProfileController extends Controller
             $join->on('l1.list_id', '=', 'listes.id')
             ->where('l1.position', '=', 1);
         })
-        ->join('movies as m1', 'movies.id', '=', 'l1.movie_id')
+        ->join('movies as m1', 'm1.id', '=', 'l1.movie_id')
         ->leftjoin('listitems as l2', function ($join) {
             $join->on('l2.list_id', '=', 'listes.id')
             ->where('l2.position', '=', 2);
         })
-        ->join('movies as m2', 'movies.id', '=', 'l2.movie_id')
+        ->join('movies as m2', 'm2.id', '=', 'l2.movie_id')
         ->leftjoin('listitems as l3', function ($join) {
             $join->on('l3.list_id', '=', 'listes.id')
             ->where('l3.position', '=', 3);
         })
-        ->join('movies as m3', 'movies.id', '=', 'l3.movie_id')
+        ->join('movies as m3', 'm3.id', '=', 'l3.movie_id')
         ->leftjoin('listitems as l4', function ($join) {
             $join->on('l4.list_id', '=', 'listes.id')
             ->where('l4.position', '=', 4);
         })
-        ->join('movies as m4', 'movies.id', '=', 'l4.movie_id')
+        ->join('movies as m4', 'm4.id', '=', 'l4.movie_id')
         ->leftjoin('listitems as l5', function ($join) {
             $join->on('l5.list_id', '=', 'listes.id')
             ->where('l5.position', '=', 5);
         })
-        ->join('movies as m5', 'movies.id', '=', 'l5.movie_id')
+        ->join('movies as m5', 'm5.id', '=', 'l5.movie_id')
         ->leftjoin('listitems as l6', function ($join) {
             $join->on('l6.list_id', '=', 'listes.id')
             ->where('l6.position', '=', 6);
         })
-        ->join('movies as m6', 'movies.id', '=', 'l6.movie_id')
+        ->join('movies as m6', 'm6.id', '=', 'l6.movie_id')
         ->select(
             'listes.*',
             'm1.'.App::getlocale().'poster_path as m1_poster_path',
