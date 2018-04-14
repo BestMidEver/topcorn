@@ -60,7 +60,7 @@
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4">
 		<div class="h-100 d-flex flex-column justify-content-center mx-2">
 			<div class="d-flex flex-row justify-content-center">
-				<a href="/createlist/new" class="btn btn-verydark border-circle text-white btn-lg"><i class="fas fa-plus"></i></a>
+				<a href="/createlist/new" class="btn btn-verydark border-circle text-white btn-lg" data-toggle="tooltip" data-placement="top" title="Liste Oluştur"><i class="fas fa-plus"></i></a>
 			</div>
 		</div>
 	</div>
