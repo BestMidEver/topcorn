@@ -1,10 +1,10 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
 {
-	$scope.list=[];
+	//$scope.list=[];
 	$scope.movies = pass.movies == '[]' ? []:pass.movies;
 	console.log($scope.movies)
 
-	for(var index in pass.liste){
+	/*for(var index in pass.liste){
 		console.log(pass.liste)
 		$scope.list.push( {
 			'position':pass.liste[index].position,
@@ -15,7 +15,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 			'overview':pass.liste[index].overview,
 			'explanation':pass.liste[index].explanation
 		} );
-	}
+	}*/
 
 	$scope.search_movie = function(movie){
 		var temp=movie.input.replace(/ /g , "%20");
@@ -65,8 +65,8 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	}
 
 	$scope.new_list = function(){
-		$scope.list.push( {
-			'position':$scope.list.length+1,
+		$scope.movies.push( {
+			'position':$scope.movies.length+1,
 			'movie_title':'',
 			'movie_id':'',
 			'poster_path':'',
