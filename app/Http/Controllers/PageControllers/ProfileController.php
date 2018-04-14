@@ -236,12 +236,12 @@ class ProfileController extends Controller
         ->leftjoin('movies as m6', 'm6.id', '=', 'l6.movie_id')
         ->select(
             'listes.*',
-            'm1.'.App::getlocale().'poster_path as m1_poster_path',
-            'm2.'.App::getlocale().'poster_path as m2_poster_path',
-            'm3.'.App::getlocale().'poster_path as m3_poster_path',
-            'm4.'.App::getlocale().'poster_path as m4_poster_path',
-            'm5.'.App::getlocale().'poster_path as m5_poster_path',
-            'm6.'.App::getlocale().'poster_path as m6_poster_path'
+            'm1.'.App::getlocale().'_poster_path as m1_poster_path',
+            'm2.'.App::getlocale().'_poster_path as m2_poster_path',
+            'm3.'.App::getlocale().'_poster_path as m3_poster_path',
+            'm4.'.App::getlocale().'_poster_path as m4_poster_path',
+            'm5.'.App::getlocale().'_poster_path as m5_poster_path',
+            'm6.'.App::getlocale().'_poster_path as m6_poster_path'
         )
         ->orderBy('listes.updated_at', 'desc');
 
