@@ -197,45 +197,48 @@ class ProfileController extends Controller
     public function get_lists($user)
     {
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_title = Auth::User()->secondary_lang.'_title';
-            }else{
-                $hover_title = 'original_title';
-            }
             $pagin=Auth::User()->pagination;
         }else{
-            $hover_title = 'original_title';
             $pagin=24;
         }
 
-        $return_val = DB::table('bans')
-        ->where('bans.user_id', $user)
+        $return_val = DB::table('listes')
+        ->where('listes.user_id', $user)
         ->join('movies', 'movies.id', '=', 'bans.movie_id')
-        ->leftjoin('rateds', function ($join) {
-            $join->on('rateds.movie_id', '=', 'movies.id')
-            ->where('rateds.user_id', '=', Auth::id());
+        ->leftjoin('listitems as l1', function ($join) {
+            $join->on('l1.list_id', '=', 'listes.id')
+            ->where('l1.position', '=', 1;
         })
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'movies.id')
-            ->where('laters.user_id', '=', Auth::id());
+        ->leftjoin('listitems as l2', function ($join) {
+            $join->on('l2.list_id', '=', 'listes.id')
+            ->where('l2.position', '=', 2;
         })
-        ->leftjoin('bans as b2', function ($join) {
-            $join->on('b2.movie_id', '=', 'movies.id')
-            ->where('b2.user_id', Auth::id());
+        ->leftjoin('listitems as l3', function ($join) {
+            $join->on('l3.list_id', '=', 'listes.id')
+            ->where('l3.position', '=', 3;
+        })
+        ->leftjoin('listitems as l4', function ($join) {
+            $join->on('l4.list_id', '=', 'listes.id')
+            ->where('l4.position', '=', 4;
+        })
+        ->leftjoin('listitems as l5', function ($join) {
+            $join->on('l5.list_id', '=', 'listes.id')
+            ->where('l5.position', '=', 5;
+        })
+        ->leftjoin('listitems as l6', function ($join) {
+            $join->on('l6.list_id', '=', 'listes.id')
+            ->where('l6.position', '=', 6;
         })
         ->select(
-            'movies.id as id',
-            'movies.'.$lang.'_title as title',
-            'movies.'.$hover_title.' as original_title',
-            'movies.release_date as release_date',
-            'movies.'.$lang.'_poster_path as poster_path',
-            'movies.vote_average as vote_average',
-            'rateds.id as rated_id',
-            'rateds.rate as rate_code',
-            'laters.id as later_id',
-            'b2.id as ban_id'
+            'listes.*',
+            'l1.movie_id as l1_movie_id',
+            'l2.movie_id as l2_movie_id',
+            'l3.movie_id as l3_movie_id',
+            'l4.movie_id as l4_movie_id',
+            'l5.movie_id as l5_movie_id',
+            'l6.movie_id as l6_movie_id'
         )
-        ->orderBy('bans.updated_at', 'desc');
+        ->orderBy('listes.updated_at', 'desc');
 
         return $return_val->paginate($pagin);
     }
