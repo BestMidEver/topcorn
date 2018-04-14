@@ -204,7 +204,6 @@ class ProfileController extends Controller
 
         $return_val = DB::table('listes')
         ->where('listes.user_id', $user)
-        ->join('movies', 'movies.id', '=', 'bans.movie_id')
         ->leftjoin('listitems as l1', function ($join) {
             $join->on('l1.list_id', '=', 'listes.id')
             ->where('l1.position', '=', 1);
