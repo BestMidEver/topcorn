@@ -3,7 +3,7 @@
 @include('head.head_createlist')
 
 @section('body')
-<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Liste Oluştur</h1>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ $liste != '[]' ? $liste[0]->title : 'Liste Oluştur' }}</h1>
 @if(session()->has('status'))
     <div class="alert alert-success"> 
     {!! session('status') !!}
@@ -32,7 +32,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heading"></i></div>
 								</div>
-								<input type="text" class="form-control" id="header" name="header" ng-model="muhah" value="{{ $liste != '[]' ? $liste[0]->title : '' }}" required autofocus>
+								<input type="text" class="form-control" id="header" name="header" value="{{ $liste != '[]' ? $liste[0]->title : '' }}" required autofocus>
 							</div>
 						</div>
 					</div>
