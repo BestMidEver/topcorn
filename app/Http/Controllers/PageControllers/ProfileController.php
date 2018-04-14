@@ -236,6 +236,7 @@ class ProfileController extends Controller
         ->leftjoin('movies as m6', 'm6.id', '=', 'l6.movie_id')
         ->select(
             'listes.*',
+            DB::raw('LEFT(listes.entry_1 , 20) AS muhah'),
             'm1.'.App::getlocale().'_poster_path as m1_poster_path',
             'm2.'.App::getlocale().'_poster_path as m2_poster_path',
             'm3.'.App::getlocale().'_poster_path as m3_poster_path',
