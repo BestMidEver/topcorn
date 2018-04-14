@@ -227,4 +227,19 @@ class listController extends Controller
 
         return redirect('/createlist/'.$liste->id);
     }
+
+
+
+
+    public function deletelist($liste)
+    {
+        $q = DB::table('listes')
+        ->where('listes.user_id', '=', Auth::id())
+        ->where('listes.id', '=', $liste)
+        ->count();
+        
+        return $q;
+       
+        return redirect('/profile/'.Auth::id().'#!#Lists');
+    }
 }

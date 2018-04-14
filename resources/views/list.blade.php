@@ -14,7 +14,7 @@
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
 					<a class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">Düzenle</a>
-					<button class="dropdown-item" type="button">Sil</button>
+					<a class="dropdown-item" href="/deletelist/{{ $liste[0]->id }}">Sil</a>
 				</div>
 			</div>
 		</div>
