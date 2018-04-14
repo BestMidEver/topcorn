@@ -13,7 +13,7 @@
 					<i class="fas fa-ellipsis-v"></i>
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
-					<button class="dropdown-item" type="button">Düzenle</button>
+					<button class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">Düzenle</button>
 					<button class="dropdown-item" type="button">Sil</button>
 				</div>
 			</div>
