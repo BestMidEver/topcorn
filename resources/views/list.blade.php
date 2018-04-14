@@ -14,7 +14,7 @@
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
 					<a class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">Düzenle</a>
-					<a class="dropdown-item" href="/deletelist/{{ $liste[0]->id }}">Sil</a>
+					<button class="dropdown-item" ng-click="confirm_delete({{ $liste[0]->id }},'Liste silinecek!')">Sil</button>
 				</div>
 			</div>
 		</div>

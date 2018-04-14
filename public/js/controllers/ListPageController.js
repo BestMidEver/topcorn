@@ -9,6 +9,13 @@ MyApp.controller('ListPageController', function($scope, $http, rate)
 		$('#'+movie_id).tooltip('hide');
 	}
 
+	$scope.confirm_delete = function(list_id, message){
+		var r = confirm(message);
+		if (r == true) {
+		    $location.path('/createlist/'+list_id);
+		}
+	}
+
 	if(pass.is_auth==1){
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
