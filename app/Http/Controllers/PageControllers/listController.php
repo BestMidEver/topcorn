@@ -243,7 +243,7 @@ class listController extends Controller
         if($q->count() > 0){
             $q->delete();
             DB::table('listitems')
-            ->where('listitems.list_id')
+            ->where('listitems.list_id', '=', $liste)
             ->delete();
         }
        
