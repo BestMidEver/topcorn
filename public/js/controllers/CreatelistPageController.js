@@ -1,7 +1,7 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
 {
 	$scope.list=[];
-	$scope.movies = pass.movies;
+	$scope.movies = pass.movies == '[]' ? []:pass.movies;
 	console.log($scope.movies)
 
 	for(var index in pass.liste){

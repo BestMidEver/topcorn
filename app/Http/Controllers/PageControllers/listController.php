@@ -146,8 +146,8 @@ class listController extends Controller
         }
 
         if($id == 'new'){
-            $liste = [];
-            $movies = [];
+            $liste = '[]';
+            $movies = '[]';
          }else{
             $temp = DB::table('listes')
             ->where('listes.id', '=', $id)
