@@ -208,34 +208,40 @@ class ProfileController extends Controller
             $join->on('l1.list_id', '=', 'listes.id')
             ->where('l1.position', '=', 1);
         })
+        ->join('movies as m1', 'movies.id', '=', 'l1.movie_id')
         ->leftjoin('listitems as l2', function ($join) {
             $join->on('l2.list_id', '=', 'listes.id')
             ->where('l2.position', '=', 2);
         })
+        ->join('movies as m2', 'movies.id', '=', 'l2.movie_id')
         ->leftjoin('listitems as l3', function ($join) {
             $join->on('l3.list_id', '=', 'listes.id')
             ->where('l3.position', '=', 3);
         })
+        ->join('movies as m3', 'movies.id', '=', 'l3.movie_id')
         ->leftjoin('listitems as l4', function ($join) {
             $join->on('l4.list_id', '=', 'listes.id')
             ->where('l4.position', '=', 4);
         })
+        ->join('movies as m4', 'movies.id', '=', 'l4.movie_id')
         ->leftjoin('listitems as l5', function ($join) {
             $join->on('l5.list_id', '=', 'listes.id')
             ->where('l5.position', '=', 5);
         })
+        ->join('movies as m5', 'movies.id', '=', 'l5.movie_id')
         ->leftjoin('listitems as l6', function ($join) {
             $join->on('l6.list_id', '=', 'listes.id')
             ->where('l6.position', '=', 6);
         })
+        ->join('movies as m6', 'movies.id', '=', 'l6.movie_id')
         ->select(
             'listes.*',
-            'l1.movie_id as l1_movie_id',
-            'l2.movie_id as l2_movie_id',
-            'l3.movie_id as l3_movie_id',
-            'l4.movie_id as l4_movie_id',
-            'l5.movie_id as l5_movie_id',
-            'l6.movie_id as l6_movie_id'
+            'm1.'.App::getlocale().'poster_path as m1_poster_path',
+            'm2.'.App::getlocale().'poster_path as m2_poster_path',
+            'm3.'.App::getlocale().'poster_path as m3_poster_path',
+            'm4.'.App::getlocale().'poster_path as m4_poster_path',
+            'm5.'.App::getlocale().'poster_path as m5_poster_path',
+            'm6.'.App::getlocale().'poster_path as m6_poster_path'
         )
         ->orderBy('listes.updated_at', 'desc');
 
