@@ -254,7 +254,7 @@ class ProfileController extends Controller
         ->get();
 
         foreach ($return_val as $row) {
-            return  Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans();
+            return  timeAgo(Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans());
         }
 
         return $return_val;
