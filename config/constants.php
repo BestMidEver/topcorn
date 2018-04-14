@@ -33,7 +33,7 @@ return array(
       'https://image.tmdb.org/t/p/w150_and_h150_bestv2',
       'https://image.tmdb.org/t/p/w300_and_h300_bestv2',
     ),
-    'thumb_nail_error' => '/images/no_image_150x150_question_mark.png',
+    'thumb_nail_error' => '/images/FFFFFF-08.png',
 
   ),
 
