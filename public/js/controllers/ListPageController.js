@@ -1,4 +1,4 @@
-MyApp.controller('ListPageController', function($scope, $http, rate, $location)
+MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 {console.log(pass)
 	$scope.movies = pass.movies;
 	
@@ -12,7 +12,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $location)
 	$scope.confirm_delete = function(list_id, message){
 		var r = confirm(message);
 		if (r == true) {
-		    $location.path('/createlist/'+list_id);
+		    $window.location.href = '/createlist/'+list_id;
 		}
 	}
 
