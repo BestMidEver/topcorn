@@ -1,7 +1,7 @@
 <div class="card-group no-gutters">
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="list in listes">
 		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
-			<a href="#" target={{$target}}>
+			<a href="#" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{list.entry_1}}">
 				<div class="position-relative text-center">
 					<div class="card-group no-gutters darken-cover">
 						<div class="col-6">
