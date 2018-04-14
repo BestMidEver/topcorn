@@ -42,19 +42,14 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     		$scope.pagination=0;
     		$http({
 				method: 'GET',
-				url: '/api/'+$scope.active_tab+'/'+pass.profile_user_id,
+				url: '/api/get_lists/'+pass.profile_user_id,
 				headers: {
 					'Content-Type': 'application/json',
 					'Accept' : 'application/json'
 				}
 			}).then(function successCallback(response) {
-				console.log(response.data.data)
-				$scope.movies=response.data.data;
-				$scope.pagination=response.data.last_page;
-				$scope.current_page=response.data.current_page;
-				$scope.from=response.data.from;
-				$scope.to=response.data.to;
-				$scope.in=response.data.total;
+				console.log(response.data)
+				//$scope.movies=response.data.data;
 				$(".tooltip").hide();
 			}, function errorCallback(response) {
 			});
