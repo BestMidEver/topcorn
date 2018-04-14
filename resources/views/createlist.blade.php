@@ -3,7 +3,7 @@
 @include('head.head_createlist')
 
 @section('body')
-<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{!! $liste != '[]' ? '<a href="/list/'.$liste[0]->id.'">'.$liste[0]->title.'</a>' : 'Liste Oluştur' !!}</h1>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{!! $liste != '[]' ? '<a href="/list/'.$liste[0]->id.'" class="text-dark">'.$liste[0]->title.'</a>' : 'Liste Oluştur' !!}</h1>
 @if(session()->has('status'))
     <div class="alert alert-success"> 
     {!! session('status') !!}
