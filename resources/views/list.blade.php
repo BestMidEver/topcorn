@@ -6,7 +6,7 @@
 <div class="row no-gutters">
 	<div class="col"></div>
 	<div class="col-12 col-lg-10 col-xl-8">
-		<div class="row">
+		<div class="d-flex d-row">
 			<h1 class="h5 text-center text-md-left col mt-3 mt-md-4 d-inline">{{ $liste[0]->title }}</h1>
 			<div class="btn-group">
 				<button type="button" class="text-right btn btn-outline-secondary border-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
