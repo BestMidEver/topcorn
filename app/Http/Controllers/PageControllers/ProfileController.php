@@ -240,7 +240,7 @@ class ProfileController extends Controller
             'listes.title',
             'listes.like_count',
             'listes.updated_at',
-            DB::raw('LEFT(listes.entry_1 , 25) AS entry_1'),
+            DB::raw('LEFT(listes.entry_1 , 50) AS entry_1'),
             'm1.'.App::getlocale().'_poster_path as m1_poster_path',
             'm2.'.App::getlocale().'_poster_path as m2_poster_path',
             'm3.'.App::getlocale().'_poster_path as m3_poster_path',
