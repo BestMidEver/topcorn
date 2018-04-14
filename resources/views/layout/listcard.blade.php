@@ -5,22 +5,22 @@
 				<div class="position-relative text-center">
 					<div class="card-group no-gutters darken-cover">
 						<div class="col-6">
-							<img class="card-img-top border-no-radius" ng-if="list.m1_poster_path != null" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m1_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+							<img class="card-img-top border-no-radius" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m1_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						</div>
 						<div class="col-6">
-							<img class="card-img-top border-no-radius" ng-if="list.m2_poster_path != null" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m2_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+							<img class="card-img-top border-no-radius" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m2_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						</div>
 						<div class="col-6">
-							<img class="card-img-top border-no-radius" ng-if="list.m3_poster_path != null" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m3_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+							<img class="card-img-top border-no-radius" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m3_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						</div>
 						<div class="col-6">
-							<img class="card-img-top border-no-radius" ng-if="list.m4_poster_path != null" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m4_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+							<img class="card-img-top border-no-radius" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m4_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						</div>
 						<div class="col-6">
-							<img class="card-img-top border-no-radius" ng-if="list.m5_poster_path != null" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m5_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+							<img class="card-img-top border-no-radius" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m5_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						</div>
 						<div class="col-6">
-							<img class="card-img-top border-no-radius" ng-if="list.m6_poster_path != null" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m6_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+							<img class="card-img-top border-no-radius" ng-src="{{config('constants.image.thumb_nail')[0]}}@{{list.m6_poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						</div>
 					</div>
 					<!--<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
