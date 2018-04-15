@@ -258,11 +258,18 @@ class listController extends Controller
 
     public function like_list($liste)
     {
-        Listlike::updateOrCreate(
-            ['user_id' => Auth::id(),
-            'list_id' => $liste],
-            []
-        );
+        $q = DB::table('listlikes')
+        ->join('listes', 'listes.id', '=', 'listlikes.list_id')
+        ->where('listes.id', '=', $liste)
+        ->where('listes.visibility', '>', 0);
+
+        if($q->count() > 0){
+            Listlike::updateOrCreate(
+                ['user_id' => Auth::id(),
+                'list_id' => $liste],
+                []
+            );
+        }
 
 
         return $liste;
