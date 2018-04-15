@@ -5,6 +5,7 @@ pass={
 	"liste":{!! json_encode($liste) !!},
 	"movies":{!! json_encode($movies) !!},
 	"like_count":"{{ $like_count  }}",
+	"is_liked":"{{ $is_liked  }}",
 	"is_auth":"{{  Auth::Check()  }}",
 	"lang":"{{ App::getlocale() }}",
 	@if(Auth::check())

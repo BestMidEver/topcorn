@@ -124,14 +124,20 @@ class listController extends Controller
                 ->toArray();
             }
 
-            $like_count = DB::table('listlikes')
-            ->where('listlikes.list_id', '=', $id)
+            $temp = DB::table('listlikes')
+            ->where('listlikes.list_id', '=', $id);
+
+            $like_count = $temp
+            ->count();
+
+            $is_liked = $temp
+            ->where('listlikes.user_id', '=', Auth::id())
             ->count();
         }else{
             return redirect('/not-found');
         }
 
-        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies', 'created_at', 'updated_at', 'like_count'));
+        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies', 'created_at', 'updated_at', 'like_count', 'is_liked'));
     }
 
 
