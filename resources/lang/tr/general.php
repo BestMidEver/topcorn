@@ -76,6 +76,7 @@ return [
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
     'list_remove_confirm' => 'Liste silinecek!',                                        //list,         //////////////////
+    'list_updated' => 'Listeniz güncellendi.',                                          //list,         //////////////////
     'm' => 'dk.',
     'match' => 'eşleşme',                                                               //recommendations,
     'margin_x_setting' => 'Tam Ekran',                                                  //accountinterface,

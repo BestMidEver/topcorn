@@ -236,7 +236,7 @@ class listController extends Controller
                 SuckMovieJob::dispatch($value, false)->onQueue("high");
             }
         }
-        $request->session()->flash('status', __('general.info_updated'));
+        $request->session()->flash('status', __('general.list_updated'));
 
 
         return redirect('/createlist/'.$liste->id);
