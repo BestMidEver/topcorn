@@ -279,12 +279,12 @@ class listController extends Controller
                 []
             );
         }
-        
+
         $like_count = DB::table('listlikes')
         ->where('listlikes.list_id', '=', $id)
         ->count();
 
-        return [$return_val, $like_count};
+        return [$return_val, $like_count];
     }
 
 
@@ -305,6 +305,6 @@ class listController extends Controller
         ->where('listlikes.list_id', '=', $id)
         ->count();
 
-        return [$return_val, $like_count};
+        return [$return_val, $like_count];
     }
 }
