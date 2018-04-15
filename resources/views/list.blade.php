@@ -62,7 +62,7 @@
 									<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.overview }}</div>
 								</div>
 								<div class="col-8 lead lead-small" ng-if="movie.explanation">
-									<div class="pl-3 pr-1 pb-1 text-dark">@{{ movie.explanation }}</div>
+									<div class="pl-3 pr-1 pb-1 text-dark line-break">@{{ movie.explanation }}</div>
 								</div>
 							</div>
 						</div>
