@@ -272,8 +272,7 @@ class listController extends Controller
 
 
         return Response([
-            'data' => $return_val,
-            'response' => 201
+            'data' => $return_val
         ]);
     }
 
@@ -293,8 +292,7 @@ class listController extends Controller
 
 
         return Response([
-            'data' => $return_val,
-            'response' => 200
+            'data' => $return_val
         ]);
     }
 }
