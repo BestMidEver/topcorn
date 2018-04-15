@@ -92,7 +92,7 @@ class listController extends Controller
                 ->select(
                     'listitems.movie_id as id',
                     'listitems.position',
-                    DB::raw('REPLACE(listitems.explanation, "\n", "<br />") as explanation'),
+                    'listitems.explanation',
                     'movies.'.$hover_title.' as original_title',
                     'movies.'.App::getlocale().'_title as movie_title',
                     'movies.'.App::getlocale().'_poster_path as poster_path',
