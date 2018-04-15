@@ -92,7 +92,7 @@
 					<div class="d-flex flex-row">
 						<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-class="{'text-success':is_liked}" ng-click="like_list()">
 							<div><i class="fas fa-heart" ng-show="is_liked"></i><i class="far fa-heart" ng-show="!is_liked"></i> {{ $like_count }}</div>
-							Beğen @{{is_liked}}
+							Beğen
 						</button>
 						<a ng-href="{{config('constants.facebook.share_website')}}/list/{{$liste[0]->id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook">
 							<div><i class="fas fa-share"></i></div>
