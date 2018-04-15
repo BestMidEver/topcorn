@@ -258,8 +258,8 @@ class listController extends Controller
 
     public function like_list($liste)
     {
-        $q = DB::table('listlikes')
-        ->join('listes', 'listes.id', '=', 'listlikes.list_id')
+        $q = DB::table('listes')
+        ->leftjoin('listlikes', 'listes.id', '=', 'listlikes.list_id')
         ->where('listes.id', '=', $liste)
         ->where('listes.visibility', '>', 0);
 
