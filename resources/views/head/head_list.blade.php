@@ -4,6 +4,7 @@ pass={
 	"angular_module_array":[],
 	"liste":{!! json_encode($liste) !!},
 	"movies":{!! json_encode($movies) !!},
+	"like_count":"{{ $like_count  }}",
 	"is_auth":"{{  Auth::Check()  }}",
 	"lang":"{{ App::getlocale() }}",
 	@if(Auth::check())
