@@ -19,7 +19,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 			console.log(response);
 			if($scope.is_liked){
 				$scope.is_liked = true;
-			}else if(mode == 'unlike'){
+			}else{
 				$scope.is_liked = false;
 			}
 		}, function errorCallback(response) {
