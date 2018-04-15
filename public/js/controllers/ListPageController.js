@@ -4,7 +4,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 		console.log("MUHA :D çç")
 		$http({
 			method: 'GET',
-			url: '/api/likelist/'+pass.liste[0]id,
+			url: '/api/likelist/'+pass.liste[0].id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
