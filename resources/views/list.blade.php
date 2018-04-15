@@ -76,7 +76,7 @@
 
 			<div class="mt-5 d-flex flex-row justify-content-between">
 				<div class="d-flex flex-column">
-					<a href="/profile/{{ $liste[0]->user_id }}" class="text-no-decoration">
+					<a href="/profile/{{ $liste[0]->user_id }}#!#Lists" class="text-no-decoration">
 						<div class="d-flex flex-row">
 							<div class="d-flex flex-column">
 								<img src="{{ $liste[0]->profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
