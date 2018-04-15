@@ -1,6 +1,7 @@
 MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 {console.log(pass)
 	$scope.is_liked = pass.is_liked == 1 ? true : false;
+	$scope.like_count = pass.like_count;
 	$scope.like_list = function(){
 		if(!$scope.is_liked){
 			var url_element = 'likelist';
@@ -22,6 +23,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 			}else{
 				$scope.is_liked = true;
 			}
+			$scope.like_count = response.data[1];
 		}, function errorCallback(response) {
 		});
 	}

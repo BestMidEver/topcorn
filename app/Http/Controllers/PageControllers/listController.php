@@ -279,9 +279,12 @@ class listController extends Controller
                 []
             );
         }
+        
+        $like_count = DB::table('listlikes')
+        ->where('listlikes.list_id', '=', $id)
+        ->count();
 
-
-        return $return_val;
+        return [$return_val, $like_count};
     }
 
 
@@ -297,8 +300,11 @@ class listController extends Controller
         if($q->count() > 0){
             $return_val = Listlike::where(['list_id' => $liste, 'user_id' => Auth::id()])->delete();
         }
+        
+        $like_count = DB::table('listlikes')
+        ->where('listlikes.list_id', '=', $id)
+        ->count();
 
-
-        return $return_val;
+        return [$return_val, $like_count};
     }
 }
