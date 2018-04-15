@@ -36,6 +36,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .votecard .card-img{z-index: 5;}
 .faded{opacity: 0!important;z-index: 0!important;  transition: opacity 0.5s ease-in, z-index 3s!important;}
 .faderdiv{opacity: 1;  transition: opacity 0.5s ease-in;z-index: 7;}
+.opacity-1{opacity: 1!important;}
 .votecard .votediv .btn, .border-circle{border-radius: 50px;}
 .btn-verydark{background: #232323;border-color:#232323;}
 .btn-verydark:hover{background: #111;border-color:#111;}
