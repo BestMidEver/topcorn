@@ -145,7 +145,7 @@
 				<!-- Filmler -->
 				<div class="row mt-5">
 					<div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">{{ __('general.movies') }}</div>
+						<div class="h6 text-muted">{{ __('general.p_movies') }}</div>
 					</div>
 				</div>
 				<div class="row mt-3 mb-5" ng-repeat="movie in movies">

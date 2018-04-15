@@ -92,7 +92,7 @@ return [
     'min_vote_count' => 'MİNİMUM OY SAYISI',                                            //recommendations,
     'minute' => 'dakika',
     'movie' => 'Film',
-    'movies' => 'Filmler',                                                              //list,         
+    'p_movies' => 'Filmler',                                                              //list,         
     'moviecard_percent' => '%{{movie.percent}}',                                        //recommendations,
     'movies' => 'Film',                                                                 //person,
     'movie_details' => 'Film Detayları',

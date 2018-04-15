@@ -92,7 +92,7 @@ return [
     'min_vote_count' => 'MINIMUM VOTE COUNT',                               //recommendations,
     'minute' => 'minute',                                                   //movie,
     'movie' => 'Movie',
-    'movies' => 'Movies',                                                   //list,         
+    'p_movies' => 'Movies',                                                   //list,         
     'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,
     'movies' => 'movies',                                                   //person,
     'movie_details' => 'Movie Details',                                     //movie,

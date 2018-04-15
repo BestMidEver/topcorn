@@ -92,7 +92,7 @@ return [
     'min_vote_count' => 'MINIMUM SZAVAZATSZÁM',                             //recommendations,
     'minute' => 'perc',                                                     //movie,
     'movie' => 'Film',
-    'movies' => 'Movies',                                                   //list,         /////////////////
+    'p_movies' => 'Movies',                                                   //list,         /////////////////
     'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,  
     'movies' => 'Film',                         
     'movie_details' => 'Film részletei',                                    //movie,
