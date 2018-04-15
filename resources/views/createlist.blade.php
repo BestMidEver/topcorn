@@ -22,14 +22,19 @@
 			@endif
 		</div>
 	</div>
+	<div class="col"></div>
+</div>
 
 	@if(session()->has('status'))
     <div class="alert alert-success"> 
     {!! session('status') !!}
     </div>
 	@endif
-
-	<div class="row mt-3">
+	
+<div class="container-fluid mt-3">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-12 col-lg-10 col-xl-8">
 			<form id="the_form" class="form-horizontal" role="form" method="POST" action="/createlist">
 				{{ csrf_field() }}
 				<input type="number" class="d-none" name="list_id" value="{{  $id }}">
@@ -209,8 +214,7 @@
 
 			</form>
 		</div>
+		<div class="col"></div>
 	</div>
-	<div class="col"></div>
-</div>
 </div>
 @endsection
