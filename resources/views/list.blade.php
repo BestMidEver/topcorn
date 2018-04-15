@@ -60,10 +60,10 @@
 
 								<div class="col-8 lead lead-small" ng-if="!movie.explanation">
 									<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.overview }}</div>
-								</div>
+								</div><pre class="line-break">
 								<div class="col-8 lead lead-small" ng-if="movie.explanation">
-									<div class="pl-3 pr-1 pb-1 text-dark"><pre class="line-break">@{{ movie.explanation }}</pre></div>
-								</div>
+									<div class="pl-3 pr-1 pb-1 text-dark">@{{ movie.explanation }}</div>
+								</div></pre>
 							</div>
 						</div>
 					</div>
