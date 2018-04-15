@@ -21,10 +21,10 @@ function timeAgo($time) {
     		return $time[0].' {{ __("general.time_hours") }} ';
     		break;
     	case 'day':
-    		return $time[0].' {{ __("general.time_day") }} ';
+    		return $time[0]." {{ __('general.time_day') }} ";
     		break;
     	case 'days':
-    		return $time[0].' {{ __("general.time_days") }} ';
+    		return $time[0]." {{ __('general.time_days') }} ";
     		break;
     	case 'week':
     		return $time[0].' {{ __("general.time_week") }} ';
