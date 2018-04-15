@@ -1,6 +1,25 @@
 MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 {console.log(pass)
-	$scope.like_list = function(){
+	$scope.like_list = function(mode){
+		if(mode == 'like'){
+			var url_element = 'likelist';
+		}else if(mode == 'unlike'){
+			var url_element = 'unlikelist';
+		}
+
+		$http({
+			method: 'GET',
+			url: '/api/'+url_element+'/'+pass.liste[0].id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			console.log(response)
+		}, function errorCallback(response) {
+		});
+	}
+	$scope.unlike_list = function(){
 		$http({
 			method: 'GET',
 			url: '/api/likelist/'+pass.liste[0].id,
@@ -13,6 +32,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 		}, function errorCallback(response) {
 		});
 	}
+
 	$scope.movies = pass.movies;
 	
 	$scope.show_tooltip = function(movie_id){

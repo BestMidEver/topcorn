@@ -259,12 +259,11 @@ class listController extends Controller
     public function like_list($liste)
     {
         $q = DB::table('listes')
-        ->leftjoin('listlikes', 'listes.id', '=', 'listlikes.list_id')
         ->where('listes.id', '=', $liste)
         ->where('listes.visibility', '>', 0);
 
         if($q->count() > 0){
-            Listlike::updateOrCreate(
+            $return_val = Listlike::updateOrCreate(
                 ['user_id' => Auth::id(),
                 'list_id' => $liste],
                 []
@@ -272,6 +271,28 @@ class listController extends Controller
         }
 
 
-        return $liste;
+        return Response([
+            'data' => $return_val,
+        ], Response::HTTP_CREATED);
+    }
+
+
+
+
+    public function unlike_list($liste)
+    {
+        $q = DB::table('listes')
+        ->leftjoin('listlikes', 'listes.id', '=', 'listlikes.list_id')
+        ->where('listes.id', '=', $liste)
+        ->where('listes.visibility', '>', 0);
+
+        if($q->count() > 0){
+            $return_val = Listlike::where(['list_id' => $liste, 'user_id', => Auth::id()])->delete();
+        }
+
+
+        return Response([
+            'data' => $return_val,
+        ], Response::HTTP_NO_CONTENT);
     }
 }

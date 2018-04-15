@@ -93,6 +93,7 @@ Route::get('createlist/{id?}', 'PageControllers\listController@create_list');/*-
 
 Route::get('deletelist/{id}', 'PageControllers\listController@delete_list');
 Route::get('api/likelist/{id}', 'PageControllers\listController@like_list');
+Route::get('api/unlikelist/{id}', 'PageControllers\listController@unlike_list');
 Route::post('createlist', 'PageControllers\listController@post_createlist');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// LIST PAGE (PULBIC) /////////////////////////////////
