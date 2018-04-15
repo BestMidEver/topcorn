@@ -8,6 +8,8 @@
 	<div class="col-12 col-lg-10 col-xl-8">
 		<div class="d-flex d-row">
 			<h1 class="h5 text-center text-md-left col mt-3 mt-md-4 d-inline">{{ $liste[0]->title }}</h1>
+			@if(Auth::check())
+				@if($liste[0]->user_id == Auth::id())
 			<div class="btn-group mt-2">
 				<button type="button" class="text-right btn btn-outline-secondary border-0 addfacebook border-no-radius mr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fas fa-ellipsis-v"></i>
@@ -17,6 +19,8 @@
 					<button class="dropdown-item" ng-click="confirm_delete({{ $liste[0]->id }},'Liste silinecek!')">Sil</button>
 				</div>
 			</div>
+				@endif
+			@endif
 		</div>
 
 		<div class="py-3">
