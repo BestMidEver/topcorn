@@ -41,12 +41,12 @@
 				<!-- Başlık & Giriş & Sonuç -->
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Başlık&Giriş&Sonuç</div>
+						<div class="h6 text-muted">{{ __('general.list_description') }}</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="current_password">Başlık</label>
+						<label for="current_password">{{ __('general.header') }}</label>
 					</div>
 					<div class="col-md-9">
 						<div class="">
@@ -61,7 +61,7 @@
 				</div>
 				<div class="row mt-3">
 					<div class="col-md-3 field-label-responsive">
-						<label for="current_password">Giriş Yazısı</label>
+						<label for="current_password">{{ __('general.intro') }}</label>
 					</div>
 					<div class="col-md-9">
 						<div class="">
@@ -76,7 +76,7 @@
 				</div>
 				<div class="row mt-3">
 					<div class="col-md-3 field-label-responsive">
-						<label for="current_password">Sonuç Yazısı</label>
+						<label for="current_password">{{ __('general.conclusion') }}</label>
 					</div>
 					<div class="col-md-9">
 						<div class="">
@@ -97,12 +97,12 @@
 				<!-- Liste Özellikleri -->
 				<div class="row mt-5">
 					<div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Liste Özellikleri</div>
+						<div class="h6 text-muted">{{ __('general.list_properties') }}</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="visibility">Kimler Görebilir?</label>
+						<label for="visibility">{{ __('general.visibility') }}</label>
 					</div>
 					<div class="col-md-9">
 						<div class="form-group">
@@ -111,8 +111,8 @@
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-eye"></i></div>
 								</div>
 								<select class="form-control" id="visibility" name="visibility">
-									<option value="1" {{ $liste != '[]' ? ($liste[0]->visibility == 1 ? 'selected' : '') : 'selected' }}>Herkes</option>
-									<option value="0" {{ $liste != '[]' ? ($liste[0]->visibility == 0 ? 'selected' : '') : '' }}>Sadece Ben</option>
+									<option value="1" {{ $liste != '[]' ? ($liste[0]->visibility == 1 ? 'selected' : '') : 'selected' }}>{{ __('general.everyone') }}</option>
+									<option value="0" {{ $liste != '[]' ? ($liste[0]->visibility == 0 ? 'selected' : '') : '' }}>{{ __('general.only_me') }}</option>
 								</select>
 							</div>
 						</div>
@@ -120,7 +120,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<label for="sort_by">Sıralama</label>
+						<label for="sort_by">{{ __('general.ordering') }}</label>
 					</div>
 					<div class="col-md-9">
 						<div class="form-group">
@@ -129,9 +129,9 @@
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort"></i></div>
 								</div>
 								<select class="form-control" id="sort_by" name="sort_by">
-									<option value="2" {{ $liste != '[]' ? ($liste[0]->sort == 2 ? 'selected' : '') : 'selected' }}>Büyükten Küçüğe</option>
-									<option value="1" {{ $liste != '[]' ? ($liste[0]->sort == 1 ? 'selected' : '') : '' }}>Küçükten Büyüğe</option>
-									<option value="0" {{ $liste != '[]' ? ($liste[0]->sort == 0 ? 'selected' : '') : '' }}>Devre Dışı</option>
+									<option value="2" {{ $liste != '[]' ? ($liste[0]->sort == 2 ? 'selected' : '') : 'selected' }}>{{ __('general.ordering_321') }}</option>
+									<option value="1" {{ $liste != '[]' ? ($liste[0]->sort == 1 ? 'selected' : '') : '' }}></option>
+									<option value="0" {{ $liste != '[]' ? ($liste[0]->sort == 0 ? 'selected' : '') : '' }}>{{ __('general.disabled') }}</option>
 								</select>
 							</div>
 						</div>
@@ -145,7 +145,7 @@
 				<!-- Filmler -->
 				<div class="row mt-5">
 					<div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">Filmler</div>
+						<div class="h6 text-muted">{{ __('general.movies') }}</div>
 					</div>
 				</div>
 				<div class="row mt-3 mb-5" ng-repeat="movie in movies">
@@ -172,9 +172,9 @@
 								<div class="input-group-prepend pl-md-3">
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
 								</div>
-								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!movie.searchmode" type="text" class="form-control" ng-click="movie.searchmode=true;set_focus($index)" ng-model="movie.movie_title" placeholder="Filmin adını giriniz.">
+								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!movie.searchmode" type="text" class="form-control" ng-click="movie.searchmode=true;set_focus($index)" ng-model="movie.movie_title" placeholder="{{ __('general.enter_movie_name') }}">
 								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="movie.movie_id" name="items[@{{$index}}][1]">
-								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="movie.searchmode" type="text" class="form-control" placeholder="Filmin adını giriniz." ng-focus="movie.search=true" ng-blur="movie.search=false" ng-model="movie.input" ng-change="search_movie(movie)" ng-model-options="{debounce: 750}">
+								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="movie.searchmode" type="text" class="form-control" placeholder="{{ __('general.enter_movie_name') }}" ng-focus="movie.search=true" ng-blur="movie.search=false" ng-model="movie.input" ng-change="search_movie(movie)" ng-model-options="{debounce: 750}">
 								<div ng-show="(movie.search || movie.choosing) && movie.movies.length > 0 && movie.searchmode" class="search-movie-results background-white py-3" ng-mouseenter="movie.choosing=true" ng-mouseleave="movie.choosing=false">
 									<div class="result py-1" ng-repeat="f in movie.movies" ng-click="choose_movie($parent.$index, f)">@{{f.title}} <small ng-if="f.release_date.length > 0"><em>(@{{f.release_date.substring(0, 4)}})</em></small></div>
 								</div>
@@ -196,7 +196,7 @@
 					</div>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
-					<button type="button" ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> Film Ekle</button>
+					<button type="button" ng-click="new_list()" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> {{ __('general.add_movie') }}</button>
 				</div>
 				<!-- Filmler -->
 
@@ -207,7 +207,7 @@
 				<div class="row mt-5">
 					<div class="col-md-3"></div>
 					<div class="col-md-6">
-						<button type="submit" class="btn btn-primary btn-block" ng-disabled="is_save_disabled">Kaydet</button>
+						<button type="submit" class="btn btn-primary btn-block" ng-disabled="is_save_disabled">{{ __('general.save') }}</button>
 					</div>
 				</div>
 				<!-- Submit -->
