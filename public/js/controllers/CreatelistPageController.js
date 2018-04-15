@@ -1,5 +1,12 @@
 MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
 {
+	$scope.confirm_delete = function(list_id, message){
+		var r = confirm(message);
+		if (r == true) {
+		    $window.location.href = '/deletelist/'+list_id;
+		}
+	}
+	
 	//$scope.list=[];
 	$scope.movies = pass.movies == '[]' ? []:pass.movies;
 	console.log($scope.movies)
