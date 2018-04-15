@@ -123,11 +123,15 @@ class listController extends Controller
                 ->get()
                 ->toArray();
             }
+
+            $like_count = DB::table('listlikes')
+            ->where('listlikes.list_id', '=', $id)
+            ->count();
         }else{
             return redirect('/not-found');
         }
 
-        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies', 'created_at', 'updated_at'));
+        return view('list', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies', 'created_at', 'updated_at', 'like_count'));
     }
 
 
