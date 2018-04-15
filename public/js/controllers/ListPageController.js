@@ -1,9 +1,10 @@
 MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 {console.log(pass)
-	$scope.like_list = function(mode){
-		if(mode == 'like'){
+	$scope.is_liked = pass.is_liked == 1 ? true : false;
+	$scope.like_list = function(){
+		if(!$scope.is_liked){
 			var url_element = 'likelist';
-		}else if(mode == 'unlike'){
+		}else{
 			var url_element = 'unlikelist';
 		}
 
@@ -15,20 +16,12 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 				'Accept' : 'application/json'
 			},
 		}).then(function successCallback(response) {
-			console.log(response)
-		}, function errorCallback(response) {
-		});
-	}
-	$scope.unlike_list = function(){
-		$http({
-			method: 'GET',
-			url: '/api/likelist/'+pass.liste[0].id,
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept' : 'application/json'
-			},
-		}).then(function successCallback(response) {
-			console.log(response)
+			console.log(response);
+			if(mode == 'like'){
+				$scope.is_liked = true;
+			}else if(mode == 'unlike'){
+				$scope.is_liked = false;
+			}
 		}, function errorCallback(response) {
 		});
 	}

@@ -90,7 +90,7 @@
 				</div>
 				<div class="d-flex flex-column mt-3 ml-1 fa22">
 					<div class="d-flex flex-row">
-						<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-click="like_list()">
+						<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-class="{'text-success':is_liked}" ng-click="like_list()">
 							<div><i class="far fa-heart"></i> {{ $like_count }}</div>
 							Beğen
 						</button>
