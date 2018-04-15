@@ -257,8 +257,16 @@ class listController extends Controller
 
     public function like_list($liste)
     {
-        
-       
+        $q = DB::table('listlikes')
+        ->where('user_id', '=', Auth::id())
+        ->where('list_id', '=', $liste)
+        Movie::updateOrCreate(
+            ['user_id' => Auth::id(),
+            'list_id' => $liste],
+            []
+        );
+
+
         return $liste;
     }
 }
