@@ -130,7 +130,7 @@
 								</div>
 								<select class="form-control" id="sort_by" name="sort_by">
 									<option value="2" {{ $liste != '[]' ? ($liste[0]->sort == 2 ? 'selected' : '') : 'selected' }}>{{ __('general.ordering_321') }}</option>
-									<option value="1" {{ $liste != '[]' ? ($liste[0]->sort == 1 ? 'selected' : '') : '' }}></option>
+									<option value="1" {{ $liste != '[]' ? ($liste[0]->sort == 1 ? 'selected' : '') : '' }}>{{ __('general.ordering_123') }}</option>
 									<option value="0" {{ $liste != '[]' ? ($liste[0]->sort == 0 ? 'selected' : '') : '' }}>{{ __('general.disabled') }}</option>
 								</select>
 							</div>
