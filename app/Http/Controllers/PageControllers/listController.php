@@ -291,6 +291,6 @@ class listController extends Controller
         }
 
 
-        return Response($return_val);
+        return $return_val;
     }
 }
