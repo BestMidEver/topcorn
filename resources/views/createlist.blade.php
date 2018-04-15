@@ -39,7 +39,12 @@
 				{{ csrf_field() }}
 				<input type="number" class="d-none" name="list_id" value="{{  $id }}">
 				<!-- Başlık & Giriş & Sonuç -->
-				<div class="row mt-4">
+				<div class="row">
+					<div class="col-md-3 field-label-responsive">
+						<div class="h6 text-muted">Başlık & Giriş & Sonuç</div>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-md-3 field-label-responsive">
 						<label for="current_password">Başlık</label>
 					</div>
