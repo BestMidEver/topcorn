@@ -287,12 +287,13 @@ class listController extends Controller
         ->where('listes.visibility', '>', 0);
 
         if($q->count() > 0){
-            $return_val = Listlike::where(['list_id' => $liste, 'user_id' => Auth::id()])->delete();
+            Listlike::where(['list_id' => $liste, 'user_id' => Auth::id()])->delete();
         }
 
 
         return Response([
             'data' => $return_val,
-        ], 200);
+            200
+        ]);
     }
 }
