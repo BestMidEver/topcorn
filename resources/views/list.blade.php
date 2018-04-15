@@ -83,7 +83,7 @@
 							</div>
 							<div class="d-flex flex-column justify-content-center ml-2">
 								<h6 class="text-dark text-hover-underline mb-0">{{ $liste[0]->name }}</h6>
-								<div class="text-muted"><small class="text-no-decoration"><!--{{ timeAgo($created_at) }} önce ekledi, en son {{ timeAgo($updated_at) }} önce güncelledi.-->{{ __('general.ago_message', ['created_at' => timeAgo($created_at) , 'updated_at' => timeAgo($updated_at)]) }}</small></div>
+								<div class="text-muted"><small class="text-no-decoration">{{ __('general.ago_message', ['created_at' => timeAgo($created_at) , 'updated_at' => timeAgo($updated_at)]) }}</small></div>
 							</div>
 						</div>
 					</a>
@@ -92,11 +92,11 @@
 					<div class="d-flex flex-row">
 						<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addseen opacity-1" ng-class="{'text-success':is_liked}" ng-click="like_list()" ng-disabled="{{Auth::check()==1?'false':'true'}}">
 							<div><i class="fas fa-heart" ng-show="is_liked"></i><i class="far fa-heart" ng-show="!is_liked"></i> @{{like_count}}</div>
-							Beğen
+							{{ __('general.like') }}
 						</button>
 						<a ng-href="{{config('constants.facebook.share_website')}}/list/{{$liste[0]->id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook">
 							<div><i class="fas fa-share"></i></div>
-							Paylaş
+							{{ __('general.share') }}
 						</a>
 					</div>
 				</div>

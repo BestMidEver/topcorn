@@ -39,7 +39,7 @@
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center">
 							<div class="text-white">
-								<span class="d-block"><span class="h5 text-warning">@{{list.like_count}}</span> <small>beğeni</small></span>
+								<span class="d-block"><span class="h5 text-warning">@{{list.like_count}}</span> <small ng-hide="list.like_count>1">{{ __('general.like_count') }}</small><small ng-show="list.like_count>1">{{ __('general.like_counts') }}</small></span>
 							</div>
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-if="active_tab=='get_lists'">
 		<div class="h-100 d-flex flex-column justify-content-center mx-2">
 			<div class="d-flex flex-row justify-content-center">
-				<a href="/createlist/new" class="btn btn-verydark border-circle text-white btn-lg" data-toggle="tooltip" data-placement="top" title="Liste Oluştur"><i class="fas fa-plus"></i></a>
+				<a href="/createlist/new" class="btn btn-verydark border-circle text-white btn-lg" data-toggle="tooltip" data-placement="top" title="{{ __('general.create_list') }}"><i class="fas fa-plus"></i></a>
 			</div>
 		</div>
 	</div>

@@ -15,7 +15,7 @@ return [
     'add_review' => 'Eleştiri Ekle',                                                    //movie,
     'advanced_recommendations' => 'Gelişmiş Tavsiyeler',                                //accountinterface,
     'ago_message' => 
-        ':created_at önce ekledis, en son :updated_at önce güncelledi.',                 //list,   /////////
+        ':created_at önce ekledi, en son :updated_at önce güncelledi.',                 //list,   //////////////////
     'all' => 'Hepsi',                                                                   //profile,
     'author' => 'Yaratıcı',         
     'ban' => 'Banla',           
@@ -33,6 +33,7 @@ return [
     'continue_without_facebook' => 'Facebook Olmadan Devam Et',                         //home
     'country' => 'Ülke',                                                                //donation,
     'cover_photo' => 'Kapak Fotoğrafı',                                                 //account,
+    'create_list' => 'Liste Oluştur',                                                   //list,                 ////////////////
     'create_new_password' => 'Yeni Şifre Oluştur',                                      //reset,
     'crew' => 'Set Ekibi',          
     'current_password' => 'Şimdiki Şifre',                                              //accountpassword,
@@ -69,8 +70,12 @@ return [
     'its_title' => 'Adı',
     'lang' => 'Dil',                                                                    //accountinterface,
     'language' => 'ORİJİNAL DİL',                                                       //recommendations_languages,
+    'like' => 'Beğen',                                                                  //list          //////////////////
+    'like_count' => 'beğeni',                                                           //list          //////////////////
+    'like_counts' => 'beğeni',                                                          //list          //////////////////
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
+    'list_remove_confirm' => 'Liste silinecek!',                                        //list,         //////////////////
     'm' => 'dk.',
     'match' => 'eşleşme',                                                               //recommendations,
     'margin_x_setting' => 'Tam Ekran',                                                  //accountinterface,
