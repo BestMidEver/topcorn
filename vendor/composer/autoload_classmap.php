@@ -71,6 +71,7 @@ return array(
     'App\\Model\\Later' => $baseDir . '/app/Model/Later.php',
     'App\\Model\\Liste' => $baseDir . '/app/Model/Liste.php',
     'App\\Model\\Listitem' => $baseDir . '/app/Model/Listitem.php',
+    'App\\Model\\Listlike' => $baseDir . '/app/Model/Listlike.php',
     'App\\Model\\Movie' => $baseDir . '/app/Model/Movie.php',
     'App\\Model\\Partie' => $baseDir . '/app/Model/Partie.php',
     'App\\Model\\Rated' => $baseDir . '/app/Model/Rated.php',

@@ -408,6 +408,7 @@ class ComposerStaticInitc1d52f4c3200949e1abe2578ee50dff0
         'App\\Model\\Later' => __DIR__ . '/../..' . '/app/Model/Later.php',
         'App\\Model\\Liste' => __DIR__ . '/../..' . '/app/Model/Liste.php',
         'App\\Model\\Listitem' => __DIR__ . '/../..' . '/app/Model/Listitem.php',
+        'App\\Model\\Listlike' => __DIR__ . '/../..' . '/app/Model/Listlike.php',
         'App\\Model\\Movie' => __DIR__ . '/../..' . '/app/Model/Movie.php',
         'App\\Model\\Partie' => __DIR__ . '/../..' . '/app/Model/Partie.php',
         'App\\Model\\Rated' => __DIR__ . '/../..' . '/app/Model/Rated.php',
