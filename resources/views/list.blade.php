@@ -15,8 +15,8 @@
 					<i class="fas fa-ellipsis-v"></i>
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">{{ __('general.remove') }}</a>
-					<button class="dropdown-item" ng-click="confirm_delete({{ $liste[0]->id }},'Liste silinecek!')">{{ __('general.edit') }}</button>
+					<a class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">{{ __('general.edit') }}</a>
+					<button class="dropdown-item" ng-click="confirm_delete({{ $liste[0]->id }},'{{ __('general.list_remove_confirm') }}')">{{ __('general.remove') }}</button>
 				</div>
 			</div>
 				@endif
