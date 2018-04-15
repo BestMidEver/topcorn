@@ -15,7 +15,6 @@
 					<i class="fas fa-ellipsis-v"></i>
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">Düzenle</a>
 					<button class="dropdown-item" ng-click="confirm_delete({{ $liste[0]->id }},'Liste silinecek!')">Sil</button>
 				</div>
 			</div>
@@ -23,18 +22,14 @@
 			@endif
 		</div>
 	</div>
-	<div class="col"></div>
-</div>
 
-@if(session()->has('status'))
+	@if(session()->has('status'))
     <div class="alert alert-success"> 
     {!! session('status') !!}
     </div>
-@endif
-<div class="container-fluid mt-3">
-	<div class="row">
-		<div class="col"></div>
-		<div class="col-12 col-xl-8">
+	@endif
+
+	<div class="row mt-3">
 			<form id="the_form" class="form-horizontal" role="form" method="POST" action="/createlist">
 				{{ csrf_field() }}
 				<input type="number" class="d-none" name="list_id" value="{{  $id }}">
@@ -214,7 +209,8 @@
 
 			</form>
 		</div>
-		<div class="col"></div>
 	</div>
+	<div class="col"></div>
+</div>
 </div>
 @endsection
