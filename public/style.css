@@ -29,6 +29,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .addseen:hover {color:#5cb85c!important;background-color: #ececec;}, .fa{color:#5cb85c!important;}
 .addlater:hover {color:#f0ad4e!important;background-color: #ececec;}, .fa{color:#f0ad4e!important;}
 .addfacebook:hover {color:#4267b2!important;background-color: #ececec;}, .fa{color:#4267b2!important;}
+.addlike:hover {color:#4267b2!important;background-color: #ececec;}, .fa{color:#4267b2!important;}
 .btn-vot{background: #fff!important;color: #000!important;}
 .divfooter{position: absolute;bottom: .5rem!important;width: 100%;}
 .votecard .card-img{z-index: 5;}
