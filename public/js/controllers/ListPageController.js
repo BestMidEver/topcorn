@@ -1,5 +1,8 @@
 MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 {console.log(pass)
+	$scope.like_list = function(){
+		console.log("MUHA :D çç")
+	}
 	$scope.movies = pass.movies;
 	
 	$scope.show_tooltip = function(movie_id){
