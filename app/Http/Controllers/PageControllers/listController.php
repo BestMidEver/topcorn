@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\SuckMovieJob;
 use App\Model\Liste;
 use App\Model\Listitem;
+use App\Model\Listlike;
 use App\Model\Rated;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -257,10 +258,7 @@ class listController extends Controller
 
     public function like_list($liste)
     {
-        $q = DB::table('listlikes')
-        ->where('user_id', '=', Auth::id())
-        ->where('list_id', '=', $liste)
-        Movie::updateOrCreate(
+        Listlike::updateOrCreate(
             ['user_id' => Auth::id(),
             'list_id' => $liste],
             []
