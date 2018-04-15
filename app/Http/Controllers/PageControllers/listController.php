@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\HttpFoundation\Response;
 
 class listController extends Controller
 {
@@ -274,7 +273,7 @@ class listController extends Controller
 
         return Response([
             'data' => $return_val,
-        ], Response::HTTP_CREATED);
+        ], 200);
     }
 
 
@@ -294,6 +293,6 @@ class listController extends Controller
 
         return Response([
             'data' => $return_val,
-        ], Response::HTTP_NO_CONTENT);
+        ], 200);
     }
 }
