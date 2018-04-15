@@ -94,10 +94,10 @@
 							<div><i class="far fa-heart"></i> {{ $liste[0]->like_count }}</div>
 							Beğen
 						</button>
-						<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban">
-							<div><i class="fas fa-share"></i> 4</div>
+						<a ng-href="{{config('constants.facebook.share_website')}}/list/{{$liste[0]->id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook">
+							<div><i class="fas fa-share"></i></div>
 							Paylaş
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
