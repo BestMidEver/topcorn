@@ -70,7 +70,7 @@
 				</div>
 			</div>
 
-			<div class="py-3 col mt-5">
+			<div class="py-3 mt-5">
 				<h6 class="lead">{{ $liste[0]->entry_2 }}</h6>
 			</div>
 
