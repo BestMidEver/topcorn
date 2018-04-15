@@ -132,7 +132,7 @@ class listController extends Controller
 
 
 
-    public function createlist($id = 'new')
+    public function create_list($id = 'new')
     {
         $image_quality = Auth::User()->image_quality;
 
@@ -234,7 +234,7 @@ class listController extends Controller
 
 
 
-    public function deletelist($liste)
+    public function delete_list($liste)
     {
         if($liste != 'new'){
             $q = DB::table('listes')
@@ -250,5 +250,15 @@ class listController extends Controller
         }
        
         return redirect('/profile/'.Auth::id().'#!#Lists');
+    }
+
+
+
+
+    public function like_list($liste)
+    {
+        
+       
+        return $liste;
     }
 }
