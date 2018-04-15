@@ -15,8 +15,8 @@
 					<i class="fas fa-ellipsis-v"></i>
 				</button>
 				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">Düzenle</a>
-					<button class="dropdown-item" ng-click="confirm_delete({{ $liste[0]->id }},'Liste silinecek!')">Sil</button>
+					<a class="dropdown-item" href="/createlist/{{ $liste[0]->id }}">{{ __('general.remove') }}</a>
+					<button class="dropdown-item" ng-click="confirm_delete({{ $liste[0]->id }},'Liste silinecek!')">{{ __('general.delete') }}</button>
 				</div>
 			</div>
 				@endif
@@ -83,7 +83,7 @@
 							</div>
 							<div class="d-flex flex-column justify-content-center ml-2">
 								<h6 class="text-dark text-hover-underline mb-0">{{ $liste[0]->name }}</h6>
-								<div class="text-muted"><small class="text-no-decoration">{{ timeAgo($created_at) }} önce ekledi, en son {{ timeAgo($updated_at) }} önce güncelledi.</small></div>
+								<div class="text-muted"><small class="text-no-decoration"><!--{{ timeAgo($created_at) }} önce ekledi, en son {{ timeAgo($updated_at) }} önce güncelledi.-->{{ __('general.ago_message', ['created_at' => timeAgo($created_at) , 'updated_at' => timeAgo($updated_at)]) }}</small></div>
 							</div>
 						</div>
 					</a>

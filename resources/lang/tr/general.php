@@ -14,6 +14,8 @@ return [
     'add_person' => 'Beraber İzle',                                                     //recommendations,
     'add_review' => 'Eleştiri Ekle',                                                    //movie,
     'advanced_recommendations' => 'Gelişmiş Tavsiyeler',                                //accountinterface,
+    'ago_message' => 
+        ':created_at önce ekledi, en son :updated_at önce güncelledi.',                 //list,   /////////
     'all' => 'Hepsi',                                                                   //profile,
     'author' => 'Yaratıcı',         
     'ban' => 'Banla',           
@@ -43,7 +45,8 @@ return [
     'definitely_recommend' => 'Efsanevi',                                               //ratemodal, profile,
     'dollar_account' => 'Dolar Hesabı',                                                 //donation,
     'dont_recommend' => 'Kötü',                                                         //ratemodal, profile,
-    'editing' => 'Kurgu',
+    'edit' => 'Düzenle',                                                                //list                      /////////////
+    'editing' => 'Kurgu',   
     'email' => 'E-Posta',                                                               //email, reset, login, register,
     'email_confirmation' => 'Tekrar E-Posta',                                           //register,
     'ethereum' => 'Ethereum',                                                           //donation,
