@@ -18,9 +18,9 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 		}).then(function successCallback(response) {
 			console.log(response);
 			if($scope.is_liked){
-				$scope.is_liked = true;
-			}else{
 				$scope.is_liked = false;
+			}else{
+				$scope.is_liked = true;
 			}
 		}, function errorCallback(response) {
 		});
