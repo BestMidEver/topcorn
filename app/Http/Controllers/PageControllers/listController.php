@@ -281,7 +281,7 @@ class listController extends Controller
         }
 
         $like_count = DB::table('listlikes')
-        ->where('listlikes.list_id', '=', $id)
+        ->where('listlikes.list_id', '=', $liste)
         ->count();
 
         return [$return_val, $like_count];
@@ -302,7 +302,7 @@ class listController extends Controller
         }
         
         $like_count = DB::table('listlikes')
-        ->where('listlikes.list_id', '=', $id)
+        ->where('listlikes.list_id', '=', $liste)
         ->count();
 
         return [$return_val, $like_count];
