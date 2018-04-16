@@ -219,16 +219,16 @@ class listController extends Controller
         $temp2 = array();
         $temp3 = array();
         foreach ($request->items as $index=>$value) {
-            array_push($temp, $value[0]);
-            array_push($temp2, $value[1]);
-            $explanation = count($value)>2 ? $value[2]: '';
-            array_push($temp3, $explanation);
+            if(!in_array( $value[1], $temp2)){
+                array_push($temp, $value[0]);
+                array_push($temp2, $value[1]);
+                $explanation = count($value)>2 ? $value[2]: '';
+                array_push($temp3, $explanation);
+            }
         }
         array_multisort($temp,$temp2,$temp3);
         foreach ($temp2 as $index=>$value) {
             if($value > 0){
-                Listitem::where(['list_id' => $liste->id, 'movie_id' => $value])->delete();
-
                 $listitem = new Listitem;
                 $listitem->list_id = $liste->id;
                 $listitem->movie_id = $value;
