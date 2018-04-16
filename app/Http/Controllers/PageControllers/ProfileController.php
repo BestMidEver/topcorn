@@ -236,7 +236,6 @@ class ProfileController extends Controller
         })
         ->leftjoin('movies as m6', 'm6.id', '=', 'l6.movie_id')
         ->select(
-            'listes.*',
             'listes.id',
             'listes.title',
             'listes.like_count',
