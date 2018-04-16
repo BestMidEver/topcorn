@@ -172,7 +172,7 @@
 								<div class="input-group-prepend pl-md-3">
 									<span class="input-group-text"><i class="fas fa-film"></i></span>
 								</div>
-								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!movie.searchmode" type="text" class="form-control" ng-click="movie.searchmode=true;set_focus($index)" ng-init="muhahah" ng-model="movie.movie_title" placeholder="{{ __('general.enter_movie_name') }}">
+								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!movie.searchmode" type="text" class="form-control" ng-click="movie.searchmode=true;set_focus($index)" ng-init="movie.movie_titl=muhahah" ng-model="movie.movie_title" placeholder="{{ __('general.enter_movie_name') }}">
 								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="movie.movie_id" name="items[@{{$index}}][1]">
 								<input ng-attr-id="back_of_vitrin_@{{$index}}" ng-show="movie.searchmode" type="text" class="form-control" placeholder="{{ __('general.enter_movie_name') }}" ng-focus="movie.search=true" ng-blur="movie.search=false" ng-model="movie.input" ng-change="search_movie(movie)" ng-model-options="{debounce: 750}">
 								<div ng-show="(movie.search || movie.choosing) && movie.movies.length > 0 && movie.searchmode" class="search-movie-results background-white py-3" ng-mouseenter="movie.choosing=true" ng-mouseleave="movie.choosing=false">
