@@ -79,7 +79,7 @@
 					<a href="/profile/{{ $liste[0]->user_id }}#!#Lists" class="text-no-decoration">
 						<div class="d-flex flex-row">
 							<div class="d-flex flex-column">
-								<img src="{{ $liste[0]->profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
+								<img ng-src="{{ $liste[0]->profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
 							</div>
 							<div class="d-flex flex-column justify-content-center ml-2">
 								<h6 class="text-dark text-hover-underline mb-0">{{ $liste[0]->name }}</h6>
