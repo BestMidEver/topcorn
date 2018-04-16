@@ -15,4 +15,7 @@ return [
     'profile' => ' - Topcorn',
     'recommendations' => 'Zevkinize Uygun Film Önerileri - Topcorn',
     'search' => 'Ara - Film | Kişi | Kullanıcı - Topcorn',
+    'list' => ' - Topcorn',
+    'createlist' => 'Ara - Film | Kişi | Kullanıcı - Topcorn',
+    'editlist' => 'Ara - Film | Kişi | Kullanıcı - Topcorn',
 ];

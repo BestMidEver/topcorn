@@ -22,5 +22,5 @@ pass={
 @section('controllername','ListPageController')
 
 @section('title')
-{{ __('title.list') }}
+{{ $liste[0]->title.__('title.list') }}
 @endsection
