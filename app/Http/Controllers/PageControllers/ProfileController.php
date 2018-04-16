@@ -197,12 +197,6 @@ class ProfileController extends Controller
 
     public function get_lists($user)
     {
-        if(Auth::check()){
-            $pagin=Auth::User()->pagination;
-        }else{
-            $pagin=24;
-        }
-
         $return_val = DB::table('listes')
         ->where('listes.user_id', $user)
         ->leftjoin('listlikes', function ($join) {
