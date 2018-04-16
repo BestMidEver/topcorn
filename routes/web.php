@@ -78,7 +78,7 @@ Route::get('movie/{id}/{lang?}/{secondary_lang?}', 'PageControllers\movieControl
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
 Route::get('api/get_user_movie_record/{movie}','PageControllers\movieController@get_user_movie_record');//IMPLEMENT AUTH
-Route::get('api/get_movie_lists/{user}','PageControllers\movieController@get_movie_lists');
+Route::get('api/get_movie_lists/{movie}','PageControllers\movieController@get_movie_lists');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// MOVIE PAGE (PULBIC) ////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
