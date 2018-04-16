@@ -115,7 +115,7 @@ return [
     'options' => 'Options',                                                 //accountinterface,
     'or' => 'OR',                                                           //login, register,
     'ordering' => 'Ordering',                                               //list,         
-    'ordering_321' => '50 - 49 - 48 - 47 ...',                                     //list,         
+    'ordering_321' => '... 5 - 4 - 3 - 2 - 1',                                     //list,         
     'ordering_123' => '1 - 2 - 3 - 4 - 5 ...',                                       //list,         
     'original_title' => 'Original Title',                                   //movie,
     'original_language' => 'Original Language',                             //movie,
