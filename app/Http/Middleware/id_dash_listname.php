@@ -21,7 +21,7 @@ class id_dash_listname
         if($liste->count() > 0) $liste = $liste->first();
         else return $next($request);
 
-        $correct_url = $liste->id.'-'.str_replace(' ', '-', $liste->title);
+        $correct_url = $liste->id;//.'-'.str_replace(' ', '-', $liste->title);
         
         if($request->user == $correct_url){
             return $next($request);
