@@ -21,7 +21,7 @@ class id_dash_username
         if($user->count() > 0) $user = $user->first();
         else return $next($request);
 
-        $correct_url = $user->id.'-'.str_replace(' ', '-', $user->name);
+        $correct_url = $user->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $user->name);
         
         if($request->user == $correct_url){
             return $next($request);

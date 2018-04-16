@@ -16,6 +16,10 @@ class id_dash_listname
      */
     public function handle($request, Closure $next)
     {
+        if($request->id == 'new'){
+            return $next($request);
+        }
+        
         $liste = Liste::where(['id' => $request->id]);
 
         if($liste->count() > 0) $liste = $liste->first();
