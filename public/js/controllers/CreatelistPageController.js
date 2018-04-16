@@ -1,4 +1,4 @@
-MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate)
+MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, rate, $window)
 {
 	$scope.confirm_delete = function(list_id, message){
 		var r = confirm(message);
