@@ -100,14 +100,14 @@ class movieController extends Controller
 
 
     public function get_movie_lists($movie)
-    {return $movie;
-        /*$return_val = DB::table('listes')
+    {
+        $return_val = DB::table('listes')
         ->leftjoin('listlikes', function ($join) {
             $join->on('listlikes.list_id', '=', 'listes.id');
         })
         ->join('listitems as l0', function ($join) {
             $join->on('l0.list_id', '=', 'listes.id')
-            ->where('l0.movie_id', '=', $movie);
+            ->where('l0.movie_id', '=', 947);
         })
         ->leftjoin('listitems as l1', function ($join) {
             $join->on('l1.list_id', '=', 'listes.id')
@@ -161,6 +161,6 @@ class movieController extends Controller
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         }
 
-        return $return_val;*/
+        return $return_val;
     }
 }
