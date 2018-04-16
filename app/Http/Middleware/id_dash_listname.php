@@ -19,7 +19,7 @@ class id_dash_listname
         if($request->id == 'new'){
             return $next($request);
         }
-        
+
         $liste = Liste::where(['id' => $request->id]);
 
         if($liste->count() > 0) $liste = $liste->first();
@@ -30,7 +30,11 @@ class id_dash_listname
         if($request->id == $correct_url){
             return $next($request);
         }else{
-            return redirect('/list/'.$correct_url);
+            if ($request->is('list/*')) {
+                return redirect('/list/'.$correct_url);
+            }else{
+                return redirect('/createlist/'.$correct_url);
+            }
         }
     }
 }
