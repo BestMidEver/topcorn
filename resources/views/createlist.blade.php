@@ -69,7 +69,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control" id="entry_1" name="entry_1"  oninput='this.style.height = "";this.style.height = (this.scrollHeight+5) + "px"'>{{ $liste != '[]' ? $liste[0]->entry_1 : '' }}</textarea>
+								<textarea type="text" class="form-control" id="entry_1" name="entry_1">{{ $liste != '[]' ? $liste[0]->entry_1 : '' }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -84,7 +84,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control" id="entry_2" name="entry_2" rows="3">{{ $liste != '[]' ? $liste[0]->entry_2 : '' }}</textarea>
+								<textarea type="text" class="form-control" id="entry_2" name="entry_2">{{ $liste != '[]' ? $liste[0]->entry_2 : '' }}</textarea>
 							</div>
 						</div>
 					</div>
