@@ -7,22 +7,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		}
 	}
 	
-	//$scope.list=[];
 	$scope.movies = pass.movies == '[]' ? []:pass.movies;
-	console.log($scope.movies)
-
-	/*for(var index in pass.liste){
-		console.log(pass.liste)
-		$scope.list.push( {
-			'position':pass.liste[index].position,
-			'movie_title':pass.liste[index].movie_title,
-			'movie_id':pass.liste[index].movie_id,
-			'poster_path':pass.liste[index].poster_path,
-			'user_text':pass.liste[index].title,
-			'overview':pass.liste[index].overview,
-			'explanation':pass.liste[index].explanation
-		} );
-	}*/
 
 	$scope.search_movie = function(movie){
 		var temp=movie.input.replace(/ /g , "%20");
