@@ -82,7 +82,7 @@ return [
     'login_via_facebook' => 'Login via Facebook',                           //login, register,
     'low' => 'Low',                                                         //accountinterface,
     'lists' => 'Custom Lists',                                              //list,  
-    'list_description' => 'Explanation',                                    //list,         
+    'list_description' => 'Description',                                    //list,         
     'list_properties' => 'List Properties',                                 //list,         
     'list_remove_confirm' => 'The list will be deleted!',                   //list,         
     'list_updated' => 'Your list has been updated successfully.',           //list,         
