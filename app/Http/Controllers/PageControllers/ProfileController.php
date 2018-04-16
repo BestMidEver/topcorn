@@ -241,7 +241,7 @@ class ProfileController extends Controller
         ->select(
             'listes.id',
             'listes.title',
-            DB::raw('COUNT(listes.id) as like_count'),
+            DB::raw('COUNT(listlikes.list_id) as like_count'),
             'listes.updated_at',
             DB::raw('LEFT(listes.entry_1 , 50) AS entry_1'),
             DB::raw('LEFT(listes.entry_1 , 51) AS entry_1_raw'),
