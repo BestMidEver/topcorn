@@ -100,7 +100,7 @@ class movieController extends Controller
 
 
 
-    public function get_movie_lists($movie)
+    public function get_movie_lists($movie, Request $request)
     {
         $return_val = DB::table('listes')
         ->leftjoin('listlikes', function ($join) {
