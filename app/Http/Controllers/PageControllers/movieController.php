@@ -108,7 +108,7 @@ class movieController extends Controller
         })
         ->join('listitems as l0', function ($join) use ($request) {
             $join->on('l0.list_id', '=', 'listes.id')
-            ->where('l0.movie_id', '=', $movie);
+            ->where('l0.movie_id', '=', $request->movie);
         })
         ->leftjoin('listitems as l1', function ($join) {
             $join->on('l1.list_id', '=', 'listes.id')
