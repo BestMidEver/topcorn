@@ -17,5 +17,5 @@ return [
     'search' => 'Ara - Film | Kişi | Kullanıcı - Topcorn',
     'list' => ' - Topcorn',
     'createlist' => 'Liste Oluştur - Topcorn',
-    'editlist' => 'Liste Düzenle - :title - Topcorn',
+    'editlist' => 'Düzenle - :title - Topcorn',
 ];

@@ -15,4 +15,7 @@ return [
     'profile' => ' - Topcorn',
     'recommendations' => 'Movie Recommendations Based on Your Taste - Topcorn',
     'search' => 'Search - Movie | Person | User - Topcorn',
+    'list' => ' - Topcorn',
+    'createlist' => 'Create List - Topcorn',
+    'editlist' => 'Edit - :title - Topcorn',
 ];

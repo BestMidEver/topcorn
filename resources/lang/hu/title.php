@@ -15,4 +15,7 @@ return [
     'profile' => ' - Topcorn',
     'recommendations' => 'Testre szabott filmjavaslatok - Topcorn',
     'search' => 'Keresés - Film | Személy | Felhasználó - Topcorn',
+    'list' => ' - Topcorn',
+    'createlist' => 'Create List - Topcorn',
+    'editlist' => 'Edit - :title - Topcorn',
 ];
