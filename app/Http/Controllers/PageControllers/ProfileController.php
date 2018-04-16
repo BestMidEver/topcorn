@@ -205,6 +205,9 @@ class ProfileController extends Controller
 
         $return_val = DB::table('listes')
         ->where('listes.user_id', $user)
+        ->leftjoin('listlikes', function ($join) {
+            $join->on('listlikes.list_id', '=', 'listes.id');
+        })
         ->leftjoin('listitems as l1', function ($join) {
             $join->on('l1.list_id', '=', 'listes.id')
             ->where('l1.position', '=', 1);
@@ -238,7 +241,7 @@ class ProfileController extends Controller
         ->select(
             'listes.id',
             'listes.title',
-            'listes.like_count',
+            DB::raw('COUNT(listes.id) as like_count'),
             'listes.updated_at',
             DB::raw('LEFT(listes.entry_1 , 50) AS entry_1'),
             DB::raw('LEFT(listes.entry_1 , 51) AS entry_1_raw'),
@@ -249,6 +252,7 @@ class ProfileController extends Controller
             'm5.'.App::getlocale().'_poster_path as m5_poster_path',
             'm6.'.App::getlocale().'_poster_path as m6_poster_path'
         )
+        ->groupBy('listes.id')
         ->orderBy('listes.updated_at', 'desc')
         ->get();
 
