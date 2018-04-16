@@ -374,7 +374,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 	}
 
 	$scope.votemodal=function(index, movie)
-	{
+	{console.log(movie)
 		$scope.modalmovie=movie;
 		$scope.modalmovie.index=index;
 		$('#myModal').modal('show');
