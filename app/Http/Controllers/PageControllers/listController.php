@@ -230,9 +230,9 @@ class listController extends Controller
                 SuckMovieJob::dispatch($value, false)->onQueue("high");
 
                 Listitem::updateOrCreate(
-                    ['list_id' => $liste->id,
+                    ['list_id' => ($liste->id),
                     'movie_id' => $value],
-                    ['position' => $index+1,
+                    ['position' => ($index+1),
                     'explanation' => $temp3[$index]]
                 );
             }
