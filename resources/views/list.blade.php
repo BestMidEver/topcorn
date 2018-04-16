@@ -52,16 +52,16 @@
 								@endif
 							</div>
 							<div class="row no-gutters pt-3 pt-md-2">
-								<div class="col-4 col-xl-3">
+								<div class="col-4 col-md-3 col-xl-2">
 									<a ng-href="/movie/@{{movie.id}}" ng-mouseover="show_tooltip('movie-'+movie.id)" ng-mouseleave="hide_tooltip('movie-'+movie.id)()">
 										<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="" class="card-img-top" alt="Responsive image">
 									</a>
 								</div>
 
-								<div class="col-8 col-xl-9 lead lead-small" ng-if="!movie.explanation">
+								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-if="!movie.explanation">
 									<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.overview }}</div>
 								</div>
-								<div class="col-8 col-xl-9 lead lead-small" ng-if="movie.explanation">
+								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-if="movie.explanation">
 									<div class="pl-3 pr-1 pb-1 text-dark line-break">@{{ movie.explanation }}</div>
 								</div>
 							</div>
