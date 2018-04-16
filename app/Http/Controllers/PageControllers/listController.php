@@ -227,14 +227,15 @@ class listController extends Controller
         array_multisort($temp,$temp2,$temp3);
         foreach ($temp2 as $index=>$value) {
             if($value > 0){
-                SuckMovieJob::dispatch($value, false)->onQueue("high");
+                Listitem::where(['list_id' => $liste->id, 'movie_id' => $value])->delete();
 
-                Listitem::updateOrCreate(
-                    ['list_id' => ($liste->id),
-                    'movie_id' => $value],
-                    ['position' => ($index+1),
-                    'explanation' => $temp3[$index]]
-                );
+                $listitem = new Listitem;
+                $listitem->list_id = $liste->id;
+                $listitem->movie_id = $value;
+                $listitem->position = $index+1;
+                $listitem->explanation = $temp3[$index];
+                $listitem->save();
+                SuckMovieJob::dispatch($value, false)->onQueue("high");
             }
         }
         $request->session()->flash('status', __('general.list_updated'));
