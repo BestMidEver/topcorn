@@ -57,6 +57,7 @@
 		</div>
 	</div>
 
+	@if($profile_user_id == Auth::user()->id)
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-if="active_tab=='get_lists'">
 		<div class="h-100 d-flex flex-column justify-content-center mx-2">
 			<div class="d-flex flex-row justify-content-center">
@@ -64,6 +65,7 @@
 			</div>
 		</div>
 	</div>
+	@endif
 </div>
 
 
