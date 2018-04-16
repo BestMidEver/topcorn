@@ -37,7 +37,7 @@
 						</div>
 					</div>-->
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
-						<div class="d-flex flex-row justify-content-center">
+						<div class="d-flex flex-row justify-content-center" ng-if="list.like_count > 0">
 							<div class="text-white">
 								<span class="d-block"><span class="h5 text-warning">@{{list.like_count}}</span> <small ng-hide="list.like_count>1">{{ __('general.like_count') }}</small><small ng-show="list.like_count>1">{{ __('general.like_counts') }}</small></span>
 							</div>
@@ -46,7 +46,7 @@
 					<!--<div class="p-2 text-right moviecard-percent">
 						<div><span class="badge btn-verydark text-white">44</span></div>
 					</div>-->
-					<div class="p-2 text-right moviecard-rating">
+					<div class="p-2 text-right moviecard-rating" ng-if="list.like_count > 0">
 						<div><span class="badge btn-verydark text-white">@{{list.like_count}}</span></div>
 					</div>
 				</div>
