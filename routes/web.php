@@ -88,7 +88,7 @@ Route::get('api/get_user_movie_record/{movie}','PageControllers\movieController@
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// LIST PAGE (PULBIC) /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-Route::get('list/{id}', 'PageControllers\listController@list');/*->middleware('id_dash_listname')*/
+Route::get('list/{id}', 'PageControllers\listController@list')->middleware('id_dash_listname');
 Route::get('createlist/{id?}', 'PageControllers\listController@create_list');/*->middleware('id_dash_listname')*/
 
 Route::get('deletelist/{id}', 'PageControllers\listController@delete_list');

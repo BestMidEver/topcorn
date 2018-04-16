@@ -64,5 +64,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'id_dash_moviename' => \App\Http\Middleware\id_dash_moviename::class,
         'id_dash_username' => \App\Http\Middleware\id_dash_username::class,
+        'id_dash_listname' => \App\Http\Middleware\id_dash_listname::class,
     ];
 }
