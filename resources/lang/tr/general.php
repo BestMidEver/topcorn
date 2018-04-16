@@ -81,6 +81,7 @@ return [
     'like_counts' => 'beğeni',                                                          //list          
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
+    'lists' => 'Listeler',                                                              //list,         
     'list_description' => 'Açıklama',                                                   //list,         
     'list_properties' => 'Liste Özellikleri',                                           //list,         
     'list_remove_confirm' => 'Liste silinecek!',                                        //list,         

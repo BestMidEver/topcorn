@@ -81,6 +81,7 @@ return [
     'like_counts' => 'likes',                                               //list          //////////////////
     'login_via_facebook' => 'Belépés Facebook-on keresztül',                //login, register,
     'low' => 'Alacsony adatforgalom',                                       //accountinterface,
+    'lists' => 'Custom Lists',                                              //list,         //////////////////
     'list_description' => 'Explanation',                                    //list,         //////////////////
     'list_properties' => 'List Properties',                                 //list,         //////////////////
     'list_remove_confirm' => 'The list will be deleted!',                   //list,         //////////////////
