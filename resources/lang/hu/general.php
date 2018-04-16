@@ -65,7 +65,7 @@ return [
     'genre' => 'MŰFAJ',                                                     //recommendations_genres,
     'h' => 'ó',                                 
     'havent_seen' => 'Nem láttam',                                          //ratemodal,
-    'header' => 'Heading',                                                  //list,             ///////////////
+    'header' => 'Heading*',                                                 //list,             ///////////////
     'high' => 'Magas adatforgalom',                                         //accountinterface,
     'hismovies' => 'Filmjei',                                               //person
     'hover_title_language' => 'Buboréksúgó',                                //accountinterface,

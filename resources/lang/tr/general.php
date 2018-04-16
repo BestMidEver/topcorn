@@ -65,7 +65,7 @@ return [
     'genre' => 'TÜR',                                                                   //recommendations_genres,
     'h' => 'sa.',
     'havent_seen' => 'İzlemedim',                                                       //ratemodal,
-    'header' => 'Manşet',                                                               //list,             
+    'header' => 'Manşet*',                                                              //list,             
     'high' => 'Yüksek',                                                                 //accountinterface,
     'hismovies' => 'Filmleri',
     'hover_title_language' => 'Film İpucu',                                             //accountinterface,

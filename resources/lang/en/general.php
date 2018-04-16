@@ -65,7 +65,7 @@ return [
     'genre' => 'GENRE',                                                     //recommendations_genres,
     'h' => 'h',                                                             //movie,
     'havent_seen' => 'Haven\'t Seen',                                       //ratemodal,
-    'header' => 'Heading',                                                  //list,             
+    'header' => 'Heading*',                                                 //list,             
     'high' => 'High',                                                       //accountinterface,
     'hismovies' => 'Movies',                                                //person,
     'hover_title_language' => 'Movie Tooltip',                              //accountinterface,

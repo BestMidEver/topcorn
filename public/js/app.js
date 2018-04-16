@@ -72,7 +72,7 @@ $(document).ready(function() {
 		});
 	});
 
-	$("textarea").each(function(i, obj) {
+	$("textarea.auto-resize").each(function(i, obj) {
 		this.style.height = "";
 		this.style.height = (this.scrollHeight+3) + "px";
 	});
