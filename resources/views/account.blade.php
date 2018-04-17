@@ -179,7 +179,53 @@
 				        </div>
 				    </div>
 				</div>
-				<div class="row">
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="current_password">Twitter</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text">https://twitter.com/</div>
+				                </div>
+				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="current_password">Instagram</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text">https://www.instagram.com/</div>
+				                </div>
+				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row mt-3">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="current_password">Youtube</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				            	<div class="input-group-prepend">
+				                	<div class="input-group-text">https://www.youtube.com/channel/</div>
+				                </div>
+				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				            </div>
+				        </div>
+				    </div>
+				</div>
+
+				<div class="row mt-3">
 				    <div class="col-md-3"></div>
 				    <div class="col-md-6">
 				        <button type="submit" class="btn btn-primary btn-block" ng-disabled="is_save_disabled">{{ __('general.save_changes') }}</button>
