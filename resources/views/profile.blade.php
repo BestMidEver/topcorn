@@ -45,20 +45,6 @@
 							<i class="fas fa-heart"></i><div class="d-inline pl-1" >72</div>
 						</div>
 					</div>
-					<div class="d-flex flex-row align-items-center text-light mt-4 ml-2 fa22">
-						<div>
-							<i class="fab fa-instagram"></i>
-						</div>
-						<div class="pl-3">
-							<i class="fab fa-facebook-square"></i>
-						</div>
-						<div class="pl-3">
-							<i class="fab fa-twitter-square"></i>
-						</div>
-						<div class="pl-3">
-							<i class="fab fa-linkedin"></i>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -72,6 +58,11 @@
 		@endif
 	</div>
 	@endif
+	<div class="right-bottom fa22">
+		<a class="btn btn-link mt-2 mr-2 text-light" href="#"><i class="fab fa-instagram"></i></a>
+		<a class="btn btn-link mt-2 mr-2 text-light" href="#"><i class="fab fa-facebook-square"></i></a>
+		<a class="btn btn-link mt-2 mr-2 text-light" href="#"><i class="fab fa-linkedin"></i></a>
+	</div>
 </div>
 
 <div class="container-fluid mt-3 pb-3">
