@@ -46,8 +46,8 @@ class recommendationsController extends Controller
 
 
     public function get_top_rateds($tab, Request $request)
-    { return ":D"
-        /*$start = microtime(true);
+    {
+        $start = microtime(true);
 
         if(auth::check()){
             if(Auth::User()->hover_title_language == 0){
@@ -171,7 +171,8 @@ class recommendationsController extends Controller
 
             return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
         }else{
-            $return_val = DB::table('movies')
+            return 1;
+            /*$return_val = DB::table('movies')
             ->select(
                 'movies.id',
                 'movies.original_title as original_title',
@@ -192,8 +193,8 @@ class recommendationsController extends Controller
             }
 
 
-            return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
-        }*/
+            return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];*/
+        }
     }
 
 
