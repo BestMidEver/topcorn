@@ -212,6 +212,20 @@ class listController extends Controller
             'sort' => $request->sort_by]
         );
 
+        $liste = Liste::where(['user_id' => Auth::id(), 'id' => $request->list_id])->first();
+        if(!$liste){
+            $liste = new Liste;
+            $liste->user_id = Auth::id();
+        }
+        $liste->title = $request->header;
+        $liste->entry_1 = $request->entry_1;
+        $liste->entry_2 = $request->entry_2;
+        $liste->visibility = $request->visibility;
+        $liste->sort = $request->sort_by;
+
+        $liste->save();
+
+
         $liste->increment('fb_comment_count');
 
         Listitem::where(['list_id' => $liste->id])->delete();
