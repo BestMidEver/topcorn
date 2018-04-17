@@ -326,9 +326,11 @@
 		<div class="d-inline mt-3">
 			<span class="h5 mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		</div>
-		<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
-			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
-		</a>
+		<div class="d-inline mt-1">
+			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
+				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
+			</a>
+		</div>
 	</div>
 	<div class="card-group no-gutters py-4">
 		@include('layout.listcard')
