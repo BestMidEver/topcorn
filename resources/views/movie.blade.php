@@ -205,7 +205,7 @@
 	<div class="px-3 px-md-0"><div class="h5">{{ __('general.actors') }}</div></div>
 	<div class="">
 		<div class="d-flex flex-wrap">
-			<div class="col-4 col-md-2 mt-2 px-2" ng-repeat="person in movie.credits.cast | limitTo:6">
+			<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in movie.credits.cast | limitTo:6">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 					<a href="/person/@{{person.id}}" target={{$target}}>
 						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
@@ -221,7 +221,7 @@
 	<div class="collapse" id="collapseCast">
 		<div ng-if="movie.credits.cast.length > 6">
 			<div class="d-flex flex-wrap">
-				<div class="col-4 col-md-2 mt-2 px-2" ng-repeat="person in movie.credits.cast | limitTo:100:6">
+				<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in movie.credits.cast | limitTo:100:6">
 					<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 						<a href="/person/@{{person.id}}" target={{$target}}>
 							<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
@@ -239,7 +239,7 @@
 		<div class="px-3 px-md-0 mt-5" ng-if="movie.credits.crew.length > 0"><div class="h5">Set Ekibi</div></div>
 		<div ng-if="movie.credits.crew.length > 0">
 			<div class="d-flex flex-wrap">
-				<div class="col-4 col-md-2 mt-2 px-2" ng-repeat="person in movie.credits.crew">
+				<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in movie.credits.crew">
 					<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 						<a href="/person/@{{person.id}}" target={{$target}}>
 							<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
