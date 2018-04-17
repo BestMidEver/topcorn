@@ -204,7 +204,7 @@ class listController extends Controller
             'header' => 'required'
         ]);
 
-        /*$liste = Liste::updateOrCreate(
+        $liste = Liste::updateOrCreate(
             ['user_id' => Auth::id(),
             'id' => $request->list_id],
             ['title' => $request->header,
@@ -212,8 +212,8 @@ class listController extends Controller
             'entry_2' => $request->entry_2,
             'visibility' => $request->visibility,
             'sort' => $request->sort_by]
-        );*/
-        return $request->list_id;
+        );
+        /*return $request->list_id;
         $liste = Liste::where(['user_id' => Auth::id(), 'id' => $request->list_id])->first();
         if(!$liste){
             $liste = new Liste;
@@ -225,7 +225,7 @@ class listController extends Controller
         $liste->visibility = $request->visibility;
         $liste->sort = $request->sort_by;
 
-        $liste->save();
+        $liste->save();*/
 
 
         $liste->increment('fb_comment_count');
