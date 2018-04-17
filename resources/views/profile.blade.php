@@ -35,13 +35,13 @@
 						<h5><span class="yeswrap text-left text-light">{{ $profile_user_name }}</span></h5>
 					</div>
 					<div class="d-flex flex-row align-items-center text-light ml-2">
-						<div>
+						<div data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_movie_number') }}">
 							<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
 						</div>
-						<div class="pl-3">
+						<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.list_number') }}">
 							<i class="fas fa-plus"></i><div class="d-inline pl-1" >6</div>
 						</div>
-						<div class="pl-3">
+						<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.like_number') }}">
 							<i class="fas fa-heart"></i><div class="d-inline pl-1" >72</div>
 						</div>
 					</div>

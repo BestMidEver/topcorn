@@ -79,10 +79,12 @@ return [
     'like' => 'Beğen',                                                                  //list          
     'like_count' => 'beğeni',                                                           //list          
     'like_counts' => 'beğeni',                                                          //list          
+    'like_number' => 'Aldığı beğeni sayısı',                                            //profile       /////////////          
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
     'lists' => 'Listeler',                                                              //list,         
     'list_description' => 'Açıklama',                                                   //list,         
+    'list_number' => 'Oluşturduğu liste sayısı',                                        //profile,          ////////////         
     'list_properties' => 'Liste Özellikleri',                                           //list,         
     'list_remove_confirm' => 'Liste silinecek!',                                        //list,         
     'list_updated' => 'Listeniz güncellendi.',                                          //list,         
@@ -197,6 +199,7 @@ return [
     'visibility' => 'Kimler Görebilir?',                                                //list                  
     'watch_later' => 'Sonra İzle',          
     'watch_together' => 'Beraber İzle',                                                 //profile,
+    'watched_movie_number' => 'İzlenilen film sayısı',                                  //profile,              //////////
     'writer' => 'Yazar',
     'writers' => 'Yazarlar',
     'writing' => 'Senaryo',
