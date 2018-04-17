@@ -45,7 +45,7 @@
 							<i class="fas fa-heart"></i><div class="d-inline pl-1" >72</div>
 						</div>
 					</div>
-					<div class="d-flex flex-row align-items-center text-light mt-2 ml-2 fa22">
+					<div class="d-flex flex-row align-items-center text-light mt-4 ml-2 fa22">
 						<div>
 							<i class="fab fa-instagram"></i>
 						</div>
