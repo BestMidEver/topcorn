@@ -46,8 +46,8 @@ class recommendationsController extends Controller
 
 
     public function get_top_rateds($tab, Request $request)
-    {
-        $start = microtime(true);
+    { return ":D"
+        /*$start = microtime(true);
 
         if(auth::check()){
             if(Auth::User()->hover_title_language == 0){
@@ -193,7 +193,7 @@ class recommendationsController extends Controller
 
 
             return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
-        }
+        }*/
     }
 
 
