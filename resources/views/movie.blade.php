@@ -100,10 +100,10 @@
 <!--Trailer Section-->
 
 <!--Under Trailer Section-->
-<div class="h4 d-flex flex-wrap justify-content-between">
+<div class="d-flex flex-wrap justify-content-between">
 	<div>
 		<div class="d-flex flex-column">
-			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-2"
+			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank"><h1 class="h4 py-3"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="google"
