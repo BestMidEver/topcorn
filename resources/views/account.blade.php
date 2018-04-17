@@ -172,7 +172,7 @@
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				            	<div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem">https://www.facebook.com/</div>
+				                	<div class="input-group-text">https://www.facebook.com/</div>
 				                </div>
 				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
 				            </div>
