@@ -156,6 +156,8 @@ class listController extends Controller
             $hover_title = 'original_title';
         }
 
+        $id_dash_title = $id;
+        $id=explode("-", $id)[0];
         if($id == 'new'){
             $liste = '[]';
             $movies = '[]';
@@ -189,7 +191,7 @@ class listController extends Controller
             }
         }
 
-        return view('createlist', compact('id', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
+        return view('createlist', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'liste', 'movies'));
     }
 
 
