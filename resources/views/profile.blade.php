@@ -39,7 +39,7 @@
 							<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
 						</div>
 						<div class="pl-3">
-							<i class="fas fa-list"></i><div class="d-inline pl-1" >6</div>
+							<i class="fas fa-plus"></i><div class="d-inline pl-1" >6</div>
 						</div>
 						<div class="pl-3">
 							<i class="fas fa-heart"></i><div class="d-inline pl-1" >72</div>
