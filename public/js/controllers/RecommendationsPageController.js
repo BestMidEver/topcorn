@@ -273,6 +273,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			"f_sort": $scope.sort_by,
 			"f_vote": $scope.slider_vote_count.value
 		}
+		console.log(data)
 
 		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
 		.then(function(response){
