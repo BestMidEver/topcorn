@@ -59,11 +59,11 @@
 	</div>
 	@endif
 	<div class="right-bottom pr-2 fa30">
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-instagram"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-facebook-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-linkedin"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-twitter-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-youtube-square"></i></a>
+		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-instagram"></i></a>
+		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-facebook-square"></i></a>
+		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-linkedin"></i></a>
+		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-twitter-square"></i></a>
+		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-youtube-square"></i></a>
 	</div>
 </div>
 
