@@ -32,7 +32,19 @@ class accountController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-		return view('account', compact('image_quality', 'target', 'watched_movie_number'));
+        $list_number = DB::table('listes')
+        ->where('listes.user_id', '=', $profile_user_id)
+        ->count();
+
+        $like_number = DB::table('listes')
+        ->where('listes.user_id', '=', $profile_user_id)
+        ->leftjoin('listlikes', function ($join) {
+            $join->on('listlikes.list_id', '=', 'listes.id');
+        })
+        ->whereNotNull('listlikes.created_at')
+        ->count();
+
+		return view('account', compact('image_quality', 'target', 'watched_movie_number', 'list_number', 'like_number'));
 	}
 
 
