@@ -43,7 +43,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .votecard .votediv .btn-warning{color: #fff;}
 .votecard.modal-dialog{    max-height: 600px!important;    max-width: 400px!important;}
 .coverpic{object-fit: cover;width: 100%; max-height: 300px; min-height: 150px;filter: brightness(50%);}
-.coveroverlayersmall{position: absolute;    bottom: 3rem;    width: 100%;}
+.coveroverlayersmall{position: absolute;    bottom: 4rem;    width: 100%;}
 .coveroverlayermedium{position: absolute;    bottom: 1rem;    left: 2rem;}
 .right-top{position: absolute;    right: 0;   top: 0;}
 .right-bottom{position: absolute;    right: 0;   bottom: 0;}
