@@ -80,6 +80,7 @@ return [
     'like_count' => 'beğeni',                                                           //list          
     'like_counts' => 'beğeni',                                                          //list          
     'like_number' => 'Aldığı beğeni sayısı',                                            //profile       /////////////          
+    'links' => 'Profilde Sergilenen Bağlantılar',                                       //account       /////////////          
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
     'lists' => 'Listeler',                                                              //list,         
