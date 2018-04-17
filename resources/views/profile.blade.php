@@ -63,6 +63,7 @@
 		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-facebook-square"></i></a>
 		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-linkedin"></i></a>
 		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-twitter-square"></i></a>
+		<a class="btn btn-link mb-2 text-light" href="#"><i class="fab fa-youtube-square"></i></a>
 	</div>
 </div>
 
