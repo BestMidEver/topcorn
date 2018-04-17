@@ -322,7 +322,7 @@
 
 <!--Lists Section-->
 <div class="container-fluid px-0 mt-5">
-	<div class="px-3 px-md-0">
+	<div class="px-3 px-md-0 col-12">
 		<div class="row align-items-center">
 			<span class="h5 mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
