@@ -17,7 +17,21 @@
 							<h5><span class="yeswrap text-left text-light">{{ $profile_user_name }}</span></h5>
 						</div>
 						<div class="d-flex flex-row align-items-center text-light ml-2">
-							<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
+							@if($profile_watched_movie_number > 0)
+							<div data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_movie_number') }}">
+								<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
+							</div>
+							@endif
+							@if($list_number > 0)
+							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.list_number') }}">
+								<i class="fas fa-plus"></i><div class="d-inline pl-1" >{{ $list_number }}</div>
+							</div>
+							@endif
+							@if($like_number > 0)
+							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.like_number') }}">
+								<i class="fas fa-heart"></i><div class="d-inline pl-1" >{{ $like_number }}</div>
+							</div>
+							@endif
 						</div>
 					</div>
 				</div>
