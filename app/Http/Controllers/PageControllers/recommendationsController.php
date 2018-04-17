@@ -171,8 +171,7 @@ class recommendationsController extends Controller
 
             return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
         }else{
-            return App::getlocale();
-            /*$return_val = DB::table('movies')
+            $return_val = DB::table('movies')
             ->select(
                 'movies.id',
                 'movies.original_title as original_title',
@@ -193,7 +192,7 @@ class recommendationsController extends Controller
             }
 
 
-            return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];*/
+            return [$return_val->paginate(24), microtime(true) - $start];
         }
     }
 
