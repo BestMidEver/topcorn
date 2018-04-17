@@ -35,7 +35,15 @@
 						<h5><span class="yeswrap text-left text-light">{{ $profile_user_name }}</span></h5>
 					</div>
 					<div class="d-flex flex-row align-items-center text-light ml-2">
-						<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
+						<div>
+							<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
+						</div>
+						<div class="pl-3">
+							<i class="fas fa-list-ol"></i><div class="d-inline pl-1" >6</div>
+						</div>
+						<div class="pl-3">
+							<i class="fas fa-heart"></i><div class="d-inline pl-1" >72</div>
+						</div>
 					</div>
 				</div>
 			</div>
