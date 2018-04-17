@@ -330,10 +330,10 @@
 			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 		</a>
 	</div>
+	<div class="p-5" ng-show="listes.length==0">
+		<div class="text-muted text-center"><span>{{ __('general.no_result') }}</span></div>
+	</div>
 	<div class="card-group no-gutters">
-		<div class="p-5" ng-show="listes.length==0">
-			<div class="text-muted text-center"><span>{{ __('general.no_result') }}</span></div>
-		</div>
 		@include('layout.listcard')
 	</div>
 </div>
