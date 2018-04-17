@@ -45,6 +45,20 @@
 							<i class="fas fa-heart"></i><div class="d-inline pl-1" >72</div>
 						</div>
 					</div>
+					<div class="d-flex flex-row align-items-center text-light ml-2">
+						<div>
+							<i class="fab fa-instagram"></i>
+						</div>
+						<div class="pl-3">
+							<i class="fab fa-facebook-square"></i>
+						</div>
+						<div class="pl-3">
+							<i class="fab fa-twitter-square"></i>
+						</div>
+						<div class="pl-3">
+							<i class="fab fa-linkedin"></i>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
