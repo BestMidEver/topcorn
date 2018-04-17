@@ -41,7 +41,7 @@
 				<!-- Başlık & Giriş & Sonuç -->
 				<div class="row">
 					<div class="col-md-3 field-label-responsive">
-						<div class="h6 text-muted">{{ __('general.list_description') }}</div>
+						<div class="h6 text-muted">{{ __('general.list_description') }}{{  $id }}</div>
 					</div>
 				</div>
 				<div class="row">
