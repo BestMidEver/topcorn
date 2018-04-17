@@ -321,12 +321,12 @@
 <!--Review Section-->
 
 <!--Lists Section-->
-<div class="container-fluid px-0 mt-5">
+<div class="container-fluid px-0 mt-5 my-auto">
 	<div class="px-3 px-md-0">
-		<div class="d-inline mt-3">
+		<div class="d-inline">
 			<span class="h5 mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		</div>
-		<div class="d-inline mt-1">
+		<div class="d-inline">
 			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
 				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 			</a>
