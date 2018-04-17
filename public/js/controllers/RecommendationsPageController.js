@@ -265,7 +265,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
         	if(temp[i][1]) f_genre.push( temp[i][0].split("_")[1] );
         }
 		var data = {
-			"f_users": f_users,
+			"f_users": [7],//f_users,
 			"f_lang": f_lang,
 			"f_genre": f_genre,
 			"f_min": $scope.slider.minValue,
