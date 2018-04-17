@@ -33,11 +33,11 @@ class accountController extends Controller
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
         $list_number = DB::table('listes')
-        ->where('listes.user_id', '=', $profile_user_id)
+        ->where('listes.user_id', '=', Auth::id())
         ->count();
 
         $like_number = DB::table('listes')
-        ->where('listes.user_id', '=', $profile_user_id)
+        ->where('listes.user_id', '=', Auth::id())
         ->leftjoin('listlikes', function ($join) {
             $join->on('listlikes.list_id', '=', 'listes.id');
         })
