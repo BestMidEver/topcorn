@@ -272,6 +272,7 @@
 		</div>
 	</div>
 </div>
+</div>
 <!--Cast Section-->
 
 <!--Review Section-->
