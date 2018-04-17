@@ -60,7 +60,7 @@
 	@endif
 	<div class="right-bottom pr-2 fa30">
 		@if(1)
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><span class="n5">Personal Website</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm h5" href="#">Personal Website</a>
 		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-instagram"></i></a>
 		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-facebook-square"></i></a>
 		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-linkedin"></i></a>
