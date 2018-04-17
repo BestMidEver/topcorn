@@ -328,7 +328,7 @@
 			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 		</a>
 	</div>
-	<div class="card-group no-gutters py-4">
+	<div class="card-group no-gutters">
 		@include('layout.listcard')
 	</div>
 </div>
