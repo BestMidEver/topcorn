@@ -276,7 +276,7 @@
 <!--Cast Section-->
 
 <!--Review Section-->
-<div class="container-fluid mt-5">	
+<div class="container-fluid px-0 mt-5">	
 	<div>
 		<span class="h5 mb-0 pr-2">{{ __('general.reviews') }}</span>
 		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"
@@ -321,7 +321,7 @@
 <!--Review Section-->
 
 <!--Lists Section-->
-<div class="mt-5">
+<div class="container-fluid px-0 mt-5">
 	<div>
 		<span class="h5 mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
