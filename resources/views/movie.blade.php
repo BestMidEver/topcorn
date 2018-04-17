@@ -323,12 +323,12 @@
 <!--Lists Section-->
 <div class="container-fluid px-0 mt-5">
 	<div class="px-3 px-md-0">
-		<div class="row align-items-center">
+		<div>
 			<span class="h5 mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
-			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
-				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
-			</a>
 		</div>
+		<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
+			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
+		</a>
 	</div>
 	<div class="card-group no-gutters py-4">
 		@include('layout.listcard')
