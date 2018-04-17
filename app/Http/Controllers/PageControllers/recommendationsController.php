@@ -171,7 +171,8 @@ class recommendationsController extends Controller
 
             return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
         }else{
-            $return_val = DB::table('movies')
+            return 1;
+            /*$return_val = DB::table('movies')
             ->select(
                 'movies.id',
                 'movies.original_title as original_title',
@@ -192,7 +193,7 @@ class recommendationsController extends Controller
             }
 
 
-            return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
+            return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];*/
         }
     }
 
