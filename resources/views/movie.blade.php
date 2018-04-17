@@ -277,7 +277,7 @@
 
 <!--Review Section-->
 <div class="container-fluid px-0 mt-5">	
-	<div>
+	<div class="px-3 px-md-0">
 		<span class="h5 mb-0 pr-2">{{ __('general.reviews') }}</span>
 		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"
 			@if(Auth::check())
@@ -322,7 +322,7 @@
 
 <!--Lists Section-->
 <div class="container-fluid px-0 mt-5">
-	<div>
+	<div class="px-3 px-md-0">
 		<span class="h5 mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
 			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
