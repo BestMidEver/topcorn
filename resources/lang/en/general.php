@@ -35,7 +35,7 @@ return [
     'continue_without_facebook' => 'Continue Without Facebook',             //home
     'country' => 'Country',                                                 //donation,
     'cover_photo' => 'Cover Photo',                                         //account,
-    'create_list' => 'Create List',                                         //list,                 
+    'create_list' => 'Create Your Own List',                                //list,                 
     'create_new_password' => 'Create New Password',                         //reset,
     'crew' => 'Crew',                               
     'current_password' => 'Current Password',                               //accountpassword,
@@ -93,6 +93,7 @@ return [
     'min_vote_count' => 'MINIMUM VOTE COUNT',                               //recommendations,
     'minute' => 'minute',                                                   //movie,
     'movie' => 'Movie',
+    'movie_lists_title' => 'Lists that Contains in It',                                //list, 
     'p_movies' => 'Movies',                                                   //list,         
     'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,
     'movies' => 'movies',                                                   //person,

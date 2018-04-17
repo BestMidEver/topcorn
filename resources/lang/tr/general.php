@@ -35,7 +35,7 @@ return [
     'continue_without_facebook' => 'Facebook Olmadan Devam Et',                         //home
     'country' => 'Ülke',                                                                //donation,
     'cover_photo' => 'Kapak Fotoğrafı',                                                 //account,
-    'create_list' => 'Liste Oluştur',                                                   //list,                 
+    'create_list' => 'Kendi Listeni Oluştur',                                           //list,                 
     'create_new_password' => 'Yeni Şifre Oluştur',                                      //reset,
     'crew' => 'Set Ekibi',          
     'current_password' => 'Şimdiki Şifre',                                              //accountpassword,
@@ -93,7 +93,7 @@ return [
     'min_vote_count' => 'MİNİMUM OY SAYISI',                                            //recommendations,
     'minute' => 'dakika',
     'movie' => 'Film',
-    'movie_lists_title' => 'İçinde Yer Aldığı Listeler',                                //list,    
+    'movie_lists_title' => 'Ait Olduğu Listeler',                                //list,    
     'p_movies' => 'Filmler',                                                            //list,         
     'moviecard_percent' => '%{{movie.percent}}',                                        //recommendations,
     'movies' => 'Film',                                                                 //person,
