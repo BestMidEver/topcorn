@@ -5,7 +5,7 @@ return [
     'cry_for_help' => 'Congragulations',
     'dont_show_hints' => 'Don\'t show hints',
     'understood' => 'Okay',
-    'quickvote1' => 'The more movies you vote, the better we know you. Quick Vote helps usto know you faster.',
+    'quickvote1' => 'The more movies you vote, the better we know you. Quick Vote helps us to know you faster.',
     'quickvote2' => 'All you have to do is voting an option which is close to you.',
     'search' => 'You can search any movie or person from here.',
     'recommendations' => 'We have come to the best part! Click here and dive into the world of movies.',
