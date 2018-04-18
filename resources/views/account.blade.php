@@ -159,7 +159,7 @@
 				    </div>
 				</div>
 
-@if(0)
+@if(1)
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
 						<div class="h6 text-muted">{{ __('general.links') }}</div>
