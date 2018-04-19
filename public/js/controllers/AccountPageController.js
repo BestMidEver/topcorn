@@ -3,7 +3,9 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
-		console.log(pass.user_name, $scope.twitter_link)
+		console.log(pass.user_name, $scope.user_name)
+		console.log(pass.cover_src, $scope.cover_path)
+		console.log(pass.profile_src, $scope.profile_path)
 		if(
 			($scope.user_name != undefined && pass.user_name != $scope.user_name)
 			|| ($scope.cover_path != '' && pass.cover_src != $scope.cover_path)
