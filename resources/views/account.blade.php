@@ -227,7 +227,7 @@
 				</div>
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="current_password">{{ __('general.another_link') }}</label>
+		                <input type="text" class="form-control" id="another_link" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="another_link" placeholder="{{ __('general.another_link') }}">
 				    </div>
 				    <div class="col-md-6">
 				        <div class="">
@@ -236,7 +236,6 @@
 				                	<div class="input-group-text"><i class="fas fa-link"></i></div>
 				                </div>
 				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
-				                <input type="text" class="form-control" id="another_link" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="another_link">
 				            </div>
 				        </div>
 				    </div>
