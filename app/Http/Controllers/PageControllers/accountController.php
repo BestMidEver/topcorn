@@ -68,6 +68,12 @@ class accountController extends Controller
 		if($request->cover_pic != '? string: ?'){
 			$user->cover_pic = '/'.explode("/", $request->cover_pic)[1];
 		}
+		$user->facebook_link = $request->facebook_link;
+		$user->twitter_link = $request->twitter_link;
+		$user->instagram_link = $request->instagram_link;
+		$user->youtube_link = $request->youtube_link;
+		$user->another_link_name = $request->another_link_name;
+		$user->another_link_url = $request->another_link_url;
 		$user->save();
 
 		$request->session()->flash('status', __('general.info_updated'));
