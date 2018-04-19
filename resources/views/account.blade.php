@@ -90,7 +90,7 @@
 		</div>
 	</div>
 	<div class="right-bottom pr-2 fa30">
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="another_link_name" href="#" target="_blank"><span class="h6">@{{another_link_name ? another_link_name : {{ '"'.__('general.personal_website').'"' }}}}</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="another_link_name" href="#" target="_blank"><span class="h6">{{ __('general.personal_website') }}</span></a>
 		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="facebook_link" href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
 		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="instagram_link" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
 		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="twitter_link" href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
