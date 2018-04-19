@@ -51,7 +51,7 @@ class accountController extends Controller
 
 
 	public function change_profile(Request $request)
-	{
+	{return $request;
 		$request->validate([
 			'name' => 'required|min:6',
 		]);
@@ -67,10 +67,6 @@ class accountController extends Controller
 		}
 		if($request->cover_pic != '? string: ?'){
 			$user->cover_pic = '/'.explode("/", $request->cover_pic)[1];
-		}
-		if($user->level == 503){
-			$user->level = 504;
-			$request->session()->flash('tutorial_504', 'level up');
 		}
 		$user->save();
 
