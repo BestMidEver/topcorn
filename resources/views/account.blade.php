@@ -159,7 +159,7 @@
 				    </div>
 				</div>
 
-@if(0)
+@if(1)
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
 						<div class="h6 text-muted">{{ __('general.links') }}</div>
@@ -227,15 +227,16 @@
 				</div>
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="current_password">{{ __('general.profile_photo') }}</label>
+				        <label for="current_password">{{ __('general.another_link') }}</label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				            	<div class="input-group-prepend">
-				                	<div class="input-group-text">https://www.youtube.com/channel/</div>
+				                	<div class="input-group-text"><i class="fas fa-link"></i></div>
 				                </div>
 				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				                <input type="text" class="form-control" id="another_link" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="another_link">
 				            </div>
 				        </div>
 				    </div>
