@@ -227,7 +227,7 @@
 				</div>
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive pt-0">
-		                <input type="text" class="form-control text-right" id="another_link" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="another_link" placeholder="{{ __('general.another_link') }}">
+		                <input type="text" class="form-control text-right" id="another_link" ng-value="" ng-model="user_name" ng-change="check_save_disabled()" name="another_link" placeholder="{{ __('general.another_link') }}">
 				    </div>
 				    <div class="col-md-6">
 				        <div class="">
