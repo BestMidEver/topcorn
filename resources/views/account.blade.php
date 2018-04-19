@@ -175,7 +175,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text">www.facebook.com/</div>
 				                </div>
-				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				                <input type="text" class="form-control" id="facebook_link" ng-value="'{{  Auth::User()->facebook_link }}'" ng-model="facebook_link" ng-change="check_save_disabled()" name="facebook_link">
 				            </div>
 				        </div>
 				    </div>
@@ -190,7 +190,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text">twitter.com/</div>
 				                </div>
-				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				                <input type="text" class="form-control" id="twitter_link" ng-value="'{{  Auth::User()->twitter_link }}'" ng-model="twitter_link" ng-change="check_save_disabled()" name="twitter_link">
 				            </div>
 				        </div>
 				    </div>
@@ -205,7 +205,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text">www.instagram.com/</div>
 				                </div>
-				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				                <input type="text" class="form-control" id="instagram_link" ng-value="'{{  Auth::User()->instagram_link }}'" ng-model="instagram_link" ng-change="check_save_disabled()" name="instagram_link">
 				            </div>
 				        </div>
 				    </div>
@@ -220,14 +220,14 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text">www.youtube.com/channel/</div>
 				                </div>
-				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				                <input type="text" class="form-control" id="youtube_link" ng-value="'{{  Auth::User()->youtube_link }}'" ng-model="youtube_link" ng-change="check_save_disabled()" name="youtube_link">
 				            </div>
 				        </div>
 				    </div>
 				</div>
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive pt-0 pb-1 pb-md-0">
-		                <input type="text" class="form-control text-md-right" id="another_link" ng-value="" ng-model="user_name" ng-change="check_save_disabled()" name="another_link" placeholder="{{ __('general.another_link') }}">
+		                <input type="text" class="form-control text-md-right" id="another_link_name" ng-value="'{{  Auth::User()->another_link_name }}'" ng-model="another_link_name" ng-change="check_save_disabled()" name="another_link_name" placeholder="{{ __('general.personal_website') }}">
 				    </div>
 				    <div class="col-md-6">
 				        <div class="">
@@ -235,7 +235,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text"><i class="fas fa-link"></i></div>
 				                </div>
-				                <input type="text" class="form-control" id="name" ng-value="'{{  Auth::User()->name }}'" ng-model="user_name" ng-change="check_save_disabled()" name="name">
+				                <input type="text" class="form-control" id="another_link_url" ng-value="'{{  Auth::User()->another_link_url }}'" ng-model="another_link_url" ng-change="check_save_disabled()" name="another_link_url">
 				            </div>
 				        </div>
 				    </div>

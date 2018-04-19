@@ -122,13 +122,14 @@ return [
     'ordering_321' => '... - 5 - 4 - 3 - 2 - 1',                                        //list,         
     'ordering_123' => '1 - 2 - 3 - 4 - 5 - ...',                                        //list,         
     'original_title' => 'Orijinal Adı',
-    'another_link' => 'Başka Bağlantı',                                                 //account           /////////////
+    'original_language' => 'Orijinal Dili',
     'pagination' => 'Sayfalama',                                                        //accountinterface,
     'pagination_info' => 
         '{{in:suffix}} <span class="pr-2"> sonuç içinde</span> {{from:suffix}} - {{to:suffix}}',             //pagination,
     'password' => 'Şifre',                                                              //login, register, account,
     'password_confirmation' => 'Tekrar Şifre',                                          //register
     'person' => 'Kişi',         
+    'personal_website' => 'Kişisel İnternet Sitesi',                                    //account           //////////////
     'person_time' => 'oy',                                                              //movie,
     'person_times' => 'oy',                                                             //movie,
     'point' => 'puan',                                                                  //recommendations,

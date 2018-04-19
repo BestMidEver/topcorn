@@ -20,6 +20,12 @@ class CreateUsersTable extends Migration
             $table->string('cover_pic')->nullable();
             $table->string('profile_pic')->nullable();
             $table->string('facebook_profile_pic')->nullable();
+            $table->string('facebook_link')->nullable();
+            $table->string('twitter_link')->nullable();
+            $table->string('instagram_link')->nullable();
+            $table->string('youtube_link')->nullable();
+            $table->string('another_link_name')->nullable();
+            $table->string('another_link_url')->nullable();
             $table->string('lang')->default('en');
             $table->string('secondary_lang')->default('en');
             $table->tinyInteger('hover_title_language')->default(0);
