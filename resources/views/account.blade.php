@@ -190,7 +190,7 @@
 				            	<div class="input-group-prepend">
 				                	<div class="input-group-text">twitter.com/</div>
 				                </div>
-				                <input type="text" class="form-control" id="twitter_link" ng-value="'{{  Auth::User()->twitter_link }}'" ng-model="twitter_link" ng-change="check_save_disabled()" name="twitter_link">
+				                <input type="text" class="form-control" id="twitter_link" ng-value="'{{  is_null(Auth::User()->twitter_link) ? '' : Auth::User()->twitter_link }}'" ng-model="twitter_link" ng-change="check_save_disabled()" name="twitter_link">
 				            </div>
 				        </div>
 				    </div>
