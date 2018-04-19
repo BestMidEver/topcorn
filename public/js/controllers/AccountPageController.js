@@ -1,5 +1,12 @@
 MyApp.controller('AccountPageController', function($scope, $http, rate)
 {
+	$scope.facebook_link = pass.facebook_link;
+	$scope.twitter_link = pass.twitter_link;
+	$scope.instagram_link = pass.instagram_link;
+	$scope.youtube_link = pass.youtube_link;
+	$scope.another_link_name = pass.another_link_name;
+	$scope.another_link_url = pass.another_link_url;
+	
 	$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
