@@ -198,6 +198,10 @@ return [
     'understand_my_taste' => 'Haydi Başlayalım',                                        //home,       
     'user' => 'Kullanıcı',          
     'user_name' => 'Kullanıcı Adı',                                                     //register, account,
+    'users_facebook' => 'Facebook Bağlantısı',                                          //account, profile      //////////
+    'users_instagram' => 'İnstagram Bağlantısı',                                        //account, profile      //////////
+    'users_twitter' => 'Twitter Bağlantısı',                                            //account, profile      //////////
+    'users_youtube' => 'Youtube Kanalı',                                                //account, profile      //////////
     'visibility' => 'Kimler Görebilir?',                                                //list                  
     'watch_later' => 'Sonra İzle',          
     'watch_together' => 'Beraber İzle',                                                 //profile,
