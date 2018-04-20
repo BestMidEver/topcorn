@@ -247,7 +247,7 @@
 										<button class="dropdown-item" type="button" ng-click="url_http='http://'">http://</button>
 									</div>
 								</div>
-								<input ng-show="false" type="text" class="form-control" ng-model="url_http" name="url_http">
+								<input ng-show="false" type="text" class="form-control" ng-model="url_http" name="url_http" ng-change="check_save_disabled()">
 								<input type="text" class="form-control" id="another_link_url" ng-value="'{{  $another_link_url }}'" ng-model="another_link_url" ng-change="check_save_disabled()" name="another_link_url">
 							</div>
 						</div>
