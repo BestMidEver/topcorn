@@ -243,12 +243,12 @@
 								<div class="input-group-prepend">
 									<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="url_http='{{$url_http}}'">@{{url_http}}</button>
 									<div class="dropdown-menu">
-										<button class="dropdown-item" type="button" ng-click="url_http='https://'">https://</button>
-										<button class="dropdown-item" type="button" ng-click="url_http='http://'">http://</button>
+										<button class="dropdown-item" type="button" ng-click="url_http='https://';check_save_disabled()">https://</button>
+										<button class="dropdown-item" type="button" ng-click="url_http='http://';check_save_disabled()">http://</button>
 									</div>
 								</div>
 								<input ng-show="false" type="text" class="form-control" ng-model="url_http" name="url_http" ng-change="check_save_disabled()">
-								<input type="text" class="form-control" id="another_link_url" ng-value="'{{  $another_link_url }}'" ng-model="another_link_url" ng-change="check_save_disabled()" name="another_link_url">
+								<input type="text" class="form-control" id="another_link_url" ng-value="'{{  $another_link_url }}'" ng-model="another_link_url" name="another_link_url">
 							</div>
 						</div>
 					</div>
