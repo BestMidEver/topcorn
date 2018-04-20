@@ -81,10 +81,19 @@
 	<div class="right-bottom pr-2 fa30">
 		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && ('{{Auth::user()->another_link_name}}' != '')" href="#" target="_blank"><span class="h6">{{Auth::user()->another_link_name}}</span></a>
 		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && !another_link_name" href="#" target="_blank"><span class="h6">{{ __('general.personal_website') }}</span></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->facebook_link}}' != ''" href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->instagram_link}}' != ''" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->twitter_link}}' != ''" href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->youtube_link}}' != ''" href="#" target="_blank"><i class="fab fa-youtube-square"></i></a>
+
+		@if(Auth::user()->facebook_link)
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.facebook.link').Auth::User()->facebook_link}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+		@endif
+		@if(Auth::user()->instagram_link)
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.instagram.link').Auth::User()->instagram_link}}" target="_blank"><i class="fab fa-instagram"></i></a>
+		@endif
+		@if(Auth::user()->twitter_link)
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.twitter.link').Auth::User()->twitter_link}}" target="_blank"><i class="fab fa-twitter-square"></i></a>
+		@endif
+		@if(Auth::user()->youtube_link)
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.youtube.link').Auth::User()->youtube_link}}" target="_blank"><i class="fab fa-youtube-square"></i></a>
+		@endif
 	</div>
 </div>
 

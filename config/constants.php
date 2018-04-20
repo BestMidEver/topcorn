@@ -46,6 +46,43 @@ return array(
     'password_spice' => 'Sp1cEe',
     'app_id' => '525225627985884',
 
+    'link' => 'https://www.facebook.com/',
+  ),
+
+
+
+
+  'instagram' => array(
+
+    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+
+  ),
+
+
+
+
+  'twitter' => array(
+
+    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+
+  ),
+
+
+
+
+  'youtube' => array(
+
+    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+
+  ),
+
+
+
+
+  'blog_website' => array(
+
+    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+
   ),
 
 
