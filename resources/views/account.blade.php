@@ -241,10 +241,10 @@
 						<div class="">
 							<div class="input-group mb-2 mr-sm-2 mb-sm-0">
 								<div class="input-group-prepend">
-									<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+									<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="url_http='https://">@{{url_http}}</button>
 									<div class="dropdown-menu">
-										<button class="dropdown-item">https://</button>
-										<button class="dropdown-item">http://</button>
+										<button class="dropdown-item" ng-click="url_http='https://'">https://</button>
+										<button class="dropdown-item" ng-click="url_http='http://'">http://</button>
 									</div>
 								</div>
 								<input type="text" class="form-control" id="another_link_url" ng-value="'{{  Auth::User()->another_link_url }}'" ng-model="another_link_url" ng-change="check_save_disabled()" name="another_link_url">
