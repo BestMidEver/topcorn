@@ -45,9 +45,9 @@ class accountController extends Controller
         ->count();
 
         $url_http = explode("://", Auth::User()->another_link_url)[0].'://';
-        return $url_http;
+        $another_link_url = explode("://", Auth::User()->another_link_url)[1];
 
-		return view('account', compact('image_quality', 'target', 'watched_movie_number', 'list_number', 'like_number', 'url_http'));
+		return view('account', compact('image_quality', 'target', 'watched_movie_number', 'list_number', 'like_number', 'url_http', 'another_link_url'));
 	}
 
 
