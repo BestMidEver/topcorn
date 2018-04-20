@@ -90,12 +90,12 @@
 		</div>
 	</div>
 	<div class="right-bottom pr-2 fa30">
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="another_link_url && another_link_name" ng-href="@{{another_link_url}}" target="_blank" data-toggle="tooltip" data-placement="bottom" data-original-title="@{{another_link_url}}"><span class="h6">@{{ another_link_name }}</span></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="another_link_url && !another_link_name" ng-href="@{{another_link_url}}" target="_blank" data-toggle="tooltip" data-placement="bottom"  data-original-title="@{{another_link_url}}"><span class="h6">{{ __('general.personal_website') }}</span></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="facebook_link" ng-href="{{config('constants.facebook.link')}}@{{facebook_link}}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="instagram_link" ng-href="{{config('constants.instagram.link')}}@{{instagram_link}}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="twitter_link" ng-href="{{config('constants.twitter.link')}}@{{twitter_link}}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="youtube_link" ng-href="{{config('constants.youtube.link')}}@{{youtube_link}}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="{{ __('general.users_youtube') }}"><i class="fab fa-youtube-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="another_link_url && another_link_name" ng-href="@{{another_link_url}}" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="@{{another_link_url}}"><span class="h6">@{{ another_link_name }}</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="another_link_url && !another_link_name" ng-href="@{{another_link_url}}" target="_blank" data-toggle="tooltip" data-placement="top"  data-original-title="@{{another_link_url}}"><span class="h6">{{ __('general.personal_website') }}</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="facebook_link" ng-href="{{config('constants.facebook.link')}}@{{facebook_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="instagram_link" ng-href="{{config('constants.instagram.link')}}@{{instagram_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="twitter_link" ng-href="{{config('constants.twitter.link')}}@{{twitter_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="youtube_link" ng-href="{{config('constants.youtube.link')}}@{{youtube_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_youtube') }}"><i class="fab fa-youtube-square"></i></a>
 	</div>
 </div>
 <div class="container-fluid mt-3">
