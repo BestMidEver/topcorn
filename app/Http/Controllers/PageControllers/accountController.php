@@ -75,7 +75,7 @@ class accountController extends Controller
 		$user->instagram_link = $request->instagram_link;
 		$user->youtube_link = $request->youtube_link;
 		$user->another_link_name = $request->another_link_name;
-		$user->another_link_url = $request->url_http ? $request->another_link_url : null;
+		$user->another_link_url = $request->another_link_url ? $request->url_http.$request->another_link_url : null;
 		$user->save();
 
 		$request->session()->flash('status', __('general.info_updated'));
