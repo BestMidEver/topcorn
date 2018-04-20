@@ -78,11 +78,14 @@ return [
     'language' => 'ORIGINAL LANGUAGE',                                      //recommendations_languages,
     'like' => 'Like',                                                       //list          
     'like_count' => 'like',                                                 //list          
-    'like_counts' => 'likes',                                               //list          
+    'like_counts' => 'likes',                                               //list      
+    'like_number' => 'Total like that user got',                            //profile                 
+    'links' => 'Profile links',                                             //account              
     'login_via_facebook' => 'Login via Facebook',                           //login, register,
     'low' => 'Low',                                                         //accountinterface,
     'lists' => 'Custom Lists',                                              //list,  
-    'list_description' => 'Description',                                    //list,         
+    'list_description' => 'Description',                                    //list,
+    'list_number' => 'Custom list count',                                   //profile,                    
     'list_properties' => 'List Properties',                                 //list,         
     'list_remove_confirm' => 'The list will be deleted!',                   //list,         
     'list_updated' => 'Your list has been updated successfully.',           //list,         
@@ -126,6 +129,7 @@ return [
     'password' => 'Password',                                               //login, register, account,
     'password_confirmation' => 'Password Confirmation',                     //register,
     'person' => 'Person',                                                   //search,
+    'personal_website' => 'Personal Link',                                  //account           
     'person_time' => 'vote',                                                //movie,
     'person_times' => 'votes',                                              //movie,
     'point' => 'points',                                                    //recommendations,
@@ -150,6 +154,7 @@ return [
     'save_changes' => 'Save Changes',                                       //account, accountinterface,
     'screenplay' => 'Screenplay',                                           //movie,
     'search' => 'Search',                                                   //search,
+    'searching' => 'Searching...',                                          //recommendations,    
     'search_movie' => 'Search a movie by title',                            //search,
     'search_results' => 'Seach Results',                                    //recommendations,
     'search_person' => 'Search a person by name',                           //search,
@@ -194,9 +199,14 @@ return [
     'understand_my_taste' => 'Let\'s Get Started',                          //home,
     'user' => 'User',
     'user_name' => 'User Name',                                             //register, account,
+    'users_facebook' => 'Facebook Link',                                    //account, profile      
+    'users_instagram' => 'İnstagram Link',                                  //account, profile      
+    'users_twitter' => 'Twitter Link',                                      //account, profile      
+    'users_youtube' => 'Youtube Channel',                                   //account, profile      
     'visibility' => 'Visibility',                                           //list                  
     'watch_later' => 'Watch Later',
     'watch_together' => 'Watch Together',                                   //profile,
+    'watched_movie_number' => 'Watched movie count',                        //profile,              
     'writer' => 'Writer',
     'writers' => 'Writers',
     'writing' => 'Writing',

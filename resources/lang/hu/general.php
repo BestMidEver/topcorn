@@ -78,11 +78,14 @@ return [
     'language' => 'EREDETI NYELV',                                          //recommendations_languages,
     'like' => 'Tetszik',                                                       //list          
     'like_count' => 'Tetszik-ek száma',                                                 //list          
-    'like_counts' => 'Tetszik-ek száma',                                               //list          
+    'like_counts' => 'Tetszik-ek száma',                                               //list         
+    'like_number' => 'Total like that user got',                            //profile       /////////////          
+    'links' => 'Profile links',                                             //account       /////////////  
     'login_via_facebook' => 'Belépés Facebook-on keresztül',                //login, register,
     'low' => 'Alacsony adatforgalom',                                       //accountinterface,
     'lists' => 'Egyéni listák',                                              //list,         
     'list_description' => 'Magyarázat',                                    //list,         
+    'list_number' => 'Custom list count',                                   //profile,          ////////////  
     'list_properties' => 'Lista tulajdonságai',                                 //list,         
     'list_remove_confirm' => 'A lista törlésre kerül!',                   //list,         
     'list_updated' => 'A listád sikeresen frissült.',           //list,         
@@ -125,6 +128,7 @@ return [
     'password' => 'Jelszó',                                                 //login, register, account,
     'password_confirmation' => 'Jelszó megerősítése',                       //register,
     'person' => 'Személy',                                                  //search,
+    'personal_website' => 'Personal Link',                                  //account           //////////////
     'person_time' => 'szavazat',                                            //movie,
 	'point' => 'pont',
     'person_times' => 'szavazat',                                           //movie,
@@ -149,6 +153,7 @@ return [
     'save_changes' => 'Változtatások mentése',                              //account, accountinterface,
     'screenplay' => 'Forgatókönyv',                                         //movie
     'search' => 'Keresés',                                                  //search
+    'searching' => 'Searching...',                                          //recommendations,    //////////////
     'search_movie' => 'Film keresése címmel',                               //search
     'search_results' => 'Keresés eredményei',                               //recommendations,
     'search_person' => 'Személy keresése névvel/Email-lel',                 //search
@@ -193,9 +198,14 @@ return [
     'understand_my_taste' => 'Ismerd meg az ízlésemet!',                    //home,
     'user' => 'Felhasználó',
     'user_name' => 'Felhasználónév',                                        //register, account,
+    'users_facebook' => 'Facebook Link',                                    //account, profile      //////////
+    'users_instagram' => 'İnstagram Link',                                  //account, profile      //////////
+    'users_twitter' => 'Twitter Link',                                      //account, profile      //////////
+    'users_youtube' => 'Youtube Channel',                                   //account, profile      //////////
     'visibility' => 'Láthatóság',                                           //list                  
     'watch_later' => 'Később megnézem',
     'watch_together' => 'Nézzük meg együtt!',                               //profile,
+    'watched_movie_number' => 'Watched movie count',                        //profile,              //////////
     'writer' => 'Író',
     'writers' => 'Írók',
     'writing' => 'Író',
