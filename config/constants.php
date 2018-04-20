@@ -54,7 +54,7 @@ return array(
 
   'instagram' => array(
 
-    'share_website' => 'https://www.instagram.com/',
+    'link' => 'https://www.instagram.com/',
 
   ),
 
@@ -63,7 +63,7 @@ return array(
 
   'twitter' => array(
 
-    'share_website' => 'https://twitter.com/',
+    'link' => 'https://twitter.com/',
 
   ),
 
@@ -72,7 +72,7 @@ return array(
 
   'youtube' => array(
 
-    'share_website' => 'https://www.youtube.com/channel/',
+    'link' => 'https://www.youtube.com/channel/',
 
   ),
 
