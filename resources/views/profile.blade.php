@@ -79,8 +79,9 @@
 	</div>
 	@endif
 	<div class="right-bottom pr-2 fa30">
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && ('{{Auth::user()->another_link_name}}' != '')" href="#" target="_blank"><span class="h6">{{Auth::user()->another_link_name}}</span></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && !another_link_name" href="#" target="_blank"><span class="h6">{{ __('general.personal_website') }}</span></a>
+		@if(Auth::user()->another_link_url)
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && ('{{Auth::user()->another_link_name}}' != '')" href="#" target="_blank"><span class="h6">{{Auth::user()->another_link_name ? Auth::user()->another_link_name : "{{ __('general.personal_website') }}"}}</span></a>
+		@endif
 
 		@if(Auth::user()->facebook_link)
 		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.facebook.link').Auth::User()->facebook_link}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
