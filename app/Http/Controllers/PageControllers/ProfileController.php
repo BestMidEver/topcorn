@@ -56,7 +56,7 @@ class ProfileController extends Controller
         ->whereNotNull('listlikes.created_at')
         ->count();
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'list_number', 'like_number'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'list_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name'));
 	}
 
     public function get_rateds($rate, $user, $lang)
