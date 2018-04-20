@@ -32,6 +32,12 @@ class ProfileController extends Controller
         if(!$user) return redirect('/not-found');
         $profile_user_name = $user->name;
         $profile_cover_pic = $user->cover_pic;
+        $facebook_link = $user->facebook_link;
+        $instagram_link = $user->instagram_link;
+        $twitter_link = $user->twitter_link;
+        $youtube_link = $user->youtube_link;
+        $another_link_url = $user->another_link_url;
+        $another_link_name = $user->another_link_name;
         if($user->profile_pic == ''){
             $profile_profile_pic = $user->facebook_profile_pic;
         }else{
