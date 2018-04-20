@@ -53,7 +53,7 @@ class accountController extends Controller
 
 
 	public function change_profile(Request $request)
-	{
+	{return $request;
 		$request->validate([
 			'name' => 'required|min:6',
 		]);
