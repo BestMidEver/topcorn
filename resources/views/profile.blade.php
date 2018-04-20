@@ -80,20 +80,20 @@
 	@endif
 	<div class="right-bottom pr-2 fa30">
 		@if($another_link_url)
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{$another_link_url}}' != '') && ('{{$another_link_name}}' != '')" href="#" target="_blank"><span class="h6">{{$another_link_name ? $another_link_name : __('general.personal_website')}}</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{$another_link_url}}' != '') && ('{{$another_link_name}}' != '')" href="{{$another_link_url}}" data-toggle="tooltip" data-placement="top" title="{{ $another_link_url }}" target="_blank"><span class="h6">{{$another_link_name ? $another_link_name : __('general.personal_website')}}</span></a>
 		@endif
 
 		@if($facebook_link)
-		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.facebook.link').$facebook_link}}" target="_blank"><i class="fab fa-facebook-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.facebook.link').$facebook_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
 		@endif
 		@if($instagram_link)
-		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.instagram.link').$instagram_link}}" target="_blank"><i class="fab fa-instagram"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.instagram.link').$instagram_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
 		@endif
 		@if($twitter_link)
-		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.twitter.link').$twitter_link}}" target="_blank"><i class="fab fa-twitter-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.twitter.link').$twitter_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
 		@endif
 		@if($youtube_link)
-		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.youtube.link').$youtube_link}}" target="_blank"><i class="fab fa-youtube-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.youtube.link').$youtube_link}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_youtube') }}"><i class="fab fa-youtube-square"></i></a>
 		@endif
 	</div>
 </div>
