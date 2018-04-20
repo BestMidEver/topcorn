@@ -79,13 +79,12 @@
 	</div>
 	@endif
 	<div class="right-bottom pr-2 fa30">
-		@if(0)
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><span class="h6">Personal Website</span></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-facebook-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-instagram"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-twitter-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="#"><i class="fab fa-youtube-square"></i></a>
-		@endif
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && ('{{Auth::user()->another_link_name}}' != '')" href="#" target="_blank"><span class="h6">{{Auth::user()->another_link_name}}</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && !another_link_name" href="#" target="_blank"><span class="h6">{{ __('general.personal_website') }}</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->facebook_link}}' != ''" href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->instagram_link}}' != ''" href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->twitter_link}}' != ''" href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{Auth::user()->youtube_link}}' != ''" href="#" target="_blank"><i class="fab fa-youtube-square"></i></a>
 	</div>
 </div>
 
