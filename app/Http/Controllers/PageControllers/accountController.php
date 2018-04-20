@@ -44,7 +44,7 @@ class accountController extends Controller
         ->whereNotNull('listlikes.created_at')
         ->count();
 
-        $exploded_url = explode("://", Auth::User()->another_link_url)
+        $exploded_url = explode("://", Auth::User()->another_link_url);
         $url_http = $exploded_url[0].'://';
         $another_link_url = count($exploded_url) > 1 ? $exploded_url[1] : '';
 
