@@ -80,7 +80,7 @@
 	@endif
 	<div class="right-bottom pr-2 fa30">
 		@if(Auth::user()->another_link_url)
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && ('{{Auth::user()->another_link_name}}' != '')" href="#" target="_blank"><span class="h6">{{Auth::user()->another_link_name ? Auth::user()->another_link_name : "{{ __('general.personal_website') }}"}}</span></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="('{{Auth::user()->another_link_url}}' != '') && ('{{Auth::user()->another_link_name}}' != '')" href="#" target="_blank"><span class="h6">{{Auth::user()->another_link_name ? Auth::user()->another_link_name : __('general.personal_website')}}</span></a>
 		@endif
 
 		@if(Auth::user()->facebook_link)
