@@ -44,8 +44,9 @@ class accountController extends Controller
         ->whereNotNull('listlikes.created_at')
         ->count();
 
-        $url_http = explode("://", Auth::User()->another_link_url)[0].'://';
-        $another_link_url = explode("://", Auth::User()->another_link_url)[1];
+        $exploded_url = explode("://", Auth::User()->another_link_url)
+        $url_http = $exploded_url[0].'://';
+        $another_link_url = count($exploded_url) > 1 ? $exploded_url[1] : '';
 
 		return view('account', compact('image_quality', 'target', 'watched_movie_number', 'list_number', 'like_number', 'url_http', 'another_link_url'));
 	}
