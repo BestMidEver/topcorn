@@ -54,7 +54,7 @@ return array(
 
   'instagram' => array(
 
-    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+    'share_website' => 'https://www.instagram.com/',
 
   ),
 
@@ -63,7 +63,7 @@ return array(
 
   'twitter' => array(
 
-    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+    'share_website' => 'https://twitter.com/',
 
   ),
 
@@ -72,16 +72,7 @@ return array(
 
   'youtube' => array(
 
-    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
-
-  ),
-
-
-
-
-  'blog_website' => array(
-
-    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+    'share_website' => 'https://www.youtube.com/channel/',
 
   ),
 
