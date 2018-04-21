@@ -152,7 +152,7 @@ else $theme='';
                         <a class="nav-link" href="/account">{{ __('navbar.account') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
-                        <a class="nav-link" href="/theme/{{$theme}}">{{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
+                        <a class="nav-link" href="/theme/{{$theme}}"><i class="fas fa-moon"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
