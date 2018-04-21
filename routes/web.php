@@ -203,7 +203,7 @@ Route::get('suckData', function(){
 });
 Route::get('refreshSitemap', function(){
 	RefreshSiteMapJob::dispatch()->onQueue("high");
-	return 'refreshing sitemap.';
+	return 'refreshing sitemaps.';
 });
 //Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
 //////////////////////////////////////////////////////////////////////////////////////////
