@@ -201,11 +201,11 @@ Route::get('suckData', function(){
 	//SuckDataJob::dispatch()->onQueue("low");
 	return 'sucking data.';
 });
-Route::get('refreshSitemap', function(){
+/*Route::get('refreshSitemap', function(){
 	RefreshSiteMapJob::dispatch()->onQueue("high");
 	return 'refreshing sitemaps.';
-});
-//Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
+});*/
+Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
