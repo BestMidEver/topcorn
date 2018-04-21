@@ -142,9 +142,9 @@ else $theme='';
                         <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star d-none d-md-inline"></i> {{ __('navbar.sequentialvote') }}</button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
-                    <li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
+                    <!--<li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later">{{ __('navbar.watchlater') }}</a>
-                    </li>
+                    </li>-->
                     <li class="nav-item d-md-none">
                         <a class="nav-link {{ Request::segment(1) === 'profile' ? 'active' : null }}" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a>
                     </li>
@@ -173,9 +173,9 @@ else $theme='';
                 </ul>
                 @endif
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
-                    <li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
+                    <!--<li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fas fa-clock"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
-                    </li>
+                    </li>-->
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="profile"
