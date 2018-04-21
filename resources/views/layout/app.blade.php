@@ -158,7 +158,7 @@ else $theme='';
                         <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
-                        <a class="nav-link" href="/donation"><i class="fas fa-donate"></i> {{ __('navbar.donation') }}</a>
+                        <a class="nav-link" href="/donation">{{ __('navbar.donation') }}</a>
                         <div class="dropdown-divider"></div>
                     </li>
                     <li class="nav-item d-md-none">
@@ -191,7 +191,7 @@ else $theme='';
                             <a class="dropdown-item" href="/theme/{{$theme}}"><i class="fas fa-moon"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
-                            <a class="dropdown-item" href="/donation"><i class="fas fa-donate"></i> {{ __('navbar.donation') }}</a>
+                            <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-muted" href="{{ route('logout') }}" onclick="event.preventDefault();   document.getElementById('logout-form').submit();">{{ __('navbar.logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -232,7 +232,7 @@ else $theme='';
                     <div class="py-2 small"><a class="text-dark" href="/recommendations">{{ __('navbar.movie_recommendations') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/search">{{ __('navbar.movie_person_user_search') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a></div>
-                    <div class="py-2 small"><a class="text-dark" href="/account">{{ __('navbar.account') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/account"><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a></div>
                 </div>
                 <div class="col-4 col-sm-2">
                     <div class="py-2 small"><a class="text-dark" href="/change_insta_language/en">English</a></div>
