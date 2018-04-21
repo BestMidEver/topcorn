@@ -62,7 +62,7 @@ class RefreshSiteMapJob implements ShouldQueue
         ->select(
             'listes.id',
             'listes.title',
-            'movies.updated_at'
+            'listes.updated_at'
         )
         ->get();
         foreach ($listes as $liste) {
