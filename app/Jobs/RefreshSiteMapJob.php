@@ -58,13 +58,13 @@ class RefreshSiteMapJob implements ShouldQueue
 ';
         }*/
 
-        $xml = $xml . '</urlset> ';
+        //$xml = $xml . '</urlset> ';
         fwrite($myfile, $xml);
         fclose($myfile);
 
         $asd = new Ban;
-        $asd->movie_id = 11;
-        $asd->user_id = 10;
+        $asd->movie_id = 44;
+        $asd->user_id = 33;
         $asd->save();
     }
 }
