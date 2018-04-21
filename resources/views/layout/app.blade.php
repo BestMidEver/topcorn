@@ -187,8 +187,8 @@ else $theme='';
                         <button class="nav-link btn btn-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/account"><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a>
-                            <a class="dropdown-item" href="/theme/{{$theme}}"><i class="fas fa-moon"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
+                            <a class="dropdown-item" href="/account"><i class="fas fa-cog text-muted"></i> {{ __('navbar.account') }}</a>
+                            <a class="dropdown-item" href="/theme/{{$theme}}"><i class="fas fa-moon text-muted"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
                             <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
@@ -232,7 +232,7 @@ else $theme='';
                     <div class="py-2 small"><a class="text-dark" href="/recommendations">{{ __('navbar.movie_recommendations') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/search">{{ __('navbar.movie_person_user_search') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a></div>
-                    <div class="py-2 small"><a class="text-dark" href="/account"><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/account">{{ __('navbar.account') }}</a></div>
                 </div>
                 <div class="col-4 col-sm-2">
                     <div class="py-2 small"><a class="text-dark" href="/change_insta_language/en">English</a></div>
