@@ -187,7 +187,7 @@ else $theme='';
                         <button class="nav-link btn btn-link" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/account"><i class="fas fa-cog"></i><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a>
+                            <a class="dropdown-item" href="/account"><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a>
                             <a class="dropdown-item" href="/theme/{{$theme}}"><i class="fas fa-moon"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
