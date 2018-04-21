@@ -188,7 +188,7 @@ else $theme='';
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/account">{{ __('navbar.account') }}</a>
-                            <a class="dropdown-item" href="/theme/{{$theme}}">{{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
+                            <a class="dropdown-item" href="/theme/{{$theme}}"><i class="fas fa-moon"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
                             <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
