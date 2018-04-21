@@ -1,6 +1,6 @@
 <?php
 
-use App\Jobs\RefreshSitemapJob;
+use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
 use App\Jobs\SuckMovieJob;
 use App\Model\Genre;
@@ -201,7 +201,11 @@ Route::get('suckData', function(){
 	//SuckDataJob::dispatch()->onQueue("low");
 	return 'sucking data.';
 });
-Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
+Route::get('refreshSitemap', function(){
+	RefreshSiteMapJob::dispatch()->onQueue("high");
+	return 'refreshing sitemap.';
+});
+//Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////

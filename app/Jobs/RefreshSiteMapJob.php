@@ -1,15 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\Architect;
+namespace App\Jobs;
 
-use App\Http\Controllers\Controller;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 
-class Architect extends Controller
+class RefreshSiteMapJob implements ShouldQueue
 {
-	public function refreshSitemap()
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    /**
+     * Create a new job instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Execute the job.
+     *
+     * @return void
+     */
+    public function handle()
     {
         $myfile = fopen("sitemap.xml", "w") or die("Unable to open file!");
         $xml = '<?xml version="1.0" encoding="utf-8"?>
@@ -39,8 +57,5 @@ class Architect extends Controller
         $xml = $xml . '</urlset> ';
         fwrite($myfile, $xml);
         fclose($myfile);
-
-
-        return 'refreshing sitemap.';
     }
 }
