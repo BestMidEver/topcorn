@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Model\Ban;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -60,5 +61,10 @@ class RefreshSiteMapJob implements ShouldQueue
         $xml = $xml . '</urlset> ';
         fwrite($myfile, $xml);
         fclose($myfile);
+
+        $asd = new Ban;
+        $asd->movie_id = 10;
+        $asd->user_id = 10;
+        $asd->save();
     }
 }
