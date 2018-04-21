@@ -46,7 +46,7 @@ class RefreshSiteMapJob implements ShouldQueue
 <url> <loc>https://topcorn.io/password/reset</loc> <lastmod>2018-03-19</lastmod> <changefreq>monthly</changefreq> <priority>0.60</priority> </url>
 ';
 
-        $movies = DB::table('movies')
+        /*$movies = DB::table('movies')
         ->select(
             'movies.id',
             'movies.original_title',
@@ -55,6 +55,18 @@ class RefreshSiteMapJob implements ShouldQueue
         ->get();
         foreach ($movies as $movie) {
             $xml = $xml.'<url> <loc>https://topcorn.io/movie/'.$movie->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $movie->original_title).'</loc> <lastmod>'.substr($movie->updated_at, 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> 
+';
+        }*/
+
+        $listes = DB::table('listes')
+        ->select(
+            'listes.id',
+            'listes.title',
+            'movies.updated_at'
+        )
+        ->get();
+        foreach ($listes as $liste) {
+            $xml = $xml.'<url> <loc>https://topcorn.io/list/'.$liste->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $liste->title).'</loc> <lastmod>'.substr($liste->updated_at, 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>0.88</priority> </url> 
 ';
         }
 
