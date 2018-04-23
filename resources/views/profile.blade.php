@@ -134,13 +134,13 @@
 </div>
 
 <div class="container-fluid" ng-show="active_tab=='get_lists'">
-	<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}'">
+	<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}';list_mode='created_ones';">
 		<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{list_mod_title}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';get_first_page_data();">{{ __('general.created_ones') }}</button>
-			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';get_first_page_data();">{{ __('general.liked_ones') }}</button>
+			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
+			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';list_mode='liked_ones';get_first_page_data();">{{ __('general.liked_ones') }}</button>
 		</div>
 	</div>
 </div>
