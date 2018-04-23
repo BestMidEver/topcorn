@@ -47,6 +47,7 @@ return array(
     'app_id' => '525225627985884',
 
     'link' => 'https://www.facebook.com/',
+    'our_link' => 'https://www.facebook.com/topcorn.io/',
   ),
 
 
