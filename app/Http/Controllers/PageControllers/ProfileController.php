@@ -270,7 +270,7 @@ class ProfileController extends Controller
             ->where('listes.user_id', $user);
         }else{
             $return_val = $return_val
-            ->where('l1.user_id', $user);
+            ->where('listlikes.user_id', $user);
         }
 
         $return_val = $return_val->get();
