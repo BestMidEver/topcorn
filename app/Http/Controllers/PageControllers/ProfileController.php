@@ -263,8 +263,7 @@ class ProfileController extends Controller
             'm6.'.App::getlocale().'_poster_path as m6_poster_path'
         )
         ->groupBy('listes.id')
-        ->orderBy('listes.updated_at', 'desc')
-        ->get();
+        ->orderBy('listes.updated_at', 'desc');
 
         if($list_mode == 'created_ones'){
             $return_val = $return_val
@@ -278,6 +277,6 @@ class ProfileController extends Controller
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         }
 
-        return $return_val;
+        return $return_val->get();
     }
 }
