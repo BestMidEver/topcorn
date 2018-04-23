@@ -262,15 +262,16 @@ class ProfileController extends Controller
             'm5.'.App::getlocale().'_poster_path as m5_poster_path',
             'm6.'.App::getlocale().'_poster_path as m6_poster_path'
         )
-        ->groupBy('listes.id')
-        ->orderBy('listes.updated_at', 'desc');
+        ->groupBy('listes.id');
 
         if($list_mode == 'created_ones'){
             $return_val = $return_val
-            ->where('listes.user_id', $user);
+            ->where('listes.user_id', $user)
+            ->orderBy('listes.updated_at', 'desc');
         }else{
             $return_val = $return_val
-            ->where('listlikes.user_id', $user);
+            ->where('listlikes.user_id', $user)
+            ->orderBy('listlikes.updated_at', 'desc');
         }
 
         $return_val = $return_val->get();
