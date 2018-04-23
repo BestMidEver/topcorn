@@ -133,6 +133,19 @@
 	<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 </div>
 
+<div class="container-fluid" ng-show="active_tab=='get_lists'">
+	<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}'">
+		<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			@{{list_mod_title}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';active_tab='get_rateds/5';get_first_page_data();">{{ __('general.created_ones') }}</button>
+			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';active_tab='get_rateds/4';get_first_page_data();">{{ __('general.liked_ones') }}</button>
+		</div>
+	</div>
+	<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
+</div>
+
 <div id="scroll_top_point">
 	<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && listes.length==0)">
 		<div class="text-muted text-center">{{ __('general.no_result') }}</div>

@@ -45,7 +45,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     		$scope.pagination=0;
     		$http({
 				method: 'GET',
-				url: '/api/get_lists/'+pass.profile_user_id,
+				url: '/api/get_lists/'+$scope.list_mod_title+'/'+pass.profile_user_id,
 				headers: {
 					'Content-Type': 'application/json',
 					'Accept' : 'application/json'

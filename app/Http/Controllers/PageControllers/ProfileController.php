@@ -212,7 +212,7 @@ class ProfileController extends Controller
 
 
 
-    public function get_lists($user)
+    public function get_lists($list_mode, $user)
     {
         $return_val = DB::table('listes')
         ->where('listes.user_id', $user)
