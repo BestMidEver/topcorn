@@ -215,7 +215,6 @@ class ProfileController extends Controller
     public function get_lists($list_mode, $user)
     {
         $return_val = DB::table('listes')
-        ->where('listes.user_id', $user)
         ->leftjoin('listlikes', function ($join) {
             $join->on('listlikes.list_id', '=', 'listes.id');
         })
@@ -266,6 +265,14 @@ class ProfileController extends Controller
         ->groupBy('listes.id')
         ->orderBy('listes.updated_at', 'desc')
         ->get();
+
+        if($list_mode == 'created_ones'){
+            $return_val = $return_val
+            ->where('listes.user_id', $user);
+        }else{
+            $return_val = $return_val
+            ->where('l1.user_id', $user);
+        }
 
         foreach ($return_val as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
