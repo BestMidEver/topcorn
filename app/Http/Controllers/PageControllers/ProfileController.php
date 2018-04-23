@@ -273,10 +273,12 @@ class ProfileController extends Controller
             ->where('l1.user_id', $user);
         }
 
+        $return_val = $return_val->get();
+
         foreach ($return_val as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         }
 
-        return $return_val->get();
+        return $return_val;
     }
 }
