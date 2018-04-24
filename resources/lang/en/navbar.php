@@ -18,7 +18,7 @@ return [
     'logout' => 'Logout',
     'donation' => 'Donate',
     'privacy' => 'Privacy Policy',
-    'like_us_on_facebook' => 'Like Us on Facebook',
+    'like_us_on_facebook' => 'Follow Us on Social Media',
     'all_rights_reserved' => 'All Rights Reserved.',  
     'activate_nightmode' => 'Activate Dark Theme',  
     'deactivate_nightmode' => 'Deactivate Dark Theme',  

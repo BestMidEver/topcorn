@@ -18,7 +18,7 @@ return [
     'logout' => 'Çıkış Yap',
     'donation' => 'Bağış',
     'privacy' => 'Gizlilik Politikası',
-    'like_us_on_facebook' => 'Bizi Facebook\'ta Beğenin',
+    'like_us_on_facebook' => 'Sosyal Medyada Bizi Takip Edin',
     'all_rights_reserved' => 'Her Hakkı Saklıdır.',    
     'activate_nightmode' => 'Gece Moduna Geç',  
     'deactivate_nightmode' => 'Gece Modundan Çık',                              

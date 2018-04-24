@@ -18,7 +18,7 @@ return [
     'logout' => 'Kijelentkezés',
     'donation' => 'Adomány',
     'privacy' => 'Adatvédelem',
-    'like_us_on_facebook' => 'Kedvelj minket Facebook-on!',
+    'like_us_on_facebook' => 'Kedvelj minket Facebook-on!', ////////////////////
     'all_rights_reserved' => 'Minden jog fenntartva',
     'activate_nightmode' => 'Sötét háttér',  
     'deactivate_nightmode' => 'Világos háttér',  
