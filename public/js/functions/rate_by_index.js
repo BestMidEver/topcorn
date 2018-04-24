@@ -338,6 +338,7 @@ MyApp.factory('rate', function($http) {
     	search_movies: search_movies, 
     	search_people: search_people,
     	search_users: search_users,
+    	search_listes: search_listes,
     	tt_manipulate: tt_manipulate,
     };
 })
