@@ -76,7 +76,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						$(".tooltip").hide();
 					});
 					break;
-				case 'liste':
+				case 'list':
 					rate.search_listes(temp, $scope.page)
 					.then(function(response){
 						console.log(response.data);
