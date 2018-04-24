@@ -281,6 +281,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    search_listes = function(search_text, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/search_lists/'+search_text+'?page='+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
 
     tt_manipulate = function(column, level) 
     {

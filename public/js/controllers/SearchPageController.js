@@ -37,6 +37,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.movies=null;
 		$scope.people=null;
 		$scope.users=null
+		$scope.listes=null
 		$(".tooltip").hide();
 	}
 
@@ -67,6 +68,19 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					.then(function(response){
 						console.log(response.data);
 						$scope.users=response.data.data;
+						$scope.pagination=response.data.last_page;
+						$scope.current_page=response.data.current_page;
+						$scope.from=response.data.from;
+						$scope.to=response.data.to;
+						$scope.in=response.data.total;
+						$(".tooltip").hide();
+					});
+					break;
+				case 'liste':
+					rate.search_listes(temp, $scope.page)
+					.then(function(response){
+						console.log(response.data);
+						$scope.listes=response.data.data;
 						$scope.pagination=response.data.last_page;
 						$scope.current_page=response.data.current_page;
 						$scope.from=response.data.from;

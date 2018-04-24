@@ -83,6 +83,7 @@ return [
     'links' => 'Profilde Sergilenen Bağlantılar',                                       //account                 
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
+    'list' => 'Liste',                                                                  //search,           /////////////         
     'lists' => 'Listeler',                                                              //list,         
     'list_description' => 'Açıklama',                                                   //list,         
     'list_number' => 'Oluşturduğu liste sayısı',                                        //profile,                   

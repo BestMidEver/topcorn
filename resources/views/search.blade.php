@@ -16,6 +16,9 @@
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='user'}" ng-click="reset_tab();active_tab='user';get_page_data();setFocus('input_user')">{{ __('general.user') }}</button>
 		</li>
+		<li class="nav-item">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='list'}" ng-click="reset_tab();active_tab='list';get_page_data();setFocus('input_list')">{{ __('general.list') }}</button>
+		</li>
 	</ul>
 </div>
 
@@ -29,13 +32,14 @@
 			<input type="text" id="input_movie" class="form-control" ng-show="active_tab=='movie'" placeholder="{{ __('general.search_movie') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}" autofocus>
 			<input type="text" id="input_person" class="form-control" ng-show="active_tab=='person'" placeholder="{{ __('general.search_person') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}">
 			<input type="text" id="input_user" class="form-control" ng-show="active_tab=='user'" placeholder="{{ __('general.search_user') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}">
+			<input type="text" id="input_list" class="form-control" ng-show="active_tab=='list'" placeholder="{{ __('general.search_list') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}">
 		</div>
 		<div class="col"></div>
 	</div>
 </div>
 
 <div id="scroll_top_point">
-	<div class="p-5" ng-hide="movies.length>0 || people.length>0 || users.length>0 || (movies==null && people==null && users==null)">
+	<div class="p-5" ng-hide="movies.length>0 || people.length>0 || users.length>0 || listes.length>0 || (movies==null && people==null && users==null && listes==null)">
 		<div class="text-muted text-center">{{ __('general.no_result') }}</div>
 	</div>
 
@@ -65,6 +69,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="card-group no-gutters">
+		@include('layout.listcard')
 	</div>
 </div>
 
