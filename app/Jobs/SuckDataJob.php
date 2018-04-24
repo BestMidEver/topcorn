@@ -5,6 +5,8 @@ namespace App\Jobs;
 use App\Jobs\RestartJob;
 use App\Jobs\SuckMovieJob;
 use App\Jobs\SuckPageJob;
+use App\Model\Ban;
+use App\Model\Later;
 use App\Model\Listitem;
 use App\Model\Rated;
 use Illuminate\Bus\Queueable;

@@ -39,14 +39,22 @@ class SearchController extends Controller
 
     public function search_users($text = null)
     {
-    	$return_val = DB::table('users')
-    	->where('email', '=', $text)
+        $return_val = DB::table('users')
+        ->where('email', '=', $text)
         ->orwhere('name', 'like', '%' . $text . '%')
-    	->select('users.id as user_id',
+        ->select('users.id as user_id',
                 'users.name as name',
                 'users.profile_pic as profile_path',
                 'users.facebook_profile_pic as facebook_profile_path');
         return $return_val->paginate(12);
+    }
+
+
+
+
+    public function search_lists($text)
+    {
+        return $text;
     }
 
 
