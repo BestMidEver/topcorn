@@ -38,6 +38,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			break;
 	}
 
+	$scope.list_mode='created_ones';
     $scope.get_page_data = function()
     {
     	if($scope.active_tab == 'get_lists'){
