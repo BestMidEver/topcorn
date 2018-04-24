@@ -109,7 +109,7 @@ class SearchController extends Controller
         ->orderBy('listes.updated_at', 'desc')
         ->paginate(12);
 
-        foreach ($return_val->data as $row) {
+        foreach ($return_val['data'] as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         }
 
