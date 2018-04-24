@@ -113,7 +113,7 @@ class SearchController extends Controller
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         }
 
-        return $return_val;
+        return $return_val->paginate(12);
     }
 
 
