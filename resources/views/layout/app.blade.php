@@ -242,7 +242,7 @@ else $theme='';
                 <div class="col-8 col-sm-4 text-sm-right">
                     <div class=" h-100 d-flex flex-column justify-content-between">
                         <div class="py-2 small">
-                            <div class="text-dark pb-1">{{ __('navbar.like_us_on_facebook') }}</div>
+                            <!--<div class="text-dark pb-1">{{ __('navbar.like_us_on_facebook') }}</div>-->
                             <div class="d-inline"
                             @if(Auth::User()->tt_navbar < 100)
                             data-toggle="popover" data-placement="left" title='{{ __("tutorial.cry_for_help") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="like"
