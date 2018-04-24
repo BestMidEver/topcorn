@@ -69,7 +69,7 @@
 		<div class="col">
 			<div class="h-100 d-flex flex-column justify-content-center">
 				<div class="flex-row justify-content-center">
-					<a href="https://www.patreon.com/preview/92803a572d784860924a7c9c7acd8811" target="_blank" class="btn btn-danger">Patreon</a>
+					<a href="https://www.patreon.com/topcorn" target="_blank" class="btn btn-danger">Patreon</a>
 				</div>
 			</div>
 		</div>

@@ -66,6 +66,7 @@ return array(
   'twitter' => array(
 
     'link' => 'https://twitter.com/',
+    'our_link' => 'https://twitter.com/topcornio',
 
   ),
 
