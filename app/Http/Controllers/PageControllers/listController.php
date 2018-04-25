@@ -258,8 +258,8 @@ class listController extends Controller
         }
         $request->session()->flash('status', __('general.list_updated'));
 
-
-        return redirect('/createlist/'.$liste->id);
+        
+        //return redirect('/createlist/'.$liste->id);
     }
 
 
