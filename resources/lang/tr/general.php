@@ -37,6 +37,7 @@ return [
     'cover_photo' => 'Kapak Fotoğrafı',                                                 //account,
     'create_list' => 'Kendi Listeni Oluştur',                                           //list,                 
     'create_new_password' => 'Yeni Şifre Oluştur',                                      //reset,
+    'created_ones' => 'Oluşturulan',                                                    //profile,
     'crew' => 'Set Ekibi',          
     'current_password' => 'Şimdiki Şifre',                                              //accountpassword,
     'directing' => 'Yönetmenlik',
@@ -77,6 +78,7 @@ return [
     'lang' => 'Dil',                                                                    //accountinterface,
     'language' => 'ORİJİNAL DİL',                                                       //recommendations_languages,
     'like' => 'Beğen',                                                                  //list          
+    'liked_ones' => 'Beğenilen',                                                        //profile,               
     'like_count' => 'beğeni',                                                           //list          
     'like_counts' => 'beğeni',                                                          //list          
     'like_number' => 'Aldığı beğeni sayısı',                                            //profile                 

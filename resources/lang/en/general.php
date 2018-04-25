@@ -37,6 +37,7 @@ return [
     'cover_photo' => 'Cover Photo',                                         //account,
     'create_list' => 'Create Your Own List',                                //list,                 
     'create_new_password' => 'Create New Password',                         //reset,
+    'created_ones' => 'Created',                                            //profile,
     'crew' => 'Crew',                               
     'current_password' => 'Current Password',                               //accountpassword,
     'directing' => 'Directing',                                             //person
@@ -76,7 +77,8 @@ return [
     'its_title' => 'Title',                                                 //movie,
     'lang' => 'Language',                                                   //accountinterface,
     'language' => 'ORIGINAL LANGUAGE',                                      //recommendations_languages,
-    'like' => 'Like',                                                       //list          
+    'like' => 'Like',                                                       //list   
+    'liked_ones' => 'Liked',                                                //profile,               
     'like_count' => 'like',                                                 //list          
     'like_counts' => 'likes',                                               //list      
     'like_number' => 'Total like that user got',                            //profile                 

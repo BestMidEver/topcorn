@@ -37,6 +37,7 @@ return [
     'cover_photo' => 'Borítókép',                                           //account,
     'create_list' => 'Lista létrehozása',                                         //list,                 
     'create_new_password' => 'Új jelszó létrehozása',                       //reset,
+    'created_ones' => 'Created',                                            //profile,          //////////
     'crew' => 'Stáb',                           
     'current_password' => 'Jelenlegi jelszó',                               //accountpassword,
     'directing' => 'Rendezés',
@@ -77,6 +78,7 @@ return [
 	'lang' => 'Nyelv',
     'language' => 'EREDETI NYELV',                                          //recommendations_languages,
     'like' => 'Tetszik',                                                       //list          
+    'liked_ones' => 'Liked',                                                //profile,      ////////////////         
     'like_count' => 'Tetszik-ek száma',                                                 //list          
     'like_counts' => 'Tetszik-ek száma',                                               //list         
     'like_number' => 'Total like that user got',                            //profile       /////////////          
