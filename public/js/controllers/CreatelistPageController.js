@@ -27,7 +27,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.choose_movie = function(index, movie){
 		console.log(index, movie);
-		rate.suck_movie(movie);
+		rate.suck_movie(movie.id);
 		$scope.movies[index].movie_id=movie.id;
 		$scope.movies[index].searchmode=false;
 		$scope.movies[index].overview=movie.overview;

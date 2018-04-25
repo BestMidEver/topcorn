@@ -2,12 +2,6 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
-use App\Jobs\SuckMovieJob;
-use App\Model\Genre;
-use App\Model\Movie;
-use App\Model\Recommendation;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
