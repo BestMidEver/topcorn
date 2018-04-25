@@ -244,7 +244,7 @@ class listController extends Controller
             }
         }
         array_multisort($temp,$temp2,$temp3);
-        return $temp;
+        return $temp2;
         foreach ($temp2 as $index=>$value) {
             if($value > 0){
                 $listitem = new Listitem;
