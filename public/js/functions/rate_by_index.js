@@ -320,6 +320,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    suck_movie = function(movie_id) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/suck_movie/'+movie_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
 
     return {
     	get_quick_rate: get_quick_rate,

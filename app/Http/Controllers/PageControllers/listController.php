@@ -252,13 +252,13 @@ class listController extends Controller
                 $listitem->position = $index+1;
                 $listitem->explanation = $temp3[$index];
                 $listitem->save();
-                SuckMovieJob::dispatch($value, false)->onQueue("high");
+                //SuckMovieJob::dispatch($value, false)->onQueue("high");
             }
         }
         $request->session()->flash('status', __('general.list_updated'));
 
 
-        //return redirect('/createlist/'.$liste->id);
+        return redirect('/createlist/'.$liste->id);
     }
 
 
