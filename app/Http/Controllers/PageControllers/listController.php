@@ -198,7 +198,7 @@ class listController extends Controller
 
 
     public function post_createlist(Request $request)
-    {return $request->all();
+    {
 
         $request->validate([
             'header' => 'required'
@@ -244,6 +244,7 @@ class listController extends Controller
             }
         }
         array_multisort($temp,$temp2,$temp3);
+        return $temp;
         foreach ($temp2 as $index=>$value) {
             if($value > 0){
                 $listitem = new Listitem;
