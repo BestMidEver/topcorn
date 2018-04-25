@@ -244,7 +244,6 @@ class listController extends Controller
             }
         }
         array_multisort($temp,$temp2,$temp3);
-        return $temp2;
         foreach ($temp2 as $index=>$value) {
             if($value > 0){
                 $listitem = new Listitem;
@@ -258,7 +257,7 @@ class listController extends Controller
         }
         $request->session()->flash('status', __('general.list_updated'));
 
-        
+
         //return redirect('/createlist/'.$liste->id);
     }
 
