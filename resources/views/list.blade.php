@@ -58,7 +58,7 @@
 									</a>
 								</div>
 
-								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-if="!movie.explanation">
+								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-if="!movie.explanation && movie.overview.length > 0">
 									<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.overview }}</div>
 								</div>
 								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-if="movie.explanation">
