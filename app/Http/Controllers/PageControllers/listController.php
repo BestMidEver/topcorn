@@ -198,7 +198,7 @@ class listController extends Controller
 
 
     public function post_createlist(Request $request)
-    {
+    {return $request->all();
 
         $request->validate([
             'header' => 'required'
