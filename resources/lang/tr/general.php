@@ -157,6 +157,7 @@ return [
     'screenplay' => 'Senaryo',          
     'search' => 'Ara',          
     'searching' => 'Aranıyor...',                                                       //recommendations,        
+    'search_list' => 'Başlığıyla Liste Ara',                                            //search,           
     'search_movie' => 'İsmiyle Film Ara',           
     'search_results' => 'Arama Sonuçları',                                              //recommendations,
     'search_person' => 'İsmiyle Kişi Ara',          

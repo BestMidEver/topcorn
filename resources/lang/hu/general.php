@@ -156,6 +156,7 @@ return [
     'screenplay' => 'Forgatókönyv',                                         //movie
     'search' => 'Keresés',                                                  //search
     'searching' => 'Searching...',                                          //recommendations,    //////////////
+    'search_list' => 'Search a list by title',                              //search,   /////////// 
     'search_movie' => 'Film keresése címmel',                               //search
     'search_results' => 'Keresés eredményei',                               //recommendations,
     'search_person' => 'Személy keresése névvel/Email-lel',                 //search
