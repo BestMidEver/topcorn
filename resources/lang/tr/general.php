@@ -63,7 +63,7 @@ return [
     'filter' => 'SÜZGEÇ',                                                               //recommendations,
     'primary_language' => 'Ana Dil',                                                    //accountinterface,
     'forgot_my_password' => 'Şifremi Unuttum',                                          //email, login,
-    'genre' => 'TÜR',                                                                   //recommendations_genres,
+    'genre' => 'TÜR KOMBİNASYONU',                                                      //recommendations_genres,
     'h' => 'sa.',
     'havent_seen' => 'İzlemedim',                                                       //ratemodal,
     'header' => 'Manşet*',                                                              //list,             

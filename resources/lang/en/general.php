@@ -63,7 +63,7 @@ return [
     'filter' => 'FILTER',                                                   //recommendations,
     'primary_language' => 'Primary Language',                               //accountinterface,
     'forgot_my_password' => 'I Forgot My Password',                         //email, login,
-    'genre' => 'GENRE',                                                     //recommendations_genres,
+    'genre' => 'GENRE COMBINATION',                                         //recommendations_genres,
     'h' => 'h',                                                             //movie,
     'havent_seen' => 'Haven\'t Seen',                                       //ratemodal,
     'header' => 'Heading*',                                                 //list,             
