@@ -166,11 +166,7 @@
                     <div class=" h-100 d-flex flex-column justify-content-between">
                         <div class="py-2 small">
                             <!--<div class="text-dark pb-1">{{ __('navbar.like_us_on_facebook') }}</div>-->
-                            <div class="d-inline"
-                            @if(Auth::User()->tt_navbar < 100)
-                            data-toggle="popover" data-placement="left" title='{{ __("tutorial.cry_for_help") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="like"
-                            @endif
-                            >
+                            <div class="d-inline">
                                 <!--<div class="fb-like mr-1 mb-2" data-href="https://www.facebook.com/topcorn.io/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>-->
                                 <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.facebook.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
                             </div>
