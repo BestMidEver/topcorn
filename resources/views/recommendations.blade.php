@@ -61,18 +61,18 @@
 <div class="container-fluid mt-3 pb-1" id="filter">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{{ __('general.top_rated') }}</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.top_rated') !!}</button>
 		</li>
-		<li class="nav-item">
+		<!--<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='popular'}" ng-click="active_tab='popular';get_first_page_data()">{{ __('general.most_populer') }}</button>
-		</li>
+		</li>-->
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		</li>
 		@if(Auth::check())
 			@if(Auth::id() == 28)
 		<li class="nav-item mb-2">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()"><small>Based on</small> <br> My Mood<!--{!! __('general.according_to_movie_combination') !!}--></button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 		</li>
 			@endif
 		@endif
