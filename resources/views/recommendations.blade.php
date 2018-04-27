@@ -67,6 +67,27 @@
 	</div>
 	<div class="py-3" ng-if="active_tab=='mood_pick'">
 		<span class="h6 text-muted d-block" ng-hide="is_mode_search">{{ __('general.definitely_recommend_movies') }}</span>
+
+
+		<div class="container-fluid">
+			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend') }}'">
+				<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					@{{mode_mod_title}}
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_recommend') }}';">{{ __('general.definitely_recommend') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.recommend') }}';">{{ __('general.recommend') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.not_sure') }}';">{{ __('general.not_sure') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.dont_recommend') }}';">{{ __('general.dont_recommend') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_dont_recommend') }}';">{{ __('general.definitely_dont_recommend') }}</button>
+					<div class="dropdown-divider"></div>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all') }}';">{{ __('general.all') }}</button>
+				</div>
+			</div>
+			<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
+		</div>
+
+
 		<span class="h6 text-muted d-block" ng-show="is_mode_search">{{ __('general.search_results') }}</span>
 		<div class="p-5" ng-show="search_movies.length==0">
 			<div class="text-muted text-center">{{ __('general.no_result') }}</div>
