@@ -50,7 +50,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				$scope.listes=response.data;
 				$(".tooltip").hide();
 			});
-    	}else{
+    	}else{console.log($scope.active_tab)
     		rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page)
 			.then(function(response){
 				console.log(response.data.data)
