@@ -69,9 +69,6 @@
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		</li>
-		<li class="nav-item ml-3 pb-2">
-			<button class="nav-link btn btn-outline-secondary btn-sm" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" {{ auth::check()?null:'disabled' }}><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
-		</li>
 		@if(Auth::check())
 			@if(Auth::id() == 28)
 		<li class="nav-item mb-2">
@@ -79,6 +76,9 @@
 		</li>
 			@endif
 		@endif
+		<li class="nav-item ml-3 pb-2">
+			<button class="nav-link btn btn-outline-secondary btn-sm" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" {{ auth::check()?null:'disabled' }}><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
+		</li>
 	</ul>
 </div>
 
