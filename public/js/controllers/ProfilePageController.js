@@ -44,8 +44,6 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     	if($scope.active_tab == 'get_lists'){
     		$scope.movies=null;
     		$scope.pagination=0;
-    		console.log($scope.list_mode)
-
     		rate.get_list_data($scope.list_mode, pass.profile_user_id)
 			.then(function(response){
 				console.log(response.data)
