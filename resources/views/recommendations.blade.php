@@ -3,6 +3,7 @@
 @include('head.head_recommendations')
 
 @section('body')
+<!-- H1 +AddPerson +AddMode row  -->
 <div class="col mt-1 mb-2 mt-md-4">
 	<h1 class="h5 d-inline align-middle my-2">{{ __('navbar.recommendations') }}</h1>
 	@if(auth::check())
@@ -17,7 +18,12 @@
 		<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_mode')"><i class="fas fa-user-plus"></i> {{ __('general.add_movie') }}</button>
 	</div>
 </div>
+<!-- H1 +AddPerson +AddMode row  -->
 
+
+
+
+<!-- AddPerson / AddMode section -->
 <div class="collapse container-fluid background-lightgrey" id="collapseAdd">
 	<div class="row pt-3">
 		<div class="col"></div>
@@ -31,32 +37,6 @@
 		<div class="col"></div>
 	</div>
 	<div class="py-3" ng-if="active_tab!='mood_pick'">
-		<span class="h6 text-muted d-block" ng-hide="is_mode_search">{{ __('general.definitely_recommend_movies') }}</span>
-		<span class="h6 text-muted d-block" ng-show="is_mode_search">{{ __('general.search_results') }}</span>
-		<div class="p-5" ng-show="search_movies.length==0">
-			<div class="text-muted text-center">{{ __('general.no_result') }}</div>
-		</div>
-		<div class="d-flex flex-wrap">
-			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-2 px-1" ng-repeat="movie in search_movies">
-				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
-					<a ng-href="/movie/@{{movie.id}}" target={{$target}}>
-						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
-						<div class="card-block">
-							<h6 class="card-title px-1 pt-1 text-muted text-center">@{{movie.title}}</h6>
-						</div>
-					</a>
-					<div class="card-footer p-0">
-						<div class="row no-gutters">
-							<div class="col">
-								<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-click="add_to_mode(movie)"><i class="fa fa-plus"></i> {{ __('general.add') }}</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="py-3" ng-if="active_tab=='mood_pick'">
 		<span class="h6 text-muted d-block" ng-hide="is_search">{{ __('general.previous_parties') }}</span>
 		<span class="h6 text-muted d-block" ng-show="is_search">{{ __('general.search_results') }}</span>
 		<div class="p-5" ng-show="users.length==0">
@@ -85,12 +65,43 @@
 			</div>
 		</div>
 	</div>
+	<div class="py-3" ng-if="active_tab=='mood_pick'">
+		<span class="h6 text-muted d-block" ng-hide="is_mode_search">{{ __('general.definitely_recommend_movies') }}</span>
+		<span class="h6 text-muted d-block" ng-show="is_mode_search">{{ __('general.search_results') }}</span>
+		<div class="p-5" ng-show="search_movies.length==0">
+			<div class="text-muted text-center">{{ __('general.no_result') }}</div>
+		</div>
+		<div class="d-flex flex-wrap">
+			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-2 px-1" ng-repeat="movie in search_movies">
+				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
+					<a ng-href="/movie/@{{movie.id}}" target={{$target}}>
+						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+						<div class="card-block">
+							<h6 class="card-title px-1 pt-1 text-muted text-center">@{{movie.title}}</h6>
+						</div>
+					</a>
+					<div class="card-footer p-0">
+						<div class="row no-gutters">
+							<div class="col">
+								<button type="button" class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-click="add_to_mode(movie)"><i class="fa fa-plus"></i> {{ __('general.add') }}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	@include('layout.pagination', ['suffix' => '_search'])
 	<div class="text-center pb-1">
 		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseAdd" ng-click="reset_add_person_input()"><i class="fa fa-angle-up"></i></button>
 	</div>
 </div>
+<!-- AddPerson / AddMode section -->
 
+
+
+
+<!-- Tabs and Filter Button -->
 <div class="container-fluid mt-3 pb-1" id="filter">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
@@ -110,7 +121,12 @@
 		</li>
 	</ul>
 </div>
+<!-- Tabs and Filter Button -->
 
+
+
+
+<!-- Filter secion -->
 <div class="collapse container-fluid background-lightgrey" id="collapseFilter">
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
@@ -156,7 +172,12 @@
 		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseFilter"><i class="fa fa-angle-up" ng-click="scroll_to_filter()"></i></button>
 	</div>
 </div>
+<!-- Filter secion -->
 
+
+
+
+<!-- MovieCard -->
 <div id="scroll_top_point">
 	<div class="p-5" ng-show="movies.length==0">
 		<div class="text-muted text-center"><span ng-if="!is_waiting">{{ __('general.no_result') }}</span><span ng-if="is_waiting">{{ __('general.searching') }}</span></div>
@@ -165,5 +186,6 @@
 </div>
 
 @include('layout.pagination', ['suffix' => ''])
+<!-- MovieCard -->
 
 @endsection
