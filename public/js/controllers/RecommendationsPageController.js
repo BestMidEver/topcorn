@@ -384,7 +384,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			if($scope.active_tab!='mood_pick'){
 				$scope.search_users();
 			}else{
-				$scope.search_movies();
+				$scope.get_search_movies();
 			}
 		}
 
