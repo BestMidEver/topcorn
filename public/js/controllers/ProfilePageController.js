@@ -46,21 +46,15 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     		$scope.pagination=0;
     		console.log($scope.list_mode)
 
-    		rate.get_profile_data($scope.list_mode)
+    		rate.get_list_data($scope.list_mode, pass.profile_user_id)
 			.then(function(response){
 				console.log(response.data)
 				$scope.listes=response.data;
 				$(".tooltip").hide();
 			});
     	}else{
-			$http({
-				method: 'GET',
-				url: '/api/'+$scope.active_tab+'/'+pass.profile_user_id+'/'+pass.lang+'?page='+$scope.page,
-				headers: {
-					'Content-Type': 'application/json',
-					'Accept' : 'application/json'
-				}
-			}).then(function successCallback(response) {
+    		rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page)
+			.then(function(response){
 				console.log(response.data.data)
 				$scope.movies=response.data.data;
 				$scope.pagination=response.data.last_page;
@@ -69,7 +63,6 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				$scope.to=response.data.to;
 				$scope.in=response.data.total;
 				$(".tooltip").hide();
-			}, function errorCallback(response) {
 			});
 		}
 	}

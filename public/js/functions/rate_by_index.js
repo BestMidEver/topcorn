@@ -337,11 +337,28 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_profile_data = function(list_mode) 
+    get_list_data = function(list_mode, profile_user_id) 
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_lists/'+list_mode+'/'+pass.profile_user_id,
+			url: '/api/get_lists/'+list_mode+'/'+profile_user_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+    get_profile_data = function(active_tab, profile_user_id, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/'+active_tab+'/'+profile_user_id+'/'+pass.lang+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -374,7 +391,8 @@ MyApp.factory('rate', function($http) {
     	search_users: search_users,
     	search_listes: search_listes,
     	suck_movie: suck_movie,
-    	get_profile_data: get_profile_data,
+    	get_list_data: get_list_data,//Kullanıcının listelerini getirir.
+    	get_profile_data: get_profile_data,//Kullanıcının izlediği/oyladığı filmleri getirir.
     	tt_manipulate: tt_manipulate,
     };
 })
