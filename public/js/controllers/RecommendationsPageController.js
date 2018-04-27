@@ -314,7 +314,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 ////////////////////////////////////////// SET FOCUS /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.setFocus = function(id_of_input){
-		console.log(id_of_input)
 		setTimeout(function() {
 			angular.element('#'+id_of_input).focus();
 		}, 500);
@@ -341,7 +340,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			}
 		}
 		
-		$scope.search_movies = function()
+		$scope.get_search_movies = function()
 		{
 			var temp=$scope.search_text.replace(/ /g , "%20");
 			if(temp > 0){

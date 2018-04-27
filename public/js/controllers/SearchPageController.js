@@ -134,7 +134,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 ////////////////////////////////////////// SET FOCUS /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.setFocus = function(id_of_input){
-		console.log(id_of_input)
 		setTimeout(function() {
 			angular.element('#'+id_of_input).focus();
 		}, 500);
