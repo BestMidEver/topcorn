@@ -357,6 +357,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 					$scope.to_search=(response.data.page-1)*20+response.data.results.length;
 					$scope.in_search=response.data.total_results;
 					$scope.is_search=true;
+					$(".tooltip").hide();
 				});
 			}else{
 				$scope.get_watched_movies();
@@ -364,7 +365,18 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		}
 
 		$scope.get_watched_movies = function(){
-			
+			rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page)
+			.then(function(response){
+				console.log(response.data.data)
+				$scope.search_movies=response.data.data;
+				$scope.pagination=response.data.last_page;
+				$scope.current_page_search=response.data.current_page;
+				$scope.from_search=response.data.from;
+				$scope.to_search=response.data.to;
+				$scope.in_search=response.data.total;
+				$scope.is_search=false;
+				$(".tooltip").hide();
+			});
 		}
 
 		$scope.search_get_first = function()
