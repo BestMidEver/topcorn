@@ -363,8 +363,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			}
 		}
 
-		$scope.get_watched_movies = function(){
-			rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page)
+		$scope.get_watched_movies = function()
+		{
+			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page)
 			.then(function(response){
 				console.log(response.data.data)
 				$scope.search_movies=response.data.data;

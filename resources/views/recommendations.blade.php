@@ -36,7 +36,7 @@
 		</div>
 		<div class="col"></div>
 	</div>
-	
+
 	<div class="py-3" ng-if="active_tab!='mood_pick'">
 		<span class="h6 text-muted d-block" ng-hide="is_search">{{ __('general.previous_parties') }}</span>
 		<span class="h6 text-muted d-block" ng-show="is_search">{{ __('general.search_results') }}</span>
@@ -70,18 +70,18 @@
 
 
 		<div class="container-fluid">
-			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend_movies') }}'">
+			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';mode_active_tab='get_rateds/5'">
 				<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					@{{mode_mod_title}}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';">{{ __('general.definitely_recommend_movies') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.recommend_movies') }}';">{{ __('general.recommend_movies') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.not_sure_movies') }}';">{{ __('general.not_sure_movies') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.dont_recommend_movies') }}';">{{ __('general.dont_recommend_movies') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_dont_recommend_movies') }}';">{{ __('general.definitely_dont_recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';mode_active_tab='get_rateds/5'">{{ __('general.definitely_recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.recommend_movies') }}';mode_active_tab='get_rateds/4'">{{ __('general.recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.not_sure_movies') }}';mode_active_tab='get_rateds/3'">{{ __('general.not_sure_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.dont_recommend_movies') }}';mode_active_tab='get_rateds/2'">{{ __('general.dont_recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_dont_recommend_movies') }}';mode_active_tab='get_rateds/1'">{{ __('general.definitely_dont_recommend_movies') }}</button>
 					<div class="dropdown-divider"></div>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all_movies') }}';">{{ __('general.all_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all_movies') }}';mode_active_tab='get_rateds/all'">{{ __('general.all_movies') }}</button>
 				</div>
 			</div>
 			<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
