@@ -337,6 +337,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_profile_data = function(list_mode) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_lists/'+list_mode+'/'+pass.profile_user_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
 
     return {
     	get_quick_rate: get_quick_rate,
@@ -357,6 +374,7 @@ MyApp.factory('rate', function($http) {
     	search_users: search_users,
     	search_listes: search_listes,
     	suck_movie: suck_movie,
+    	get_profile_data: get_profile_data,
     	tt_manipulate: tt_manipulate,
     };
 })

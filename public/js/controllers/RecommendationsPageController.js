@@ -325,11 +325,69 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// ADD MOVIES TO MOOD ////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+		$scope.page_search=1;
+
+		$scope.paginate_search = function(page)
+		{
+			$scope.page_search = page;
+			if($scope.active_tab!='mood_pick'){
+				$scope.search_users();
+			}else{
+				$scope.search_movies();
+			}
+		}
+		
+		$scope.search_movies = function()
+		{
+			var temp=$scope.search_text.replace(/ /g , "%20");
+			if(temp > 0){
+				rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page_search)
+				.then(function(response){
+					console.log(response.data);
+					$scope.search_movies=response.data.results;
+					$(".tooltip").hide();
+					if(response.data.total_pages<1000) $scope.pagination_search=response.data.total_pages;
+					else $scope.pagination_search=1000;
+					$scope.current_page_search=response.data.page;
+					$scope.from_search=(response.data.page-1)*20+1;
+					$scope.to_search=(response.data.page-1)*20+response.data.results.length;
+					$scope.in_search=response.data.total_results;
+					$scope.is_search=true;
+				});
+			}else{
+				$scope.get_watched_movies();
+			}
+		}
+
+		$scope.get_watched_movies = function(){
+			
+		}
+
+		$scope.search_get_first = function()
+		{
+			$scope.page_search = 1;
+			if($scope.active_tab!='mood_pick'){
+				$scope.search_users();
+			}else{
+				$scope.search_movies();
+			}
+		}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////// ADD MOVIES TO MOOD ////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 	if(pass.is_auth==1){
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ADD USERS TO WATCH TOGETHER ///////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-		$scope.page_search = 1;
 		$scope.party_members = [];
 		
 		$scope.get_last_parties = function()
@@ -347,7 +405,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			});
 		}
 		
-		$scope.page_search=1;
 		$scope.search_users = function()
 		{
 			if($scope.search_text.length>0){
@@ -365,19 +422,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			}else{
 				$scope.get_last_parties();
 			}
-		}
-
-		$scope.paginate_search = function(page)
-		{
-			$scope.page_search = page;
-			$scope.search_users();
-		}
-
-
-		$scope.search_get_first = function()
-		{
-			$scope.page_search = 1;
-			$scope.search_users();
 		}
 
 		$scope.add_to_history = function(user_id)
@@ -424,6 +468,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 ////////////////////////////////// ADD USERS TO WATCH TOGETHER ///////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	}
+
 
 
 

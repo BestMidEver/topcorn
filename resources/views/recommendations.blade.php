@@ -36,6 +36,7 @@
 		</div>
 		<div class="col"></div>
 	</div>
+	
 	<div class="py-3" ng-if="active_tab!='mood_pick'">
 		<span class="h6 text-muted d-block" ng-hide="is_search">{{ __('general.previous_parties') }}</span>
 		<span class="h6 text-muted d-block" ng-show="is_search">{{ __('general.search_results') }}</span>

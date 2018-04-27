@@ -4,6 +4,7 @@ pass={
 	"angular_module_array":['rzModule'], 
 	"lang":"{{ App::getlocale() }}",
 	"is_auth":"{{  Auth::Check()  }}",
+	"constants_api_key":"{{config('constants.api_key')}}",
 	@if(Auth::check())
 	"user_id":{{ Auth::id() }},
 	"with_user_id":"{!! session('with_user_id') !!}",
