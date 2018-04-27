@@ -6,13 +6,13 @@
 <div class="col mt-1 mb-2 mt-md-4">
 	<h1 class="h5 d-inline align-middle my-2">{{ __('navbar.recommendations') }}</h1>
 	@if(auth::check())
-	<div ng-show="active_tab!='mood_pick'">
+	<div class="d-inline" ng-show="active_tab!='mood_pick'">
 		<button class="btn btn-warning btn-sm text-white ml-3 my-2" type="button" disabled>{{ Auth::user()->name }}</button>
 		<button class="btn btn-warning btn-sm text-white mx-1 my-2" type="button" ng-repeat="user in party_members" ng-click="remove_from_party(user.user_id);">@{{user.name}} <i class="fa fa-times"></i></button>
 		<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i> {{ __('general.add_person') }}</button>
 	</div>
 	@endif
-	<div ng-show="active_tab=='mood_pick'">
+	<div class="d-inline" ng-show="active_tab=='mood_pick'">
 		<button class="btn btn-warning btn-sm text-white mx-1 my-2" type="button" ng-repeat="mode_movie in mode_movies" ng-click="remove_from_mode(mode_movie.id);">@{{mode_movie.title}}@{{mode_movie.release_date.length > 0 ? ' ('+mode_movie.release_date.substring(0, 4)+')' : ''}} <i class="fa fa-times"></i></button>
 		<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_mode')"><i class="fas fa-user-plus"></i> {{ __('general.add_movie') }}</button>
 	</div>
