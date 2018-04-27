@@ -20,6 +20,7 @@ return [
     'ago_message' => 
         ':created_at önce ekledi, en son :updated_at önce güncelledi.',                 //list,   
     'all' => 'Hepsi',                                                                   //profile,
+    'all_movies' => 'Bütün Filmler',                                                    //recommendations,          /////////
     'author' => 'Yaratıcı',         
     'ban' => 'Banla',           
     'banneds' => 'Banlananlar',                                                         //profile,
@@ -48,10 +49,12 @@ return [
     'disabled' => 'Devre Dışı',                                                         //accountinterface,
     'display' => 'Görüntü',                                                             //accountinterface,
     'definitely_dont_recommend' => 'Çöp',                                               //ratemodal, profile,
+    'definitely_dont_recommend_movies' => 'Çöp Filmler',                                //recommendations,          ///////
     'definitely_recommend' => 'Efsanevi',                                               //ratemodal, profile,
     'definitely_recommend_movies' => 'Efsanevi Filmler',                                //recommendations,          ////////
     'dollar_account' => 'Dolar Hesabı',                                                 //donation,
     'dont_recommend' => 'Kötü',                                                         //ratemodal, profile,
+    'dont_recommend_movies' => 'Kötü Filmler',                                          //recommendations,          ////////
     'edit' => 'Düzenle',                                                                //list                      
     'editing' => 'Kurgu',   
     'email' => 'E-Posta',                                                               //email, reset, login, register,
@@ -118,6 +121,7 @@ return [
     'no_result' => 'Sonuç bulunamadı.',                                                 //profile, search
     'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                //movie
     'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,
+    'not_sure_movies' => 'Kararsız Kaldığım Filmler',                                   //recommendations,      /////////////
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
     'only_me' => 'Sadece Ben',                                                          //list,         
@@ -150,6 +154,7 @@ return [
     'read_all' => 'Hepsini oku',            
     'recipient_name' => 'Alıcının Adı',                                                 //donation,
     'recommend' => 'Güzel',                                                             //ratemodal, profile,
+    'recommend_movies' => 'Güzel Filmler',                                              //recommendations,      //////////
     'remember_me' => 'Beni hatırla',                                                    //login,
     'remove' => 'Sil',                                                                  //recommendations,
     'revenue' => 'Gelir',           

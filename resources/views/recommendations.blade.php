@@ -75,12 +75,12 @@
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';">{{ __('general.definitely_recommend_movies') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.recommend') }}';">{{ __('general.recommend') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.not_sure') }}';">{{ __('general.not_sure') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.dont_recommend') }}';">{{ __('general.dont_recommend') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_dont_recommend') }}';">{{ __('general.definitely_dont_recommend') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.recommend_movies') }}';">{{ __('general.recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.not_sure_movies') }}';">{{ __('general.not_sure_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.dont_recommend_movies') }}';">{{ __('general.dont_recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_dont_recommend_movies') }}';">{{ __('general.definitely_dont_recommend_movies') }}</button>
 					<div class="dropdown-divider"></div>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all') }}';">{{ __('general.all') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all_movies') }}';">{{ __('general.all_movies') }}</button>
 				</div>
 			</div>
 			<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
