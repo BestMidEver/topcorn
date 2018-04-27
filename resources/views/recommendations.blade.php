@@ -72,7 +72,7 @@
 		@if(Auth::check())
 			@if(Auth::id() == 28)
 		<li class="nav-item mb-2">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{{ __('general.according_to_movie_combination') }}<br>:D</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()"><small>Based on</small> <br> My Mood<!--{!! __('general.according_to_movie_combination') !!}--></button>
 		</li>
 			@endif
 		@endif
