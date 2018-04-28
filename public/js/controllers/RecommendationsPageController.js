@@ -332,10 +332,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 		$scope.paginate_search = function(page)
 		{
-			$scope.page_mode = page;
 			if($scope.active_tab!='mood_pick'){
+				$scope.page_mode = page;
 				$scope.search_users();
 			}else{
+				$scope.page_search = page;
 				$scope.get_search_movies();
 			}
 		}
