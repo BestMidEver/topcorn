@@ -356,7 +356,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 					$scope.from_search=(response.data.page-1)*20+1;
 					$scope.to_search=(response.data.page-1)*20+response.data.results.length;
 					$scope.in_search=response.data.total_results;
-					$scope.is_search=true;
+					$scope.is_mode_search=true;
 					$(".tooltip").hide();
 				});
 			}else{
@@ -376,7 +376,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$scope.from_search=response.from;
 				$scope.to_search=response.to;
 				$scope.in_search=response.total;
-				$scope.is_search=false;
+				$scope.is_mode_search=false;
 				$(".tooltip").hide();
 			});
 		}
