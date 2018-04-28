@@ -342,9 +342,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		
 		$scope.get_search_movies = function()
 		{
-			var temp=$scope.search_text.replace(/ /g , "%20");
-			console.log($scope.search_text, temp, temp > 0)
-			if(temp > 0){
+			var temp = $scope.search_text.replace(/ /g , "%20");
+			console.log($scope.search_text, temp, temp.length > 0)
+			if(temp.length > 0){
 				rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page_search)
 				.then(function(response){
 					console.log(response.data);
