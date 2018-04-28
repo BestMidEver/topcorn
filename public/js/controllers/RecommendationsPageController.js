@@ -280,6 +280,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_vote": $scope.slider_vote_count.value
 			}	
 		}else{
+			console.log($scope.f_mode_movies)
 			if($scope.f_mode_movies == []) return;
 			var data = {
 				"f_users": f_users,
