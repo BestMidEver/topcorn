@@ -399,9 +399,13 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.mode_active_tab='get_rateds/'+mode;
 		}
 
+		$scope.mode_movies = [];
 		$scope.add_to_mode = function(movie)
 		{
-			console.log(movie);
+			$scope.mode_movies = _.uniq( _.union($scope.mode_movies, [movie]),'id' );
+			f_mode_movies = _.pluck($scope.mode_movies, 'id');
+			console.log($scope.mode_movies)
+			console.log($scope.f_mode_movies)
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////// ADD MOVIES TO MOOD ////////////////////////////////
