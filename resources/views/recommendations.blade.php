@@ -69,7 +69,7 @@
 	<div class="py-3" ng-if="active_tab=='mood_pick'">
 
 		<div class="container-fluid mb-3" ng-hide="is_mode_search">
-			<span class="h6 text-muted d-block" ng-hide="is_mode_search">{{ __('general.search_results') }}</span>
+			<span class="h6 text-muted d-block d-inline" ng-hide="is_mode_search">{{ __('general.watched_movies') }}</span>
 			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend') }}';">
 				<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					@{{mode_mod_title}}

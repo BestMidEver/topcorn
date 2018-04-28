@@ -215,6 +215,7 @@ return [
     'users_twitter' => 'Twitter Bağlantısı',                                            //account, profile      
     'users_youtube' => 'Youtube Kanalı',                                                //account, profile      
     'visibility' => 'Kimler Görebilir?',                                                //list                  
+    'watched_movies' => 'İzlenilen Filmler',                                            //profile, recommendations      ///////////
     'watch_later' => 'Sonra İzle',          
     'watch_together' => 'Beraber İzle',                                                 //profile,
     'watched_movie_number' => 'İzlenilen film sayısı',                                  //profile,              
