@@ -386,7 +386,7 @@ class recommendationsController extends Controller
             $subq = $subq->leftjoin('rateds', function ($join) use ($request) {
                 $join->on('rateds.movie_id', '=', 'movies.id')
                 ->where('rateds.user_id', Auth::id());
-            })
+            });
         }
 
         $qqSql = $subq->toSql();
