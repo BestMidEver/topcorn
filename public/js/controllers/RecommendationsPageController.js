@@ -268,6 +268,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
         for (var i = 0; i < temp.length; i++) {
         	if(temp[i][1]) f_genre.push( temp[i][0].split("_")[1] );
         }
+
 		var data = {
 			"f_users": f_users,
 			"f_lang": f_lang,
@@ -277,20 +278,27 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			"f_sort": $scope.sort_by,
 			"f_vote": $scope.slider_vote_count.value
 		}
-
-		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
-		.then(function(response){
-			console.log(response.data[1])
-			console.log(response.data[0])
-			$scope.movies=response.data[0].data;
-			$scope.pagination=response.data[0].last_page;
-			$scope.current_page=response.data[0].current_page;
-			$scope.from=response.data[0].from;
-			$scope.to=response.data[0].to;
-			$scope.in=response.data[0].total;
-			$(".tooltip").hide();
-			$scope.is_waiting=false;
-		});
+		if($scope.active_tab != 'mood_pick'){
+			rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
+			.then(function(response){
+				console.log(response.data[1])
+				console.log(response.data[0])
+				$scope.movies=response.data[0].data;
+				$scope.pagination=response.data[0].last_page;
+				$scope.current_page=response.data[0].current_page;
+				$scope.from=response.data[0].from;
+				$scope.to=response.data[0].to;
+				$scope.in=response.data[0].total;
+				$(".tooltip").hide();
+				$scope.is_waiting=false;
+			});
+		}else{
+			if($scope.f_mode_movies.length > 0){
+				console.log('dolu attın da ne oldu')
+			}else{
+				console.log('boş atma')
+			}
+		}
 	}
 
     $scope.get_first_page_data = function()
@@ -412,7 +420,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.mode_movies = _.filter($scope.mode_movies, function(item) {
 			    return item.id !== movie
 			});
-			f_mode_movies = _.pluck($scope.mode_movies, 'id');
+			$scope.f_mode_movies = _.pluck($scope.mode_movies, 'id');
 			$scope.get_first_page_data();
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
