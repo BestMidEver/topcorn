@@ -6,6 +6,10 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.scroll_to_top=function(){
 		$anchorScroll.yOffset = 55;
 		$anchorScroll('scroll_top_point')
+	}		
+	$scope.scroll_to_toppest=function(){
+		$anchorScroll.yOffset = 55;
+		$anchorScroll('scroll_toppest_point')
 	}	
 	$scope.scroll_to_filter=function(){
 		$anchorScroll.yOffset = 10;
@@ -334,6 +338,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		{
 			$scope.page_mode = page;
 			$scope.get_search_movies();
+			$scope.scroll_to_toppest();
 		}
 		
 		$scope.search_mode_text='';
@@ -485,6 +490,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		{
 			$scope.page_search = page;
 			$scope.search_users();
+			$scope.scroll_to_toppest();
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ADD USERS TO WATCH TOGETHER ///////////////////////////

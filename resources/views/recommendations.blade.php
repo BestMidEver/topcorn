@@ -27,7 +27,7 @@
 <div class="collapse container-fluid background-lightgrey" id="collapseAdd">
 	<div class="row pt-3">
 		<div class="col"></div>
-		<div class="input-group input-group-lg col-12 col-xl-8">
+		<div class="input-group input-group-lg col-12 col-xl-8" id="scroll_toppest_point">
 			<div class="input-group-prepend">
 				<span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
 			</div>
