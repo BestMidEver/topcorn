@@ -328,11 +328,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////// ADD MOVIES TO MOOD ////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-		$scope.page_search=1;
+		$scope.page_mode=1;
 
 		$scope.paginate_search = function(page)
 		{
-			$scope.page_search = page;
+			$scope.page_mode = page;
 			if($scope.active_tab!='mood_pick'){
 				$scope.search_users();
 			}else{
@@ -345,17 +345,17 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		{
 			var temp = $scope.search_text.replace(/ /g , "%20");
 			if(temp.length > 0){
-				rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page_search)
+				rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page_mode)
 				.then(function(response){
 					console.log(response.data);
 					$scope.search_movies=response.data.results;
 					$(".tooltip").hide();
-					if(response.data.total_pages<1000) $scope.pagination_search=response.data.total_pages;
-					else $scope.pagination_search=1000;
-					$scope.current_page_search=response.data.page;
-					$scope.from_search=(response.data.page-1)*20+1;
-					$scope.to_search=(response.data.page-1)*20+response.data.results.length;
-					$scope.in_search=response.data.total_results;
+					if(response.data.total_pages<1000) $scope.pagination_mode=response.data.total_pages;
+					else $scope.pagination_mode=1000;
+					$scope.current_page_mode=response.data.page;
+					$scope.from_mode=(response.data.page-1)*20+1;
+					$scope.to_mode=(response.data.page-1)*20+response.data.results.length;
+					$scope.in_mode=response.data.total_results;
 					$scope.is_mode_search=true;
 					$(".tooltip").hide();
 				});
@@ -367,15 +367,15 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.mode_active_tab='get_rateds/5';
 		$scope.get_watched_movies = function()
 		{
-			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page_search)
+			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page_mode)
 			.then(function(response){
 				console.log(response.data)
 				$scope.search_movies=response.data.data;
-				$scope.pagination_search=response.last_page;
-				$scope.current_page_search=response.current_page;
-				$scope.from_search=response.from;
-				$scope.to_search=response.to;
-				$scope.in_search=response.total;
+				$scope.pagination_mode=response.last_page;
+				$scope.current_page_mode=response.current_page;
+				$scope.from_mode=response.from;
+				$scope.to_mode=response.to;
+				$scope.in_mode=response.total;
 				$scope.is_mode_search=false;
 				$(".tooltip").hide();
 			});
@@ -385,6 +385,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.search_get_first = function()
 		{
 			$scope.page_search = 1;
+			$scope.page_mode = 1;
 			if($scope.active_tab!='mood_pick'){
 				$scope.search_users();
 			}else{

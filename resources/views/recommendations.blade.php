@@ -112,7 +112,8 @@
 			</div>
 		</div>
 	</div>
-	@include('layout.pagination', ['suffix' => '_search'])
+	<div ng-hide="active_tab=='mood_pick'">@include('layout.pagination', ['suffix' => '_search'])</div>
+	<div ng-show="active_tab=='mood_pick'">@include('layout.pagination', ['suffix' => '_mode'])</div>
 	<div class="text-center pb-1">
 		<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" data-toggle="collapse" data-target="#collapseAdd" ng-click="reset_add_person_input()"><i class="fa fa-angle-up"></i></button>
 	</div>
