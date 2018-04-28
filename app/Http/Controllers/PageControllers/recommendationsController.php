@@ -351,6 +351,7 @@ class recommendationsController extends Controller
         $f_lang = ['en'];
         $f_min =1990;
         $f_max =2015;
+        $f_genre =[14];
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
@@ -431,15 +432,15 @@ class recommendationsController extends Controller
             $return_val = $return_val->orderBy('popularity', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
-        }
+        }*/
 
-        if($request->f_genre != [])
+        if($f_genre != [])
         {
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
-            ->whereIn('genre_id', $request->f_genre)
+            ->whereIn('genre_id', $f_genre)
             ->groupBy('movies.id')
-            ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
-        }*/
+            ->havingRaw('COUNT(movies.id)='.count($f_genre));
+        }
 
         return [$return_val->paginate($pagination), microtime(true) - $start];
     }
