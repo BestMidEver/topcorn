@@ -362,19 +362,19 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$scope.get_watched_movies();
 			}
 		}
-		
-		$scope.mode_active_tab='get_rateds/5'
+
+		$scope.mode_active_tab='get_rateds/5';
 		$scope.get_watched_movies = function()
 		{
 			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page)
 			.then(function(response){
-				console.log(response.data.data)
-				$scope.search_movies=response.data.data;
-				$scope.pagination=response.data.last_page;
-				$scope.current_page_search=response.data.current_page;
-				$scope.from_search=response.data.from;
-				$scope.to_search=response.data.to;
-				$scope.in_search=response.data.total;
+				console.log(response.data)
+				$scope.search_movies=response.data;
+				$scope.pagination=response.last_page;
+				$scope.current_page_search=response.current_page;
+				$scope.from_search=response.from;
+				$scope.to_search=response.to;
+				$scope.in_search=response.total;
 				$scope.is_search=false;
 				$(".tooltip").hide();
 			});
