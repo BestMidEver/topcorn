@@ -361,7 +361,7 @@ class recommendationsController extends Controller
         ->groupBy('recommendations.this_id');
 
 
-        return [$subq->paginate($pagination), microtime(true) - $start];
+        return [$subq->get()/*paginate($pagination)*/, microtime(true) - $start];
 
 
 
