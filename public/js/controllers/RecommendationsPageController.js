@@ -369,13 +369,13 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		{
 			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page_search)
 			.then(function(response){
-				console.log(response.total)
+				console.log(response.data)
 				$scope.search_movies=response.data.data;
-				$scope.pagination_search=response.last_page;
-				$scope.current_page_search=response.current_page;
-				$scope.from_search=response.from;
-				$scope.to_search=response.to;
-				$scope.in_search=response.total;
+				$scope.pagination_search=response.data.last_page;
+				$scope.current_page_search=response.data.current_page;
+				$scope.from_search=response.data.from;
+				$scope.to_search=response.data.to;
+				$scope.in_search=response.data.total;
 				$scope.is_mode_search=false;
 				$(".tooltip").hide();
 			});
