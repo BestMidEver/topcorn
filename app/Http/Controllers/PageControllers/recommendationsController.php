@@ -361,7 +361,9 @@ class recommendationsController extends Controller
             'recommendations.this_id as id',
             DB::raw('sum(recommendations.is_similar) AS point'),
             DB::raw('COUNT(recommendations.this_id) as count'),
-            DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent')
+            DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent'),
+            'rateds.id as rated_id',
+            'rateds.rate as rate_code'
         )
         ->groupBy('recommendations.this_id');
 
@@ -380,6 +382,13 @@ class recommendationsController extends Controller
             $subq = $subq->where('movies.release_date', '<=', Carbon::create($f_max,12,31));
         }
 
+        if(Auth::check()){
+            $subq = $subq->leftjoin('rateds', function ($join) use ($request) {
+                $join->on('rateds.movie_id', '=', 'movies.id');
+                ->where('rateds.user_id', Auth::id());
+            })
+        }
+
         $qqSql = $subq->toSql();
     ////////////////////////////////////////////////////
         $return_val = DB::table('movies')
@@ -389,7 +398,7 @@ class recommendationsController extends Controller
                 $join->on('movies.id', '=', 'ss.id')
                 ->addBinding($subq->getBindings());  
             }
-        )
+        );
         /*->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::user()->id);
@@ -399,22 +408,38 @@ class recommendationsController extends Controller
             ->whereIn('bans.user_id', $request->f_users);
         })
         ->where('bans.id', '=', null)*/
-        ->select(
-            'movies.'.$hover_title.' as original_title',
-            'ss.id',
-            'ss.point',
-            'ss.count',
-            'ss.percent',
-            'movies.vote_average',
-            'movies.vote_count',
-            'movies.release_date',
-            'movies.'.App::getlocale().'_title as title',
-            'movies.'.App::getlocale().'_poster_path as poster_path'//,
-            //'ss.rated_id',
-            //'ss.rate_code',
-            //'laters.id as later_id',
-            //'bans.id as ban_id'
-        );
+        if(Auth::check()){
+            $return_val = $return_val->select(
+                'movies.'.$hover_title.' as original_title',
+                'ss.id',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'movies.vote_average',
+                'movies.vote_count',
+                'movies.release_date',
+                'movies.'.App::getlocale().'_title as title',
+                'movies.'.App::getlocale().'_poster_path as poster_path',
+                'ss.rated_id',
+                'ss.rate_code'//,
+                //'laters.id as later_id',
+                //'bans.id as ban_id'
+            );
+        }else{
+            $return_val = $return_val->select(
+                'movies.'.$hover_title.' as original_title',
+                'ss.id',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'movies.vote_average',
+                'movies.vote_count',
+                'movies.release_date',
+                'movies.'.App::getlocale().'_title as title',
+                'movies.'.App::getlocale().'_poster_path as poster_path'
+            );
+        }
+        
         //->where('movies.vote_count', '>', $request->f_vote);
 
         if($f_sort == 'point'){
