@@ -180,9 +180,13 @@ return [
     'show_everyone' => 'Herkesi Göster',            
     'sort_by' => 'SIRALAMA ÖLÇÜTÜ',                                                     //recommendations,      
     'sort_by_match' => 'Eşleşme Puanı',                                                 //recommendations,      
+    'sort_by_match_title' => 'Eşleşme Puanına Göre Sırala',                             //recommendations,   //////   
     'sort_by_percent' => 'Eşleşme Yüzdesi',                                             //recommendations,      
+    'sort_by_percent_title' => 'Eşleşme Yüzdesine Göre Sırala',                         //recommendations,    //////  
     'sort_by_tmdb' => 'TMDb puanı',                                                     //recommendations,      
-    'sort_by_pop' => 'Popülerliği',                                                     //recommendations,      
+    'sort_by_tmdb_title' => 'TMDb puanına Göre Sırala',                                 //recommendations,     ////// 
+    'sort_by_pop' => 'Popülerlik',                                                      //recommendations,      
+    'sort_by_pop_title' => 'Popülerliğine Göre Sırala',                                 //recommendations,   ///////   
     'standard' => 'Standart',                                                           //accountinterface,  
     'time_second' => 'saniye',                                                          //list,             
     'time_seconds' => 'saniye',                                                         //list,             

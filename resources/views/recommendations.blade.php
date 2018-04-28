@@ -198,6 +198,23 @@
 
 
 
+<!-- Sort by section -->
+	<div class="dropdown d-inline" ng-init="sort_by_title='{{ __('general.definitely_recommend_movies') }}';">
+		<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			@{{sort_by_title}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_match_title') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_percent_title') }}';change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_tmdb_title') }}';change_sort_by('vote_average');">{{ __('general.sort_by_tmdb') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_pop_title') }}';change_sort_by('popularity');">{{ __('general.sort_by_pop') }}</button>
+		</div>
+	</div>
+<!-- Sort by section -->
+
+
+
+
 <!-- MovieCard -->
 <div id="scroll_top_point">
 	<div class="p-5" ng-show="movies.length==0">
