@@ -199,6 +199,7 @@
 
 
 <!-- Sort by section -->
+<div class="container-fluid">
 	<div class="dropdown d-inline" ng-init="sort_by_title='{{ __('general.definitely_recommend_movies') }}';">
 		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{sort_by_title}}
@@ -210,6 +211,7 @@
 			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_pop_title') }}';change_sort_by('popularity');">{{ __('general.sort_by_pop') }}</button>
 		</div>
 	</div>
+</div>
 <!-- Sort by section -->
 
 
