@@ -403,7 +403,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.add_to_mode = function(movie)
 		{
 			$scope.mode_movies = _.uniq( _.union($scope.mode_movies, [movie]),'id' );
-			f_mode_movies = _.pluck($scope.mode_movies, 'id');
+			$scope.f_mode_movies = _.pluck($scope.mode_movies, 'id');
 			console.log($scope.mode_movies)
 			console.log($scope.f_mode_movies)
 		}
