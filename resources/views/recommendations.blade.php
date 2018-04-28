@@ -83,7 +83,7 @@
 					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all_movies') }}';change_mode_active_tab('all');search_get_first()">{{ __('general.all_movies') }}</button>
 				</div>
 			</div>
-			<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
+			<span class="text-muted pl-2"><small>@{{in_search}} <span ng-show="in_search < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in_search > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 		</div>
 		<span class="h6 text-muted d-block" ng-show="is_mode_search">{{ __('general.search_results') }}</span>
 

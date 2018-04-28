@@ -367,7 +367,6 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.mode_active_tab='get_rateds/5';
 		$scope.get_watched_movies = function()
 		{
-			console.log('kafası indi geldi'+$scope.mode_active_tab)
 			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page_search)
 			.then(function(response){
 				console.log(response.data)
