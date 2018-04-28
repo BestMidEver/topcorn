@@ -8,7 +8,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$anchorScroll('scroll_top_point')
 	}		
 	$scope.scroll_to_toppest=function(){
-		$anchorScroll.yOffset = 55;
+		$anchorScroll.yOffset = 10;
 		$anchorScroll('scroll_toppest_point')
 	}	
 	$scope.scroll_to_filter=function(){
