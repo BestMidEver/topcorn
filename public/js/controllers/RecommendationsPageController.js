@@ -371,7 +371,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			.then(function(response){
 				console.log(response.data)
 				$scope.search_movies=response.data.data;
-				$scope.pagination=response.last_page;
+				$scope.pagination_search=response.last_page;
 				$scope.current_page_search=response.current_page;
 				$scope.from_search=response.from;
 				$scope.to_search=response.to;
