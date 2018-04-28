@@ -340,6 +340,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			}
 		}
 		
+		$scope.search_text='';
 		$scope.get_search_movies = function()
 		{
 			var temp = $scope.search_text.replace(/ /g , "%20");
