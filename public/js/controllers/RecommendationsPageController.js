@@ -408,6 +408,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		}
 
 		$scope.mode_movies = [];
+		$scope.f_mode_movies = [];
 		$scope.add_to_mode = function(movie)
 		{
 			$scope.mode_movies = _.uniq( _.union($scope.mode_movies, [movie]),'id' );
