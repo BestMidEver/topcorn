@@ -96,7 +96,7 @@
 			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-2 px-1" ng-repeat="movie in search_movies">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 					<a ng-href="/movie/@{{movie.id}}" target={{$target}}>
-						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+						<img class="card-img-top" ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						<div class="card-block">
 							<h6 class="card-title px-1 pt-1 text-muted text-center">@{{movie.title}}</h6>
 						</div>
