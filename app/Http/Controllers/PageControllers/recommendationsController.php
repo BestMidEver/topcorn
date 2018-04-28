@@ -341,10 +341,28 @@ class recommendationsController extends Controller
         $start = microtime(true);
 
         $hover_title = 'original_title';
+        $pagination = 24;
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0) $hover_title = Auth::User()->secondary_lang.'_title';
+            if(Auth::User()->hover_title_language == 0)$hover_title = Auth::User()->secondary_lang.'_title';
+            $pagination = Auth::User()->pagination;
         } 
-        return $hover_title;
+
+        $f_movies = [77,122];
+
+        $subq = DB::table('movies')
+        ->whereIn('movies.id', $f_movies)
+        ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'movies.id')
+        ->select(
+            'recommendations.this_id as id',
+            DB::raw('sum(recommendations.is_similar) AS point'),
+            DB::raw('COUNT(recommendations.this_id) as count'),
+            DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent')
+        )
+
+
+        return [$subq->paginate($pagination), microtime(true) - $start];
+
+
 
 
         /*$subq = DB::table('rateds')
