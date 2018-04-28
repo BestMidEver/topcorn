@@ -371,11 +371,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			.then(function(response){
 				console.log(response.data)
 				$scope.search_movies=response.data.data;
-				$scope.pagination_mode=response.last_page;
-				$scope.current_page_mode=response.current_page;
-				$scope.from_mode=response.from;
-				$scope.to_mode=response.to;
-				$scope.in_mode=response.total;
+				$scope.pagination_mode=response.data.last_page;
+				$scope.current_page_mode=response.data.current_page;
+				$scope.from_mode=response.data.from;
+				$scope.to_mode=response.data.to;
+				$scope.in_mode=response.data.total;
 				$scope.is_mode_search=false;
 				$(".tooltip").hide();
 			});
