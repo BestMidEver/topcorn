@@ -349,6 +349,7 @@ class recommendationsController extends Controller
 
         $f_movies = [98,1271,120,2310];
         $f_lang = ['en'];
+        $f_min =2000;
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
@@ -366,12 +367,12 @@ class recommendationsController extends Controller
             $subq = $subq->whereIn('original_language', $f_lang);
         }
 
-        /*if($request->f_min != 1917)
+        if($f_min != 1917)
         {
-            $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1));
+            $subq = $subq->where('movies.release_date', '>=', Carbon::create($f_min,1,1));
         }
 
-        if($request->f_max != 2018)
+        /*if($request->f_max != 2018)
         {
             $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
         }*/
