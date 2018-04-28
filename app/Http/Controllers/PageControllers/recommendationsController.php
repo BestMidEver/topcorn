@@ -357,6 +357,7 @@ class recommendationsController extends Controller
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'movies.id')
+        ->leftjoin('movies as m2', 'm2.id', '=', 'recommendations.this_id')
         ->select(
             'recommendations.this_id as id',
             DB::raw('sum(recommendations.is_similar) AS point'),
@@ -369,22 +370,22 @@ class recommendationsController extends Controller
 
         if($f_lang != [])
         {
-            $subq = $subq->whereIn('original_language', $f_lang);
+            $subq = $subq->whereIn('m2.original_language', $f_lang);
         }
 
         if($f_min != 1917)
         {
-            $subq = $subq->where('movies.release_date', '>=', Carbon::create($f_min,1,1));
+            $subq = $subq->where('m2.release_date', '>=', Carbon::create($f_min,1,1));
         }
 
         if($f_max != 2018)
         {
-            $subq = $subq->where('movies.release_date', '<=', Carbon::create($f_max,12,31));
+            $subq = $subq->where('m2.release_date', '<=', Carbon::create($f_max,12,31));
         }
 
         if(Auth::check()){
             $subq = $subq->leftjoin('rateds', function ($join) use ($request) {
-                $join->on('rateds.movie_id', '=', 'recommendations.this_id')
+                $join->on('rateds.movie_id', '=', 'm2.id')
                 ->where('rateds.user_id', Auth::id());
             });
         }
