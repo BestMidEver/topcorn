@@ -349,10 +349,11 @@ class recommendationsController extends Controller
 
         $f_movies = [98,1271,120,2310];
         $f_lang = ['en'];
-        $f_min =1990;
-        $f_max =2015;
-        $f_genre =[];
-        $f_sort ='point';
+        $f_min = 1990;
+        $f_max = 2015;
+        $f_genre = [];
+        $f_sort = 'point';
+        $f_vote = 4000;
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
@@ -399,16 +400,9 @@ class recommendationsController extends Controller
                 $join->on('movies.id', '=', 'ss.id')
                 ->addBinding($subq->getBindings());  
             }
-        );
-        /*->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'movies.id')
-            ->where('laters.user_id', '=', Auth::user()->id);
-        })
-        ->leftjoin('bans', function ($join) use ($request) {
-            $join->on('bans.movie_id', '=', 'movies.id')
-            ->whereIn('bans.user_id', $request->f_users);
-        })
-        ->where('bans.id', '=', null)*/
+        )
+        ->where('movies.vote_count', '>', $f_vote);
+
         if(Auth::check()){
             $return_val = $return_val->select(
                 'movies.'.$hover_title.' as original_title',
@@ -422,10 +416,18 @@ class recommendationsController extends Controller
                 'movies.'.App::getlocale().'_title as title',
                 'movies.'.App::getlocale().'_poster_path as poster_path',
                 'ss.rated_id',
-                'ss.rate_code'//,
-                //'laters.id as later_id',
-                //'bans.id as ban_id'
-            );
+                'ss.rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            )->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', '=', 'movies.id')
+                ->where('laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('bans', function ($join) use ($request) {
+                $join->on('bans.movie_id', '=', 'movies.id')
+                ->whereIn('bans.user_id', $request->f_users);
+            })
+            ->where('bans.id', '=', null);
         }else{
             $return_val = $return_val->select(
                 'movies.'.$hover_title.' as original_title',
@@ -440,8 +442,6 @@ class recommendationsController extends Controller
                 'movies.'.App::getlocale().'_poster_path as poster_path'
             );
         }
-        
-        //->where('movies.vote_count', '>', $request->f_vote);
 
         if($f_sort == 'point'){
             $return_val = $return_val->orderBy('point', 'desc')
