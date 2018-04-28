@@ -3,11 +3,12 @@
 return [
     '404' => 'Sayfa bulunamadı.',
     'a_z' => 'A -> Z',
-    'according_to_my_taste' => 'Zevkime Göre',                                    //recommendations,
+    'according_to_my_taste' => 'Zevkime Göre',                                          //recommendations,
     'according_to_themoviedb' => 'TMDb puanı',                                          //recommendations,
     'according_to_your_taste' => 'Senin zevkine göre',                                  //recommendations,
+    'according_to_your_mood' => 'Moduna Göre',                                          //recommendations,      ///////////////
     'according_to_movie_combination' => 'Moduma Göre',                                  //recommendations,     ////////////
-    'according_to_popular_taste' => 'Genel Zevke Göre',                                  //recommendations,     ////////////
+    'according_to_popular_taste' => 'Genel Zevke Göre',                                 //recommendations,     ////////////
     'acting' => 'Oyunculuk',            
     'active' => 'Etkin',                                                                //accountinterface,
     'actor' => 'Oyuncu',            

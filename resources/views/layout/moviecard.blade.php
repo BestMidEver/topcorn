@@ -7,7 +7,8 @@
 					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.percent > 0">
 							<div class="text-white">
-								<small>{{ __('general.according_to_your_taste') }}</small>
+								<small ng-if="active_tab!='mood_pick'">{{ __('general.according_to_your_taste') }}</small>
+								<small ng-if="active_tab=='mood_pick'">{{ __('general.according_to_your_mood') }}</small>
 								<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
 								@if(Auth::check())
 									@if(Auth::User()->advanced_filter)
