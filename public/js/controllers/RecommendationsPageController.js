@@ -380,6 +380,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$(".tooltip").hide();
 			});
 		}
+		$scope.get_watched_movies();
 
 		$scope.search_get_first = function()
 		{
