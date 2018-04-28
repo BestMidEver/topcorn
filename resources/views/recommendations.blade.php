@@ -69,19 +69,18 @@
 	<div class="py-3" ng-if="active_tab=='mood_pick'">
 
 		<div class="container-fluid mb-3" ng-hide="is_mode_search">
-			<span class="h6 text-muted d-inline" ng-hide="is_mode_search">{{ __('general.watched_movies') }}</span>
-			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend') }}';">
+			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';">
 				<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					@{{mode_mod_title}}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_recommend') }}';change_mode_active_tab(5);search_get_first()">{{ __('general.definitely_recommend') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.recommend') }}';change_mode_active_tab(4);search_get_first()">{{ __('general.recommend') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.not_sure') }}';change_mode_active_tab(3);search_get_first()">{{ __('general.not_sure') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.dont_recommend') }}';change_mode_active_tab(2);search_get_first()">{{ __('general.dont_recommend') }}</button>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_dont_recommend') }}';change_mode_active_tab(1);search_get_first()">{{ __('general.definitely_dont_recommend') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';change_mode_active_tab(5);search_get_first()">{{ __('general.definitely_recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.recommend_movies') }}';change_mode_active_tab(4);search_get_first()">{{ __('general.recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.not_sure_movies') }}';change_mode_active_tab(3);search_get_first()">{{ __('general.not_sure_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.dont_recommend_movies') }}';change_mode_active_tab(2);search_get_first()">{{ __('general.dont_recommend_movies') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.definitely_dont_recommend_movies') }}';change_mode_active_tab(1);search_get_first()">{{ __('general.definitely_dont_recommend_movies') }}</button>
 					<div class="dropdown-divider"></div>
-					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all') }}';change_mode_active_tab('all');search_get_first()">{{ __('general.all') }}</button>
+					<button class="dropdown-item" ng-click="mode_mod_title='{{ __('general.all_movies') }}';change_mode_active_tab('all');search_get_first()">{{ __('general.all_movies') }}</button>
 				</div>
 			</div>
 			<span class="text-muted pl-2"><small>@{{in_mode}} <span ng-show="in_mode < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in_mode > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
