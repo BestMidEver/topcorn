@@ -438,7 +438,7 @@ class recommendationsController extends Controller
             ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
         }*/
 
-        return [$subq->paginate($pagination), microtime(true) - $start];
+        return [$return_val->paginate($pagination), microtime(true) - $start];
 
 
 
