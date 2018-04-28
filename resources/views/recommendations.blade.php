@@ -200,7 +200,7 @@
 
 <!-- Sort by section -->
 	<div class="dropdown d-inline" ng-init="sort_by_title='{{ __('general.definitely_recommend_movies') }}';">
-		<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{sort_by_title}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
