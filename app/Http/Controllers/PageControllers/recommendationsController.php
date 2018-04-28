@@ -353,20 +353,12 @@ class recommendationsController extends Controller
         $f_max = 2015;
         $f_genre = [];
         $f_sort = 'point';
-        $f_vote = 4000;
+        $f_vote = 75;
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'movies.id')
         ->leftjoin('movies as m2', 'm2.id', '=', 'recommendations.this_id')
-        ->select(
-            'recommendations.this_id as id',
-            DB::raw('sum(recommendations.is_similar) AS point'),
-            DB::raw('COUNT(recommendations.this_id) as count'),
-            DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent'),
-            'rateds.id as rated_id',
-            'rateds.rate as rate_code'
-        )
         ->groupBy('recommendations.this_id');
 
         if($f_lang != [])
@@ -388,7 +380,22 @@ class recommendationsController extends Controller
             $subq = $subq->leftjoin('rateds', function ($join) use ($request) {
                 $join->on('rateds.movie_id', '=', 'm2.id')
                 ->where('rateds.user_id', Auth::id());
-            });
+            })
+            ->select(
+                'recommendations.this_id as id',
+                DB::raw('sum(recommendations.is_similar) AS point'),
+                DB::raw('COUNT(recommendations.this_id) as count'),
+                DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent'),
+                'rateds.id as rated_id',
+                'rateds.rate as rate_code'
+            );
+        }else{
+            ->select(
+                'recommendations.this_id as id',
+                DB::raw('sum(recommendations.is_similar) AS point'),
+                DB::raw('COUNT(recommendations.this_id) as count'),
+                DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent')
+            )
         }
 
         $qqSql = $subq->toSql();
