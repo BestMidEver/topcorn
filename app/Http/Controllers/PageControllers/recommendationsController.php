@@ -332,4 +332,12 @@ class recommendationsController extends Controller
 
         return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
     }
+
+
+
+
+    public function get_momosu(Request $request)
+    {
+        return "$request->all();;";
+    }
 }

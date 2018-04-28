@@ -199,9 +199,9 @@ MyApp.factory('rate', function($http) {
 
     get_recommendations_page_data = function(tab, data, page) 
     {
-    	if(tab != 'pemosu' && tab != 'mode_pick') var route = 'get_top_rateds/'+tab;
-    	else if(tab != 'mode_pick') var route = 'get_pemosu';
-    	else var route = 'mode_pick';
+    	if(tab != 'pemosu' && tab != 'mood_pick') var route = 'get_top_rateds/'+tab;
+    	else if(tab != 'mood_pick') var route = 'get_pemosu';
+    	else var route = 'get_momosu';
         return $http({
 			method: 'POST',
 			url: '/api/'+route+'?page='+page,

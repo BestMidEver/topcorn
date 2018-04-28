@@ -269,36 +269,44 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
         	if(temp[i][1]) f_genre.push( temp[i][0].split("_")[1] );
         }
 
-		var data = {
-			"f_users": f_users,
-			"f_lang": f_lang,
-			"f_genre": f_genre,
-			"f_min": $scope.slider.minValue,
-			"f_max": $scope.slider.maxValue,
-			"f_sort": $scope.sort_by,
-			"f_vote": $scope.slider_vote_count.value
-		}
 		if($scope.active_tab != 'mood_pick'){
-			rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
-			.then(function(response){
-				console.log(response.data[1])
-				console.log(response.data[0])
-				$scope.movies=response.data[0].data;
-				$scope.pagination=response.data[0].last_page;
-				$scope.current_page=response.data[0].current_page;
-				$scope.from=response.data[0].from;
-				$scope.to=response.data[0].to;
-				$scope.in=response.data[0].total;
-				$(".tooltip").hide();
-				$scope.is_waiting=false;
-			});
+			var data = {
+				"f_users": f_users,
+				"f_lang": f_lang,
+				"f_genre": f_genre,
+				"f_min": $scope.slider.minValue,
+				"f_max": $scope.slider.maxValue,
+				"f_sort": $scope.sort_by,
+				"f_vote": $scope.slider_vote_count.value
+			}	
 		}else{
-			if($scope.f_mode_movies.length > 0){
-				console.log('dolu attın da ne oldu')
-			}else{
-				console.log('boş atma')
+			if($scope.f_mode_movies == []) return;
+			var data = {
+				"f_users": f_users,
+				"f_lang": f_lang,
+				"f_genre": f_genre,
+				"f_min": $scope.slider.minValue,
+				"f_max": $scope.slider.maxValue,
+				"f_sort": $scope.sort_by,
+				"f_vote": $scope.slider_vote_count.value,
+				"f_mode_movies": $scope.f_mode_movies
 			}
 		}
+
+		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
+		.then(function(response){
+			console.log(response.data)
+			//console.log(response.data[1])
+			//console.log(response.data[0])
+			$scope.movies=response.data[0].data;
+			$scope.pagination=response.data[0].last_page;
+			$scope.current_page=response.data[0].current_page;
+			$scope.from=response.data[0].from;
+			$scope.to=response.data[0].to;
+			$scope.in=response.data[0].total;
+			$(".tooltip").hide();
+			$scope.is_waiting=false;
+		});
 	}
 
     $scope.get_first_page_data = function()

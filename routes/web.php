@@ -109,6 +109,8 @@ Route::post('api/get_top_rateds/{tab}/{lang?}','PageControllers\recommendationsC
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::post('api/get_pemosu/{lang?}','PageControllers\recommendationsController@get_pemosu')
 	->where('lang', config('constants.supported_languages.for_web_php'));
+//Route::post('api/get_momosu','PageControllers\recommendationsController@get_momosu');
+Route::get('api/get_momosu','PageControllers\recommendationsController@get_momosu');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// RECOMMENDATIONS PAGE (PUBLIC) ///////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
