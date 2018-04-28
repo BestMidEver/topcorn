@@ -347,7 +347,7 @@ class recommendationsController extends Controller
             $pagination = Auth::User()->pagination;
         } 
 
-        $f_movies = [77,122];
+        $f_movies = [98,1271,120,2310];
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
