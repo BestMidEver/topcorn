@@ -360,8 +360,85 @@ class recommendationsController extends Controller
         )
         ->groupBy('recommendations.this_id');
 
+        /*if($request->f_lang != [])
+        {
+            $subq = $subq->whereIn('original_language', $request->f_lang);
+        }
 
-        return [$subq->get()/*paginate($pagination)*/, microtime(true) - $start];
+        if($request->f_min != 1917)
+        {
+            $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1));
+        }
+
+        if($request->f_max != 2018)
+        {
+            $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31));
+        }*/
+
+        $qqSql = $subq->toSql();
+    ////////////////////////////////////////////////////
+        $return_val = DB::table('movies')
+        ->join(
+            DB::raw('(' . $qqSql. ') AS ss'),
+            function($join) use ($subq) {
+                $join->on('movies.id', '=', 'ss.id')
+                ->addBinding($subq->getBindings());  
+            }
+        )
+        /*->leftjoin('laters', function ($join) {
+            $join->on('laters.movie_id', '=', 'movies.id')
+            ->where('laters.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('bans', function ($join) use ($request) {
+            $join->on('bans.movie_id', '=', 'movies.id')
+            ->whereIn('bans.user_id', $request->f_users);
+        })
+        ->where('bans.id', '=', null)*/
+        ->select(
+            'movies.'.$hover_title.' as original_title',
+            'ss.id',
+            'ss.point',
+            'ss.count',
+            'ss.percent',
+            'movies.vote_average',
+            'movies.vote_count',
+            'movies.release_date',
+            'movies.'.App::getlocale().'_title as title',
+            'movies.'.App::getlocale().'_poster_path as poster_path'//,
+            //'ss.rated_id',
+            //'ss.rate_code',
+            //'laters.id as later_id',
+            //'bans.id as ban_id'
+        );
+        //->where('movies.vote_count', '>', $request->f_vote);
+
+        /*if($request->f_sort == 'point'){
+            $return_val = $return_val->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc')
+            ->orderBy('vote_average', 'desc');
+        }else if($request->f_sort == 'percent'){
+            $return_val = $return_val->orderBy('percent', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('vote_average', 'desc');
+        }else if($request->f_sort == 'top_rated'){
+            $return_val = $return_val->orderBy('vote_average', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc');
+        }else if($request->f_sort == 'most_popular'){
+            $return_val = $return_val->orderBy('popularity', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc');
+        }
+
+        if($request->f_genre != [])
+        {
+            $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
+            ->whereIn('genre_id', $request->f_genre)
+            ->groupBy('movies.id')
+            ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
+        }*/
+
+        return [$subq->paginate($pagination), microtime(true) - $start];
 
 
 
