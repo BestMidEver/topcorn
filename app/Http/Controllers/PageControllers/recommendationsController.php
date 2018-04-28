@@ -351,13 +351,7 @@ class recommendationsController extends Controller
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
-        ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'movies.id')
-        ->select(
-            'recommendations.this_id as id',
-            DB::raw('sum(recommendations.is_similar) AS point'),
-            DB::raw('COUNT(recommendations.this_id) as count'),
-            DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent')
-        );
+        ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'movies.id');
 
 
         return [$subq->paginate($pagination), microtime(true) - $start];
