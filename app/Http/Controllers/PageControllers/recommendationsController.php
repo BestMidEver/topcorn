@@ -390,7 +390,7 @@ class recommendationsController extends Controller
                 'rateds.rate as rate_code'
             );
         }else{
-            ->select(
+            $subq = $subq->select(
                 'recommendations.this_id as id',
                 DB::raw('sum(recommendations.is_similar) AS point'),
                 DB::raw('COUNT(recommendations.this_id) as count'),
