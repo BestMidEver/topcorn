@@ -348,12 +348,12 @@ class recommendationsController extends Controller
         } 
 
         $f_movies = $request->f_mode_movies;
-        $f_lang = ['en'];
-        $f_min = 1990;
-        $f_max = 2015;
-        $f_genre = [];
-        $f_sort = 'point';
-        $f_vote = 75;
+        $f_lang = $request->f_lang;
+        $f_min = $request->f_min;
+        $f_max = $request->f_max;
+        $f_genre = $request->f_genre;
+        $f_sort = $request->f_sort;
+        $f_vote = $request->f_vote;
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
