@@ -12,8 +12,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$anchorScroll('scroll_toppest_point')
 	}	
 	$scope.scroll_to_filter=function(){
-		$anchorScroll.yOffset = 10;
-		$anchorScroll('filter')
+		//$anchorScroll.yOffset = 10;
+		//$anchorScroll('filter')
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
@@ -404,8 +404,16 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		{
 			$scope.mode_movies = _.uniq( _.union($scope.mode_movies, [movie]),'id' );
 			$scope.f_mode_movies = _.pluck($scope.mode_movies, 'id');
-			console.log($scope.mode_movies)
-			console.log($scope.f_mode_movies)
+			$scope.get_first_page_data();
+		}
+
+		$scope.remove_from_mode = function(movie)
+		{
+			$scope.mode_movies = _.filter($scope.mode_movies, function(item) {
+			    return item.id !== movie
+			});
+			f_mode_movies = _.pluck($scope.mode_movies, 'id');
+			$scope.get_first_page_data();
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////// ADD MOVIES TO MOOD ////////////////////////////////
