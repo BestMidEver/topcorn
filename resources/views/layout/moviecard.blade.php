@@ -11,9 +11,10 @@
 								<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
 								@if(Auth::check())
 									@if(Auth::User()->advanced_filter)
-								<small><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
+								<small ng-if="active_tab!='mood_pick"><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
 									@endif
 								@endif
+								<small ng-if="active_tab=='mood_pick"><span class="h5 text-warning">@{{movie.point}}</span>/@{{movie.count*5}} {{ __('general.point') }}</small>
 							</div>
 						</div>
 					</div>
