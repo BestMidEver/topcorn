@@ -351,7 +351,8 @@ class recommendationsController extends Controller
         $f_lang = ['en'];
         $f_min =1990;
         $f_max =2015;
-        $f_genre =[14];
+        $f_genre =[];
+        $f_sort ='point';
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
@@ -416,23 +417,23 @@ class recommendationsController extends Controller
         );
         //->where('movies.vote_count', '>', $request->f_vote);
 
-        /*if($request->f_sort == 'point'){
+        if($f_sort == 'point'){
             $return_val = $return_val->orderBy('point', 'desc')
             ->orderBy('percent', 'desc')
             ->orderBy('vote_average', 'desc');
-        }else if($request->f_sort == 'percent'){
+        }else if($f_sort == 'percent'){
             $return_val = $return_val->orderBy('percent', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('vote_average', 'desc');
-        }else if($request->f_sort == 'top_rated'){
+        }else if($f_sort == 'top_rated'){
             $return_val = $return_val->orderBy('vote_average', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
-        }else if($request->f_sort == 'most_popular'){
+        }else if($f_sort == 'most_popular'){
             $return_val = $return_val->orderBy('popularity', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
-        }*/
+        }
 
         if($f_genre != [])
         {
