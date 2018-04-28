@@ -425,7 +425,7 @@ class recommendationsController extends Controller
             })
             ->leftjoin('bans', function ($join) use ($request) {
                 $join->on('bans.movie_id', '=', 'movies.id')
-                ->whereIn('bans.user_id', $request->f_users);
+                ->where('bans.user_id', Auth::id());
             })
             ->where('bans.id', '=', null);
         }else{
