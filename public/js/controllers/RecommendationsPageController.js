@@ -369,7 +369,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page)
 			.then(function(response){
 				console.log(response.data)
-				$scope.search_movies=response.data;
+				$scope.search_movies=response.data.data;
 				$scope.pagination=response.last_page;
 				$scope.current_page_search=response.current_page;
 				$scope.from_search=response.from;
