@@ -330,21 +330,16 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 //////////////////////////////////////////////////////////////////////////////////////////
 		$scope.page_mode=1;
 
-		$scope.paginate_search = function(page)
+		$scope.paginate_mode = function(page)
 		{
-			if($scope.active_tab!='mood_pick'){
-				$scope.page_search = page;
-				$scope.search_users();
-			}else{
-				$scope.page_mode = page;
-				$scope.get_search_movies();
-			}
+			$scope.page_mode = page;
+			$scope.get_search_movies();
 		}
 		
-		$scope.search_text='';
+		$scope.search_mode_text='';
 		$scope.get_search_movies = function()
 		{
-			var temp = $scope.search_text.replace(/ /g , "%20");
+			var temp = $scope.search_mode_text.replace(/ /g , "%20");
 			if(temp.length > 0){
 				rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page_mode)
 				.then(function(response){
@@ -484,6 +479,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				console.log(response.data);
 				$scope.get_last_parties();
 			});
+		}
+
+		$scope.paginate_search = function(page)
+		{
+			$scope.page_search = page;
+			$scope.search_users();
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ADD USERS TO WATCH TOGETHER ///////////////////////////
