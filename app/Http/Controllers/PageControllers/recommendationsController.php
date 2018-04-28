@@ -357,7 +357,7 @@ class recommendationsController extends Controller
             DB::raw('sum(recommendations.is_similar) AS point'),
             DB::raw('COUNT(recommendations.this_id) as count'),
             DB::raw('sum(recommendations.is_similar)*20 DIV COUNT(movies.id) as percent')
-        )
+        );
 
 
         return [$subq->paginate($pagination), microtime(true) - $start];
