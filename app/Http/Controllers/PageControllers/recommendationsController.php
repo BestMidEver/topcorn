@@ -349,7 +349,7 @@ class recommendationsController extends Controller
 
         $f_movies = [98,1271,120,2310];
         $f_lang = ['en'];
-        $f_min =2009;
+        $f_min =2005;
 
         $subq = DB::table('movies')
         ->whereIn('movies.id', $f_movies)
