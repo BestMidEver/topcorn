@@ -202,7 +202,7 @@
 <div class="container-fluid">
 	<div class="dropdown d-inline" ng-init="sort_by_title='{{ __('general.definitely_recommend_movies') }}';">
 		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			@{{sort_by_title}}
+			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_match_title') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
