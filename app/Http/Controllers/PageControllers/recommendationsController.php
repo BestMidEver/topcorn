@@ -340,13 +340,14 @@ class recommendationsController extends Controller
     {
         $start = microtime(true);
 
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
+        $hover_title = 'original_title';
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0) $hover_title = Auth::User()->secondary_lang.'_title';
+        } 
+        return $hover_title;
 
-        $subq = DB::table('rateds')
+
+        /*$subq = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
         ->where('rateds.rate', '>', 0)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
@@ -467,6 +468,6 @@ class recommendationsController extends Controller
         }
         
 
-        return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];
+        return [$return_val->paginate(Auth::User()->pagination), microtime(true) - $start];*/
     }
 }
