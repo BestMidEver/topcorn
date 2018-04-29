@@ -57,7 +57,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.genres = _.sortBy(genres, 'o');
 		console.log($scope.genres, genres)
 		$scope.genres.pop();
-		$scope.sort_by_2 = 'popularity';
+		$scope.sort_by_2 = 'vote_average';
 		$scope.sort_by_4 = 'point';
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////

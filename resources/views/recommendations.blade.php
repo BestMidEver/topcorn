@@ -200,7 +200,16 @@
 
 <!-- Sort by section -->
 <div class="container-fluid">
-	<div class="dropdown d-inline" ng-init="sort_by_title='{{ __('general.sort_by_match') }}';">
+	<div class="dropdown d-inline" ng-init="sort_by_title='{{ __('general.sort_by_tmdb') }}';" ng-show="active_tab=='top_rated'">
+		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_tmdb') }}';change_sort_by('top_rated');">{{ __('general.sort_by_tmdb') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_pop') }}';change_sort_by('most_popular');">{{ __('general.sort_by_pop') }}</button>
+		</div>
+	</div>
+	<div class="dropdown d-inline" ng-init="sort_by_title='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title}}
 		</button>
