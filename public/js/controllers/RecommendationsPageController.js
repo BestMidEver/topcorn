@@ -59,11 +59,14 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.genres.pop();
 		$scope.sort_by_2 = 'vote_average';
 		$scope.sort_by_4 = 'point';
+		
+		$('#collapseFilter').on('shown.bs.collapse', function () {
+		   console.log("Opened")
+		});
 
-		$scope.is_filter_collapsed = function(){
-			console.log($("#collapseFilter").attr("aria-expanded"))
-			console.log(31)
-		}
+		$('#collapseFilter').on('hidden.bs.collapse', function () {
+		   console.log("Closed")
+		});
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
