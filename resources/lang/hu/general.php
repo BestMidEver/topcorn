@@ -134,6 +134,7 @@ return [
     'ordering_123' => '1 - 2 - 3 - 4 - 5 - ...',                            //list,         
     'original_title' => 'Eredeti cím',                                      //movie,
     'original_language' => 'Eredeti nyelv',                                 //movie,
+    'other' => 'OTHER',                                                     //recommendations,   ///////
 	'pagination' => 'Lapszámozás',
     'pagination_info' =>
         '{{from:suffix}} - {{to:suffix}} <span class="px-2">/</span> {{in:suffix}} találat',     //pagination,

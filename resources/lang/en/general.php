@@ -135,6 +135,7 @@ return [
     'ordering_123' => '1 - 2 - 3 - 4 - 5 - ...',                            //list,         
     'original_title' => 'Original Title',                                   //movie,
     'original_language' => 'Original Language',                             //movie,
+    'other' => 'OTHER',                                                     //recommendations,   
     'pagination' => 'Pagination',                                           //accountinterface,
     'pagination_info' => 
         '{{from:suffix}} - {{to:suffix}} <span class="px-2">of</span> {{in:suffix}}', //pagination,

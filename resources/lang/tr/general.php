@@ -135,6 +135,7 @@ return [
     'ordering_123' => '1 - 2 - 3 - 4 - 5 - ...',                                        //list,         
     'original_title' => 'Orijinal Adı',
     'original_language' => 'Orijinal Dili',
+    'other' => 'DİĞER',                                                                 //recommendations,   
     'pagination' => 'Sayfalama',                                                        //accountinterface,
     'pagination_info' => 
         '{{in:suffix}} <span class="pr-2"> sonuç içinde</span> {{from:suffix}} - {{to:suffix}}',             //pagination,
