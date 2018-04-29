@@ -46,7 +46,7 @@ class recommendationsController extends Controller
 
 
     public function get_top_rateds(Request $request)
-    {return $request->f_add_watched?'dru':'fas';
+    {
         $start = microtime(true);
 
         if(auth::check()){
@@ -158,8 +158,11 @@ class recommendationsController extends Controller
                 'laters.id as later_id',
                 'bans.id as ban_id'
             )
-            ->groupBy('movies.id')
-            ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0');
+            ->groupBy('movies.id');
+
+            if(!$request->f_add_watched){
+                $return_val = $return_val->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0');
+            }
 
             if($request->f_sort == 'most_popular'){
                 $return_val = $return_val->orderBy('movies.popularity', 'desc');
