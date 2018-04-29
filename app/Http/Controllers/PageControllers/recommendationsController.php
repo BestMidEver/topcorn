@@ -45,7 +45,7 @@ class recommendationsController extends Controller
     
 
 
-    public function get_top_rateds($tab, Request $request)
+    public function get_top_rateds(Request $request)
     {
         $start = microtime(true);
 
@@ -161,7 +161,7 @@ class recommendationsController extends Controller
             ->groupBy('movies.id')
             ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0');
 
-            if($tab=='popular'){
+            if($request->f_sort == 'most_popular'){
                 $return_val = $return_val->orderBy('movies.popularity', 'desc');
             }else{
                 $return_val = $return_val->orderBy('movies.vote_average', 'desc')
@@ -184,7 +184,7 @@ class recommendationsController extends Controller
             ->where('movies.vote_count', '>', 1500)
             ->where('movies.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
-            if($tab=='popular'){
+            if($request->f_sort == 'most_popular'){
                 $return_val = $return_val->orderBy('movies.popularity', 'desc');
             }else{
                 $return_val = $return_val->orderBy('movies.vote_average', 'desc')
