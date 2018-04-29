@@ -267,6 +267,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.user_id = pass.user_id;
     $scope.f_lang_model = [];
     $scope.f_genre_model = [];
+    $scope.f_add_watched = true;
 	$scope.active_tab= pass.watched_movie_number < 50 ? 'top_rated' : 'pemosu';
 	$scope.is_waiting=false;
 

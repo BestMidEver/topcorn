@@ -181,7 +181,7 @@ return [
     'share' => 'Megosztás',                                                 //movie
 	'show_crew' => 'Mutassa a stábot',
     'show_everyone' => 'Mutass mindenkit',                                  //movie
-    'show_watched_movies' => 'Show Movies That I Watched',                  //recommendations,      //////////////
+    'show_watched_movies' => 'Bring Movies That I Watched Too',             //recommendations,      //////////////
     'sort_by' => 'SORREND',                                                 //recommendations, 
     'sort_by_match' => 'Egyezési pontszám alapján',                         //recommendations,      
     'sort_by_percent' => 'Egyezési százalék szerint',                       //recommendations,      
