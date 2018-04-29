@@ -211,7 +211,7 @@
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('popularity');">{{ __('general.most_populer') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
 		</div>
 	</div>
 	<div class="dropdown d-inline" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
@@ -224,7 +224,7 @@
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_match') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_percent') }}';change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.most_populer') }}';change_sort_by('popularity');">{{ __('general.most_populer') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
 		</div>
 			@endif
 		@endif
