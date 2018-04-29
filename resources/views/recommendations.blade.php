@@ -207,8 +207,8 @@
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_match') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
 			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_percent') }}';change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_tmdb') }}';change_sort_by('vote_average');">{{ __('general.sort_by_tmdb') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_pop') }}';change_sort_by('popularity');">{{ __('general.sort_by_pop') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_tmdb') }}';change_sort_by('top_rated');">{{ __('general.sort_by_tmdb') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title='{{ __('general.sort_by_pop') }}';change_sort_by('most_popular');">{{ __('general.sort_by_pop') }}</button>
 		</div>
 	</div>
 </div>
