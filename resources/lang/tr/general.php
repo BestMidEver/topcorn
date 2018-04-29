@@ -3,12 +3,11 @@
 return [
     '404' => 'Sayfa bulunamadı.',
     'a_z' => 'A -> Z',
-    'according_to_my_taste' => 'Zevkime Göre',                                          //recommendations,
+    'according_to_my_taste' => 'Benim Zevkime Göre',                                    //recommendations,
     'according_to_themoviedb' => 'TMDb puanı',                                          //recommendations,
     'according_to_your_taste' => 'Senin zevkine göre',                                  //recommendations,
-    'according_to_your_mood' => 'Moduna Göre',                                          //recommendations,      ///////////////
-    'according_to_movie_combination' => 'Moduma Göre',                                  //recommendations,     ////////////
-    'according_to_popular_taste' => 'Genel Zevke Göre',                                 //recommendations,     ////////////
+    'according_to_movie_combination' => 'Moduma Göre',                                  //recommendations,     
+    'according_to_popular_taste' => 'Genel Zevke Göre',                                 //recommendations,     
     'acting' => 'Oyunculuk',            
     'active' => 'Etkin',                                                                //accountinterface,
     'actor' => 'Oyuncu',            
@@ -21,7 +20,7 @@ return [
     'ago_message' => 
         ':created_at önce ekledi, en son :updated_at önce güncelledi.',                 //list,   
     'all' => 'Hepsi',                                                                   //profile,
-    'all_movies' => 'Bütün Filmler',                                                    //recommendations,          /////////
+    'all_movies' => 'Bütün Filmler',                                                    //recommendations,          
     'author' => 'Yaratıcı',         
     'ban' => 'Banla',           
     'banneds' => 'Banlananlar',                                                         //profile,
@@ -50,12 +49,12 @@ return [
     'disabled' => 'Devre Dışı',                                                         //accountinterface,
     'display' => 'Görüntü',                                                             //accountinterface,
     'definitely_dont_recommend' => 'Çöp',                                               //ratemodal, profile,
-    'definitely_dont_recommend_movies' => 'Çöp Filmler',                                //recommendations,          ///////
+    'definitely_dont_recommend_movies' => 'Çöp Filmler',                                //recommendations,          
     'definitely_recommend' => 'Efsanevi',                                               //ratemodal, profile,
-    'definitely_recommend_movies' => 'Efsanevi Filmler',                                //recommendations,          ////////
+    'definitely_recommend_movies' => 'Efsanevi Filmler',                                //recommendations,          
     'dollar_account' => 'Dolar Hesabı',                                                 //donation,
     'dont_recommend' => 'Kötü',                                                         //ratemodal, profile,
-    'dont_recommend_movies' => 'Kötü Filmler',                                          //recommendations,          ////////
+    'dont_recommend_movies' => 'Kötü Filmler',                                          //recommendations,          
     'edit' => 'Düzenle',                                                                //list                      
     'editing' => 'Kurgu',   
     'email' => 'E-Posta',                                                               //email, reset, login, register,
@@ -92,7 +91,7 @@ return [
     'links' => 'Profilde Sergilenen Bağlantılar',                                       //account                 
     'login_via_facebook' => 'Facebook ile Bağlan',                                      //login, register,
     'low' => 'Düşük',                                                                   //accountinterface,
-    'list' => 'Liste',                                                                  //search,           /////////////         
+    'list' => 'Liste',                                                                  //search,                    
     'lists' => 'Listeler',                                                              //list,         
     'list_description' => 'Açıklama',                                                   //list,         
     'list_number' => 'Oluşturduğu liste sayısı',                                        //profile,                   
@@ -119,11 +118,11 @@ return [
     'new_password_confirmation' => 'Tekrar Yeni Şifre',                                 //reset, accountpassword,
     'newest' => 'En Yeni',
     'next' => 'Sonraki',                                                                //pagination,
-    'no_mode_movies' => 'Modunu belirten filmleri eklemelisin.',                        //recommendations      /////////
+    'no_mode_movies' => 'Modunu belirten filmleri eklemelisin.',                        //recommendations      
     'no_result' => 'Sonuç bulunamadı.',                                                 //profile, search
     'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                //movie
     'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,
-    'not_sure_movies' => 'Kararsız Kaldığım Filmler',                                   //recommendations,      /////////////
+    'not_sure_movies' => 'Kararsız Kaldığım Filmler',                                   //recommendations,      
     'novel' => 'Roman',
     'official_website' => 'Resmi İnternet Sitesi',
     'only_me' => 'Sadece Ben',                                                          //list,         
@@ -156,7 +155,7 @@ return [
     'read_all' => 'Hepsini oku',            
     'recipient_name' => 'Alıcının Adı',                                                 //donation,
     'recommend' => 'Güzel',                                                             //ratemodal, profile,
-    'recommend_movies' => 'Güzel Filmler',                                              //recommendations,      //////////
+    'recommend_movies' => 'Güzel Filmler',                                              //recommendations,      
     'remember_me' => 'Beni hatırla',                                                    //login,
     'remove' => 'Sil',                                                                  //recommendations,
     'revenue' => 'Gelir',           
@@ -180,14 +179,10 @@ return [
     'show_crew' => 'Film Ekibini Göster',                                               //accountinterface,        
     'show_everyone' => 'Herkesi Göster',            
     'sort_by' => 'SIRALAMA ÖLÇÜTÜ',                                                     //recommendations,      
-    'sort_by_match' => 'Eşleşme Puanı',                                                 //recommendations,      
-    'sort_by_match_title' => 'Eşleşme Puanına Göre Sırala',                             //recommendations,   //////   
+    'sort_by_match' => 'Eşleşme Puanı',                                                 //recommendations,       
     'sort_by_percent' => 'Eşleşme Yüzdesi',                                             //recommendations,      
-    'sort_by_percent_title' => 'Eşleşme Yüzdesine Göre Sırala',                         //recommendations,    //////  
     'sort_by_tmdb' => 'TMDb puanı',                                                     //recommendations,      
-    'sort_by_tmdb_title' => 'TMDb puanına Göre Sırala',                                 //recommendations,     ////// 
     'sort_by_pop' => 'Popülerlik',                                                      //recommendations,      
-    'sort_by_pop_title' => 'Popülerliğine Göre Sırala',                                 //recommendations,   ///////   
     'standard' => 'Standart',                                                           //accountinterface,  
     'time_second' => 'saniye',                                                          //list,             
     'time_seconds' => 'saniye',                                                         //list,             
@@ -221,7 +216,7 @@ return [
     'users_twitter' => 'Twitter Bağlantısı',                                            //account, profile      
     'users_youtube' => 'Youtube Kanalı',                                                //account, profile      
     'visibility' => 'Kimler Görebilir?',                                                //list                  
-    'watched_movies' => 'İzlenilen Filmler',                                            //profile, recommendations      ///////////
+    'watched_movies' => 'İzlenilen Filmler',                                            //profile, recommendations      
     'watch_later' => 'Sonra İzle',          
     'watch_together' => 'Beraber İzle',                                                 //profile,
     'watched_movie_number' => 'İzlenilen film sayısı',                                  //profile,              

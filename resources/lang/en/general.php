@@ -5,6 +5,8 @@ return [
     'a_z' => 'A -> Z',                                                      //person,
     'according_to_my_taste' => 'Based on my Taste',                         //recommendations,
     'according_to_your_taste' => 'Based on your taste',                     //recommendations,
+    'according_to_movie_combination' => 'By Mood',                          //recommendations,     
+    'according_to_popular_taste' => 'Based on Popular Taste',               //recommendations,     
     'according_to_themoviedb' => 'TMDb score',                              //recommendations,
     'acting' => 'Acting',                                                   //person,
     'active' => 'Active',                                                   //accountinterface,
@@ -18,6 +20,7 @@ return [
     'ago_message' => 
         'Created :created_at ago, last updated :updated_at ago.',           //list,  
     'all' => 'All',                                                         //profile,
+    'all_movies' => 'All Movies',                                           //recommendations,          
     'author' => 'Author',                                                   //movie,
     'ban' => 'Ban',                                                         //movie,
     'banneds' => 'Banned Movies',                                           //profile,
@@ -46,9 +49,12 @@ return [
     'disabled' => 'Disabled',                                               //accountinterface,
     'display' => 'Display',                                                 //accountinterface,
     'definitely_dont_recommend' => 'Garbage',                               //ratemodal, profile,
+    'definitely_dont_recommend_movies' => 'Garbage Movies',                 //recommendations,          
     'definitely_recommend' => 'Legendary',                                  //ratemodal, profile,
+    'definitely_recommend_movies' => 'Legendary Movies',                    //recommendations,          
     'dollar_account' => 'Dollar Account',                                   //donation,
     'dont_recommend' => 'Bad',                                              //ratemodal, profile,
+    'dont_recommend_movies' => 'Bad Movies',                                //recommendations,          
     'edit' => 'Edit',                                                       //list                      
     'editing' => 'Editing',                                                 //person,
     'email' => 'Email',                                                     //email, reset, login, register,
@@ -85,6 +91,7 @@ return [
     'links' => 'Profile links',                                             //account              
     'login_via_facebook' => 'Login via Facebook',                           //login, register,
     'low' => 'Low',                                                         //accountinterface,
+    'list' => 'List',                                                       //search,             
     'lists' => 'Custom Lists',                                              //list,  
     'list_description' => 'Description',                                    //list,
     'list_number' => 'Custom list count',                                   //profile,                    
@@ -111,9 +118,11 @@ return [
     'new_password_confirmation' => 'New Password Confirmation',             //reset, accountpassword,
     'newest' => 'Newest',
     'next' => 'Next',                                                       //pagination,
+    'no_mode_movies' => 'You must add movies to define your mood.',         //recommendations      
     'no_result' => 'No result',                                             //profile,
     'no_result_review' => 'No review',                                      //movie
     'not_sure' => 'Not Sure',                                               //ratemodal, profile,
+    'not_sure_movies' => 'The Movies I Am Not Sure About',                  //recommendations,      
     'novel' => 'Novel',                                                     //person,
     'official_website' => 'Official Website',                               //movie,
     'only_me' => 'Private',                                                 //list,         
@@ -147,6 +156,7 @@ return [
     'read_all' => 'Read more',                                              //movie,
     'recipient_name' => 'Recipient Name',                                   //donation,
     'recommend' => 'Good',                                                  //ratemodal, profile,
+    'recommend_movies' => 'Good Movies',                                    //recommendations,      
     'remember_me' => 'Remember me',                                         //login,
     'remove' => 'Remove',                                                   //recommendations,
     'revenue' => 'Revenue',                                                 //movie,
@@ -206,7 +216,8 @@ return [
     'users_instagram' => 'İnstagram Link',                                  //account, profile      
     'users_twitter' => 'Twitter Link',                                      //account, profile      
     'users_youtube' => 'Youtube Channel',                                   //account, profile      
-    'visibility' => 'Visibility',                                           //list                  
+    'visibility' => 'Visibility',                                           //list    
+    'watched_movies' => 'Watched Movies',                                   //profile, recommendations                 
     'watch_later' => 'Watch Later',
     'watch_together' => 'Watch Together',                                   //profile,
     'watched_movie_number' => 'Watched movie count',                        //profile,              

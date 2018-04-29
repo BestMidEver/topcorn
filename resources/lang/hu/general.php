@@ -5,6 +5,8 @@ return [
     'a_z' => 'A -> Z',                                                      //person,
     'according_to_my_taste' => 'Az én ízlésem szerint',                     //recommendations,
 	'according_to_your_taste' => 'A Te ízlésed szerint',
+    'according_to_movie_combination' => 'By Mood',                          //recommendations,     ////////////
+    'according_to_popular_taste' => 'Based on Popular Taste',               //recommendations,     ////////////
     'according_to_themoviedb' => 'TMDb pontszám',                           //recommendations,
     'acting' => 'Szereplő',                                                 //person,                       
     'active' => 'Aktív',                                                    //accountinterface,                     
@@ -18,6 +20,7 @@ return [
     'ago_message' => 
         'Létrehozva :created_at, utolsó módosítás :updated_at.',           //list,   
     'all' => 'Mind',                                                        //profile,
+    'all_movies' => 'All Movies',                                           //recommendations,          /////////
     'author' => 'Szerző',                                                   //movie
     'ban' => 'Tiltás',                                                      //movie
     'banneds' => 'Letiltott filmek',                                        //profile,
@@ -46,9 +49,12 @@ return [
     'disabled' => 'Inaktív',                                                //accountinterface,
 	'display' => 'Kijelző',
     'definitely_dont_recommend' => 'Szörnyű',                               //ratemodal, profile,
+    'definitely_dont_recommend_movies' => 'Garbage Movies',                 //recommendations,          ///////
     'definitely_recommend' => 'Legendás',                                   //ratemodal, profile,
+    'definitely_recommend_movies' => 'Legendary Movies',                    //recommendations,          ////////
     'dollar_account' => 'Dollár számla',                                    //donation,
     'dont_recommend' => 'Rossz',                                            //ratemodal, profile,
+    'dont_recommend_movies' => 'Bad Movies',                                //recommendations,          ////////
     'edit' => 'Szerkesztés',                                                       //list                      
     'editing' => 'Vágás',                                                   //person
     'email' => 'E-mail cím',                                                //email, reset, login, register,
@@ -85,6 +91,7 @@ return [
     'links' => 'Profile links',                                             //account       /////////////  
     'login_via_facebook' => 'Belépés Facebook-on keresztül',                //login, register,
     'low' => 'Alacsony adatforgalom',                                       //accountinterface,
+    'list' => 'List',                                                       //search,           /////////////  
     'lists' => 'Egyéni listák',                                              //list,         
     'list_description' => 'Magyarázat',                                    //list,         
     'list_number' => 'Custom list count',                                   //profile,          ////////////  
@@ -110,9 +117,11 @@ return [
     'new_password_confirmation' => 'Új jelszó megismétlése',                //reset, accountpassword,
     'newest' => 'Legújabb',
     'next' => 'Következő',                                                  //pagination
+    'no_mode_movies' => 'You must add movies to define your mood.',         //recommendations      /////////
     'no_result' => 'Nincs találat',                                         //profile,
     'no_result_review' => 'Nincs vélemény',                                 //movie,
     'not_sure' => 'Bizonytalan',                                            //ratemodal, profile,
+    'not_sure_movies' => 'The Movies I Am Not Sure About',                  //recommendations,      /////////////
     'novel' => 'Regény',                                                    //person,
     'official_website' => 'Hivatalos honlap',                               //movie,
     'only_me' => 'Csak én',                                                 //list,         
@@ -146,6 +155,7 @@ return [
     'read_all' => 'Több',                                                   //movie
     'recipient_name' => 'A címzett neve',                                   //donation,
     'recommend' => 'Jó',                                                    //ratemodal, profile,
+    'recommend_movies' => 'Good Movies',                                    //recommendations,      //////////
     'remember_me' => 'Emlékezz rám!',                                       //login,
     'remove' => 'Törlés',                                                   //recommendations,
     'revenue' => 'Bevétel',                                                 //movie
@@ -205,7 +215,8 @@ return [
     'users_instagram' => 'İnstagram Link',                                  //account, profile      //////////
     'users_twitter' => 'Twitter Link',                                      //account, profile      //////////
     'users_youtube' => 'Youtube Channel',                                   //account, profile      //////////
-    'visibility' => 'Láthatóság',                                           //list                  
+    'visibility' => 'Láthatóság',                                           //list       
+    'watched_movies' => 'Watched Movies',                                   //profile, recommendations   ///////////             
     'watch_later' => 'Később megnézem',
     'watch_together' => 'Nézzük meg együtt!',                               //profile,
     'watched_movie_number' => 'Watched movie count',                        //profile,              //////////
