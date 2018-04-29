@@ -181,7 +181,7 @@ class recommendationsController extends Controller
                 'movies.'.App::getlocale().'_title as title',
                 'movies.'.App::getlocale().'_poster_path as poster_path'
             )
-            ->where('movies.vote_count', '>', 1500)
+            ->where('movies.vote_count', '>', 250)
             ->where('movies.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
             if($request->f_sort == 'most_popular'){
