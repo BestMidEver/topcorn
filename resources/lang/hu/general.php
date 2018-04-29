@@ -5,6 +5,7 @@ return [
     'a_z' => 'A -> Z',                                                      //person,
     'according_to_my_taste' => 'Az én ízlésem szerint',                     //recommendations,
 	'according_to_your_taste' => 'A Te ízlésed szerint',
+    'according_to_your_mood' => 'Based on the Mood',                        //recommendations,     ///////////
     'according_to_movie_combination' => 'By Mood',                          //recommendations,     ////////////
     'according_to_popular_taste' => 'Based on Popular Taste',               //recommendations,     ////////////
     'according_to_themoviedb' => 'TMDb pontszám',                           //recommendations,
