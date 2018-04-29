@@ -67,10 +67,10 @@
 		</div>
 	</div>
 	<div class="py-3" ng-if="active_tab=='mood_pick'">
-
+		@if(auth::check())
 		<div class="container-fluid mb-3" ng-hide="is_mode_search">
 			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';">
-				<button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					@{{mode_mod_title}}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -85,12 +85,17 @@
 			</div>
 			<span class="text-muted pl-2"><small>@{{in_mode}} <span ng-show="in_mode < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in_mode > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 		</div>
+		@endif
 		<span class="h6 text-muted d-block" ng-show="is_mode_search">{{ __('general.search_results') }}</span>
 
-
+		@if(auth::check())
 		<div class="p-5" ng-show="search_movies.length==0">
+		@else
+		<div class="p-5" ng-show="search_movies.length==0 && is_mode_search">
+		@endif
 			<div class="text-muted text-center">{{ __('general.no_result') }}</div>
 		</div>
+
 		<div class="d-flex flex-wrap">
 			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-2 px-1" ng-repeat="movie in search_movies">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
