@@ -70,7 +70,7 @@
 		@if(auth::check())
 		<div class="container-fluid mb-3" ng-hide="is_mode_search">
 			<div class="dropdown d-inline" ng-init="mode_mod_title='{{ __('general.definitely_recommend_movies') }}';">
-				<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<button class="btn btn-outline-secondary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					@{{mode_mod_title}}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
