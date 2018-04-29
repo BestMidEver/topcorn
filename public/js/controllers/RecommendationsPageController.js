@@ -62,6 +62,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 		$scope.is_filter_collapsed = function(){
 			console.log($(collapsableRegion).attr("aria-expanded"))
+			console.log($(31)
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
