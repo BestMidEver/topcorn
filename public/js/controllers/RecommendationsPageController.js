@@ -60,11 +60,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_2 = 'vote_average';
 		$scope.sort_by_4 = 'point';
 
-		$('#collapseFilter').on('shown.bs.collapse', function () {
+		$('#collapseFilter').on('show.bs.collapse', function () {
 		   angular.element( document.querySelector( '#filter_button' ) ).addClass('btn-outline-secondary-hover');
 		});
 
-		$('#collapseFilter').on('hidden.bs.collapse', function () {
+		$('#collapseFilter').on('hide.bs.collapse', function () {
 		  angular.element( document.querySelector( '#filter_button' ) ).removeClass('btn-outline-secondary-hover');
 		});
 //////////////////////////////////////////////////////////////////////////////////////////
