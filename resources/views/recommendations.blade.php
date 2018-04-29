@@ -171,9 +171,11 @@
 	</div>
 	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">{{ __('general.other') }}</p>
-		<div class="custom-control custom-checkbox col">
-		  <input type="checkbox" class="custom-control-input" id="customCheckWL" ng-model="f_add_watched" ng-change="get_first_page_data()">
-		  <label class="custom-control-label" for="customCheckWL">{{ __('general.show_watched_movies') }}</label>
+		<div class="col">
+			<div class="custom-control custom-checkbox">
+			  <input type="checkbox" class="custom-control-input" id="customCheckWL" ng-model="f_add_watched" ng-change="get_first_page_data()">
+			  <label class="custom-control-label" for="customCheckWL">{{ __('general.show_watched_movies') }}</label>
+			</div>
 		</div>
 	</div>
 		@endif
