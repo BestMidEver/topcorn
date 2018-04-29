@@ -175,6 +175,10 @@
 			<input type="checkbox" class="form-check-input" ng-model="f_add_watched" ng-change="get_first_page_data()">
 			{{ __('general.show_watched_movies') }}
 		</label>
+		<div class="custom-control custom-checkbox">
+		  <input type="checkbox" class="custom-control-input" id="customCheck1">
+		  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+		</div>
 	</div>
 		@endif
 	@endif
