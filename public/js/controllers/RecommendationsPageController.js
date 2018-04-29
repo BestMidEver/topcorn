@@ -62,12 +62,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 		$('#collapseFilter').on('shown.bs.collapse', function () {
 		   $scope.expanded_filter = true;
-		    console.log("opened")
+		    console.log("opened",$scope.expanded_filter)
 		});
 
 		$('#collapseFilter').on('hidden.bs.collapse', function () {
 		  $scope.expanded_filter = false;
-		   console.log("Closed")		
+		   console.log("Closed",$scope.expanded_filter)		
 		});
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
