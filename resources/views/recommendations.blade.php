@@ -15,7 +15,7 @@
 	@endif
 	<div class="d-inline ml-3" ng-show="active_tab=='mood_pick'">
 		<button class="btn btn-warning btn-sm text-white mx-1 my-2" type="button" ng-repeat="mode_movie in mode_movies" ng-click="remove_from_mode(mode_movie.id);" data-toggle="tooltip" data-placement="top" title="@{{mode_movies.original_title}}">@{{mode_movie.title}}@{{mode_movie.release_date.length > 0 ? ' ('+mode_movie.release_date.substring(0, 4)+')' : ''}} <i class="fa fa-times"></i></button>
-		<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_mode')"><i class="fas fa-user-plus"></i> @{{mode_movies.length == 0 ? {{ '"'.__('general.pick_mode').'"' }} : {{ '"'.__('general.add_movie').'"' }}}}</button>
+		<button class="btn btn-outline-warning btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_mode')"><i class="fas fa-user-plus"></i> <span ng-show="mode_movies.length == 0">{{ __('general.pick_mode') }}</span><span ng-hide="mode_movies.length == 0"> {{ __('general.add_movie') }}</span></button>
 	</div>
 </div>
 <!-- H1 +AddPerson +AddMode row  -->
