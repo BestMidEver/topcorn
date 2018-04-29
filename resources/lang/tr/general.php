@@ -180,6 +180,7 @@ return [
     'share' => 'Paylaş',            
     'show_crew' => 'Film Ekibini Göster',                                               //accountinterface,        
     'show_everyone' => 'Herkesi Göster',            
+    'show_watched_movies' => 'İzlediğim Filmleri Göster',                               //recommendations,
     'sort_by' => 'SIRALAMA ÖLÇÜTÜ',                                                     //recommendations,      
     'sort_by_match' => 'Eşleşme Puanı',                                                 //recommendations,       
     'sort_by_percent' => 'Eşleşme Yüzdesi',                                             //recommendations,      

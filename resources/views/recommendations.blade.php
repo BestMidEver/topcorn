@@ -169,29 +169,13 @@
 		<rzslider rz-slider-model="slider_vote_count.value"
 		rz-slider-options="slider_vote_count.options"></rzslider>
 	</div>
-	<!--<div class="mt-3 pb-3" ng-show="active_tab=='pemosu'">
+	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">{{ __('general.sort_by') }}</p>
-		<div class="form-check form-check-inline">
-			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="point"> {{ __('general.sort_by_match') }}
-			</label>
-		</div>
-		<div class="form-check form-check-inline">
-			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="percent"> {{ __('general.sort_by_percent') }}
-			</label>
-		</div>
-		<div class="form-check form-check-inline">
-			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="top_rated"> {{ __('general.sort_by_tmdb') }}
-			</label>
-		</div>
-		<div class="form-check form-check-inline">
-			<label class="form-check-label">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="most_popular"> {{ __('general.sort_by_pop') }}
-			</label>
-		</div>
-	</div>-->
+		<label class="form-check-label nowrap">
+			<input type="checkbox" class="form-check-input" ng-model="f_add_watched" ng-change="get_first_page_data()">
+			{{ __('general.show_watched_movies') }}
+		</label>
+	</div>
 		@endif
 	@endif
 	<div class="text-center pb-1">
