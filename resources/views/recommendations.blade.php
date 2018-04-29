@@ -185,8 +185,8 @@
 			<label class="form-check-label">
 				<input class="form-check-input" type="radio" name="inlineRadioOptions" ng-model="sort_by" ng-change="get_page_data()" value="most_popular"> {{ __('general.sort_by_pop') }}
 			</label>
-		</div>-->
-	</div>
+		</div>
+	</div>-->
 		@endif
 	@endif
 	<div class="text-center pb-1">
