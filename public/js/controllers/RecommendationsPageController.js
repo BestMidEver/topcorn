@@ -52,12 +52,13 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		    });
 		};
 
-		$scope.languages=_.sortBy(languages, 'o');
+		$scope.languages = _.sortBy(languages, 'o');
 		$scope.languages.pop();
-		$scope.genres=_.sortBy(genres, 'o');
+		$scope.genres = _.sortBy(genres, 'o');
 		console.log($scope.genres, genres)
 		$scope.genres.pop();
-		$scope.sort_by='point';
+		$scope.sort_by_2 = 'popularity';
+		$scope.sort_by_4 = 'point';
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -276,7 +277,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_genre": f_genre,
 				"f_min": $scope.slider.minValue,
 				"f_max": $scope.slider.maxValue,
-				"f_sort": $scope.sort_by,
+				"f_sort": $scope.active_tab == 'top_rated' ? $scope.sort_by_2 : $scope.sort_by_4,
 				"f_vote": $scope.slider_vote_count.value
 			}	
 		}else{
@@ -288,7 +289,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_genre": f_genre,
 				"f_min": $scope.slider.minValue,
 				"f_max": $scope.slider.maxValue,
-				"f_sort": $scope.sort_by,
+				"f_sort": $scope.sort_by_4,
 				"f_vote": $scope.slider_vote_count.value,
 				"f_mode_movies": $scope.f_mode_movies
 			}
@@ -322,6 +323,16 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	{
 		$scope.search_text='';
 		$scope.search_users();
+	}
+
+	$scope.change_sort_by = function(mode)
+	{
+		if($scope.active_tab == 'top_rated'){
+			$scope.sort_by_2 = mode;
+		}else{
+			$scope.sort_by_4 = mode;
+		}
+		$scope.get_first_page_data();
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
