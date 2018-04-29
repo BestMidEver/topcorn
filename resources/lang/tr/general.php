@@ -119,6 +119,7 @@ return [
     'new_password_confirmation' => 'Tekrar Yeni Şifre',                                 //reset, accountpassword,
     'newest' => 'En Yeni',
     'next' => 'Sonraki',                                                                //pagination,
+    'no_mode_movies' => 'Modunu belirten filmleri eklemelisin.',                        //recommendations      /////////
     'no_result' => 'Sonuç bulunamadı.',                                                 //profile, search
     'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                //movie
     'not_sure' => 'Kararsızım',                                                         //ratemodal, profile,

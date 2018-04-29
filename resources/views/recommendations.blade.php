@@ -238,7 +238,7 @@
 <!-- MovieCard -->
 <div id="scroll_top_point">
 	<div class="p-5" ng-show="movies.length==0">
-		<div class="text-muted text-center"><span ng-if="!is_waiting">{{ __('general.no_result') }}</span><span ng-if="is_waiting">{{ __('general.searching') }}</span></div>
+		<div class="text-muted text-center"><span ng-if="!is_waiting && active_tab!='mood_pick'">{{ __('general.no_result') }}</span><span ng-if="!is_waiting && active_tab=='mood_pick' && mode_movies.length==0">{{ __('general.no_mode_movies') }}</span><span ng-if="is_waiting">{{ __('general.searching') }}</span></div>
 	</div>
 	@include('layout.moviecard')
 </div>
