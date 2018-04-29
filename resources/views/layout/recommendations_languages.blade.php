@@ -7,8 +7,8 @@
 				@{{language.o}}
 			</label>-->
 			<div class="custom-control custom-checkbox">
-			  <input type="checkbox" class="custom-control-input" id="customCheck1">
-			  <label class="custom-control-label" for="customCheck1">@{{language.o}}</label>
+			  <input type="checkbox" class="custom-control-input" ng-attr-id="customCheck@{{$index}}">
+			  <label class="custom-control-label" for="customCheck@{{$index}}">@{{language.o}}</label>
 			</div>
 		</div>
 	</div>	
