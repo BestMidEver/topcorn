@@ -15,7 +15,7 @@
 					<h5><a ng-href="http://www.google.com/search?q=@{{person.name}}" class="text-light" target="_blank"><span class="yeswrap text-left">{{config('constants.gabar')}}@{{person.name}} @{{age}} - {{ __('general.hismovies') }}</span></a></h5>
 				</div>
 				<div class="d-flex flex-row align-items-center text-light ml-2" ng-if="person.place_of_birth">
-					<i class="fas fa-map-marker"></i><div class="d-inline pl-1" >@{{person.place_of_birth}}</div>
+					<a ng-href="http://www.google.com/search?q=@{{person.place_of_birth}}"><i class="fas fa-map-marker"></i><div class="d-inline pl-1" >@{{person.place_of_birth}}</div></a>
 				</div>
 				<div class="d-flex flex-row align-items-center text-light ml-2" ng-if="person.deathday">
 					<i class="fab fa-studiovinari"></i><div class="d-inline pl-1" >@{{person.deathday}}</div>
