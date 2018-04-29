@@ -265,8 +265,11 @@ class recommendationsController extends Controller
             'rateds.id as rated_id',
             'rateds.rate as rate_code'
         )
-        ->groupBy('movies.id')
-        ->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0');
+        ->groupBy('movies.id');
+
+        if(!$request->f_add_watched){
+            $subq_2 = $subq_2->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0');
+        }
 
         $qqSql_2 = $subq_2->toSql();
     ////////////////////////////////////////////////////
