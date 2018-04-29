@@ -200,13 +200,13 @@
 
 <!-- Sort by section -->
 <div class="container-fluid">
-	<div class="dropdown d-inline" ng-init="sort_by_title_2='{{ __('general.sort_by_tmdb') }}';" ng-show="active_tab=='top_rated'">
+	<div class="dropdown d-inline" ng-init="sort_by_title_2='{{ __('general.top_rated') }}';" ng-show="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.sort_by_tmdb') }}';change_sort_by('top_rated');">{{ __('general.sort_by_tmdb') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.sort_by_pop') }}';change_sort_by('most_popular');">{{ __('general.sort_by_pop') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('popularity');">{{ __('general.most_populer') }}</button>
 		</div>
 	</div>
 	<div class="dropdown d-inline" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
@@ -217,7 +217,7 @@
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_match') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_percent') }}';change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_tmdb') }}';change_sort_by('top_rated');">{{ __('general.sort_by_tmdb') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_pop') }}';change_sort_by('most_popular');">{{ __('general.sort_by_pop') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_pop') }}';change_sort_by('popularity');">{{ __('general.sort_by_pop') }}</button>
 		</div>
 	</div>
 </div>
