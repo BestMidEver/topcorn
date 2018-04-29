@@ -295,7 +295,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_min": $scope.slider.minValue,
 				"f_max": $scope.slider.maxValue,
 				"f_sort": $scope.active_tab == 'top_rated' ? $scope.sort_by_2 : $scope.sort_by_4,
-				"f_vote": $scope.slider_vote_count.value
+				"f_vote": $scope.slider_vote_count.value,
+				"f_add_watched": $scope.f_add_watched
 			}	
 		}else{
 			console.log($scope.f_mode_movies)
@@ -308,7 +309,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_max": $scope.slider.maxValue,
 				"f_sort": $scope.sort_by_4,
 				"f_vote": $scope.slider_vote_count.value,
-				"f_mode_movies": $scope.f_mode_movies
+				"f_mode_movies": $scope.f_mode_movies,
+				"f_add_watched": $scope.f_add_watched
 			}
 		}
 
