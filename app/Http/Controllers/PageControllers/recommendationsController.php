@@ -46,7 +46,7 @@ class recommendationsController extends Controller
 
 
     public function get_top_rateds(Request $request)
-    {return 2;
+    {return $request->f_add_watched;
         $start = microtime(true);
 
         if(auth::check()){
