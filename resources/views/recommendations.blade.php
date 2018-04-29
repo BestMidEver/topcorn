@@ -153,7 +153,7 @@
 
 
 <!-- Filter secion -->
-<div class="collapse container-fluid background-lightgrey mb-2" id="collapseFilter">
+<div class="collapse container-fluid background-lightgrey mb-3" id="collapseFilter">
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="mt-3 pb-3">
