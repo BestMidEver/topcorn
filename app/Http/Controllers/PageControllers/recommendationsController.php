@@ -383,7 +383,7 @@ class recommendationsController extends Controller
         }
 
         if(Auth::check()){
-            $subq = $subq->leftjoin('rateds', function ($join) use ($request) {
+            $subq = $subq->leftjoin('rateds', function ($join) {
                 $join->on('rateds.movie_id', '=', 'm2.id')
                 ->where('rateds.user_id', Auth::id());
             })
@@ -395,6 +395,10 @@ class recommendationsController extends Controller
                 'rateds.id as rated_id',
                 'rateds.rate as rate_code'
             );
+
+            if(!$request->f_add_watched){
+                $subq = $subq->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0');
+            }
         }else{
             $subq = $subq->select(
                 'recommendations.this_id as id',
