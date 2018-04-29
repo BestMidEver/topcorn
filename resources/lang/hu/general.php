@@ -143,6 +143,7 @@ return [
     'person_time' => 'szavazat',                                            //movie,
 	'point' => 'pont',
     'person_times' => 'szavazat',                                           //movie,
+    'pick_mode' => 'Define the Mood',                                       //recommendations,              /////////
     'previous' => 'Előző',                                                  //pagination,
     'previous_parties' => 'Előzmények',                                     //recommendations,
     'production' => 'Produkció',                                            //person

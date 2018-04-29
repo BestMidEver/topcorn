@@ -143,6 +143,7 @@ return [
     'personal_website' => 'Kişisel İnternet Sitesi',                                    //account           
     'person_time' => 'oy',                                                              //movie,
     'person_times' => 'oy',                                                             //movie,
+    'pick_mode' => 'Mod Belirle',                                                       //recommendations,
     'point' => 'puan',                                                                  //recommendations,
     'previous' => 'Önceki',                                                             //pagination,
     'previous_parties' => 'Geçmiş Partiler',                                            //recommendations,

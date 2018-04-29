@@ -143,6 +143,7 @@ return [
     'personal_website' => 'Personal Link',                                  //account           
     'person_time' => 'vote',                                                //movie,
     'person_times' => 'votes',                                              //movie,
+    'pick_mode' => 'Define the Mood',                                       //recommendations,
     'point' => 'points',                                                    //recommendations,
     'previous' => 'Previous',                                               //pagination,
     'previous_parties' => 'History',                                        //recommendations,
