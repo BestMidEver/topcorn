@@ -61,7 +61,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_4 = 'point';
 
 		$scope.is_filter_collapsed = function(){
-			console.log($(collapsableRegion).attr("aria-expanded"))
+			console.log($("#collapseFilter").attr("aria-expanded"))
 			console.log(31)
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
