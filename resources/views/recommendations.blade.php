@@ -171,13 +171,9 @@
 	</div>
 	<div class="mt-3 pb-3">
 		<p class="h6 text-muted">{{ __('general.sort_by') }}</p>
-		<label class="form-check-label nowrap">
-			<input type="checkbox" class="form-check-input" ng-model="f_add_watched" ng-change="get_first_page_data()">
-			{{ __('general.show_watched_movies') }}
-		</label>
 		<div class="custom-control custom-checkbox">
-		  <input type="checkbox" class="custom-control-input" id="customCheck1">
-		  <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+		  <input type="checkbox" class="custom-control-input" id="customCheckWL" ng-model="f_add_watched" ng-change="get_first_page_data()">
+		  <label class="custom-control-label" for="customCheckWL">{{ __('general.show_watched_movies') }}</label>
 		</div>
 	</div>
 		@endif
