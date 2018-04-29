@@ -61,13 +61,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_4 = 'point';
 
 		$('#collapseFilter').on('shown.bs.collapse', function () {
-		   $scope.expanded_filter = false;
-		    console.log("opened",$scope.expanded_filter)
+		   angular.element( document.querySelector( '#filter_button' ) ).addClass('btn-outline-secondary-hover');
 		});
 
 		$('#collapseFilter').on('hidden.bs.collapse', function () {
-		  $scope.expanded_filter = true;
-		   console.log("Closed",$scope.expanded_filter)		
+		  angular.element( document.querySelector( '#filter_button' ) ).removeClass('btn-outline-secondary-hover');
 		});
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
