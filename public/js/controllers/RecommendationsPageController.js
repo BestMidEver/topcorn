@@ -61,12 +61,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_4 = 'point';
 
 		$('#collapseFilter').on('shown.bs.collapse', function () {
-		   $scope.expanded_filter = true;
+		   $scope.expanded_filter = false;
 		    console.log("opened",$scope.expanded_filter)
 		});
 
 		$('#collapseFilter').on('hidden.bs.collapse', function () {
-		  $scope.expanded_filter = false;
+		  $scope.expanded_filter = true;
 		   console.log("Closed",$scope.expanded_filter)		
 		});
 //////////////////////////////////////////////////////////////////////////////////////////
