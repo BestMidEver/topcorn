@@ -326,7 +326,7 @@
 <div class="container-fluid px-0 pt-3">
 	<div class="h5 px-3 px-md-0">
 		<div class="d-inline mb-0 pr-2 pt-2">{{ __('general.movie_lists_title') }}</div>	
-		<div class="pt-2">
+		<div class="d-inline pt-2">
 			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
 				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 			</a>
