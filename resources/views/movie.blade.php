@@ -323,14 +323,12 @@
 <!--Review Section-->
 
 <!--Lists Section-->
-<div class="container-fluid px-0 pt-3">
+<div class="container-fluid px-0 pt-5">
 	<div class="h5 px-3 px-md-0">
-		<div class="d-inline mb-0 pr-2 mt-2">{{ __('general.movie_lists_title') }}</div>	
-		<div class="d-inline mt-2">
-			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
-				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
-			</a>
-		</div>
+		<span class="pr-2">{{ __('general.movie_lists_title') }}</span>	
+		<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
+			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
+		</a>
 	</div>
 	<div class="p-5" ng-show="listes.length==0">
 		<div class="text-muted text-center"><span>{{ __('general.no_result') }}</span></div>
