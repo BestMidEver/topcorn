@@ -325,7 +325,7 @@
 <!--Lists Section-->
 <div class="container-fluid px-0 pt-5">
 	<div class="h5 px-3 px-md-0">
-		<span class="mb-0 pr-2 pb-3">{{ __('general.movie_lists_title') }}</span>	
+		<span class="mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
 			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 		</a>
