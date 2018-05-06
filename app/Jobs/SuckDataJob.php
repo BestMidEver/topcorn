@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\RestartJob;
 use App\Jobs\SuckMovieJob;
 use App\Jobs\SuckPageJob;
@@ -64,6 +65,8 @@ class SuckDataJob implements ShouldQueue
         foreach(Listitem::All()->pluck('movie_id')->unique() as $id){
             SuckMovieJob::dispatch($id, false)->onQueue("low");
         }
+
+        RefreshSiteMapJob::dispatch()->onQueue("low");
 
         //RestartJob::dispatch()->onQueue("low");
     }
