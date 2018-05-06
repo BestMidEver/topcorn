@@ -195,11 +195,11 @@ Route::post('api/tooltip','ApiControllers\LevelController@tt_manipulate');
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('suckData', function(){
-	SuckDataJob::dispatch()->onQueue("low");
+	//SuckDataJob::dispatch()->onQueue("low");
 	return 'sucking data.';
 });
 Route::get('refreshSitemap', function(){
-	RefreshSiteMapJob::dispatch()->onQueue("high");
+	//RefreshSiteMapJob::dispatch()->onQueue("high");
 	return 'refreshing sitemaps.';
 });
 //Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
