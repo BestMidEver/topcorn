@@ -323,10 +323,10 @@
 <!--Review Section-->
 
 <!--Lists Section-->
-<div class="container-fluid px-0 pt-5">
+<div class="container-fluid px-0 pt-3">
 	<div class="h5 px-3 px-md-0">
-		<span class="pr-2 mb-2 mb-md-0">{{ __('general.movie_lists_title') }}</span>	
-		<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
+		<span class="mb-0 pr-2 mt-2">{{ __('general.movie_lists_title') }}</span>	
+		<a href="/createlist/new" class="btn btn-outline-success btn-sm mt-2" target="{{$target}}">
 			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 		</a>
 	</div>
