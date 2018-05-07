@@ -2,6 +2,7 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
