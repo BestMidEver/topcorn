@@ -229,7 +229,7 @@ Route::get('test', function(){
         DB::raw('COUNT(bans.id) as ban_count')
 	)
 	->groupBy('users.id')
-    ->orderByRaw('COUNT(rateds.id) DESC')
+    //->orderByRaw('COUNT(rateds.id) DESC')
 	->paginate(20));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
