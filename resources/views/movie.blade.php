@@ -324,11 +324,11 @@
 
 <!--Lists Section-->
 <div class="container-fluid px-0 pt-5">
-	<div class="px-3 px-md-0">
-		<div class="d-inline">
+	<div class="h5 px-3 px-md-0 d-flex flex-row">
+		<div class="flex-column">
 			<span class="mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		</div>
-		<div class="d-inline">
+		<div class="flex-column">
 			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
 				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 			</a>
