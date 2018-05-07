@@ -223,10 +223,10 @@ Route::get('test', function(){
 		'users.facebook_id',
 		'users.name',
 		'users.tt_navbar',
-		'users.tt_movie',
+		'users.tt_movie'/*,
         DB::raw('COUNT(rateds.id) as rated_count'),
         DB::raw('COUNT(laters.id) as later_count'),
-        DB::raw('COUNT(bans.id) as ban_count')
+        DB::raw('COUNT(bans.id) as ban_count')*/
 	)
 	->groupBy('users.id')
 	->paginate(20));
