@@ -3,7 +3,7 @@
 return [
     '404' => 'Page not found.',                                             //404,
     'a_z' => 'A -> Z',                                                      //person,
-    'according_to_my_taste' => 'Based on my Taste',                         //recommendations,
+    'according_to_my_taste' => 'Based on My Taste',                         //recommendations,
     'according_to_your_taste' => 'Based on your taste',                     //recommendations,
     'according_to_your_mood' => 'Based on the Mood',                        //recommendations,
     'according_to_movie_combination' => 'By Mood',                          //recommendations,     
