@@ -7,7 +7,7 @@
 	<div class="col"></div>
 	<div class="col-12 col-lg-10 col-xl-8">
 		<div class="d-flex d-row">
-			<h1 class="h5 text-center text-md-left col mt-3 mt-md-4 d-inline">{!! $liste != '[]' ? '<a href="/list/'.$liste[0]->id.'" class="text-dark" target={{$target}}>'.$liste[0]->title.'</a>' : __('general.create_list') !!}</h1>
+			<h1 class="h5 text-center text-md-left col mt-3 mt-md-4 d-inline">{!! $liste != '[]' ? '<a href="/list/'.$liste[0]->id.'" class="text-dark" target='.$target.'>'.$liste[0]->title.'</a>' : __('general.create_list') !!}</h1>
 			@if(Auth::check() && $liste != '[]')
 				@if($liste[0]->user_id == Auth::id())
 			<div class="btn-group mt-2">
