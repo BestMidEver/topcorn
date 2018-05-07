@@ -215,6 +215,21 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
 	return dd(DB::table('users')
+	->leftjoin('rateds', 'rateds.user_id', '=', 'users.id')
+	->leftjoin('laters', 'laters.user_id', '=', 'users.id')
+	->leftjoin('bans', 'bans.user_id', '=', 'users.id')
+	->select(
+		'users.id',
+		'users.facebook_id',
+		'users.name',
+		'users.tt_navbar',
+		'users.tt_movie',
+        DB::raw('COUNT(rateds.id) as rated_count'),
+        DB::raw('COUNT(laters.id) as later_count'),
+        DB::raw('COUNT(bans.id) as ban_count')
+	)
+	->groupBy('users.id')
+    ->orderByRaw('COUNT(rateds.id) DESC')
 	->paginate(20));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
