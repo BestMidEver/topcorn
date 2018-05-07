@@ -228,7 +228,7 @@ Route::get('test', function(){
         DB::raw('COUNT(laters.id) as later_count'),
         DB::raw('COUNT(bans.id) as ban_count')*/
 	)
-	->groupBy('users.id')
+	//->groupBy('users.id')
 	->paginate(20));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
