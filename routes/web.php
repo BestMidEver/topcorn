@@ -215,9 +215,9 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
 	return dd(DB::table('users')
-	->leftjoin('rateds', 'rateds.user_id', '=', 'users.id')
+	/*->leftjoin('rateds', 'rateds.user_id', '=', 'users.id')
 	->leftjoin('laters', 'laters.user_id', '=', 'users.id')
-	->leftjoin('bans', 'bans.user_id', '=', 'users.id')
+	->leftjoin('bans', 'bans.user_id', '=', 'users.id')*/
 	->select(
 		'users.id',
 		'users.facebook_id',
