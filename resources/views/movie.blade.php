@@ -324,7 +324,7 @@
 
 <!--Lists Section-->
 <div class="container-fluid px-0 pt-5">
-	<div class="h5 px-3 px-md-0">
+	<div class="px-3 px-md-0">
 		<div class="d-inline">
 			<span class="mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		</div>
