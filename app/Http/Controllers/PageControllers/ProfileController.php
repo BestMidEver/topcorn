@@ -277,7 +277,7 @@ class ProfileController extends Controller
             ->orderBy('lili2.updated_at', 'desc');
         }
 
-        if(check()){
+        if(Auth::check()){
             if($user != Auth::id()){
                 $return_val = $return_val
                 ->where('listes.visibility', 1);
