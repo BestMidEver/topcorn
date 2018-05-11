@@ -156,6 +156,7 @@ class movieController extends Controller
         )
         ->groupBy('listes.id')
         ->orderBy('listes.updated_at', 'desc')
+        ->where('listes.visibility', '=', 1)
         ->get();
 
         foreach ($return_val as $row) {
