@@ -196,7 +196,7 @@
 					</div>
 				</div>
 				<div class="d-flex flex-row justify-content-center">
-					<button type="button" ng-click="new_list();set_focus(movies.length)" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> {{ __('general.add_movie') }}</button>
+					<button type="button" ng-click="new_list();movies[movies.length].searchmode=true;set_focus(movies.length)" class="btn btn-verydark border-circle text-white"><i class="fas fa-plus"></i> {{ __('general.add_movie') }}</button>
 				</div>
 				<!-- Filmler -->
 
