@@ -236,7 +236,7 @@
 		</div>
 		@if(Auth::check())
 			@if(Auth::User()->show_crew)
-		<div class="px-3 px-md-0 mt-5" ng-if="movie.credits.crew.length > 0"><div class="h5">Set Ekibi</div></div>
+		<div class="px-3 px-md-0 mt-5" ng-if="movie.credits.crew.length > 0"><div class="h5">{{ __('general.crew') }}</div></div>
 		<div ng-if="movie.credits.crew.length > 0">
 			<div class="d-flex flex-wrap">
 				<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in movie.credits.crew">
