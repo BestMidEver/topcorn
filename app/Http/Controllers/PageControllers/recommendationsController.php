@@ -308,7 +308,7 @@ class recommendationsController extends Controller
             'bans.id as ban_id'
         )
         ->where('movies.vote_count', '>', $request->f_vote);
-return $request->f_sort;
+
         if($request->f_sort == 'point'){
             $return_val = $return_val->orderBy('point', 'desc')
             ->orderBy('percent', 'desc')
