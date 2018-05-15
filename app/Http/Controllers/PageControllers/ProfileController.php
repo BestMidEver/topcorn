@@ -95,7 +95,7 @@ class ProfileController extends Controller
             'movies.release_date as release_date',
             'movies.'.$lang.'_poster_path as poster_path',
             'movies.vote_average as vote_average',
-            'movvote_countrage vote_count vote_average',
+            'movies.vote_count as vote_count',
             'r2.id as rated_id',
             'r2.rate as rate_code',
             'laters.id as later_id',
