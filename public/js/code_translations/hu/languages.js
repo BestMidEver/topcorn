@@ -45,11 +45,11 @@ languages=[
 	},
 	{
 		"i":"zh",
-		"o":"Kínai"
+		"o":"Kínai(zh)"
 	},
 	{
 		"i":"cn",
-		"o":"Kínai"
+		"o":"Kínai(cn)"
 	},
 	{
 		"i":"hr",

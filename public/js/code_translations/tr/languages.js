@@ -45,11 +45,11 @@ languages=[
 	},
 	{
 		"i":"zh",
-		"o":"Çince"
+		"o":"Çince(zh)"
 	},
 	{
 		"i":"cn",
-		"o":"Çince"
+		"o":"Çince(cn)"
 	},
 	{
 		"i":"hr",
