@@ -21,7 +21,7 @@ class id_dash_moviename
         if($movie->count() > 0) $movie = $movie->first();
         else return $next($request);
 
-        $correct_url = $movie->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $movie->original_title).'-'.substr($movie->release_date, 0, 4);
+        $correct_url = $movie->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $movie->original_title);
         
         if($request->id == $correct_url){
             return $next($request);
