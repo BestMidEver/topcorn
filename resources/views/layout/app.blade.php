@@ -146,7 +146,7 @@ else $theme='';
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later">{{ __('navbar.watchlater') }}</a>
                     </li>-->
                     <li class="nav-item d-md-none">
-                        <a class="nav-link {{ Request::segment(1) === 'profile' ? 'active' : null }}" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a>
+                        <a class="nav-link {{ (Request::segment(1) === 'profile') && ($profile_user_id == Auth::user()->id) ? 'active' : null }}" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
                         <a class="nav-link" href="/account"><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a>
