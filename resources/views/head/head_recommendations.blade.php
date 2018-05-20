@@ -41,3 +41,13 @@ pass={
 
 @section('meta_description')
 Get movie recommendations from all over the world based on your unique taste. topcorn.io learns your taste and gives movie advices accordingly. You can filter movies with original languages, years and genres. See movie rating in this personalized movie recommendation engine. @endsection
+
+@section('adsense')
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-5818851352711866",
+    enable_page_level_ads: true
+  });
+</script>
+@endsection
