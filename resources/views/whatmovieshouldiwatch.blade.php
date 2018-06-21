@@ -3,5 +3,5 @@
 @include('head.head_whatmovieshouldiwatch')
 
 @section('body')
-<h1 class="h4 text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch</h1>
+<h1 class="h2 text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch</h1>
 @endsection
