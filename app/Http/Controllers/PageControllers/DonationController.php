@@ -48,15 +48,6 @@ class DonationController extends Controller
 
     public function whatmovieshouldiwatch()
     {
-        $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
-
-        if(Auth::check()){
-            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
-        }else{
-            $target = '_self';
-        }
-
-
-        return view('whatmovieshouldiwatch' , compact('image_quality', 'target'));
+        return view('whatmovieshouldiwatch');
     }
 }

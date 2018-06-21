@@ -84,9 +84,6 @@
                         <a class="nav-link" href="/account"><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
-                        <a class="nav-link" href="/theme/{{$theme}}"><i class="fas fa-moon"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
-                    </li>
-                    <li class="nav-item d-md-none">
                         <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
@@ -106,7 +103,6 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/account"><i class="fas fa-cog text-muted"></i> {{ __('navbar.account') }}</a>
-                            <a class="dropdown-item" href="/theme/{{$theme}}"><i class="fas fa-moon text-muted"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
                             <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
