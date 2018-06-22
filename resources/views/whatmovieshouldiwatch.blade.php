@@ -16,7 +16,7 @@
 			<p class="lead">There are more movies than we can possibly watch!</p>
 			<div class="quote-line">
 				<img src="https://qph.ec.quoracdn.net/main-qimg-f914caf8040406fec63fccd09b32f040.webp" class="img-fluid" alt="Films Per Year Graph">
-				<p>In the past 10 years, film production has doubled, going from 4,584 in 2005, to 9,387 in 2015. <a href="https://www.quora.com/How-many-films-are-produced-each-year" target="_blank"><i class="fas fa-external-link-alt"></i></a></p>
+				<div class="mt-2">In the past 10 years, film production has doubled, going from 4,584 in 2005, to 9,387 in 2015. <a href="https://www.quora.com/How-many-films-are-produced-each-year" target="_blank"><i class="fas fa-external-link-alt"></i></a></p>
 			</div>
 		</div>
 		<p></p>
