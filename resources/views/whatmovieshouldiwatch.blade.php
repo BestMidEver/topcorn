@@ -10,7 +10,7 @@
 		<div class="jumbotron">
 			<p class="lead">This website is the answer of this question! I explain it you <strong>right now</strong>.</p>
 		</div>
-		<p>Humankind started to make films at the end of the 19th centuary. Since then the film industry grew rapidly. Nowadays we have access to hundreds of thousands of movies. Because we are mortals and we don’t have infinite time, we can’t possibly watch all of them. That makes you ask the question <strong>What movie should I watch?</strong>
+		<p>Humankind started to make films at the end of the 19th century. Since then the film industry grew rapidly. Nowadays we have access to hundreds of thousands of movies. Because we are mortals and we don’t have infinite time, we can’t possibly watch all of them. That makes you ask the question <strong>What movie should I watch?</strong>
 		</p>
 		<div class="jumbotron">
 			<p class="lead">There are more movies than we can possibly watch!</p>
@@ -19,7 +19,8 @@
 				<img src="https://qph.ec.quoracdn.net/main-qimg-f914caf8040406fec63fccd09b32f040.webp" class="img-fluid" alt="Films Per Year Graph">
 			</div>
 		</div>
-		<p></p>
+		<p>That means:</p>
+		<p><strong>No time to waste on bad movies!</strong></p>
 	</div>
 </div>
 @endsection
