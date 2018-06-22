@@ -38,8 +38,9 @@
 		</div>
 		<p>There are several ways of strengthening your profile. Firstly, you can use quick vote feature. Through the quick vote button you can sequentially vote the most frequently voted movies by other users. Secondly, you can search&vote. In addition to them you can go to the page of your favourite actors or directors to vote their movies.</p>
 		<div class="jumbotron">
-			<p class="lead">Quick vote brings you the most frequently voted movies by other users.</p>
+			<p class="lead">Quick vote brings you the most frequently voted movies.</p>
 		</div>
+		<p>I don’t really have to tell you to how to use this website because it is quite easy to use; however like I said before, this is a hook page for the search results so you can find the real product. And you found the tool to answer your question. You will not have to overthink or oversearch the movie that you should watch tonight anymore. There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
 	</div>
 </div>
 @endsection
