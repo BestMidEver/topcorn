@@ -1,3 +1,3 @@
 @section('title')
-What Movie Should I Watch?
+What Movie Should I Watch (2018)
 @endsection
