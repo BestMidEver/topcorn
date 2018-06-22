@@ -23,9 +23,10 @@
 		<p><strong>No time to waste on bad movies!</strong></p>
 		<p>If you came here to get some movie recommendations from somebody who may or may not share the same movie taste with you, you may scroll down to the bottom of the page for that. Even so I didn’t create this page to announce my “Top 100 Greatest Movies of All Time”.</p>
 		<p>Look:</p>
-		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, topcorn.io offers customized movie recommendation list in addition to all of them.</p>
+		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, Topcorn.io offers customized movie recommendation list in addition to all of them.</p>
 		<div class="jumbotron">
-			<p class="lead">Everyone has some friends who recommend you which movie you should watch. Eventhough you are not interested in that movies at all.</p>
+			<p class="lead">Everyone has some friends who recommend you which movie you should watch. Eventhough you are not interested in that movies at all.</p><hr class="my-4">
+  			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
 		</div>
 	</div>
 </div>
