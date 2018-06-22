@@ -40,9 +40,11 @@
 		<div class="jumbotron">
 			<p class="lead">Quick vote brings you the most frequently voted movies.</p>
 		</div>
-		<p>I don’t really have to tell you to how to use this website because it is quite easy to use; however like I said before, this is a hook page for the search results so you can find the real product. And you found the tool to answer your question. You will not have to overthink or oversearch the movie that you should watch tonight anymore. 
+		<p>I don’t really have to tell you to how to use this website because it is quite easy to use; however like I said before, this is a hook page for the search results so you can find the real product. And you found the tool to answer your question. 
 		</p>
-		
+		<div class="jumbotron">
+			<p class="lead">You will not have to overthink or oversearch the movie that you should watch tonight anymore.</p>
+		</div>
 		</p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use Topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
 	</div>
 </div>
