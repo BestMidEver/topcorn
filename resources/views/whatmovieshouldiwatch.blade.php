@@ -21,6 +21,7 @@
 		</div>
 		<p>That means:</p>
 		<p><strong>No time to waste on bad movies!</strong></p>
+		<p>If you came here to get some movie recommendations from somebody who may or may not share the same movie taste with you, you may scroll down to the bottom of the page for that. Even so I didn’t create this page to announce my “Top 100 Greatest Movies of All Time”.</p>
 	</div>
 </div>
 @endsection
