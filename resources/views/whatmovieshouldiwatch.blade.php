@@ -23,14 +23,18 @@
 		<p><strong>No time to waste on bad movies!</strong></p>
 		<p>If you came here to get some movie recommendations from somebody who may or may not share the same movie taste with you, you may scroll down to the bottom of the page for that. Even so I didn’t create this page to announce my “Top 100 Greatest Movies of All Time”.</p>
 		<p>Look:</p>
-		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, Topcorn.io offers customized movie recommendation list in addition to all of them.</p>
+		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, Topcorn.io offers <strong>customized movie recommendation</strong> list in addition to all of them.</p>
 		<div class="jumbotron">
 			<p class="lead">Everyone has some friends who recommend you which movie you should watch. Eventhough you are not interested in that movies at all.</p><hr class="my-4">
   			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
 		</div>
 		<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
 		<div class="jumbotron">
-			<p class="lead">Start using topcorn.io to get movie recommendations according to your unique movie taste now.</p>
+			<p class="lead">Start using Topcorn.io to get movie recommendations according to your unique movie taste now.</p>
+		</div>
+		<p>You can create an account with your facebook account or with your email address easily and quickly. You don’t even have to confirm your email address. If it is still too much work to do, you can just go to the recommendations page and define your mood with several movies and get your movie suggestions according to that mood. However it can be told that, creating a strong profile and filtering the results afterwards is more effective than defining the mood with several movies.</p>
+		<div class="jumbotron">
+			<p class="lead">creating a strong profile and filtering the results afterwards is more effective than defining the mood with several movies. Create and strengthen your profile quickly! It is <strong>completely free</strong> and it will stay like that! </p>
 		</div>
 	</div>
 </div>
