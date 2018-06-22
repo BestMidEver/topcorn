@@ -28,6 +28,10 @@
 			<p class="lead">Everyone has some friends who recommend you which movie you should watch. Eventhough you are not interested in that movies at all.</p><hr class="my-4">
   			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
 		</div>
+		<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
+		<div class="jumbotron">
+			<p class="lead"><strong>Start</strong> using topcorn.io to get movie recommendations according to your unique movie taste <strong>now</strong>.</p>
+		</div>
 	</div>
 </div>
 @endsection
