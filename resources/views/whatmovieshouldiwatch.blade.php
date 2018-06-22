@@ -60,10 +60,10 @@
 		<div class="jumbotron">
 			<p class="lead">There are some features of the website however you must enable advanced recommendations from the interface settings, in order to reveal them. They are hidden at the beginning because I realised that too much option can confuse the new users.</p>
 		</div>
-		<strong>Another use of Topcorn.io</strong>
-		<p>Topcorn.io is created to give customized movie recommendation lists however you can create custom lists for any reason and you can share it with other users too. In this way; at the bottom section of the related movie detail pages, your lists will be shown. Thanks to that people can reach to your lists and your profile. In addition to this, you may share links to promote your social media accounts or your youtube channel or even your blog to get some extra traffic.</p>
+		<p><strong>Another use of Topcorn.io</strong></p>
+		<p>Topcorn.io is created to give customized movie recommendation lists however you can create custom lists for any reason and you can share it with other users too. In this way; at the bottom section of the related movie detail pages, your lists will be shown. Thanks to that people can reach to your lists and your profile. In addition to this, you may share your links in your profile page in order to promote your social media accounts or your youtube channel or even your blog to get some extra traffic.</p>
 		<div class="jumbotron">
-			<p class="lead">Get extra traffic to your social media accounts or your blog</p>
+			<p class="lead">Get extra traffic to your social media accounts or your blog.</p>
 		</div>
 	</div>
 </div>
