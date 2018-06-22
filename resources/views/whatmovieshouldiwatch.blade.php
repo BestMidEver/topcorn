@@ -14,7 +14,7 @@
 		</p>
 		<div class="jumbotron">
 			<p class="lead">There are more movies than we can possibly watch!</p>
-			<div class="quote-line">In the past 10 years, film production has doubled, going from 4,584 in 2005, to 9,387 in 2015. <a href="https://www.quora.com/How-many-films-are-produced-each-year"></a></div>
+			<div class="quote-line">In the past 10 years, film production has doubled, going from 4,584 in 2005, to 9,387 in 2015. <a href="https://www.quora.com/How-many-films-are-produced-each-year"><i class="fas fa-external-link-alt"></i></a></div>
 		</div>
 	</div>
 </div>
