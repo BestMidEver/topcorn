@@ -36,6 +36,7 @@
 		<div class="jumbotron">
 			<p class="lead">Create and strengthen your profile quickly! It is completely free and it will stay like that! </p>
 		</div>
+		<p>There are several ways of strengthening your profile. Firstly, you can use quick vote feature. Through the quick vote button you can sequentially vote the most frequently voted movies by other users. Secondly, you can search&vote. In addition to them you can go to the page of your favourite actors or directors to vote their movies.</p>
 	</div>
 </div>
 @endsection
