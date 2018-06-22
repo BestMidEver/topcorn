@@ -46,6 +46,20 @@
 			<p class="lead">You will not have to overthink or oversearch the movie that you should watch tonight anymore.</p>
 		</div>
 		</p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use Topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
+		<div class="jumbotron">
+			<p class="lead">Topcorn.io is a continuous improvement process.</p>
+		</div>
+		<p>After you create and strengthen your profile, you can get your customized movie recommendations right away.</p>
+		<p>If you entered enough movies to the system, you will have a lot of movies in your list. You can use the filter to narrow the list down.</p>
+		<div class="jumbotron">
+			<p class="lead">Use filter to narrow down the movies by their original languages, genres, release years and minimum vote counts.</p>
+		</div>
+		<p>If that filter is not enough complex for you and if you want to see more choices there, you can go to interface settings to enable advanced recommendations.</p>
+		<p>You can also customize your profile&background pictures and many other things from there too.</p>
+		<p>I am spending a lot of time on developing Topcorn.io. Every time when Topcorn.io has new users, that makes me really happy. I am glad if I can help other people to find some good movies to watch.</p>
+		<div class="jumbotron">
+			<p class="lead">There are some features of the website however you must enable advanced recommendations from the interface settings, in order to reveal them. They are hidden at the beginning because I realised that too much option can confuse the new users.</p>
+		</div>
 	</div>
 </div>
 @endsection
