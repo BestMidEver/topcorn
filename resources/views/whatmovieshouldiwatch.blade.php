@@ -4,7 +4,7 @@
 
 @section('body')
 <div class="col-12 col-lg-8">
-	<h1 class="text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch</h1>
+	<h1 class="text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch?</h1>
 
 	<div class="p-3">
 		<div class="jumbotron">
@@ -25,7 +25,7 @@
 		<p>Look:</p>
 		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, Topcorn.io offers <strong>customized movie recommendation</strong> list in addition to all of them.</p>
 		<div class="jumbotron">
-			<p class="lead">Everyone has some friends who recommend you which movie you should watch. Eventhough you are not interested in that movies at all.</p><hr class="my-4">
+			<p class="lead">Everyone has a friend who recommends you which movie you should watch. Eventhough you are not interested in that kind of a movie at all.</p><hr class="my-4">
   			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
 		</div>
 		<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
