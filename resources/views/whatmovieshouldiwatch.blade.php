@@ -92,6 +92,10 @@
 		<div class="jumbotron">
 			<p class="lead">Get extra traffic to your social media accounts or your blog.</p>
 		</div>
+		<p>When I was creating this website; no one ever told me the difficulties of promoting it, will be harder than creating it. Now I see that I didn’t make enough plans or I don’t know enough to reach people who needs free customized movie recommendations from every language not only in english.</p>
+		<div class="jumbotron">
+			<p class="lead">Good movies are being shot all around the world. Watch foreign movies to have a different point of view.</p>
+		</div>
 	</div>
 </div>
 @endsection
