@@ -116,7 +116,7 @@
 		<h3 class="mt-4"><a href="/movie/9339-Click" target="_blank">Click (2006)</a></h3>
 		<p>Another surprising movie for me is Click (2006). I know that they don’t need my affection, they are professionals who are earning good money. However, I am not a huge fan of Adam Sandler either. At the same time, I am a huge fan of this movie. This movie always affects me deeply when I watch it. I probably watched it like 3 times, I recommend you to watch it too.</p>
 		<h3 class="mt-4"><a href="/movie/82690-Wreck-It-Ralph" target="_blank">Wreck-It Ralph (2012)</a></h3>
-		<p>I am a huge fan of this one. Actually it is the best animation movie in my opinion. Wreck-It Ralph (2012). I won’t tell too much about it but if you’ve already watched this film and loved it, I recommend you to watch Bit by Bit Creating the Worlds of Wreck-It Ralph (2012) too. Couple of interviews with the people who created the world of the movie. I discovered the short film via topcorn.io by the way.</p>
+		<p>I am a huge fan of this one. Actually it is the best animation movie in my opinion. Wreck-It Ralph (2012). I won’t tell too much about it but if you’ve already watched this film and loved it, I recommend you to watch Bit by Bit Creating the Worlds of Wreck-It Ralph (2012) too. Couple of interviews with the people who created the world of the movie. I discovered the short film via Topcorn.io by the way.</p>
 		<h3 class="mt-4"><a href="/movie/871-Planet-of-the-Apes" target="_blank">Planet of the Apes (1968)</a></h3>
 		<p>I and my wife turned our living room to a very modest home theater two years ago. Since then we are watching movies almost every night. Last month we started to watch all of the Planet of the Apes movies. Old and new ones. I liked the new movies too, however too much action makes me sleepy somehow. In my opinion the first movie of the first sequel is the best one. Planet of the Apes(1968). I save you from wasting your time. Don’t continue the old sequel, you can watch the first one and leave it there. Just trust me in this.</p>
 		<h3 class="mt-4"><a href="/movie/13393-Babam-ve-Oğlum" target="_blank">My Father and My Son (2005)</a></h3>
@@ -124,7 +124,7 @@
 		<h3 class="mt-4"><a href="/movie/18438-김씨-표류기" target="_blank">Castaway on the Moon (2009)</a></h3>
 		<p>Last movie that I will recommend you is Castaway on the Moon(2009). It is a weird korean Robinson Crusoe. If you haven't heard about this movie yet, you can thank me later.</p>
 		<p>What’s the bottom line?</p>
-		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve topcorn.io, please contact us. I am waiting your merciless critics.</p>
+		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve Topcorn.io, please contact us. I am waiting your merciless critics.</p>
 	</div>
 </div>
 @endsection
