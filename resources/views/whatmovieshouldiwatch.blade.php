@@ -121,7 +121,8 @@
 		<p>I and my wife turned our living room to a very modest home theater two years ago. Since then we are watching movies almost every night. Last month we started to watch all of the Planet of the Apes movies. Old and new ones. I liked the new movies too, however too much action makes me sleepy somehow. In my opinion the first movie of the first sequel is the best one. Planet of the Apes(1968). I save you from wasting your time. Don’t continue the old sequel, you can watch the first one and leave it there. Just trust me in this.</p>
 		<h3 class="mt-4"><a href="/movie/13393-Babam-ve-Oğlum" target="_blank">My Father and My Son (2005)</a></h3>
 		<p>Here is a movie that makes me cry whenever I watch. A genius director and awesome cast. I saw it on netflix with english and bulgarian subtitles. My Father and My Son(2005) is the best drama that I have ever seen in my life.</p>
-		<h3 class="mt-4"><a href="/movie/18438-김씨-표류기" target="_blank">Castaway on the Moon (2009)</a></h3>
+		<h3 class="mt-4"><a href="/movie/18438-김씨-표류기" target="_blank">Castaway on the Moon</a></h3>
+		<p>2009 • Drama, Comedy, Romance</p>
 		<p>Last movie that I will recommend you is Castaway on the Moon(2009). It is a weird korean Robinson Crusoe. If you haven't heard about this movie yet, you can thank me later.</p>
 		<p>What’s the bottom line?</p>
 		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve Topcorn.io, please contact us. I am waiting your merciless critics.</p>
