@@ -137,8 +137,8 @@
 		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve Topcorn.io, please contact us. I am waiting your merciless critics.</p>
 	</div>
 
-	<div class="col-12 col-lg-4">
-		<div class="pl-0 pl-lg-3 pt-0 pt-lg-4">POPULAR LISTS</div>
+	<div class="col-12 col-lg-4 pl-0 pl-lg-3 pt-0 pt-lg-4">
+		<div class="">POPULAR LISTS</div>
 		<p><i class="icon-star-full wpa-article-icon" aria-hidden="true"></i> Oscar Winner Movies of All Times - Best Picture</p>
 	</div>
 </div>
