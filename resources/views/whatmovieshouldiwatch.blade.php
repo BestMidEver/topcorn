@@ -138,7 +138,7 @@
 	</div>
 
 	<div class="col-12 col-lg-4">
-		<img src="/images/yoda_vote_consistently.png" class="img-fluid mb-4 mt-1 b-image-border" alt="Yoda Votes More Consistently">
+		<div class="pl-0 pl-lg-3">Quicksprout</div>
 	</div>
 </div>
 @endsection
