@@ -6,7 +6,7 @@
 <div class="row no-gutters">
 	<div class="col-12 col-lg-8">
 		<h1 class="text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch?</h1>
-		<p class="text-muted"><small>by Uygar Yılmaz <i class="icon-clock"></i> Last updated 23 June 2018</small></p>
+		<p class="text-muted"><small><i class="icon-clock"></i> Last updated 23 June 2018</small></p>
 		<div class="jumbotron">
 			<p class="lead">This website is the answer of this question! I explain it to you <strong>right now</strong>.</p>
 		</div>
