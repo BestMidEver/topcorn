@@ -139,8 +139,8 @@
 
 	<div class="col-12 col-lg-4 pl-0 pl-lg-3 pt-0 pt-lg-4">
 		<div class="text-muted"><strong>POPULAR LISTS</strong></div>
-		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture"></a><i class="far fa-star"></i> Oscar Winner Movies of All Times - Best Picture</p>
-		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture"></a><i class="far fa-star"></i> Oscar Winner Movies of All Times - Best Picture</p>
+		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture">Oscar Winner Movies of All Times - Best Picture</a></p>
+		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture">Oscar Winner Movies of All Times - Best Picture</a></p>
 	</div>
 </div>
 @endsection
