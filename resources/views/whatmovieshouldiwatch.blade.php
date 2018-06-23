@@ -138,8 +138,8 @@
 	</div>
 
 	<div class="col-12 col-lg-4 pl-0 pl-lg-3 pt-0 pt-lg-4">
-		<div class="">POPULAR LISTS</div>
-		<p><i class="icon-star-full wpa-article-icon" aria-hidden="true"></i> Oscar Winner Movies of All Times - Best Picture</p>
+		<div class="text-muted"><strong>POPULAR LISTS</strong></div>
+		<p><i class="far fa-star"></i> Oscar Winner Movies of All Times - Best Picture</p>
 	</div>
 </div>
 @endsection
