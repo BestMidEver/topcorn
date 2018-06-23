@@ -139,16 +139,16 @@
 
 	<div class="col-12 col-lg-4 pl-0 pl-lg-4 pt-0 pt-lg-5">
 		<div class="quote-line">
-			<div class="text-muted"><strong>POPULAR LISTS</strong></div>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Oscar Winner Movies of All Times - Best Picture</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Oscar Winner Movies of All Times - Best Director</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">My favourite spanish movies</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Best Date Movies</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Oscar Winner Movies of All Times - Best Foreign Language Film</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Oscar Winner Movies of All Times - Best Costume Design</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Oscar Winner Movies of All Times - Best Sound Editing</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Oscar Winner Movies of All Times - Best Visual Effects</a></p>
-			<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Best movies about artists & painters</a></p>
+			<p><div class="text-muted"><strong>POPULAR LISTS</strong></div></p>
+			<p><a href="/list/11" class="text-muted" target="_blank">Oscar Winner Movies of All Times - Best Picture</a></p>
+			<p><a href="/list/19" class="text-muted" target="_blank">Oscar Winner Movies of All Times - Best Director</a></p>
+			<p><a href="/list/2" class="text-muted" target="_blank">My favourite spanish movies</a></p>
+			<p><a href="/list/18" class="text-muted" target="_blank">Best Date Movies</a></p>
+			<p><a href="/list/20" class="text-muted" target="_blank">Oscar Winner Movies of All Times - Best Foreign Language Film</a></p>
+			<p><a href="/list/23" class="text-muted" target="_blank">Oscar Winner Movies of All Times - Best Costume Design</a></p>
+			<p><a href="/list/24" class="text-muted" target="_blank">Oscar Winner Movies of All Times - Best Sound Editing</a></p>
+			<p><a href="/list/22" class="text-muted" target="_blank">Oscar Winner Movies of All Times - Best Visual Effects</a></p>
+			<p><a href="/list/26" class="text-muted" target="_blank">Best movies about artists & painters</a></p>
 		</div>
 	</div>
 </div>
