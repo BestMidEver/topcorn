@@ -105,7 +105,10 @@
 		</div>
 		<p class="mt-2">Last but not least:</p>
 		<p>Here is my <strong>"Movies You Should Watch</strong> list.</p>
-		<h3><a href="/movie/77-Memento">Memento (2000)</a></h3>
+		<h3><a href="/movie/77-Memento" target="_blank">Memento (2000)</a></h3>
+		<p>My favourite movie of all time. I was an erasmus student in The Netherlands and I remember that I watched this movie at least 4 times there with different people. If I really love a movie, I always watch it with the friends who haven’t seen it yet. That way I can suck the excitement energy from them and feel like I am experiencing the movie again like the first time.</p>
+		<h3><a href="/movie/265195-Relatos-salvajes" target="_blank">Wild Tales (2014)</a></h3>
+		<p>If you haven’t watch Wild Tales(2014), stop doing everything even reading this and start watching it. You can thank me later. It is the best spanish speaking movie that I watched.</p>
 	</div>
 </div>
 @endsection
