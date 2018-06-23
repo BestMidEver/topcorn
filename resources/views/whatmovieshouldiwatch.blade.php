@@ -105,7 +105,7 @@
 		</div>
 		<p class="mt-2">Last but not least:</p>
 		<p>Here is my <strong>"Movies You Should Watch</strong> list.</p>
-		<h3>Memento (2000)</h3>
+		<h3><a href="/movie/77-Memento">Memento (2000)</a></h3>
 	</div>
 </div>
 @endsection
