@@ -3,7 +3,7 @@
 @include('head.head_whatmovieshouldiwatch')
 
 @section('body')
-<div class="col-12 col-lg-8">
+<div class="col-12 col-lg-8 p-0">
 	<h1 class="text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch?</h1>
 
 	<div class="p-3">
