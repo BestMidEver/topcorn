@@ -138,7 +138,8 @@
 	</div>
 
 	<div class="col-12 col-lg-4">
-		<div class="pl-0 pl-lg-3">POPULAR LISTS</div>
+		<div class="pl-0 pl-lg-3 pt-0 pt-lg-4">POPULAR LISTS</div>
+		<p><i class="icon-star-full wpa-article-icon" aria-hidden="true"></i> Oscar Winner Movies of All Times - Best Picture</p>
 	</div>
 </div>
 @endsection
