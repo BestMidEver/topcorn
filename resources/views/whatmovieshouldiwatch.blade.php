@@ -73,10 +73,14 @@
 		<p>Want to know the best part?</p>
 		<p>You can add other users to your movie party and get the customized movie recommendations for the group.</p>
 		<div class="jumbotron">
-			<p class="lead">If you want to choose a movie to watch with your friends/family/partner, use watch together feature of Topcorn.io.</p>
+			<p class="lead">If you want to choose a movie to watch with your friends/family/partner, use "watch together" feature.</p>
 		</div>
 		<p><strong>Another use of Topcorn.io</strong></p>
-		<p>Topcorn.io is created to give customized movie recommendation lists however you can create custom lists for any reason and you can share it with other users too. In this way; at the bottom section of the related movie detail pages, your lists will be shown. Thanks to that people can reach to your lists and your profile. In addition to this, you may share your links in your profile page in order to promote your social media accounts or your youtube channel or even your blog to get some extra traffic.</p>
+		<p>Topcorn.io is created to give customized movie recommendation lists however you can create custom lists for any reason and you can share it with other users too.</p>
+		<p>In this way:</p>
+		<p>At the bottom section of the related movie detail pages, your lists will be shown. Thanks to that people can reach to your lists and your profile.</p>
+		<p>In addition to them:</p>
+		<p>You may share your links in your profile page in order to promote your social media accounts or your youtube channel or even your blog to get some extra traffic.</p>
 		<div class="jumbotron">
 			<p class="lead">Get extra traffic to your social media accounts or your blog.</p>
 		</div>
