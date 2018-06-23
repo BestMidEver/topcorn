@@ -28,18 +28,19 @@
 			<p class="lead">Everyone has a friend who recommends you which movies you should watch. Eventhough you are not interested in that kind of movies at all.</p><hr class="my-4">
   			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
 		</div>
-		<p>Here’'s the deal:</p>
+		<p>Here's the deal:</p>
 		<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
 		<div class="jumbotron">
 			<p class="lead">Start using Topcorn.io to get movie recommendations according to your unique movie taste now.</p>
 		</div>
 		<p>You can create an account with your facebook account or with your email address easily and quickly. You don’t even have to confirm your email address.</p>
 		<p>If it is still too much work to do, you can just go to the recommendations page and define your mood with several movies and get your movie suggestions according to that mood.</p>
-		<p>But here’s the kicker:</p>
+		<p>But here's the kicker:</p>
 		<p>It can be told that, creating a strong profile and filtering the results afterwards is more effective than defining the mood with several movies.</p>
 		<div class="jumbotron">
 			<p class="lead">Create and strengthen your profile quickly! It is completely free and it will stay like that! </p>
 		</div>
+		<p>Now:</p>
 		<p>There are several ways of strengthening your profile. Firstly, you can use quick vote feature. Through the quick vote button you can sequentially vote the most frequently voted movies by other users. Secondly, you can search&vote. In addition to them you can go to the page of your favourite actors or directors to vote their movies.</p>
 		<div class="jumbotron">
 			<p class="lead">Quick vote brings you the most frequently voted movies.</p>
@@ -58,11 +59,21 @@
 		<div class="jumbotron">
 			<p class="lead">Use filter to narrow down the movies by their original languages, genres, release years and minimum vote counts.</p>
 		</div>
+		<p>It gets better:</p>
 		<p>If that filter is not enough complex for you and if you want to see more choices there, you can go to interface settings to enable advanced recommendations.</p>
 		<p>You can also customize your profile&background pictures and many other things from there too.</p>
 		<p>I am spending a lot of time on developing Topcorn.io. Every time when Topcorn.io has new users, that makes me really happy. I am glad if I can help other people to find some good movies to watch.</p>
 		<div class="jumbotron">
 			<p class="lead">There are some features of the website however you must enable advanced recommendations from the interface settings, in order to reveal them. They are hidden at the beginning because I realised that too much option can confuse the new users.</p>
+		</div>
+		<p>It gets much better:</p>
+		<p>When I am with my friends/wife, there are two things that we can't decide.</p>
+		<p>What to eat..</p>
+		<p>..and what to watch</p>
+		<p>Want to know the best part?</p>
+		<p>You can add other users to your movie party and get the customized movie recommendations for the group.</p>
+		<div class="jumbotron">
+			<p class="lead">If you want to choose a movie to watch with your friends/family/partner, use watch together feature of Topcorn.io.</p>
 		</div>
 		<p><strong>Another use of Topcorn.io</strong></p>
 		<p>Topcorn.io is created to give customized movie recommendation lists however you can create custom lists for any reason and you can share it with other users too. In this way; at the bottom section of the related movie detail pages, your lists will be shown. Thanks to that people can reach to your lists and your profile. In addition to this, you may share your links in your profile page in order to promote your social media accounts or your youtube channel or even your blog to get some extra traffic.</p>
