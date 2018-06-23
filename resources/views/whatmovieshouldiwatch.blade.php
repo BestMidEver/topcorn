@@ -25,16 +25,17 @@
 		<p>Look:</p>
 		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, Topcorn.io offers <strong>customized movie recommendation</strong> list in addition to all of them.</p>
 		<div class="jumbotron">
-			<p class="lead">Everyone has a friend who recommends you which movie you should watch. Eventhough you are not interested in that kind of a movie at all.</p><hr class="my-4">
+			<p class="lead">Everyone has a friend who recommends you which movies you should watch. Eventhough you are not interested in that kind of movies at all.</p><hr class="my-4">
   			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
 		</div>
+		<p>Here’'s the deal:</p>
 		<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
 		<div class="jumbotron">
 			<p class="lead">Start using Topcorn.io to get movie recommendations according to your unique movie taste now.</p>
 		</div>
 		<p>You can create an account with your facebook account or with your email address easily and quickly. You don’t even have to confirm your email address.</p>
 		<p>If it is still too much work to do, you can just go to the recommendations page and define your mood with several movies and get your movie suggestions according to that mood.</p>
-		<p>However:</p>
+		<p>But here’s the kicker:</p>
 		<p>It can be told that, creating a strong profile and filtering the results afterwards is more effective than defining the mood with several movies.</p>
 		<div class="jumbotron">
 			<p class="lead">Create and strengthen your profile quickly! It is completely free and it will stay like that! </p>
