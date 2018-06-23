@@ -7,7 +7,7 @@
 	<h1 class="text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch?</h1>
 
 	<div class="jumbotron">
-		<p class="lead">This website is the answer of this question! I explain it you <strong>right now</strong>.</p>
+		<p class="lead">This website is the answer of this question! I explain it to you <strong>right now</strong>.</p>
 	</div>
 	<p>Fact:</p>
 	<p>Humankind started to make films at the end of the 19th century. Since then the film industry grew rapidly. Nowadays we have access to hundreds of thousands of movies. Because we are mortals and we don’t have infinite time, we can’t possibly watch all of them.</p>
@@ -26,8 +26,9 @@
 	<p>Look:</p>
 	<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, Topcorn.io offers <strong>customized movie recommendation</strong> list in addition to all of them.</p>
 	<div class="jumbotron">
-		<p class="lead">Everyone has a friend who recommends you which movies you should watch. Eventhough you are not interested in that kind of movies at all.</p><hr class="my-4">
-			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
+		<p class="lead">Everyone has a friend who recommends you which movies you should watch. Eventhough you are not interested in that kind of movies at all.</p>
+		<hr class="my-4">
+		<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
 	</div>
 	<p>Here's the deal:</p>
 	<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
@@ -57,7 +58,7 @@
 	<div class="jumbotron">
 		<p class="lead">You will not have to overthink or oversearch the movie that you should watch tonight anymore.</p>
 	</div>
-	</p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use Topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
+	<p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use Topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
 	<div class="jumbotron">
 		<p class="lead">Topcorn.io is completely free and it will stay like that!</p>
 	</div>
