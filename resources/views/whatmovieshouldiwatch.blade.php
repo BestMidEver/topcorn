@@ -96,7 +96,15 @@
 		<div class="jumbotron">
 			<p class="lead">Good movies are being shot all around the world. Watch foreign movies to have a different point of view.</p>
 		</div>
-		<p class="mt-2"><strong>Here is the movie recommendation list that I promised.</strong></p>
+		<p>I don’t have any problem who love american cinema and actually I watch hollywood movies more than other cinemas however I really enjoy other cinemas too. I love to hear and listen the stories from different cultures in different languages. So much essence is hidden inside those movies. Some spanish crime mystery movies, almost all of the good scandinavian movies without certain endings, quality movies of bollywood, old time japanese movies, weird romantic korean movies and more that I can’t remember right now.</p>
+		<p><strong>Special films for you, they wait for you!</strong></p>
+		<p>When I tried to find a customized movie recommendation engine which can also give this kind of movies, I couldn’t find it. That really makes Topcorn.io different from other personalized movie suggestion systems and that’s why I am developing it.</p>
+		<p>It is not rocket science or something magical by the way. When I was creating this website, I planned users to spend as least time as possible on the site. Users come to the website, find the best movie for their taste quickly and then they can spend their time on watching them. All of my plans are according to it. It is a very simple page and offers you to find a good movie to watch, nothing else.</p>
+		<div class="jumbotron">
+			<p class="lead">Topcorn.io is specially designed to be plain. You shouldn't waste your time on searching movies what to watch tonight. Instead, spend your precious time on watching quality&interesting movies!</p>
+		</div>
+		<p class="mt-2"><strong>Last but not least:</strong></p>
+		<p>Here is the movie recommendation list that I promised:</p>
 	</div>
 </div>
 @endsection
