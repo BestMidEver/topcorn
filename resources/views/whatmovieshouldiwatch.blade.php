@@ -40,12 +40,20 @@
 		<p>But here's the kicker:</p>
 		<p>It can be told that, creating a strong profile and filtering the results afterwards is more effective than defining the mood with several movies.</p>
 		<div class="jumbotron">
-			<p class="lead">Create and strengthen your profile quickly! It is completely free and it will stay like that! </p>
+			<p class="lead">Create and strengthen your profile quickly!</p>
 		</div>
 		<p>Now:</p>
 		<p>There are several ways of strengthening your profile. Firstly, you can use quick vote feature. Through the quick vote button you can sequentially vote the most frequently voted movies by other users. Secondly, you can search&vote. In addition to them you can go to the page of your favourite actors or directors to vote their movies.</p>
 		<div class="jumbotron">
 			<p class="lead">Quick vote brings you the most frequently voted movies.</p>
+		</div>
+		<p>Here's the deal:</p>
+		<p>When you watch a movie, you can add it to your watched movies. You should vote the movies consistently.</p>
+		<p>That doesn't mean that you should spend a lot of time on voting movies. You can decide the first option come to mind.</p>
+		<p>Don't worry:</p>
+		<p>You can always go back and vote the movies again.</p>
+		<div class="jumbotron">
+			<img src="/images/yoda.png" class="img-fluid" alt="Yoda Votes More Consistently"></div>
 		</div>
 		<p>I don’t really have to tell you to how to use this website because it is quite easy to use; however like I said before, this is a hook page for the search results so you can find the real product. And you found the tool to answer your question. 
 		</p>
@@ -54,7 +62,7 @@
 		</div>
 		</p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use Topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
 		<div class="jumbotron">
-			<p class="lead">Topcorn.io is a continuous improvement process.</p>
+			<p class="lead">Topcorn.io is completely free and it will stay like that!</p>
 		</div>
 		<p>After you create and strengthen your profile, you can get your customized movie recommendations right away.</p>
 		<p>If you entered enough movies to the system, you will have a lot of movies in your list. You can use the filter to narrow the list down.</p>
