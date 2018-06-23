@@ -137,9 +137,9 @@
 		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve Topcorn.io, please contact us. I am waiting your merciless critics.</p>
 	</div>
 
-	<div class="col-12 col-lg-4 pl-0 pl-lg-3 pt-0 pt-lg-4 text-muted">
+	<div class="col-12 col-lg-4 pl-0 pl-lg-4 pt-0 pt-lg-5 text-muted">
 		<div><strong>POPULAR LISTS</strong></div>
-		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture">Oscar Winner Movies of All Times - Best Picture</a></p>
+		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture" class="text-muted">Oscar Winner Movies of All Times - Best Picture</a></p>
 		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture">Oscar Winner Movies of All Times - Best Director</a></p>
 		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture">My favourite spanish movies</a></p>
 		<p><a href="/list/11-Oscar-Winner-Movies-of-All-Times---Best-Picture">Best Date Movies</a></p>
