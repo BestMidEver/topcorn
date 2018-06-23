@@ -135,5 +135,9 @@
 	<p>What’s the bottom line?</p>
 	<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve Topcorn.io, please contact us. I am waiting your merciless critics.</p>
 </div>
+
+<div class="col-12 col-lg-4 p-0">
+	MUHAHUAHU
+</div>
 @endsection
 
