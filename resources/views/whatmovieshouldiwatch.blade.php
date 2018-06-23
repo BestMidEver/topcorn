@@ -138,7 +138,7 @@
 	</div>
 
 	<div class="col-12 col-lg-4">
-		<div class="pl-0 pl-lg-3">Quicksprout</div>
+		<div class="pl-0 pl-lg-3">POPULAR LISTS</div>
 	</div>
 </div>
 @endsection
