@@ -34,7 +34,8 @@
 		</div>
 		<p>You can create an account with your facebook account or with your email address easily and quickly. You don’t even have to confirm your email address.</p>
 		<p>If it is still too much work to do, you can just go to the recommendations page and define your mood with several movies and get your movie suggestions according to that mood.</p>
-		<p>However it can be told that, creating a strong profile and filtering the results afterwards is more effective than defining the mood with several movies.</p>
+		<p>However:</p>
+		<p>It can be told that, creating a strong profile and filtering the results afterwards is more effective than defining the mood with several movies.</p>
 		<div class="jumbotron">
 			<p class="lead">Create and strengthen your profile quickly! It is completely free and it will stay like that! </p>
 		</div>
