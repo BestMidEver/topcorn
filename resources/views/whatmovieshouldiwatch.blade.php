@@ -10,6 +10,7 @@
 		<div class="jumbotron">
 			<p class="lead">This website is the answer of this question! I explain it you <strong>right now</strong>.</p>
 		</div>
+		<p>Did you know?</p>
 		<p>Humankind started to make films at the end of the 19th century. Since then the film industry grew rapidly. Nowadays we have access to hundreds of thousands of movies. Because we are mortals and we don’t have infinite time, we can’t possibly watch all of them. That makes you ask the question <strong>What movie should I watch?</strong>
 		</p>
 		<div class="jumbotron">
