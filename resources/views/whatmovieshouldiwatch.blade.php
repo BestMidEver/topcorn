@@ -101,7 +101,7 @@
 		<p>When I tried to find a customized movie recommendation engine which can also give this kind of movies, I couldn’t find it. That really makes Topcorn.io different from other personalized movie suggestion systems and that’s why I am developing it.</p>
 		<p>It is not rocket science or something magical by the way. When I was creating this website, I planned users to spend as least time as possible on the site. Users come to the website, find the best movie for their taste quickly and then they can spend their time on watching them. All of my plans are according to it. It is a very simple page and offers you to find a good movie to watch, nothing else.</p>
 		<div class="jumbotron">
-			<p class="lead">Topcorn.io is specially designed to be plain. You shouldn't waste your time on searching movies what to watch tonight. Instead, spend your precious time on watching quality&interesting movies!</p>
+			<p class="lead">Topcorn.io is specially designed to be plain and not time consuming. You shouldn't waste your time on searching what to watch tonight. Instead, spend your precious time on watching quality&interesting movies!</p>
 		</div>
 		<p class="mt-2"><strong>Last but not least:</strong></p>
 		<p>Here is the movie recommendation list that I promised:</p>
