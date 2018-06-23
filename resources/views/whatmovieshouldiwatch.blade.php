@@ -103,8 +103,9 @@
 		<div class="jumbotron">
 			<p class="lead">Topcorn.io is specially designed to be plain and not time consuming. You shouldn't waste your time on searching what to watch tonight. Instead, spend your precious time on watching quality&interesting movies!</p>
 		</div>
-		<p class="mt-2"><strong>Last but not least:</strong></p>
-		<p>Here is the movie recommendation list that I promised:</p>
+		<p class="mt-2">Last but not least:</p>
+		<p>Here is my <strong>"Movies You Should Watch</strong> list.</p>
+		<h3>Memento (2000)</h3>
 	</div>
 </div>
 @endsection
