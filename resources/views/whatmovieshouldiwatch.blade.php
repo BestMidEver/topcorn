@@ -4,7 +4,7 @@
 
 @section('body')
 <div class="row no-gutters">
-	<div class="col-12 col-lg-8 p-0">
+	<div class="col-12 col-lg-8">
 		<h1 class="text-center text-md-left col mt-3 mt-md-4">What Movie Should I Watch?</h1>
 
 		<div class="jumbotron">
@@ -137,7 +137,7 @@
 		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve Topcorn.io, please contact us. I am waiting your merciless critics.</p>
 	</div>
 
-	<div class="col-12 col-lg-4 p-0">
+	<div class="col-12 col-lg-4">
 		MUHAHUAHU
 	</div>
 </div>
