@@ -105,23 +105,31 @@
 		</div>
 		<p class="mt-2">Last but not least:</p>
 		<p>Here is my <strong>"Movies You Should Watch</strong> list.</p>
-		<h3><a href="/movie/77-Memento" target="_blank">Memento (2000)</a></h3>
+		<h3><a href="/movie/77-Memento" target="_blank">Memento</a></h3>
+		<p>2000 • Mystery, Thriller</p>
 		<p>My favourite movie of all time. I was an erasmus student in The Netherlands and I remember that I watched this movie at least 4 times there with different people. If I really love a movie, I always watch it with the friends who haven’t seen it yet. That way I can suck the excitement energy from them and feel like I am experiencing the movie again like the first time.</p>
-		<h3 class="mt-4"><a href="/movie/265195-Relatos-salvajes" target="_blank">Wild Tales (2014)</a></h3>
+		<h3 class="mt-4"><a href="/movie/265195-Relatos-salvajes" target="_blank">Wild Tales</a></h3>
+		<p>2014 • Drama, Thriller, Comedy</p>
 		<p>If you haven’t watch Wild Tales(2014), stop doing everything even reading this and start watching it. You can thank me later. It is the best spanish speaking movie that I watched.</p>
-		<h3 class="mt-4"><a href="/movie/575-Das-Experiment" target="_blank">The Experiment (2001)</a></h3>
+		<h3 class="mt-4"><a href="/movie/575-Das-Experiment" target="_blank">The Experiment</a></h3>
+		<p>2001 • Drama, Thriller</p>
 		<p>I haven’t watch more than 20 german speaking movies, yet The Experiment (2001) is my favourite among them. This movie is based on a real experiment as I read. That is why I liked it so much. When the movie is not completely fiction, it affects me more.</p>
-		<h3 class="mt-4"><a href="/movie/451-Leaving-Las-Vegas" target="_blank">Leaving Las Vegas (1995)</a></h3>
+		<h3 class="mt-4"><a href="/movie/451-Leaving-Las-Vegas" target="_blank">Leaving Las Vegas</a></h3>
+		<p>1995 • Drama, Romance</p>
 		<p>Here is a movie that really affected me. Leaving Las Vegas(1995). Frankly speaking, I don’t like Nicolas Cage movies but this low budget movie blew my mind. He drinks himself to death and the movie doesn’t tell you why he is doing it. That makes you to think about suicide alone. He got an oscar with this movie, I am sure this movie will surprise you if you don’t like his movies.</p>
-		<h3 class="mt-4"><a href="/movie/9339-Click" target="_blank">Click (2006)</a></h3>
+		<h3 class="mt-4"><a href="/movie/9339-Click" target="_blank">Click</a></h3>
+		<p>2006 • Comedy, Drama, Fantasy, Romance</p>
 		<p>Another surprising movie for me is Click (2006). I know that they don’t need my affection, they are professionals who are earning good money. However, I am not a huge fan of Adam Sandler either. At the same time, I am a huge fan of this movie. This movie always affects me deeply when I watch it. I probably watched it like 3 times, I recommend you to watch it too.</p>
-		<h3 class="mt-4"><a href="/movie/82690-Wreck-It-Ralph" target="_blank">Wreck-It Ralph (2012)</a></h3>
+		<h3 class="mt-4"><a href="/movie/82690-Wreck-It-Ralph" target="_blank">Wreck-It Ralph</a></h3>
+		<p>2012 • Family, Animation, Comedy, Adventure</p>
 		<p>I am a huge fan of this one. Actually it is the best animation movie in my opinion. Wreck-It Ralph (2012). I won’t tell too much about it but if you’ve already watched this film and loved it, I recommend you to watch Bit by Bit Creating the Worlds of Wreck-It Ralph (2012) too. Couple of interviews with the people who created the world of the movie. I discovered the short film via Topcorn.io by the way.</p>
-		<h3 class="mt-4"><a href="/movie/871-Planet-of-the-Apes" target="_blank">Planet of the Apes (1968)</a></h3>
+		<h3 class="mt-4"><a href="/movie/871-Planet-of-the-Apes" target="_blank">Planet of the Apes</a></h3>
+		<p>1968 • Science Fiction, Adventure, Drama, Action</p>
 		<p>I and my wife turned our living room to a very modest home theater two years ago. Since then we are watching movies almost every night. Last month we started to watch all of the Planet of the Apes movies. Old and new ones. I liked the new movies too, however too much action makes me sleepy somehow. In my opinion the first movie of the first sequel is the best one. Planet of the Apes(1968). I save you from wasting your time. Don’t continue the old sequel, you can watch the first one and leave it there. Just trust me in this.</p>
-		<h3 class="mt-4"><a href="/movie/13393-Babam-ve-Oğlum" target="_blank">My Father and My Son (2005)</a></h3>
+		<h3 class="mt-4"><a href="/movie/13393-Babam-ve-Oğlum" target="_blank">My Father and My Son</a></h3>
+		<p>2005 • Comedy, Drama</p>
 		<p>Here is a movie that makes me cry whenever I watch. A genius director and awesome cast. I saw it on netflix with english and bulgarian subtitles. My Father and My Son(2005) is the best drama that I have ever seen in my life.</p>
-		<h3 class="mt-4"><a href="/movie/18438-김씨-표류기" target="_blank">Castaway on the Moon</a></h3>
+		<h3 class="my-4"><a href="/movie/18438-김씨-표류기" target="_blank">Castaway on the Moon</a></h3>
 		<p>2009 • Drama, Comedy, Romance</p>
 		<p>Last movie that I will recommend you is Castaway on the Moon(2009). It is a weird korean Robinson Crusoe. If you haven't heard about this movie yet, you can thank me later.</p>
 		<p>What’s the bottom line?</p>
