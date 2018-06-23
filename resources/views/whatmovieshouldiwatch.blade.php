@@ -52,7 +52,7 @@
 		<p>That doesn't mean that you should spend a lot of time on voting movies. You can decide the first option come to mind.</p>
 		<p>Don't worry:</p>
 		<p>You can always go back and vote the movies again.</p>
-		<img src="/images/yoda.png" class="img-fluid mb-2" alt="Yoda Votes More Consistently">
+		<img src="/images/yoda.png" class="img-fluid mb-3" alt="Yoda Votes More Consistently">
 		<p>I don’t really have to tell you to how to use this website because it is quite easy to use; however like I said before, this is a hook page for the search results so you can find the real product. And you found the tool to answer your question. 
 		</p>
 		<div class="jumbotron">
