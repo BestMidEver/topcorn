@@ -1,4 +1,4 @@
-@extends('layout.appnew')
+@extends('layout.applitenew')
 
 @include('head.head_home')
 
