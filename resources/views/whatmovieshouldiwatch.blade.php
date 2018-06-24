@@ -59,6 +59,7 @@
 		<div class="jumbotron">
 			<p class="lead">You will not have to overthink or oversearch the movie that you should watch tonight anymore.</p>
 		</div>
+		<p><strong>Which movie you should watch?</strong></p>
 		<p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use Topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
 		<div class="jumbotron">
 			<p class="lead">Topcorn.io is completely free and it will stay like that!</p>
@@ -79,6 +80,7 @@
 		<p>When I am with my friends/wife, there are two things that we can't decide.</p>
 		<p>What to eat..</p>
 		<p>..and what to watch</p>
+		<p>I can help you to decide only one of them.</p>
 		<p>Want to know the best part?</p>
 		<p>You can add other users to your movie party and get the customized movie recommendations for the group.</p>
 		<div class="jumbotron">
@@ -105,7 +107,7 @@
 			<p class="lead">Topcorn.io is specially designed to be plain and not time consuming. You shouldn't waste your time on searching what to watch tonight. Instead, spend your precious time on watching quality&interesting movies!</p>
 		</div>
 		<p class="mt-2">Last but not least:</p>
-		<p>Here is my <strong>"Movies You Should Watch</strong> list.</p>
+		<p>Here is my <strong>"What to watch tonight"</strong> list.</p>
 		<h3><a href="/movie/77-Memento" target="_blank">Memento</a></h3>
 		<p>2000 • Mystery, Thriller</p>
 		<p>My favourite movie of all time. I was an erasmus exchange student in The Netherlands and I remember that I watched this movie at least 4 times there with different people. If I really love a movie, I always watch it with the friends who haven’t seen it yet. That way I can suck the excitement energy from them and feel like I am experiencing the movie again like the first time.</p>
