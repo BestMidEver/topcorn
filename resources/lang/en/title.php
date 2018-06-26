@@ -5,7 +5,7 @@ return [
     'donation' => 'Donate - Topcorn',
     'email' => 'Forgot My Password - Topcorn',
     'faq' => 'FAQ - Topcorn',
-    'home' => 'Topcorn - Customized Movie Recommendation Engine',
+    'home' => 'Customized Movie Recommendation Engine',
     'login' => 'Login - Topcorn',
     'movie' => ' - Topcorn',
     'register' => 'Register - Topcorn',
