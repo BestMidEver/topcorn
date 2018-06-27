@@ -12,8 +12,13 @@
 		</div>
 		<p>Fact:</p>
 		<p>Humankind started to make films at the end of the 19th century. Since then the film industry grew rapidly. Nowadays we have access to hundreds of thousands of movies. Because we are mortals and we don’t have infinite time, we can’t possibly watch all of them.</p>
-		<p>That makes you ask the question:</p>
-		<p><strong>What movie should I watch?</strong></p>
+		<p>That makes you ask the questions:</p>
+		<p><strong>What movie should I watch? </strong>
+		What should I watch on netflix today? 
+		What should I watch tonight?
+		Where can I find a good movie to watch?
+		What are the best movies to watch?
+		Which movies should I watch before I die?</p>
 		<div class="jumbotron">
 			<p class="lead">There are more movies than we can possibly watch!</p>
 			<div class="quote-line">
