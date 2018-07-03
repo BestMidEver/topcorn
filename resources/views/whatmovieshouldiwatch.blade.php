@@ -58,7 +58,7 @@
 		<p>That doesn't mean that you should spend a lot of time on voting movies. You can decide the first option come to mind.</p>
 		<p>Don't worry:</p>
 		<p>You can always go back and vote the movies again.</p>
-		<img src="/images/yoda_consistently.png" class="img-fluid mb-4 mt-1 b-image-border" alt="Yoda Votes More Consistently">
+		<img src="/images/yoda_consistently.png" class="img-fluid mb-4 mt-1 b-image-border" alt="BETTER MOVIES YOU WANT MORE CONSISTENTLY YOU VOTE - Star Wars Master Yoda with closed eyes">
 		<p>I don’t really have to tell you to how to use this website because it is quite easy to use; however like I said before, this is a hook page for the search results so you can find the real product. And you found the tool to answer your question. 
 		</p>
 		<div class="jumbotron">
@@ -77,6 +77,7 @@
 		<p>It gets better:</p>
 		<p>If that filter is not enough complex for you and if you want to see more choices there, you can go to interface settings to enable advanced recommendations.</p>
 		<p>You can also customize your profile&background pictures and many other things from there too.</p>
+		<img src="/images/godfather_friendslike.png" class="img-fluid mb-4 mt-1 b-image-border" alt="WHEN YOUR FRIENDS FINALLY WATCH A MOVIE YOU KEPT TELLING THEM ABOUT AND THEY LOVED IT - Godfather Don Vito Corleone's hand is getting kissed">
 		<p>I am spending a lot of time on developing Topcorn.io. Every time when Topcorn.io has new users, that makes me really happy. I am glad if I can help other people to find some good movies to watch.</p>
 		<div class="jumbotron">
 			<p class="lead">There are some features of the website however you must enable advanced recommendations from the interface settings, in order to reveal them. They are hidden at the beginning because I realised that too much option can confuse the new users.</p>
