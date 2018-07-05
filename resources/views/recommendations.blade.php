@@ -153,13 +153,11 @@
 
 
 <!-- Tabs and Filter Button -->
-<div class="container-fluid mt-3 pb-1" id="filter">
 	<nav class="nav nav-pills flex-column flex-sm-row">
 		<button class="flex-sm-fill text-sm-center nav-link" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 		<button class="flex-sm-fill text-sm-center nav-link" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		<button class="flex-sm-fill text-sm-center nav-link" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 	</nav>
-</div>
 <!-- Tabs and Filter Button -->
 
 
