@@ -127,49 +127,6 @@
 
 
 
-
-
-
-
-
-
-<div class="container">
-	<h3>Centered Tabs</h3>
-	<ul class="nav nav-tabs nav-justified">
-		<li class="active"><a href="#">Home</a></li>
-		<li><a href="#">Menu 1</a></li>
-		<li><a href="#">Menu 2</a></li>
-		<li><a href="#">Menu 3</a></li>
-	</ul>
-	<br>
-	<h3>Centered Pills</h3>
-	<ul class="nav nav-pills nav-justified">
-		<li class="active"><a href="#">Home</a></li>
-		<li><a href="#">Menu 1</a></li>
-		<li><a href="#">Menu 2</a></li>
-		<li><a href="#">Menu 3</a></li>
-	</ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Tabs and Filter Button -->
 <div class="container-fluid mt-3 pb-1" id="filter">
 	<ul class="nav justify-content-md-center tab1">
@@ -187,6 +144,25 @@
 		</li>
 		<li class="nav-item ml-3 pb-2">
 			<button id="filter_button" class="nav-link btn btn-outline-secondary btn-sm" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
+		</li>
+	</ul>
+</div>
+<!-- Tabs and Filter Button -->
+
+
+
+
+<!-- Tabs and Filter Button -->
+<div class="container-fluid mt-3 pb-1" id="filter">
+	<ul class="nav nav-pills flex-column flex-sm-row">
+		<li class="flex-sm-fill text-sm-center nav-link">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
+		</li>
+		<li class="flex-sm-fill text-sm-center nav-link">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
+		</li>
+		<li class="flex-sm-fill text-sm-center nav-link">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 		</li>
 	</ul>
 </div>
