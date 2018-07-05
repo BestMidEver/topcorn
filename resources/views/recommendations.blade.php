@@ -133,7 +133,7 @@
 
 
 
-
+<div class="container">
 	<h3>Centered Tabs</h3>
 	<ul class="nav nav-tabs nav-justified">
 		<li class="active"><a href="#">Home</a></li>
@@ -149,6 +149,7 @@
 		<li><a href="#">Menu 2</a></li>
 		<li><a href="#">Menu 3</a></li>
 	</ul>
+</div>
 
 
 
