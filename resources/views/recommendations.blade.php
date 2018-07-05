@@ -127,6 +127,48 @@
 
 
 
+
+
+
+
+
+
+
+	<h3>Centered Tabs</h3>
+	<ul class="nav nav-tabs nav-justified">
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="#">Menu 1</a></li>
+		<li><a href="#">Menu 2</a></li>
+		<li><a href="#">Menu 3</a></li>
+	</ul>
+	<br>
+	<h3>Centered Pills</h3>
+	<ul class="nav nav-pills nav-justified">
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="#">Menu 1</a></li>
+		<li><a href="#">Menu 2</a></li>
+		<li><a href="#">Menu 3</a></li>
+	</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Tabs and Filter Button -->
 <div class="container-fluid mt-3 pb-1" id="filter">
 	<ul class="nav justify-content-md-center tab1">
