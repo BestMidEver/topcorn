@@ -8,7 +8,7 @@
 	<h1 class="h5 d-inline align-middle my-2">{{ __('navbar.recommendations') }}</h1>
 	@if(auth::check())
 	<div class="d-inline ml-3" ng-show="active_tab!='mood_pick'">
-		<button class="btn btn-outline-secondary btn-sm my-2" type="button" disabled>{{ Auth::user()->name }}</button>
+		<button class="btn btn-outline-secondary btn-sm my-2" ng-show="party_members.length>0" type="button" disabled>{{ Auth::user()->name }}</button>
 		<button class="btn btn-outline-secondary btn-sm mx-1 my-2" type="button" ng-repeat="user in party_members" ng-click="remove_from_party(user.user_id);">@{{user.name}} <i class="fa fa-times"></i></button>
 		<button id="addperson_button" class="btn btn-outline-secondary btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i> {{ __('general.add_person') }}</button>
 	</div>
