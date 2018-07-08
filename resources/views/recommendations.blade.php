@@ -142,9 +142,9 @@
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 		</li>
-		<li class="nav-item ml-3 pb-2">
+		<!--<li class="nav-item ml-3 pb-2">
 			<button id="filter_button" class="nav-link btn btn-outline-secondary btn-sm" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
-		</li>
+		</li>-->
 	</ul>
 </div>
 <!-- Tabs and Filter Button -->
@@ -152,13 +152,13 @@
 
 
 
-<!-- Tabs and Filter Button -->
+<!-- Tabs and Filter Button Mobile -->
 	<nav class="nav nav-pills flex-column flex-sm-row d-md-none">
 		<button class="btn btn-sm border-no-radius flex-sm-fill text-sm-center nav-link" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 		<button class="btn btn-sm border-no-radius flex-sm-fill text-sm-center nav-link" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		<button class="btn btn-sm border-no-radius flex-sm-fill text-sm-center nav-link" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 	</nav>
-<!-- Tabs and Filter Button -->
+<!-- Tabs and Filter Button Mobile -->
 
 
 
@@ -225,6 +225,9 @@
 		</div>
 			@endif
 		@endif
+	</div>
+	<div>
+		<button id="filter_button" class="nav-link btn btn-outline-secondary btn-sm" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
 	</div>
 </div>
 <!-- Sort by section -->
