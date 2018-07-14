@@ -6,7 +6,7 @@ button:focus{box-shadow: none!important;}
 .yeswrap {  white-space: normal!important;}
 .break-word{word-wrap: break-word;}
 .line-break{white-space: pre-wrap;}
-.nav > li, .tab1 > .under-blue {  float: left;  position: relative;}
+.nav > li {  float: left;  position: relative;}
 .tab1 .active::after {  position: absolute;  bottom: 0;  left: 0;  width: 100%;  content: " ";  border-bottom: 5px solid #5BC0EB;}
 .background-white{background-color: #fff!important;}
 .background-black{background-color: #000!important;}
