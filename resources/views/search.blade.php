@@ -5,7 +5,7 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('general.search') }}</h1>
 
-<div class="container-fluid mt-3 d-none">
+<div class="container-fluid mt-3">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='movie'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')">{{ __('general.movie') }}</button>
