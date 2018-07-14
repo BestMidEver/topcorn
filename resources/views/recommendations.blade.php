@@ -140,6 +140,8 @@
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
 		</li>
+		@else
+		:D:D
 		@endif
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
