@@ -176,9 +176,9 @@
 			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
 		</div>
 	</div>
+	@if(auth::check())
+		@if(Auth::User()->advanced_filter)
 	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
-		@if(auth::check())
-			@if(Auth::User()->advanced_filter)
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_4}}
 		</button>
@@ -188,9 +188,9 @@
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
 			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
 		</div>
-			@endif
-		@endif
 	</div>
+		@endif
+	@endif
 	<div class="dropdown d-inline">
 		<button id="filter_button" class="btn btn-outline-secondary mt-3" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
 	</div>
