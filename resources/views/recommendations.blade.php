@@ -153,7 +153,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu my-2 d-md-none tab2">
+<div class="scrollmenu my-3 d-md-none tab2">
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 	@if(auth::check())
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
