@@ -10,7 +10,7 @@
 	<div class="d-inline" ng-show="active_tab!='mood_pick'">
 		<button class="btn btn-outline-secondary my-2" ng-show="party_members.length>0" type="button" disabled>{{ Auth::user()->name }}</button>
 		<button class="btn btn-outline-secondary mr-2 my-2" type="button" ng-repeat="user in party_members" ng-click="remove_from_party(user.user_id);">@{{user.name}} <i class="fa fa-times"></i></button>
-		<button id="addperson_button" class="btn btn-outline-secondary my-2 border-0" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i> {{ __('general.add_person') }}</button>
+		<button id="addperson_button" class="btn btn-outline-secondary my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i> {{ __('general.add_person') }}</button>
 	</div>
 	@endif
 	<div class="d-inline" ng-show="active_tab=='mood_pick'">
@@ -168,7 +168,7 @@
 <!-- Sort by and Filter section -->
 <div class="container-fluid">
 	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_2='{{ __('general.top_rated') }}';" ng-show="active_tab=='top_rated'">
-		<button class="btn btn-outline-secondary border-0 dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -179,7 +179,7 @@
 	@if(auth::check())
 		@if(Auth::User()->advanced_filter)
 	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
-		<button class="btn btn-outline-secondary border-0 dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_4}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
@@ -192,7 +192,7 @@
 		@endif
 	@endif
 	<div class="dropdown d-inline">
-		<button id="filter_button" class="btn btn-outline-secondary border-0 mt-3" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
+		<button id="filter_button" class="btn btn-outline-secondary mt-3" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
 	</div>
 </div>
 <!-- Sort by and Filter section -->
