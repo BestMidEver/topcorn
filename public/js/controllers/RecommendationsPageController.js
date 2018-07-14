@@ -69,12 +69,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
 		   angular.element( document.querySelector( '#addperson_button' ) ).addClass('btn-outline-secondary-hover');
-		   angular.element( document.querySelector( '#addperson_text' ) ).addClass('d-none');
+		   angular.element( document.querySelector( '#addperson_text' ) ).removeClass('d-none');
 		   angular.element( document.querySelector( '#addmovie_button' ) ).addClass('btn-outline-secondary-hover');
 		});
 		$('#collapseAdd').on('hide.bs.collapse', function () {
 		  angular.element( document.querySelector( '#addperson_button' ) ).removeClass('btn-outline-secondary-hover');
-		  angular.element( document.querySelector( '#addperson_text' ) ).removeClass('d-none');
+		  angular.element( document.querySelector( '#addperson_text' ) ).addClass('d-none');
 		  angular.element( document.querySelector( '#addmovie_button' ) ).removeClass('btn-outline-secondary-hover');
 		});
 //////////////////////////////////////////////////////////////////////////////////////////
