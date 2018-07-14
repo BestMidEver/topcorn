@@ -127,7 +127,7 @@
 
 
 
-<!-- Tabs and Filter Button -->
+<!-- Tabs Button -->
 <div class="container-fluid mt-3 pb-1 d-none d-md-inline" id="filter">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
@@ -147,26 +147,26 @@
 		</li>-->
 	</ul>
 </div>
-<!-- Tabs and Filter Button -->
+<!-- Tabs Button -->
 
 
 
 
-<!-- Tabs and Filter Button Mobile -->
-	<div class="scrollmenu d-md-none tab2">
-		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
-		@if(auth::check())
-		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
-		@endif
-		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
-	</div>
-<!-- Tabs and Filter Button Mobile -->
+<!-- Tabs Button Mobile -->
+<div class="scrollmenu d-md-none tab2">
+	<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
+	@if(auth::check())
+	<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
+	@endif
+	<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
+</div>
+<!-- Tabs Button Mobile -->
 
 
 
 
-<!-- Sort by section -->
-<div class="container-fluid">
+<!-- Sort by and Filter section -->
+<div class="container-fluid mt-3">
 	<div class="dropdown d-inline" ng-init="sort_by_title_2='{{ __('general.top_rated') }}';" ng-show="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
@@ -192,10 +192,10 @@
 		@endif
 	</div>
 	<div class="dropdown d-inline">
-		<button id="filter_button" class="btn btn-outline-secondary btn-sm dropdown-toggle" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
+		<button id="filter_button" class="btn btn-outline-secondary btn-sm" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
 	</div>
 </div>
-<!-- Sort by section -->
+<!-- Sort by and Filter section -->
 
 
 
