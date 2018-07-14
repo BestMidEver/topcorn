@@ -167,7 +167,7 @@
 
 <!-- Sort by and Filter section -->
 <div class="container-fluid mt-3">
-	<div class="dropdown d-inline mr-3" ng-init="sort_by_title_2='{{ __('general.top_rated') }}';" ng-show="active_tab=='top_rated'">
+	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_2='{{ __('general.top_rated') }}';" ng-show="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
 		</button>
@@ -176,7 +176,7 @@
 			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
 		</div>
 	</div>
-	<div class="dropdown d-inline mr-3" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
+	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
 		@if(auth::check())
 			@if(Auth::User()->advanced_filter)
 		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
