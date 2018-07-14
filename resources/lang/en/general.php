@@ -106,7 +106,7 @@ return [
     'min_vote_count' => 'MINIMUM VOTE COUNT',                               //recommendations,
     'minute' => 'minute',                                                   //movie,
     'movie' => 'Movie',
-    'movie_lists_title' => 'Lists Which Contains This Movie',               //list, 
+    'movie_lists_title' => 'Lists Which Contain This Movie',                //list, 
     'p_movies' => 'Movies',                                                 //list,         
     'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,
     'movies' => 'movies',                                                   //person,
