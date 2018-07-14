@@ -191,7 +191,7 @@
 			@endif
 		@endif
 	</div>
-	<div class="dropdown d-inline mt-3">
+	<div class="dropdown d-inline">
 		<button id="filter_button" class="btn btn-outline-secondary" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
 	</div>
 </div>
