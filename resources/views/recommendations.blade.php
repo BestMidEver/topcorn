@@ -136,9 +136,11 @@
 		<!--<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='popular'}" ng-click="active_tab='popular';get_first_page_data()">{{ __('general.most_populer') }}</button>
 		</li>-->
+		@if(auth::check())
 		<li class="nav-item mb-2">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
 		</li>
+		@endif
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 		</li>
