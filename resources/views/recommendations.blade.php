@@ -5,15 +5,15 @@
 @section('body')
 <!-- H1 +AddPerson +AddMode row  -->
 <div class="col mt-1 mb-2 mt-md-4">
-	<h1 class="h5 d-inline align-middle my-2">{{ __('navbar.recommendations') }}</h1>
+	<h1 class="h5 d-inline align-middle my-2 mr-3">{{ __('navbar.recommendations') }}</h1>
 	@if(auth::check())
-	<div class="d-inline ml-3" ng-show="active_tab!='mood_pick'">
+	<div class="d-inline" ng-show="active_tab!='mood_pick'">
 		<button class="btn btn-outline-secondary btn-sm my-2" ng-show="party_members.length>0" type="button" disabled>{{ Auth::user()->name }}</button>
 		<button class="btn btn-outline-secondary btn-sm mx-1 my-2" type="button" ng-repeat="user in party_members" ng-click="remove_from_party(user.user_id);">@{{user.name}} <i class="fa fa-times"></i></button>
 		<button id="addperson_button" class="btn btn-outline-secondary btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i> {{ __('general.add_person') }}</button>
 	</div>
 	@endif
-	<div class="d-inline ml-3" ng-show="active_tab=='mood_pick'">
+	<div class="d-inline" ng-show="active_tab=='mood_pick'">
 		<button class="btn btn-outline-secondary btn-sm mx-1 my-2" type="button" ng-repeat="mode_movie in mode_movies" ng-click="remove_from_mode(mode_movie.id);" data-toggle="tooltip" data-placement="top" title="@{{mode_movies.original_title}}">@{{mode_movie.title}}@{{mode_movie.release_date.length > 0 ? ' ('+mode_movie.release_date.substring(0, 4)+')' : ''}} <i class="fa fa-times"></i></button>
 		<button id="addmovie_button" class="btn btn-outline-secondary btn-sm my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_mode')"><i class="fas fa-plus"></i> <span ng-show="mode_movies.length == 0">{{ __('general.pick_mode') }}</span><span ng-hide="mode_movies.length == 0"> {{ __('general.add_movie') }}</span></button>
 	</div>
