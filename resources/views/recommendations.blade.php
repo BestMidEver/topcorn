@@ -130,16 +130,16 @@
 <!-- Tabs and Filter Button -->
 <div class="container-fluid mt-3 pb-1 d-none d-md-inline" id="filter">
 	<ul class="nav justify-content-md-center tab1">
-		<li class="nav-item under-blue">
+		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 		</li>
 		<!--<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='popular'}" ng-click="active_tab='popular';get_first_page_data()">{{ __('general.most_populer') }}</button>
 		</li>-->
-		<li class="nav-item under-blue mb-2">
+		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		</li>
-		<li class="nav-item under-blue mb-2">
+		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 		</li>
 		<!--<li class="nav-item ml-3 pb-2">
@@ -153,10 +153,10 @@
 
 
 <!-- Tabs and Filter Button Mobile -->
-	<div class="scrollmenu d-md-none tab1">
-		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted under-blue" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
-		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted under-blue" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
-		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted under-blue" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
+	<div class="scrollmenu d-md-none tab2">
+		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
+		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
+		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 	</div>
 <!-- Tabs and Filter Button Mobile -->
 
