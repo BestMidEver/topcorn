@@ -25,7 +25,7 @@
 
 <!-- AddPerson / AddMode section -->
 <div class="collapse container-fluid background-lightgrey" id="collapseAdd">
-	<div class="row pt-3">
+	<div class="row">
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8" id="scroll_toppest_point">
 			<div class="input-group-prepend">
@@ -201,7 +201,7 @@
 
 
 <!-- Filter secion -->
-<div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter">
+<div class="collapse container-fluid background-lightgrey mb-3" id="collapseFilter">
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="mt-3 pb-3">
