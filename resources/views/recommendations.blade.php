@@ -153,7 +153,7 @@
 
 
 <!-- Tabs and Filter Button Mobile -->
-	<div class="scrollmenu d-md-none">
+	<div class="scrollmenu d-md-none tab1">
 		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
