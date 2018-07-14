@@ -49,7 +49,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 pb-3 d-md-none">
+<div class="container-fluid mt-3 pb-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1" ng-init=active_tab='vote_count'>
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='vote_count'}" ng-click="active_tab='vote_count';filter('vote_count')">{{ __('general.most_rated') }}</button>
