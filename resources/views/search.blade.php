@@ -5,7 +5,7 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('general.search') }}</h1>
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3 d-none">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='movie'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')">{{ __('general.movie') }}</button>
@@ -21,6 +21,22 @@
 		</li>
 	</ul>
 </div>
+
+
+
+
+<!-- Tabs Button Mobile -->
+<div class="scrollmenu my-3 tab2">
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='top_rated'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')">{{ __('general.movie') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='person'}" ng-click="reset_tab();active_tab='person';get_page_data();setFocus('input_person')">{{ __('general.person') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='user'}" ng-click="reset_tab();active_tab='user';get_page_data();setFocus('input_user')">{{ __('general.user') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='list'}" ng-click="reset_tab();active_tab='list';get_page_data();setFocus('input_list')">{{ __('general.list') }}</button>
+</div>
+<!-- Tabs Button Mobile -->
+
+
+
+
 
 <div class="container-fluid mt-3">
 	<div class="row">
