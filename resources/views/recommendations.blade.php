@@ -154,11 +154,11 @@
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
-	<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 	@if(auth::check())
-	<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
 	@endif
-	<button class="btn btn-link border-no-radius flex-sm-fill text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 </div>
 <!-- Tabs Button Mobile -->
 
