@@ -5,7 +5,7 @@
 @section('body')
 <div class="position-relative mt-md-4">
 	<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{cover}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid coverpic" alt="Responsive image">
-	<div class="coveroverlayersmall d-md-none">
+	<div class="coveroverlayersmall-profile d-md-none">
 		<div class="d-flex flex-column align-items-center">
 			<div class="d-flex flex-column">
 				<img ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicsmall" alt="Responsive image">
