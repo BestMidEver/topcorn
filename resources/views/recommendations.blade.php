@@ -24,7 +24,7 @@
 
 
 <!-- AddPerson / AddMode section -->
-<div class="collapse container-fluid background-lightgrey" id="collapseAdd">
+<div class="collapse container-fluid background-lightgrey pt-3" id="collapseAdd">
 	<div class="row">
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8" id="scroll_toppest_point">
