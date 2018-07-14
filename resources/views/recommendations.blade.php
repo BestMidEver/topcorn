@@ -165,6 +165,41 @@
 
 
 
+<!-- Sort by section -->
+<div class="container-fluid">
+	<div class="dropdown d-inline" ng-init="sort_by_title_2='{{ __('general.top_rated') }}';" ng-show="active_tab=='top_rated'">
+		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
+		</div>
+	</div>
+	<div class="dropdown d-inline" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
+		@if(auth::check())
+			@if(Auth::User()->advanced_filter)
+		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_4}}
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_match') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_percent') }}';change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
+		</div>
+			@endif
+		@endif
+	</div>
+	<div class="dropdown d-inline">
+		<button id="filter_button" class="btn btn-outline-secondary btn-sm dropdown-toggle" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
+	</div>
+</div>
+<!-- Sort by section -->
+
+
+
+
 <!-- Filter secion -->
 <div class="collapse container-fluid background-lightgrey mb-3" id="collapseFilter">
 	@include('layout.recommendations_languages')
@@ -198,41 +233,6 @@
 	</div>
 </div>
 <!-- Filter secion -->
-
-
-
-
-<!-- Sort by section -->
-<div class="container-fluid">
-	<div class="dropdown d-inline" ng-init="sort_by_title_2='{{ __('general.top_rated') }}';" ng-show="active_tab=='top_rated'">
-		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
-		</button>
-		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
-		</div>
-	</div>
-	<div class="dropdown d-inline" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
-		@if(auth::check())
-			@if(Auth::User()->advanced_filter)
-		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_4}}
-		</button>
-		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_match') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_percent') }}';change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
-		</div>
-			@endif
-		@endif
-	</div>
-	<div class="dropdown d-inline">
-		<button id="filter_button" class="btn btn-outline-secondary btn-sm dropdown-toggle" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
-	</div>
-</div>
-<!-- Sort by section -->
 
 
 
