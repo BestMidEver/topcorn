@@ -98,6 +98,10 @@
 	</div>
 </div>
 
+
+
+
+<!-- Tabs Button -->
 <div class="container-fluid mt-3 pb-3">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
@@ -114,10 +118,26 @@
 		</li>
 	</ul>
 </div>
+<!-- Tabs Button -->
+
+
+
+
+<!-- Tabs Button Mobile -->
+<div class="scrollmenu my-3 d-md-none tab2">
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data()">{{ __('general.seen_movies') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_bans'}" ng-click="active_tab='get_bans';get_first_page_data();">{{ __('general.banneds') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">{{ __('general.lists') }}</button>
+</div>
+<!-- Tabs Button Mobile -->
+
+
+
 
 <div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'">
 	<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.definitely_recommend') }}'">
-		<button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{mod_title}}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
