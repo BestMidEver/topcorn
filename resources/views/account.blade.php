@@ -25,7 +25,7 @@
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu my-3 d-md-none tab2">
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account">{{ __('general.seen_movies') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account">{{ __('general.profile') }}</button>
 </div>
 <!-- Tabs Button Mobile -->
 
