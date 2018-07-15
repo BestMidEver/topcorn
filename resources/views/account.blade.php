@@ -45,7 +45,7 @@
 @endif
 <div class="position-relative pt-1">
 	<img ng-src="@{{cover_src}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid coverpic" alt="Responsive image">
-	<div class="coveroverlayersmall d-md-none">
+	<div class="coveroverlayersmall-profile d-md-none">
 		<div class="d-flex flex-column align-items-center">
 			<div class="d-flex flex-column">
 				<div class="d-flex flex-row align-items-center">
