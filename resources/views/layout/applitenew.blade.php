@@ -64,7 +64,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/home"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.recommendations') }}</span></a>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'recommendations' ? 'active' : null }}" href="/recommendations"><i class="fa fa-th-list" aria-hidden="true"></i><span class="d-none d-md-inline"> {{ __('navbar.recommendations') }}</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto pr-3">
