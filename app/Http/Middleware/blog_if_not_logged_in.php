@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class id_dash_listname
+class blog_if_not_logged_in
 {
     /**
      * Handle an incoming request.
