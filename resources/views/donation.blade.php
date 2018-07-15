@@ -9,7 +9,11 @@
 	<p class="lead">{{ __('long_texts.donation') }}</p>
 </div>
 
-<div class="container-fluid mt-3">
+
+
+
+<!-- Tabs Button -->
+<div class="container-fluid mt-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1" ng-init="active_tab='bitcoin'">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='bitcoin'}" ng-click="active_tab='bitcoin'">{{ __('general.bitcoin') }}</button>
@@ -25,6 +29,22 @@
 		</li>
 	</ul>
 </div>
+<!-- Tabs Button -->
+
+
+
+
+<!-- Tabs Button Mobile -->
+<div class="scrollmenu my-3 d-md-none tab2">
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='bitcoin'}" ng-click="active_tab='bitcoin'">{{ __('general.bitcoin') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='ethereum'}" ng-click="active_tab='ethereum'">{{ __('general.ethereum') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='patreon'}" ng-click="active_tab='patreon'">Patreon</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='bank_transfer'}" ng-click="active_tab='bank_transfer'">{{ __('general.bank_transfer') }}</button>
+</div>
+<!-- Tabs Button Mobile -->
+
+
+
 
 <div class="jumbotron text-center background-white" ng-show="active_tab=='bitcoin'">
 	<div class="row">
