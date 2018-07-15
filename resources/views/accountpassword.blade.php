@@ -5,7 +5,11 @@
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.account') }}</h5>
 
-<div class="container-fluid mt-3 pb-1">
+
+
+
+<!-- Tabs Button -->
+<div class="container-fluid mt-3 pb-1 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<a class="nav-link text-muted" href="/account">{{ __('general.profile') }}</a>
@@ -18,6 +22,22 @@
 		</li>
 	</ul>
 </div>
+<!-- Tabs Button -->
+
+
+
+
+<!-- Tabs Button Mobile -->
+<div class="scrollmenu my-3 d-md-none tab2">
+	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account">{{ __('general.profile') }}</a>
+	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account/password">{{ __('general.password') }}</a>
+	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account/interface">{{ __('general.interface') }}</a>
+</div>
+<!-- Tabs Button Mobile -->
+
+
+
+
 @if(session()->has('status'))
     <div class="alert alert-success"> 
     {!! session('status') !!}
