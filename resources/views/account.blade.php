@@ -25,8 +25,8 @@
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu my-3 d-md-none tab2">
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account">{{ __('general.profile') }}</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account/password">{{ __('general.password') }}</button>
+	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account">{{ __('general.profile') }}</a>
+	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account/password">{{ __('general.password') }}</a>
 </div>
 <!-- Tabs Button Mobile -->
 
