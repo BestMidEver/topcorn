@@ -27,6 +27,7 @@
 <div class="scrollmenu my-3 d-md-none tab2">
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account">{{ __('general.profile') }}</a>
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account/password">{{ __('general.password') }}</a>
+	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account/interface">{{ __('general.interface') }}</a>
 </div>
 <!-- Tabs Button Mobile -->
 
