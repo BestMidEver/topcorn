@@ -90,7 +90,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-night py-md-0">
         <div class="container">
-            <a class="navbar-brand ml-auto d-none d-md-inline" href="/">
+            <a class="navbar-brand ml-auto" href="/">
                 <img src="/images/topcorn_logo.png" width="66" height="66">
             </a>
             <ul class="navbar-nav ml-auto">
