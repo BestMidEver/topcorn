@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Model\Liste;
+use Illuminate\Support\Facades\Auth;
 
 class blog_if_not_logged_in
 {
