@@ -102,7 +102,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 pb-3">
+<div class="container-fluid mt-3 pb-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data()">{{ __('general.seen_movies') }}</button>
