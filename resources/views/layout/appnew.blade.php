@@ -82,7 +82,7 @@
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
       js.src = 'https://connect.facebook.net/{{ app()->getLocale() }}_{{ strtoupper(app()->getLocale()) }}/sdk.js#xfbml=1&version=v2.11';
-      fjs.parentNode.insertBefore(js, fjs);
+      fjs.parentNode.insertBefore(js, fjs); d-none d-md-inline
     }(document, 'script', 'facebook-jssdk'));</script>-->
 
 
@@ -90,7 +90,7 @@
 
     <nav class="navbar navbar-expand-md navbar-dark bg-night py-md-0">
         <div class="container">
-            <a class="navbar-brand ml-auto" href="/">
+            <a class="navbar-brand" href="/">
                 <img src="/images/topcorn_logo.png" width="66" height="66">
             </a>
             <ul class="navbar-nav ml-auto">
