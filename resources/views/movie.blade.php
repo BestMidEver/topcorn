@@ -103,13 +103,18 @@
 <div class="d-flex flex-wrap justify-content-between">
 	<div>
 		<div class="d-flex flex-column">
-			<div class="px-3 px-md-0"><a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank" onclick="window.open('https://www.google.com/', '_system', 'location=yes');"><h1 class="h4 pb-2 pt-3"
-			@if(Auth::check())
-				@if(Auth::User()->tt_movie < 50)
-            data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="google"
-            	@endif
-            @endif
-			>@{{movie.title}}</h1></a></div>
+			<div class="px-3 px-md-0">
+				<!--<a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank" onclick="window.open('https://www.google.com/', '_system', 'location=yes');">-->
+				<a class="text-dark" onclick="window.open('https://www.google.com/', '_system', 'location=yes');">
+					<h1 class="h4 pb-2 pt-3"
+					@if(Auth::check())
+						@if(Auth::User()->tt_movie < 50)
+		            data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="google"
+		            	@endif
+		            @endif
+					>@{{movie.title}}</h1>
+				</a>
+			</div>
 		</div>
 	</div>
 	@if(Auth::check())
