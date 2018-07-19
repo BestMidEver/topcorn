@@ -105,7 +105,7 @@
 		<div class="d-flex flex-column">
 			<div class="px-3 px-md-0">
 				<!--<a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank" onclick="window.open('https://www.google.com/', '_system', 'location=yes');">-->
-				<a class="text-dark" onclick="window.open('http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}', '_system');return false;">
+				<a class="text-dark" onclick="window.open('http://www.google.com/search?q=@{{movie.title}} @{{movie.release_date.substring(0, 4)}}', '_system');return false;">
 					<h1 class="h4 pb-2 pt-3"
 					@if(Auth::check())
 						@if(Auth::User()->tt_movie < 50)
