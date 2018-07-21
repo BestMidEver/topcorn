@@ -14,11 +14,7 @@
 		<p>Humankind started to make films at the end of the 19th century. Since then the film industry grew rapidly. Nowadays we have access to hundreds of thousands of movies. Because we are mortals and we don’t have infinite time, we can’t possibly watch all of them.</p>
 		<p>That makes you ask the questions:</p>
 		<p><strong>What movie should I watch? </strong>
-		What should I watch on netflix today? 
-		What should I watch tonight?
-		Where can I find a good movie to watch?
-		What are the best movies to watch?
-		Which movies should I watch before I die?</p>
+		Where can I find a good movie to watch?</p>
 		<div class="jumbotron">
 			<p class="lead">There are more movies than we can possibly watch!</p>
 			<div class="quote-line">
@@ -39,7 +35,7 @@
 		<p>Here's the deal:</p>
 		<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
 		<div class="jumbotron">
-			<p class="lead">Start using Topcorn.io to get movie recommendations according to your unique movie taste now.</p>
+			<p class="lead">Start using Topcorn.io to get movie recommendations according to your unique movie taste right now.</p>
 		</div>
 		<p>You can create an account with your facebook account or with your email address easily and quickly. You don’t even have to confirm your email address.</p>
 		<p>If it is still too much work to do, you can just go to the recommendations page and define your mood with several movies and get your movie suggestions according to that mood.</p>
