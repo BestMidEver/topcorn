@@ -51,7 +51,7 @@
 
 
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-night px-md-0 py-md-0 z-1041">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-night px-md-0 py-md-0 z-1041">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
