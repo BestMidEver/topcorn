@@ -96,7 +96,7 @@ else $theme='';
     <!--<a class="d-xl-inline" href="/">
         <img src="/images/topcorn_logo.png" class="indian-spot" alt="">
     </a>-->
-    <nav class="navbar navbar-expand-md navbar-dark bg-night px-md-0 py-md-0 z-1041" ng-init="start_course='{{ __('navbar.start_course') }}';graduate='{{ __('navbar.graduate') }}'">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-night px-md-0 py-md-0 z-1041" ng-init="start_course='{{ __('navbar.start_course') }}';graduate='{{ __('navbar.graduate') }}'">
         <div class="container{{ $full_screen }}">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
