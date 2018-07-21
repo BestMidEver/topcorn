@@ -76,7 +76,7 @@
 <?php
 if(Auth::user()->margin_x_setting == 2) $full_screen = '-fluid px-1';
 else if (Auth::user()->margin_x_setting == 1) $full_screen = '-fluid px-1 px-md-3 px-lg-5';
-else $full_screen = '';
+else $full_screen = ' px-1';
 
 if(Auth::User()->theme==1) $theme='drk';
 else $theme='';

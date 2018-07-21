@@ -104,8 +104,7 @@
 	<div>
 		<div class="d-flex flex-column">
 			<div class="px-3 px-md-0">
-				<!--<a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank" onclick="window.open('https://www.google.com/', '_system', 'location=yes');">-->
-				<a class="text-dark" target="_blank" onclick="window.open('https://www.google.com/', '_system');return false;">
+				<a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.title+' '+movie.release_date.substring(0, 4)}}" target="_blank">
 					<h1 class="h4 pb-2 pt-3"
 					@if(Auth::check())
 						@if(Auth::User()->tt_movie < 50)
@@ -284,7 +283,7 @@
 <div class="container-fluid px-0 mt-5">	
 	<div class="h5 px-3 px-md-0">
 		<span class="mb-0 pr-2">{{ __('general.reviews') }}</span>
-		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success btn-sm" target="_blank"
+		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success" target="_blank"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
@@ -334,7 +333,7 @@
 			<span class="mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
 		</div>
 		<div class="flex-column">
-			<a href="/createlist/new" class="btn btn-outline-success btn-sm" target="{{$target}}">
+			<a href="/createlist/new" class="btn btn-outline-success" target="{{$target}}">
 				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 			</a>
 		</div>
@@ -360,29 +359,29 @@
 <div id="popover-content-share" class="d-none">
     <p>{{ __("tutorial.share") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-search">{{ __("tutorial.understood") }}</a>
+        <a class="btn btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-link d-inline" href="#tooltip-movie-search">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-google" class="d-none">
     <p>{{ __("tutorial.google") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-cast">{{ __("tutorial.understood") }}</a>
+        <a class="btn btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-link d-inline" href="#tooltip-movie-cast">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-cast" class="d-none">
     <p>{{ __("tutorial.cast") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
-        <a class="btn btn-sm btn-link d-inline" href="#tooltip-movie-review">{{ __("tutorial.understood") }}</a>
+        <a class="btn btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-link d-inline" href="#tooltip-movie-review">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 <div id="popover-content-review" class="d-none">
     <p>{{ __("tutorial.review") }}</p>
     <div class="text-right">
-        <a class="btn btn-sm btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
-        <a class="btn btn-sm btn-link d-inline" href="#movie-tooltips-done">{{ __("tutorial.understood") }}</a>
+        <a class="btn btn-link d-inline text-muted" href="#cancel-movie-tooltips">{{ __("tutorial.dont_show_hints") }}</a>
+        <a class="btn btn-link d-inline" href="#movie-tooltips-done">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
 	@endif
