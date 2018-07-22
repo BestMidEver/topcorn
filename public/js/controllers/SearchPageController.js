@@ -141,7 +141,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	angular.element(function () {
 		setTimeout(function() {
 	    	$scope.setFocus('input_movie');
-	   	}, 500);
+	   	}, 3500);
 	});
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////// SET FOCUS /////////////////////////////////////
