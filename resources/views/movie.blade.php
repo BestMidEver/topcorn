@@ -269,10 +269,10 @@
 	<div ng-if="movie.credits.cast.length > 6">
 	@endif
 		<div class="text-center pt-1" ng-hide="iscast">
-			<button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><small>{{ __('general.show_everyone') }}</small></button>
+			<button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseCast"><small>{{ __('general.show_everyone') }}</small></button>
 		</div>
 		<div class="text-center pt-1" ng-show="iscast">
-			<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false; scroll_to_cast()" data-toggle="collapse" data-target="#collapseCast"><i class="fa fa-angle-up"></i></button>
+			<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseCast"><i class="fa fa-angle-up"></i></button>
 		</div>
 	</div>
 </div>
