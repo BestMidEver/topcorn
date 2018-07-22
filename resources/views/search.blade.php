@@ -13,7 +13,7 @@
 <div class="container-fluid mt-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='movie'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')" ng-init="setFocus('input_movie')">{{ __('general.movie') }}</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='movie'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')">{{ __('general.movie') }}</button>
 		</li>
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='person'}" ng-click="reset_tab();active_tab='person';get_page_data();setFocus('input_person')">{{ __('general.person') }}</button>
