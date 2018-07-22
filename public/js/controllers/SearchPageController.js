@@ -139,7 +139,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		}, 500);
 	}
 	setTimeout(function() {
-		angular.element('#input_movie')..blur();
+		angular.element('#input_movie').blur();
 		angular.element('#input_movie').focus();
 		alert("3");
 	}, 2500);
