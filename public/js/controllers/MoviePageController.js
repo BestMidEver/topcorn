@@ -4,7 +4,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.scroll_to_top=function(){
-		$anchorScroll.yOffset = 10;
+		$anchorScroll.yOffset = 60;
 		$anchorScroll('accordion');
 	}	
 	$scope.scroll_to_cast=function(){
