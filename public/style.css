@@ -82,6 +82,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .card-footer .btn, .border-no-radius{border-radius: 0!important;}
 .b-image-border{    border: 4px solid #cccccc;}
 .scrollmenu {overflow: auto;    white-space: nowrap;}
+.nav-logo{height: 58px; width: 58px;}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
@@ -103,19 +104,16 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 	.search-movie-results{position: absolute; left: 42px; top:38px; z-index: 10; width: calc(100% - 42px); border:1px solid #7A9CD3;}
 }
 @media (min-width: 768px) and (max-width: 991px) {
-	body { padding-top: 66px!important;}
 	.review{column-count:2;}
 	.nowrap {  white-space: nowrap;}
 	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-	body { padding-top: 66px!important;}
 	.review{column-count:2;}
 	.nowrap {  white-space: nowrap;}
 	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }
 }
 @media (min-width: 1199px) {
-	body { padding-top: 66px!important;}
 	.review{column-count:3;}
 	.nowrap {  white-space: nowrap;}
 	.field-label-responsive {    padding-top: .5rem;    text-align: right;  }

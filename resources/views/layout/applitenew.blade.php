@@ -54,7 +54,7 @@
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-night py-md-0">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="/images/topcorn_logo.png" class="d-none d-md-inline" width="66" height="66">
+                <img src="/images/topcorn_logo.png" class="d-none d-md-inline" class="nav-logo">
                 <img src="/images/topcorn_logo.png" class="d-md-none" width="30" height="30">
             </a>
             <ul class="navbar-nav ml-auto">
