@@ -139,8 +139,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		}, 500);
 	}
 	angular.element(function () {
-	    $scope.setFocus('input_movie');
-		alert("dene4")
+		setTimeout(function() {
+	    	$scope.setFocus('input_movie');
+	   	}, 500);
 	});
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////// SET FOCUS /////////////////////////////////////
