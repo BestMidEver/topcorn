@@ -28,7 +28,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .search-movie-results .result{padding-left: .75rem; padding-right: .75rem;}
 .search-movie-results .result:hover{background-color: #1E90FF; color:#fff;    cursor: default;}
 .position-relative{position: relative;}
-.addban:hover {color:#d9534f!important;background-color: #ececec;}, .fa{color:#d9534f!important;}
+.addban:hover {color:#000!important;background-color: #ececec;}, .fa{color:#000!important;}/*d9534f*/
 .addseen:hover {color:#5cb85c!important;background-color: #ececec;}, .fa{color:#5cb85c!important;}
 .addlater:hover {color:#f0ad4e!important;background-color: #ececec;}, .fa{color:#f0ad4e!important;}
 .addfacebook:hover {color:#4267b2!important;background-color: #ececec;}, .fa{color:#4267b2!important;}
