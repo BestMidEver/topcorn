@@ -135,7 +135,7 @@
 
 
 
-<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'">
+<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && !is_waiting">
 	<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.definitely_recommend') }}'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{mod_title}}
@@ -153,7 +153,7 @@
 	<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 </div>
 
-<div class="container-fluid" ng-show="active_tab=='get_lists'">
+<div class="container-fluid" ng-show="active_tab=='get_lists' && !is_waiting">
 	<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}';">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{list_mod_title}}
@@ -166,8 +166,8 @@
 </div>
 
 <div id="scroll_top_point">
-	<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && listes.length==0)">
-		<div class="text-muted text-center">{{ __('general.no_result') }}</div>
+	<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && listes.length==0) || is_waiting">
+		<div class="text-muted text-center" ng-if="!is_waiting">{{ __('general.no_result') }}</div><div class="text-muted text-center" ng-if="is_waiting">{{ __('general.searching') }}</div>
 	</div>
 	@include('layout.moviecard')
 	<div class="card-group no-gutters">

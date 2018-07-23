@@ -39,9 +39,11 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 	}
 
 	$scope.list_mode='created_ones';
+	$scope.is_waiting=false;
     $scope.get_page_data = function()
     {
 		$scope.pagination=0;
+		$scope.is_waiting=true;
     	if($scope.active_tab == 'get_lists'){
     		$scope.movies=null;
     		rate.get_list_data($scope.list_mode, pass.profile_user_id)
@@ -49,8 +51,9 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				console.log(response.data)
 				$scope.listes=response.data;
 				$(".tooltip").hide();
+				$scope.is_waiting=false;
 			});
-    	}else{console.log($scope.active_tab)
+    	}else{
     		rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page)
 			.then(function(response){
 				console.log(response.data.data)
@@ -61,6 +64,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				$scope.to=response.data.to;
 				$scope.in=response.data.total;
 				$(".tooltip").hide();
+				$scope.is_waiting=false;
 			});
 		}
 	}
