@@ -83,7 +83,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .b-image-border{    border: 4px solid #cccccc;}
 .scrollmenu {overflow: auto;    white-space: nowrap;}
 .nav-logo{height: 58px; width: 58px;}
-.min-height-200{min-height: 200px;}
+.min-height-200{min-height: calc(width * 1.75);}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
