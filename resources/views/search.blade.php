@@ -62,7 +62,7 @@
 
 <div id="scroll_top_point">
 	<div class="p-5" ng-hide="movies.length>0 || people.length>0 || users.length>0 || listes.length>0 || (movies==null && people==null && users==null && listes==null)">
-		<div class="text-muted text-center">{{ __('general.no_result') }}</div>
+		<div class="text-muted text-center" ng-if="!is_waiting">{{ __('general.no_result') }}</div><div class="text-muted text-center" ng-if="is_waiting">{{ __('general.searching') }}</div>
 	</div>
 
 	<div ng-show="active_tab=='movie'">

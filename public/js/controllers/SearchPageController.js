@@ -22,6 +22,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.user_id = pass.user_id;
 	$scope.active_tab='movie';
 	$scope.page=1;
+	$scope.is_waiting=false;
 
 	rate.get_user_movies()
 	.then(function(response){
@@ -48,6 +49,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		if(temp.length == 0){
 			$scope.reset_tab();
 		}else{
+    		$scope.is_waiting=true;
 			switch($scope.active_tab) {
 				case 'movie':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
@@ -74,6 +76,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						$scope.to=response.data.to;
 						$scope.in=response.data.total;
 						$(".tooltip").hide();
+						$scope.is_waiting=false;
 					});
 					break;
 				case 'list':
@@ -87,6 +90,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						$scope.to=response.data.to;
 						$scope.in=response.data.total;
 						$(".tooltip").hide();
+						$scope.is_waiting=false;
 					});
 					break;
 				default:
@@ -105,6 +109,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.from=(response.data.page-1)*20+1;
 		$scope.to=(response.data.page-1)*20+response.data.results.length;
 		$scope.in=response.data.total_results;
+		$scope.is_waiting=false;
 	}
 
 	$scope.inside_get_page_data_person = function(response){
@@ -116,6 +121,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.from=(response.data.page-1)*20+1;
 		$scope.to=(response.data.page-1)*20+response.data.results.length;
 		$scope.in=response.data.total_results;
+		$scope.is_waiting=false;
 	}
 
     $scope.get_first_page_data = function()
