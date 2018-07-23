@@ -50,7 +50,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			$scope.reset_tab();
 		}else{
     		$scope.is_waiting=true;
-    		console.log("is_waiting true")
 			switch($scope.active_tab) {
 				case 'movie':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
