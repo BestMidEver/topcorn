@@ -41,9 +41,9 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 	$scope.list_mode='created_ones';
     $scope.get_page_data = function()
     {
+		$scope.pagination=0;
     	if($scope.active_tab == 'get_lists'){
     		$scope.movies=null;
-    		$scope.pagination=0;
     		rate.get_list_data($scope.list_mode, pass.profile_user_id)
 			.then(function(response){
 				console.log(response.data)
