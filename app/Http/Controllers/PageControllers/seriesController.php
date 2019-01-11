@@ -21,6 +21,6 @@ class seriesController extends Controller
             $watched_movie_number = null;
         }
 
-    	return view('series', compact('id', 'watched_movie_number'));
+    	return view('series', compact('id', 'watched_movie_number', 'image_quality'));
     }
 }
