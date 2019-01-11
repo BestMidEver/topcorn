@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class seriesController extends Controller
 {
-    public function movie($id, $lang = '', $secondary_lang='')
+    public function series($id, $lang = '', $secondary_lang='')
     {
     	return 5;//view('series');
     }
