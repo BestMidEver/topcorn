@@ -9,6 +9,6 @@ class seriesController extends Controller
 {
     public function series($id, $lang = '', $secondary_lang='')
     {
-    	return view('series');
+    	return view('series', compact('id'));
     }
 }
