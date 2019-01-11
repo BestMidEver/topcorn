@@ -36,20 +36,9 @@ series
 @endsection
 
 @section('og_tags')
-<!--<meta property="og:url" content="{{url('/')}}/movie/{{$id}}"/>
-<meta property="og:title" content="{{$movie_title}} ({{$movie_year}})"/>
-<meta property="og:description" content="Check every detail of {{$movie_title}} ({{$movie_year}}). Read reviews, watch trailers. Find out movie score based on your taste. And so on..."/>
-<meta property="og:type" content="video.movie"/>
-<meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
-<meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>-->
+
 @endsection
 
 @section('adsense')
-<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5818851352711866",
-    enable_page_level_ads: true
-  });
-</script>-->
+
 @endsection
