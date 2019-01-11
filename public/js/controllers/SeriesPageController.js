@@ -87,11 +87,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.prepeare_movie_data(desireddata);
 		}, function errorCallback(response) {
 			console.log('1')
-			window.location.replace("/not-found");
+			//window.location.replace("/not-found");
 		});
 	}, function errorCallback(response) {
 			console.log('1')
-		window.location.replace("/not-found");
+		//window.location.replace("/not-found");
 	});
 
 	$scope.merge_movie_data = function(desireddata, secondarydata){
