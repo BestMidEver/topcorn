@@ -61,9 +61,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
+	$scope.temp={};
 	$http({
 		method: 'GET',
-		url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews'
+		url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews%2external_ids'
 	}).then(function successCallback(response) {
 		desireddata=response.data;
 		console.log('SERIES_desired_data',desireddata);
@@ -73,8 +74,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}).then(function successCallback(response) {
 			secondarydata=response.data;
 			console.log('SERIES_secondary_data',secondarydata);
-			$scope.merge_movie_data(desireddata, secondarydata);
-			$scope.prepeare_movie_data(desireddata);
+			$scope.merge_series_data(desireddata, secondarydata);
+			$scope.prepeare_series_data(desireddata);
 		}, function errorCallback(response) {
 			console.log('error2')
 			window.location.replace("/not-found");
@@ -85,39 +86,33 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	});
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 
-	$scope.merge_movie_data = function(desireddata, secondarydata){
+	$scope.merge_series_data = function(desireddata, secondarydata){
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
-		if(!desireddata.overview) desireddata.overview=secondarydata.overview;
+		if(!desireddata.overview) desireddata.overview=secondarydata.overview; //DAHA SONRA 2. DE GÖSTERİLECEK
 		if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
 		if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
-		if(!desireddata.tagline)	desireddata.tagline=secondarydata.tagline;
 		if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
-		if(desireddata.runtime < 1) desireddata.runtime=secondarydata.runtime;
-		if(desireddata.budget < 1) desireddata.budget=secondarydata.budget;
-		if(desireddata.revenue < 1) desireddata.revenue=secondarydata.revenue;
-		if(desireddata.homepage == "") desireddata.homepage=secondarydata.homepage;
+		if(desireddata.episode_run_time[0] < 1) desireddata.episode_run_time[0]=secondarydata.episode_run_time[0];
 	}
-	$scope.prepeare_movie_data = function(movie){
-		$scope.movie=movie;
-		if(!$scope.movie.backdrop_path)	$scope.movie.backdrop_path=$scope.movie.poster_path;
-		if($scope.movie.videos.results.length>0){
-			$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.movie.videos.results[0].key);
+	$scope.prepeare_series_data = function(series){
+		$scope.series=series;
+		if(!$scope.series.backdrop_path)	$scope.series.backdrop_path=$scope.series.poster_path;
+		if($scope.series.videos.results.length>0){
+			$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
 			console.log($scope.trailerurl + ':D')
 		}
-		$scope.directors=_.where($scope.movie.credits.crew, {department:'Directing',job:"Director"});
-		$scope.writers=_.filter($scope.movie.credits.crew, function(crew){
-			return crew.job == 'Writer' || crew.job == 'Screenplay' || crew.job == 'Novel' || crew.job == 'Author';
+		$scope.directors=_.where($scope.series.credits.crew, {department:'Directing',job:"Director"}); //DENEME 1 2
+		$scope.writers=_.filter($scope.series.credits.crew, function(crew){
+			return crew.job == 'Writer' || crew.job == 'Screenplay' || crew.job == 'Novel' || crew.job == 'Author'; //DENEME 3 4
 		});
 		_.each($scope.writers, function(writer){
 			temp=_.where(jobs,{i:writer.job});
 			if(temp.length > 0)writer.job=temp[0].o;
 		});
-		if($scope.movie.title != secondarydata.title && $scope.movie.original_title != secondarydata.title) $scope.secondary_title=secondarydata.title;
+		if($scope.series.name != secondarydata.name && $scope.series.original_name != secondarydata.name) $scope.secondary_name=secondarydata.name;
 		$scope.secondary_language=_.where(languages,{i:pass.secondary_lang})[0].o;
-		$scope.fancyruntime={"hour":parseInt($scope.movie.runtime/60),"minute":$scope.movie.runtime%60};
-		$scope.fancybudget=$scope.movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		$scope.fancyrevenue=$scope.movie.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		_.each($scope.movie.reviews.results, function(review){
+		$scope.fancyruntime={"hour":parseInt($scope.series.episode_run_time[0]/60),"minute":$scope.series.episode_run_time[0]%60};
+		_.each($scope.series.reviews.results, function(review){
 			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\r\n/g , "<br>");
 			if(review.content.length>500){
 				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
@@ -127,10 +122,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				review.id='short';
 			}
 		});
-		temp=_.where(languages,{i:$scope.movie.original_language});
-		if(temp.length > 0)$scope.movie.original_language=temp[0].o;
+		temp=_.where(languages,{i:$scope.series.original_language});
+		if(temp.length > 0)$scope.series.original_language=temp[0].o;
 		console.log(countries)
-		_.each($scope.movie.production_countries, function(t){
+		_.each($scope.series.origin_country, function(t){ //production_countries
 			temp=_.where(countries,{i:t.iso_3166_1});
 			if(temp.length > 0)t.name=temp[0].o;
 		})
@@ -139,11 +134,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.current_trailer = 0;
 	$scope.previous_trailer = function(){
 		$scope.current_trailer--;
-		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.movie.videos.results[$scope.current_trailer].key);
+		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
 	}
 	$scope.next_trailer = function(){
 		$scope.current_trailer++;
-		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.movie.videos.results[$scope.current_trailer].key);
+		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
 	}
 
 
