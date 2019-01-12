@@ -91,7 +91,7 @@
         <div class="d-flex flex-column">
             <div class="px-3 px-md-0">
                 <a class="text-dark" href="/" target="_blank">
-                    <h1 class="h4 pb-2 pt-3">Game of Thrones</h1>
+                    <h1 class="h4 pb-2 pt-3">@{{series.name}}</h1>
                 </a>
             </div>
         </div>
