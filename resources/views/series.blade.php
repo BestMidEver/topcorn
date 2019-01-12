@@ -29,8 +29,8 @@
                         </div>
                         <div class="d-flex flex-row justify-content-end p-2 text-right">
                             <div ng-if="series.vote_average > 0">
-                                <div><span class="text-warning display-4 d-none d-md-inline">6.9</span><span class="text-warning h5 d-md-none">6.9</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>977</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
+                                <div><span class="text-warning display-4 d-none d-md-inline">@{{series.vote_average}}</span><span class="text-warning h5 d-md-none">@{{series.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+                                <div><span class="text-white"><small>@{{series.vote_count}}</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
                             </div>
                         </div>
                     </div>
@@ -73,8 +73,8 @@
                         </div>
                         <div class="col pb-2 pr-2 text-right">
                             <div ng-if="series.vote_average > 0">
-                                <div><span class="text-warning h4 d-none d-md-inline">6.9</span><span class="text-warning h5 d-md-none">6.9</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>977</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
+                                <div><span class="text-warning h4 d-none d-md-inline">@{{series.vote_average}}</span><span class="text-warning h5 d-md-none">@{{series.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+                                <div><span class="text-white"><small>@{{series.vote_count}}</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
                             </div>
                         </div>
                     </div>
