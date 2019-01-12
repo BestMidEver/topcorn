@@ -141,7 +141,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.current_trailer++;
 		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
 	}
-
+	console.log("seriesscope", $scope.series)
 
 
 	if(pass.is_auth==1){
