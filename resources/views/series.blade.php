@@ -112,10 +112,10 @@
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_1==1000}" ng-click="active_tab_1=1000">General Info</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_1==-1}" ng-click="active_tab_1=-1">General Info</button>
         </li>
         <li class="nav-item" ng-repeat="season in series.seasons">
-            <button class="btn btn-link nav-link text-muted active" ng-class="{'active':active_tab_1==season.season_number}" ng-click="active_tab_1=season.season_number">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_1==season.season_number}" ng-click="active_tab_1=season.season_number">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</button>
         </li>
     </ul>
 </div>
