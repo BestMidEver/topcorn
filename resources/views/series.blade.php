@@ -112,34 +112,10 @@
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">General Info</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_1==-1}" ng-click="active_tab_1=-1">General Info</button>
         </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted active">S01</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S02</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S03</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S04</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S05</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S06</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S07</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S08</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">Specials</button>
+        <li class="nav-item" ng-repeat="season in series.seasons">
+            <button class="btn btn-link nav-link text-muted active" ng-class="{'active':active_tab_1==season.season_number}" ng-click="active_tab_1=season.season_number">S@{{series.last_episode_to_air.season_number>9?series.last_episode_to_air.season_number:'0'+series.last_episode_to_air.season_number}}</button>
         </li>
     </ul>
 </div>
@@ -148,14 +124,6 @@
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active">S01</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S02</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S03</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S04</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S05</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S06</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S07</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S08</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">Specials</button>
 </div>
 <!-- Tabs Button Mobile -->
 
