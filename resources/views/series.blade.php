@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto pb-3">
+    <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto pb-4">
         <div class="d-flex flex-row justify-content-between text-center">
             <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div>Watch Later</button>
             <button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-click=""><div><span><i class="fas fa-check"></i></span></div>Seen</button>
@@ -161,7 +161,7 @@
 
 
 <!--Poster Plot Details Section-->
-<div class="row no-gutters mt-3 mt-md-4 mb-md-5">
+<div class="row no-gutters mt-3 mt-md-5 mb-md-5">
     <div class="col-12 col-md-3 col-lg-3">
         <img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{series.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
     </div>
