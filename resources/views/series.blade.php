@@ -141,11 +141,11 @@
             </div>
             <div>
                 <div class="h6 pt-1">Original Language</div>
-                <p>English</p>
+                <p>@{{series.original_language}}</p>
             </div>
-            <div>
-                <div class="h6 pt-1">Origin Country</div>
-                <p>United States of America</p>
+            <div ng-if="series.origin_country.length > 0">
+                <div class="h6 pt-1"><span ng-if="series.origin_country.length == 1">{{ __('general.producer_country') }}</span><span ng-if="series.origin_country.length > 1">{{ __('general.producer_countries') }}</span></span></div>
+                <p><span ng-repeat="country in series.origin_country"><span ng-if="$index!=0">, </span>@{{country.name}}</span></p>
             </div>
             <div>
                 <div class="h6 pt-1">Runtime</div>
