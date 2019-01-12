@@ -63,11 +63,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$scope.page_variables={};
 
-	$scope.show_general_info_last = function(season) {
-		if(season.season_number == 0) return 1000;
-		else return season.season_number;
-	};
-
 	switch(location.hash){
 		case '':
 			$scope.page_variables.active_tab_1 = -1;
