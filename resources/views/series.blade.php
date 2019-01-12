@@ -153,7 +153,7 @@
             </div>
             <div>
                 <div class="h6 pt-1">Networks</div>
-                <p>HBO</p>
+                <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
             </div>
             <div>
                 <div class="h6 pt-1">Last Episode</div>
