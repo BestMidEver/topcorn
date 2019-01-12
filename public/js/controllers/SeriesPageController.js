@@ -128,8 +128,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		_.each($scope.series.origin_country, function(t){ //production_countries
 			temp=_.where(countries,{i:t});
 			if(temp.length > 0)t=temp[0].o;
+			console.log("countries", temp)
 		})
-		console.log("countries", $scope.series.origin_country)
 	}
 
 	$scope.current_trailer = 0;
