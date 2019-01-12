@@ -243,6 +243,47 @@
 </div>
 <!--Cast Section-->
 
+<!--Review Section-->
+<div class="container-fluid px-0 mt-5"> 
+    <div class="h5 px-3 px-md-0">
+        <span class="mb-0 pr-2">{{ __('general.reviews') }}</span>
+        <a href="https://www.themoviedb.org/tv/{{$id}}/reviews" class="btn btn-outline-success" target="_blank"><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</a>
+    </div>
+    <div class="container-fluid">
+        <div ng-if="series.reviews.results.length>0" class="py-4" ng-repeat="review in series.reviews.results">
+            <div class="h6 pb-2">@{{review.author}}</div>
+            <div id="@{{'accordion'+$index}}">
+                <div ng-if="review.id == 'long'">
+                    <div id="@{{'collapse'+$index+'a'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse">
+                        <div>
+                            <div ng-bind-html="review.content"></div>
+                        </div>
+                        <div class="text-center pt-0">
+                            <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'b'}}" aria-expanded="true"><i class="fa fa-angle-up"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div id="@{{'collapse'+$index+'b'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse show">
+                        <div>
+                            <div ng-bind-html="review.url"></div>
+                        </div>
+                        <div ng-if="review.id == 'long'">
+                            <div class="text-center pt-1">
+                                <button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-5" ng-if="!series.reviews.results.length>0">
+        <div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
+    </div>
+</div>
+<!--Review Section-->
+
 
 
 
