@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto pb-4">
+    <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto pb-5">
         <div class="d-flex flex-row justify-content-between text-center">
             <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div>Watch Later</button>
             <button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addseen" ng-click=""><div><span><i class="fas fa-check"></i></span></div>Seen</button>
