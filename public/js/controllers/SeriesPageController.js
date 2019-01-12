@@ -61,7 +61,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 
 	$scope.temp={};
-	$http({
+	/*$http({
 		method: 'GET',
 		url: 'https://api.themoviedb.org/3/movie/'+77+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews'
 	}).then(function successCallback(response) {
@@ -92,7 +92,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}, function errorCallback(response) {
 			console.log('1')
 		//window.location.replace("/not-found");
-	});
+	});*/
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$http({
