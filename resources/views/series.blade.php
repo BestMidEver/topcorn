@@ -151,17 +151,9 @@
                 <div class="h6 pt-1">{{ __('general.runtime') }}</div>
                 <p>@{{series.episode_run_time[0]}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
             </div>
-            <div>
+            <div ng-if="series.networks > 0">
                 <div class="h6 pt-1">Networks</div>
                 <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
-            </div>
-            <div>
-                <div class="h6 pt-1">Last Episode</div>
-                <p><a class="text-dark" href="/" target="_blank">Apocalypse Then</a> <span class="small text-muted">(05/10/2011)</span></p>
-            </div>
-            <div>
-                <div class="h6 pt-1">Next Episode</div>
-                <p><a class="text-dark" href="/" target="_blank">Episode 1</a> <span class="small text-muted">(07/04/2019)</span></p>
             </div>
         </div>
     </div>
