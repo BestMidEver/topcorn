@@ -23,7 +23,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 	$http({
 		method: 'GET',
-		url: '/api/get_movie_lists/'+pass.movieid,
+		url: '/api/get_movie_lists/'+77,
 		headers: {
 			'Content-Type': 'application/json',
 			'Accept' : 'application/json'
@@ -42,7 +42,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	if(pass.is_auth == 1){
 		$http({
 			method: 'GET',
-			url: '/api/get_user_movie_record/'+pass.movieid
+			url: '/api/get_user_movie_record/'+77
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('ban_id')){
 				$scope.user_movie_record = response.data;
@@ -63,7 +63,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.temp={};
 	$http({
 		method: 'GET',
-		url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews'
+		url: 'https://api.themoviedb.org/3/movie/'+77+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews'
 	}).then(function successCallback(response) {
 		desireddata=response.data;
 		console.log('desired_data',desireddata);
@@ -79,7 +79,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}
 		$http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
+			url: 'https://api.themoviedb.org/3/movie/'+77+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
 		}).then(function successCallback(response) {
 			secondarydata=response.data;
 			console.log('secondary_data',secondarydata);
@@ -113,7 +113,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}
 		$http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
+			url: 'https://api.themoviedb.org/3/movie/'+77+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
 		}).then(function successCallback(response) {
 			secondarydata=response.data;
 			console.log('secondary_data',secondarydata);
