@@ -3,6 +3,59 @@
 @include('head.head_series')
 
 @section('body')
+
+<!-- Tabs Button -->
+<div class="container-fluid p-0 d-none d-md-inline">
+    <ul class="nav justify-content-md-center tab1">
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">General Info</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted active">S01</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">S02</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">S03</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">S04</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">S05</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">S06</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">S07</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">S08</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted">Specials</button>
+        </li>
+    </ul>
+</div>
+<!-- Tabs Button -->
+
+<!-- Tabs Button Mobile -->
+<div class="scrollmenu d-md-none tab2">
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active">S01</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S02</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S03</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S04</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S05</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S06</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S07</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S08</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">Specials</button>
+</div>
+<!-- Tabs Button Mobile -->
+
+
 <!--Trailer Section-->
 <div class="mt-md-4">
     <div class="position-relative">
@@ -106,58 +159,6 @@
     </div>
 </div>
 <!--Under Trailer Section-->
-
-
-<!-- Tabs Button -->
-<div class="container-fluid p-0 d-none d-md-inline">
-    <ul class="nav justify-content-md-center tab1">
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">General Info</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted active">S01</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S02</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S03</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S04</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S05</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S06</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S07</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S08</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">Specials</button>
-        </li>
-    </ul>
-</div>
-<!-- Tabs Button -->
-
-<!-- Tabs Button Mobile -->
-<div class="scrollmenu d-md-none tab2">
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active">S01</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S02</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S03</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S04</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S05</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S06</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S07</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S08</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">Specials</button>
-</div>
-<!-- Tabs Button Mobile -->
 
 
 <!--Poster Plot Details Section-->
