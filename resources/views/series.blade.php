@@ -159,9 +159,9 @@
                 <div class="h6 pt-1">Last Episode</div>
                 <p>S@{{series.last_episode_to_air.season_number>9?series.last_episode_to_air.season_number:'0'+series.last_episode_to_air.season_number}}E@{{series.last_episode_to_air.episode_number>9?series.last_episode_to_air.episode_number:'0'+series.last_episode_to_air.episode_number}} <span class="small text-muted">(@{{series.last_episode_to_air.air_date}})</span></p>
             </div>
-            <div ng-if="series.next_episode_to_air > 0">
-                <div class="h6 pt-1">Next Episode Air Date</div>
-                <p>@{{series.last_episode_to_air}}</p>
+            <div ng-if="series.next_episode_to_air">
+                <div class="h6 pt-1">Last Episode</div>
+                <p>S@{{series.next_episode_to_air.season_number>9?series.next_episode_to_air.season_number:'0'+series.next_episode_to_air.season_number}}E@{{series.next_episode_to_air.episode_number>9?series.next_episode_to_air.episode_number:'0'+series.next_episode_to_air.episode_number}} <span class="small text-muted">(@{{series.next_episode_to_air.air_date}})</span></p>
             </div>
         </div>
     </div>
