@@ -115,7 +115,7 @@
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_1==-1}" ng-click="active_tab_1=-1">General Info</button>
         </li>
         <li class="nav-item" ng-repeat="season in series.seasons">
-            <button class="btn btn-link nav-link text-muted active" ng-class="{'active':active_tab_1==season.season_number}" ng-click="active_tab_1=season.season_number">S@{{series.last_episode_to_air.season_number>9?series.last_episode_to_air.season_number:'0'+series.last_episode_to_air.season_number}}</button>
+            <button class="btn btn-link nav-link text-muted active" ng-class="{'active':active_tab_1==season.season_number}" ng-click="active_tab_1=season.season_number">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</button>
         </li>
     </ul>
 </div>
