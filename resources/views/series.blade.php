@@ -131,14 +131,14 @@
     <div class="col-9 col-lg-3">
         <div class="container-fluid">
             <div class="h5 d-none d-lg-inline">Details</div>
-            <div>
-                <div class="h6 pt-2">Hungarian Title</div>
-                <a class="text-dark" href="/" target="_blank"><p>Amerikai Horror Story</p></a>
+            <div ng-if="series.original_name.length > 0">
+                <div class="h6 pt-2">{{ __('general.original_name') }}</div>
+                <a class="text-dark" ng-href="http://www.google.com/search?q=@{{series.original_name}}" target="_blank"><p>@{{series.original_name}}</p></a>
             </div>
-            <!--<div ng-if="series.original_title.length > 0">
-                <div class="h6 pt-2">Original Title</div>
-                <a class="text-dark" href="" target="_blank"><p>American Horror Story</p></a>
-            </div>-->
+            <div ng-if="secondary_name.length > 0">
+                <div class="h6 pt-1">@{{secondary_language}} {{ __('general.its_title') }}</div>
+                <a class="text-dark" ng-href="http://www.google.com/search?q=@{{secondary_name}}" target="_blank"><p>@{{secondary_name}}</p></a>
+            </div>
             <div>
                 <div class="h6 pt-1">Original Language</div>
                 <p>English</p>
