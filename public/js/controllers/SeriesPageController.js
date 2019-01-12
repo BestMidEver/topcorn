@@ -1,5 +1,5 @@
 MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScroll, rate)
-{console.log(":DDÖÖÖÖÇÇÇ")
+{
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP /////////////////////////////////// CHECKED
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -60,40 +60,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		});
 	}
 
-	$scope.temp={};
-	$http({
-		method: 'GET',
-		url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews'
-	}).then(function successCallback(response) {
-		desireddata=response.data;
-		console.log('desired_data',desireddata);
-		if(desireddata.belongs_to_collection != null){
-			$http({
-				method: 'GET',
-				url: 'https://api.themoviedb.org/3/collection/'+desireddata.belongs_to_collection.id+'?api_key='+pass.api_key+'&language='+pass.lang
-			}).then(function successCallback(response) {
-				$scope.collection=_.sortBy(response.data.parts, 'release_date');
-				console.log('collection', $scope.collection);
-			}, function errorCallback(response) {
-			});
-		}
-		$http({
-			method: 'GET',
-			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
-		}).then(function successCallback(response) {
-			secondarydata=response.data;
-			console.log('secondary_data',secondarydata);
-			$scope.merge_movie_data(desireddata, secondarydata);
-			$scope.prepeare_movie_data(desireddata);
-		}, function errorCallback(response) {
-			console.log('1')
-			//window.location.replace("/not-found");
-		});
-	}, function errorCallback(response) {
-			console.log('1')
-		//window.location.replace("/not-found");
-	});
-
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$http({
 		method: 'GET',
@@ -101,31 +67,21 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}).then(function successCallback(response) {
 		desireddata=response.data;
 		console.log('SERIES_desired_data',desireddata);
-		/*if(desireddata.belongs_to_collection != null){
-			$http({
-				method: 'GET',
-				url: 'https://api.themoviedb.org/3/collection/'+desireddata.belongs_to_collection.id+'?api_key='+pass.api_key+'&language='+pass.lang
-			}).then(function successCallback(response) {
-				$scope.collection=_.sortBy(response.data.parts, 'release_date');
-				console.log('collection', $scope.collection);
-			}, function errorCallback(response) {
-			});
-		}
 		$http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
+			url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
 		}).then(function successCallback(response) {
 			secondarydata=response.data;
-			console.log('secondary_data',secondarydata);
+			console.log('SERIES_secondary_data',secondarydata);
 			$scope.merge_movie_data(desireddata, secondarydata);
 			$scope.prepeare_movie_data(desireddata);
 		}, function errorCallback(response) {
-			console.log('1')
-			//window.location.replace("/not-found");
-		});*/
+			console.log('error2')
+			window.location.replace("/not-found");
+		});
 	}, function errorCallback(response) {
-			console.log('error')
-		//window.location.replace("/not-found");
+		console.log('error1')
+		window.location.replace("/not-found");
 	});
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 
