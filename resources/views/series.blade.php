@@ -148,7 +148,7 @@
                 <p><span ng-repeat="country in series.countries"><span ng-if="$index!=0">, </span>@{{country}}</span></p>
             </div>
             <div ng-if="series.episode_run_time[0] > 0">
-                <div class="h6 pt-1">{{ __('general.episode_run_time[0]') }}</div>
+                <div class="h6 pt-1">{{ __('general.runtime') }}</div>
                 <p>@{{series.episode_run_time[0]}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
             </div>
             <div>
