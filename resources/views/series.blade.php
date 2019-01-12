@@ -109,7 +109,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid p-0 d-none d-md-inline">
+<div class="container-fluid mt-3 p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted">General Info</button>
