@@ -168,6 +168,94 @@
 </div>
 <!--Poster Plot Details Section-->
 
+
+<!--Cast Section-->
+<div class="container-fluid px-0 mt-5" id="cast" ng-if="series.credits.cast.length > 0">
+    <div class="px-3 px-md-0"><div class="h5">{{ __('general.actors') }}</div></div>
+    <div class="">
+        <div class="d-flex flex-wrap">
+            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.credits.cast | limitTo:6">
+                <div class="card moviecard h-100 d-flex flex-column justify-content-between">
+                    <a href="/person/@{{person.id}}" target={{$target}}>
+                        <img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+                        <div class="card-block text-center">
+                            <h6 class="card-title px-1 pt-1 text-dark">@{{person.name}}</h6>
+                        </div>
+                    </a>
+                    <div class="card-title px-1 text-muted text-center mb-0"><small>@{{person.character}}</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="collapse" id="collapseCast">
+        <div ng-if="series.credits.cast.length > 6">
+            <div class="d-flex flex-wrap">
+                <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.credits.cast | limitTo:100:6">
+                    <div class="card moviecard h-100 d-flex flex-column justify-content-between">
+                        <a href="/person/@{{person.id}}" target={{$target}}>
+                            <img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+                            <div class="card-block text-center">
+                                <h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
+                            </div>
+                        </a>
+                        <div class="card-title px-1 text-muted text-center mb-0"><small ng-if="person.character.length > 0">@{{person.character}}</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @if(Auth::check())
+            @if(Auth::User()->show_crew)
+        <div class="px-3 px-md-0 mt-5" ng-if="series.credits.crew.length > 0"><div class="h5">{{ __('general.crew') }}</div></div>
+        <div ng-if="series.credits.crew.length > 0">
+            <div class="d-flex flex-wrap">
+                <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.credits.crew">
+                    <div class="card moviecard h-100 d-flex flex-column justify-content-between">
+                        <a href="/person/@{{person.id}}" target={{$target}}>
+                            <img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+                            <div class="card-block text-center">
+                                <h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
+                            </div>
+                        </a>
+                        <div class="card-title px-1 text-muted text-center mb-0"><small ng-if="person.job.length > 0">@{{person.job}}</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            @endif
+        @endif
+    </div>
+    @if(Auth::check())
+        @if(Auth::User()->show_crew)
+    <div ng-if="series.credits.cast.length > 6 || series.credits.crew.length > 0">
+        @else
+    <div ng-if="series.credits.cast.length > 6">
+        @endif
+    @else
+    <div ng-if="series.credits.cast.length > 6">
+    @endif
+        <div class="text-center pt-1" ng-hide="iscast">
+            <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseCast"><small>{{ __('general.show_everyone') }}</small></button>
+        </div>
+        <div class="text-center pt-1" ng-show="iscast">
+            <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseCast"><i class="fa fa-angle-up"></i></button>
+        </div>
+    </div>
+</div>
+<!--Cast Section-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Tabs Button -->
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
