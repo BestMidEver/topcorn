@@ -132,7 +132,7 @@
         <div class="container-fluid">
             <div class="h5 d-none d-lg-inline">Details</div>
             <div ng-if="series.original_name.length > 0">
-                <div class="h6 pt-2">{{ __('general.original_name') }}</div>
+                <div class="h6 pt-2">{{ __('general.original_title') }}</div>
                 <a class="text-dark" ng-href="http://www.google.com/search?q=@{{series.original_name}}" target="_blank"><p>@{{series.original_name}}</p></a>
             </div>
             <div ng-if="secondary_name.length > 0">
