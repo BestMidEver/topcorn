@@ -76,6 +76,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log('SERIES_secondary_data',secondarydata);
 			$scope.merge_series_data(desireddata, secondarydata);
 			$scope.prepeare_series_data(desireddata);
+	console.log("seriesscope", $scope.series)
 		}, function errorCallback(response) {
 			console.log('error2')
 			window.location.replace("/not-found");
@@ -84,7 +85,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		console.log('error1')
 		window.location.replace("/not-found");
 	});
-	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 
 	$scope.merge_series_data = function(desireddata, secondarydata){
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
@@ -141,7 +141,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.current_trailer++;
 		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
 	}
-	console.log("seriesscope", $scope.series)
 
 
 	if(pass.is_auth==1){
