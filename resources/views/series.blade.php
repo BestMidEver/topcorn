@@ -114,7 +114,7 @@
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1">General Info</button>
         </li>
-        <li class="nav-item" ng-repeat="season in series.seasons">
+        <li class="nav-item" ng-repeat="season in series.seasons | orderBy:show_general_info_last">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</button>
         </li>
     </ul>
