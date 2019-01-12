@@ -93,7 +93,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		console.log(desireddata.reviews)
 		if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
 		if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
-		if(desireddata.episode_run_time[0] < 1) desireddata.episode_run_time[0]=secondarydata.episode_run_time[0];
 	}
 	$scope.prepeare_series_data = function(series){
 		$scope.series=series;
