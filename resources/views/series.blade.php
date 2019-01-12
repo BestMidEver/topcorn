@@ -115,15 +115,15 @@
     </div>
     <div class="col-12 col-md-9 col-lg-6">
         <div class="container-fluid">
-            <p class="h6 pt-3 pt-md-0">2011 • Drama, Mystery, Sci-Fi & Fantasy</p>
-            <div class="pt-2"><p>An anthology horror drama series centering on different characters and locations, including a house with a murderous past, an asylum, a witch coven, a freak show, a hotel, a farmhouse in Roanoke and a cult.</p></div>
+            <p class="h6 pt-3 pt-md-0">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
+            <div class="pt-2" ng-if="series.overview.length > 0 && series.overview != 'No overview found.'"><p>@{{series.overview}}</p></div>
             <div>
                 <div class="h6 pt-1"><span>Creators</span></div>
-                <p><span class="d-inline"><a href="/" target={{$target}} class="text-dark">Ryan Murphy</a></span>, <span class="d-inline"><a href="/" target={{$target}} class="text-dark">Brad Falchuk</a></span></p>
+                <p><span class="d-inline" ng-repeat="creator in created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
             <div>
                 <div class="h6 pt-1"><span>Status</span></div>
-                <p><span class="d-inline">Returning Series</span></p>
+                <p><span class="d-inline">@{{series.status}}</span></p>
             </div>
         </div>
     </div>
