@@ -119,7 +119,7 @@
             <div class="pt-2" ng-if="series.overview.length > 0 && series.overview != 'No overview found.'"><p>@{{series.overview}}</p></div>
             <div>
                 <div class="h6 pt-1"><span>Creators</span></div>
-                <p><span class="d-inline" ng-repeat="creator in created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
+                <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
             <div>
                 <div class="h6 pt-1"><span>Status</span></div>
