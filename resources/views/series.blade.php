@@ -17,27 +17,27 @@
                             </div>
                             <div class="col p-2 text-right">
                                 <div ng-if="user_movie_record.percent > 0">
-                                    <small class="text-white">According to your taste</small>
+                                    <small class="text-white">{{ __("general.according_to_your_taste") }}</small>
                                     <div>
                                         <span class="text-warning display-4 d-none d-md-inline">%72</span><span class="text-warning h5 d-md-none">%72</span><span class="text-white"> <small>match</small></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex flex-row justify-content-center" ng-if="movie.videos.results.length > 0">
+                        <div class="d-flex flex-row justify-content-center" ng-if="series.videos.results.length > 0">
                             <button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>Videos</small></button>
                         </div>
                         <div class="d-flex flex-row justify-content-end p-2 text-right">
-                            <div ng-if="movie.vote_average > 0">
+                            <div ng-if="series.vote_average > 0">
                                 <div><span class="text-warning display-4 d-none d-md-inline">6.9</span><span class="text-warning h5 d-md-none">6.9</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>977</small></span><span class="text-white"> <small><span ng-if="movie.vote_count > 1">votes</span></small></span></div>
+                                <div><span class="text-white"><small>977</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="movie.videos.results.length > 0">
+                <div id="collapseFragman" class="collapse" data-parent="#accordion" ng-if="series.videos.results.length > 0">
                     <div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
                         <div class="col">
                             <div class="h-100 d-flex flex-column justify-content-center pl-2">
@@ -58,9 +58,9 @@
                     <div class="d-flex flex-row background-black no-gutters">
                         <div class="col">
                             <div class="h-100 d-flex flex-column justify-content-center pl-2">
-                                <div ng-if="movie.videos.results.length > 1">
+                                <div ng-if="series.videos.results.length > 1">
                                     <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
-                                    <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == movie.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
+                                    <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == series.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +72,9 @@
                             </div>
                         </div>
                         <div class="col pb-2 pr-2 text-right">
-                            <div ng-if="movie.vote_average > 0">
+                            <div ng-if="series.vote_average > 0">
                                 <div><span class="text-warning h4 d-none d-md-inline">6.9</span><span class="text-warning h5 d-md-none">6.9</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>977</small></span><span class="text-white"> <small><span ng-if="movie.vote_count > 1">votes</span></small></span></div>
+                                <div><span class="text-white"><small>977</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                 <div class="h6 pt-2">Hungarian Title</div>
                 <a class="text-dark" href="/" target="_blank"><p>Amerikai Horror Story</p></a>
             </div>
-            <!--<div ng-if="movie.original_title.length > 0">
+            <!--<div ng-if="series.original_title.length > 0">
                 <div class="h6 pt-2">Original Title</div>
                 <a class="text-dark" href="" target="_blank"><p>American Horror Story</p></a>
             </div>-->
