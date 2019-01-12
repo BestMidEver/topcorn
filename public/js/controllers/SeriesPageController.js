@@ -61,9 +61,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
+	$scope.page_variables={};
+
 	switch(location.hash){
 		case '':
-			$scope.active_tab_1 = -1;
+			$scope.page_variables.active_tab_1 = -1;
 			break;
 	}
 
