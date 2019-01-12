@@ -14,6 +14,7 @@
                         <div class="d-flex flex-row no-gutters">
                             <div class="col pt-2 pl-2">
                                 <span class="text-white h6 lead lead-small">8 Seasons - 94 Episodes</span>
+                                <div>Last Seen Episode: S02E11</div>
                             </div>
                             <div class="col p-2 text-right">
                                 <div ng-if="user_movie_record.percent > 0">
