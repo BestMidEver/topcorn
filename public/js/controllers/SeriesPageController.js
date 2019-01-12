@@ -129,7 +129,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		_.each($scope.series.origin_country, function(t){ //production_countries
 			temp=_.where(countries,{i:t});
 			if(temp.length > 0)$scope.series.countries.push(temp[0].o);
-			console.log("countries", temp)
 		})
 	}
 

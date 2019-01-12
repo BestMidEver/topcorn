@@ -145,7 +145,7 @@
             </div>
             <div ng-if="series.countries.length > 0">
                 <div class="h6 pt-1"><span ng-if="series.countries.length == 1">Origin Country</span><span ng-if="series.countries.length > 1">Origin Countries</span></span></div>
-                <p><span ng-repeat="country in series.countries"><span ng-if="$index!=0">, </span>@{{country.name}}</span></p>
+                <p><span ng-repeat="country in series.countries"><span ng-if="$index!=0">, </span>@{{country}}</span></p>
             </div>
             <div>
                 <div class="h6 pt-1">Runtime</div>
