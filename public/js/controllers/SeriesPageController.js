@@ -64,7 +64,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.temp={};
 	$http({
 		method: 'GET',
-		url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews%2external_ids'
+		url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews%2Cexternal_ids'
 	}).then(function successCallback(response) {
 		desireddata=response.data;
 		console.log('SERIES_desired_data',desireddata);
@@ -90,6 +90,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
 		if(!desireddata.overview) desireddata.overview=secondarydata.overview; //DAHA SONRA 2. DE GÖSTERİLECEK
 		if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
+		console.log(desireddata.reviews)
 		if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
 		if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
 		if(desireddata.episode_run_time[0] < 1) desireddata.episode_run_time[0]=secondarydata.episode_run_time[0];
