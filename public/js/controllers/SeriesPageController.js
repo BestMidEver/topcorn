@@ -76,7 +76,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log('SERIES_secondary_data',secondarydata);
 			$scope.merge_series_data(desireddata, secondarydata);
 			$scope.prepeare_series_data(desireddata);
-	console.log("seriesscope", $scope.series)
+			console.log("seriesscope", $scope.series)
 		}, function errorCallback(response) {
 			console.log('error2')
 			window.location.replace("/not-found");
