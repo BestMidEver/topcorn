@@ -66,7 +66,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.active_tab_1 = -1;
 			break;
 	}
-	console.log=($scope.active_tab_1, 123123123)
+	console.log($scope.active_tab_1, 123123123)
 
 	$scope.temp={};
 	$http({
