@@ -76,7 +76,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	var is_loading = true;
 	$scope.pull_data = function(mode){
 		is_loading = true;
-		if(mode == 'seasons'){
+		if(mode != 'videos'){
 			if($scope.page_variables.active_tab_1 == -1){
 				api_spice = '';
 				append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids';
