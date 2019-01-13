@@ -100,7 +100,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log('SERIES_desired_data',desireddata);
 			$http({
 				method: 'GET',
-				url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response='+append_to_response_2
+				url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+api_spice+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response='+append_to_response_2
 			}).then(function successCallback(response) {
 				secondarydata=response.data;
 				console.log('SERIES_secondary_data',secondarydata);
