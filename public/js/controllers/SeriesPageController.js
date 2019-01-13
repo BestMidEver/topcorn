@@ -111,11 +111,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				console.log("seriesscope", $scope.series)
 			}, function errorCallback(response) {
 				console.log('error2')
-				window.location.replace("/not-found");
+				//window.location.replace("/not-found");
 			});
 		}, function errorCallback(response) {
 			console.log('error1')
-			window.location.replace("/not-found");
+			//window.location.replace("/not-found");
 		});
 	}
 	$scope.pull_data('seasons');
