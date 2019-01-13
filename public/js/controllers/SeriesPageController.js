@@ -81,12 +81,12 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids';
 				append_to_response_2 = 'videos%2Creviews';
 			}else{
-				api_spice = '/season'+$scope.page_variables.active_tab_1;
+				api_spice = '/season/'+$scope.page_variables.active_tab_1;
 				append_to_response_1 = 'credits%2Cvideos';
 				append_to_response_2 = 'videos';
 			}
 		}else{
-			api_spice = '/season'+$scope.page_variables.active_tab_1+'/episode'+$scope.page_variables.active_tab_2;
+			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode'+$scope.page_variables.active_tab_2;
 			append_to_response_1 = 'credits%2Cvideos';
 			append_to_response_2 = 'videos';
 
