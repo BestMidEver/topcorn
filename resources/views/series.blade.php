@@ -122,8 +122,8 @@
 <!-- Tabs_1 Button -->
 
 
-<!-- Tabs_1 Button -->
-<div class="container-fluid p-0 d-none d-md-inline">
+<!-- Tabs_2 Button -->
+<div class="container-fluid p-0 d-none d-md-inline" ng-if="page_variables.active_tab_1!=-1">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data('episodes')">Season Info</button>
@@ -133,7 +133,7 @@
         </li>
     </ul>
 </div>
-<!-- Tabs_1 Button -->
+<!-- Tabs_2 Button -->
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
