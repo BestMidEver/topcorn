@@ -70,29 +70,62 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 
 	$scope.temp={};
-	$http({
-		method: 'GET',
-		url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews%2Cexternal_ids'
-	}).then(function successCallback(response) {
-		desireddata=response.data;
-		console.log('SERIES_desired_data',desireddata);
+	var api_spice, append_to_response_1, append_to_response_2;
+	var is_new = true;
+	var is_loading = true;
+	$scope.pull_data = function(mode){
+		is_loading = true;
+		if(mode == 'seasons'){
+			if($scope.page_variables.active_tab_1 == -1){
+				api_spice = '';
+				append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids';
+				append_to_response_2 = 'videos%2Creviews';
+			}else{
+				api_spice = '/season'+$scope.page_variables.active_tab_1;
+				append_to_response_1 = 'credits%2Cvideos';
+				append_to_response_2 = 'videos';
+			}
+		}else{
+			api_spice = '/season'+$scope.page_variables.active_tab_1+'/episode'+$scope.page_variables.active_tab_2;
+			append_to_response_1 = 'credits%2Cvideos';
+			append_to_response_2 = 'videos';
+
+		}
+
 		$http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
+			url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+api_spice+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response='+append_to_response_1
 		}).then(function successCallback(response) {
-			secondarydata=response.data;
-			console.log('SERIES_secondary_data',secondarydata);
-			$scope.merge_series_data(desireddata, secondarydata);
-			$scope.prepeare_series_data(desireddata);
-			console.log("seriesscope", $scope.series)
+			desireddata=response.data;
+			console.log('SERIES_desired_data',desireddata);
+			$http({
+				method: 'GET',
+				url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response='+append_to_response_2
+			}).then(function successCallback(response) {
+				secondarydata=response.data;
+				console.log('SERIES_secondary_data',secondarydata);
+				$scope.merge_series_data(desireddata, secondarydata);
+				$scope.prepeare_series_data(desireddata);
+				implement_static_data();
+				is_loading = false;
+				console.log("seriesscope", $scope.series)
+			}, function errorCallback(response) {
+				console.log('error2')
+				window.location.replace("/not-found");
+			});
 		}, function errorCallback(response) {
-			console.log('error2')
+			console.log('error1')
 			window.location.replace("/not-found");
 		});
-	}, function errorCallback(response) {
-		console.log('error1')
-		window.location.replace("/not-found");
-	});
+	}
+	$scope.pull_data('seasons');
+
+	var implement_static_data = function(){
+		if(is_new){
+			console.log('isd workds')
+			is_new = false;
+		}
+	}
 
 	$scope.merge_series_data = function(desireddata, secondarydata){
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
