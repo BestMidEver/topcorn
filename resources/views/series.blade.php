@@ -108,18 +108,32 @@
 <!--Under Trailer Section-->
 
 
-<!-- Tabs Button -->
+<!-- Tabs_1 Button -->
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1">General Info</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
         </li>
         <li class="nav-item" ng-repeat="season in series.seasons">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
         </li>
     </ul>
 </div>
-<!-- Tabs Button -->
+<!-- Tabs_1 Button -->
+
+
+<!-- Tabs_1 Button -->
+<div class="container-fluid p-0 d-none d-md-inline">
+    <ul class="nav justify-content-md-center tab1">
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
+        </li>
+        <li class="nav-item" ng-repeat="episode in season_info.episodes">
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==season.episode_number}" ng-click="page_variables.active_tab_2=season.episode_number;pull_data()"><span>E@{{season.episode_number>9?season.episode_number:'0'+season.episode_number}}</span></button>
+        </li>
+    </ul>
+</div>
+<!-- Tabs_1 Button -->
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu d-md-none tab2">

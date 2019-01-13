@@ -122,7 +122,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 	var implement_static_data = function(){
 		if(is_new){
-			console.log('isd workds')
 			is_new = false;
 		}
 	}
@@ -131,7 +130,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
 		if(!desireddata.overview) desireddata.overview=secondarydata.overview; //DAHA SONRA 2. DE GÖSTERİLECEK
 		if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
-		console.log(desireddata.reviews)
 		if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
 		if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
 	}
