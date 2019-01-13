@@ -66,6 +66,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	switch(location.hash){
 		case '':
 			$scope.page_variables.active_tab_1 = -1;
+			$scope.page_variables.active_tab_2 = -1;
 			break;
 	}
 
