@@ -123,7 +123,7 @@
 
 
 <!-- Tabs_2 Button -->
-<div class="container-fluid p-0 d-none d-md-inline" ng-if="page_variables.active_tab_1!=-1">
+<div class="container-fluid p-0 d-none d-md-inline" ng-show="page_variables.active_tab_1!=-1">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
