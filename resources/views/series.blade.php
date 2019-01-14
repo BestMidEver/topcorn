@@ -150,7 +150,7 @@
     <div class="col-12 col-md-9 col-lg-6">
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==1">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
-            <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=-1&&page_variables.active_tab_2==-1">@{{series.name}}</p>
+            <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=-1">@{{series.name}}</p>
             <div class="pt-2" ng-if="series.overview.length > 0 && series.overview != 'No overview found.'"><p>@{{series.overview}}</p></div>
             <div ng-if="page_variables.active_tab_1==-1">
                 <div class="h6 pt-1"><span>Creators</span></div>
@@ -197,6 +197,18 @@
             <div ng-if="series.next_episode_to_air">
                 <div class="h6 pt-1">Next Episode</div>
                 <p>S@{{series.next_episode_to_air.season_number>9?series.next_episode_to_air.season_number:'0'+series.next_episode_to_air.season_number}}E@{{series.next_episode_to_air.episode_number>9?series.next_episode_to_air.episode_number:'0'+series.next_episode_to_air.episode_number}} <span class="small text-muted">(@{{series.next_episode_to_air.air_date}})</span></p>
+            </div>
+            <div ng-if="page_variables.active_tab_1!=-1">
+                <div class="h6 pt-1">First Episode</div>
+                <p>@{{series.air_date}}</p>
+            </div>
+            <div ng-if="page_variables.active_tab_1!=-1">
+                <div class="h6 pt-1">Finale Date</div>
+                <p>@{{series.episodes[series.episodes.length-1].air_date}}</p>
+            </div>
+            <div ng-if="page_variables.active_tab_1!=-1">
+                <div class="h6 pt-1">Episodes</div>
+                <p>@{{series.episodes.length}}</p>
             </div>
         </div>
     </div>
