@@ -111,12 +111,16 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 	$scope.pull_data();
 	switch(location.hash){
-		case '':
+		case 'watch-later':
+			$scope.page_variables.active_tab_1 = -2;
+			$scope.page_variables.active_tab_2 = -3;
+			break;
+		default:
 			$scope.page_variables.active_tab_1 = -1;
 			$scope.page_variables.active_tab_2 = -1;
 			break;
 	}
-	$scope.pull_data();
+	if($scope.page_variables.active_tab_1 != -1) $scope.pull_data();
 
 	$scope.implement_static_data = function(){
 		if($scope.page_variables.active_tab_1 = -1){
