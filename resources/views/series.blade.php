@@ -129,7 +129,7 @@
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
         </li>
         <li class="nav-item" ng-repeat="episode in seasons.episodes">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==season.episode_number}" ng-click="page_variables.active_tab_2=season.episode_number;pull_data()"><span>E@{{season.episode_number>9?season.episode_number:'0'+season.episode_number}}</span></button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==episode.episode_number}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
         </li>
     </ul>
 </div>
