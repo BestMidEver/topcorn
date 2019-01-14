@@ -149,8 +149,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}
 	}
 	$scope.prepeare_series_data = function(series){
-		console.log('active_tab_1', $scope.page_variables.active_tab_1, 'active_tab_2', $scope.page_variables.active_tab_2)
 		if($scope.page_variables.active_tab_1 == -1 || $scope.page_variables.active_tab_2 == -1){
+		console.log('active_tab_1', $scope.page_variables.active_tab_1, 'active_tab_2', $scope.page_variables.active_tab_2)
 			$scope.series=series;
 			if(!$scope.series.backdrop_path) $scope.series.backdrop_path=$scope.series.poster_path;
 			if($scope.series.videos.results.length>0){
