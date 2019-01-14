@@ -187,7 +187,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(temp.length > 0)$scope.series.countries.push(temp[0].o);
 			})
 		}else if($scope.page_variables.active_tab_2 != -1){
-			$scope.series.videos=series.results;
+			$scope.series.videos.results=series.results;
 			console.log($scope.series, series.results)
 			if($scope.series.videos.results.length>0){
 				$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
