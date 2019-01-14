@@ -148,39 +148,43 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}
 	}
 	$scope.prepeare_series_data = function(series){
-		$scope.series=series;
-		if(!$scope.series.backdrop_path) $scope.series.backdrop_path=$scope.series.poster_path;
-		if($scope.series.videos.results.length>0){
-			$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
-		}
-		$scope.directors=_.where($scope.series.credits.crew, {department:'Directing',job:"Director"});
-		$scope.writers=_.filter($scope.series.credits.crew, function(crew){
-			return crew.job == 'Writer' || crew.job == 'Screenplay' || crew.job == 'Novel' || crew.job == 'Author';
-		});
-		_.each($scope.writers, function(writer){
-			temp=_.where(jobs,{i:writer.job});
-			if(temp.length > 0)writer.job=temp[0].o;
-		});
-		if($scope.series.name != secondarydata.name && $scope.series.original_name != secondarydata.name) $scope.secondary_name=secondarydata.name;
-		$scope.secondary_language=_.where(languages,{i:pass.secondary_lang})[0].o;
-		$scope.fancyruntime={"hour":parseInt($scope.series.episode_run_time[0]/60),"minute":$scope.series.episode_run_time[0]%60};
-		_.each($scope.series.reviews.results, function(review){
-			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\r\n/g , "<br>");
-			if(review.content.length>500){
-				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
-				review.id='long';
-			}else{
-				review.url=review.content;
-				review.id='short';
+		if($scope.page_variables.active_tab_1 == -1 || $scope.page_variables.active_tab_2 == -1){
+			$scope.series=series;
+			if(!$scope.series.backdrop_path) $scope.series.backdrop_path=$scope.series.poster_path;
+			if($scope.series.videos.results.length>0){
+				$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
 			}
-		});
-		temp=_.where(languages,{i:$scope.series.original_language});
-		if(temp.length > 0)$scope.series.original_language=temp[0].o;
-		$scope.series.countries=[];
-		_.each($scope.series.origin_country, function(t){
-			temp=_.where(countries,{i:t});
-			if(temp.length > 0)$scope.series.countries.push(temp[0].o);
-		})
+			if($scope.series.name != secondarydata.name && $scope.series.original_name != secondarydata.name) $scope.secondary_name=secondarydata.name;
+		}
+		if($scope.page_variables.active_tab_1 == -1){
+			$scope.directors=_.where($scope.series.credits.crew, {department:'Directing',job:"Director"});
+			$scope.writers=_.filter($scope.series.credits.crew, function(crew){
+				return crew.job == 'Writer' || crew.job == 'Screenplay' || crew.job == 'Novel' || crew.job == 'Author';
+			});
+			_.each($scope.writers, function(writer){
+				temp=_.where(jobs,{i:writer.job});
+				if(temp.length > 0)writer.job=temp[0].o;
+			});
+			$scope.secondary_language=_.where(languages,{i:pass.secondary_lang})[0].o;
+			$scope.fancyruntime={"hour":parseInt($scope.series.episode_run_time[0]/60),"minute":$scope.series.episode_run_time[0]%60};
+			_.each($scope.series.reviews.results, function(review){
+				review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\r\n/g , "<br>");
+				if(review.content.length>500){
+					review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
+					review.id='long';
+				}else{
+					review.url=review.content;
+					review.id='short';
+				}
+			});
+			temp=_.where(languages,{i:$scope.series.original_language});
+			if(temp.length > 0)$scope.series.original_language=temp[0].o;
+			$scope.series.countries=[];
+			_.each($scope.series.origin_country, function(t){
+				temp=_.where(countries,{i:t});
+				if(temp.length > 0)$scope.series.countries.push(temp[0].o);
+			})
+		}
 	}
 
 	$scope.current_trailer = 0;
