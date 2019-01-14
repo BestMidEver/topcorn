@@ -121,8 +121,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.implement_static_data = function(){
 		if($scope.page_variables.active_tab_1 = -1){
 			$scope.page_variables.backdrop_path = $scope.series.backdrop_path;
-			$scope.page_variables.season_count = $scope.series.number_of_seasons;
-			$scope.page_variables.episode_count = $scope.series.number_of_episodes;
+			$scope.page_variables.number_of_seasons = $scope.series.number_of_seasons;
+			$scope.page_variables.number_of_episodes = $scope.series.number_of_episodes;
 			$scope.page_variables.vote_average = $scope.series.vote_average;
 			$scope.page_variables.vote_count = $scope.series.vote_count;
 			$scope.page_variables.name = $scope.series.name;
