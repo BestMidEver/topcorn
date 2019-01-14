@@ -78,9 +78,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			append_to_response_1 = 'credits%2Cvideos';
 			append_to_response_2 = 'videos';
 		}else{
-			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode'+$scope.page_variables.active_tab_2;
-			append_to_response_1 = 'credits%2Cvideos';
-			append_to_response_2 = 'videos';
+			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode'+$scope.page_variables.active_tab_2+'/videos';
+			append_to_response_1 = '';
+			append_to_response_2 = '';
 		}
 
 		$http({
@@ -145,6 +145,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
 		}else if($scope.page_variables.active_tab_2 == -1){
 		}else{
+			if(pass.secondary_lang!=pass.lang)	desireddata.results=_.union(desireddata.results, secondarydata.results);
 		}
 	}
 	$scope.prepeare_series_data = function(series){
@@ -185,6 +186,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				temp=_.where(countries,{i:t});
 				if(temp.length > 0)$scope.series.countries.push(temp[0].o);
 			})
+		}else if($scope.page_variables.active_tab_2 != -1){
+			$scope.series.videos=series.results;
+			if($scope.series.videos.results.length>0){
+				$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
+			}
 		}
 	}
 
