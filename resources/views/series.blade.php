@@ -144,8 +144,18 @@
 
 <!--Poster Plot Details Section-->
 <div class="row no-gutters mt-3 mt-md-5 mb-md-5">
-    <div class="col-12 col-md-3 col-lg-3">
+    <div class="col-12 col-md-3 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{series.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
+    </div>
+    <div class="col-12 col-md-6 col-lg-5" ng-if="page_variables.active_tab_2!=-1">
+        <img src="{{config('constants.image.cover')[$image_quality]}}@{{series.episodes[page_variables.active_tab_2-1].still_path}}" on-error-src="" class="img-fluid" alt="Responsive image">
+        <div class="d-flex flex-wrap justify-content-between">
+            <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
+                <div class="d-flex flex-row justify-content-between text-center">
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-12 col-md-9 col-lg-6">
         <div class="container-fluid">
@@ -163,7 +173,7 @@
         </div>
     </div>
     <div class="col-3 d-none d-md-inline d-lg-none"></div>
-    <div class="col-9 col-lg-3">
+    <div class="col-9 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <div class="container-fluid">
             <div class="h5 d-none d-lg-inline">Details</div>
             <div ng-if="series.original_name.length > 0">
@@ -291,13 +301,13 @@
 <!--Cast Section-->
 
 <!--Review Section-->
-<div class="container-fluid px-0 mt-5"> 
+<div class="container-fluid px-0 mt-5" ng-if="page_variables.active_tab_1==-1"> 
     <div class="h5 px-3 px-md-0">
         <span class="mb-0 pr-2">{{ __('general.reviews') }}</span>
         <a href="https://www.themoviedb.org/tv/{{$id}}/reviews" class="btn btn-outline-success" target="_blank"><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</a>
     </div>
     <div class="container-fluid">
-        <div ng-if="page_variables.reviews.results.length>0" class="py-4" ng-repeat="review in page_variables.reviews.results">
+        <div ng-if="series.reviews.results.length>0" class="py-4" ng-repeat="review in series.reviews.results">
             <div class="h6 pb-2">@{{review.author}}</div>
             <div id="@{{'accordion'+$index}}">
                 <div ng-if="review.id == 'long'">
@@ -325,7 +335,7 @@
             </div>
         </div>
     </div>
-    <div class="p-5" ng-if="!page_variables.reviews.results.length>0">
+    <div class="p-5" ng-if="!series.reviews.results.length>0">
         <div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
     </div>
 </div>
