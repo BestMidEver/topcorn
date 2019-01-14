@@ -115,7 +115,7 @@
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
         </li>
         <li class="nav-item" ng-repeat="season in page_variables.seasons">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
         </li>
     </ul>
 </div>
@@ -149,7 +149,8 @@
     </div>
     <div class="col-12 col-md-9 col-lg-6">
         <div class="container-fluid">
-            <p class="h6 pt-3 pt-md-0">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
+            <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==1">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
+            <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=1&&page_variables.active_tab_2==-1">@{{series.name}}</p>
             <div class="pt-2" ng-if="series.overview.length > 0 && series.overview != 'No overview found.'"><p>@{{series.overview}}</p></div>
             <div ng-if="page_variables.active_tab_1==-1">
                 <div class="h6 pt-1"><span>Creators</span></div>
