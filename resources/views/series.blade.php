@@ -147,16 +147,6 @@
     <div class="col-12 col-md-3 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{series.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
     </div>
-    <div class="col-12 col-md-6 col-lg-5" ng-if="page_variables.active_tab_2!=-1">
-        <img src="{{config('constants.image.cover')[$image_quality]}}@{{series.episodes[page_variables.active_tab_2-1].still_path}}" on-error-src="" class="img-fluid" alt="Responsive image">
-        <div class="d-flex flex-wrap justify-content-between">
-            <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
-                <div class="d-flex flex-row justify-content-between text-center">
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="col-12 col-md-9 col-lg-6">
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==-1">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
@@ -189,7 +179,7 @@
                 <p>@{{series.original_language}}</p>
             </div>
             <div ng-if="page_variables.active_tab_1==-1 && series.countries.length > 0">
-                <div class="h6 pt-1"><span ng-if="series.countries.length == 1">Origin Country</span><span ng-if="series.countries.length > 1">Origin Countries</span></span></div>
+                <div class="h6 pt-1"><span ng-if="series.countries.length == 1">Origin Country</span><span ng-if="series.countries.length > 1">Origin Countries</span></div>
                 <p><span ng-repeat="country in series.countries"><span ng-if="$index!=0">, </span>@{{country}}</span></p>
             </div>
             <div ng-if="page_variables.active_tab_1==-1 && series.episode_run_time[0] > 0">
@@ -219,6 +209,26 @@
             <div ng-if="page_variables.active_tab_1!=-1">
                 <div class="h6 pt-1">Episodes</div>
                 <p>@{{series.episodes.length}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-7" ng-if="page_variables.active_tab_2!=-1">
+        <div class="container-fluid">
+            <p class="h6 pt-3 pt-md-0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}} • @{{series.episodes[page_variables.active_tab_2-1].name}}</p>
+            <div class="pt-2"><p>@{{series.episodes[page_variables.active_tab_2-1].name}}</p></div>
+            <div>
+                <div class="h6 pt-1"><span>Air Date</span></div>
+                <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}} <span class="small text-muted">(6 years ago)</span></span></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3 col-lg-6" ng-if="page_variables.active_tab_2!=-1">
+        <img src="{{config('constants.image.cover')[$image_quality]}}@{{series.episodes[page_variables.active_tab_2-1].still_path}}" on-error-src="" class="img-fluid" alt="Responsive image">
+        <div class="d-flex flex-wrap justify-content-between">
+            <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
+                <div class="d-flex flex-row justify-content-between text-center">
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
+                </div>
             </div>
         </div>
     </div>
