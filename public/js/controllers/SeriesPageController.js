@@ -78,7 +78,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			append_to_response_1 = 'credits%2Cvideos';
 			append_to_response_2 = 'videos';
 		}else{
-			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode'+$scope.page_variables.active_tab_2+'/videos';
+			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode/'+$scope.page_variables.active_tab_2+'/videos';
 			append_to_response_1 = '';
 			append_to_response_2 = '';
 		}
