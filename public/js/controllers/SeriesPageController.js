@@ -155,6 +155,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
 			}
 			if($scope.series.name != secondarydata.name && $scope.series.original_name != secondarydata.name) $scope.secondary_name=secondarydata.name;
+			else $scope.secondary_name="";
 		}
 		if($scope.page_variables.active_tab_1 == -1){
 			$scope.directors=_.where($scope.series.credits.crew, {department:'Directing',job:"Director"});
