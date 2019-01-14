@@ -297,7 +297,7 @@
         <a href="https://www.themoviedb.org/tv/{{$id}}/reviews" class="btn btn-outline-success" target="_blank"><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</a>
     </div>
     <div class="container-fluid">
-        <div ng-if="series.reviews.results.length>0" class="py-4" ng-repeat="review in series.reviews.results">
+        <div ng-if="page_variables.reviews.results.length>0" class="py-4" ng-repeat="review in page_variables.reviews.results">
             <div class="h6 pb-2">@{{review.author}}</div>
             <div id="@{{'accordion'+$index}}">
                 <div ng-if="review.id == 'long'">
@@ -325,7 +325,7 @@
             </div>
         </div>
     </div>
-    <div class="p-5" ng-if="!series.reviews.results.length>0">
+    <div class="p-5" ng-if="!page_variables.reviews.results.length>0">
         <div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
     </div>
 </div>

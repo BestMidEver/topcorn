@@ -131,6 +131,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.page_variables.vote_count = $scope.series.vote_count;
 			$scope.page_variables.name = $scope.series.name;
 			$scope.page_variables.seasons = $scope.series.seasons;
+			$scope.page_variables.reviews = $scope.series.reviews;
 		}
 	}
 
