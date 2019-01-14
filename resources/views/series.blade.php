@@ -9,11 +9,11 @@
         <div id="accordion">
             <div>
                 <div id="collapseCover" class="collapse show" data-parent="#accordion">
-                    <img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{series.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
+                    <img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{page_variables.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
                     <div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
                         <div class="d-flex flex-row no-gutters">
                             <div class="col pt-2 pl-2">
-                                <span class="text-white h6 lead lead-small">@{{series.number_of_seasons}} Seasons - @{{series.number_of_episodes}} Episodes</span>
+                                <span class="text-white h6 lead lead-small">@{{page_variables.number_of_seasons}} Seasons - @{{page_variables.number_of_episodes}} Episodes</span>
                             </div>
                             <div class="col p-2 text-right">
                                 <div ng-if="user_movie_record.percent > 0">
@@ -28,9 +28,9 @@
                             <button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>Videos</small></button>
                         </div>
                         <div class="d-flex flex-row justify-content-end p-2 text-right">
-                            <div ng-if="series.vote_average > 0">
-                                <div><span class="text-warning display-4 d-none d-md-inline">@{{series.vote_average}}</span><span class="text-warning h5 d-md-none">@{{series.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>@{{series.vote_count}}</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
+                            <div ng-if="page_variables.vote_average > 0">
+                                <div><span class="text-warning display-4 d-none d-md-inline">@{{page_variables.vote_average}}</span><span class="text-warning h5 d-md-none">@{{page_variables.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count > 1">votes</span></small></span></div>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                     <div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
                         <div class="col">
                             <div class="h-100 d-flex flex-column justify-content-center pl-2">
-                                <span class="text-white h6 lead lead-small">8 Seasons - 94 Episodes</span>
+                                <span class="text-white h6 lead lead-small">@{{page_variables.number_of_seasons}} Seasons - @{{page_variables.number_of_episodes}} Episodes</span>
                             </div>
                         </div>
                         <div class="col pb-2 pr-2 text-right">
@@ -72,9 +72,9 @@
                             </div>
                         </div>
                         <div class="col pb-2 pr-2 text-right">
-                            <div ng-if="series.vote_average > 0">
-                                <div><span class="text-warning h4 d-none d-md-inline">@{{series.vote_average}}</span><span class="text-warning h5 d-md-none">@{{series.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>@{{series.vote_count}}</small></span><span class="text-white"> <small><span ng-if="series.vote_count > 1">votes</span></small></span></div>
+                            <div ng-if="page_variables.vote_average > 0">
+                                <div><span class="text-warning h4 d-none d-md-inline">@{{page_variables.vote_average}}</span><span class="text-warning h5 d-md-none">@{{page_variables.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count > 1">votes</span></small></span></div>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
         <div class="d-flex flex-column">
             <div class="px-3 px-md-0">
                 <a class="text-dark" href="/" target="_blank">
-                    <h1 class="h4 pb-2 pt-3">@{{series.name}}</h1>
+                    <h1 class="h4 pb-2 pt-3">@{{page_variables.name}}</h1>
                 </a>
             </div>
         </div>
@@ -112,10 +112,10 @@
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data('seasons')">General Info</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;change_tab()">General Info</button>
         </li>
-        <li class="nav-item" ng-repeat="season in series.seasons">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number;pull_data('episodes')"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+        <li class="nav-item" ng-repeat="season in page_variables.seasons">
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number;change_tab()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
         </li>
     </ul>
 </div>
@@ -126,10 +126,10 @@
 <div class="container-fluid p-0 d-none d-md-inline" ng-if="page_variables.active_tab_1!=-1">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data('episodes')">Season Info</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;change_tab()">Season Info</button>
         </li>
         <li class="nav-item" ng-repeat="episode in season_info.episodes">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==season.episode_number}" ng-click="page_variables.active_tab_2=season.episode_number;pull_data('videos')"><span>E@{{season.episode_number>9?season.episode_number:'0'+season.episode_number}}</span></button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==season.episode_number}" ng-click="page_variables.active_tab_2=season.episode_number;change_tab()"><span>E@{{season.episode_number>9?season.episode_number:'0'+season.episode_number}}</span></button>
         </li>
     </ul>
 </div>

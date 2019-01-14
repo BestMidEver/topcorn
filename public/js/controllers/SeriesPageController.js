@@ -63,34 +63,24 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$scope.page_variables={};
 
-	switch(location.hash){
-		case '':
-			$scope.page_variables.active_tab_1 = -1;
-			$scope.page_variables.active_tab_2 = -1;
-			break;
-	}
-
+	$scope.page_variables.active_tab_1 = -1;
 	$scope.temp={};
 	var api_spice, append_to_response_1, append_to_response_2;
-	var is_new = true;
 	var is_loading = true;
-	$scope.pull_data = function(mode){
+	$scope.pull_data = function(){
 		is_loading = true;
-		if(mode != 'videos'){
-			if($scope.page_variables.active_tab_1 == -1){
-				api_spice = '';
-				append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids';
-				append_to_response_2 = 'videos%2Creviews';
-			}else{
-				api_spice = '/season/'+$scope.page_variables.active_tab_1;
-				append_to_response_1 = 'credits%2Cvideos';
-				append_to_response_2 = 'videos';
-			}
+		if($scope.page_variables.active_tab_1 == -1){
+			api_spice = '';
+			append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids';
+			append_to_response_2 = 'videos%2Creviews';
+		}else if($scope.page_variables.active_tab_2 == -1){
+			api_spice = '/season/'+$scope.page_variables.active_tab_1;
+			append_to_response_1 = 'credits%2Cvideos';
+			append_to_response_2 = 'videos';
 		}else{
 			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode'+$scope.page_variables.active_tab_2;
 			append_to_response_1 = 'credits%2Cvideos';
 			append_to_response_2 = 'videos';
-
 		}
 
 		$http({
@@ -119,31 +109,49 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			//window.location.replace("/not-found");
 		});
 	}
-	$scope.pull_data('seasons');
+	$scope.pull_data();
+	switch(location.hash){
+		case '':
+			$scope.page_variables.active_tab_1 = -1;
+			$scope.page_variables.active_tab_2 = -1;
+			break;
+	}
+	$scope.pull_data();
 
-	var implement_static_data = function(){
-		if(is_new){
-			is_new = false;
+	$scope.implement_static_data = function(){
+		if($scope.page_variables.active_tab_1 = -1){
+			$scope.page_variables.backdrop_path = $scope.series.backdrop_path;
+			$scope.page_variables.season_count = $scope.series.number_of_seasons;
+			$scope.page_variables.episode_count = $scope.series.number_of_episodes;
+			$scope.page_variables.vote_average = $scope.series.vote_average;
+			$scope.page_variables.vote_count = $scope.series.vote_count;
+			$scope.page_variables.name = $scope.series.name;
+			$scope.page_variables.seasons = $scope.series.seasons;
 		}
 	}
 
 	$scope.merge_series_data = function(desireddata, secondarydata){
-		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
-		if(!desireddata.overview) desireddata.overview=secondarydata.overview; //DAHA SONRA 2. DE GÖSTERİLECEK
-		if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
-		if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
-		if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
+		if($scope.page_variables.active_tab_1 == -1 || $scope.page_variables.active_tab_2 == -1){
+			if(!desireddata.overview) desireddata.overview=secondarydata.overview;
+			if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
+			if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
+		}
+		if($scope.page_variables.active_tab_1 == -1){
+			if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
+			if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
+		}else if($scope.page_variables.active_tab_2 == -1){
+		}else{
+		}
 	}
 	$scope.prepeare_series_data = function(series){
 		$scope.series=series;
-		if(!$scope.series.backdrop_path)	$scope.series.backdrop_path=$scope.series.poster_path;
+		if(!$scope.series.backdrop_path) $scope.series.backdrop_path=$scope.series.poster_path;
 		if($scope.series.videos.results.length>0){
 			$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
-			console.log($scope.trailerurl + ':D')
 		}
-		$scope.directors=_.where($scope.series.credits.crew, {department:'Directing',job:"Director"}); //DENEME 1 2
+		$scope.directors=_.where($scope.series.credits.crew, {department:'Directing',job:"Director"});
 		$scope.writers=_.filter($scope.series.credits.crew, function(crew){
-			return crew.job == 'Writer' || crew.job == 'Screenplay' || crew.job == 'Novel' || crew.job == 'Author'; //DENEME 3 4
+			return crew.job == 'Writer' || crew.job == 'Screenplay' || crew.job == 'Novel' || crew.job == 'Author';
 		});
 		_.each($scope.writers, function(writer){
 			temp=_.where(jobs,{i:writer.job});
@@ -165,7 +173,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		temp=_.where(languages,{i:$scope.series.original_language});
 		if(temp.length > 0)$scope.series.original_language=temp[0].o;
 		$scope.series.countries=[];
-		_.each($scope.series.origin_country, function(t){ //production_countries
+		_.each($scope.series.origin_country, function(t){
 			temp=_.where(countries,{i:t});
 			if(temp.length > 0)$scope.series.countries.push(temp[0].o);
 		})
