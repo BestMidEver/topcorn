@@ -132,6 +132,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.page_variables.name = $scope.series.name;
 			$scope.page_variables.seasons = $scope.series.seasons;
 		}
+		console.log("SERIES PV", $scope.page_variables.seasons,  $scope.series.seasons)
 	}
 
 	$scope.merge_series_data = function(desireddata, secondarydata){
