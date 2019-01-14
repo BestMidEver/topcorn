@@ -123,7 +123,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	if($scope.page_variables.active_tab_1 != -1) $scope.pull_data();
 
 	$scope.implement_static_data = function(){
-		if($scope.page_variables.active_tab_1 = -1){
+		if($scope.page_variables.active_tab_1 == -1){
 			$scope.page_variables.backdrop_path = $scope.series.backdrop_path;
 			$scope.page_variables.number_of_seasons = $scope.series.number_of_seasons;
 			$scope.page_variables.number_of_episodes = $scope.series.number_of_episodes;
@@ -131,7 +131,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.page_variables.vote_count = $scope.series.vote_count;
 			$scope.page_variables.name = $scope.series.name;
 			$scope.page_variables.seasons = angular.copy($scope.series.seasons);
-		console.log("SERIES PV", $scope.page_variables.seasons,  $scope.series.seasons)
+			console.log("SERIES PV", $scope.page_variables.seasons,  $scope.series.seasons)
 		}
 	}
 
