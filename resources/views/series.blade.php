@@ -151,11 +151,11 @@
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
             <div class="pt-2" ng-if="series.overview.length > 0 && series.overview != 'No overview found.'"><p>@{{series.overview}}</p></div>
-            <div>
+            <div ng-if="page_variables.active_tab_1!=-1">
                 <div class="h6 pt-1"><span>Creators</span></div>
                 <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
-            <div>
+            <div ng-if="page_variables.active_tab_1!=-1">
                 <div class="h6 pt-1"><span>Status</span></div>
                 <p><span class="d-inline">@{{series.status}}</span></p>
             </div>
@@ -173,19 +173,19 @@
                 <div class="h6 pt-1">@{{secondary_language}} {{ __('general.its_title') }}</div>
                 <a class="text-dark" ng-href="http://www.google.com/search?q=@{{secondary_name}}" target="_blank"><p>@{{secondary_name}}</p></a>
             </div>
-            <div>
+            <div ng-if="page_variables.active_tab_1!=-1 && series.original_language.length > 0">
                 <div class="h6 pt-1">Original Language</div>
                 <p>@{{series.original_language}}</p>
             </div>
-            <div ng-if="series.countries.length > 0">
+            <div ng-if="page_variables.active_tab_1!=-1 && series.countries.length > 0">
                 <div class="h6 pt-1"><span ng-if="series.countries.length == 1">Origin Country</span><span ng-if="series.countries.length > 1">Origin Countries</span></span></div>
                 <p><span ng-repeat="country in series.countries"><span ng-if="$index!=0">, </span>@{{country}}</span></p>
             </div>
-            <div ng-if="series.episode_run_time[0] > 0">
+            <div ng-if="page_variables.active_tab_1!=-1 && series.episode_run_time[0] > 0">
                 <div class="h6 pt-1">{{ __('general.runtime') }}</div>
                 <p>@{{series.episode_run_time[0]}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
             </div>
-            <div ng-if="series.networks > 0">
+            <div ng-if="page_variables.active_tab_1!=-1 && series.networks > 0">
                 <div class="h6 pt-1">Networks</div>
                 <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
             </div>
