@@ -130,7 +130,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.page_variables.vote_average = $scope.series.vote_average;
 			$scope.page_variables.vote_count = $scope.series.vote_count;
 			$scope.page_variables.name = $scope.series.name;
-			$scope.page_variables.seasons = $scope.series.seasons;
+			$scope.page_variables_seasons = $scope.series.seasons;
 		}
 		console.log("SERIES PV", $scope.page_variables.seasons,  $scope.series.seasons)
 	}
