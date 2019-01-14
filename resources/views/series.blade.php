@@ -147,7 +147,7 @@
     <div class="col-12 col-md-3 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{series.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
     </div>
-    <div class="col-12 col-md-9 col-lg-6">
+    <div class="col-12 col-md-9 col-lg-6" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==-1">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=-1">@{{series.name}}</p>
@@ -215,7 +215,7 @@
     <div class="col-12 col-md-6 col-lg-7" ng-if="page_variables.active_tab_2!=-1">
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}} • @{{series.episodes[page_variables.active_tab_2-1].name}}</p>
-            <div class="pt-2"><p>@{{series.episodes[page_variables.active_tab_2-1].name}}</p></div>
+            <div class="pt-2"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
             <div>
                 <div class="h6 pt-1"><span>Air Date</span></div>
                 <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}} <span class="small text-muted">(6 years ago)</span></span></p>
