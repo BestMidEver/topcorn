@@ -29,7 +29,7 @@
                         </div>
                         <div class="d-flex flex-row p-2">
                             <div class="d-flex flex-column"><img src="https://image.tmdb.org/t/p/w200/Allse9kbjiP6ExaQrnSpIhkurEi.svg" on-error-src="" class="network-logo" alt="Responsive image"></div>
-                            <div ng-if="page_variables.vote_average > 0" class="text-right">
+                            <div ng-if="page_variables.vote_average > 0" class="text-right justify-content-end">
                                 <div><span class="text-warning display-4 d-none d-md-inline">@{{page_variables.vote_average}}</span><span class="text-warning h5 d-md-none">@{{page_variables.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
                                 <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count > 1">votes</span></small></span></div>
                             </div>
