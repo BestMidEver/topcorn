@@ -143,7 +143,7 @@
 
 
 <!--Poster Plot Details Section-->
-<div class="p-5" ng-show="is_waiting">
+<div class="p-5" ng-if="true">
     <div class="text-muted text-center">Loading...</div>
 </div>
 <div class="row no-gutters mt-3 mt-md-5 mb-md-5">
