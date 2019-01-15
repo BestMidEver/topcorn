@@ -193,6 +193,10 @@
                 <div class="h6 pt-1">Networks</div>
                 <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
             </div>
+            <div ng-if="series.first_air_date">
+                <div class="h6 pt-1">Last Episode</div>
+                <p>S@{{series.first_air_date}}</p>
+            </div>
             <div ng-if="series.last_episode_to_air">
                 <div class="h6 pt-1">Last Episode</div>
                 <p>S@{{series.last_episode_to_air.season_number>9?series.last_episode_to_air.season_number:'0'+series.last_episode_to_air.season_number}}E@{{series.last_episode_to_air.episode_number>9?series.last_episode_to_air.episode_number:'0'+series.last_episode_to_air.episode_number}} <span class="small text-muted">(@{{series.last_episode_to_air.air_date}})</span></p>
@@ -221,7 +225,7 @@
             <div class="pt-2"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
             <div>
                 <div class="h6 pt-1"><span>Air Date</span></div>
-                <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}} <span class="small text-muted">(6 years ago)</span></span></p>
+                <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}}</p>
             </div>
         </div>
     </div>
@@ -350,7 +354,7 @@
         </div>
     </div>
         <div class="text-center pt-1" ng-hide="iscast">
-            <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>{{ __('general.show_everyone') }}</small></button>
+            <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>Show All</small></button>
         </div>
         <div class="text-center pt-1" ng-show="iscast">
             <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseGuestStars"><i class="fa fa-angle-up"></i></button>
