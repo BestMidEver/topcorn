@@ -189,13 +189,9 @@
                 <div class="h6 pt-1">{{ __('general.runtime') }}</div>
                 <p>@{{series.episode_run_time[0]}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
             </div>
-            <div ng-if="page_variables.active_tab_1==-1 && series.networks > 0">
+            <div ng-if="page_variables.active_tab_1==-1 && series.networks.length > 0">
                 <div class="h6 pt-1">Networks</div>
                 <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
-            </div>
-            <div ng-if="series.first_air_date">
-                <div class="h6 pt-1">First Air Date</div>
-                <p>S@{{series.first_air_date}}</p>
             </div>
             <div ng-if="series.last_episode_to_air">
                 <div class="h6 pt-1">Last Episode</div>
