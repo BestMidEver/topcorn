@@ -204,7 +204,7 @@
             </div>
             <div ng-if="series.external_ids.facebook_id.length>0 || series.external_ids.instagram_id.length>0 || series.external_ids.twitter_id.length>0">
                 <div class="h6 pt-1">Links</div>
-                <p>
+                <p class="small">
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="https://www.facebook.com/@{{series.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="https://instagram.com/@{{series.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="https://twitter.com/@{{series.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
