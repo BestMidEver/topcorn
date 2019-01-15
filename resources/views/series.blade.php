@@ -143,6 +143,13 @@
 </div>
 <!-- Tabs_2 Button -->
 
+<!-- Tabs_2 Button Mobile -->
+<div class="scrollmenu d-md-none tab2" ng-if="page_variables.active_tab_1!=-1">
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
+</div>
+<!-- Tabs_2 Button Mobile -->
+
 
 <!--Poster Plot Details Section-->
 <div class="p-5" ng-if="is_waiting">
