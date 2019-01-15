@@ -417,7 +417,7 @@
 
 <!--People Who Liked Also Liked Section-->
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="movies.length > 0" ng-hide="is_waiting">
-    <div class="dropdown">
+    <div class="dropdown d-inline">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="h5">@{{page_variables.active_tab_3==0?'People who Liked this Also Liked':'Similar Series'}}</span>
         </button>
@@ -426,6 +426,7 @@
             <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">Similar Series</button>
         </div>
     </div>
+    <span class="text-muted pl-2"><small>Sorted by relevance</small></span>
     @include('layout.moviecard_6')
     <div class="">
         <div class="d-flex flex-wrap">
