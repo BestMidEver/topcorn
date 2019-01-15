@@ -205,9 +205,9 @@
             <div ng-if="series.external_ids.facebook_id.length>0 || series.external_ids.instagram_id.length>0 || series.external_ids.twitter_id.length>0">
                 <div class="h6 pt-1">Links</div>
                 <p>
-                    <a class="btn btn-link btn-sm fa40 text-muted" ng-href="https://www.facebook.com/@{{series.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
-                    <a class="btn btn-link btn-sm fa40 text-muted" ng-href="https://instagram.com/@{{series.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-link btn-sm fa40 text-muted" ng-href="https://twitter.com/@{{series.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
+                    <a class="btn btn-link btn-sm fa40 text-muted pl-0" ng-href="https://www.facebook.com/@{{series.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
+                    <a class="btn btn-link btn-sm fa40 text-muted pl-0" ng-href="https://instagram.com/@{{series.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-link btn-sm fa40 text-muted pl-0" ng-href="https://twitter.com/@{{series.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
                 </p>
             </div>
             <div ng-if="page_variables.active_tab_1!=-1">
