@@ -194,7 +194,7 @@
                 <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
             </div>
             <div ng-if="series.first_air_date">
-                <div class="h6 pt-1">Last Episode</div>
+                <div class="h6 pt-1">First Air Date</div>
                 <p>S@{{series.first_air_date}}</p>
             </div>
             <div ng-if="series.last_episode_to_air">
