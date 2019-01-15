@@ -209,7 +209,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 
 	$scope.set_recommendations = function(){
-		if($scope.page_variables.active_tab_3 == 0){
+		if($scope.page_variables.active_tab_1!=-1){
+			$scope.movies=null;
+		}else if($scope.page_variables.active_tab_3 == 0){
 			$scope.movies=$scope.series.recommendations.results;
 		}else{
 			$scope.movies=$scope.series.similar.results;
