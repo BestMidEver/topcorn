@@ -13,6 +13,7 @@
                     <div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
                         <div class="d-flex flex-row no-gutters">
                             <div class="col pt-2 pl-2">
+                                <p><img src="https://image.tmdb.org/t/p/w200/Allse9kbjiP6ExaQrnSpIhkurEi.png" on-error-src="" class="" alt="Responsive image"></p>
                                 <span class="text-white h6 lead lead-small">@{{page_variables.number_of_seasons}} Seasons - @{{page_variables.number_of_episodes}} Episodes</span>
                             </div>
                             <div class="col p-2 text-right">
