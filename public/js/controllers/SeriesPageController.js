@@ -70,7 +70,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.is_waiting = true;
 		if($scope.page_variables.active_tab_1 == -1){
 			api_spice = '';
-			append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids';
+			append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids%2Crecommendations%2Csimilar';
 			append_to_response_2 = 'videos%2Creviews';
 		}else if($scope.page_variables.active_tab_2 == -1){
 			api_spice = '/season/'+$scope.page_variables.active_tab_1;

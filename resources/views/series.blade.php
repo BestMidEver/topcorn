@@ -416,8 +416,17 @@
 
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0" ng-hide="is_waiting">
-    <div class="px-3 px-md-0"><div class="h5">Guest Stars</div></div>
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.recommendations.total_results > 0" ng-hide="is_waiting">
+    <div class="dropdown">
+        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="h5">People who Liked this Also Liked</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
+            <a class="dropdown-item" href="#">People who Liked this Also Liked</a>
+            <a class="dropdown-item" href="#">Similar Series</a>
+            <a class="dropdown-item" href="#">Lists Which Contain This Movie</a>
+        </div>
+    </div>
     <div class="">
         <div class="d-flex flex-wrap">
             <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:6">
