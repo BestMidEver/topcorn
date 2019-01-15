@@ -11,10 +11,10 @@
         	</div>
         </div>
     </div>
-	<div class="text-center pt-1" ng-hide="iscast_movies">
-	    <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast_movies = true;" data-toggle="collapse" data-target="#collapseMovies"><small>Show All</small></button>
-	</div>
-	<div class="text-center pt-1" ng-show="iscast_movies">
-	    <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast_movies = false;" data-toggle="collapse" data-target="#collapseMovies"><i class="fa fa-angle-up"></i></button>
-	</div>
+</div>
+<div class="text-center pt-1" ng-hide="iscast_movies">
+    <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast_movies = true;" data-toggle="collapse" data-target="#collapseMovies"><small>Show All</small></button>
+</div>
+<div class="text-center pt-1" ng-show="iscast_movies">
+    <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast_movies = false;" data-toggle="collapse" data-target="#collapseMovies"><i class="fa fa-angle-up"></i></button>
 </div>
