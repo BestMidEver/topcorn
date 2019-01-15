@@ -154,7 +154,8 @@
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==-1">@{{series.first_air_date.substring(0, 4)}} <span class="text-muted" ng-if="series.genres.length > 0">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=-1">@{{series.name}}</p>
-            <div class="pt-2" ng-if="series.overview.length > 0 && series.overview != 'No overview found.'"><p>@{{series.overview}}</p></div>
+            <div class="pt-2" ng-if="series.overview.length > 0"><p>@{{series.overview}}</p></div>
+            <div class="pt-2" ng-if="series.overview.length == 0"><p>No overview found.</p></div>
             <div ng-if="page_variables.active_tab_1==-1">
                 <div class="h6 pt-1"><span>Creators</span></div>
                 <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
@@ -218,7 +219,8 @@
     <div class="col-12 col-md-6 col-lg-7" ng-if="page_variables.active_tab_2!=-1">
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}} • @{{series.episodes[page_variables.active_tab_2-1].name}}</p>
-            <div class="pt-2"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
+            <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length > 0"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
+            <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length == 0"><p>No overview found.</p></div>
             <div>
                 <div class="h6 pt-1"><span>Air Date</span></div>
                 <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}}</p>
