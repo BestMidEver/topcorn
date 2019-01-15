@@ -110,7 +110,7 @@ return array(
   'angular_slider' => array(
 
     'min_value' => 1917,
-    'max_value' => 2018,
+    'max_value' => 2019,
     'vote_count' => 75
 
   ),
