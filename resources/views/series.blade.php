@@ -312,7 +312,7 @@
 
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-4" id="guest_stars" ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0">
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0">
     <div class="px-3 px-md-0"><div class="h5">Guest Stars</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
