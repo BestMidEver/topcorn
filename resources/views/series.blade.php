@@ -415,300 +415,47 @@
 <!--Review Section-->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Tabs Button
-<div class="container-fluid p-0 d-none d-md-inline">
-    <ul class="nav justify-content-md-center tab1">
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">General Info</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted active">S01</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S02</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S03</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S04</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S05</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S06</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S07</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">S08</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">Specials</button>
-        </li>
-    </ul>
-</div>
-<!-- Tabs Button -->
-
-<!-- Tabs Button Mobile
-<div class="scrollmenu d-md-none tab2">
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active">S01</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S02</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S03</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S04</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S05</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S06</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S07</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S08</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">Specials</button>
-</div>
-<!-- Tabs Button Mobile -->
-
-<!--Poster Plot Details Section
-<div class="row no-gutters mt-3 mt-md-5 mb-md-5">
-    <div class="col-12 col-md-3 col-lg-3">
-        <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/kMTcwNRfFKCZ0O2OaBZS0nZ2AIe.jpg" on-error-src="" class="card-img-top d-none d-md-inline" alt="Responsive image">
-    </div>
-    <div class="col-12 col-md-9 col-lg-6">
-        <div class="container-fluid">
-            <p class="h6 pt-3 pt-md-0">Season 1</p>
-            <div class="pt-2"><p>Trouble is brewing in the Seven Kingdoms of Westeros. For the driven inhabitants of this visionary world, control of Westeros' Iron Throne holds the lure of great power. But in a land where the seasons can last a lifetime, winter is coming...and beyond the Great Wall that protects them, an ancient evil has returned. In Season One, the story centers on three primary areas: the Stark and the Lannister families, whose designs on controlling the throne threaten a tenuous peace; the dragon princess Daenerys, heir to the former dynasty, who waits just over the Narrow Sea with her malevolent brother Viserys; and the Great Wall--a massive barrier of ice where a forgotten danger is stirring.</p></div>
-        </div>
-    </div>
-    <div class="col-3 d-none d-md-inline d-lg-none"></div>
-    <div class="col-9 col-lg-3">
-        <div class="container-fluid">
-            <div class="h5 d-none d-lg-inline">Details</div>
-            <div>
-                <div class="h6 pt-2">Hungarian Title</div>
-                <a class="text-dark" href="/" target="_blank"><p>1. évad</p></a>
-            </div>
-            <div>
-                <div class="h6 pt-1">First Episode</div>
-                <p>2011-04-17</p>
-            </div>
-            <div>
-                <div class="h6 pt-1">Finale Date</div>
-                <p>2011-06-19</p>
-            </div>
-            <div>
-                <div class="h6 pt-1">Episodes</div>
-                <p>10</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Poster Plot Details Section-->
-
-<!-- Tabs Button 
-<div class="container-fluid p-0 d-none d-md-inline">
-    <ul class="nav justify-content-md-center tab1">
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted active">E01</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E02</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E03</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E04</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E05</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E06</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E07</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E08</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E09</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E10</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E11</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E12</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E13</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E14</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E15</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E16</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E17</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E18</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E19</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E20</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E21</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E22</button>
-        </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted">E23</button>
-        </li>
-    </ul>
-</div>
-<!-- Tabs Button -->
-
-<!-- Tabs Button Mobile
-<div class="scrollmenu d-md-none tab2">
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active">S01</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S02</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S03</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S04</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S05</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S06</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S07</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">S08</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration">Specials</button>
-</div>-->
-<!-- Tabs Button Mobile 
-
-<div class="row no-gutters mt-3 my-md-5">
-    <div class="col-12 col-md-6 col-lg-7">
-        <div class="container-fluid">
-            <p class="h6 pt-3 pt-md-0">S03E13 • A Man Without Honor</p>
-            <div class="pt-2"><p>Jamie meets a distant relative. Daenerys receives an invitation to the House of the Undying. Theon leads a search party. Jon loses his way in the wilderness. Cersei counsels Sansa.</p></div>
-            <div>
-                <div class="h6 pt-1"><span>Air Date</span></div>
-                <p><span class="d-inline">2012-05-13 <span class="small text-muted">(6 years ago)</span></span></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-12 col-md-6 col-lg-5">
-        <img src="https://image.tmdb.org/t/p/w1280/d7hTn2ltWb9RMXLycP1TSQTIPG8.jpg" on-error-src="" class="img-fluid" alt="Responsive image">
-        <div class="d-flex flex-wrap justify-content-between">
-            <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
-                <div class="d-flex flex-row justify-content-between text-center">
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!--Cast Section
-<div>
-<div class="container-fluid px-0 mt-5" id="cast">
-    <div class="px-3 px-md-0"><div class="h5">Cast</div></div>
+<!--People Who Liked Also Liked Section-->
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0" ng-hide="is_waiting">
+    <div class="px-3 px-md-0"><div class="h5">Guest Stars</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
-            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="">
+            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:6">
                 <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                    <a href="/">
-                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/neWvvnFVWVWmo7bXsUdrbvJIFHF.jpg">
+                    <a href="/person/@{{person.id}}" target={{$target}}>
+                        <img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
                         <div class="card-block text-center">
-                            <h6 class="card-title px-1 pt-1 text-dark">Emilia Clarke</h6>
+                            <h6 class="card-title px-1 pt-1 text-dark">@{{person.name}}</h6>
                         </div>
                     </a>
-                    <div class="card-title px-1 text-muted text-center mb-0"><small>Daenerys Targaryen</small></div>
-                </div>
-            </div>
-            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="">
-                <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                    <a href="/">
-                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/4MqUjb1SYrzHmFSyGiXnlZWLvBs.jpg">
-                        <div class="card-block text-center">
-                            <h6 class="card-title px-1 pt-1 text-dark">Kit Harington</h6>
-                        </div>
-                    </a>
-                    <div class="card-title px-1 text-muted text-center mb-0"><small>Jon Snow</small></div>
-                </div>
-            </div>
-            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="">
-                <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                    <a href="/">
-                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/xuB7b4GbARu4HN6gq5zMqjGbkwF.jpg">
-                        <div class="card-block text-center">
-                            <h6 class="card-title px-1 pt-1 text-dark">Peter Dinklage</h6>
-                        </div>
-                    </a>
-                    <div class="card-title px-1 text-muted text-center mb-0"><small>Tyrion Lannister</small></div>
-                </div>
-            </div>
-            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="">
-                <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                    <a href="/">
-                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/wcpy6J7KLzmVt0METboX3CZ0Jp.jpg">
-                        <div class="card-block text-center">
-                            <h6 class="card-title px-1 pt-1 text-dark">Lena Headey</h6>
-                        </div>
-                    </a>
-                    <div class="card-title px-1 text-muted text-center mb-0"><small>Cersei Lannister</small></div>
-                </div>
-            </div>
-            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="">
-                <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                    <a href="/">
-                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/3xv7t3Uyx4RNLB8MnPQMIhuRV9V.jpg">
-                        <div class="card-block text-center">
-                            <h6 class="card-title px-1 pt-1 text-dark">Nikolaj Coster-Waldau</h6>
-                        </div>
-                    </a>
-                    <div class="card-title px-1 text-muted text-center mb-0"><small>Jaime Lannister</small></div>
-                </div>
-            </div>
-            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="">
-                <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                    <a href="/">
-                        <img class="card-img-top" src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/ed4ajSYdv49j9OF7yMeG8Hznrrt.jpg">
-                        <div class="card-block text-center">
-                            <h6 class="card-title px-1 pt-1 text-dark">Sophie Turner</h6>
-                        </div>
-                    </a>
-                    <div class="card-title px-1 text-muted text-center mb-0"><small>Sansa Stark</small></div>
+                    <div class="card-title px-1 text-muted text-center mb-0"><small>@{{person.character}}</small></div>
                 </div>
             </div>
         </div>
     </div>
-    <div>
-        <div class="text-center pt-1" ng-hide="iscast">
-            <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseCast"><small>Show Full Cast</small></button>
+    <div class="collapse" id="collapseGuestStars">
+        <div ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 6">
+            <div class="d-flex flex-wrap">
+                <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:100:6">
+                    <div class="card moviecard h-100 d-flex flex-column justify-content-between">
+                        <a href="/person/@{{person.id}}" target={{$target}}>
+                            <img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+                            <div class="card-block text-center">
+                                <h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
+                            </div>
+                        </a>
+                        <div class="card-title px-1 text-muted text-center mb-0"><small ng-if="person.character.length > 0">@{{person.character}}</small></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="text-center pt-1" ng-hide="iscast">
+        <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>Show All</small></button>
+    </div>
+    <div class="text-center pt-1" ng-show="iscast">
+        <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseGuestStars"><i class="fa fa-angle-up"></i></button>
+    </div>
 </div>
-</div>
-<!--Cast Section-->
+<!--People Who Liked Also Liked Section-->
 @endsection
