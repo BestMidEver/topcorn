@@ -67,7 +67,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.temp={};
 	var api_spice, append_to_response_1, append_to_response_2;
 	$scope.pull_data = function(){
-		is_waiting = true;
+		$scope.is_waiting = true;
 		if($scope.page_variables.active_tab_1 == -1){
 			api_spice = '';
 			append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids';
@@ -97,7 +97,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.merge_series_data(desireddata, secondarydata);
 				$scope.prepeare_series_data(desireddata);
 				$scope.implement_static_data();
-				is_waiting = false;
+				$scope.is_waiting = false;
 				console.log("seriesscope", $scope.series)
 			}, function errorCallback(response) {
 				console.log('error2')

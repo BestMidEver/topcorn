@@ -143,10 +143,10 @@
 
 
 <!--Poster Plot Details Section-->
-<div class="p-5" ng-if="true">
+<div class="p-5" ng-if="is_waiting">
     <div class="text-muted text-center">Loading...</div>
 </div>
-<div class="row no-gutters mt-3 mt-md-5 mb-md-5">
+<div class="row no-gutters mt-3 mt-md-5 mb-md-5" ng-hide="is_waiting">
     <div class="col-12 col-md-3 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{series.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
     </div>
@@ -240,7 +240,7 @@
 
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="cast" ng-if="series.credits.cast.length > 0">
+<div class="container-fluid px-0 mt-5" id="cast" ng-if="series.credits.cast.length > 0" ng-hide="is_waiting">
     <div class="px-3 px-md-0"><div class="h5">{{ __('general.actors') }}</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
@@ -315,7 +315,7 @@
 
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0">
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0" ng-hide="is_waiting">
     <div class="px-3 px-md-0"><div class="h5">Guest Stars</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
@@ -360,7 +360,7 @@
 <!--Cast Section-->
 
 <!--Review Section-->
-<div class="container-fluid px-0 mt-5" ng-if="page_variables.active_tab_1==-1"> 
+<div class="container-fluid px-0 mt-5" ng-if="page_variables.active_tab_1==-1" ng-hide="is_waiting"> 
     <div class="h5 px-3 px-md-0">
         <span class="mb-0 pr-2">{{ __('general.reviews') }}</span>
         <a href="https://www.themoviedb.org/tv/{{$id}}/reviews" class="btn btn-outline-success" target="_blank"><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</a>
