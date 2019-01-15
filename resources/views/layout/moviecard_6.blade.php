@@ -36,7 +36,7 @@
 					</div>
 				</div>
 				<div class="card-block">
-					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{movie.title}} <small class="text-muted d-block pt-1" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
+					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{movie.title>0?movie.title:movie.name}} <small class="text-muted d-block pt-1" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
 				</div>
 			</a>
 			@if(Auth::check())
