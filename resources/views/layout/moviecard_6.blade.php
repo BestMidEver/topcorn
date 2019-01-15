@@ -2,6 +2,8 @@
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in movies | limitTo:6">
 		@include('layout.moviecard_6_inside')
 	</div>
+</div>
+<div class="card-group no-gutters">
     <div class="collapse" id="collapseMovies">
         <div ng-if="movies.length > 6">
         	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in movies | limitTo:100:6">
