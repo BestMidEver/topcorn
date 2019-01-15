@@ -427,6 +427,7 @@
             <a class="dropdown-item" href="#">Lists Which Contain This Movie</a>
         </div>
     </div>
+    @include('layout.moviecard_6')
     <div class="">
         <div class="d-flex flex-wrap">
             <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:6">

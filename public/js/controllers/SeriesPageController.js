@@ -194,6 +194,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
 			}
 		}
+		$scope.movies=$scope.series.recommendations.results;
 	}
 
 	$scope.current_trailer = 0;
