@@ -428,7 +428,7 @@
     </div>
     <span class="text-muted pl-2"><small>Sorted by relevance</small></span>
     @include('layout.moviecard_6')
-    <div class="">
+    <!--<div class="">
         <div class="d-flex flex-wrap">
             <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:6">
                 <div class="card moviecard h-100 d-flex flex-column justify-content-between">
@@ -465,7 +465,7 @@
     </div>
     <div class="text-center pt-1" ng-show="iscast">
         <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseGuestStars"><i class="fa fa-angle-up"></i></button>
-    </div>
+    </div>-->
 </div>
 <!--People Who Liked Also Liked Section-->
 @endsection
