@@ -143,6 +143,9 @@
 
 
 <!--Poster Plot Details Section-->
+<div class="p-5" ng-show="is_waiting">
+    <div class="text-muted text-center">Loading...</div>
+</div>
 <div class="row no-gutters mt-3 mt-md-5 mb-md-5">
     <div class="col-12 col-md-3 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{series.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
