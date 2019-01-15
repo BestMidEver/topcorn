@@ -122,6 +122,13 @@
 </div>
 <!-- Tabs_1 Button -->
 
+<!-- Tabs_1 Button Mobile -->
+<div class="scrollmenu d-md-none tab2">
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+</div>
+<!-- Tabs_1 Button Mobile -->
+
 
 <!-- Tabs_2 Button -->
 <div class="container-fluid p-0 d-none d-md-inline" ng-if="page_variables.active_tab_1!=-1">
@@ -135,12 +142,6 @@
     </ul>
 </div>
 <!-- Tabs_2 Button -->
-
-<!-- Tabs Button Mobile -->
-<div class="scrollmenu d-md-none tab2">
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active">S01</button>
-</div>
-<!-- Tabs Button Mobile -->
 
 
 <!--Poster Plot Details Section-->
