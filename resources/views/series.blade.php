@@ -160,6 +160,10 @@
                 <div class="h6 pt-1"><span>Creators</span></div>
                 <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
+            <div ng-if="page_variables.active_tab_1==-1 && series.networks.length > 0">
+                <div class="h6 pt-1">Networks</div>
+                <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
+            </div>
             <div ng-if="page_variables.active_tab_1==-1">
                 <div class="h6 pt-1"><span>Status</span></div>
                 <p><span class="d-inline">@{{series.status}}</span></p>
@@ -189,10 +193,6 @@
             <div ng-if="page_variables.active_tab_1==-1 && series.episode_run_time[0] > 0">
                 <div class="h6 pt-1">{{ __('general.runtime') }}</div>
                 <p>@{{series.episode_run_time[0]}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
-            </div>
-            <div ng-if="page_variables.active_tab_1==-1 && series.networks.length > 0">
-                <div class="h6 pt-1">Networks</div>
-                <p><span ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
             </div>
             <div ng-if="series.last_episode_to_air">
                 <div class="h6 pt-1">Last Episode</div>
