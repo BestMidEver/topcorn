@@ -416,15 +416,14 @@
 
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.recommendations.total_results > 0" ng-hide="is_waiting">
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="movies.length > 0" ng-hide="is_waiting">
     <div class="dropdown">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="h5">People who Liked this Also Liked</span> <i class="fas fa-sort-amount-down"></i>
+        <span class="h5">@{{page_variables.active_tab_3==0?'People who Liked this Also Liked':'Similar Series'}}</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
-            <a class="dropdown-item" href="#">People who Liked this Also Liked</a>
-            <a class="dropdown-item" href="#">Similar Series</a>
-            <a class="dropdown-item" href="#">Lists Which Contain This Movie</a>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">People who Liked this Also Liked</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">Similar Series</button>
         </div>
     </div>
     @include('layout.moviecard_6')
