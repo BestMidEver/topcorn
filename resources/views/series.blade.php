@@ -418,7 +418,7 @@
 <!--People Who Liked Also Liked Section-->
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.recommendations.total_results > 0" ng-hide="is_waiting">
     <div class="dropdown">
-        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-sort-amount-down"></i>
+        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="h5">People who Liked this Also Liked</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
@@ -426,7 +426,7 @@
             <a class="dropdown-item" href="#">Similar Series</a>
             <a class="dropdown-item" href="#">Lists Which Contain This Movie</a>
         </div>
-    </div>
+    </div><i class="fas fa-sort-amount-down"></i>
     @include('layout.moviecard_6')
     <div class="">
         <div class="d-flex flex-wrap">
