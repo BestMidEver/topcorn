@@ -125,7 +125,7 @@
 <!-- Tabs_1 Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
 </div>
 <!-- Tabs_1 Button Mobile -->
 
