@@ -131,7 +131,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.page_variables.vote_count = $scope.series.vote_count;
 			$scope.page_variables.name = $scope.series.name;
 			$scope.page_variables.seasons = $scope.series.seasons;
-			$scope.page_variables.network_logo = $scope.series.networks[0].logo_path.split('.')[0]+'svg';
+			$scope.page_variables.network_logo = $scope.series.networks[0].logo_path.split('.')[0]+'.svg';
 			console.log($scope.page_variables.network_logo)
 		}
 	}
