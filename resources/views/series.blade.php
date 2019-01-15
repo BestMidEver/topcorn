@@ -202,10 +202,12 @@
                 <div class="h6 pt-1">Next Episode</div>
                 <p>S@{{series.next_episode_to_air.season_number>9?series.next_episode_to_air.season_number:'0'+series.next_episode_to_air.season_number}}E@{{series.next_episode_to_air.episode_number>9?series.next_episode_to_air.episode_number:'0'+series.next_episode_to_air.episode_number}} <span class="small text-muted">(@{{series.next_episode_to_air.air_date}})</span></p>
             </div>
-            <div ng-if="series.external_ids.facebook_id>0 || series.external_ids.instagram_id.length>0 || series.external_ids.twitter_id>0">
+            <div ng-if="series.external_ids.facebook_id>0 || series.external_ids.instagram_id>0 || series.external_ids.twitter_id>0">
                 <div class="h6 pt-1">Links</div>
                 <p>
+                    <a class="btn btn-link btn-sm fa40 text-muted" ng-href="https://www.facebook.com/@{{series.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
                     <a class="btn btn-link btn-sm fa40 text-muted" ng-href="https://instagram.com/@{{series.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-link btn-sm fa40 text-muted" ng-href="https://twitter.com/@{{series.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
                 </p>
             </div>
             <div ng-if="page_variables.active_tab_1!=-1">
