@@ -204,7 +204,7 @@
             </div>
             <div ng-if="series.external_ids.facebook_id.length>0 || series.external_ids.instagram_id.length>0 || series.external_ids.twitter_id.length>0">
                 <div class="h6 pt-1">Links</div>
-                <p class="small">
+                <p>
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="https://www.facebook.com/@{{series.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="https://instagram.com/@{{series.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="https://twitter.com/@{{series.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
@@ -359,12 +359,11 @@
             </div>
         </div>
     </div>
-        <div class="text-center pt-1" ng-hide="iscast">
-            <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>Show All</small></button>
-        </div>
-        <div class="text-center pt-1" ng-show="iscast">
-            <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseGuestStars"><i class="fa fa-angle-up"></i></button>
-        </div>
+    <div class="text-center pt-1" ng-hide="iscast">
+        <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>Show All</small></button>
+    </div>
+    <div class="text-center pt-1" ng-show="iscast">
+        <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseGuestStars"><i class="fa fa-angle-up"></i></button>
     </div>
 </div>
 <!--Cast Section-->
