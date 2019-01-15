@@ -80,6 +80,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode/'+$scope.page_variables.active_tab_2+'/videos';
 			append_to_response_1 = '';
 			append_to_response_2 = '';
+			$scope.is_waiting = false;
 		}
 
 		$http({
