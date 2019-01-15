@@ -59,7 +59,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .custom-over-layer-bottom{position: absolute;width: 100%;bottom:0;}
 .moviecard .custom-over-layer, .moviecard .custom-over-layer-bottom{display: none!important;}
 .trailer{max-height: 500px;}
-.network-logo{max-height: 30px;}
+.network-logo{max-height: 40px;}
 .fa22 i{font-size: 22px!important;}
 .fa30 i{font-size: 30px!important;}
 .fa40 i{font-size: 40px!important;}
