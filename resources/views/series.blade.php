@@ -247,13 +247,13 @@
                 <div class="d-flex flex-row justify-content-between text-center">
                     <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
+                        <label class="btn btn-outline-secondary active">
                             <input type="radio" name="options" id="option1" autocomplete="off" checked> Haven't Seen
                         </label>
-                        <label class="btn btn-secondary">
+                        <label class="btn btn-outline-secondary">
                             <input type="radio" name="options" id="option2" autocomplete="off"> Seen
                         </label>
-                        <label class="btn btn-secondary">
+                        <label class="btn btn-outline-secondary">
                             <input type="radio" name="options" id="option3" autocomplete="off"> Last Seen Episode
                         </label>
                     </div>
