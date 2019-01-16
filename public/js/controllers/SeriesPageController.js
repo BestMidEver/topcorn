@@ -141,6 +141,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			if(!desireddata.overview) desireddata.overview=secondarydata.overview;
 			if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
 			if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
+			if(!desireddata.videos.results.length>0) $('#collapseCover').collapse("show");
 		}
 		if($scope.page_variables.active_tab_1 == -1){
 			if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
@@ -148,6 +149,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}else if($scope.page_variables.active_tab_2 == -1){
 		}else{
 			if(pass.secondary_lang!=pass.lang)	desireddata.results=_.union(desireddata.results, secondarydata.results);
+			if(!desireddata.results.length>0) $('#collapseCover').collapse("show");
 		}
 	}
 	$scope.prepeare_series_data = function(series){
@@ -191,7 +193,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if($scope.series.videos.results.length>0){
 			$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
 		}else{
-			$('#collapseCover').collapse("show");
 		}
 		$scope.set_recommendations();
 	}
