@@ -196,6 +196,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			}
 		}
 		$scope.set_recommendations();
+		$('#collapseFragman').collapse("hide");
 	}
 
 	$scope.current_trailer = 0;
