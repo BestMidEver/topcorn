@@ -86,7 +86,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .scrollmenu {overflow: auto;    white-space: nowrap;}
 .nav-logo{height: 58px; width: 58px;}
 .min-height-200{min-height: 200px;}
-.btn-trailer:disabled{color:#000!important;}
+.btn-trailer{color:#000!important;}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
