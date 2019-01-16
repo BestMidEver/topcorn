@@ -60,8 +60,8 @@
                         <div class="col">
                             <div class="h-100 d-flex flex-column justify-content-center pl-2">
                                 <div ng-if="series.videos.results.length > 1">
-                                    <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
-                                    <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == series.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
+                                    <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white btn-trailer" ng-disabled="current_trailer == 0" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
+                                    <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white btn-trailer" ng-disabled="current_trailer == series.videos.results.length-1" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -419,53 +419,15 @@
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="movies.length > 0" ng-hide="is_waiting">
     <div class="dropdown d-inline">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="h5">@{{page_variables.active_tab_3==0?'People Who Liked this Also Liked':'Similar Series'}}</span>
+        <span class="h5">@{{page_variables.active_tab_3==0?'People Who Liked This Also Liked':'Similar Series'}}</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">People Who Liked this Also Liked</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">People Who Liked This Also Liked</button>
             <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">Similar Series</button>
         </div>
     </div>
     <span class="text-muted pl-2"><small>Sorted by relevance</small></span>
     @include('layout.moviecard_6')
-    <!--<div class="">
-        <div class="d-flex flex-wrap">
-            <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:6">
-                <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                    <a href="/person/@{{person.id}}" target={{$target}}>
-                        <img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-                        <div class="card-block text-center">
-                            <h6 class="card-title px-1 pt-1 text-dark">@{{person.name}}</h6>
-                        </div>
-                    </a>
-                    <div class="card-title px-1 text-muted text-center mb-0"><small>@{{person.character}}</small></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="collapse" id="collapseGuestStars">
-        <div ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 6">
-            <div class="d-flex flex-wrap">
-                <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:100:6">
-                    <div class="card moviecard h-100 d-flex flex-column justify-content-between">
-                        <a href="/person/@{{person.id}}" target={{$target}}>
-                            <img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-                            <div class="card-block text-center">
-                                <h6 class="card-title px-1 pt-1 text-dark" ng-if="person.name.length > 0">@{{person.name}}</h6>
-                            </div>
-                        </a>
-                        <div class="card-title px-1 text-muted text-center mb-0"><small ng-if="person.character.length > 0">@{{person.character}}</small></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="text-center pt-1" ng-hide="iscast">
-        <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>Show All</small></button>
-    </div>
-    <div class="text-center pt-1" ng-show="iscast">
-        <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseGuestStars"><i class="fa fa-angle-up"></i></button>
-    </div>-->
 </div>
 <!--People Who Liked Also Liked Section-->
 @endsection
