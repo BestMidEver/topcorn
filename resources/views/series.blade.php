@@ -169,7 +169,7 @@
                 <div class="h6 pt-1"><span>Creators</span></div>
                 <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
-            <div ng-if="page_variables.active_tab_1==-1">
+            <div ng-if="page_variables.active_tab_1==-1 && series.networks.length>0">
                 <div class="h6 pt-1"><span>Networks</span></div>
                 <p><span class="d-inline" ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
             </div>
@@ -246,6 +246,17 @@
             <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
                 <div class="d-flex flex-row justify-content-between text-center">
                     <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Haven't Seen
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option2" autocomplete="off"> Seen
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> Last Seen Episode
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
