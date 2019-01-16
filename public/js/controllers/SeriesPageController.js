@@ -68,6 +68,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.temp={};
 	var api_spice, append_to_response_1, append_to_response_2;
 	$scope.pull_data = function(){
+		$('#collapseFragman').collapse("hide");
+		$('#collapseCover').collapse("show");
 		$scope.is_waiting = true;
 		if($scope.page_variables.active_tab_1 == -1){
 			api_spice = '';
@@ -196,8 +198,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			}
 		}
 		$scope.set_recommendations();
-		$('#collapseFragman').collapse("hide");
-		$('#collapseCover').collapse("show");
 	}
 
 	$scope.current_trailer = 0;
