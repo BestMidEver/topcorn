@@ -83,7 +83,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			append_to_response_2 = '';
 			$scope.is_waiting = false;
 		}
-
 		$http({
 			method: 'GET',
 			url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+api_spice+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response='+append_to_response_1
