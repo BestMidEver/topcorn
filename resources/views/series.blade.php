@@ -169,6 +169,10 @@
                 <div class="h6 pt-1"><span>Creators</span></div>
                 <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
+            <div ng-if="page_variables.active_tab_1==-1">
+                <div class="h6 pt-1"><span>Networks</span></div>
+                <p><span class="d-inline" ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span></p>
+            </div>
         </div>
     </div>
     <div class="col-3 d-none d-md-inline d-lg-none"></div>
