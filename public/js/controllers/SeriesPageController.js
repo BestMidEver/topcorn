@@ -68,8 +68,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.temp={};
 	var api_spice, append_to_response_1, append_to_response_2;
 	$scope.pull_data = function(){
-		//$('#collapseFragman').collapse("hide");
-		$('#collapseCover').collapse("show");
 		$scope.is_waiting = true;
 		if($scope.page_variables.active_tab_1 == -1){
 			api_spice = '';
@@ -156,9 +154,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if($scope.page_variables.active_tab_1 == -1 || $scope.page_variables.active_tab_2 == -1){
 			$scope.series=series;
 			if(!$scope.series.backdrop_path) $scope.series.backdrop_path=$scope.series.poster_path;
-			if($scope.series.videos.results.length>0){
-				$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
-			}
 			if($scope.series.name != secondarydata.name && $scope.series.original_name != secondarydata.name) $scope.secondary_name=secondarydata.name;
 			else $scope.secondary_name="";
 		}
@@ -192,10 +187,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			})
 		}else if($scope.page_variables.active_tab_2 != -1){
 			$scope.series.videos.results=series.results;
-			console.log($scope.series, series.results)
-			if($scope.series.videos.results.length>0){
-				$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
-			}
+		}
+		if($scope.series.videos.results.length>0){
+			$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[0].key);
+		}else{
+			$('#collapseCover').collapse("show");
 		}
 		$scope.set_recommendations();
 	}
