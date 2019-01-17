@@ -129,6 +129,24 @@ MyApp.factory('rate', function($http) {
 
 
 
+    series_add_ban = function(series_id) 
+    {
+        return $http({
+			method: 'POST',
+			url: '/api/series_bans',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {"series_id":series_id}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     un_ban = function(record_id) 
     {
         return $http({
@@ -381,6 +399,7 @@ MyApp.factory('rate', function($http) {
     	add_rate: add_rate,
     	un_rate: un_rate,
     	add_ban: add_ban,
+    	series_add_ban: series_add_ban,
     	un_ban: un_ban,
     	get_last_parties: get_last_parties,
     	add_to_history: add_to_history,

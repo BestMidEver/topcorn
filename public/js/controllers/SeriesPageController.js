@@ -360,7 +360,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 	if(pass.is_auth==1){
 //////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////// SAME PART(MOVIES) //////////////////////////////////
+///////////////////////////////////// SAME PART(SERIES) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 		$scope.this_votemodal=function()
 		{
@@ -434,15 +434,15 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_ban=function()
 		{
-			if($scope.user_movie_record.ban_id == null){
-				rate.add_ban($scope.user_movie_record.movie_id)
+			//if($scope.user_movie_record.ban_id == null){
+				rate.series_add_ban(pass.seriesid/*$scope.user_movie_record.movie_id*/)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
 						$scope.user_movie_record.ban_id=response.data.data.ban_id;
 					}
 				});
-			}else{
+			/*}else{
 				rate.un_ban($scope.user_movie_record.ban_id)
 				.then(function(response){
 					console.log(response);
@@ -450,10 +450,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 						$scope.user_movie_record.ban_id=null;
 					}
 				});
-			}
+			}*/
 		};
 //////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////// SAME PART(MOVIES) //////////////////////////////////
+///////////////////////////////////// SAME PART(SERIES) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	}
 

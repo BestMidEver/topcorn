@@ -29,7 +29,11 @@ class SeriesBanController extends Controller
      */
     public function create()
     {
-        //
+        $ban = Series_ban::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->series_id));
+        //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
+        return Response([
+            'data' => 'correctus',
+        ], Response::HTTP_CREATED);
     }
 
     /**
