@@ -97,6 +97,6 @@ class SeriesBanController extends Controller
             $will_be_deleted->delete();
         }
         
-        return Response(null, Response::HTTP_NO_CONTENT);
+        return ':D';//Response(null, Response::HTTP_NO_CONTENT);
     }
 }
