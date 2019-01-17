@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Series_ban;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class SeriesBanController extends Controller
 {
