@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ApiControllers;
 use App\Http\Controllers\Controller;
 use App\Model\Series_ban;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SeriesBanController extends Controller
 {
@@ -19,7 +20,11 @@ class SeriesBanController extends Controller
      */
     public function index()
     {
-        //
+        $series_ban = Series_ban::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->series_id));
+        //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
+        return Response([
+            'data' => $series_ban,
+        ], Response::HTTP_CREATED);
     }
 
     /**
@@ -40,7 +45,7 @@ class SeriesBanController extends Controller
      */
     public function store(Request $request)
     {
-        $ban = Series_ban::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->series_id));
+        $series_ban = Series_ban::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->series_id));
         //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
         return Response([
             'data' => 'correctus',
