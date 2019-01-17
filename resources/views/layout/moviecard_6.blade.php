@@ -12,7 +12,7 @@
         </div>
     </div>
 </div>
-<div class="text-center pt-1" ng-hide="iscast_movies">
+<div class="text-center pt-1" ng-hide="iscast_movies||similar_movies.length<7">
     <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast_movies = true;" data-toggle="collapse" data-target="#collapseMovies"><small>Show All</small></button>
 </div>
 <div class="text-center pt-1" ng-show="iscast_movies">
