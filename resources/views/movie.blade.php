@@ -355,27 +355,6 @@
 </div>
 <!--People Who Liked Also Liked Section-->
 
-<!--Lists Section
-<div class="container-fluid px-0 pt-5">
-	<div class="h5 px-3 px-md-0 d-flex flex-row">
-		<div class="flex-column">
-			<span class="mb-0 pr-2">{{ __('general.movie_lists_title') }}</span>	
-		</div>
-		<div class="flex-column">
-			<a href="/createlist/new" class="btn btn-outline-success" target="{{$target}}">
-				<i class="fas fa-plus"></i> {{ __('general.create_list') }}
-			</a>
-		</div>
-	</div>
-	<div class="p-5" ng-show="listes.length==0">
-		<div class="text-muted text-center"><span>{{ __('general.no_result') }}</span></div>
-	</div>
-	<div class="card-group no-gutters">
-		@include('layout.listcard')
-	</div>
-</div>
-Lists Section-->
-
 
 <!--<div class="container-fluid pt-5">
 	<span class="h5 mb-0">{{ __('general.fb_comments') }}</span>
