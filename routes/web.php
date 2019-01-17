@@ -207,6 +207,7 @@ Route::get('api/get_quick_rate/{lang}','ApiControllers\RatedController@get_quick
 Route::get('api/get_watched_movie_number','ApiControllers\RatedController@get_watched_movie_number');
 Route::get('api/suck_movie/{movie_id}','ApiControllers\JobController@suck_movie');
 Route::post('api/tooltip','ApiControllers\LevelController@tt_manipulate');
+Route::apiResource('api/series_bans','ApiControllers\SeriesBanController');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// API RATE (AUTH) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
