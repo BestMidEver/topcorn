@@ -326,7 +326,33 @@
 </div>
 <!--Review Section-->
 
-<!--Lists Section-->
+
+<!--People Who Liked Also Liked Section-->
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
+    <div class="dropdown d-inline">
+        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="h5">@{{page_variables.active_tab_3==0?'People Who Liked This Also Liked':(page_variables.active_tab_3==1?'Similar Movies':'{{ __('general.movie_lists_title') }}')}}</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3=0;set_recommendations();">People Who Liked This Also Liked</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;set_recommendations();">Similar Movies</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;">{{ __('general.movie_lists_title') }}</button>
+        </div>
+    </div>
+    <span class="text-muted pl-2" ng-if="page_variables.active_tab_3<2"><small>Sorted by relevance</small></span>
+	<a href="/createlist/new" class="btn btn-outline-success" ng-if="page_variables.active_tab_3==2" target="{{$target}}">
+		<i class="fas fa-plus"></i> {{ __('general.create_list') }}
+	</a>
+	<div ng-if="page_variables.active_tab_3<2">
+    @include('layout.moviecard_6')
+	</div>
+	<div class="card-group no-gutters" ng-if="page_variables.active_tab_3==2">
+		@include('layout.listcard')
+	</div>
+</div>
+<!--People Who Liked Also Liked Section-->
+
+<!--Lists Section
 <div class="container-fluid px-0 pt-5">
 	<div class="h5 px-3 px-md-0 d-flex flex-row">
 		<div class="flex-column">
@@ -345,24 +371,7 @@
 		@include('layout.listcard')
 	</div>
 </div>
-<!--Lists Section-->
-
-
-<!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
-    <div class="dropdown d-inline">
-        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="h5">@{{page_variables.active_tab_3==0?'People Who Liked This Also Liked':'Similar Movies'}}</span>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">People Who Liked This Also Liked</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">Similar Movies</button>
-        </div>
-    </div>
-    <span class="text-muted pl-2"><small>Sorted by relevance</small></span>
-    @include('layout.moviecard_6')
-</div>
-<!--People Who Liked Also Liked Section-->
+Lists Section-->
 
 
 <!--<div class="container-fluid pt-5">
