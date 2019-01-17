@@ -434,16 +434,16 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_ban=function()
 		{
-			if(/*$scope.user_series_record.ban_id == null*/true){
+			if(/*$scope.user_series_record.ban_id == null*/false){
 				rate.series_add_ban(pass.seriesid/*$scope.user_series_record.movie_id*/)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.user_series_record.ban_id=response.data.data.ban_id;
+						//$scope.user_series_record.ban_id=response.data.data.ban_id;
 					}
 				});
 			}else{
-				rate.series_un_ban(8/*$scope.user_series_record.ban_id*/)
+				rate.series_un_ban(9/*$scope.user_series_record.ban_id*/)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
