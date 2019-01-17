@@ -90,13 +90,13 @@ class SeriesBanController extends Controller
      */
     public function destroy(Series_ban $series_ban)
     {
-        $will_be_deleted = Series_ban::where('id', $series_ban)
+        $will_be_deleted = Series_ban::where('id',8)
         ->where('user_id', Auth::id())->first();
         
         if($will_be_deleted){
             $will_be_deleted->delete();
         }
         
-        return ':D';//Response(null, Response::HTTP_NO_CONTENT);
+        return Response(null, Response::HTTP_NO_CONTENT);
     }
 }
