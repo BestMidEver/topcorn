@@ -42,20 +42,20 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	if(pass.is_auth == 1){
 		$http({
 			method: 'GET',
-			url: '/api/get_user_movie_record/'+pass.movieid
+			url: '/api/get_user_series_record/'+pass.seriesid
 		}).then(function successCallback(response) {
-			if(response.data.hasOwnProperty('ban_id')){
-				$scope.user_movie_record = response.data;
+			if(response.data.hasOwnProperty('series_ban_id')){
+				$scope.user_series_record = response.data;
 			}else{
-				$scope.user_movie_record = {
+				$scope.user_series_record = {
 					ban_id: null,
 					later_id: null,
-					movie_id: pass.movieid,
+					movie_id: pass.seriesid,
 					rate_code: null,
 					rated_id: null
 				}
 			}
-			console.log($scope.user_movie_record)
+			console.log($scope.user_series_record)
 		}, function errorCallback(response) {
 		});
 	}
@@ -387,20 +387,20 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_later=function()
 		{
-			if($scope.user_movie_record.later_id == null){
-				rate.add_later($scope.user_movie_record.movie_id)
+			if($scope.user_series_record.later_id == null){
+				rate.add_later($scope.user_series_record.movie_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.user_movie_record.later_id=response.data.data.later_id;
+						$scope.user_series_record.later_id=response.data.data.later_id;
 					}
 				});
 			}else{
-				rate.un_later($scope.user_movie_record.later_id)
+				rate.un_later($scope.user_series_record.later_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.user_movie_record.later_id=null;
+						$scope.user_series_record.later_id=null;
 					}
 				});
 			}
@@ -410,22 +410,22 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		{
 			$('#this_movie_modal').modal('hide');
 			if(rate_code != null){
-				rate.add_rate($scope.user_movie_record.movie_id, rate_code)
+				rate.add_rate($scope.user_series_record.movie_id, rate_code)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.user_movie_record.rated_id=response.data.data.rated_id;
-						$scope.user_movie_record.rate_code=response.data.data.rate;
+						$scope.user_series_record.rated_id=response.data.data.rated_id;
+						$scope.user_series_record.rate_code=response.data.data.rate;
 						if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
 				});
 			}else if(rate_code == null){
-				rate.un_rate($scope.user_movie_record.rated_id)
+				rate.un_rate($scope.user_series_record.rated_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.user_movie_record.rated_id=null;
-						$scope.user_movie_record.rate_code=null;
+						$scope.user_series_record.rated_id=null;
+						$scope.user_series_record.rate_code=null;
 						if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
 				});
@@ -434,23 +434,23 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_ban=function()
 		{
-			//if($scope.user_movie_record.ban_id == null){
-				rate.series_add_ban(pass.seriesid/*$scope.user_movie_record.movie_id*/)
+			if(/*$scope.user_series_record.ban_id == null*/&&false){
+				rate.series_add_ban(pass.seriesid/*$scope.user_series_record.movie_id*/)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.user_movie_record.ban_id=response.data.data.ban_id;
+						$scope.user_series_record.ban_id=response.data.data.ban_id;
 					}
 				});
-			/*}else{
-				rate.un_ban($scope.user_movie_record.ban_id)
+			}else{
+				rate.series_un_ban(8/*$scope.user_series_record.ban_id*/)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.user_movie_record.ban_id=null;
+						//$scope.user_series_record.ban_id=null;
 					}
 				});
-			}*/
+			}
 		};
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SAME PART(SERIES) //////////////////////////////////

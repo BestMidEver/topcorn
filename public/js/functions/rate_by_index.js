@@ -164,6 +164,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    series_un_ban = function(record_id) 
+    {
+        return $http({
+			method: 'DELETE',
+			url: '/api/series_bans/'+record_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     get_last_parties = function(page) 
     {
         return $http({
@@ -401,6 +418,7 @@ MyApp.factory('rate', function($http) {
     	add_ban: add_ban,
     	series_add_ban: series_add_ban,
     	un_ban: un_ban,
+    	series_un_ban: series_un_ban,
     	get_last_parties: get_last_parties,
     	add_to_history: add_to_history,
     	remove_from_history: remove_from_history,
