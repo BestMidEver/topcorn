@@ -64,7 +64,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.page_variables={};
 
 	$scope.page_variables.active_tab_1 = -1;
-	$scope.page_variables.active_tab_3=0;
+	$scope.page_variables.active_tab_3 = 0;
 	$scope.temp={};
 	var api_spice, append_to_response_1, append_to_response_2;
 	$scope.pull_data = function(){
@@ -207,11 +207,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 	$scope.set_recommendations = function(){
 		if($scope.page_variables.active_tab_1!=-1){
-			$scope.movies=null;
+			$scope.similar_movies=null;
 		}else if($scope.page_variables.active_tab_3 == 0){
-			$scope.movies=$scope.series.recommendations.results;
+			$scope.similar_movies=$scope.series.recommendations.results;
 		}else{
-			$scope.movies=$scope.series.similar.results;
+			$scope.similar_movies=$scope.series.similar.results;
 		}
 	}
 

@@ -347,6 +347,24 @@
 </div>
 <!--Lists Section-->
 
+
+<!--People Who Liked Also Liked Section-->
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
+    <div class="dropdown d-inline">
+        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="h5">@{{page_variables.active_tab_3==0?'People Who Liked This Also Liked':'Similar Series'}}</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">People Who Liked This Also Liked</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">Similar Series</button>
+        </div>
+    </div>
+    <span class="text-muted pl-2"><small>Sorted by relevance</small></span>
+    @include('layout.moviecard_6')
+</div>
+<!--People Who Liked Also Liked Section-->
+
+
 <!--<div class="container-fluid pt-5">
 	<span class="h5 mb-0">{{ __('general.fb_comments') }}</span>
 	<div class="fb-comments" data-href="https://topcorn.io/movie/{{$id_dash_title}}" data-width="100%" data-numposts="6" data-colorscheme="{{Auth::check()?(Auth::User()->theme==1?'dark':'light'):''}}"></div>

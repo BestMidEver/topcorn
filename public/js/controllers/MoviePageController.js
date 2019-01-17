@@ -63,7 +63,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.temp={};
 	$http({
 		method: 'GET',
-		url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews'
+		url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews%2Crecommendations%2Csimilar'
 	}).then(function successCallback(response) {
 		desireddata=response.data;
 		console.log('desired_data',desireddata);
@@ -143,6 +143,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			temp=_.where(countries,{i:t.iso_3166_1});
 			if(temp.length > 0)t.name=temp[0].o;
 		})
+		$scope.set_recommendations();
 	}
 
 	$scope.current_trailer = 0;
@@ -153,6 +154,16 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.next_trailer = function(){
 		$scope.current_trailer++;
 		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.movie.videos.results[$scope.current_trailer].key);
+	}
+
+	$scope.page_variables={};
+	$scope.page_variables.active_tab_3 = 0;
+	$scope.set_recommendations = function(){
+		if($scope.page_variables.active_tab_3 == 0){
+			$scope.similar_movies=$scope.movie.recommendations.results;
+		}else{
+			$scope.similar_movies=$scope.movie.similar.results;
+		}
 	}
 
 

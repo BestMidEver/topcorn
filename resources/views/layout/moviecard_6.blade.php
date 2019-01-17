@@ -1,12 +1,12 @@
 <div class="card-group no-gutters">
-	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in movies | limitTo:6">
+	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in similar_movies | limitTo:6">
 		@include('layout.moviecard_6_inside')
 	</div>
 </div>
 <div class="collapse" id="collapseMovies">
-	<div ng-if="movies.length > 6">
+	<div ng-if="similar_movies.length > 6">
 		<div class="card-group no-gutters">
-        	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in movies | limitTo:100:6">
+        	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in similar_movies | limitTo:100:6">
         		@include('layout.moviecard_6_inside')
         	</div>
         </div>
