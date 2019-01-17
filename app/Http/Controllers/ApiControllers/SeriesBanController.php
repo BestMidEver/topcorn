@@ -88,9 +88,9 @@ class SeriesBanController extends Controller
      * @param  \App\Model\Series_ban  $series_ban
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Series_ban $series_ban)
+    public function destroy(Request $series_ban_id)
     {
-        $will_be_deleted = Series_ban::where('id',8)
+        $will_be_deleted = Series_ban::where('id', $series_ban_id)
         ->where('user_id', Auth::id())->first();
         
         if($will_be_deleted){
