@@ -258,7 +258,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'POST',
-			url: '/api/series_last_seens',
+			url: '/api/series_seens',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -280,7 +280,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'DELETE',
-			url: '/api/series_last_seens/'+record_id,
+			url: '/api/series_seens/'+record_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
