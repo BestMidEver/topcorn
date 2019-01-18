@@ -19,7 +19,7 @@ class CreateSeriesSeensTable extends Migration
             $table->integer('user_id');
             $table->integer('season_number');
             $table->integer('episode_number');
-            $table->tinyInteger('status');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
             $table->unique(['series_id', 'user_id']);
         });

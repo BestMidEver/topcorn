@@ -58,8 +58,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.last_seen_id = response.data.id;
-				$scope.page_variables.last_seen_season = response.data.
-				$scope.page_variables.last_seen_episode
+				$scope.page_variables.last_seen_season = response.data.season_number;
+				$scope.page_variables.last_seen_episode = response.data.episode_number;
 			}
 			console.log($scope.page_variables.ban_id)
 		}, function errorCallback(response) {
