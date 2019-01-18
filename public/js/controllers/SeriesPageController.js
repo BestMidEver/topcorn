@@ -16,7 +16,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+console.log(pass.is_auth)
 	if(pass.is_auth == 1){
 		console.log(1)
 		$http({
