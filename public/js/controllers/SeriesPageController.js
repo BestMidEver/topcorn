@@ -54,7 +54,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$http({
 			method: 'GET',
-			url: '/api/series_bans/'+pass.seriesid
+			url: '/api/series_seens/'+pass.seriesid
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.last_seen_id = response.data.id;
