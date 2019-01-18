@@ -113,9 +113,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 	$scope.pull_data();
 	if($scope.page_variables.later_id>0){
+		console.log("HÜLOĞ")
 		$scope.page_variables.active_tab_1 = $scope.page_variables.last_seen_season;
 		$scope.page_variables.active_tab_2 = $scope.page_variables.last_seen_episode;
 	}else{
+		console.log("MAGARKAN")
 		$scope.page_variables.active_tab_1 = -1;
 		$scope.page_variables.active_tab_2 = -1;
 	}
