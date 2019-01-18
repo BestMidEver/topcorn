@@ -403,7 +403,7 @@ $scope.user_movie_record={}
 		{
 			$('#this_movie_modal').modal('hide');
 			if(rate_code != null){
-				rate.add_rate(pass.seriesid, rate_code)
+				rate.series_add_rate(pass.seriesid, rate_code)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
@@ -413,7 +413,7 @@ $scope.user_movie_record={}
 					}
 				});
 			}else if(rate_code == null){
-				rate.un_rate($scope.page_variables.rated_id)
+				rate.series_un_rate($scope.page_variables.rated_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
