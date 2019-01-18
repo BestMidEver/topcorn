@@ -25,7 +25,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.later_id = response.data.id;
 			}
-			console.log($scope.page_variables.later_id)
 		}, function errorCallback(response) {
 		});
 
@@ -37,7 +36,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.page_variables.rated_id = response.data.id;
 				$scope.user_movie_record.rate_code = response.data.rate;
 			}
-			console.log(response)
 		}, function errorCallback(response) {
 		});
 
@@ -48,7 +46,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.ban_id = response.data.id;
 			}
-			console.log($scope.page_variables.ban_id)
 		}, function errorCallback(response) {
 		});
 
@@ -61,7 +58,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.page_variables.last_seen_season = response.data.season_number;
 				$scope.page_variables.last_seen_episode = response.data.episode_number;
 			}
-			console.log($scope.page_variables.ban_id)
 		}, function errorCallback(response) {
 		});
 	}
@@ -461,7 +457,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		};
 
 		$scope.toggle_last_Seen=function()
-		{console.log($scope.page_variables.last_seen_season,$scope.page_variables.last_seen_episode)
+		{console.log($scope.page_variables.last_seen_season!=$scope.page_variables.active_tab_1,$scope.page_variables.last_seen_episode!=$scope.page_variables.active_tab_2)
 			if($scope.page_variables.last_seen_season!=$scope.page_variables.active_tab_1 && $scope.page_variables.last_seen_episode!=$scope.page_variables.active_tab_2){
 				rate.series_add_last_seen(pass.seriesid, $scope.page_variables.last_seen_season, $scope.page_variables.last_seen_episode)
 				.then(function(response){
