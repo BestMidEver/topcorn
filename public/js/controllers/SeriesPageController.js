@@ -33,6 +33,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					rated_id: null
 				}
 			}
+			console.log($scope.user_series_record)
 		}, function errorCallback(response) {
 		});
 	}
