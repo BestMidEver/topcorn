@@ -21,7 +21,14 @@ class SeriesSeenController extends Controller
      */
     public function index()
     {
-        //
+        $series_seen = Series_seen::updateOrCreate(
+            array('user_id' => Auth::id(), 'series_id' => 4), 
+            array('season_number' => 4, 'episode_number' => 4)
+        );
+        //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
+        return Response([
+            'data' => $series_seen,
+        ], Response::HTTP_CREATED);
     }
 
     /**
