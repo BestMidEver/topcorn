@@ -408,7 +408,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				.then(function(response){
 					console.log(response);
 					if(123123,response.status == 201){
-						//$scope.user_series_record.ban_id=response.data.data.ban_id;
+						$scope.page_variables.ban_id=response.data.data.id;
 					}
 				});
 			}else{
