@@ -22,9 +22,23 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			method: 'GET',
 			url: '/api/series_laters/'+pass.seriesid
 		}).then(function successCallback(response) {
-			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.later_id = response.data.id;
-			}
+			$http({
+				method: 'GET',
+				url: '/api/series_seens/'+pass.seriesid
+			}).then(function successCallback(response) {
+				if(response.data.hasOwnProperty('series_id')){
+					$scope.page_variables.last_seen_id = response.data.id;
+					$scope.page_variables.last_seen_season = response.data.season_number;
+					$scope.page_variables.last_seen_episode = response.data.episode_number;
+				}
+				if(response.data.hasOwnProperty('series_id')){
+					$scope.page_variables.later_id = response.data.id;
+					if($scope.page_variables.last_seen_id>0){
+
+					}
+				}
+			}, function errorCallback(response) {
+			});
 		}, function errorCallback(response) {
 		});
 
@@ -45,18 +59,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.ban_id = response.data.id;
-			}
-		}, function errorCallback(response) {
-		});
-
-		$http({
-			method: 'GET',
-			url: '/api/series_seens/'+pass.seriesid
-		}).then(function successCallback(response) {
-			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.last_seen_id = response.data.id;
-				$scope.page_variables.last_seen_season = response.data.season_number;
-				$scope.page_variables.last_seen_episode = response.data.episode_number;
 			}
 		}, function errorCallback(response) {
 		});
@@ -112,16 +114,13 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		});
 	}
 	$scope.pull_data();
-	if($scope.page_variables.later_id>0){
+
+	$scope.go_to_last_Seen = function(){
 		console.log("HÜLOĞ")
 		$scope.page_variables.active_tab_1 = $scope.page_variables.last_seen_season;
 		$scope.page_variables.active_tab_2 = $scope.page_variables.last_seen_episode;
-	}else{
-		console.log("MAGARKAN")
-		$scope.page_variables.active_tab_1 = -1;
-		$scope.page_variables.active_tab_2 = -1;
+		$scope.pull_data();
 	}
-	if($scope.page_variables.active_tab_1 != -1) $scope.pull_data();
 
 	$scope.implement_static_data = function(){
 		if($scope.page_variables.active_tab_1 == -1){
