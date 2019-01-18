@@ -229,7 +229,7 @@
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-7" ng-if="page_variables.active_tab_1!=-1 && page_variables.active_tab_2!=-1">
+    <div class="col-12 col-lg-7" ng-if="page_variables.active_tab_1!=-1 && page_variables.active_tab_2!=-1">
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}} • @{{series.episodes[page_variables.active_tab_2-1].name}}</p>
             <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length > 0"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
@@ -240,7 +240,7 @@
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-5" ng-if="page_variables.active_tab_1!=-1 && page_variables.active_tab_2!=-1">
+    <div class="col-12 col-lg-5" ng-if="page_variables.active_tab_1!=-1 && page_variables.active_tab_2!=-1">
         <img src="{{config('constants.image.cover')[$image_quality]}}@{{series.episodes[page_variables.active_tab_2-1].still_path}}" on-error-src="" class="img-fluid" alt="Responsive image">
         <div class="d-flex flex-wrap justify-content-between">
             <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
