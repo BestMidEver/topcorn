@@ -19,13 +19,8 @@ class SeriesBanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($series_id)
+    public function index()
     {
-        $series_ban = Series_ban::where('id', $series_ban_id)
-        ->where('user_id', Auth::id())
-        ->get();
-
-        return $series_ban;
     }
 
     /**
@@ -59,9 +54,13 @@ class SeriesBanController extends Controller
      * @param  \App\Model\Series_ban  $series_ban
      * @return \Illuminate\Http\Response
      */
-    public function show(Series_ban $series_ban)
+    public function show($series_ban_id)
     {
-        //
+        $series_ban = Series_ban::where('id', $series_ban_id)
+        ->where('user_id', Auth::id())
+        ->get();
+
+        return $series_ban;
     }
 
     /**
