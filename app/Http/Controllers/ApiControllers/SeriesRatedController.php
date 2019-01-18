@@ -21,11 +21,7 @@ class SeriesRatedController extends Controller
      */
     public function index()
     {
-        $series_rated = Series_rated::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => 2), array('rate' => 2));
-        //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
-        return Response([
-            'data' => $series_rated,
-        ], Response::HTTP_CREATED);
+        //
     }
 
     /**
