@@ -21,14 +21,7 @@ class SeriesSeenController extends Controller
      */
     public function index()
     {
-        $series_seen = Series_seen::updateOrCreate(
-            array('user_id' => Auth::id(), 'series_id' => 2), 
-            array('status' => 2, 'season_number' => 2, 'episode_number' => 2)
-        );
-        //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
-        return Response([
-            'data' => $series_seen,
-        ], Response::HTTP_CREATED);
+        //
     }
 
     /**
@@ -51,7 +44,7 @@ class SeriesSeenController extends Controller
     {
         $series_seen = Series_seen::updateOrCreate(
             array('user_id' => Auth::id(), 'series_id' => $request->series_id), 
-            array('status' => $request->status, 'season_number' => $request->season_number, 'episode_number' => $request->episode_number)
+            array('season_number' => $request->season_number, 'episode_number' => $request->episode_number)
         );
         //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
         return Response([
