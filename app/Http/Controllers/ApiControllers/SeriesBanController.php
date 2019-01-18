@@ -19,8 +19,13 @@ class SeriesBanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($series_id)
     {
+        $series_ban = Series_ban::where('id', $series_ban_id)
+        ->where('user_id', Auth::id())
+        ->get();
+
+        return $series_ban;
     }
 
     /**
