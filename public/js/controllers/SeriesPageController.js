@@ -407,7 +407,7 @@ $scope.user_movie_record={}
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.page_variables.rated_id=response.data.data.rated_id;
+						$scope.page_variables.rated_id=response.data.data.id;
 						$scope.user_movie_record.rate_code=response.data.data.rate;
 						//if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
