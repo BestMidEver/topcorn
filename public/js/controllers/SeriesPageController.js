@@ -464,6 +464,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					if(response.status == 201){
 						$scope.page_variables.last_seen_id=response.data.data.id;
+						$scope.page_variables.last_seen_season=response.data.data.season_number;
+						$scope.page_variables.last_seen_episode=response.data.data.episode_number;
 					}
 				});
 			}else{
@@ -472,6 +474,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					if(response.status == 204){
 						$scope.page_variables.last_seen_id=null;
+						$scope.page_variables.last_seen_season=null;
+						$scope.page_variables.last_seen_episode=null;
 					}
 				});
 			}
