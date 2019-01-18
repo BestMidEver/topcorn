@@ -34,7 +34,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.data.hasOwnProperty('series_id')){
 					$scope.page_variables.later_id = response.data.id;
 					if($scope.page_variables.last_seen_id>0){
-
+						$scope.go_to_last_Seen();
 					}
 				}
 			}, function errorCallback(response) {
