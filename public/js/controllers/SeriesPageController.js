@@ -21,19 +21,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			method: 'GET',
 			url: '/api/series_bans/'+pass.seriesid
 		}).then(function successCallback(response) {
-				console.log(response)
 			if(response.data.hasOwnProperty('series_id')){
-				$scope.user_series_record = response.data;
-			}else{
-				$scope.user_series_record = {
-					ban_id: null,
-					later_id: null,
-					series_id: pass.seriesid,
-					rate_code: null,
-					rated_id: null
-				}
+				$scope.page_variables.ban_id = response.data.id;
 			}
-			console.log($scope.user_series_record)
+			console.log($scope.page_variables.ban_id)
 		}, function errorCallback(response) {
 		});
 	}
