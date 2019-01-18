@@ -245,7 +245,7 @@
         <div class="d-flex flex-wrap justify-content-between">
             <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
                 <div class="d-flex flex-row justify-content-between text-center">
-                    <button type="button" class="btn btn-outline-dark btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="this_later()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
+                    <button type="button" class="btn btn-outline-dark btn-sm btn-block border-0 mt-0 px-lg-4 addlater text-nowrap" ng-click="toggle_last_Seen()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
                 </div>
             </div>
         </div>

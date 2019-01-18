@@ -210,6 +210,7 @@ Route::post('api/tooltip','ApiControllers\LevelController@tt_manipulate');
 Route::apiResource('api/series_bans','ApiControllers\SeriesBanController');
 Route::apiResource('api/series_laters','ApiControllers\SeriesLaterController');
 Route::apiResource('api/series_rateds','ApiControllers\SeriesRatedController');
+Route::apiResource('api/series_seens','ApiControllers\SeriesSeenController');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// API RATE (AUTH) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////

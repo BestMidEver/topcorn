@@ -254,6 +254,45 @@ MyApp.factory('rate', function($http) {
 
 
 
+    series_add_last_seen = function(series_id, last_seen_season, last_seen_episode) 
+    {
+        return $http({
+			method: 'POST',
+			url: '/api/series_last_seens',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {
+				"series_id":series_id,
+				"last_seen_season":last_seen_season,
+				"last_seen_episode":last_seen_episode
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+    series_un_last_seen = function(record_id) 
+    {
+        return $http({
+			method: 'DELETE',
+			url: '/api/series_last_seens/'+record_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     get_last_parties = function(page) 
     {
         return $http({
@@ -496,6 +535,8 @@ MyApp.factory('rate', function($http) {
     	series_add_ban: series_add_ban,
     	un_ban: un_ban,
     	series_un_ban: series_un_ban,
+    	series_add_last_seen: series_add_last_seen,
+    	series_un_last_seen: series_un_last_seen,
     	get_last_parties: get_last_parties,
     	add_to_history: add_to_history,
     	remove_from_history: remove_from_history,

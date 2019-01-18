@@ -51,6 +51,19 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log($scope.page_variables.ban_id)
 		}, function errorCallback(response) {
 		});
+
+		$http({
+			method: 'GET',
+			url: '/api/series_bans/'+pass.seriesid
+		}).then(function successCallback(response) {
+			if(response.data.hasOwnProperty('series_id')){
+				$scope.page_variables.last_seen_id = response.data.id;
+				$scope.page_variables.last_seen_season = response.data.
+				$scope.page_variables.last_seen_episode
+			}
+			console.log($scope.page_variables.ban_id)
+		}, function errorCallback(response) {
+		});
 	}
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
@@ -442,6 +455,27 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					if(response.status == 204){
 						$scope.page_variables.ban_id=null;
+					}
+				});
+			}
+		};
+
+		$scope.toggle_last_Seen=function()
+		{
+			if($scope.page_variables.last_seen_season!=$scope.page_variables.active_tab_1 && $scope.page_variables.last_seen_episode!=$scope.page_variables.active_tab_2){
+				rate.series_add_last_seen(pass.seriesid, $scope.page_variables.last_seen_season, $scope.page_variables.last_seen_episode)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.page_variables.last_seen_id=response.data.data.id;
+					}
+				});
+			}else{
+				rate.series_un_last_seen($scope.page_variables.last_seen_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204){
+						$scope.page_variables.last_seen_id=null;
 					}
 				});
 			}
