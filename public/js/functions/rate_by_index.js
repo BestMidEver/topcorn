@@ -127,12 +127,51 @@ MyApp.factory('rate', function($http) {
 
 
 
+    series_add_rate = function(series_id, rate_code) 
+    {
+        return $http({
+			method: 'POST',
+			url: '/api/series_rateds',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {
+				"series_id":series_id,
+				"rate":rate_code
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
 
     un_rate = function(record_id) 
     {
         return $http({
 			method: 'DELETE',
 			url: '/api/rateds/'+record_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+
+    series_un_rate = function(record_id) 
+    {
+        return $http({
+			method: 'DELETE',
+			url: '/api/series_rateds/'+record_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -450,7 +489,9 @@ MyApp.factory('rate', function($http) {
     	un_later: un_later,
     	series_un_later: series_un_later,
     	add_rate: add_rate,
+    	series_add_rate: series_add_rate,
     	un_rate: un_rate,
+    	series_un_rate: series_un_rate,
     	add_ban: add_ban,
     	series_add_ban: series_add_ban,
     	un_ban: un_ban,
