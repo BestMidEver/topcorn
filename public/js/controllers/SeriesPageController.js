@@ -34,7 +34,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.rated_id = response.data.id;
-				$scope.page_variables.rated_id = response.data.id;
+				$scope.user_movie_record.rate_code = response.data.rate;
 			}
 			console.log(response)
 		}, function errorCallback(response) {
@@ -374,7 +374,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				case 1:
 					return 'btn-danger';
 				default:
-					return 'btn-outline-secondary addlarter';
+					return 'btn-outline-secondary addlater';
 			}
 		}
 
@@ -403,23 +403,23 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		{
 			$('#this_movie_modal').modal('hide');
 			if(rate_code != null){
-				rate.add_rate($scope.user_series_record.movie_id, rate_code)
+				rate.add_rate(pass.seriesid, rate_code)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.user_series_record.rated_id=response.data.data.rated_id;
+						$scope.page_variables.rated_id=response.data.data.rated_id;
 						$scope.user_series_record.rate_code=response.data.data.rate;
-						if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
+						//if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
 				});
 			}else if(rate_code == null){
-				rate.un_rate($scope.user_series_record.rated_id)
+				rate.un_rate($scope.page_variables.rated_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.user_series_record.rated_id=null;
+						$scope.page_variables.rated_id=null;
 						$scope.user_series_record.rate_code=null;
-						if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
+						//if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
 				});
 			}

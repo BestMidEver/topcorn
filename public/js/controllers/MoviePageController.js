@@ -334,7 +334,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				case 1:
 					return 'btn-danger';
 				default:
-					return 'btn-outline-secondary addlarter';
+					return 'btn-outline-secondary addlater';
 			}
 		}
 
