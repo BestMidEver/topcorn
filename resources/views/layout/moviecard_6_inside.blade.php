@@ -1,5 +1,5 @@
 <div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
-	<a ng-href="/@{{movie.title>0?'movie':'series'}}/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title>0?movie.original_title:movie.original_name}}">
+	<a ng-href="/@{{movie.title.length>0?'movie':'series'}}/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title.length>0?movie.original_title:movie.original_name}}">
 		<div class="position-relative text-center min-height-200">
 			<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 			<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
@@ -34,7 +34,7 @@
 			</div>
 		</div>
 		<div class="card-block">
-			<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{movie.title>0?movie.title:movie.name}} <small class="text-muted d-block pt-1" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="movie.first_air_date.length > 0"><em>(@{{movie.first_air_date.substring(0, 4)}})</em></small></h6>
+			<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{movie.title.length>0?movie.title:movie.name}} <small class="text-muted d-block pt-1" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="movie.first_air_date.length > 0"><em>(@{{movie.first_air_date.substring(0, 4)}})</em></small></h6>
 		</div>
 	</a>
 	@if(Auth::check())

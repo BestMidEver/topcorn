@@ -28,16 +28,16 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$http({
 				method: 'GET',
 				url: '/api/series_seens/'+pass.seriesid
-			}).then(function successCallback(response) {
-				if(response.data.hasOwnProperty('series_id')){
-					$scope.page_variables.last_seen_id = response.data.id;
-					$scope.page_variables.last_seen_season = response.data.season_number;
-					$scope.page_variables.last_seen_episode = response.data.episode_number;
+			}).then(function successCallback(response_2) {
+				if(response_2.data.hasOwnProperty('series_id')){
+					$scope.page_variables.last_seen_id = response_2.data.id;
+					$scope.page_variables.last_seen_season = response_2.data.season_number;
+					$scope.page_variables.last_seen_episode = response_2.data.episode_number;
 				}
 				if($scope.page_variables.last_seen_id>0 && $scope.page_variables.later_id>0){
 					$scope.go_to_last_Seen();
 				}
-			}, function errorCallback(response) {
+			}, function errorCallback(response_2) {
 			});
 		}, function errorCallback(response) {
 		});
@@ -96,15 +96,15 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$http({
 				method: 'GET',
 				url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+api_spice+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response='+append_to_response_2
-			}).then(function successCallback(response) {
-				secondarydata=response.data;
+			}).then(function successCallback(response_2) {
+				secondarydata=response_2.data;
 				console.log('SERIES_secondary_data',secondarydata);
 				$scope.merge_series_data(desireddata, secondarydata);
 				$scope.prepeare_series_data(desireddata);
 				$scope.implement_static_data();
 				$scope.is_waiting = false;
 				console.log("seriesscope", $scope.series)
-			}, function errorCallback(response) {
+			}, function errorCallback(response_2) {
 				console.log('error2')
 				//window.location.replace("/not-found");
 			});
