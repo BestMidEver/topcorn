@@ -16,19 +16,15 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-console.log(pass)
 	if(pass.is_auth == 1){
-		console.log(1)
 		$http({
 			method: 'GET',
-			url: '/api/series/'+pass.seriesid
+			url: '/api/series_bans/'+pass.seriesid
 		}).then(function successCallback(response) {
-			console.log(2)
 			if(response.data.hasOwnProperty('series_ban_id')){
 				$scope.user_series_record = response.data;
-				console.log(3,response)
+				console.log(response, response[0])
 			}else{
-				console.log(4)
 				$scope.user_series_record = {
 					ban_id: null,
 					later_id: null,
