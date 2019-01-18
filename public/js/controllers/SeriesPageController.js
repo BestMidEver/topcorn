@@ -21,6 +21,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			method: 'GET',
 			url: '/api/series_bans/'+pass.seriesid
 		}).then(function successCallback(response) {
+			console.log(response)
 			if(response.hasOwnProperty('series_id')){
 				$scope.user_series_record = response.data;
 				console.log(response, response[0])
@@ -28,7 +29,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.user_series_record = {
 					ban_id: null,
 					later_id: null,
-					movie_id: pass.seriesid,
+					series_id: pass.seriesid,
 					rate_code: null,
 					rated_id: null
 				}
