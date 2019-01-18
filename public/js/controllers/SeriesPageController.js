@@ -22,6 +22,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			method: 'GET',
 			url: '/api/series_laters/'+pass.seriesid
 		}).then(function successCallback(response) {
+			if(response.data.hasOwnProperty('series_id')){
+				$scope.page_variables.later_id = response.data.id;
+			}
 			$http({
 				method: 'GET',
 				url: '/api/series_seens/'+pass.seriesid
@@ -31,11 +34,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$scope.page_variables.last_seen_season = response.data.season_number;
 					$scope.page_variables.last_seen_episode = response.data.episode_number;
 				}
-				if(response.data.hasOwnProperty('series_id')){
-					$scope.page_variables.later_id = response.data.id;
-					if($scope.page_variables.last_seen_id>0){
-						$scope.go_to_last_Seen();
-					}
+				if($scope.page_variables.last_seen_id>0 && $scope.page_variables.later_id>0){
+					$scope.go_to_last_Seen();
 				}
 			}, function errorCallback(response) {
 			});
