@@ -112,15 +112,12 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		});
 	}
 	$scope.pull_data();
-	switch(location.hash){
-		case 'watch-later':
-			$scope.page_variables.active_tab_1 = -2;
-			$scope.page_variables.active_tab_2 = -3;
-			break;
-		default:
-			$scope.page_variables.active_tab_1 = -1;
-			$scope.page_variables.active_tab_2 = -1;
-			break;
+	if($scope.page_variables.later_id>0){
+		$scope.page_variables.active_tab_1 = $scope.page_variables.last_seen_season;
+		$scope.page_variables.active_tab_2 = $scope.page_variables.last_seen_episode;
+	}else{
+		$scope.page_variables.active_tab_1 = -1;
+		$scope.page_variables.active_tab_2 = -1;
 	}
 	if($scope.page_variables.active_tab_1 != -1) $scope.pull_data();
 
