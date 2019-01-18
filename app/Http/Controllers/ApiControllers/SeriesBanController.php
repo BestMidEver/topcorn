@@ -58,7 +58,7 @@ class SeriesBanController extends Controller
     {
         $series_ban = Series_ban::where('series_id', $series_ban_id)
         ->where('user_id', Auth::id())
-        ->get();
+        ->first();
 
         return $series_ban;
     }
