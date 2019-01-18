@@ -403,7 +403,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_ban=function()
 		{
-			if($scope.page_variables.ban_id>0){
+			if(!$scope.page_variables.ban_id>0){
 				rate.series_add_ban(pass.seriesid)
 				.then(function(response){
 					console.log(response);
