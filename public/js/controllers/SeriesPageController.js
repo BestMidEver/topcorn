@@ -408,7 +408,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					if(response.status == 201){
 						$scope.page_variables.rated_id=response.data.data.rated_id;
-						$scope.user_series_record.rate_code=response.data.data.rate;
+						$scope.user_movie_record.rate_code=response.data.data.rate;
 						//if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
 				});
@@ -418,7 +418,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					if(response.status == 204){
 						$scope.page_variables.rated_id=null;
-						$scope.user_series_record.rate_code=null;
+						$scope.user_movie_record.rate_code=null;
 						//if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
 				});
