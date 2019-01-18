@@ -430,4 +430,7 @@
     @include('layout.moviecard_6')
 </div>
 <!--People Who Liked Also Liked Section-->
+
+
+@include('layout.this_ratemodal')
 @endsection
