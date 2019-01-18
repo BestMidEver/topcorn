@@ -34,6 +34,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.rated_id = response.data.id;
+				$scope.page_variables.rated_id = response.data.id;
 			}
 			console.log(response)
 		}, function errorCallback(response) {
@@ -115,6 +116,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 	$scope.implement_static_data = function(){
 		if($scope.page_variables.active_tab_1 == -1){
+			$scope.movie = $scope.series;
 			$scope.page_variables.backdrop_path = $scope.series.backdrop_path;
 			$scope.page_variables.number_of_seasons = $scope.series.number_of_seasons;
 			$scope.page_variables.number_of_episodes = $scope.series.number_of_episodes;
