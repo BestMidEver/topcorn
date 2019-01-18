@@ -19,22 +19,34 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	if(pass.is_auth == 1){
 		$http({
 			method: 'GET',
-			url: '/api/series_bans/'+pass.seriesid
-		}).then(function successCallback(response) {
-			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.ban_id = response.data.id;
-			}
-			console.log($scope.page_variables.ban_id)
-		}, function errorCallback(response) {
-		});
-		$http({
-			method: 'GET',
 			url: '/api/series_laters/'+pass.seriesid
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
 				$scope.page_variables.later_id = response.data.id;
 			}
 			console.log($scope.page_variables.later_id)
+		}, function errorCallback(response) {
+		});
+
+		$http({
+			method: 'GET',
+			url: '/api/series_rateds/'+pass.seriesid
+		}).then(function successCallback(response) {
+			if(response.data.hasOwnProperty('series_id')){
+				$scope.page_variables.rated_id = response.data.id;
+			}
+			console.log(response)
+		}, function errorCallback(response) {
+		});
+
+		$http({
+			method: 'GET',
+			url: '/api/series_bans/'+pass.seriesid
+		}).then(function successCallback(response) {
+			if(response.data.hasOwnProperty('series_id')){
+				$scope.page_variables.ban_id = response.data.id;
+			}
+			console.log($scope.page_variables.ban_id)
 		}, function errorCallback(response) {
 		});
 	}
