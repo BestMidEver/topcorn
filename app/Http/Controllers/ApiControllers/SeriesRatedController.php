@@ -61,7 +61,7 @@ class SeriesRatedController extends Controller
         ->where('user_id', Auth::id())
         ->first();
 
-        return 5;
+        return $series_rated;
     }
 
     /**

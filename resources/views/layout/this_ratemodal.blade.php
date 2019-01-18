@@ -9,7 +9,7 @@
 							<div class="faderdiv">
 							</div>
 							<div class="faderdiv">
-								<div class="h4 mr-3" data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title}}"><a ng-href="/movie/@{{movie.id}}" target={{$target}}><span class="badge btn-verydark yeswrap text-white">@{{movie.title}} <small><em>(@{{movie.release_date.substring(0, 4)}})</em></small></span></a></div>
+								<div class="h4 mr-3" data-toggle="tooltip" data-placement="bottom" title="@{{movie.original_title>0?movie.original_title:movie.original_name}}"><a ng-href="/@{{movie.title>0?'movie':'series'}}/@{{movie.id}}" target={{$target}}><span class="badge btn-verydark yeswrap text-white">@{{movie.title>0?movie.title:movie.name}} <small class="text-muted d-block pt-1" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="movie.first_air_date.length > 0"><em>(@{{movie.first_air_date.substring(0, 4)}})</em></small></span></a></div>
 							</div>
 							<div class="faderdiv">
 								<button type="button" class="btn btn-verydark btn-lg float-right border-circle text-white" data-dismiss="modal" aria-label="Close">
