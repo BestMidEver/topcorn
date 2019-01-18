@@ -36,7 +36,6 @@ MyApp.factory('rate', function($http) {
 
 
 
-
     add_later = function(movie_id) 
     {
         return $http({
@@ -55,11 +54,46 @@ MyApp.factory('rate', function($http) {
 
 
 
+    series_add_later = function(series_id) 
+    {
+        return $http({
+			method: 'POST',
+			url: '/api/series_laters',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {"series_id":series_id}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     un_later = function(record_id) 
     {
         return $http({
 			method: 'DELETE',
 			url: '/api/laters/'+record_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+    series_un_later = function(record_id) 
+    {
+        return $http({
+			method: 'DELETE',
+			url: '/api/series_laters/'+record_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'

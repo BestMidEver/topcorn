@@ -27,6 +27,16 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log($scope.page_variables.ban_id)
 		}, function errorCallback(response) {
 		});
+		$http({
+			method: 'GET',
+			url: '/api/series_laters/'+pass.seriesid
+		}).then(function successCallback(response) {
+			if(response.data.hasOwnProperty('series_id')){
+				$scope.page_variables.later_id = response.data.id;
+			}
+			console.log($scope.page_variables.later_id)
+		}, function errorCallback(response) {
+		});
 	}
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
@@ -356,20 +366,20 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_later=function()
 		{
-			if($scope.user_series_record.later_id == null){
-				rate.add_later($scope.user_series_record.movie_id)
+			if(!$scope.page_variables.later_id>0){
+				rate.series_add_later(pass.seriesid)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.user_series_record.later_id=response.data.data.later_id;
+						$scope.page_variables.later_id=response.data.data.id;
 					}
 				});
 			}else{
-				rate.un_later($scope.user_series_record.later_id)
+				rate.series_un_later($scope.page_variables.later_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.user_series_record.later_id=null;
+						$scope.page_variables.later_id=null;
 					}
 				});
 			}
@@ -407,14 +417,14 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				rate.series_add_ban(pass.seriesid)
 				.then(function(response){
 					console.log(response);
-					if(123123,response.status == 201){
+					if(response.status == 201){
 						$scope.page_variables.ban_id=response.data.data.id;
 					}
 				});
 			}else{
 				rate.series_un_ban($scope.page_variables.ban_id)
 				.then(function(response){
-					console.log(8987798798,response);
+					console.log(response);
 					if(response.status == 204){
 						$scope.page_variables.ban_id=null;
 					}
