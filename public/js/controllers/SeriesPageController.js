@@ -118,7 +118,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.go_to_last_Seen = function(){
 		console.log("HÜLOĞ")
 		$scope.page_variables.active_tab_1 = $scope.page_variables.last_seen_season;
-		$scope.page_variables.active_tab_2 = $scope.page_variables.last_seen_episode;
+		//$scope.page_variables.active_tab_2 = $scope.page_variables.last_seen_episode;
 		$scope.pull_data();
 	}
 
