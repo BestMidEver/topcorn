@@ -17,51 +17,53 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 	$scope.user_movie_record={}
 
-	if(pass.is_auth == 1){
-		$http({
-			method: 'GET',
-			url: '/api/series_laters/'+pass.seriesid
-		}).then(function successCallback(response) {
-			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.later_id = response.data.id;
-			}
+	$scope.set_user_buttons = function(){
+		if(pass.is_auth == 1){
 			$http({
 				method: 'GET',
-				url: '/api/series_seens/'+pass.seriesid
-			}).then(function successCallback(response_2) {
-				if(response_2.data.hasOwnProperty('series_id')){
-					$scope.page_variables.last_seen_id = response_2.data.id;
-					$scope.page_variables.last_seen_season = response_2.data.season_number;
-					$scope.page_variables.last_seen_episode = response_2.data.episode_number;
+				url: '/api/series_laters/'+pass.seriesid
+			}).then(function successCallback(response) {
+				if(response.data.hasOwnProperty('series_id')){
+					$scope.page_variables.later_id = response.data.id;
 				}
-				if($scope.page_variables.last_seen_id>0 && $scope.page_variables.later_id>0){
-					$scope.go_to_last_Seen();
-				}
-			}, function errorCallback(response_2) {
+				$http({
+					method: 'GET',
+					url: '/api/series_seens/'+pass.seriesid
+				}).then(function successCallback(response_2) {
+					if(response_2.data.hasOwnProperty('series_id')){
+						$scope.page_variables.last_seen_id = response_2.data.id;
+						$scope.page_variables.last_seen_season = response_2.data.season_number;
+						$scope.page_variables.last_seen_episode = response_2.data.episode_number;
+					}
+					if($scope.page_variables.last_seen_id>0 && $scope.page_variables.later_id>0){
+						$scope.go_to_last_Seen();
+					}
+				}, function errorCallback(response_2) {
+				});
+			}, function errorCallback(response) {
 			});
-		}, function errorCallback(response) {
-		});
 
-		$http({
-			method: 'GET',
-			url: '/api/series_rateds/'+pass.seriesid
-		}).then(function successCallback(response) {
-			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.rated_id = response.data.id;
-				$scope.user_movie_record.rate_code = response.data.rate;
-			}
-		}, function errorCallback(response) {
-		});
+			$http({
+				method: 'GET',
+				url: '/api/series_rateds/'+pass.seriesid
+			}).then(function successCallback(response) {
+				if(response.data.hasOwnProperty('series_id')){
+					$scope.page_variables.rated_id = response.data.id;
+					$scope.user_movie_record.rate_code = response.data.rate;
+				}
+			}, function errorCallback(response) {
+			});
 
-		$http({
-			method: 'GET',
-			url: '/api/series_bans/'+pass.seriesid
-		}).then(function successCallback(response) {
-			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.ban_id = response.data.id;
-			}
-		}, function errorCallback(response) {
-		});
+			$http({
+				method: 'GET',
+				url: '/api/series_bans/'+pass.seriesid
+			}).then(function successCallback(response) {
+				if(response.data.hasOwnProperty('series_id')){
+					$scope.page_variables.ban_id = response.data.id;
+				}
+			}, function errorCallback(response) {
+			});
+		}
 	}
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
@@ -102,6 +104,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.merge_series_data(desireddata, secondarydata);
 				$scope.prepeare_series_data(desireddata);
 				$scope.implement_static_data();
+				$scope.set_user_buttons();
 				$scope.is_waiting = false;
 				console.log("seriesscope", $scope.series)
 			}, function errorCallback(response_2) {
