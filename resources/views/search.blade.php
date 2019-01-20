@@ -82,7 +82,7 @@
 		<div class="text-muted text-center" ng-if="!is_waiting">{{ __('general.no_result') }}</div><div class="text-muted text-center" ng-if="is_waiting">{{ __('general.searching') }}</div>
 	</div>
 
-	<div ng-show="active_tab=='movie'">
+	<div ng-show="active_tab=='movie' || active_tab=='series'">
 	@include('layout.moviecard')
 	</div>
 
