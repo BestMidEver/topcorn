@@ -62,7 +62,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					rate.search_series(pass.constants_api_key, pass.lang, temp, $scope.page)
 					.then(function(response){
 						console.log(response.data);
-						$scope.inside_get_page_data_series(response);
+						$scope.inside_get_page_data_movie(response);
 					});
 					break;
 				case 'person':
