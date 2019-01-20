@@ -137,7 +137,7 @@
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
         </li>
         <li class="nav-item" ng-repeat="episode in series.episodes">
-            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'text-primary':season.episode_number==page_variables.last_seen_episode, 'text-muted':season.episode_number!=page_variables.last_seen_episode}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
+            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'text-primary':episode.episode_number==page_variables.last_seen_episode, 'text-muted':episode.episode_number!=page_variables.last_seen_episode}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
         </li>
     </ul>
 </div>
@@ -146,7 +146,7 @@
 <!-- Tabs_2 Button Mobile -->
 <div class="scrollmenu d-md-none tab2" ng-if="page_variables.active_tab_1!=-1">
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number, 'text-primary':season.episode_number==page_variables.last_seen_episode, 'text-muted':season.episode_number!=page_variables.last_seen_episode}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
+    <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number, 'text-primary':episode.episode_number==page_variables.last_seen_episode, 'text-muted':episode.episode_number!=page_variables.last_seen_episode}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
 </div>
 <!-- Tabs_2 Button Mobile -->
 
