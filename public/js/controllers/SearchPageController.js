@@ -58,6 +58,13 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 						$scope.inside_get_page_data_movie(response);
 					});
 					break;
+				case 'series':
+					rate.search_series(pass.constants_api_key, pass.lang, temp, $scope.page)
+					.then(function(response){
+						console.log(response.data);
+						$scope.inside_get_page_data_series(response);
+					});
+					break;
 				case 'person':
 					rate.search_people(pass.constants_api_key, pass.lang, temp, $scope.page)
 					.then(function(response){
