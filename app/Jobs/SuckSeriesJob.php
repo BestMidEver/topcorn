@@ -51,7 +51,7 @@ class SuckSeriesJob implements ShouldQueue
                 if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
             }
             $last_episode_air_date = null;
-            if($series['last_air_date'] != null){$last_episode_air_date = new Carbon($series['last_air_date'];}
+            if($series['last_air_date'] != null){$last_episode_air_date = new Carbon($series['last_air_date']);}
             Serie::updateOrCreate(
                 ['id' => $series['id']],
                 ['original_name' => $series['original_name'],
