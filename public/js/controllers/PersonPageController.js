@@ -37,7 +37,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 	}
 
 	if(pass.is_auth==1){
-		rate.get_user_movies('both')
+		rate.get_user_movies('movies')
 		.then(function(response){
 			console.log(response.data);
 			$scope.user_movies = response.data;
