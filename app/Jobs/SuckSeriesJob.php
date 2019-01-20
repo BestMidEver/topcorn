@@ -45,11 +45,13 @@ class SuckSeriesJob implements ShouldQueue
             $series_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
             $series_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu'), true);
             $first_air_date = null;
-            if($series['first_air_date'] != null) $first_air_date = new Carbon($series['first_air_date']);
+            if($series['first_air_date'] != null){$first_air_date = new Carbon($series['first_air_date']);}
             $next_episode_air_date = null;
-            if($series['next_episode_to_air'] != null) if($series['next_episode_to_air']['air_date'] != null) $next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);
+            if($series['next_episode_to_air'] != null){
+                if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
+            }
             $last_episode_air_date = null;
-            if($series['last_air_date'] != null) $last_episode_air_date = new Carbon($series['last_air_date'];
+            if($series['last_air_date'] != null){$last_episode_air_date = new Carbon($series['last_air_date'];}
             Serie::updateOrCreate(
                 ['id' => $series['id']],
                 ['original_name' => $series['original_name'],
