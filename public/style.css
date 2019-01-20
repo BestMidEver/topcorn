@@ -8,7 +8,7 @@ button:focus{box-shadow: none!important;}
 .line-break{white-space: pre-wrap;}
 .nav > li {  float: left;  position: relative;}
 .tab1 .active::after {  position: absolute;  bottom: 0;  left: 0;  width: 100%;  content: " ";  border-bottom: 5px solid #5BC0EB;}
-.tab2 .active{border-bottom: 5px solid #5BC0EB;}
+.tab2 .active{border-bottom: 5px solid #5BC0EB; font-weight: bold;}
 .background-white{background-color: #fff!important;}
 .background-black{background-color: #000!important;}
 .background-lightgrey{background-color: #f7f7f7!important;}
