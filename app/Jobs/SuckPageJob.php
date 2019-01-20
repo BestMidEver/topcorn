@@ -57,7 +57,7 @@ class SuckPageJob implements ShouldQueue
             }
             for ($j=0; $j < count($series) ; $j++) {
                 if($series[$j]['vote_average'] > config('constants.suck_page.min_vote_average') && $series[$j]['vote_count'] > config('constants.suck_page.min_vote_count')){
-                    SuckSeriesJob::dispatch()->onQueue("low");
+                    SuckSeriesJob::dispatch($series[$j]['id'], false)->onQueue("low");
                 }
             }
         }
