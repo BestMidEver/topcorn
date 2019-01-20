@@ -373,7 +373,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				case 1:
 					return 'btn-danger';
 				default:
-					return 'btn-outline-secondary addlater';
+					return 'btn-outline-secondary addban';
 			}
 		}
 
