@@ -24,7 +24,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.page=1;
 	$scope.is_waiting=false;
 
-	rate.get_user_movies()
+	rate.get_user_movies('movies')
 	.then(function(response){
 		console.log(response.data);
 		$scope.user_movies = response.data;

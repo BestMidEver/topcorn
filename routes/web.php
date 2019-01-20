@@ -146,7 +146,7 @@ Route::post('api/get_momosu','PageControllers\recommendationsController@get_momo
 Route::get('search/{lang?}', 'PageControllers\searchController@search')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
-Route::get('api/get_pluck_id','ApiControllers\SearchController@get_pluck_id');
+Route::get('api/get_pluck_id/{mode}','ApiControllers\SearchController@get_pluck_id');
 Route::get('api/search_lists/{text}','ApiControllers\SearchController@search_lists');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SEARCH PAGE (AUTH) /////////////////////////////////

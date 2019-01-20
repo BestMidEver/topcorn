@@ -140,45 +140,51 @@ class SearchController extends Controller
 
 
 
-    public function get_pluck_id()
+    public function get_pluck_id($mode)
     {
-        $rateds = DB::table('rateds')
-        ->where('user_id', Auth::user()->id)
-        ->pluck('movie_id')
-        ->toArray();
-        $laters = DB::table('laters')
-        ->where('user_id', Auth::user()->id)
-        ->pluck('movie_id')
-        ->toArray();
-        $bans = DB::table('bans')
-        ->where('user_id', Auth::user()->id)
-        ->pluck('movie_id')
-        ->toArray();
+        if($mode == 'movies'){
+            $rateds = DB::table('rateds')
+            ->where('user_id', Auth::user()->id)
+            ->pluck('movie_id')
+            ->toArray();
+            $laters = DB::table('laters')
+            ->where('user_id', Auth::user()->id)
+            ->pluck('movie_id')
+            ->toArray();
+            $bans = DB::table('bans')
+            ->where('user_id', Auth::user()->id)
+            ->pluck('movie_id')
+            ->toArray();
 
-        $users_movies = array_merge($rateds, $laters, $bans);
-        
-        $return_val = DB::table('movies')
-        ->whereIn('movies.id', $users_movies)
-        ->leftjoin('rateds', function ($join) {
-            $join->on('rateds.movie_id', '=', 'movies.id')
-            ->where('rateds.user_id', '=', Auth::user()->id);
-        })
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'movies.id')
-            ->where('laters.user_id', '=', Auth::user()->id);
-        })
-        ->leftjoin('bans', function ($join) {
-            $join->on('bans.movie_id', '=', 'movies.id')
-            ->where('bans.user_id', '=', Auth::user()->id);
-        })
-        ->select(
-            'movies.id as movie_id',
-            'rateds.id as rated_id',
-            'rateds.rate as rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
-        );
+            $users_movies = array_merge($rateds, $laters, $bans);
+            
+            $return_val = DB::table('movies')
+            ->whereIn('movies.id', $users_movies)
+            ->leftjoin('rateds', function ($join) {
+                $join->on('rateds.movie_id', '=', 'movies.id')
+                ->where('rateds.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', '=', 'movies.id')
+                ->where('laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('bans', function ($join) {
+                $join->on('bans.movie_id', '=', 'movies.id')
+                ->where('bans.user_id', '=', Auth::user()->id);
+            })
+            ->select(
+                'movies.id as movie_id',
+                'rateds.id as rated_id',
+                'rateds.rate as rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            );
 
-        return $return_val->get();
+            return $return_val->get();
+        }else if($mode == 'series'){
+
+        }else{//both
+
+        }
     }
 }

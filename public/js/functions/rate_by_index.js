@@ -365,11 +365,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_user_movies = function() 
+    get_user_movies = function(mode) 
     {
 		return $http({
 			method: 'GET',
-			url: '/api/get_pluck_id'
+			url: '/api/get_pluck_id/'+mode
 		}).then(function successCallback(response) {
 			return response;
 		}, function errorCallback(response) {
