@@ -107,8 +107,10 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	}
 
 	$scope.inside_get_page_data_movie = function(response){
+		console.log("önce",response.data.results)
 		external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
 		$scope.movies=response.data.results;
+		console.log("sonra",$scope.movies)
 		$(".tooltip").hide();
 		if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
 		else $scope.pagination=1000;
