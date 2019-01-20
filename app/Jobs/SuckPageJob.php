@@ -51,9 +51,9 @@ class SuckPageJob implements ShouldQueue
             }
         }else{
             if($this->isPopular){
-                $series = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), true)['results'];
+                $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/popular?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), true)['results'];
             }else{
-                $series = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/top_rated?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), true)['results'];   
+                $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/top_rated?api_key='.config('constants.api_key').'&language=en-US&page='.$this->page), true)['results'];   
             }
             for ($j=0; $j < count($series) ; $j++) {
                 if($series[$j]['vote_average'] > config('constants.suck_page.min_vote_average') && $series[$j]['vote_count'] > config('constants.suck_page.min_vote_count')){
