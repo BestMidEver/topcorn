@@ -102,7 +102,7 @@
             <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-warning':page_variables.later_id>0}" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div>Watch Later</button>
             <button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><div><span ng-show="!user_movie_record.rate_code>0"><i class="far fa-star"></i></span><span ng-show="user_movie_record.rate_code>0"><i class="fas fa-check"></i></span></div>Seen</button>
             <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':page_variables.ban_id>0}" ng-click="this_ban()"><div><i class="fas fa-ban"></i></div>Ban</button>
-            <a ng-href="{{config('constants.facebook.share_website')}}/series/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook"><div><i class="fas fa-share"></i></div>Share</a>
+            <a ng-href="{{config('constants.facebook.share_website')}}/series/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban"><div><i class="fas fa-share"></i></div>Share</a>
         </div>
     </div>
 </div>
