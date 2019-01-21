@@ -85,7 +85,7 @@
 <div class="container-fluid">
 	<div class="dropdown d-inline mr-2" ng-init="active_tab='vote_count'">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fas fa-sort-amount-down"></i> <span ng-if="active_tab=='vote_count">Most Popular</span><span ng-if="active_tab=='vote_average">Top Rated</span><span ng-if="active_tab=='release_date">Newest</span><span ng-if="active_tab=='title">A -> Z</span>
+			<i class="fas fa-sort-amount-down"></i> <span ng-if="active_tab=='vote_count'">Most Popular</span><span ng-if="active_tab=='vote_average'">Top Rated</span><span ng-if="active_tab=='release_date'">Newest</span><span ng-if="active_tab=='title'">A -> Z</span>
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="active_tab='vote_count';filter('vote_count')">Most Popular</button>
