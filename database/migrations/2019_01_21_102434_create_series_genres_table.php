@@ -14,7 +14,7 @@ class CreateSeriesGenresTable extends Migration
     public function up()
     {
         Schema::create('series_genres', function (Blueprint $table) {
-            $table->integer('bigInteger')->primary()->unique();
+            $table->bigInteger('id')->primary()->unique();
             $table->integer('series_id');
             $table->integer('genre_id');
         });

@@ -3,6 +3,8 @@
 namespace App\Jobs;
 
 use App\Model\Serie;
+use App\Model\Series_genre;
+use App\Model\Series_network;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -75,14 +77,22 @@ class SuckSeriesJob implements ShouldQueue
                 'hu_plot' => $series_hu['overview'],
                 'vote_count' => $series['vote_count']]
             );
-            /*Genre::where(['movie_id' => $this->id])->delete();
+            Series_genre::where(['series_id' => $this->id])->delete();
             for ($k=0; $k < count($series['genres']); $k++) { 
-                $genre = new Genre;
+                $genre = new Series_genre;
                 $genre->id = $series['id']*10000000 + $series['genres'][$k]['id'];
-                $genre->movie_id = $series['id'];
+                $genre->series_id = $series['id'];
                 $genre->genre_id = $series['genres'][$k]['id'];
                 $genre->save();
-            }*/
+            }
+            Series_network::where(['series_id' => $this->id])->delete();
+            for ($k=0; $k < count($series['networks']); $k++) { 
+                $network = new Series_network;
+                $network->id = $series['id']*10000000 + $series['networks'][$k]['id'];
+                $network->series_id = $series['id'];
+                $network->network_id = $series['networks'][$k]['id'];
+                $network->save();
+            }
         }
     }
 }

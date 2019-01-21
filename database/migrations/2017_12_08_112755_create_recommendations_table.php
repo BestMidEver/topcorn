@@ -14,10 +14,10 @@ class CreateRecommendationsTable extends Migration
     public function up()
     {
         Schema::create('recommendations', function (Blueprint $table) {
-            $table->integer('bigInteger')->primary()->unique();
+            $table->bigInteger('id')->primary()->unique();
             $table->integer('movie_id');
             $table->integer('this_id');
-            $table->boolean('is_similar');
+            $table->tinyInteger('is_similar');
         });
     }
 

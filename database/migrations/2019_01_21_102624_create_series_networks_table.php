@@ -14,8 +14,8 @@ class CreateSeriesNetworksTable extends Migration
     public function up()
     {
         Schema::create('series_networks', function (Blueprint $table) {
-            $table->integer('bigInteger')->primary()->unique();
-            $table->integer('movie_id');
+            $table->bigInteger('id')->primary()->unique();
+            $table->integer('series_id');
             $table->integer('network_id');
         });
     }

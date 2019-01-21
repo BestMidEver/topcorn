@@ -14,10 +14,10 @@ class CreateSeriesRecommendationsTable extends Migration
     public function up()
     {
         Schema::create('series_recommendations', function (Blueprint $table) {
-            $table->integer('bigInteger')->primary()->unique();
+            $table->bigInteger('id')->primary()->unique();
             $table->integer('series_id');
             $table->integer('this_id');
-            $table->boolean('rank');
+            $table->tinyInteger('rank');
         });
     }
 
