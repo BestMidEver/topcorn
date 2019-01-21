@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SuckSeriesJob;
 use App\Model\Series_later;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,7 +44,7 @@ class SeriesLaterController extends Controller
     public function store(Request $request)
     {
         $series_later = Series_later::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->series_id));
-        //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
+        SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
         return Response([
             'data' => $series_later,
         ], Response::HTTP_CREATED);

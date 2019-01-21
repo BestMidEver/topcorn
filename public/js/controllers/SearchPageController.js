@@ -367,7 +367,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		}
 	}
 
-	var f1, f2;
 	$scope.later=function(index)
 	{
 		console.log(index)
@@ -463,29 +462,42 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.ban=function(index)
 	{
 		console.log(index)
+		if($scope.active_tab == 'movie'){
+			f1 = 'add_ban';
+			f2 = 'un_ban';
+			f3 = 'modify_user_movies';
+			v1 = 'ban_id';
+			v2 = 'movie_id';
+		}else{
+			f1 = 'series_add_ban';
+			f2 = 'series_un_ban';
+			f3 = 'modify_user_series';
+			v1 = 'id';
+			v2 = 'series_id';
+		}
 		if($scope.movies[index].ban_id == null){
-			rate.add_ban($scope.movies[index].id)
+			rate[f1]($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].ban_id=response.data.data.ban_id;
-					$scope.modify_user_movies({
-						'movie_id':response.data.data.movie_id,
+					$scope.movies[index].ban_id=response.data.data[v1];
+					$scope[f3]({
+						'movie_id':response.data.data[v2],
 						'rated_id':null,
 						'rate_code':null,
 						'later_id':null,
-						'ban_id':response.data.data.ban_id
+						'ban_id':response.data.data[v1]
 					}, 'ban');
 				}
 			});
 		}else{
 			var temp = $scope.movies[index];
-			rate.un_ban($scope.movies[index].ban_id)
+			rate[f2]($scope.movies[index].ban_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
 					$scope.movies[index].ban_id=null;
-					$scope.modify_user_movies({
+					$scope[f3]({
 						'movie_id':temp.id,
 						'rated_id':temp.rated_id,
 						'rate_code':temp.rate_code,
