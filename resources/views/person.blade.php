@@ -50,18 +50,12 @@
 
 <!-- Tabs Button -->
 <div class="container-fluid mt-3 pb-3 d-none d-md-inline">
-	<ul class="nav justify-content-md-center tab1" ng-init="active_tab='vote_count'">
+	<ul class="nav justify-content-md-center tab1" ng-init="active_tab_0='movies'">
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='vote_count'}" ng-click="active_tab='vote_count';filter('vote_count')">{{ __('general.most_rated') }}</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';switch_tab()">Movies</button>
 		</li>
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='vote_average'}" ng-click="active_tab='vote_average';filter('vote_average')">{{ __('general.top_rated') }}</button>
-		</li>
-		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='release_date'}" ng-click="active_tab='release_date';filter('release_date')">{{ __('general.newest') }}</button>
-		</li>
-		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='title'}" ng-click="active_tab='title';filter('title')">{{ __('general.a_z') }}</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';switch_tab()">Series</button>
 		</li>
 	</ul>
 </div>
@@ -72,10 +66,8 @@
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu my-3 d-md-none tab2">
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='vote_count'}" ng-click="active_tab='vote_count';filter('vote_count')">{{ __('general.most_rated') }}</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='vote_average'}" ng-click="active_tab='vote_average';filter('vote_average')">{{ __('general.top_rated') }}</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='release_date'}" ng-click="active_tab='release_date';filter('release_date')">{{ __('general.newest') }}</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='title'}" ng-click="active_tab='title';filter('title')">{{ __('general.a_z') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';switch_tab()">Movies</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';switch_tab()">Series</button>
 </div>
 <!-- Tabs Button Mobile -->
 
