@@ -375,24 +375,26 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			f1 = 'add_later';
 			f2 = 'un_later';
 			f3 = 'modify_user_movies';
-			v1 = 'movie_id';
+			v1 = 'later_id';
+			v2 = 'movie_id';
 		}else{
 			f1 = 'series_add_later';
 			f2 = 'series_un_later';
 			f3 = 'modify_user_series';
-			v1 = 'series_id';
+			v1 = 'id';
+			v2 = 'series_id';
 		}
 		if($scope.movies[index].later_id == null){
 			rate[f1]($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].later_id=response.data.data.later_id;
+					$scope.movies[index].later_id=response.data.data[v1];
 					$scope[f3]({
-						'movie_id':response.data.data[v1],
+						'movie_id':response.data.data[v2],
 						'rated_id':null,
 						'rate_code':null,
-						'later_id':response.data.data.later_id,
+						'later_id':response.data.data[v1],
 						'ban_id':null
 					}, 'later');
 				}
