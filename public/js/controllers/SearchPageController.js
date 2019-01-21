@@ -329,6 +329,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			if(which_function == 'later')temp.later_id=movie.later_id;
 			if(which_function == 'rate')temp.rated_id=movie.rated_id;
 			if(which_function == 'rate')temp.rate_code=movie.rate_code;
+			console.log(temp, movie)
 		}else{
 			$scope.user_series.push(movie);
 		}
