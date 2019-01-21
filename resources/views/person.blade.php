@@ -94,7 +94,7 @@
 			<button class="dropdown-item" ng-click="active_tab='title';filter('title')">A -> Z</button>
 		</div>
 	</div>
-	<div class="dropdown" ng-init="cast_or_crew='{{ __('general.all') }}'">
+	<div class="dropdown d-inline" ng-init="cast_or_crew='{{ __('general.all') }}'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{cast_or_crew}}
 		</button>
