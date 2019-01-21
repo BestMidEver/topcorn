@@ -219,7 +219,7 @@ class SearchController extends Controller
                 'series_bans.id as ban_id'
             );
 
-            return $return_val->get() + 2;
+            return $return_val->get() . 'a';
 
         }else{//both
 
