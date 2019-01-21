@@ -320,7 +320,18 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		}else{
 			$scope.user_movies.push(movie);
 		}
-		console.log($scope.user_movies);
+	}
+
+	$scope.modify_user_series=function(movie, which_function){
+		if(_.where($scope.user_series, {movie_id:movie.movie_id}).length>0){
+			temp=_.where($scope.user_series, {movie_id:movie.movie_id})[0];
+			if(which_function == 'ban')temp.ban_id=movie.ban_id;
+			if(which_function == 'later')temp.later_id=movie.later_id;
+			if(which_function == 'rate')temp.rated_id=movie.rated_id;
+			if(which_function == 'rate')temp.rate_code=movie.rate_code;
+		}else{
+			$scope.user_series.push(movie);
+		}
 	}
 
 	$scope.paginate = function(page)
@@ -351,20 +362,30 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			case 1:
 				return 'btn-danger';
 			default:
-				return 'btn-outline-secondary addlarter';
+				return 'btn-outline-secondary addlater';
 		}
 	}
 
+	var f1, f2;
 	$scope.later=function(index)
 	{
 		console.log(index)
+		if($scope.active_tab == 'movie'){
+			f1 = 'add_later';
+			f2 = 'un_later';
+			f3 = 'modify_user_movies';
+		}else{
+			f1 = 'series_add_later';
+			f2 = 'series_un_later';
+			f3 = 'modify_user_series';
+		}
 		if($scope.movies[index].later_id == null){
-			rate.add_later($scope.movies[index].id)
+			rate[f1]($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
 					$scope.movies[index].later_id=response.data.data.later_id;
-					$scope.modify_user_movies({
+					$scope[f3]({
 						'movie_id':response.data.data.movie_id,
 						'rated_id':null,
 						'rate_code':null,
@@ -375,12 +396,12 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			});
 		}else{
 			var temp = $scope.movies[index];
-			rate.un_later($scope.movies[index].later_id)
+			rate[f2]($scope.movies[index].later_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
 					$scope.movies[index].later_id=null;
-					$scope.modify_user_movies({
+					$scope[f3]({
 						'movie_id':temp.id,
 						'rated_id':temp.rated_id,
 						'rate_code':temp.rate_code,
