@@ -29,6 +29,11 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		console.log(response.data);
 		$scope.user_movies = response.data;
 	});
+	rate.get_user_movies('series')
+	.then(function(response){
+		console.log(response.data);
+		$scope.user_series = response.data;
+	});
 
 	$scope.reset_tab = function()
 	{
@@ -107,10 +112,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	}
 
 	$scope.inside_get_page_data_movie = function(response){
-		console.log("önce",response.data.results)
-		external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
+		if($scope.active_tab == 'movie') external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
+		else external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_series);
 		$scope.movies=response.data.results;
-		console.log("sonra",$scope.movies)
 		$(".tooltip").hide();
 		if(response.data.total_pages<1000) $scope.pagination=response.data.total_pages;
 		else $scope.pagination=1000;
