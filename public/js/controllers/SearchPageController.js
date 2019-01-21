@@ -420,17 +420,30 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.rate=function(index, rate_code)
 	{
 		console.log(index, rate_code)
+		if($scope.active_tab == 'movie'){
+			f1 = 'add_rate';
+			f2 = 'un_rate';
+			f3 = 'modify_user_movies';
+			v1 = 'rated_id';
+			v2 = 'movie_id';
+		}else{
+			f1 = 'series_add_rate';
+			f2 = 'series_un_rate';
+			f3 = 'modify_user_series';
+			v1 = 'id';
+			v2 = 'series_id';
+		}
 		$('#myModal').modal('hide');
 		if(rate_code != null){
-			rate.add_rate($scope.movies[index].id, rate_code)
+			rate[f1]($scope.movies[index].id, rate_code)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].rated_id=response.data.data.rated_id;
+					$scope.movies[index].rated_id=response.data.data[v1];
 					$scope.movies[index].rate_code=response.data.data.rate;
-					$scope.modify_user_movies({
-						'movie_id':response.data.data.movie_id,
-						'rated_id':response.data.data.rated_id,
+					$scope[f3]({
+						'movie_id':response.data.data[v2],
+						'rated_id':response.data.data[v1],
 						'rate_code':response.data.data.rate,
 						'later_id':null,
 						'ban_id':null
@@ -440,13 +453,13 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			});
 		}else if(rate_code == null){
 			var temp = $scope.movies[index];
-			rate.un_rate($scope.movies[index].rated_id)
+			rate[f2]($scope.movies[index].rated_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
 					$scope.movies[index].rated_id=null;
 					$scope.movies[index].rate_code=null;
-					$scope.modify_user_movies({
+					$scope[f3]({
 						'movie_id':temp.id,
 						'rated_id':null,
 						'rate_code':null,
