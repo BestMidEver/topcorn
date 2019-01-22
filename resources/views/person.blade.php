@@ -140,9 +140,9 @@
 
 	<div class="card-columns mt-4" ng-if="page_variables.image_tab=='tagged'">
 		<div class="card" ng-repeat="image in tagged_images.results">
-			<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
+			<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap" ng-click="image_full_screen(image)">
 			<div class="card-block">
-				<a ng-click="image_full_screen(image)">
+				<a ng-href="/@{{image.media_type=='movie'?'movie':'series'}}/@{{image.media.id}}" target={{$target}}>
 					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{image.media_type=='movie'?image.media.title:image.media.name}} <small class="text-muted d-block pt-1" ng-if="image.media_type=='movie'"><em>(@{{image.media.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="image.media_type!='movie'"><em>(@{{image.media.first_air_date.substring(0, 4)}})</em></small></h6>
 				</a>
 			</div>
