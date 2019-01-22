@@ -128,7 +128,7 @@
 
 	<div class="card-group no-gutters" ng-if="page_variables.image_tab=='profile'">
 		<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
-			<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
+			<div class="card h-100 d-flex flex-column justify-content-between mx-2">
 				<a ng-click="image_full_screen(image)">
 					<div class="position-relative text-center min-height-200">
 						<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{image.file_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
