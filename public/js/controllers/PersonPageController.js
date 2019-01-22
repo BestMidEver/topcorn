@@ -22,16 +22,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 			}else{
 				$scope.age='';
 			}
-			$scope.row_cast=$scope.person.movie_credits.cast;
-			_.each($scope.person.movie_credits.crew,function(person){
-				temp=_.where(jobs,{i:person.department});
-				if(temp.length > 0)	person.job=temp[0].o;
-				else	person.job=person.department;
-			})
-			$scope.row_crew=$scope.person.movie_credits.crew;
-			$scope.jobs=_.uniq($scope.person.movie_credits.crew,'department');
-			$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
-			$scope.movies=_.sortBy($scope.movies, 'vote_count').reverse();
+			$scope.set_moviecard_data('movies');
 			$scope.cover=$scope.movies[0].backdrop_path;
 		}, function errorCallback(response) {
 			window.location.replace("/not-found");
@@ -87,19 +78,25 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 
 	$scope.switch_tab = function(){
 		if($scope.active_tab_0 == 'movies'){
-
+			$scope.set_moviecard_data('movies');
 		}else{
-			$scope.row_cast=$scope.person.tv_credits.cast;
-			_.each($scope.person.tv_credits.crew,function(person){
-				temp=_.where(jobs,{i:person.department});
-				if(temp.length > 0)	person.job=temp[0].o;
-				else	person.job=person.department;
-			})
-			$scope.row_crew=$scope.person.tv_credits.crew;
-			$scope.jobs=_.uniq($scope.person.tv_credits.crew,'department');
-			$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
-			$scope.movies=_.sortBy($scope.movies, 'vote_count').reverse();
+			$scope.set_moviecard_data('series');
 		}
+	}
+
+	$scope.set_moviecard_data = function(mode){
+		if(mode == 'movies') v1 = 'movie_credits';
+		else v1 = 'tv_credits';
+		$scope.row_cast=$scope.person[v1].cast;
+		_.each($scope.person[v1].crew,function(person){
+			temp=_.where(jobs,{i:person.department});
+			if(temp.length > 0)	person.job=temp[0].o;
+			else	person.job=person.department;
+		})
+		$scope.row_crew=$scope.person[v1].crew;
+		$scope.jobs=_.uniq($scope.person[v1].crew,'department');
+		$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
+		$scope.movies=_.sortBy($scope.movies, 'vote_count').reverse();
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
