@@ -153,8 +153,11 @@
 		@include('layout.pagination', ['suffix' => ''])
 	</div>
 </div>
-
 <div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
+				<img class="card-img" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image_poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
+
+</div>
+<!--<div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
 	<div class="modal-dialog modal-lg modal-dialog-centered full-screen-modal" role="document">
 		<div class="modal-content">
 			<div class="card">
@@ -180,5 +183,5 @@
 	</div>
 </div>
 <img class="d-none" ng-src="{{config('constants.image.original')}}@{{page_variables.previous_image.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
-<img class="d-none" ng-src="{{config('constants.image.original')}}@{{page_variables.next_image.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
+<img class="d-none" ng-src="{{config('constants.image.original')}}@{{page_variables.next_image.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">-->
 @endsection
