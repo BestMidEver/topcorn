@@ -163,6 +163,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 
 	$scope.set_full_screen_images = function(image){
 		$scope.page_variables.current_image_poster_path = image.file_path;
+		$scope.page_variables.aspect_ratio = image.aspect_ratio;
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
