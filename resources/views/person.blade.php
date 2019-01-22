@@ -114,17 +114,17 @@
 <div class="container-fluid" ng-if="active_tab_0 == 'images'">
 	<div class="dropdown d-inline">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fa fa-filter"></i> <span ng-if="image_tab=='profile'">Profile</span><span ng-if="image_tab=='tagged'">Tagged</span>
+			<i class="fa fa-filter"></i> <span ng-if="page_variables.image_tab=='profile'">Profile</span><span ng-if="page_variables.image_tab=='tagged'">Tagged</span>
 		</button>
 		<span class="text-muted pl-2"><small>@{{profile_images.length}} <span ng-show="profile_images.length < 2">image</span><span ng-show="profile_images.length > 1">images</span></small></span>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<button class="dropdown-item" ng-click="image_tab='profile'">Profile</button>
-			<button class="dropdown-item" ng-click="image_tab='tagged'">Tagged</button>
+			<button class="dropdown-item" ng-click="page_variables.image_tab='profile'">Profile</button>
+			<button class="dropdown-item" ng-click="page_variables.image_tab='tagged'">Tagged</button>
 		</div>
 	</div>
 </div>
 
-<div class="card-group no-gutters" ng-if="active_tab_0=='images' && image_tab=='profile'">
+<div class="card-group no-gutters" ng-if="active_tab_0=='images' && page_variables.image_tab=='profile'">
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
 		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
 			<a ng-href="/">
@@ -136,7 +136,7 @@
 	</div>
 </div>
 
-<div class="card-columns" ng-if="active_tab_0=='images' && image_tab=='tagged'">
+<div class="card-columns" ng-if="active_tab_0=='images' && page_variables.image_tab=='tagged'">
 	<div class="card" ng-repeat="image in tagged_images">
 		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
 		<div class="card-body">
