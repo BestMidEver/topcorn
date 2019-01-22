@@ -57,10 +57,10 @@
 <div class="container-fluid mt-3 pb-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1" ng-init="active_tab_0='movies'">
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';switch_tab()">Movies</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">Movies</button>
 		</li>
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';switch_tab()">Series</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">Series</button>
 		</li>
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='images';switch_tab()">Images</button>
@@ -74,8 +74,8 @@
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu my-3 d-md-none tab2">
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';switch_tab()">Movies</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';switch_tab()">Series</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">Movies</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">Series</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='series';switch_tab()">Images</button>
 </div>
 <!-- Tabs Button Mobile -->
