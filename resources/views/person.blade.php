@@ -97,7 +97,7 @@
 	</div>
 	<div class="dropdown d-inline" ng-init="cast_or_crew='{{ __('general.all') }}'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			@{{cast_or_crew}}
+			<i class="fa fa-filter"></i> @{{cast_or_crew}}
 		</button>
 		<span class="text-muted pl-2"><small>@{{movies.length}} <span ng-show="movies.length < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="movies.length > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
