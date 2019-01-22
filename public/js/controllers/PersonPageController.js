@@ -83,6 +83,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		}else if($scope.active_tab_0 == 'series'){
 			$scope.set_moviecard_data('series');
 		}else{
+			$scope.movies={};
 		}
 	}
 
