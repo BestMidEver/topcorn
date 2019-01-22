@@ -139,9 +139,8 @@
 <div class="card-columns" ng-if="active_tab_0=='images' && page_variables.image_tab=='tagged'">
 	<div class="card" ng-repeat="image in tagged_images">
 		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
-		<div class="card-body">
-			<h5 class="card-title">Card title that wraps to a new line</h5>
-			<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+		<div class="card-block">
+			<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{image.media_type=='movie'?image.media.title:image.media.name}} <small class="text-muted d-block pt-1" ng-if="image.media_type=='movie'"><em>(@{{image.media.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="image.media_type!='movie'"><em>(@{{image.media.first_air_date.substring(0, 4)}})</em></small></h6>
 		</div>
 	</div>
 </div>
