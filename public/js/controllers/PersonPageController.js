@@ -24,6 +24,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 			}
 			$scope.set_moviecard_data('movies');
 			$scope.cover=$scope.movies[0].backdrop_path;
+			$scope.set_imagecard_data();
 		}, function errorCallback(response) {
 			window.location.replace("/not-found");
 		});
@@ -79,8 +80,9 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 	$scope.switch_tab = function(){
 		if($scope.active_tab_0 == 'movies'){
 			$scope.set_moviecard_data('movies');
-		}else{
+		}else if($scope.active_tab_0 == 'series'){
 			$scope.set_moviecard_data('series');
+		}else{
 		}
 	}
 
@@ -97,6 +99,10 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		$scope.jobs=_.uniq($scope.person[v1].crew,'department');
 		$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
 		$scope.movies=_.sortBy($scope.movies, 'vote_count').reverse();
+	}
+
+	$scope.set_imagecard_data = function(){
+		$scope.profile_images = $scope.person.images.profiles;
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////

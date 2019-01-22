@@ -62,6 +62,9 @@
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';switch_tab()">Series</button>
 		</li>
+		<li class="nav-item">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='images';switch_tab()">Images</button>
+		</li>
 	</ul>
 </div>
 <!-- Tabs Button -->
@@ -73,6 +76,7 @@
 <div class="scrollmenu my-3 d-md-none tab2">
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';switch_tab()">Movies</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';switch_tab()">Series</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='series';switch_tab()">Images</button>
 </div>
 <!-- Tabs Button Mobile -->
 
@@ -107,4 +111,15 @@
 
 @include('layout.moviecard')
 
+<div class="card-group no-gutters">
+	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
+		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
+			<a ng-href="/">
+				<div class="position-relative text-center min-height-200">
+					<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{image.file_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
 @endsection
