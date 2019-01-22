@@ -137,7 +137,7 @@
 </div>
 
 <div class="card-columns" ng-if="active_tab_0=='images' && image_tab=='tagged'">
-	<div class="card" ng-repeat="image in profile_images">
+	<div class="card" ng-repeat="image in tagged_images">
 		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
 		<div class="card-body">
 			<h5 class="card-title">Card title that wraps to a new line</h5>
