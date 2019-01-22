@@ -83,7 +83,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid" ng-if="active_tab_0 != 'images'">
 	<div class="dropdown d-inline mr-2" ng-init="active_tab='vote_count'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> <span ng-if="active_tab=='vote_count'">Most Popular</span><span ng-if="active_tab=='vote_average'">Top Rated</span><span ng-if="active_tab=='release_date'">Newest</span><span ng-if="active_tab=='title'">A -> Z</span>
@@ -110,6 +110,19 @@
 </div>
 
 @include('layout.moviecard')
+
+<div class="container-fluid" ng-if="active_tab_0 == 'images'">
+	<div class="dropdown d-inline" ng-init="image_tab='profile'">
+		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fa fa-filter"></i> <span ng-if="image_tab=='profile'">Profile</span><span ng-if="image_tab=='tagged'">Tagged</span>
+		</button>
+		<span class="text-muted pl-2"><small>@{{profile_images.length}} <span ng-show="profile_images.length < 2">image</span><span ng-show="profile_images.length > 1">images</span></small></span>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<button class="dropdown-item" ng-click="image_tab='profile'">Profile</button>
+			<button class="dropdown-item" ng-click="image_tab='tagged'">Tagged</button>
+		</div>
+	</div>
+</div>
 
 <div class="card-group no-gutters" ng-if="active_tab_0 == 'images'">
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
