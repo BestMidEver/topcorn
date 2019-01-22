@@ -154,7 +154,7 @@
 	</div>
 </div>
 <div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
-	<div class="votecard modal-dialog modal-dialog-centered" role="document">
+	<div class="modal-dialog-centered">
 		<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 		  <div class="carousel-inner">
 		    <div class="carousel-item active">
