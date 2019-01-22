@@ -91,7 +91,7 @@
     <div>
         <div class="d-flex flex-column">
             <div class="px-3 px-md-0">
-                <a class="text-dark" href="/" target="_blank">
+                <a class="text-dark" ng-href="http://www.google.com/search?q=@{{page_variables.name+' '+series.first_air_date.substring(0, 4)}}" target="_blank">
                     <h1 class="h4 pb-2 pt-3">@{{page_variables.name}}</h1>
                 </a>
             </div>
