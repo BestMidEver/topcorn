@@ -95,16 +95,16 @@
 			<button class="dropdown-item" ng-click="page_variables.active_tab='title';filter('title')">A -> Z</button>
 		</div>
 	</div>
-	<div class="dropdown d-inline" ng-init="cast_or_crew='{{ __('general.all') }}'">
+	<div class="dropdown d-inline" ng-init="page_variables.cast_or_crew='{{ __('general.all') }}'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fa fa-filter"></i> @{{cast_or_crew}}
+			<i class="fa fa-filter"></i> @{{page_variables.cast_or_crew}}
 		</button>
 		<span class="text-muted pl-2"><small>@{{movies.length}} <span ng-show="movies.length < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="movies.length > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<button class="dropdown-item" ng-show="person.movie_credits.cast.length>0" ng-click="cast_or_crew='{{ __('general.acting') }}';filter('cast')">{{ __('general.acting') }}</button>
+			<button class="dropdown-item" ng-show="person.movie_credits.cast.length>0" ng-click="page_variables.cast_or_crew='{{ __('general.acting') }}';filter('cast')">{{ __('general.acting') }}</button>
 			<button class="dropdown-item" ng-repeat="job in jobs" ng-click="filter(job.department,job.job)">@{{job.job}}</button>
 			<div class="dropdown-divider"></div>
-			<button class="dropdown-item" ng-click="cast_or_crew='{{ __('general.all') }}';filter('all')">{{ __('general.all') }}</button>
+			<button class="dropdown-item" ng-click="page_variables.cast_or_crew='{{ __('general.all') }}';filter('all')">{{ __('general.all') }}</button>
 		</div>
 	</div>
 </div>

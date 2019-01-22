@@ -123,7 +123,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 				break;
 			default:
 				$scope.movies=_.unique(_.where($scope.row_crew,{department:mod}),'id');
-				$scope.cast_or_crew=name;
+				$scope.page_variables.cast_or_crew=name;
 				$scope.filter($scope.page_variables.active_tab);
 		}
 		$(".tooltip").hide();
