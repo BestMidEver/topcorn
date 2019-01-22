@@ -115,7 +115,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 			case 'cast':
 				$scope.movies=$scope.row_cast;
 				console.log($scope.row_cast)
-				$scope.filter($scope.active_tab);
+				//$scope.filter($scope.active_tab);
 				break;
 			case 'all':
 				$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
