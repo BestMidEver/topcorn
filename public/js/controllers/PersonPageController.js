@@ -104,6 +104,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 
 	$scope.set_imagecard_data = function(){
 		$scope.profile_images = $scope.person.images.profiles;
+		$scope.tagged_images = $scope.person.tagged_images.results;
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////

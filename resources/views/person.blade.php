@@ -124,7 +124,7 @@
 	</div>
 </div>
 
-<div class="card-group no-gutters" ng-if="active_tab_0 == 'images'">
+<div class="card-group no-gutters" ng-if="active_tab_0=='images' && image_tab=='profile">
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
 		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
 			<a ng-href="/">
@@ -132,6 +132,16 @@
 					<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{image.file_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 				</div>
 			</a>
+		</div>
+	</div>
+</div>
+
+<div class="card-columns" ng-if="active_tab_0=='images' && image_tab=='tagged">
+	<div class="card" ng-repeat="image in profile_images">
+		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">Card title that wraps to a new line</h5>
+			<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 		</div>
 	</div>
 </div>
