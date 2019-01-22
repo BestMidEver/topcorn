@@ -155,10 +155,10 @@
 </div>
 
 <div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
-	<div class="modal-dialog modal-lg modal-dialog-centered " ng-style="{height: iframeHeight + 'px'}" role="document">
+	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="card">
-				<img class="card-img" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image_poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
+				<img class="card-img" ng-style="{height: iframeHeight + 'px'}" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image_poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
 				<div class="card-img-overlay p-2">
 					<div class="text-center h-100 d-flex flex-column justify-content-between">
 						<div class="d-flex flex-row justify-content-between">
