@@ -142,7 +142,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 	$scope.set_moviecard_data = function(mode){
 		$scope.page_variables.cast_or_crew='All';
 		console.log($scope.page_variables.active_tab)
-		$scope.page_variables.active_tab=='vote_count';
+		$scope.page_variables.active_tab==null;
 		console.log($scope.page_variables.active_tab)
 		if(mode == 'movies') v1 = 'movie_credits';
 		else v1 = 'tv_credits';
