@@ -1,4 +1,4 @@
-MyApp.controller('PersonPageController', function($scope, $http, rate, external_internal_data_merger)
+MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, rate, external_internal_data_merger)
 {
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
