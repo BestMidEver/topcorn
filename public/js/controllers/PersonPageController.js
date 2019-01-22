@@ -98,7 +98,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 		$scope.in=$scope.tagged_images.total_results;
 	}
 
-	$scope.filter = function(mod,name){
+	$scope.filter = function(mod){
 		switch(mod) {
 			case 'vote_average':
 				$scope.movies=_.sortBy($scope.movies, 'vote_average').reverse();
@@ -115,7 +115,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 			case 'cast':
 				$scope.movies=$scope.row_cast;
 				console.log($scope.row_cast)
-				//$scope.filter($scope.active_tab);
+				$scope.filter($scope.active_tab);
 				break;
 			case 'all':
 				$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
@@ -123,7 +123,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 				break;
 			default:
 				$scope.movies=_.unique(_.where($scope.row_crew,{department:mod}),'id');
-				$scope.cast_or_crew=name;
+				//$scope.cast_or_crew=name;
 				$scope.filter($scope.active_tab);
 		}
 		$(".tooltip").hide();
