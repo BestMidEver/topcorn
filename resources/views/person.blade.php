@@ -142,7 +142,7 @@
 		<div class="card" ng-repeat="image in tagged_images.results">
 			<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
 			<div class="card-block">
-				<a ng-href="/@{{image.media_type=='movie'?'movie':'series'}}/@{{image.media.id}}" target={{$target}}>
+				<a ng-click="image_full_screen(image)">
 					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{image.media_type=='movie'?image.media.title:image.media.name}} <small class="text-muted d-block pt-1" ng-if="image.media_type=='movie'"><em>(@{{image.media.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="image.media_type!='movie'"><em>(@{{image.media.first_air_date.substring(0, 4)}})</em></small></h6>
 				</a>
 			</div>
@@ -155,7 +155,7 @@
 </div>
 
 <div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
-	<div class="modal-dialog modal-dialog-centered" role="document">
+	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="card">
 				<img class="card-img" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image_poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
