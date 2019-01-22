@@ -286,7 +286,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		$scope.later=function(index)
 		{
 			console.log(index)
-			if($scope.active_tab_0 == 'movie'){
+			if($scope.active_tab_0 == 'movies'){
 				f1 = 'add_later';
 				f2 = 'un_later';
 				v1 = 'later_id';
