@@ -65,17 +65,18 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 	$scope.paginate = function(page)
 	{
 		$scope.page = page;
-		$scope.get_tagged_images();
+		$scope.get_tagged_images('not_first_time');
 		$scope.scroll_to_top();
 	}
 
+	$scope.page = 1;
 	$scope.get_tagged_images = function(mode){
 		if(mode == 'first_time'){
 			$scope.implement_tagged_images();
 		}else{
 			$http({
 				method: 'GET',
-				url: 'https://api.themoviedb.org/3/person/'+pass.personid+'/tagged_images?api_key='+pass.api_key+'&language='+pass.lang
+				url: 'https://api.themoviedb.org/3/person/'+pass.personid+'/tagged_images?api_key='+pass.api_key+'&language='+pass.lang+'+page='+$scope.page
 			}).then(function successCallback(response) {
 				$scope.tagged_images = response.data;
 				$scope.implement_tagged_images();
