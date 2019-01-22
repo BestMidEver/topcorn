@@ -118,7 +118,7 @@
 				<i class="fa fa-filter"></i> <span ng-if="page_variables.image_tab=='profile'">Profile</span><span ng-if="page_variables.image_tab=='tagged'">Tagged</span>
 			</button>
 			<span class="text-muted pl-2" ng-if="image_tab=='profile'"><small>@{{profile_images.length}} <span ng-show="profile_images.length < 2">image</span><span ng-show="profile_images.length > 1">images</span></small></span>
-			<span class="text-muted pl-2" ng-if="image_tab!='profile"><small>@{{tagged_images.results.length}} <span ng-show="tagged_images.results.length < 2">image</span><span ng-show="tagged_images.results.length > 1">images</span></small></span>
+			<span class="text-muted pl-2" ng-if="image_tab!='profile'"><small>@{{tagged_images.results.length}} <span ng-show="tagged_images.results.length < 2">image</span><span ng-show="tagged_images.results.length > 1">images</span></small></span>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				<button class="dropdown-item" ng-click="page_variables.image_tab='profile'">Profile</button>
 				<button class="dropdown-item" ng-click="page_variables.image_tab='tagged'">Tagged</button>
