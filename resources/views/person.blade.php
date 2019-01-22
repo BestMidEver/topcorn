@@ -112,7 +112,7 @@
 @include('layout.moviecard')
 
 <div class="container-fluid" ng-if="active_tab_0 == 'images'">
-	<div class="dropdown d-inline" ng-init="image_tab='profile'">
+	<div class="dropdown d-inline">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fa fa-filter"></i> <span ng-if="image_tab=='profile'">Profile</span><span ng-if="image_tab=='tagged'">Tagged</span>
 		</button>
@@ -136,7 +136,7 @@
 	</div>
 </div>
 
-<!--<div class="card-columns" ng-if="active_tab_0=='images' && image_tab=='tagged'">
+<div class="card-columns" ng-if="active_tab_0=='images' && image_tab=='tagged'">
 	<div class="card" ng-repeat="image in tagged_images">
 		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
 		<div class="card-body">
@@ -144,5 +144,5 @@
 			<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 		</div>
 	</div>
-</div>-->
+</div>
 @endsection

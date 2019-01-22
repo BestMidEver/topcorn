@@ -102,6 +102,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		$scope.movies=_.sortBy($scope.movies, 'vote_count').reverse();
 	}
 
+	$scope.image_tab='profile';
 	$scope.set_imagecard_data = function(){
 		$scope.profile_images = $scope.person.images.profiles;
 		$scope.tagged_images = $scope.person.tagged_images.results;
