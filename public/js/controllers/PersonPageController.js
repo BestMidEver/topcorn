@@ -78,8 +78,8 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 				method: 'GET',
 				url: 'https://api.themoviedb.org/3/person/'+pass.personid+'/tagged_images?api_key='+pass.api_key+'&language='+pass.lang+'&page='+$scope.page
 			}).then(function successCallback(response) {
+				console.log(response.data)
 				$scope.tagged_images = response.data;
-				console.log($scope.tagged_images)
 				$scope.implement_tagged_images();
 			});
 		}
@@ -88,10 +88,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 	$scope.implement_tagged_images = function(){
 		if($scope.tagged_images.total_pages<1000) $scope.pagination=$scope.tagged_images.total_pages;
 		else $scope.pagination=1000;
-		console.log('ŞİNCİK cp',$scope.current_page)
-		$scope.current_page=null;
 		$scope.current_page=$scope.tagged_images.page;
-		console.log('ŞİNCİK cp',$scope.current_page)
 		$scope.from=($scope.tagged_images.page-1)*20+1;
 		$scope.to=($scope.tagged_images.page-1)*20+$scope.tagged_images.results.length;
 		$scope.in=$scope.tagged_images.total_results;
