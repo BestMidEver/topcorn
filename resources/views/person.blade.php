@@ -155,7 +155,7 @@
 </div>
 
 <div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
-	<div class="full-screen-modal modal-dialog modal-dialog-centered" role="document">
+	<div class="modal-dialog modal-lg modal-dialog-centered full-screen-modal" role="document">
 		<div class="modal-content">
 			<div class="card">
 				<img class="card-img" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image_poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
