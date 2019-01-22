@@ -90,6 +90,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .min-height-200{min-height: 200px;}
 .btn-trailer{color:#000!important;}
 .btn-trailer:hover{color:#000!important;}
+.cursor-pointer{cursor: pointer;}
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}
