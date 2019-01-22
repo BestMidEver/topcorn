@@ -35,7 +35,7 @@ return array(
     ),
     'thumb_nail_error' => '/images/FFFFFF-08.png',
 
-    'svg' => 'https://image.tmdb.org/t/p/original',
+    'original' => 'https://image.tmdb.org/t/p/original',
   ),
 
 

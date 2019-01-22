@@ -154,6 +154,16 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 		$scope.profile_images = $scope.person.images.profiles;
 		$scope.tagged_images = $scope.person.tagged_images;
 	}
+
+	$scope.image_full_screen=function(image)
+	{
+		$scope.set_full_screen_images(image);
+		$('#image_modal').modal('show');
+	};
+
+	$scope.set_full_screen_images = function(image){
+		$scope.page_variables.current_image.poster_path = image.file_path;
+	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////

@@ -129,7 +129,7 @@
 	<div class="card-group no-gutters" ng-if="page_variables.image_tab=='profile'">
 		<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
 			<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
-				<a ng-href="/">
+				<a ng-click="image_full_screen(image)">
 					<div class="position-relative text-center min-height-200">
 						<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{image.file_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
@@ -153,4 +153,32 @@
 		@include('layout.pagination', ['suffix' => ''])
 	</div>
 </div>
+
+<div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
+	<div class="votecard modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="card">
+				<img class="card-img" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
+				<div class="card-img-overlay p-2">
+					<div class="text-center h-100 d-flex flex-column justify-content-between">
+						<div class="d-flex flex-row justify-content-between">
+							<div class="faderdiv">
+							</div>
+							<div class="faderdiv">
+								<div class="h4 mr-3"><a ng-href="/" target={{$target}}><span class="badge btn-verydark yeswrap text-white">@{{modalmovie.title.length>0?modalmovie.title:modalmovie.name}} <small class="text-muted d-block pt-1" ng-if="modalmovie.release_date.length > 0"><em>(@{{modalmovie.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="modalmovie.first_air_date.length > 0"><em>(@{{modalmovie.first_air_date.substring(0, 4)}})</em></small></span></a></div>
+							</div>
+							<div class="faderdiv">
+								<button type="button" class="btn btn-verydark btn-lg float-right border-circle text-white" data-dismiss="modal" data-backdrop="false" aria-label="Close">
+									<span><i class="fa fa-times"></i></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<img class="d-none" ng-src="{{config('constants.image.original')}}@{{page_variables.previous_image.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
+<img class="d-none" ng-src="{{config('constants.image.original')}}@{{page_variables.next_image.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
 @endsection
