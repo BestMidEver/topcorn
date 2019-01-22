@@ -45,8 +45,8 @@
 	</div>
 	<div class="right-bottom pr-2 fa30">
 		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.facebook.link')}}@{{person.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}" ng-if="person.external_ids.facebook_id.length>0"><i class="fab fa-facebook-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.instagram.link')}}@{{person.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram" ng-if="person.external_ids.instagram_id.length>0"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.twitter.link')}}@{{person.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square" ng-if="person.external_ids.twitter_id.length>0"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.instagram.link')}}@{{person.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}" ng-if="person.external_ids.instagram_id.length>0"><i class="fab fa-instagram"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.twitter.link')}}@{{person.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}" ng-if="person.external_ids.twitter_id.length>0"><i class="fab fa-twitter-square"></i></a>
 	</div>
 </div>
 
