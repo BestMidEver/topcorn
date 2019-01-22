@@ -1,5 +1,19 @@
 MyApp.controller('PersonPageController', function($scope, $http, rate, external_internal_data_merger)
 {
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+	$scope.scroll_to_top=function(){
+		$anchorScroll.yOffset = 55;
+		$anchorScroll('scroll_top_point')
+	}
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 	$scope.page_variables={};
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
@@ -26,26 +40,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 			$scope.set_moviecard_data('movies');
 			$scope.cover=$scope.movies[0].backdrop_path;
 			$scope.set_imagecard_data();
-
-
-
-
-
-
-			if($scope.tagged_images.total_pages<1000) $scope.pagination=$scope.tagged_images.total_pages;
-			else $scope.pagination=1000;
-			$scope.current_page=$scope.tagged_images.page;
-			$scope.from=($scope.tagged_images.page-1)*20+1;
-			$scope.to=($scope.tagged_images.page-1)*20+$scope.tagged_images.results.length;
-			$scope.in=$scope.tagged_images.total_results;
-
-
-
-
-
-
-
-
+			$scope.get_tagged_images('first_time');
 		}, function errorCallback(response) {
 			window.location.replace("/not-found");
 		});
@@ -65,6 +60,36 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		});
 	}else{
 		$scope.get_page_data();
+	}
+
+	$scope.paginate = function(page)
+	{
+		$scope.page = page;
+		$scope.get_tagged_images();
+		$scope.scroll_to_top();
+	}
+
+	$scope.get_tagged_images = function(mode){
+		if(mode == 'first_time'){
+			$scope.implement_tagged_images();
+		}else{
+			$http({
+				method: 'GET',
+				url: 'https://api.themoviedb.org/3/person/'+pass.personid+'/tagged_images?api_key='+pass.api_key+'&language='+pass.lang
+			}).then(function successCallback(response) {
+				$scope.tagged_images = response.data;
+				$scope.implement_tagged_images();
+			});
+		}
+	}
+
+	$scope.implement_tagged_images = function(){
+		if($scope.tagged_images.total_pages<1000) $scope.pagination=$scope.tagged_images.total_pages;
+		else $scope.pagination=1000;
+		$scope.current_page=$scope.tagged_images.page;
+		$scope.from=($scope.tagged_images.page-1)*20+1;
+		$scope.to=($scope.tagged_images.page-1)*20+$scope.tagged_images.results.length;
+		$scope.in=$scope.tagged_images.total_results;
 	}
 
 	$scope.filter = function(mod,name){
@@ -280,12 +305,6 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// SAME PART //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-		/*$scope.paginate = function(page)
-		{
-			$scope.page = page;
-			$scope.get_page_data();
-			$scope.scroll_to_top();
-		}*/
 
 		$scope.votemodal=function(index, movie)
 		{

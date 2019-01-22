@@ -111,7 +111,7 @@
 
 @include('layout.moviecard')
 
-<div ng-if="active_tab_0 == 'images'">
+<div ng-if="active_tab_0 == 'images'" id="scroll_top_point">
 	<div class="container-fluid">
 		<div class="dropdown d-inline" ng-init="page_variables.image_tab='profile'">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
