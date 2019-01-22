@@ -89,6 +89,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 		if($scope.tagged_images.total_pages<1000) $scope.pagination=$scope.tagged_images.total_pages;
 		else $scope.pagination=1000;
 		$scope.current_page=$scope.tagged_images.page;
+		$scope.current_page=3;
 		$scope.from=($scope.tagged_images.page-1)*20+1;
 		$scope.to=($scope.tagged_images.page-1)*20+$scope.tagged_images.results.length;
 		$scope.in=$scope.tagged_images.total_results;
