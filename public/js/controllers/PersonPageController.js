@@ -26,6 +26,26 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 			$scope.set_moviecard_data('movies');
 			$scope.cover=$scope.movies[0].backdrop_path;
 			$scope.set_imagecard_data();
+
+
+
+
+
+
+			if($scope.tagged_images.total_pages<1000) $scope.pagination=$scope.tagged_images.total_pages;
+			else $scope.pagination=1000;
+			$scope.current_page=$scope.tagged_images.page;
+			$scope.from=($scope.tagged_images.page-1)*20+1;
+			$scope.to=($scope.tagged_images.page-1)*20+$scope.tagged_images.results.length;
+			$scope.in=$scope.tagged_images.total_results;
+
+
+
+
+
+
+
+
 		}, function errorCallback(response) {
 			window.location.replace("/not-found");
 		});
@@ -105,7 +125,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 
 	$scope.set_imagecard_data = function(){
 		$scope.profile_images = $scope.person.images.profiles;
-		$scope.tagged_images = $scope.person.tagged_images.results;
+		$scope.tagged_images = $scope.person.tagged_images;
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////

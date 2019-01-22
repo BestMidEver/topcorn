@@ -111,39 +111,43 @@
 
 @include('layout.moviecard')
 
-<div class="container-fluid" ng-if="active_tab_0 == 'images'">
-	<div class="dropdown d-inline" ng-init="page_variables.image_tab='profile'">
-		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fa fa-filter"></i> <span ng-if="page_variables.image_tab=='profile'">Profile</span><span ng-if="page_variables.image_tab=='tagged'">Tagged</span>
-		</button>
-		<span class="text-muted pl-2"><small>@{{profile_images.length}} <span ng-show="profile_images.length < 2">image</span><span ng-show="profile_images.length > 1">images</span></small></span>
-		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<button class="dropdown-item" ng-click="page_variables.image_tab='profile'">Profile</button>
-			<button class="dropdown-item" ng-click="page_variables.image_tab='tagged'">Tagged</button>
+<div ng-if="active_tab_0 == 'images'">
+	<div class="container-fluid">
+		<div class="dropdown d-inline" ng-init="page_variables.image_tab='profile'">
+			<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-filter"></i> <span ng-if="page_variables.image_tab=='profile'">Profile</span><span ng-if="page_variables.image_tab=='tagged'">Tagged</span>
+			</button>
+			<span class="text-muted pl-2"><small>@{{profile_images.length}} <span ng-show="profile_images.length < 2">image</span><span ng-show="profile_images.length > 1">images</span></small></span>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<button class="dropdown-item" ng-click="page_variables.image_tab='profile'">Profile</button>
+				<button class="dropdown-item" ng-click="page_variables.image_tab='tagged'">Tagged</button>
+			</div>
 		</div>
 	</div>
-</div>
 
-<div class="card-group no-gutters" ng-if="active_tab_0=='images' && page_variables.image_tab=='profile'">
-	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
-		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
-			<a ng-href="/">
-				<div class="position-relative text-center min-height-200">
-					<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{image.file_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
-				</div>
-			</a>
+	<div class="card-group no-gutters" ng-if="page_variables.image_tab=='profile'">
+		<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
+			<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
+				<a ng-href="/">
+					<div class="position-relative text-center min-height-200">
+						<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{image.file_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+					</div>
+				</a>
+			</div>
 		</div>
 	</div>
-</div>
 
-<div class="card-columns mt-4" ng-if="active_tab_0=='images' && page_variables.image_tab=='tagged'">
-	<div class="card" ng-repeat="image in tagged_images">
-		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
-		<div class="card-block">
-			<a ng-href="/@{{image.media_type=='movie'?'movie':'series'}}/@{{image.media.id}}" target={{$target}}>
-				<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{image.media_type=='movie'?image.media.title:image.media.name}} <small class="text-muted d-block pt-1" ng-if="image.media_type=='movie'"><em>(@{{image.media.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="image.media_type!='movie'"><em>(@{{image.media.first_air_date.substring(0, 4)}})</em></small></h6>
-			</a>
+	<div class="card-columns mt-4" ng-if="page_variables.image_tab=='tagged'">
+		<div class="card" ng-repeat="image in tagged_images.results">
+			<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
+			<div class="card-block">
+				<a ng-href="/@{{image.media_type=='movie'?'movie':'series'}}/@{{image.media.id}}" target={{$target}}>
+					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{image.media_type=='movie'?image.media.title:image.media.name}} <small class="text-muted d-block pt-1" ng-if="image.media_type=='movie'"><em>(@{{image.media.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="image.media_type!='movie'"><em>(@{{image.media.first_air_date.substring(0, 4)}})</em></small></h6>
+				</a>
+			</div>
 		</div>
 	</div>
+
+	@include('layout.pagination', ['suffix' => ''])
 </div>
 @endsection
