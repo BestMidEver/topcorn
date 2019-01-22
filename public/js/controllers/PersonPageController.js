@@ -86,7 +86,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 	}
 
 	$scope.switch_tab = function(){
-		if(active_tab_0 == 'movies'){
+		if($scope.active_tab_0 == 'movies'){
 
 		}else{
 			$scope.row_cast=$scope.person.tv_credits.cast;
