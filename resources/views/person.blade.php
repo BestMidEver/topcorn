@@ -5,7 +5,7 @@
 @section('body')
 <div class="position-relative mt-md-4">
 	<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{cover}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid coverpic" alt="Responsive image">
-	<div class="coveroverlayersmall d-md-none">
+	<div class="coveroverlayersmall-profile d-md-none">
 		<div class="d-flex flex-column align-items-center">
 			<div class="d-flex flex-column">
 				<img ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="img-thumbnail profilepicsmall" alt="Responsive image">
@@ -44,9 +44,9 @@
 		</div>
 	</div>
 	<div class="right-bottom pr-2 fa30">
-		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.facebook.link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.instagram.link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
-		<a class="btn btn-link mb-2 text-light btn-sm" href="{{config('constants.twitter.link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.facebook.link')}}@{{person.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}" ng-if="person.external_ids.facebook_id.length>0"><i class="fab fa-facebook-square"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.instagram.link')}}@{{person.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram" ng-if="person.external_ids.instagram_id.length>0"></i></a>
+		<a class="btn btn-link mb-2 text-light btn-sm" ng-href="{{config('constants.twitter.link')}}@{{person.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square" ng-if="person.external_ids.twitter_id.length>0"></i></a>
 	</div>
 </div>
 
