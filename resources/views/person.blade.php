@@ -124,7 +124,7 @@
 	</div>
 </div>
 
-<div class="card-group no-gutters" ng-if="active_tab_0=='images' && image_tab=='profile'">
+<div class="card-group no-gutters" ng-show="active_tab_0=='images' && image_tab=='profile'">
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
 		<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
 			<a ng-href="/">
@@ -136,7 +136,7 @@
 	</div>
 </div>
 
-<div class="card-columns" ng-if="active_tab_0=='images' && image_tab=='tagged'">
+<div class="card-columns" ng-show="active_tab_0=='images' && image_tab=='tagged'">
 	<div class="card" ng-repeat="image in tagged_images">
 		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
 		<div class="card-body">
