@@ -115,16 +115,16 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 			case 'cast':
 				$scope.movies=$scope.row_cast;
 				console.log($scope.row_cast)
-				$scope.filter($scope.active_tab);
+				$scope.filter($scope.page_variables.active_tab);
 				break;
 			case 'all':
 				$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
-				$scope.filter($scope.active_tab);
+				$scope.filter($scope.page_variables.active_tab);
 				break;
 			default:
 				$scope.movies=_.unique(_.where($scope.row_crew,{department:mod}),'id');
 				//$scope.cast_or_crew=name;
-				$scope.filter($scope.active_tab);
+				$scope.filter($scope.page_variables.active_tab);
 		}
 		$(".tooltip").hide();
 	}
