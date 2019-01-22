@@ -136,7 +136,7 @@
 	</div>
 </div>
 
-<div class="card-columns" ng-if="active_tab_0=='images' && page_variables.image_tab=='tagged'">
+<div class="card-columns no-gutters" ng-if="active_tab_0=='images' && page_variables.image_tab=='tagged'">
 	<div class="card" ng-repeat="image in tagged_images">
 		<img class="card-img-top" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap">
 		<div class="card-block">
