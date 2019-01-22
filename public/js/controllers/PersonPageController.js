@@ -7,7 +7,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 	{
 		$http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/person/'+pass.personid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=movie_credits,tv_credits'
+			url: 'https://api.themoviedb.org/3/person/'+pass.personid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=movie_credits,tv_credits,external_ids'
 		}).then(function successCallback(response) {
 			if(pass.is_auth==1){
 				external_internal_data_merger.merge_user_movies_to_external_data(response.data.movie_credits.cast, $scope.user_movies);
