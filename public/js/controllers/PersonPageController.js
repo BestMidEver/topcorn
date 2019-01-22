@@ -286,16 +286,25 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		$scope.later=function(index)
 		{
 			console.log(index)
+			if($scope.active_tab_0 == 'movie'){
+				f1 = 'add_later';
+				f2 = 'un_later';
+				v1 = 'later_id';
+			}else{
+				f1 = 'series_add_later';
+				f2 = 'series_un_later';
+				v1 = 'id';
+			}
 			if($scope.movies[index].later_id == null){
-				rate.add_later($scope.movies[index].id)
+				rate[f1]($scope.movies[index].id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.movies[index].later_id=response.data.data.later_id;
+						$scope.movies[index].later_id=response.data.data[v1];
 					}
 				});
 			}else{
-				rate.un_later($scope.movies[index].later_id)
+				rate[f2]($scope.movies[index].later_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204 || response.status == 404){
