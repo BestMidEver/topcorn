@@ -78,7 +78,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 				method: 'GET',
 				url: 'https://api.themoviedb.org/3/person/'+pass.personid+'/tagged_images?api_key='+pass.api_key+'&language='+pass.lang+'+page='+$scope.page
 			}).then(function successCallback(response) {
-				console.log(respose.data)
+				console.log(response.data)
 				$scope.tagged_images = response.data;
 				$scope.implement_tagged_images();
 			});
