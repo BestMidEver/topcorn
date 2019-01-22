@@ -112,7 +112,7 @@
 @include('layout.moviecard')
 
 <div class="container-fluid" ng-if="active_tab_0 == 'images'">
-	<div class="dropdown d-inline">
+	<div class="dropdown d-inline" ng-init="page_variables.image_tab='profile'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fa fa-filter"></i> <span ng-if="page_variables.image_tab=='profile'">Profile</span><span ng-if="page_variables.image_tab=='tagged'">Tagged</span>
 		</button>
