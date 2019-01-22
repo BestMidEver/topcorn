@@ -129,7 +129,7 @@
 	<div class="card-group no-gutters" ng-if="page_variables.image_tab=='profile'">
 		<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="image in profile_images">
 			<div class="card h-100 d-flex flex-column justify-content-between mx-2">
-				<a ng-click="image_full_screen(image)" class="cursor-pointer">
+				<a ng-click="image_full_screen(image)" class="cursor-zoom-in">
 					<div class="position-relative text-center min-height-200">
 						<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{image.file_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 					</div>
@@ -140,7 +140,7 @@
 
 	<div class="card-columns mt-4" ng-if="page_variables.image_tab=='tagged'">
 		<div class="card" ng-repeat="image in tagged_images.results">
-			<img class="card-img-top cursor-pointer" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap" ng-click="image_full_screen(image)">
+			<img class="card-img-top cursor-zoom-in" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap" ng-click="image_full_screen(image)">
 			<div class="card-block">
 				<a ng-href="/@{{image.media_type=='movie'?'movie':'series'}}/@{{image.media.id}}" target={{$target}}>
 					<h6 class="card-title px-1 py-1 my-0 text-dark text-left">@{{image.media_type=='movie'?image.media.title:image.media.name}} <small class="text-muted d-block pt-1" ng-if="image.media_type=='movie'"><em>(@{{image.media.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="image.media_type!='movie'"><em>(@{{image.media.first_air_date.substring(0, 4)}})</em></small></h6>
