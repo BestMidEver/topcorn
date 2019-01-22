@@ -11,7 +11,9 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		}).then(function successCallback(response) {
 			if(pass.is_auth==1){
 				external_internal_data_merger.merge_user_movies_to_external_data(response.data.movie_credits.cast, $scope.user_movies);
-				external_internal_data_merger.merge_user_movies_to_external_data(response.data.movie_credits.crew, $scope.user_movies)
+				external_internal_data_merger.merge_user_movies_to_external_data(response.data.movie_credits.crew, $scope.user_movies);
+				external_internal_data_merger.merge_user_movies_to_external_data(response.data.tv_credits.cast, $scope.user_series);
+				external_internal_data_merger.merge_user_movies_to_external_data(response.data.tv_credits.crew, $scope.user_series);
 			}
 			console.log(response.data);
 			$scope.person=response.data;
@@ -41,7 +43,12 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		.then(function(response){
 			console.log(response.data);
 			$scope.user_movies = response.data;
-			$scope.get_page_data();
+			rate.get_user_movies('series')
+			.then(function(response_2){
+				console.log(response_2.data);
+				$scope.user_series = response_2.data;
+				$scope.get_page_data();
+			});
 		});
 	}else{
 		$scope.get_page_data();
@@ -76,6 +83,23 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 				$scope.filter($scope.active_tab);
 		}
 		$(".tooltip").hide();
+	}
+
+	$scope.switch_tab = function(){
+		if(active_tab_0 == 'movies'){
+
+		}else{
+			$scope.row_cast=$scope.person.tv_credits.cast;
+			_.each($scope.person.tv_credits.crew,function(person){
+				temp=_.where(jobs,{i:person.department});
+				if(temp.length > 0)	person.job=temp[0].o;
+				else	person.job=person.department;
+			})
+			$scope.row_crew=$scope.person.tv_credits.crew;
+			$scope.jobs=_.uniq($scope.person.tv_credits.crew,'department');
+			$scope.movies=_.uniq(_.union($scope.row_cast, $scope.row_crew),'id');
+			$scope.movies=_.sortBy($scope.movies, 'vote_count').reverse();
+		}
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
