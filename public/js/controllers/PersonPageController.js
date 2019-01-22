@@ -99,7 +99,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 	}
 
 	$scope.filter = function(mod,name){
-		/*switch(mod) {
+		switch(mod) {
 			case 'vote_average':
 				$scope.movies=_.sortBy($scope.movies, 'vote_average').reverse();
 				break;
@@ -125,7 +125,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 				$scope.movies=_.unique(_.where($scope.row_crew,{department:mod}),'id');
 				$scope.cast_or_crew=name;
 				$scope.filter($scope.active_tab);
-		}*/console.log(':D')
+		}
 		$(".tooltip").hide();
 	}
 
