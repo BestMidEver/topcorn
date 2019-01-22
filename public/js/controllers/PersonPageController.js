@@ -317,7 +317,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		$scope.rate=function(index, rate_code)
 		{
 			console.log(index, rate_code)
-			if($scope.active_tab == 'movie'){
+			if($scope.active_tab_0 == 'movies'){
 				f1 = 'add_rate';
 				f2 = 'un_rate';
 				v1 = 'rated_id';
@@ -356,7 +356,7 @@ MyApp.controller('PersonPageController', function($scope, $http, rate, external_
 		$scope.ban=function(index)
 		{
 			console.log(index)
-			if($scope.active_tab == 'movie'){
+			if($scope.active_tab_0 == 'movies'){
 				f1 = 'add_ban';
 				f2 = 'un_ban';
 				v1 = 'ban_id';
