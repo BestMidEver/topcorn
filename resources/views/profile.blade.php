@@ -108,7 +108,7 @@
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='series'">Series</button>
 	</div>
 </div>
-<div class="container-fluid pb-3 pt-0 d-none d-md-inline">
+<div class="container-fluid p-0 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data()">{{ __('general.seen_movies') }}</button>
