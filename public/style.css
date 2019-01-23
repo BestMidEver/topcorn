@@ -18,7 +18,7 @@ button:focus{box-shadow: none!important;}
 .btn-tab{border-color: #5bc0eb; background: #5bc0eb; color:#fff;}
 .btn-tab:hover{cursor: pointer;}
 .btn-outline-tab{border-color: #5bc0eb; background: #fff; color:#6c757d;}
-.btn-outline-tab:hover{cursor: pointer; color: #000;}
+.btn-outline-tab:hover{cursor: pointer;}
 .text-black{color:#000!important;}
 .text-dark{color:#212529!important;}
 .text-no-decoration{text-decoration: none!important;}
