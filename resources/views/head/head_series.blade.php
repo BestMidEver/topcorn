@@ -18,6 +18,10 @@ pass={
 @include('cdn.underscore')
 @endsection
 
+@section('external_internal_data_merger')
+<script src="/js/functions/external_internal_data_merger.js"></script>
+@endsection
+
 @section('angular_sanitize')
 @include('cdn.angular_sanitize')
 @endsection
