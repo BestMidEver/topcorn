@@ -102,7 +102,7 @@
 
 
 <!-- Tabs Button -->
-<div class="d-flex mt-3 d-none d-md-inline mt-3">
+<div class="mt-3 d-none d-md-inline mt-3">
 	<div class="btn-group d-flex justify-content-center" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='movies'">Movies</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='series'">Series</button>
