@@ -106,8 +106,8 @@
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<div class="btn-group btn-group mr-3" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
-				<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab:'btn-outline-tab'" ng-click="page_variables.movies_or_series='movies'">Movies</button>
-				<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab:'btn-outline-tab'" ng-click="page_variables.movies_or_series='series'">Series</button>
+				<button type="button" class="btn" ng-class="{page_variables.movies_or_series=='movies'?'btn-tab:'btn-outline-tab'}" ng-click="page_variables.movies_or_series='movies'">Movies</button>
+				<button type="button" class="btn" ng-class="{page_variables.movies_or_series!='movies'?'btn-tab:'btn-outline-tab'}" ng-click="page_variables.movies_or_series='series'">Series</button>
 			</div>
 		</li>
 		<li class="nav-item">
