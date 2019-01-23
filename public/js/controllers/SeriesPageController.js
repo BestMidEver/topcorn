@@ -1,4 +1,4 @@
-MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScroll, rate)
+MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScroll, rate, external_internal_data_merger)
 {
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP /////////////////////////////////// CHECKED
@@ -14,6 +14,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
+	rate.get_user_movies('series')
+	.then(function(response){
+		console.log(response.data);
+		$scope.user_series = response.data;
+	});
 
 	$scope.user_movie_record={}
 
@@ -201,8 +206,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if($scope.page_variables.active_tab_1!=-1){
 			$scope.similar_movies=null;
 		}else if($scope.page_variables.active_tab_3 == 0){
+			external_internal_data_merger.merge_user_movies_to_external_data($scope.series.recommendations.results, $scope.user_series);
 			$scope.similar_movies=$scope.series.recommendations.results;
 		}else{
+			external_internal_data_merger.merge_user_movies_to_external_data($scope.series.similar.results, $scope.user_series);
 			$scope.similar_movies=$scope.series.similar.results;
 		}
 	}
