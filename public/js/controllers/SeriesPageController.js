@@ -14,11 +14,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-	rate.get_user_movies('series')
-	.then(function(response){
-		console.log(response.data);
-		$scope.user_series = response.data;
-	});
 
 	$scope.user_movie_record={}
 
@@ -189,7 +184,12 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}else{
 			$('#collapseCover').collapse("show");
 		}
-		$scope.set_recommendations();
+		rate.get_user_movies('series')
+		.then(function(response){
+			console.log(response.data);
+			$scope.user_series = response.data;
+			$scope.set_recommendations();
+		});
 	}
 
 	$scope.current_trailer = 0;

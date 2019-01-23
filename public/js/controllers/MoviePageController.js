@@ -38,12 +38,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-	rate.get_user_movies('movies')
-	.then(function(response){
-		console.log(response.data);
-		$scope.user_movies = response.data;
-	});
-
 	if(pass.is_auth == 1){
 		$http({
 			method: 'GET',
@@ -148,7 +142,12 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			temp=_.where(countries,{i:t.iso_3166_1});
 			if(temp.length > 0)t.name=temp[0].o;
 		})
-		$scope.set_recommendations();
+		rate.get_user_movies('movies')
+		.then(function(response){
+			console.log(response.data);
+			$scope.user_movies = response.data;
+			$scope.set_recommendations();
+		});
 	}
 
 	$scope.current_trailer = 0;
