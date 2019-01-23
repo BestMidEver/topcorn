@@ -105,9 +105,9 @@
 <div class="container-fluid mt-3 pb-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
-			<div class="btn-group" role="group" aria-label="Basic example">
-				<button type="button" class="btn btn-primary">Movies</button>
-				<button type="button" class="btn btn-outline-primary">Series</button>
+			<div class="btn-group mr-3" role="group" aria-label="Movies or Series">
+				<button type="button" class="btn btn-tab">Movies</button>
+				<button type="button" class="btn btn-outline-tab">Series</button>
 			</div>
 		</li>
 		<li class="nav-item">
