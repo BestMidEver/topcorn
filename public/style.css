@@ -15,6 +15,10 @@ button:focus{box-shadow: none!important;}
 .btn-facebook{background-color:#4267b2; border-color:#4267b2;}
 .btn-facebook:hover{background-color:#3b5998; border-color:#3b5998;}
 .btn-outline-secondary-hover{color: #fff;    background-color: #6c757d;    border-color: #6c757d;}
+.btn-tab{border-color: #5bc0eb; background: #5bc0eb; color:#fff;}
+.btn-tab:hover{cursor: pointer;}
+.btn-outline-tab{border-color: #5bc0eb; background: #fff; color:#6c757d;}
+.btn-outline-tab:hover{cursor: pointer; color: #000;}
 .text-black{color:#000!important;}
 .text-dark{color:#212529!important;}
 .text-no-decoration{text-decoration: none!important;}
