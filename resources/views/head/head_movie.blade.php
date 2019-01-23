@@ -27,6 +27,10 @@ pass={
 @include('cdn.angular_sanitize')
 @endsection
 
+@section('external_internal_data_merger')
+<script src="/js/functions/external_internal_data_merger.js"></script>
+@endsection
+
 @section('angular_controller_js')
 <script src="/js/controllers/MoviePageController.js"></script>
 @endsection

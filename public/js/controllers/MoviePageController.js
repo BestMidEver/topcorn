@@ -1,4 +1,4 @@
-MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScroll, rate)
+MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScroll, rate, external_internal_data_merger)
 {
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
@@ -38,6 +38,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
+	rate.get_user_movies('movies')
+	.then(function(response){
+		console.log(response.data);
+		$scope.user_movies = response.data;
+	});
 
 	if(pass.is_auth == 1){
 		$http({
@@ -160,8 +165,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.page_variables.active_tab_3 = 0;
 	$scope.set_recommendations = function(){
 		if($scope.page_variables.active_tab_3 == 0){
+			external_internal_data_merger.merge_user_movies_to_external_data($scope.movie.recommendations.results, $scope.user_movies);
 			$scope.similar_movies=$scope.movie.recommendations.results;
 		}else{
+			external_internal_data_merger.merge_user_movies_to_external_data($scope.movie.similar.results, $scope.user_movies);
 			$scope.similar_movies=$scope.movie.similar.results;
 		}
 	}
@@ -405,7 +412,142 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				});
 			}
 		};
-//////////////////////////////////////////////////////////////////////////////////////////
+
+		$scope.votemodal=function(index, movie)
+		{
+			$scope.modalmovie=movie;
+			$scope.modalmovie.index=index;
+			$('#myModal').modal('show');
+		};
+
+		$scope.later=function(index)
+		{
+			console.log(index)
+			if($scope.movies[index].later_id == null){
+				rate.add_later($scope.movies[index].id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.movies[index].later_id=response.data.data.later_id;
+						$scope.modify_user_movies({
+							'movie_id':response.data.data.movie_id,
+							'rated_id':null,
+							'rate_code':null,
+							'later_id':response.data.data.later_id,
+							'ban_id':null
+						}, 'later');
+					}
+				});
+			}else{
+				var temp = $scope.movies[index];
+				rate.un_later($scope.movies[index].later_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204 || response.status == 404){
+						$scope.movies[index].later_id=null;
+						$scope.modify_user_movies({
+							'movie_id':temp.id,
+							'rated_id':temp.rated_id,
+							'rate_code':temp.rate_code,
+							'later_id':null,
+							'ban_id':temp.ban_id
+						}, 'later');
+					}
+				});
+			}
+		};
+		
+		$scope.rate=function(index, rate_code)
+		{
+			console.log(index, rate_code)
+			$('#myModal').modal('hide');
+			if(rate_code != null){
+				rate.add_rate($scope.movies[index].id, rate_code)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.movies[index].rated_id=response.data.data.rated_id;
+						$scope.movies[index].rate_code=response.data.data.rate;
+						$scope.modify_user_movies({
+							'movie_id':response.data.data.movie_id,
+							'rated_id':response.data.data.rated_id,
+							'rate_code':response.data.data.rate,
+							'later_id':null,
+							'ban_id':null
+						}, 'rate')
+					}
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+				});
+			}else if(rate_code == null){
+				var temp = $scope.movies[index];
+				rate.un_rate($scope.movies[index].rated_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204){
+						$scope.movies[index].rated_id=null;
+						$scope.movies[index].rate_code=null;
+						$scope.modify_user_movies({
+							'movie_id':temp.id,
+							'rated_id':null,
+							'rate_code':null,
+							'later_id':temp.later_id,
+							'ban_id':temp.ban_id
+						}, 'rate');
+					}
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+				});
+			}
+		};
+
+		$scope.ban=function(index)
+		{
+			console.log(index)
+			if($scope.movies[index].ban_id == null){
+				rate.add_ban($scope.movies[index].id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.movies[index].ban_id=response.data.data.ban_id;
+						$scope.modify_user_movies({
+							'movie_id':response.data.data.movie_id,
+							'rated_id':null,
+							'rate_code':null,
+							'later_id':null,
+							'ban_id':response.data.data.ban_id
+						}, 'ban');
+					}
+				});
+			}else{
+				var temp = $scope.movies[index];
+				rate.un_ban($scope.movies[index].ban_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204 || response.status == 404){
+						$scope.movies[index].ban_id=null;
+						$scope.modify_user_movies({
+							'movie_id':temp.id,
+							'rated_id':temp.rated_id,
+							'rate_code':temp.rate_code,
+							'later_id':temp.later_id,
+							'ban_id':null
+						}, 'ban');
+					}
+				});
+			}
+		};
+
+		$scope.modify_user_movies=function(movie, which_function){
+			if(_.where($scope.user_movies, {movie_id:movie.movie_id}).length>0){
+				temp=_.where($scope.user_movies, {movie_id:movie.movie_id})[0];
+				if(which_function == 'ban')temp.ban_id=movie.ban_id;
+				if(which_function == 'later')temp.later_id=movie.later_id;
+				if(which_function == 'rate')temp.rated_id=movie.rated_id;
+				if(which_function == 'rate')temp.rate_code=movie.rate_code;
+			}else{
+				$scope.user_movies.push(movie);
+			}
+		}
+	//////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SAME PART(MOVIES) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	}
