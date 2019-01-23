@@ -483,6 +483,135 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			$scope.modalmovie.index=index;
 			$('#myModal').modal('show');
 		};
+
+		$scope.later=function(index)
+		{
+			console.log(index)
+			if($scope.similar_movies[index].later_id == null){
+				rate.series_add_later($scope.similar_movies[index].id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.similar_movies[index].later_id=response.data.data.id;
+						$scope.modify_user_series({
+							'movie_id':response.data.data.series_id,
+							'rated_id':null,
+							'rate_code':null,
+							'later_id':response.data.data.id,
+							'ban_id':null
+						}, 'later');
+					}
+				});
+			}else{
+				var temp = $scope.similar_movies[index];
+				rate.series_un_later($scope.similar_movies[index].later_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204 || response.status == 404){
+						$scope.similar_movies[index].later_id=null;
+						$scope.modify_user_series({
+							'movie_id':temp.id,
+							'rated_id':temp.rated_id,
+							'rate_code':temp.rate_code,
+							'later_id':null,
+							'ban_id':temp.ban_id
+						}, 'later');
+					}
+				});
+			}
+		};
+		
+		$scope.rate=function(index, rate_code)
+		{
+			console.log(index, rate_code)
+			$('#myModal').modal('hide');
+			if(rate_code != null){
+				rate.series_add_rate($scope.similar_movies[index].id, rate_code)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.similar_movies[index].rated_id=response.data.data.id;
+						$scope.similar_movies[index].rate_code=response.data.data.rate;
+						$scope.modify_user_series({
+							'movie_id':response.data.data.series_id,
+							'rated_id':response.data.data.id,
+							'rate_code':response.data.data.rate,
+							'later_id':null,
+							'ban_id':null
+						}, 'rate')
+					}
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+				});
+			}else if(rate_code == null){
+				var temp = $scope.similar_movies[index];
+				rate.series_un_rate($scope.similar_movies[index].rated_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204){
+						$scope.similar_movies[index].rated_id=null;
+						$scope.similar_movies[index].rate_code=null;
+						$scope.modify_user_series({
+							'movie_id':temp.id,
+							'rated_id':null,
+							'rate_code':null,
+							'later_id':temp.later_id,
+							'ban_id':temp.ban_id
+						}, 'rate');
+					}
+					if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
+				});
+			}
+		};
+
+		$scope.ban=function(index)
+		{
+			console.log(index)
+			if($scope.similar_movies[index].ban_id == null){
+				rate.series_add_ban($scope.similar_movies[index].id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.similar_movies[index].ban_id=response.data.data.id;
+						$scope.modify_user_series({
+							'movie_id':response.data.data.series_id,
+							'rated_id':null,
+							'rate_code':null,
+							'later_id':null,
+							'ban_id':response.data.data.id
+						}, 'ban');
+					}
+				});
+			}else{
+				var temp = $scope.similar_movies[index];
+				rate.series_un_ban($scope.similar_movies[index].ban_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204 || response.status == 404){
+						$scope.similar_movies[index].ban_id=null;
+						$scope.modify_user_series({
+							'movie_id':temp.id,
+							'rated_id':temp.rated_id,
+							'rate_code':temp.rate_code,
+							'later_id':temp.later_id,
+							'ban_id':null
+						}, 'ban');
+					}
+				});
+			}
+		};
+
+		$scope.modify_user_series=function(movie, which_function){
+			if(_.where($scope.user_series, {movie_id:movie.movie_id}).length>0){
+				temp=_.where($scope.user_series, {movie_id:movie.movie_id})[0];
+				if(which_function == 'ban')temp.ban_id=movie.ban_id;
+				if(which_function == 'later')temp.later_id=movie.later_id;
+				if(which_function == 'rate')temp.rated_id=movie.rated_id;
+				if(which_function == 'rate')temp.rate_code=movie.rate_code;
+				console.log(temp, movie)
+			}else{
+				$scope.user_series.push(movie);
+			}
+		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SAME PART(SERIES) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
