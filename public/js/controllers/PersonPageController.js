@@ -42,13 +42,11 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 			console.log(temp)
 			if(temp) {
 				$scope.cover=temp.file_path;
-				console.log(123)
 			}else if($scope.person.tagged_images.results.length>0){
 				$scope.cover=$scope.person.tagged_images.results[0].file_path;
-				console.log(1234)
 			}else{
 				$scope.cover=$scope.movies[0].backdrop_path;
-				console.log(12345)
+				console.log($scope.movies)
 			} 	
 			$scope.set_imagecard_data();
 			$scope.get_tagged_images('first_time');
