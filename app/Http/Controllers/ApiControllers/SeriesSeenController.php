@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\Series_seen;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
@@ -51,7 +52,7 @@ class SeriesSeenController extends Controller
     {
         $series_seen = Series_seen::updateOrCreate(
             array('user_id' => Auth::id(), 'series_id' => $request->series_id), 
-            array('season_number' => $request->last_seen_season, 'episode_number' => $request->last_seen_episode)
+            array('season_number' => $request->last_seen_season, 'episode_number' => $request->last_seen_episode, 'air_date' => new Carbon($request->air_date))
         );
         //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
         return Response([

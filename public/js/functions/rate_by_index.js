@@ -254,7 +254,7 @@ MyApp.factory('rate', function($http) {
 
 
 
-    series_add_last_seen = function(series_id, last_seen_season, last_seen_episode) 
+    series_add_last_seen = function(series_id, last_seen_season, last_seen_episode, air_date) 
     {
         return $http({
 			method: 'POST',
@@ -266,7 +266,8 @@ MyApp.factory('rate', function($http) {
 			data: {
 				"series_id":series_id,
 				"last_seen_season":last_seen_season,
-				"last_seen_episode":last_seen_episode
+				"last_seen_episode":last_seen_episode,
+				"air_date":air_date
 			}
 		}).then(function successCallback(response) {
 			return response;
