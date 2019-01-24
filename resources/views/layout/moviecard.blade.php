@@ -9,6 +9,7 @@
 							<div class="text-white">
 								<small ng-if="active_tab!='mood_pick'">{{ __('general.according_to_your_taste') }}</small>
 								<small ng-if="active_tab=='mood_pick'">{{ __('general.according_to_your_mood') }}</small>
+								<small ng-if="movie.day_difference_last">Next Episode</small>
 								<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
 								@if(Auth::check())
 									@if(Auth::User()->advanced_filter)
