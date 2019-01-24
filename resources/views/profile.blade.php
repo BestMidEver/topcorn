@@ -176,7 +176,7 @@
 </div>
 
 <div class="container-fluid" ng-show="page_variables.movies_or_series=='series'">
-	<div class="dropdown d-inline" ng-init="page_variables.watch_later_tab=">
+	<div class="dropdown d-inline" ng-init="page_variables.watch_later_tab=0">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{list_mod_title}}
 		</button>
