@@ -38,7 +38,7 @@
 							<div class="text-white" ng-if="!movie.last_seen_air_date.length>0 && movie.last_episode_air_date.length>0">
 								<small>First Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
-									<span ng-if="movie.day_difference_last==1">Ready</span>
+									<span>Ready</span>
 								</span>
 							</div>
 						</div>
