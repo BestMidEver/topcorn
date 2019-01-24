@@ -523,7 +523,7 @@ MyApp.factory('rate', function($http) {
     get_profile_data = function(active_tab, profile_user_id, page, mode) 
     {
     	temp = active_tab.split('get_');
-    	active_tab = temp[0]+(mode=='series'?'series_':'')+temp[1];
+    	active_tab = (mode=='series'?'get_series_':'get_')+temp[1];
     	console.log(active_tab, temp)
         return $http({
 			method: 'GET',
