@@ -22,7 +22,7 @@
 							<div class="text-white" ng-if="movie.day_difference_last<1">
 								<small>New Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
-									<span ng-if="!movie.day_difference_next.length>0">Unknown</span>
+									<span ng-if="isNaN(movie.day_difference_next)">Unknown</span>
 									<span ng-if="movie.day_difference_next>0">Airing @{{movie.day_difference_next}} days later</span>
 									<span ng-if="movie.day_difference_next==0">Airing today</span>
 									<span ng-if="movie.day_difference_next<0">Ready</span>
