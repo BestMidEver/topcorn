@@ -19,10 +19,20 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.day_difference_last.length > 0">
-							<div class="text-white">
+							<div class="text-white" ng-if="movie.day_difference_last<1">
+								<small>New Episode</small>
+								<span class="d-block"><span class="h5 text-warning">
+									<span ng-if="!movie.day_difference_next.length>0">Unknown</span>
+									<span ng-if="movie.day_difference_next>0">Airing @{{movie.day_difference_next}} days later</span>
+									<span ng-if="movie.day_difference_next==0">Airing today</span>
+									<span ng-if="movie.day_difference_next<0">Ready</span>
+								</span>
+							</div>
+							<div class="text-white" ng-if="movie.day_difference_last>0">
 								<small>Next Episode</small>
-								<span class="d-block"><span class="h5 text-warning"><span ng-if="movie.day_difference_last.length==0||movie.day_difference_next==0">Airing Today</span><span ng-if="movie.day_difference_last.length<0">Ready</span></span><small> {{ __('general.match') }}</small></span>
-								<small ng-if="active_tab!='mood_pick'"><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
+								<span class="d-block"><span class="h5 text-warning">
+									<span ng-if="!movie.day_difference_next.length>0">Ready</span>
+								</span>
 							</div>
 						</div>
 					</div>
