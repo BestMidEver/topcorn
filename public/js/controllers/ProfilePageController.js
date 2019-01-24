@@ -56,7 +56,7 @@ $scope.page_variables={};
     	}else{
     		rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page, $scope.page_variables.movies_or_series)
 			.then(function(response){
-				console.log(response.data.data)
+				console.log(response.data.data, $scope.page_variables.movies_or_series)
 				$scope.movies=response.data.data;
 				$scope.pagination=response.data.last_page;
 				$scope.current_page=response.data.current_page;
