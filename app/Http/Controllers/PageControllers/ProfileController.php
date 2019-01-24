@@ -316,6 +316,10 @@ class ProfileController extends Controller
         $return_val = DB::table('series_laters')
         ->where('series_laters.user_id', $user)
         ->join('series', 'series.id', '=', 'series_laters.series_id')
+        ->leftjoin('series_seens', function ($join) {
+            $join->on('series_seens.series_id', '=', 'series.id')
+            ->where('series_seens.user_id', '=', Auth::id());
+        })
         ->leftjoin('series_rateds', function ($join) {
             $join->on('series_rateds.series_id', '=', 'series.id')
             ->where('series_rateds.user_id', '=', Auth::id());
@@ -333,6 +337,7 @@ class ProfileController extends Controller
             'series.'.$lang.'_name as name',
             'series.'.$hover_name.' as original_name',
             'series.first_air_date as first_air_date',
+            'series_seens.air_date as last_seen_air_date',
             'series.'.$lang.'_poster_path as poster_path',
             'series.vote_average as vote_average',
             'series.vote_count as vote_count',
