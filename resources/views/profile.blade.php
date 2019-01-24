@@ -104,8 +104,8 @@
 <!-- Tabs Button -->
 <div class="mt-3 d-none d-md-inline">
 	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='movies';switch_movies_series()">Movies</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='series';switch_movies_series()">Series</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='movies';get_first_page_data()">Movies</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='series';get_first_page_data()">Series</button>
 	</div>
 </div>
 <div class="container-fluid p-0 d-none d-md-inline">
@@ -132,8 +132,8 @@
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu my-3 d-md-none tab2">
 	<div class="btn-group btn-group mr-3 d-block mb-2 text-center" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='movies';switch_movies_series()">Movies</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='series';switch_movies_series()">Series</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='movies';get_first_page_data()">Movies</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="page_variables.movies_or_series='series';get_first_page_data()">Series</button>
 	</div>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data()">{{ __('general.seen_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
