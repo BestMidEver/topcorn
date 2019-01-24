@@ -31,7 +31,8 @@
 							<div class="text-white" ng-if="movie.day_difference_last>0">
 								<small>Next Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
-									<span ng-if="!movie.day_difference_next.length>0">Ready</span>
+									<span ng-if="movie.day_difference_last==1">Aired yesterday</span>
+									<span ng-if="movie.day_difference_last>1">Ready</span>
 								</span>
 							</div>
 						</div>
