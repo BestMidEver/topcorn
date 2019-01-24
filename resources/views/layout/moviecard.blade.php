@@ -9,7 +9,6 @@
 							<div class="text-white">
 								<small ng-if="active_tab!='mood_pick'">{{ __('general.according_to_your_taste') }}</small>
 								<small ng-if="active_tab=='mood_pick'">{{ __('general.according_to_your_mood') }}</small>
-								<small ng-if="1>0">@{{movie.day_difference_last.length}}Next Episode</small>
 								<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
 								@if(Auth::check())
 									@if(Auth::User()->advanced_filter)
@@ -17,6 +16,13 @@
 									@endif
 								@endif
 								<small ng-if="active_tab=='mood_pick'"><span class="h5 text-warning">@{{movie.point}}</span>/@{{movie.count*5}} {{ __('general.point') }}</small>
+							</div>
+						</div>
+						<div class="d-flex flex-row justify-content-center" ng-if="movie.day_difference_last.length > 0">
+							<div class="text-white">
+								<small>Next Episode</small>
+								<span class="d-block"><span class="h5 text-warning"><span ng-if="movie.day_difference_last.length==0||movie.day_difference_next==0">Airing Today</span><span ng-if="movie.day_difference_last.length<0">Ready</span></span><small> {{ __('general.match') }}</small></span>
+								<small ng-if="active_tab!='mood_pick'"><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
 							</div>
 						</div>
 					</div>
