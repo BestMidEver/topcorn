@@ -39,10 +39,17 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 			}
 			$scope.set_moviecard_data('movies');
 			temp = _.find($scope.person.tagged_images.results, function(num){ return num.aspect_ratio>1; })
-			console.log(temp, $scope.person.tagged_images.results.length>0)
-			if(temp && $scope.person.tagged_images.results.length>0) $scope.cover=temp.file_path;
-			else if($scope.person.tagged_images.results.length>0) $scope.cover=$scope.person.tagged_images.results[0].file_path;
-			else $scope.cover=$scope.movies[0].backdrop_path;
+			console.log(temp)
+			if(temp) {
+				$scope.cover=temp.file_path;
+				console.log(123)
+			}else if($scope.person.tagged_images.results.length>0){
+				$scope.cover=$scope.person.tagged_images.results[0].file_path;
+				console.log(1234)
+			}else{
+				$scope.cover=$scope.movies[0].backdrop_path;
+				console.log(12345)
+			} 	
 			$scope.set_imagecard_data();
 			$scope.get_tagged_images('first_time');
 		}, function errorCallback(response) {
