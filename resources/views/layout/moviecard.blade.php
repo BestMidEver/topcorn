@@ -19,14 +19,13 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="!isNaN(movie.day_difference_last)">
-							<div class="text-white" ng-if="movie.day_difference_last<1 || !movie.last_episode_air_date.length>0">
+							<div class="text-white" ng-if="(movie.day_difference_last<1 || !movie.last_episode_air_date.length>0) && movie.last_seen_air_date.length>0">
 								<small>New Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
 									<span ng-if="isNaN(movie.day_difference_next)">Unknown</span>
 									<span ng-if="movie.day_difference_next>0">Airs @{{movie.day_difference_next}} days later</span>
 									<span ng-if="movie.day_difference_next==0">Airs today</span>
 									<span ng-if="movie.day_difference_next<0">Ready</span>
-									<span ng-if="!movie.last_seen_air_date.length>0">Ready</span>
 								</span>
 							</div>
 							<div class="text-white" ng-if="movie.day_difference_last>0">
@@ -34,6 +33,12 @@
 								<span class="d-block"><span class="h5 text-warning">
 									<span ng-if="movie.day_difference_last==1">Aired yesterday</span>
 									<span ng-if="movie.day_difference_last>1">Ready</span>
+								</span>
+							</div>
+							<div class="text-white" ng-if="!movie.last_seen_air_date.length>0 && movie.last_episode_air_date>0">
+								<small>First Episode</small>
+								<span class="d-block"><span class="h5 text-warning">
+									<span ng-if="movie.day_difference_last==1">Ready</span>
 								</span>
 							</div>
 						</div>
