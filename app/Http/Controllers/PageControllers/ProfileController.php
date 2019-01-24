@@ -339,7 +339,7 @@ class ProfileController extends Controller
             'series.first_air_date as first_air_date',
             'series_seens.air_date as last_seen_air_date',
             DB::raw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) AS day_difference_last'),
-            DB::raw('DATEDIFF(series.next_episode_air_date, series_seens.air_date) AS day_difference_next'),
+            DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next'),
             'series.'.$lang.'_poster_path as poster_path',
             'series.vote_average as vote_average',
             'series.vote_count as vote_count',
