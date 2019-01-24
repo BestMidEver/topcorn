@@ -40,7 +40,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 			$scope.set_moviecard_data('movies');
 			temp = _.find($scope.person.tagged_images.results, function(num){ return num.aspect_ratio>1; })
 			console.log(temp)
-			if(temp) $scope.cover=temp.file_path;
+			if(temp>0) $scope.cover=temp.file_path;
 			else if($scope.person.tagged_images.results.length>0) $scope.cover=$scope.person.tagged_images.results[0].file_path;
 			else $scope.cover=$scope.movies[0].backdrop_path;
 			console.log($scope.cover, $scope.person.tagged_images.results)
