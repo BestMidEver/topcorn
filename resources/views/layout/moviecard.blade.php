@@ -18,7 +18,7 @@
 								<small ng-if="active_tab=='mood_pick'"><span class="h5 text-warning">@{{movie.point}}</span>/@{{movie.count*5}} {{ __('general.point') }}</small>
 							</div>
 						</div>
-						<div class="d-flex flex-row justify-content-center" ng-if="movie.day_difference_last.length > 0">
+						<div class="d-flex flex-row justify-content-center" ng-if="movie.day_difference_last">
 							<div class="text-white" ng-if="movie.day_difference_last<1">
 								<small>New Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
@@ -39,7 +39,7 @@
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
 							<div class="text-white">
-								<small>{{ __('general.according_to_themoviedb') }}@{{movie.day_difference_last.length}}</small>
+								<small>{{ __('general.according_to_themoviedb') }}</small>
 								<span class="d-block"><span class="h5 text-warning">@{{movie.vote_average}}</span><small>/10</small></span>
 								<small ng-if="movie.vote_count > 0">@{{movie.vote_count}} <span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small>
 							</div>
