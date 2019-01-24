@@ -54,7 +54,7 @@ $scope.page_variables={};
 				$scope.is_waiting=false;
 			});
     	}else{
-    		rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page)
+    		rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page, $scope.page_variables.movies_or_series)
 			.then(function(response){
 				console.log(response.data.data)
 				$scope.movies=response.data.data;

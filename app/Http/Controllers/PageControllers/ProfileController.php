@@ -294,5 +294,55 @@ class ProfileController extends Controller
         }
 
         return $return_val;
+    }    
+
+
+
+
+    public function get_seen_bans($user, $lang)
+    {
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0){
+                $hover_name = Auth::User()->secondary_lang.'_name';
+            }else{
+                $hover_name = 'original_name';
+            }
+            $pagin=Auth::User()->pagination;
+        }else{
+            $hover_name = 'original_name';
+            $pagin=24;
+        }
+
+        $return_val = DB::table('series_bans')
+        ->where('series_bans.user_id', $user)
+        ->join('series', 'series.id', '=', 'series_bans.series_id')
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series_rateds.series_id', '=', 'series.id')
+            ->where('series_rateds.user_id', '=', Auth::id());
+        })
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'series.id')
+            ->where('series_laters.user_id', '=', Auth::id());
+        })
+        ->leftjoin('series_bans as b2', function ($join) {
+            $join->on('b2.series_id', '=', 'series.id')
+            ->where('b2.user_id', Auth::id());
+        })
+        ->select(
+            'series.id as id',
+            'series.'.$lang.'_name as name',
+            'series.'.$hover_name.' as original_name',
+            'series.first_air_date as first_air_date',
+            'series.'.$lang.'_poster_path as poster_path',
+            'series.vote_average as vote_average',
+            'series.vote_count as vote_count',
+            'series_rateds.id as rated_id',
+            'series_rateds.rate as rate_code',
+            'series_laters.id as later_id',
+            'b2.id as ban_id'
+        )
+        ->orderBy('series_bans.updated_at', 'desc');
+
+        return $return_val->paginate($pagin);
     }
 }
