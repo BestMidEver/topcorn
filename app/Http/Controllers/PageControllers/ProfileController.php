@@ -380,9 +380,9 @@ class ProfileController extends Controller
         })
         ->select(
             'series.id as id',
-            'series.'.$lang.'_title as title',
-            'series.'.$hover_title.' as original_title',
-            'series.release_date as release_date',
+            'series.'.$lang.'_name as name',
+            'series.'.$hover_name.' as original_name',
+            'series.first_air_date as first_air_date',
             'series.'.$lang.'_poster_path as poster_path',
             'series.vote_average as vote_average',
             'series.vote_count as vote_count',
