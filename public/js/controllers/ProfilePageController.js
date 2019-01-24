@@ -79,12 +79,12 @@ $scope.page_variables={};
 	$scope.get_first_page_data();
 
 	$scope.switch_page_mode = function(mode){
-		if(mode == movies){
+		if(mode == 'movies'){
 			$scope.page_variables.movies_or_series = 'movies';
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
 		}
-			get_page_data()
+		$scope.get_page_data()
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
