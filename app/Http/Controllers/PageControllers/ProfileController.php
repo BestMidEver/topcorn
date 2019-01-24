@@ -338,6 +338,7 @@ class ProfileController extends Controller
             'series.'.$hover_name.' as original_name',
             'series.first_air_date as first_air_date',
             'series_seens.air_date as last_seen_air_date',
+            DB::raw('DATEDIFF(series.first_air_date, series_seens.air_date) AS day_difference'),
             'series.'.$lang.'_poster_path as poster_path',
             'series.vote_average as vote_average',
             'series.vote_count as vote_count',
