@@ -23,9 +23,10 @@
 								<small>New Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
 									<span ng-if="isNaN(movie.day_difference_next)">Unknown</span>
-									<span ng-if="movie.day_difference_next>0">Airing @{{movie.day_difference_next}} days later</span>
-									<span ng-if="movie.day_difference_next==0">Airing today</span>
+									<span ng-if="movie.day_difference_next>0">Airs @{{movie.day_difference_next}} days later</span>
+									<span ng-if="movie.day_difference_next==0">Airs today</span>
 									<span ng-if="movie.day_difference_next<0">Ready</span>
+									<span ng-if="isNaN(movie.last_seen_air_date)">Ready</span>
 								</span>
 							</div>
 							<div class="text-white" ng-if="movie.day_difference_last>0">
