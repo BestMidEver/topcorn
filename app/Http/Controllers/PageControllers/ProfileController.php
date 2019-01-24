@@ -299,7 +299,7 @@ class ProfileController extends Controller
 
 
 
-    public function get_seen_bans($user, $lang)
+    public function get_series_bans($user, $lang)
     {
         if(Auth::check()){
             if(Auth::User()->hover_title_language == 0){
