@@ -345,4 +345,60 @@ class ProfileController extends Controller
 
         return $return_val->paginate($pagin);
     }
+
+
+
+
+    public function get_series_rateds($rate, $user, $lang)
+    {
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0){
+                $hover_name = Auth::User()->secondary_lang.'_name';
+            }else{
+                $hover_name = 'original_name';
+            }
+            $pagin=Auth::User()->pagination;
+        }else{
+            $hover_name = 'original_name';
+            $pagin=24;
+        }
+
+        $return_val = DB::table('series_rateds')
+        ->where('series_rateds.user_id', $user)
+        ->join('series', 'series.id', '=', 'series_rateds.series_id')
+        ->leftjoin('series_rateds as r2', function ($join) {
+            $join->on('r2.series_id', '=', 'series.id')
+            ->where('r2.user_id', Auth::id());
+        })
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'series.id')
+            ->where('series_laters.user_id', '=', Auth::id());
+        })
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.series_id', '=', 'series.id')
+            ->where('series_bans.user_id', '=', Auth::id());    
+        })
+        ->select(
+            'series.id as id',
+            'series.'.$lang.'_title as title',
+            'series.'.$hover_title.' as original_title',
+            'series.release_date as release_date',
+            'series.'.$lang.'_poster_path as poster_path',
+            'series.vote_average as vote_average',
+            'series.vote_count as vote_count',
+            'r2.id as rated_id',
+            'r2.rate as rate_code',
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
+        )
+        ->orderBy('series_rateds.updated_at', 'desc');
+
+        if($rate=='all'){
+            $return_val = $return_val->where('series_rateds.rate', '<>', 0);
+        }else{
+            $return_val = $return_val->where('series_rateds.rate', $rate);
+        }
+
+        return $return_val->paginate($pagin);
+    }
 }

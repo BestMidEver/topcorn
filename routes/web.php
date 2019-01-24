@@ -163,6 +163,8 @@ Route::get('profile/{user}/{lang?}', 'PageControllers\ProfileController@profile'
 
 Route::get('api/get_rateds/{rate}/{user}/{lang}','PageControllers\ProfileController@get_rateds')
 	->where('lang', config('constants.supported_languages.for_web_php'));
+Route::get('api/get_series_rateds/{rate}/{user}/{lang}','PageControllers\ProfileController@get_series_rateds')
+	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::get('api/get_laters/{user}/{lang}','PageControllers\ProfileController@get_laters')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::get('api/get_bans/{user}/{lang}','PageControllers\ProfileController@get_bans')
