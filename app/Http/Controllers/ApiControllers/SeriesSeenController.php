@@ -49,7 +49,7 @@ class SeriesSeenController extends Controller
         );
         //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
         return Response([
-            'data' => new Carbon($request->air_date),
+            'data' => $series_seen,
         ], Response::HTTP_CREATED);
     }
 

@@ -12,5 +12,6 @@ class Series_seen extends Model
     	'status',
     	'season_number',
     	'episode_number',
+    	'air_date',
     ];
 }
