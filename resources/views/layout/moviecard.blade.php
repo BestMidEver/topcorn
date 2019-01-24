@@ -39,7 +39,7 @@
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
 							<div class="text-white">
-								<small>{{ __('general.according_to_themoviedb') }}@{{movie.day_difference_next}}</small>
+								<small>{{ __('general.according_to_themoviedb') }}@{{movie.day_difference_last}}</small>
 								<span class="d-block"><span class="h5 text-warning">@{{movie.vote_average}}</span><small>/10</small></span>
 								<small ng-if="movie.vote_count > 0">@{{movie.vote_count}} <span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small>
 							</div>
