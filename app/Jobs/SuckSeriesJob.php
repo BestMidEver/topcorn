@@ -39,7 +39,7 @@ class SuckSeriesJob implements ShouldQueue
     public function handle()
     {
         $is_recent = Serie::where('id', $this->id)
-        ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
+        ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
         ->first();
         if($is_recent) return;
 
