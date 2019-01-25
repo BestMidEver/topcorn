@@ -336,6 +336,8 @@ class ProfileController extends Controller
             'series.id as id',
             'series.'.$lang.'_name as name',
             'series.'.$hover_name.' as original_name',
+            'series.next_season as next_season',
+            'series.next_episode as next_episode',
             'series.first_air_date as first_air_date',
             'series.last_episode_air_date as last_episode_air_date',
             'series.next_episode_air_date as next_episode_air_date',
@@ -350,7 +352,7 @@ class ProfileController extends Controller
             'l2.id as later_id',
             'series_bans.id as ban_id'
         )
-        ->orderBy('series_laters.updated_at', 'desc');
+        ->orderBy('series_seens.updated_at', 'desc');
 
         return $return_val->paginate($pagin);
     }
