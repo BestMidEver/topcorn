@@ -357,7 +357,11 @@ class ProfileController extends Controller
 
         if($mode == 'unseen'){
             $return_val = $return_val
-            ->whereNull('series_seens.air_date');
+            ->whereNull('series_seens.air_date')
+            ->whereNotNull('series.last_episode_air_date');
+        }else if($mode == 'available'){
+            $return_val = $return_val
+            ->havingRaw('(DATEDIFF(series.last_episode_air_date, series_seens.air_date) > 0) OR (DATEDIFF(series.next_episode_air_date, NOW()) < 0)')
         }
 
         return $return_val->paginate($pagin);
