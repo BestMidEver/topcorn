@@ -454,9 +454,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.toggle_last_Seen=function()
 		{
-			console.log('TOGGLE',_.where($scope.page_variables.seasons, {season_number:$scope.page_variables.active_tab_1+1}))
 			if(!($scope.page_variables.last_seen_season==$scope.page_variables.active_tab_1 && $scope.page_variables.last_seen_episode==$scope.page_variables.active_tab_2)){
-				if()
+				console.log('TOGGLE',_.where($scope.page_variables.seasons, {season_number:$scope.page_variables.active_tab_1+1}))
 				rate.series_add_last_seen(pass.seriesid, $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2, $scope.series.episodes[$scope.page_variables.active_tab_2-1].air_date)
 				.then(function(response){
 					console.log(response);
