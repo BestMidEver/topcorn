@@ -457,8 +457,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			if(!($scope.page_variables.last_seen_season==$scope.page_variables.active_tab_1 && $scope.page_variables.last_seen_episode==$scope.page_variables.active_tab_2)){
 				temp=_.where($scope.series.episodes, {episode_number:$scope.page_variables.active_tab_2+1});
 				if(temp.length>0){
-					episode=temp.episode_number;
-					season=temp.season_number;
+					episode=temp[0].episode_number;
+					season=temp[0].season_number;
 				}else{
 					temp=_.where($scope.page_variables.seasons, {season_number:$scope.page_variables.active_tab_1+1});
 					episode=1;
