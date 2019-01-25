@@ -21,24 +21,25 @@
 						<div class="d-flex flex-row justify-content-center" ng-if="!isNaN(movie.day_difference_last)">
 							<div class="text-white" ng-if="(movie.day_difference_last<1 || !movie.last_episode_air_date.length>0) && movie.last_seen_air_date.length>0">
 								<small>New Episode</small>
-								<span class="d-block"><span class="h5 text-warning">
-									<span ng-if="isNaN(movie.day_difference_next)">Unknown</span>
-									<span ng-if="movie.day_difference_next>0">Airs @{{movie.day_difference_next}} days later</span>
-									<span ng-if="movie.day_difference_next==0">Airs today</span>
-									<span ng-if="movie.day_difference_next<0">Available</span>
+								<small class="d-block" ng-if="movie.next_episode>0">S@{{movie.next_season}}E@{{movie.next_episode}}</small>
+								<span class="d-block">
+									<span ng-if="isNaN(movie.day_difference_next)" class="h5 text-warning">Unknown</span>
+									<span ng-if="movie.day_difference_next>0">Airs <span class="h5 text-warning">@{{movie.day_difference_next}}</span> days later</span>
+									<span ng-if="movie.day_difference_next==0">Airs <span class="h5 text-warning">today</span></span>
+									<span ng-if="movie.day_difference_next<0" class="h5 text-warning">Available</span>
 								</span>
 							</div>
 							<div class="text-white" ng-if="movie.day_difference_last>0">
 								<small>Next Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
-									<span ng-if="movie.day_difference_last==1">Aired yesterday</span>
+									<span ng-if="movie.day_difference_last==1">Aired <span class="h5 text-warning">yesterday</span></span>
 									<span ng-if="movie.day_difference_last>1">Available</span>
 								</span>
 							</div>
 							<div class="text-white" ng-if="!movie.last_seen_air_date.length>0 && movie.last_episode_air_date.length>0">
 								<small>First Episode</small>
 								<span class="d-block"><span class="h5 text-warning">
-									<span>Available</span>
+									<span class="h5 text-warning">Available</span>
 								</span>
 							</div>
 						</div>
