@@ -20,6 +20,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 //////////////////////////////////////////////////////////////////////////////////////////
 
 	$scope.page_variables = {};
+	$scope.page_variables.movies_or_series == 'movies';
 
 	$scope.switch_page_mode = function(mode){
 		if(mode == 'movies'){
