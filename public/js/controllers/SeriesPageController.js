@@ -455,8 +455,17 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.toggle_last_Seen=function()
 		{
 			if(!($scope.page_variables.last_seen_season==$scope.page_variables.active_tab_1 && $scope.page_variables.last_seen_episode==$scope.page_variables.active_tab_2)){
-				console.log('TOGGLE1',_.where($scope.series.episodes, {episode_number:$scope.page_variables.active_tab_2+1}))
-				console.log('TOGGLE2',_.where($scope.page_variables.seasons, {season_number:$scope.page_variables.active_tab_1+1}))
+				temp=_.where($scope.series.episodes, {episode_number:$scope.page_variables.active_tab_2+1});
+				if(temp.length>0){
+					episode=temp.episode_number;
+					season=temp.season_number;
+				}else{
+					temp=_.where($scope.page_variables.seasons, {season_number:$scope.page_variables.active_tab_1+1});
+					episode=1;
+					season=temp.season_number;
+				}
+				console.log('TOGGLE1',episode,season)
+
 				rate.series_add_last_seen(pass.seriesid, $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2, $scope.series.episodes[$scope.page_variables.active_tab_2-1].air_date)
 				.then(function(response){
 					console.log(response);
