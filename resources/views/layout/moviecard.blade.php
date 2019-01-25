@@ -31,7 +31,7 @@
 							</div>
 							<div class="text-white" ng-if="movie.day_difference_last>0">
 								<small>Next Episode</small>
-								<small class="" ng-if="movie.next_episode>0"> S@{{movie.next_season>9?movie.next_season:'0'+movie.next_season}}E@{{movie.movie.next_episode>9?movie.movie.next_episode:'0'+movie.movie.next_episode}}</small>
+								<small class="" ng-if="movie.next_episode>0"> S@{{movie.next_season>9?movie.next_season:'0'+movie.next_season}}E@{{movie.next_episode>9?movie.next_episode:'0'+movie.next_episode}}</small>
 								<span class="d-block"><span class="h5 text-warning">
 									<span ng-if="movie.day_difference_last==1">Aired <span class="h5 text-warning">yesterday</span></span>
 									<span ng-if="movie.day_difference_last>1">Available</span>
