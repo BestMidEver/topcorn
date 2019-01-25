@@ -352,19 +352,21 @@ class ProfileController extends Controller
             'series_rateds.rate as rate_code',
             'l2.id as later_id',
             'series_bans.id as ban_id'
-        )
-        ->orderBy('series_seens.updated_at', 'desc');
+        );
 
         if($mode == 'unseen'){
             $return_val = $return_val
             ->whereNull('series_seens.air_date')
-            ->whereNotNull('series.last_episode_air_date');
+            ->whereNotNull('series.last_episode_air_date')
+            ->orderBy('series_seens.updated_at', 'desc');
         }else if($mode == 'available'){
             $return_val = $return_val
-            ->whereRaw('(DATEDIFF(series.last_episode_air_date, series_seens.air_date) > 0) OR (DATEDIFF(series.next_episode_air_date, NOW()) < 0)');
+            ->whereRaw('(DATEDIFF(series.last_episode_air_date, series_seens.air_date) > 0) OR (DATEDIFF(series.next_episode_air_date, NOW()) < 0)')
+            ->orderBy('series_seens.updated_at', 'desc');
         }else if($mode == 'awaited'){
             $return_val = $return_val
-            ->whereRaw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) == 0');
+            ->whereRaw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) == 0')
+            ->orderBy('next_episode_air_date', 'asc');
         }
 
         return $return_val->paginate($pagin);
