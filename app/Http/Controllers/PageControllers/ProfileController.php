@@ -366,7 +366,7 @@ class ProfileController extends Controller
         }else if($mode == 'awaited'){
             $return_val = $return_val
             ->whereRaw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) == 0')
-            ->orderBy('next_episode_air_date', 'asc');
+            ->orderBy('next_episode_air_date', 'desc');
         }
 
         return $return_val->paginate($pagin);
