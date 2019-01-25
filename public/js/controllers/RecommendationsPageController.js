@@ -27,6 +27,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
 		}
+		$scope.get_first_page_data();
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////
