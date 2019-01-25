@@ -276,16 +276,25 @@ $scope.page_variables={};
 	$scope.later=function(index)
 	{
 		console.log(index)
+		if($scope.page_variables.movies_or_series == 'movie'){
+			f1 = 'add_later';
+			f2 = 'un_later';
+			v1 = 'later_id';
+		}else{
+			f1 = 'series_add_later';
+			f2 = 'series_un_later';
+			v1 = 'id';
+		}
 		if($scope.movies[index].later_id == null){
-			rate.add_later($scope.movies[index].id)
+			rate[f1]($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].later_id=response.data.data.later_id;
+					$scope.movies[index].later_id=response.data.data[v1];
 				}
 			});
 		}else{
-			rate.un_later($scope.movies[index].later_id)
+			rate[f2]($scope.movies[index].later_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
@@ -338,16 +347,25 @@ $scope.page_variables={};
 	$scope.ban=function(index)
 	{
 		console.log(index)
+		if($scope.page_variables.movies_or_series == 'movie'){
+			f1 = 'add_ban';
+			f2 = 'un_ban';
+			v1 = 'ban_id';
+		}else{
+			f1 = 'series_add_ban';
+			f2 = 'series_un_ban';
+			v1 = 'id';
+		}
 		if($scope.movies[index].ban_id == null){
-			rate.add_ban($scope.movies[index].id)
+			rate[f1]($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].ban_id=response.data.data.ban_id;
+					$scope.movies[index].ban_id=response.data.data[v1];
 				}
 			});
 		}else{
-			rate.un_ban($scope.movies[index].ban_id)
+			rate[f2]($scope.movies[index].ban_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
