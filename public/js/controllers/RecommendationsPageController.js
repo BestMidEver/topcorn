@@ -23,8 +23,10 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 	$scope.switch_page_mode = function(mode){
 		if(mode == 'movies'){
+			$scope.switch_genre();
 			$scope.page_variables.movies_or_series = 'movies';
 		}else{
+			$scope.switch_genre();
 			$scope.page_variables.movies_or_series = 'series';
 		}
 		$scope.get_first_page_data();
@@ -73,6 +75,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$scope.genres.pop();
 			}
 		}
+		$scope.switch_genre();
 		$scope.sort_by_2 = 'vote_average';
 		$scope.sort_by_4 = 'point';
 
