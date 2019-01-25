@@ -298,7 +298,7 @@ $scope.page_variables={};
 	$scope.rate=function(index, rate_code)
 	{
 		console.log(index, rate_code)
-		if($scope.active_tab == 'movie'){
+		if($scope.page_variables.movies_or_series == 'movie'){
 			f1 = 'add_rate';
 			f2 = 'un_rate';
 			f3 = 'modify_user_movies';
