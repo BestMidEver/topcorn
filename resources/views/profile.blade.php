@@ -165,12 +165,30 @@
 
 <div class="container-fluid" ng-show="active_tab=='get_lists' && !is_waiting">
 	<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}';">
-		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{list_mod_title}}
 		</button>
-		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<div class="dropdown-menu">
 			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
 			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';list_mode='liked_ones';get_first_page_data();">{{ __('general.liked_ones') }}</button>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series'">
+	<div class="dropdown d-inline" ng-init="page_variables.active_dropdown_3 = 'all'">
+		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<span ng-if="page_variables.active_dropdown_3=='unseen'">Unseen</span>
+			<span ng-if="page_variables.active_dropdown_3=='available'">Available</span>
+			<span ng-if="page_variables.active_dropdown_3=='awaited'">Awaited</span>
+			<span ng-if="page_variables.active_dropdown_3=='all'">All</span>
+		</button>
+		<div class="dropdown-menu">
+			<button class="dropdown-item" ng-click="switch_seen_unseen('unseen')">Unseen</button>
+			<button class="dropdown-item" ng-click="switch_seen_unseen('available')">Available</button>
+			<button class="dropdown-item" ng-click="switch_seen_unseen('awaited')">Awaited</button>
+			<div class="dropdown-divider"></div>
+			<button class="dropdown-item" ng-click="switch_seen_unseen('all')">All</button>
 		</div>
 	</div>
 </div>
