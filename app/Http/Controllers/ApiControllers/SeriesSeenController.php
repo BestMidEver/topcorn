@@ -45,7 +45,13 @@ class SeriesSeenController extends Controller
     {
         $series_seen = Series_seen::updateOrCreate(
             array('user_id' => Auth::id(), 'series_id' => $request->series_id), 
-            array('season_number' => $request->last_seen_season, 'episode_number' => $request->last_seen_episode, 'air_date' => new Carbon($request->air_date))
+            array(
+                'season_number' => $request->last_seen_season,
+                'episode_number' => $request->last_seen_episode,
+                'air_date' => new Carbon($request->air_date),
+                'next_season' => $request->next_season,
+                'next_episode' => $request->next_episode
+            )
         );
         //SuckSeriesJob::dispatch($request->series_id, false)->onQueue("high");
         return Response([

@@ -13,5 +13,7 @@ class Series_seen extends Model
     	'season_number',
     	'episode_number',
     	'air_date',
+    	'next_season',
+    	'next_episode',
     ];
 }

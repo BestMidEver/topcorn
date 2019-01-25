@@ -459,14 +459,16 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(temp.length>0){
 					episode=temp[0].episode_number;
 					season=temp[0].season_number;
-				}else{
+				}else if($scope.movie.in_production){
 					temp=_.where($scope.page_variables.seasons, {season_number:$scope.page_variables.active_tab_1+1});
 					episode=1;
-					season=temp.season_number;
+					season=temp[0].season_number;
+				}else{
+					episode=null;
+					season=null;
 				}
-				console.log('TOGGLE1',episode,season)
 
-				rate.series_add_last_seen(pass.seriesid, $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2, $scope.series.episodes[$scope.page_variables.active_tab_2-1].air_date)
+				rate.series_add_last_seen(pass.seriesid, $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2, $scope.series.episodes[$scope.page_variables.active_tab_2-1].air_date, season, episode)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
