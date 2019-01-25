@@ -65,7 +65,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.languages = _.sortBy(languages, 'o');
 		$scope.languages.pop();
 		$scope.switch_genre = function(){
-			if(page_variables.movies_or_series == 'movies'){
+			if($scope.page_variables.movies_or_series == 'movies'){
 				$scope.genres = _.sortBy(genres, 'o');
 				console.log($scope.genres, genres)
 				$scope.genres.pop();
