@@ -460,9 +460,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					episode=temp[0].episode_number;
 					season=temp[0].season_number;
 				}else if($scope.movie.in_production || $scope.page_variables.active_tab_1!=$scope.page_variables.seasons[$scope.page_variables.seasons.length-1].season_number){
-					temp=_.where($scope.page_variables.seasons, {season_number:$scope.page_variables.active_tab_1+1});
 					episode=1;
-					season=temp[0].season_number;
+					season=$scope.page_variables.active_tab_1+1;
 				}else{
 					episode=null;
 					season=null;
