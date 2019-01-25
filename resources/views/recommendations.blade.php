@@ -135,7 +135,7 @@
 	</div>
 </div>
 <div class="container-fluid p-0 d-none d-md-inline" id="filter">
-	<ul class="nav justify-content-md-center tab1">
+	<ul class="nav justify-content-md-center tab1 mt-1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 		</li>
