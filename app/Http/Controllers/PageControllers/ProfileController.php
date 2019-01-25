@@ -367,6 +367,9 @@ class ProfileController extends Controller
             $return_val = $return_val
             ->whereRaw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) = 0')
             ->orderBy('day_difference_next', 'asc');
+        }else{
+            $return_val = $return_val
+            ->orderBy('series_seens.updated_at', 'desc');
         }
 
         return $return_val->paginate($pagin);
