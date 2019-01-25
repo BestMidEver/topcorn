@@ -16,7 +16,7 @@ $scope.page_variables={};
 
 $scope.switch_seen_unseen = function(mode){
 	$scope.page_variables.active_dropdown_3=mode;
-	console.log(mode, $scope.page_variables.active_dropdown_3)
+
 }
 
 
@@ -48,6 +48,8 @@ $scope.switch_seen_unseen = function(mode){
 	$scope.is_waiting=false;
     $scope.get_page_data = function()
     {
+    	if($scope.active_tab=='get_laters' && $scope.page_variables.movies_or_series == 'series') temp=$scope.active_tab+'/'+$scope.page_variables.active_dropdown_3;
+    	else temp=$scope.active_tab;
 		$scope.pagination=0;
 		$scope.is_waiting=true;
     	if($scope.active_tab == 'get_lists'){
@@ -60,7 +62,7 @@ $scope.switch_seen_unseen = function(mode){
 				$scope.is_waiting=false;
 			});
     	}else{
-    		rate.get_profile_data($scope.active_tab, pass.profile_user_id, $scope.page, $scope.page_variables.movies_or_series)
+    		rate.get_profile_data(temp, pass.profile_user_id, $scope.page, $scope.page_variables.movies_or_series)
 			.then(function(response){
 				console.log(response.data.data, $scope.page_variables.movies_or_series)
 				$scope.movies=response.data.data;

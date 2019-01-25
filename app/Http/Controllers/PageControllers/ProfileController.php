@@ -299,7 +299,7 @@ class ProfileController extends Controller
 
 
 
-    public function get_series_laters($user, $lang)
+    public function get_series_laters($mode, $user, $lang)
     {
         if(Auth::check()){
             if(Auth::User()->hover_title_language == 0){
