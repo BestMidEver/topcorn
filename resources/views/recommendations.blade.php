@@ -128,23 +128,23 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 pb-1 d-none d-md-inline" id="filter">
+<div class="mt-3 d-none d-md-inline">
+	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">Movies</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">Series</button>
+	</div>
+</div>
+<div class="container-fluid p-0 d-none d-md-inline" id="filter">
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 		</li>
-		<!--<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='popular'}" ng-click="active_tab='popular';get_first_page_data()">{{ __('general.most_populer') }}</button>
-		</li>-->
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		</li>
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 		</li>
-		<!--<li class="nav-item ml-3 pb-2">
-			<button id="filter_button" class="nav-link btn btn-outline-secondary btn-sm" ng-click="drawslider();scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
-		</li>-->
 	</ul>
 </div>
 <!-- Tabs Button -->
