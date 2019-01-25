@@ -19,6 +19,7 @@ pass={
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/genres.js"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/series_genres.js"></script>
 <script src="/js/code_translations/{{ App::getlocale() }}/languages.js"></script>
 @endsection
 
