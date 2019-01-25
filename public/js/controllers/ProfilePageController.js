@@ -16,7 +16,7 @@ $scope.page_variables={};
 
 $scope.switch_seen_unseen = function(mode){
 	$scope.page_variables.active_dropdown_3=mode;
-
+	$scope.get_first_page_data();
 }
 
 

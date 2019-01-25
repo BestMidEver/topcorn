@@ -355,6 +355,11 @@ class ProfileController extends Controller
         )
         ->orderBy('series_seens.updated_at', 'desc');
 
+        if($mode == 'unseen'){
+            $return_val = $return_val
+            ->whereNull('series_seens.air_date');
+        }
+
         return $return_val->paginate($pagin);
     }
 
