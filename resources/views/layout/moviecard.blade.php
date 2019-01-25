@@ -27,7 +27,7 @@
 									<span ng-if="movie.day_difference_next>0">Airs <span class="h5 text-warning">@{{movie.day_difference_next}}</span> days later</span>
 									<span ng-if="movie.day_difference_next==0">Airs <span class="h5 text-warning">today</span></span>
 									<span ng-if="movie.day_difference_next<0" class="h5 text-warning">Available</span>
-									<span ng-if="movie.day_difference_last==0 && !next_episode>0" class="h5 text-warning"><span ng-if="movie.status=='Ended'">You've seen the last one (Ended)</span><span ng-if="movie.status=='Canceled'">You've seen the last one (Canceled)</span></span>
+									<span ng-if="movie.day_difference_last==0 && !next_episode>0" class="h5 text-warning"><span ng-if="movie.status=='Ended'">Ended</span><span ng-if="movie.status=='Canceled'">Canceled</span></span>
 								</span>
 							</div>
 							<div class="text-white" ng-if="movie.day_difference_last>0">
