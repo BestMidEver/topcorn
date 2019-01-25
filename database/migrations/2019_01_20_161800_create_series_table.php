@@ -19,6 +19,7 @@ class CreateSeriesTable extends Migration
             $table->double('vote_average',3,1)->nullable();
             $table->integer('vote_count')->nullable();
             $table->double('popularity',11,8)->nullable();
+            $table->string('status')->nullable();
             $table->string('original_language')->nullable();
             $table->dateTime('first_air_date')->nullable();
             $table->dateTime('next_episode_air_date')->nullable();
