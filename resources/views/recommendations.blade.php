@@ -13,7 +13,7 @@
 		<button id="addperson_button" class="btn btn-outline-secondary my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_user')"><i class="fas fa-user-plus"></i><span id="addperson_text" class="d-none"> {{ __('general.add_person') }}</span></button>
 	</div>
 	@endif
-	<div class="d-inline" ng-show="active_tab=='mood_pick'">
+	<div class="d-inline" ng-show="active_tab=='mood_pick' && page_variables.movies_or_series == 'movies'">
 		<button class="btn btn-outline-secondary mr-2 my-2" type="button" ng-repeat="mode_movie in mode_movies" ng-click="remove_from_mode(mode_movie.id);" data-toggle="tooltip" data-placement="top" title="@{{mode_movies.original_title}}">@{{mode_movie.title}}@{{mode_movie.release_date.length > 0 ? ' ('+mode_movie.release_date.substring(0, 4)+')' : ''}} <i class="fa fa-times"></i></button>
 		<button id="addmovie_button" class="btn btn-outline-secondary my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_mode')"><i class="fas fa-plus"></i> <span ng-show="mode_movies.length == 0">{{ __('general.pick_mode') }}</span><span ng-hide="mode_movies.length == 0"> {{ __('general.add_movie') }}</span></button>
 	</div>
@@ -129,7 +129,7 @@
 
 <!-- Tabs Button -->
 <div class="mt-3 d-none d-md-inline">
-	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
+	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series == 'movies'">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">Movies</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">Series</button>
 	</div>
@@ -142,7 +142,7 @@
 		<li class="nav-item mb-2">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()" {{ auth::check()?null:'disabled' }}>{{ __('general.according_to_my_taste') }}</button>
 		</li>
-		<li class="nav-item mb-2">
+		<li class="nav-item mb-2" ng-if="page_variables.movies_or_series == 'movies'">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
 		</li>
 	</ul>
@@ -158,7 +158,7 @@
 	@if(auth::check())
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
 	@endif
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()">{!! __('general.according_to_movie_combination') !!}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='mood_pick'}" ng-click="active_tab='mood_pick';get_first_page_data()" ng-if="page_variables.movies_or_series == 'movies'">{!! __('general.according_to_movie_combination') !!}</button>
 </div>
 <!-- Tabs Button Mobile -->
 
