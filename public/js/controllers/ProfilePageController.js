@@ -301,15 +301,11 @@ $scope.page_variables={};
 		if($scope.page_variables.movies_or_series == 'movie'){
 			f1 = 'add_rate';
 			f2 = 'un_rate';
-			f3 = 'modify_user_movies';
 			v1 = 'rated_id';
-			v2 = 'movie_id';
 		}else{
 			f1 = 'series_add_rate';
 			f2 = 'series_un_rate';
-			f3 = 'modify_user_series';
 			v1 = 'id';
-			v2 = 'series_id';
 		}
 		$('#myModal').modal('hide');
 		if(rate_code != null){
@@ -319,33 +315,22 @@ $scope.page_variables={};
 				if(response.status == 201){
 					$scope.movies[index].rated_id=response.data.data[v1];
 					$scope.movies[index].rate_code=response.data.data.rate;
-					$scope[f3]({
-						'movie_id':response.data.data[v2],
-						'rated_id':response.data.data[v1],
-						'rate_code':response.data.data.rate,
-						'later_id':null,
-						'ban_id':null
-					}, 'rate')
+					if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
+				}else{
+					$('#myModal').modal('show');
 				}
-				if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 			});
 		}else if(rate_code == null){
-			var temp = $scope.movies[index];
 			rate[f2]($scope.movies[index].rated_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
 					$scope.movies[index].rated_id=null;
 					$scope.movies[index].rate_code=null;
-					$scope[f3]({
-						'movie_id':temp.id,
-						'rated_id':null,
-						'rate_code':null,
-						'later_id':temp.later_id,
-						'ban_id':temp.ban_id
-					}, 'rate');
+					if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
+				}else{
+					$('#myModal').modal('show');
 				}
-				if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 			});
 		}
 	};
