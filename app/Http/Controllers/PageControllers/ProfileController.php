@@ -341,6 +341,7 @@ class ProfileController extends Controller
             'series.first_air_date as first_air_date',
             'series.last_episode_air_date as last_episode_air_date',
             'series.next_episode_air_date as next_episode_air_date',
+            'series.status as status',
             'series_seens.air_date as last_seen_air_date',
             DB::raw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) AS day_difference_last'),
             DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next'),
