@@ -202,7 +202,7 @@ class recommendationsController extends Controller
     
 
 
-    public function get_series_top_rateds(Request $request)
+    public function get_series_top_rateds()
     {
         $start = microtime(true);
 
