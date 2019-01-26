@@ -134,6 +134,8 @@ Route::post('api/get_series_top_rateds/{lang?}','PageControllers\recommendations
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::post('api/get_pemosu/{lang?}','PageControllers\recommendationsController@get_pemosu')
 	->where('lang', config('constants.supported_languages.for_web_php'));
+Route::post('api/get_series_pemosu/{lang?}','PageControllers\recommendationsController@get_series_pemosu')
+	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::post('api/get_momosu','PageControllers\recommendationsController@get_momosu');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// RECOMMENDATIONS PAGE (PUBLIC) ///////////////////////////
