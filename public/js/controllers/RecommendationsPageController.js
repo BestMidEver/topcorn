@@ -23,11 +23,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 	$scope.switch_page_mode = function(mode){
 		if(mode == 'movies'){
-			$scope.switch_genre();
 			$scope.page_variables.movies_or_series = 'movies';
-		}else{
 			$scope.switch_genre();
+		}else{
 			$scope.page_variables.movies_or_series = 'series';
+			$scope.switch_genre();
 		}
 		$scope.get_first_page_data();
 	}
