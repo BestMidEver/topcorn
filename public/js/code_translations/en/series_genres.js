@@ -33,7 +33,7 @@ series_genres=[
     },
     {
         "i": 10762,
-        "o": "Kis"
+        "o": "Kids"
     },
     {
         "i": 9648,

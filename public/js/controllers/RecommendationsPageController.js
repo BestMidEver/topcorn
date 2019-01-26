@@ -337,7 +337,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			}
 		}
 
-		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page)
+		rate.get_recommendations_page_data($scope.active_tab, data, $scope.page, $scope.page_variables.movies_or_series)
 		.then(function(response){
 			console.log(response.data[1])
 			console.log(response.data[0])
