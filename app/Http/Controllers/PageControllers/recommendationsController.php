@@ -202,7 +202,7 @@ class recommendationsController extends Controller
     
 
 
-    public function get_series_top_rateds()
+    public function get_series_top_rateds(Request $request)
     {
         /*$request=new \stdClass();
         $request->f_users=[7];
