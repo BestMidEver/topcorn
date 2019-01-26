@@ -225,15 +225,15 @@ class recommendationsController extends Controller
                 $hover_name = 'original_name';
             }
 
-            $subq = DB::table('series_rateds')
-            ->whereIn('series_rateds.user_id', $request->f_users)
+            $subq = DB::table('seeds.user_id', $requeries_rateds')
+            ->whereIn('series_ratst->f_users)
             ->where('series_rateds.rate', '>', 0)
             ->leftjoin('series_recommendations', 'series_recommendations.series_id', '=', 'series_rateds.series_id')
             ->join('series', 'series.id', '=', 'series_recommendations.this_id')
             ->select(
                 'series.id',
-                DB::raw('sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.is_similar) AS point'),
-                DB::raw('sum(4*series_recommendations.is_similar) as p2'),
+                DB::raw('sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.rank) AS point'),
+                DB::raw('sum(4*series_recommendations.rank) as p2'),
                 DB::raw('COUNT(series_recommendations.this_id) as count'),
                 DB::raw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) as percent')
             )
