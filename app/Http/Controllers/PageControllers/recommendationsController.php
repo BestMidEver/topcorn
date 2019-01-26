@@ -225,8 +225,8 @@ class recommendationsController extends Controller
                 $hover_name = 'original_name';
             }
 
-            $subq = DB::table('seeds.user_id', $requeries_rateds')
-            ->whereIn('series_ratst->f_users)
+            $subq = DB::table('series_rateds')
+            ->whereIn('series_rateds.user_id', $request->f_users)
             ->where('series_rateds.rate', '>', 0)
             ->leftjoin('series_recommendations', 'series_recommendations.series_id', '=', 'series_rateds.series_id')
             ->join('series', 'series.id', '=', 'series_recommendations.this_id')
