@@ -265,7 +265,7 @@ class recommendationsController extends Controller
 
             if($request->f_genre != [])
             {
-                $subq_2 = $subq_2->join('genres', 'genres.series_id', '=', 'm2.id')
+                $subq_2 = $subq_2->join('series_genres', 'series_genres.series_id', '=', 'm2.id')
                 ->whereIn('genre_id', $request->f_genre)
                 ->groupBy('m2.id')
                 ->havingRaw('COUNT(m2.id)='.count($request->f_genre));
