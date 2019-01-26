@@ -130,7 +130,7 @@ Route::get('api/remove_from_parties/{user}','ApiControllers\SearchController@rem
 Route::get('api/add_to_parties/{user}','ApiControllers\SearchController@add_to_parties');
 Route::post('api/get_top_rateds/{lang?}','PageControllers\recommendationsController@get_top_rateds')
 	->where('lang', config('constants.supported_languages.for_web_php'));
-Route::post('api/get_series_top_rateds/{lang?}','PageControllers\recommendationsController@get_series_top_rateds')
+Route::get('api/get_series_top_rateds/{lang?}','PageControllers\recommendationsController@get_series_top_rateds')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::post('api/get_pemosu/{lang?}','PageControllers\recommendationsController@get_pemosu')
 	->where('lang', config('constants.supported_languages.for_web_php'));
