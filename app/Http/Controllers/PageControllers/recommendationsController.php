@@ -204,6 +204,10 @@ class recommendationsController extends Controller
 
     public function get_series_top_rateds()
     {
+        $request->f_users=[7];
+
+
+
         $start = microtime(true);
 
         if(auth::check()){
