@@ -204,7 +204,7 @@ class recommendationsController extends Controller
 
     public function get_series_top_rateds()
     {
-        $request=new \stdClass();
+        /*$request=new \stdClass();
         $request->f_users=[7];
         $request->f_vote=75;
         $request->f_sort='point';
@@ -212,10 +212,7 @@ class recommendationsController extends Controller
         $request->f_max=2019;
         $request->f_lang=[];
         $request->f_genre=[];
-        $request->f_add_watched=false;
-
-
-
+        $request->f_add_watched=false;*/
         $start = microtime(true);
 
         if(auth::check()){
