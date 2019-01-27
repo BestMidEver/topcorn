@@ -27,6 +27,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
 		}
+		$scope.pagination_mode=0;
 		$scope.f_genre_model = [];
 		$scope.f_mode_movies = [];
 		$scope.mode_movies = [];
@@ -86,11 +87,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 		$('#collapseFilter').on('show.bs.collapse', function () {
 			angular.element( document.querySelector( '#filter_button' ) ).addClass('active');
-			console.log('A')
 		});
 		$('#collapseFilter').on('hide.bs.collapse', function () {
 			angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
-			console.log('B')
 		});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
