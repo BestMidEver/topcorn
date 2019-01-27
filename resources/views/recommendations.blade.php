@@ -14,8 +14,8 @@
 	</div>
 	@endif
 	<div class="d-inline" ng-show="active_tab=='mood_pick'">
-		<button class="btn btn-outline-secondary mr-2 my-2" type="button" ng-repeat="mode_movie in mode_movies" ng-click="remove_from_mode(mode_movie.id);" data-toggle="tooltip" data-placement="top" title="@{{mode_movies.original_title}}">@{{movie.title.length>0?movie.title:movie.name}}
-			<span ng-if="movie.release_date.length > 0">(@{{movie.release_date.substring(0, 4)}})</span><span ng-if="movie.first_air_date.length > 0">(@{{movie.first_air_date.substring(0, 4)}})</span> <i class="fa fa-times"></i></button>
+		<button class="btn btn-outline-secondary mr-2 my-2" type="button" ng-repeat="mode_movie in mode_movies" ng-click="remove_from_mode(mode_movie.id);" data-toggle="tooltip" data-placement="top" title="@{{mode_movie.original_title.length>0?mode_movie.original_title:mode_movie.original_name}}">@{{mode_movie.title.length>0?mode_movie.title:mode_movie.name}}
+			<span ng-if="mode_movie.release_date.length > 0">(@{{mode_movie.release_date.substring(0, 4)}})</span><span ng-if="mode_movie.first_air_date.length > 0">(@{{mode_movie.first_air_date.substring(0, 4)}})</span> <i class="fa fa-times"></i></button>
 		<button id="addmovie_button" class="btn btn-outline-secondary my-2" type="button" data-toggle="collapse" data-target="#collapseAdd" ng-click="setFocus('input_mode')"><i class="fas fa-plus"></i> <span ng-show="mode_movies.length == 0">{{ __('general.pick_mode') }}</span><span ng-hide="mode_movies.length == 0"> {{ __('general.add_movie') }}</span></button>
 	</div>
 </div>
