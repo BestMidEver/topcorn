@@ -812,7 +812,7 @@ class recommendationsController extends Controller
             $pagination = Auth::User()->pagination;
         } 
 
-        $f_movies = [$request->f_mode_movies;
+        $f_movies = [$request->f_mode_movies];
         $f_lang =$request->f_lang;
         $f_min = $request->f_min;
         $f_max = $request->f_max;
