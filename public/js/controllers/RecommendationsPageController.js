@@ -30,6 +30,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.search_mode_text = '';
 			$scope.get_watched_movies();
 			$scope.switch_genre();
+			$scope.movies = [];
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
 			$scope.f_genre_model = [];
@@ -38,6 +39,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.search_mode_text = '';
 			$scope.get_watched_movies();
 			$scope.switch_genre();
+			$scope.movies = [];
 		}
 	}
 
