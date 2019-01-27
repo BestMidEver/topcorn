@@ -131,7 +131,7 @@
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu my-3 d-md-none tab2">
-	<div class="btn-group btn-group mr-3 d-block mb-2 text-center" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
+	<div class="btn-group btn-group d-block mb-2 text-center" role="group" aria-label="Movies or Series">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">Movies</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">Series</button>
 	</div>
