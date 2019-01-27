@@ -855,7 +855,7 @@ class recommendationsController extends Controller
                 'series_rateds.rate as rate_code'
             );
 
-            if(!$request->f_add_watched){
+            if(true/*!$request->f_add_watched*/){
                 $subq = $subq->havingRaw('sum(IF(series_rateds.id IS NULL OR series_rateds.rate = 0, 0, 1)) = 0');
             }
         }else{
@@ -899,7 +899,7 @@ class recommendationsController extends Controller
                 $join->on('series_laters.series_id', '=', 'series.id')
                 ->where('series_laters.user_id', '=', Auth::user()->id);
             })
-            ->leftjoin('series_bans', function ($join) use ($request) {
+            ->leftjoin('series_bans', function ($join) {
                 $join->on('series_bans.series_id', '=', 'series.id')
                 ->where('series_bans.user_id', Auth::id());
             })
