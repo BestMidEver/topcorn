@@ -801,7 +801,7 @@ class recommendationsController extends Controller
 
 
 
-    public function get_series_momosu()
+    public function get_series_momosu(Request $request)
     {
         $start = microtime(true);
 
@@ -812,13 +812,13 @@ class recommendationsController extends Controller
             $pagination = Auth::User()->pagination;
         } 
 
-        $f_movies = [1405];//$request->f_mode_movies;
-        $f_lang = [];//$request->f_lang;
-        $f_min = 1917;//$request->f_min;
-        $f_max = 2019;//$request->f_max;
-        $f_genre = [];//$request->f_genre;
-        $f_sort = "point";//$request->f_sort;
-        $f_vote = 25;//$request->f_vote;
+        $f_movies = [$request->f_mode_movies;
+        $f_lang =$request->f_lang;
+        $f_min = $request->f_min;
+        $f_max = $request->f_max;
+        $f_genre $request->f_genre;
+        $f_sort = $request->f_sort;
+        $f_vote = $request->f_vote;
 
         $subq = DB::table('series')
         ->whereIn('series.id', $f_movies)
@@ -855,7 +855,7 @@ class recommendationsController extends Controller
                 'series_rateds.rate as rate_code'
             );
 
-            if(true/*!$request->f_add_watched*/){
+            if(!$request->f_add_watched){
                 $subq = $subq->havingRaw('sum(IF(series_rateds.id IS NULL OR series_rateds.rate = 0, 0, 1)) = 0');
             }
         }else{
