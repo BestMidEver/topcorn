@@ -848,9 +848,9 @@ class recommendationsController extends Controller
             })
             ->select(
                 'series_recommendations.this_id as id',
-                DB::raw('sum(series_recommendations.rate) AS point'),
+                DB::raw('sum(series_recommendations.rank) AS point'),
                 DB::raw('COUNT(series_recommendations.this_id) as count'),
-                DB::raw('sum(series_recommendations.rate)*20 DIV COUNT(series.id) as percent'),
+                DB::raw('sum(series_recommendations.rank)*20 DIV COUNT(series.id) as percent'),
                 'series_rateds.id as rated_id',
                 'series_rateds.rate as rate_code'
             );
@@ -861,9 +861,9 @@ class recommendationsController extends Controller
         }else{
             $subq = $subq->select(
                 'series_recommendations.this_id as id',
-                DB::raw('sum(series_recommendations.rate) AS point'),
+                DB::raw('sum(series_recommendations.rank) AS point'),
                 DB::raw('COUNT(series_recommendations.this_id) as count'),
-                DB::raw('sum(series_recommendations.rate)*20 DIV COUNT(series.id) as percent')
+                DB::raw('sum(series_recommendations.rank)*20 DIV COUNT(series.id) as percent')
             );
         }
 
