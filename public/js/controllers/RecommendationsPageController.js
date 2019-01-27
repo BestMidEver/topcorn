@@ -28,7 +28,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.f_mode_movies = [];
 			$scope.mode_movies = [];
 			$scope.search_mode_text = '';
-			$scope.search_movies = [];
+			$scope.get_watched_movies();
 			$scope.switch_genre();
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
@@ -36,10 +36,9 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.f_mode_movies = [];
 			$scope.mode_movies = [];
 			$scope.search_mode_text = '';
-			$scope.search_movies = [];
+			$scope.get_watched_movies();
 			$scope.switch_genre();
 		}
-		$scope.get_first_page_data();
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -445,7 +444,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.mode_active_tab='get_rateds/5';
 		$scope.get_watched_movies = function()
 		{
-			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page_mode)
+			rate.get_profile_data($scope.mode_active_tab, pass.user_id, $scope.page_mode, $scope.page_variables.movies_or_series)
 			.then(function(response){
 				console.log(response.data)
 				$scope.search_movies=response.data.data;
