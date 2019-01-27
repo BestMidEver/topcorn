@@ -172,6 +172,7 @@ return [
     'searching' => 'Searching...',                                          //recommendations, 
     'search_list' => 'Search a list by title',                              //search,       
     'search_movie' => 'Search a movie by title',                            //search,
+    'search_series' => 'Search a series by name',                           //search,           ////////////
     'search_results' => 'Seach Results',                                    //recommendations,
     'search_person' => 'Search a person by name',                           //search,
     'search_user' => 'Search a user by name/email',                         //search,

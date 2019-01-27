@@ -33,7 +33,8 @@
 				<span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
 			</div>
 			<input type="text" id="input_user" class="form-control" placeholder="{{ __('general.search_user') }}" aria-describedby="basic-addon1" ng-model="search_text" ng-change="search_get_first()" ng-model-options="{debounce: 750}" ng-show="active_tab!='mood_pick'">
-			<input type="text" id="input_mode" class="form-control" placeholder="{{ __('general.search_movie') }}" aria-describedby="basic-addon1" ng-model="search_mode_text" ng-change="search_get_first()" ng-model-options="{debounce: 750}" ng-show="active_tab=='mood_pick'">
+			<input type="text" id="input_mode" class="form-control" placeholder="{{ __('general.search_movie') }}" aria-describedby="basic-addon1" ng-model="search_mode_text" ng-change="search_get_first()" ng-model-options="{debounce: 750}" ng-show="active_tab=='mood_pick' && page_variables.movies_or_series=='movies'">
+			<input type="text" id="input_series_mode" class="form-control" placeholder="{{ __('general.search_series') }}" aria-describedby="basic-addon1" ng-model="search_mode_text" ng-change="search_get_first()" ng-model-options="{debounce: 750}" ng-show="active_tab=='mood_pick' && page_variables.movies_or_series=='series'">
 		</div>
 		<div class="col"></div>
 	</div>
