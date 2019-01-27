@@ -815,7 +815,7 @@ class recommendationsController extends Controller
 
         $start = microtime(true);
 
-        $hover_title = 'original_name';
+        $hover_name = 'original_name';
         $pagination = 24;
         if(Auth::check()){
             if(Auth::User()->hover_title_language == 0)$hover_name = Auth::User()->secondary_lang.'_name';
