@@ -802,16 +802,16 @@ class recommendationsController extends Controller
 
 
 
-    public function get_series_momosu(/*Request $request*/)
+    public function get_series_momosu(Request $request)
     {
-        $request = new \stdClass();
+        /*$request = new \stdClass();
         $request->f_mode_movies = [1399];
         $request->f_lang = [];
         $request->f_min = 1950;
         $request->f_max = 2019;
         $request->f_genre = [];
         $request->f_sort = 'point';
-        $request->f_vote = true;
+        $request->f_vote = true;*/
 
         $start = microtime(true);
 
