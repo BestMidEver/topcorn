@@ -27,14 +27,16 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.f_genre_model = [];
 			$scope.f_mode_movies = [];
 			$scope.mode_movies = [];
-			$scope.search_mode_text='';
+			$scope.search_mode_text = '';
+			$scope.search_movies = [];
 			$scope.switch_genre();
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
 			$scope.f_genre_model = [];
 			$scope.f_mode_movies = [];
 			$scope.mode_movies = [];
-			$scope.search_mode_text='';
+			$scope.search_mode_text = '';
+			$scope.search_movies = [];
 			$scope.switch_genre();
 		}
 		$scope.get_first_page_data();
