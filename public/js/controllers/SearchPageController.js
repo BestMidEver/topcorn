@@ -59,14 +59,14 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				case 'movie':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
 					.then(function(response){
-						console.log(response.data);
+						console.log(1,response.data);
 						$scope.inside_get_page_data_movie(response);
 					});
 					break;
 				case 'series':
 					rate.search_series(pass.constants_api_key, pass.lang, temp, $scope.page)
 					.then(function(response){
-						console.log(response.data);
+						console.log(2,response.data);
 						$scope.inside_get_page_data_movie(response);
 					});
 					break;
