@@ -60,7 +60,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				case 'series':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page, $scope.active_tab)
 					.then(function(response){
-						console.log(1,response.data);
+						console.log(1, $scope.active_tab,response.data);
 						$scope.inside_get_page_data_movie(response);
 					});
 					break;
