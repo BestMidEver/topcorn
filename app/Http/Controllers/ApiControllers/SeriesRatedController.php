@@ -44,7 +44,7 @@ class SeriesRatedController extends Controller
     public function store(Request $request)
     {
         $series_rated = Series_rated::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->series_id), array('rate' => $request->rate));
-        SuckSeriesJob::dispatch($request->series_id, false)->onQueue("low");
+        SuckSeriesJob::dispatch($request->series_id, true)->onQueue("high");
         return Response([
             'data' => $series_rated,
         ], Response::HTTP_CREATED);

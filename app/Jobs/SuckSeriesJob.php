@@ -38,11 +38,6 @@ class SuckSeriesJob implements ShouldQueue
      */
     public function handle()
     {
-        $is_recent = Serie::where('id', $this->id)
-        ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
-        ->first();
-        if($is_recent) return;
-
         if($this->isWithRecommendation){
             $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations'), true);
             Series_recommendation::where(['series_id' => $this->id])->delete();
@@ -107,6 +102,11 @@ class SuckSeriesJob implements ShouldQueue
                 $network->save();
             }
         }else{
+            $is_recent = Serie::where('id', $this->id)
+            ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
+            ->first();
+            if($is_recent) return;
+            
             $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en'), true);
             $series_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
             $series_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu'), true);
