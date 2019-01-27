@@ -25,10 +25,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		if(mode == 'movies'){
 			$scope.page_variables.movies_or_series = 'movies';
 			$scope.f_genre_model = [];
+			$scope.f_mode_movies = [];
 			$scope.switch_genre();
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
 			$scope.f_genre_model = [];
+			$scope.f_mode_movies = [];
 			$scope.switch_genre();
 		}
 		$scope.get_first_page_data();
@@ -415,7 +417,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		{
 			var temp = $scope.search_mode_text.replace(/ /g , "%20");
 			if(temp.length > 0){
-				rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page_mode)
+				rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page_mode, $scope.page_variables.movies_or_series)
 				.then(function(response){
 					console.log(response.data);
 					$scope.search_movies=response.data.results;

@@ -388,11 +388,12 @@ MyApp.factory('rate', function($http) {
 
 
 
-    search_movies = function(constants_api_key, lang, temp, page) 
+    search_movies = function(constants_api_key, lang, temp, page, mode) 
     {
+    	temp = mode=='movies'?'movie':'tv';
 		return $http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/search/movie?api_key='+constants_api_key+'&language='+lang+'&query='+temp+'&page='+page+'&include_adult=false',
+			url: 'https://api.themoviedb.org/3/search/'+temp+'?api_key='+constants_api_key+'&language='+lang+'&query='+temp+'&page='+page+'&include_adult=false',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
