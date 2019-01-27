@@ -85,10 +85,10 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_4 = 'point';
 
 		$('#collapseFilter').on('show.bs.collapse', function () {
-		   angular.element( document.querySelector( '#filter_button' ) ).addClass('btn-outline-secondary-hover');
+		   angular.element( document.querySelector( '#filter_button' ) ).addClass('active');
 		});
 		$('#collapseFilter').on('hide.bs.collapse', function () {
-		  angular.element( document.querySelector( '#filter_button' ) ).removeClass('btn-outline-secondary-hover');
+		  angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
 		});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
