@@ -24,23 +24,17 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.switch_page_mode = function(mode){
 		if(mode == 'movies'){
 			$scope.page_variables.movies_or_series = 'movies';
-			$scope.f_genre_model = [];
-			$scope.f_mode_movies = [];
-			$scope.mode_movies = [];
-			$scope.search_mode_text = '';
-			$scope.get_watched_movies();
-			$scope.switch_genre();
-			$scope.movies = [];
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
-			$scope.f_genre_model = [];
-			$scope.f_mode_movies = [];
-			$scope.mode_movies = [];
-			$scope.search_mode_text = '';
-			$scope.get_watched_movies();
-			$scope.switch_genre();
-			$scope.movies = [];
 		}
+		$scope.f_genre_model = [];
+		$scope.f_mode_movies = [];
+		$scope.mode_movies = [];
+		$scope.search_mode_text = '';
+		$scope.get_watched_movies();
+		$scope.switch_genre();
+		$scope.movies = [];
+		$scope.get_first_page_data();
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////
