@@ -357,8 +357,7 @@ MyApp.factory('rate', function($http) {
     		else route = 'get_series_pemosu';
     	}else{
     		if(mode=='movies') route = 'get_momosu';
-    		else reute = 'get_series_momosu'
-    			console.log(mode)
+    		else route = 'get_series_momosu'
         }
         return $http({
 			method: 'POST',
