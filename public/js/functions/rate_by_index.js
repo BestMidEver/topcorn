@@ -406,23 +406,6 @@ MyApp.factory('rate', function($http) {
 
 
 
-    search_series = function(constants_api_key, lang, temp, page) 
-    {
-		return $http({
-			method: 'GET',
-			url: 'https://api.themoviedb.org/3/search/tv?api_key='+constants_api_key+'&language='+lang+'&query='+temp+'&page='+page+'&include_adult=false',
-			headers: {
-				'Content-Type': 'application/json',
-				'Accept' : 'application/json'
-			},
-		}).then(function successCallback(response) {
-			return response;
-		}, function errorCallback(response) {
-		});
-    }
-
-
-
     search_people = function(constants_api_key, lang, temp, page) 
     {
 		return $http({
@@ -574,7 +557,6 @@ MyApp.factory('rate', function($http) {
     	get_recommendations_page_data: get_recommendations_page_data,
     	get_user_movies: get_user_movies,
     	search_movies: search_movies, 
-    	search_series: search_series, 
     	search_people: search_people,
     	search_users: search_users,
     	search_listes: search_listes,

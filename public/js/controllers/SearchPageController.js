@@ -57,16 +57,10 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
     		$scope.is_waiting=true;
 			switch($scope.active_tab) {
 				case 'movie':
-					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page)
+				case 'series':
+					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page, $scope.active_tab)
 					.then(function(response){
 						console.log(1,response.data);
-						$scope.inside_get_page_data_movie(response);
-					});
-					break;
-				case 'series':
-					rate.search_series(pass.constants_api_key, pass.lang, temp, $scope.page)
-					.then(function(response){
-						console.log(2,response.data);
 						$scope.inside_get_page_data_movie(response);
 					});
 					break;
