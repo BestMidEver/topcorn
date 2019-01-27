@@ -779,16 +779,25 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.later=function(index)
 	{
 		console.log(index)
+		if($scope.active_tab == 'movie'){
+			f1 = 'add_later';
+			f2 = 'un_later';
+			v1 = 'later_id';
+		}else{
+			f1 = 'series_add_later';
+			f2 = 'series_un_later';
+			v1 = 'id';
+		}
 		if($scope.movies[index].later_id == null){
-			rate.add_later($scope.movies[index].id)
+			rate[f1]($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].later_id=response.data.data.later_id;
+					$scope.movies[index].later_id=response.data.data[v1];
 				}
 			});
 		}else{
-			rate.un_later($scope.movies[index].later_id)
+			rate[f2]($scope.movies[index].later_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
@@ -801,13 +810,22 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.rate=function(index, rate_code)
 	{
 		console.log(index, rate_code)
+		if($scope.active_tab == 'movie'){
+			f1 = 'add_rate';
+			f2 = 'un_rate';
+			v1 = 'rated_id';
+		}else{
+			f1 = 'series_add_rate';
+			f2 = 'series_un_rate';
+			v1 = 'id';
+		}
 		$('#myModal').modal('hide');
 		if(rate_code != null){
-			rate.add_rate($scope.movies[index].id, rate_code)
+			rate[f1]($scope.movies[index].id, rate_code)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].rated_id=response.data.data.rated_id;
+					$scope.movies[index].rated_id=response.data.data[v1];
 					$scope.movies[index].rate_code=response.data.data.rate;
 					if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 				}else{
@@ -815,7 +833,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				}
 			});
 		}else if(rate_code == null){
-			rate.un_rate($scope.movies[index].rated_id)
+			rate[f2]($scope.movies[index].rated_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
@@ -832,16 +850,25 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.ban=function(index)
 	{
 		console.log(index)
+		if($scope.active_tab == 'movie'){
+			f1 = 'add_ban';
+			f2 = 'un_ban';
+			v1 = 'ban_id';
+		}else{
+			f1 = 'series_add_ban';
+			f2 = 'series_un_ban';
+			v1 = 'id';
+		}
 		if($scope.movies[index].ban_id == null){
-			rate.add_ban($scope.movies[index].id)
+			rate[f1]($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].ban_id=response.data.data.ban_id;
+					$scope.movies[index].ban_id=response.data.data[v1];
 				}
 			});
 		}else{
-			rate.un_ban($scope.movies[index].ban_id)
+			rate[f2]($scope.movies[index].ban_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
