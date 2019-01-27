@@ -99,10 +99,10 @@
 		<div class="d-flex flex-wrap">
 			<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-2 px-1" ng-repeat="movie in search_movies">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
-					<a ng-href="/movie/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title}}">
+					<a ng-href="/@{{movie.title.length>0?'movie':'series'}}/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title.length>0?movie.original_title:movie.original_name}}">
 						<img class="card-img-top" ng-src="{{config('constants.image.thumb_nail')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
 						<div class="card-block">
-							<h6 class="card-title px-1 pt-1 text-muted text-center">@{{movie.title}} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
+							<h6 class="card-title px-1 pt-1 text-muted text-center">@{{movie.title.length>0?movie.title:movie.name}} <small class="text-muted d-block pt-1" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small><small class="text-muted d-block pt-1" ng-if="movie.first_air_date.length > 0"><em>(@{{movie.first_air_date.substring(0, 4)}})</em></small></h6>
 						</div>
 					</a>
 					<div class="card-footer p-0">
