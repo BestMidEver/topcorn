@@ -355,7 +355,10 @@ MyApp.factory('rate', function($http) {
     	}else if(tab != 'mood_pick'){
     		if(mode=='movies') route = 'get_pemosu';
     		else route = 'get_series_pemosu';
-    	}else route = 'get_momosu';
+    	}else{
+    		if(mode=='movies') route = 'get_momosu';
+    		else reute = 'get_series_momosu'
+        }
         return $http({
 			method: 'POST',
 			url: '/api/'+route+'?page='+page,

@@ -797,4 +797,154 @@ class recommendationsController extends Controller
 
         return [$return_val->paginate($pagination), microtime(true) - $start];
     }
+
+
+
+
+    public function get_series_momosu(Request $request)
+    {
+        $start = microtime(true);
+
+        $hover_title = 'original_name';
+        $pagination = 24;
+        if(Auth::check()){
+            if(Auth::User()->hover_title_language == 0)$hover_name = Auth::User()->secondary_lang.'_name';
+            $pagination = Auth::User()->pagination;
+        } 
+
+        $f_movies = $request->f_mode_movies;
+        $f_lang = $request->f_lang;
+        $f_min = $request->f_min;
+        $f_max = $request->f_max;
+        $f_genre = $request->f_genre;
+        $f_sort = $request->f_sort;
+        $f_vote = $request->f_vote;
+
+        $subq = DB::table('series')
+        ->whereIn('series.id', $f_movies)
+        ->leftjoin('series_recommendations', 'series_recommendations.series_id', '=', 'series.id')
+        ->leftjoin('series as m2', 'm2.id', '=', 'series_recommendations.this_id')
+        ->groupBy('series_recommendations.this_id');
+
+        if($f_lang != [])
+        {
+            $subq = $subq->whereIn('m2.original_language', $f_lang);
+        }
+
+        if($f_min != 1917)
+        {
+            $subq = $subq->where('m2.first_air_date', '>=', Carbon::create($f_min,1,1));
+        }
+
+        if($f_max != 2019)
+        {
+            $subq = $subq->where('m2.first_air_date', '<=', Carbon::create($f_max,12,31));
+        }
+
+        if(Auth::check()){
+            $subq = $subq->leftjoin('series_rateds', function ($join) {
+                $join->on('series_rateds.series_id', '=', 'm2.id')
+                ->where('series_rateds.user_id', Auth::id());
+            })
+            ->select(
+                'series_recommendations.this_id as id',
+                DB::raw('sum(series_recommendations.rate) AS point'),
+                DB::raw('COUNT(series_recommendations.this_id) as count'),
+                DB::raw('sum(series_recommendations.rate)*20 DIV COUNT(series.id) as percent'),
+                'series_rateds.id as rated_id',
+                'series_rateds.rate as rate_code'
+            );
+
+            if(!$request->f_add_watched){
+                $subq = $subq->havingRaw('sum(IF(series_rateds.id IS NULL OR series_rateds.rate = 0, 0, 1)) = 0');
+            }
+        }else{
+            $subq = $subq->select(
+                'series_recommendations.this_id as id',
+                DB::raw('sum(series_recommendations.rate) AS point'),
+                DB::raw('COUNT(series_recommendations.this_id) as count'),
+                DB::raw('sum(series_recommendations.rate)*20 DIV COUNT(series.id) as percent')
+            );
+        }
+
+        $qqSql = $subq->toSql();
+    ////////////////////////////////////////////////////
+        $return_val = DB::table('series')
+        ->join(
+            DB::raw('(' . $qqSql. ') AS ss'),
+            function($join) use ($subq) {
+                $join->on('series.id', '=', 'ss.id')
+                ->addBinding($subq->getBindings());  
+            }
+        )
+        ->where('series.vote_count', '>', $f_vote);
+
+        if(Auth::check()){
+            $return_val = $return_val->select(
+                'series.'.$hover_name.' as original_name',
+                'ss.id',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'series.vote_average',
+                'series.vote_count',
+                'series.first_air_date',
+                'series.'.App::getlocale().'_name as name',
+                'series.'.App::getlocale().'_poster_path as poster_path',
+                'ss.rated_id',
+                'ss.rate_code',
+                'series_laters.id as later_id',
+                'series_bans.id as ban_id'
+            )->leftjoin('series_laters', function ($join) {
+                $join->on('series_laters.series_id', '=', 'series.id')
+                ->where('series_laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('series_bans', function ($join) use ($request) {
+                $join->on('series_bans.series_id', '=', 'series.id')
+                ->where('series_bans.user_id', Auth::id());
+            })
+            ->where('series_bans.id', '=', null);
+        }else{
+            $return_val = $return_val->select(
+                'series.'.$hover_name.' as original_name',
+                'ss.id',
+                'ss.point',
+                'ss.count',
+                'ss.percent',
+                'series.vote_average',
+                'series.vote_count',
+                'series.first_air_date',
+                'series.'.App::getlocale().'_name as name',
+                'series.'.App::getlocale().'_poster_path as poster_path'
+            );
+        }
+
+        if($f_sort == 'point'){
+            $return_val = $return_val->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc')
+            ->orderBy('vote_average', 'desc');
+        }else if($f_sort == 'percent'){
+            $return_val = $return_val->orderBy('percent', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('vote_average', 'desc');
+        }else if($f_sort == 'top_rated'){
+            $return_val = $return_val->orderBy('vote_average', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc');
+        }else if($f_sort == 'most_popular'){
+            $return_val = $return_val->orderBy('popularity', 'desc')
+            ->orderBy('point', 'desc')
+            ->orderBy('percent', 'desc');
+        }
+
+        if($f_genre != [])
+        {
+            $return_val = $return_val->join('series_genres', 'series_genres.series_id', '=', 'ss.id')
+            ->whereIn('genre_id', $f_genre)
+            ->groupBy('series.id')
+            ->havingRaw('COUNT(series.id)='.count($f_genre));
+        }
+
+        return [$return_val->paginate($pagination), microtime(true) - $start];
+    }
 }
