@@ -208,7 +208,7 @@
 
 
 <!-- Filter secion -->
-<div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter">
+<div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter" ng-if="active_tab=='top_rated'">
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="mt-3 pb-3">
