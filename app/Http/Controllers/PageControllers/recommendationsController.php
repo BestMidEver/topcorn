@@ -805,7 +805,7 @@ class recommendationsController extends Controller
     public function get_series_momosu(/*Request $request*/)
     {
         $request = new \stdClass();
-        $f_mode_movies = [1399];
+        $request->f_mode_movies = [1399];
         $request->f_lang = [];
         $request->f_min = 1950;
         $request->f_max = 2019;
