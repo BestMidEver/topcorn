@@ -670,7 +670,7 @@ class recommendationsController extends Controller
             if(Auth::User()->hover_title_language == 0)$hover_title = Auth::User()->secondary_lang.'_title';
             $pagination = Auth::User()->pagination;
         }
-        
+
         $subq = DB::table('movies')
         ->whereIn('movies.id', $request->f_mode_movies)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'movies.id')
@@ -806,7 +806,7 @@ class recommendationsController extends Controller
     {
         $request = new \stdClass();
         $f_mode_movies = [1399];
-        $request->f_lang = $request->f_lang;
+        $request->f_lang = [];
         $request->f_min = 1950;
         $request->f_max = 2019;
         $request->f_genre = [];
