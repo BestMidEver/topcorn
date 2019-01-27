@@ -28,6 +28,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			$scope.page_variables.movies_or_series = 'series';
 		}
 		$scope.pagination_mode=0;
+		$scope.pagination_search=0;
 		$scope.f_genre_model = [];
 		$scope.f_mode_movies = [];
 		$scope.mode_movies = [];
