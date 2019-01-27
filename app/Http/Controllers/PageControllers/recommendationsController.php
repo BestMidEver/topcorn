@@ -204,7 +204,7 @@ class recommendationsController extends Controller
 
     public function get_series_top_rateds(Request $request)
     {
-        /*$request=new \stdClass();
+        /*$request = new \stdClass();
         $request->f_users=[7];
         $request->f_vote=75;
         $request->f_sort='point';
@@ -653,6 +653,15 @@ class recommendationsController extends Controller
 
     public function get_momosu(Request $request)
     {
+        /*$request = new \stdClass();
+        $$request->f_mode_movies = [77];
+        $$request->f_lang = [];
+        $request->f_min = 1950;
+        $request->f_max = 2019;
+        $f_genre = [];
+        $request->f_sort = 'point';
+        $request->f_vote = true;*/
+
         $start = microtime(true);
 
         $hover_title = 'original_title';
@@ -660,35 +669,27 @@ class recommendationsController extends Controller
         if(Auth::check()){
             if(Auth::User()->hover_title_language == 0)$hover_title = Auth::User()->secondary_lang.'_title';
             $pagination = Auth::User()->pagination;
-        } 
-
-        $f_movies = $request->f_mode_movies;
-        $f_lang = $request->f_lang;
-        $f_min = $request->f_min;
-        $f_max = $request->f_max;
-        $f_genre = $request->f_genre;
-        $f_sort = $request->f_sort;
-        $f_vote = $request->f_vote;
-
+        }
+        
         $subq = DB::table('movies')
-        ->whereIn('movies.id', $f_movies)
+        ->whereIn('movies.id', $request->f_mode_movies)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'movies.id')
         ->leftjoin('movies as m2', 'm2.id', '=', 'recommendations.this_id')
         ->groupBy('recommendations.this_id');
 
-        if($f_lang != [])
+        if($request->f_lang != [])
         {
-            $subq = $subq->whereIn('m2.original_language', $f_lang);
+            $subq = $subq->whereIn('m2.original_language', $request->f_lang);
         }
 
-        if($f_min != 1917)
+        if($request->f_min != 1917)
         {
-            $subq = $subq->where('m2.release_date', '>=', Carbon::create($f_min,1,1));
+            $subq = $subq->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
-        if($f_max != 2019)
+        if($request->f_max != 2019)
         {
-            $subq = $subq->where('m2.release_date', '<=', Carbon::create($f_max,12,31));
+            $subq = $subq->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
         if(Auth::check()){
@@ -727,7 +728,7 @@ class recommendationsController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->where('movies.vote_count', '>', $f_vote);
+        ->where('movies.vote_count', '>', $request->f_vote);
 
         if(Auth::check()){
             $return_val = $return_val->select(
@@ -769,30 +770,30 @@ class recommendationsController extends Controller
             );
         }
 
-        if($f_sort == 'point'){
+        if($request->f_sort == 'point'){
             $return_val = $return_val->orderBy('point', 'desc')
             ->orderBy('percent', 'desc')
             ->orderBy('vote_average', 'desc');
-        }else if($f_sort == 'percent'){
+        }else if($request->f_sort == 'percent'){
             $return_val = $return_val->orderBy('percent', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('vote_average', 'desc');
-        }else if($f_sort == 'top_rated'){
+        }else if($request->f_sort == 'top_rated'){
             $return_val = $return_val->orderBy('vote_average', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
-        }else if($f_sort == 'most_popular'){
+        }else if($request->f_sort == 'most_popular'){
             $return_val = $return_val->orderBy('popularity', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
         }
 
-        if($f_genre != [])
+        if($request->f_genre != [])
         {
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
-            ->whereIn('genre_id', $f_genre)
+            ->whereIn('genre_id', $request->f_genre)
             ->groupBy('movies.id')
-            ->havingRaw('COUNT(movies.id)='.count($f_genre));
+            ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
         }
 
         return [$return_val->paginate($pagination), microtime(true) - $start];
@@ -801,8 +802,17 @@ class recommendationsController extends Controller
 
 
 
-    public function get_series_momosu(Request $request)
+    public function get_series_momosu(/*Request $request*/)
     {
+        $request = new \stdClass();
+        $f_mode_movies = [1399];
+        $request->f_lang = $request->f_lang;
+        $request->f_min = 1950;
+        $request->f_max = 2019;
+        $request->f_genre = [];
+        $request->f_sort = 'point';
+        $request->f_vote = true;
+
         $start = microtime(true);
 
         $hover_title = 'original_name';
@@ -812,33 +822,25 @@ class recommendationsController extends Controller
             $pagination = Auth::User()->pagination;
         } 
 
-        $f_movies = $request->f_mode_movies;
-        $f_lang = $request->f_lang;
-        $f_min = $request->f_min;
-        $f_max = $request->f_max;
-        $f_genre = $request->f_genre;
-        $f_sort = $request->f_sort;
-        $f_vote = $request->f_vote;
-
         $subq = DB::table('series')
-        ->whereIn('series.id', $f_movies)
+        ->whereIn('series.id', $request->f_mode_movies)
         ->leftjoin('series_recommendations', 'series_recommendations.series_id', '=', 'series.id')
         ->leftjoin('series as m2', 'm2.id', '=', 'series_recommendations.this_id')
         ->groupBy('series_recommendations.this_id');
 
-        if($f_lang != [])
+        if($request->f_lang != [])
         {
-            $subq = $subq->whereIn('m2.original_language', $f_lang);
+            $subq = $subq->whereIn('m2.original_language', $request->f_lang);
         }
 
-        if($f_min != 1917)
+        if($request->f_min != 1917)
         {
-            $subq = $subq->where('m2.first_air_date', '>=', Carbon::create($f_min,1,1));
+            $subq = $subq->where('m2.first_air_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
-        if($f_max != 2019)
+        if($request->f_max != 2019)
         {
-            $subq = $subq->where('m2.first_air_date', '<=', Carbon::create($f_max,12,31));
+            $subq = $subq->where('m2.first_air_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
         if(Auth::check()){
@@ -877,7 +879,7 @@ class recommendationsController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->where('series.vote_count', '>', $f_vote);
+        ->where('series.vote_count', '>', $request->f_vote);
 
         if(Auth::check()){
             $return_val = $return_val->select(
@@ -919,30 +921,30 @@ class recommendationsController extends Controller
             );
         }
 
-        if($f_sort == 'point'){
+        if($request->f_sort == 'point'){
             $return_val = $return_val->orderBy('point', 'desc')
             ->orderBy('percent', 'desc')
             ->orderBy('vote_average', 'desc');
-        }else if($f_sort == 'percent'){
+        }else if($request->f_sort == 'percent'){
             $return_val = $return_val->orderBy('percent', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('vote_average', 'desc');
-        }else if($f_sort == 'top_rated'){
+        }else if($request->f_sort == 'top_rated'){
             $return_val = $return_val->orderBy('vote_average', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
-        }else if($f_sort == 'most_popular'){
+        }else if($request->f_sort == 'most_popular'){
             $return_val = $return_val->orderBy('popularity', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
         }
 
-        if($f_genre != [])
+        if($request->f_genre != [])
         {
             $return_val = $return_val->join('series_genres', 'series_genres.series_id', '=', 'ss.id')
-            ->whereIn('genre_id', $f_genre)
+            ->whereIn('genre_id', $request->f_genre)
             ->groupBy('series.id')
-            ->havingRaw('COUNT(series.id)='.count($f_genre));
+            ->havingRaw('COUNT(series.id)='.count($request->f_genre));
         }
 
         return [$return_val->paginate($pagination), microtime(true) - $start];
