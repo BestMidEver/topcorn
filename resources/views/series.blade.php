@@ -19,8 +19,15 @@
                                 <div ng-if="user_movie_record.percent > 0">
                                     <small class="text-white">{{ __("general.according_to_your_taste") }}</small>
                                     <div>
-                                        <span class="text-warning display-4 d-none d-md-inline">%72</span><span class="text-warning h5 d-md-none">%72</span><span class="text-white"> <small>match</small></span>
+                                        <span class="text-warning display-4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
                                     </div>
+                                    @if(Auth::check())
+                                        @if(Auth::User()->advanced_filter)
+                                    <div>
+                                        <span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
+                                    </div>
+                                        @endif
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -48,8 +55,15 @@
                         <div class="col pb-2 pr-2 text-right">
                             <div ng-if="user_movie_record.percent > 0">
                                 <div>
-                                    <small class="text-white">According to your taste </small><span class="text-warning h4 d-none d-md-inline">%72</span><span class="text-warning h5 d-md-none">%72</span><span class="text-white"> <small>match</small></span>
+                                    <small class="text-white">{{ __("general.according_to_your_taste") }} </small><span class="text-warning h4 d-none d-md-inline">%@{{user_movie_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{user_movie_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
                                 </div>
+                                @if(Auth::check())
+                                    @if(Auth::User()->advanced_filter)
+                                <div>
+                                    <span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
+                                    </div>
+                                    @endif
+                                @endif
                             </div>
                         </div>
                     </div>
