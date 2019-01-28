@@ -227,6 +227,7 @@ return [
     'watch_later' => 'Watch Later',
     'watch_together' => 'Watch Together',                                   //profile,
     'watched_movie_number' => 'Watched movie count',                        //profile,              
+    'watched_series_number' => 'Watched series count',                      //profile,      //////////////////////        
     'writer' => 'Writer',
     'writers' => 'Writers',
     'writing' => 'Writing',
