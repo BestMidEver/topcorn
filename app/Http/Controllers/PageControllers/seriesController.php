@@ -80,6 +80,8 @@ class seriesController extends Controller
         ->groupBy('series.id')
         ->first();
 
+        $user_series_record = json($user_series_record);
+
         //return response()->json($user_series_record->first());
 
     	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'user_series_record'));
