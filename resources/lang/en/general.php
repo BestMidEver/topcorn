@@ -19,7 +19,14 @@ return [
     'add_review' => 'Add Review',                                           //movie,
     'advanced_recommendations' => 'Advanced Recommendations',               //accountinterface,
     'ago_message' => 
-        'Created :created_at ago, last updated :updated_at ago.',           //list,  
+        'Created :created_at ago, last updated :updated_at ago.',           //list,
+    'airs_days_later' =>
+        'Airs <span class="h5 text-warning">@{{movie.day_difference_next}}</span> days later', //profile,   ////////////////////
+    'airs_tomorrow' =>
+        'Airs <span class="h5 text-warning">tomorrow</span> days later',    //profile,   ////////////////////
+    'airs_today' =>
+        'Airs <span class="h5 text-warning">today</span> days later',       //profile,   ////////////////////
+    'air_date' => 'Air date',                                               //profile,   ////////////////////
     'all' => 'All',                                                         //profile,
     'all_movies' => 'All Movies',                                           //recommendations,          
     'author' => 'Author',                                                   //movie,
@@ -218,6 +225,7 @@ return [
     'tr' => 'Turkey',                                                       //donation
     'try_account' => 'TRY Account',                                         //donation,
     'understand_my_taste' => 'Let\'s Get Started',                          //home,
+    'unknown' => 'unknown',                                                 //profile,                  ////////////////
     'unseen' => 'Unseen',                                                   //profile,                  ////////////////
     'user' => 'User',
     'user_name' => 'User Name',                                             //register, account,

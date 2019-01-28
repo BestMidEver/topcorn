@@ -23,9 +23,10 @@
 								<small>New Episode</small>
 								<div ng-if="movie.next_episode>0" class="h5 text-warning mb-1"> S@{{movie.next_season>9?movie.next_season:'0'+movie.next_season}}E@{{movie.next_episode>9?movie.next_episode:'0'+movie.next_episode}}</div>
 								<span class="d-block">
-									<span ng-if="movie.day_difference_next==null">Air date <span class="h5 text-warning">unknown</span></span>
-									<span ng-if="movie.day_difference_next>0">Airs <span class="h5 text-warning">@{{movie.day_difference_next}}</span> days later</span>
-									<span ng-if="movie.day_difference_next==0">Airs <span class="h5 text-warning">today</span></span>
+									<span ng-if="movie.day_difference_next==null">{{ __('general.air_date') }} <span class="h5 text-warning">{{ __('general.unknown') }}</span></span>
+									<span ng-if="movie.day_difference_next>1">{!! __('general.airs_days_later') !!}</span>
+									<span ng-if="movie.day_difference_next==1">{!! __('general.airs_tomorrow') !!}</span>
+									<span ng-if="movie.day_difference_next==0">{!! __('general.airs_today') !!}</span>
 									<span ng-if="movie.day_difference_next<0" class="h5 text-warning">Available</span>
 									<span ng-if="movie.day_difference_last==0 && !next_episode>0" class="h5 text-warning"><span ng-if="movie.status=='Ended'">Ended</span><span ng-if="movie.status=='Canceled'">Canceled</span></span>
 								</span>
