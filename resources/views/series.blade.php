@@ -173,8 +173,8 @@
                 <div class="h6 pt-1"><span>Networks</span></div>
                 <p>
                     <span class="d-inline" ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span>
-                    <span class="ml-1" ng-if="series.status=='Returning Series'">(Continuing)</span>
-                    <span class="ml-1" ng-if="series.status=='Ended'">(Ended)</span>
+                    <span class="ml-1 text-muted" ng-if="series.status=='Returning Series'">(Continuing)</span>
+                    <span class="ml-1 text-muted" ng-if="series.status=='Ended'">(Ended)</span>
                     <span class="ml-1 text-muted" ng-if="series.status=='Canceled'">(Canceled)</span>
                 </p>
             </div>
