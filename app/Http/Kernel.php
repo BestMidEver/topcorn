@@ -63,6 +63,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'id_dash_moviename' => \App\Http\Middleware\id_dash_moviename::class,
+        'id_dash_seriesname' => \App\Http\Middleware\id_dash_seriesname::class,
         'id_dash_username' => \App\Http\Middleware\id_dash_username::class,
         'id_dash_listname' => \App\Http\Middleware\id_dash_listname::class,
         'blog_if_not_logged_in' => \App\Http\Middleware\blog_if_not_logged_in::class,
