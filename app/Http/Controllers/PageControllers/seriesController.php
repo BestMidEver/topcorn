@@ -33,7 +33,7 @@ class seriesController extends Controller
                 $series_en_name = $series->en_name != $series_name ? $series->en_name : '';
                 $series_tr_name = $series->tr_name != $series_name ? ($series->tr_name != $series_en_name ? $series->tr_name :'') : '';
                 $series_hu_name = $series->hu_name != $series_name ? ($series->hu_name != $series_en_name ? ($series->hu_name != $series_tr_name ? $series->hu_name :'') :'') : '';
-                $series_year = substr($series->release_date,0 ,4);
+                $series_year = substr($series->first_air_date, 0 ,4);
                 $poster_path = $series->en_poster_path;
             }else{
                 $series_name = '';
