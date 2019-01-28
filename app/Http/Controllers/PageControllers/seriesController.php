@@ -81,7 +81,7 @@ class seriesController extends Controller
                 $rated_id = $temp->rated_id;
                 $rate_code = $temp->rate_code;
                 $later_id = $temp->later_id;
-                $ban_id = $temp->ban_id;
+                $ban_id = $temp->ban_id==''?'null':$temp->ban_id;
                 $point = $temp->point;
                 $p2 = $temp->p2;
                 $count = $temp->count;
