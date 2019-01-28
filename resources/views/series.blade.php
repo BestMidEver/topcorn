@@ -16,7 +16,7 @@
                                 <span class="text-white h6 lead lead-small">@{{page_variables.number_of_seasons}} Seasons - @{{page_variables.number_of_episodes}} Episodes</span>
                             </div>
                             <div class="col p-2 text-right">
-                                <div ng-if="pass.user_movie_record.percent > 0">
+                                <div ng-if="pass.user_series_record.percent > 0">
                                     <small class="text-white">{{ __("general.according_to_your_taste") }}</small>
                                     <div>
                                         <span class="text-warning display-4 d-none d-md-inline">%@{{pass.user_series_record.percent}}</span><span class="text-warning h5 d-md-none">%@{{pass.user_series_record.percent}}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
