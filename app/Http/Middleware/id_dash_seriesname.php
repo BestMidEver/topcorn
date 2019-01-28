@@ -18,7 +18,7 @@ class id_dash_seriesname
     {
         $series = Serie::where(['id' => $request->id]);
 
-        if($series->count() > 0) $series = $series->first();
+        if($series->count() == 0) $series = $series->first();
         else return $next($request);
 
         $correct_url = $series->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $series->original_name);
