@@ -107,7 +107,7 @@ return [
     'minute' => 'minute',                                                   //movie,
     'movie' => 'Movie',
     'movie_lists_title' => 'Lists Which Contain This Movie',                //list, 
-    'p_movies' => 'Movies',                                                 //list,         
+    'p_movies' => 'Movies',                                                 //list,recommendations  //////////////////         
     'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,
     'movies' => 'movies',                                                   //person,
     'movie_details' => 'Movie Details',                                     //movie,
@@ -180,6 +180,7 @@ return [
     'seen' => 'Seen',
     'seen_movies' => 'Seen',                                                //profile,
     'send_instructions' => 'Send Instructions',                             //email,
+    'series' => 'Series',                                                   //recommendations,          //////////////////
     'share' => 'Share',                                                     //movie,
     'show_crew' => 'Show Crew',                                             //accountinterface,  
     'show_everyone' => 'Show Full Cast',                                    //movie,
