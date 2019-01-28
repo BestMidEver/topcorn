@@ -23,8 +23,10 @@ return [
     'all' => 'All',                                                         //profile,
     'all_movies' => 'All Movies',                                           //recommendations,          
     'author' => 'Author',                                                   //movie,
+    'available' => 'Available',                                             //profile,       /////////////
+    'awaited' => 'Awaited',                                                 //profile,       /////////////
     'ban' => 'Ban',                                                         //movie,
-    'banneds' => 'Banned',                                                  //profile,
+    'banneds' => 'Banned',                                                  //profile,          /////////////////
     'bank' => 'Bank',                                                       //donation,
     'bank_' => 'T.C. Ziraat Bankası',                                       //donation,
     'bank_address' => 'Bank Address',                                       //donation,
@@ -178,7 +180,7 @@ return [
     'search_user' => 'Search a user by name/email',                         //search,
     'secondary_language' => 'Secondary Language',                           //accountinterface,
     'seen' => 'Seen',
-    'seen_movies' => 'Seen',                                                //profile,
+    'seen_movies' => 'Seen',                                                //profile,              /////////////////
     'send_instructions' => 'Send Instructions',                             //email,
     'series' => 'Series',                                                   //recommendations,          //////////////////
     'share' => 'Share',                                                     //movie,
@@ -216,6 +218,7 @@ return [
     'tr' => 'Turkey',                                                       //donation
     'try_account' => 'TRY Account',                                         //donation,
     'understand_my_taste' => 'Let\'s Get Started',                          //home,
+    'unseen' => 'Unseen',                                                   //profile,                  ////////////////
     'user' => 'User',
     'user_name' => 'User Name',                                             //register, account,
     'users_facebook' => 'Facebook Link',                                    //account, profile      

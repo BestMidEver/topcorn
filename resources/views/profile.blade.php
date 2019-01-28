@@ -190,17 +190,17 @@
 <div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series'">
 	<div class="dropdown d-inline" ng-init="page_variables.active_dropdown_3 = 'all'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<span ng-if="page_variables.active_dropdown_3=='unseen'">Unseen</span>
-			<span ng-if="page_variables.active_dropdown_3=='available'">Available</span>
-			<span ng-if="page_variables.active_dropdown_3=='awaited'">Awaited</span>
-			<span ng-if="page_variables.active_dropdown_3=='all'">All</span>
+			<span ng-if="page_variables.active_dropdown_3=='unseen'">{{ __('general.unseen') }}</span>
+			<span ng-if="page_variables.active_dropdown_3=='available'">{{ __('general.available') }}</span>
+			<span ng-if="page_variables.active_dropdown_3=='awaited'">{{ __('general.awaited') }}</span>
+			<span ng-if="page_variables.active_dropdown_3=='all'">{{ __('general.all') }}</span>
 		</button>
 		<div class="dropdown-menu">
-			<button class="dropdown-item" ng-click="switch_seen_unseen('unseen')">Unseen</button>
-			<button class="dropdown-item" ng-click="switch_seen_unseen('available')">Available</button>
-			<button class="dropdown-item" ng-click="switch_seen_unseen('awaited')">Awaited</button>
+			<button class="dropdown-item" ng-click="switch_seen_unseen('unseen')">{{ __('general.unseen') }}</button>
+			<button class="dropdown-item" ng-click="switch_seen_unseen('available')">{{ __('general.available') }}</button>
+			<button class="dropdown-item" ng-click="switch_seen_unseen('awaited')">{{ __('general.awaited') }}</button>
 			<div class="dropdown-divider"></div>
-			<button class="dropdown-item" ng-click="switch_seen_unseen('all')">All</button>
+			<button class="dropdown-item" ng-click="switch_seen_unseen('all')">{{ __('general.all') }}</button>
 		</div>
 	</div>
 </div>
