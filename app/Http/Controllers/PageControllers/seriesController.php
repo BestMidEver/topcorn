@@ -16,8 +16,10 @@ class seriesController extends Controller
 
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+            $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         }else{
             $target = '_self';
+            $watched_movie_number = null;
         }
 
         $id_dash_name=$id;
@@ -45,6 +47,6 @@ class seriesController extends Controller
             }
         }
 
-    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path'));
+    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path'));
     }
 }
