@@ -78,9 +78,9 @@ class seriesController extends Controller
             DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
         )
         ->groupBy('series.id')
-        ->get();
+        ->first();
 
-        $user_series_record = json_decode( json_encode($user_series_record), true);
+        $user_series_record = (array)$user_series_record;
 
         //return response()->json($user_series_record->first());
 
