@@ -16,7 +16,7 @@
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='movie'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')">{{ __('general.movie') }}</button>
 		</li>
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='series'}" ng-click="reset_tab();active_tab='series';get_page_data();setFocus('input_series')">Series</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='series'}" ng-click="reset_tab();active_tab='series';get_page_data();setFocus('input_series')">{{ __('general.series') }}</button>
 		</li>
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='person'}" ng-click="reset_tab();active_tab='person';get_page_data();setFocus('input_person')">{{ __('general.person') }}</button>
@@ -56,7 +56,7 @@
 				<span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
 			</div>
 			<input type="text" id="input_movie" class="form-control" ng-show="active_tab=='movie'" placeholder="{{ __('general.search_movie') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}" autofocus>
-			<input type="text" id="input_series" class="form-control" ng-show="active_tab=='series'" placeholder="Search a series by title" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}" autofocus>
+			<input type="text" id="input_series" class="form-control" ng-show="active_tab=='series'" placeholder="{{ __('general.search_series') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}" autofocus>
 			<input type="text" id="input_person" class="form-control" ng-show="active_tab=='person'" placeholder="{{ __('general.search_person') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}">
 			<input type="text" id="input_user" class="form-control" ng-show="active_tab=='user'" placeholder="{{ __('general.search_user') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}">
 			<input type="text" id="input_list" class="form-control" ng-show="active_tab=='list'" placeholder="{{ __('general.search_list') }}" ng-model="generalinput" ng-change="get_page_data()" ng-model-options="{debounce: 750}">

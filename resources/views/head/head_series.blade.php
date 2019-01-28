@@ -32,7 +32,11 @@ pass={
 @section('controllername', 'MoviePageController')
 
 @section('title')
-series
+@if($series_name != '')
+{{$series_name}} ({{$series_year}}) - topcorn.io
+@else
+@{{movie.name}}@{{ movie.first_air_date ? ' (' + movie.first_air_date.substring(0, 4) + ')' : ''}}{{ __('title.movie') }}
+@endif
 @endsection
 
 @section('meta_description')
