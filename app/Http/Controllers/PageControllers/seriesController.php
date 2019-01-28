@@ -47,7 +47,7 @@ class seriesController extends Controller
             }
         }
 
-        $return_val = DB::table('series')
+        $user_series_record = DB::table('series')
         ->where('series.id', '=', $series)
         ->leftjoin('series_rateds', function ($join) {
             $join->on('series_rateds.series_id', '=', 'series.id')
@@ -79,8 +79,8 @@ class seriesController extends Controller
         )
         ->groupBy('series.id');
 
-        //return response()->json($return_val->first());
+        //return response()->json($user_series_record->first());
 
-    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'return_val'));
+    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'user_series_record'));
     }
 }
