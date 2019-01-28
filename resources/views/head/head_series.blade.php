@@ -6,7 +6,8 @@ pass={
 	"seriesid":{{$id}}, 
 	"secondary_lang":"{{ Session::get('secondary_lang') }}", 
 	"api_key":"{{config('constants.api_key')}}",
-	"is_auth":"{{  Auth::Check()  }}"
+	"is_auth":"{{  Auth::Check()  }}",
+	"user_series_record":{{$user_series_record}}
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/countries.js"></script>
