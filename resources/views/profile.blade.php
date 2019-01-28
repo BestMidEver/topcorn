@@ -114,8 +114,8 @@
 <!-- Tabs Button -->
 <div class="mt-3 d-none d-md-inline">
 	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">Movies</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">Series</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.watch_later') }}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.series') }}</button>
 	</div>
 </div>
 <div class="container-fluid p-0 d-none d-md-inline">
@@ -142,8 +142,8 @@
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu mt-3 d-md-none tab2">
 	<div class="btn-group btn-group d-block mb-2 text-center" role="group" aria-label="Movies or Series">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">Movies</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">Series</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series!='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.series') }}</button>
 	</div>
 </div>
 <div class="scrollmenu mb-3 d-md-none tab2">
