@@ -60,7 +60,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			}
 		}, function errorCallback(response) {
 		});
-}
+	}
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$scope.page_variables={};

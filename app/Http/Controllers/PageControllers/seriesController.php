@@ -20,6 +20,14 @@ class seriesController extends Controller
         }else{
             $target = '_self';
             $watched_movie_number = null;
+            $rated_id = 'null';
+            $rate_code = 'null';
+            $later_id = 'null';
+            $ban_id = 'null';
+            $point = 'null';
+            $p2 = 'null';
+            $count = 'null';
+            $percent = 'null';
         }
 
         $id_dash_name=$id;
@@ -78,23 +86,23 @@ class seriesController extends Controller
             ->groupBy('series.id');
             if($temp->count() > 0){
                 $temp = $temp->first();
-                $rated_id = $temp->rated_id;
-                $rate_code = $temp->rate_code;
-                $later_id = $temp->later_id;
+                $rated_id = $temp->rated_id==''?'null':$temp->rated_id;
+                $rate_code = $temp->rate_code==''?'null':$temp->rate_code;
+                $later_id = $temp->later_id==''?'null':$temp->later_id;
                 $ban_id = $temp->ban_id==''?'null':$temp->ban_id;
-                $point = $temp->point;
-                $p2 = $temp->p2;
-                $count = $temp->count;
-                $percent = $temp->percent;
+                $point = $temp->point==''?'null':$temp->point;
+                $p2 = $temp->p2==''?'null':$temp->p2;
+                $count = $temp->count==''?'null':$temp->count;
+                $percent = $temp->percent==''?'null':$temp->percent;
             }else{
-                $rated_id = '';
-                $rate_code = '';
-                $later_id = '';
-                $ban_id = '';
-                $point = '';
-                $p2 = '';
-                $count = '';
-                $percent = '';
+                $rated_id = 'null';
+                $rate_code = 'null';
+                $later_id = 'null';
+                $ban_id = 'null';
+                $point = 'null';
+                $p2 = 'null';
+                $count = 'null';
+                $percent = 'null';
             }
         }
 

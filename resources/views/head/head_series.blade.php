@@ -8,14 +8,14 @@ pass={
 	"api_key":"{{config('constants.api_key')}}",
 	"is_auth":"{{  Auth::Check()  }}",
 	"user_series_record":{
-		"rated_id":"{{$rated_id}}",
-		"rate_code":"{{$rate_code}}",
-		"later_id":"{{$later_id}}",
+		"rated_id":{{$rated_id}},
+		"rate_code":{{$rate_code}},
+		"later_id":{{$later_id}},
 		"ban_id":{{$ban_id}},
-		"point":"{{$point}}",
-		"p2":"{{$p2}}",
-		"count":"{{$count}}",
-		"percent":"{{$percent}}"
+		"point":{{$point}},
+		"p2":{{$p2}},
+		"count":{{$count}},
+		"percent":{{$percent}}
 	}
 };
 </script>
