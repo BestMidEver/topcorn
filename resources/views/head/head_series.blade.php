@@ -11,7 +11,7 @@ pass={
 		"rated_id":"{{$rated_id}}",
 		"rate_code":"{{$rate_code}}",
 		"later_id":"{{$later_id}}",
-		"ban_id":"{{$ban_id}}",
+		"ban_id":{{$ban_id}},
 		"point":"{{$point}}",
 		"p2":"{{$p2}}",
 		"count":"{{$count}}",
