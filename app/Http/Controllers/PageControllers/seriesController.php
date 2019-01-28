@@ -48,7 +48,7 @@ class seriesController extends Controller
         }
 
         $user_series_record = DB::table('series')
-        ->where('series.id', '=', $series)
+        ->where('series.id', '=', $id)
         ->leftjoin('series_rateds', function ($join) {
             $join->on('series_rateds.series_id', '=', 'series.id')
             ->where('series_rateds.user_id', '=', Auth::user()->id);
