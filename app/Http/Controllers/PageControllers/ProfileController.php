@@ -360,12 +360,11 @@ class ProfileController extends Controller
             $return_val = $return_val
             ->whereNull('series_seens.air_date')
             ->whereNotNull('series.last_episode_air_date')
-            ->orderBy('series_seens.updated_at', 'desc')
             ->orderBy('series_laters.updated_at', 'desc');
         }else if($mode == 'available'){
             $return_val = $return_val
             ->whereRaw('(DATEDIFF(series.last_episode_air_date, series_seens.air_date) > 0) OR (DATEDIFF(series.next_episode_air_date, NOW()) < 0)')
-            ->orderBy('series_seens.updated_at', 'desc')
+            ->orderByRaw('ISNULL(series_seens.updated_at), series_seens.updated_at asc')
             ->orderBy('series_laters.updated_at', 'desc');
         }else if($mode == 'awaited'){
             $return_val = $return_val
@@ -373,7 +372,7 @@ class ProfileController extends Controller
             ->orderByRaw('ISNULL(day_difference_next), day_difference_next asc');
         }else{
             $return_val = $return_val
-            ->orderBy('series_seens.updated_at', 'desc')
+            ->orderByRaw('ISNULL(series_seens.updated_at), series_seens.updated_at asc')
             ->orderBy('series_laters.updated_at', 'desc');
         }
 
