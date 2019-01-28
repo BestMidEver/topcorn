@@ -4,6 +4,7 @@ namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\Rated;
+use App\Model\Series_rated;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class ProfileController extends Controller
             $watched_movie_number = null;
         }
         $profile_watched_movie_number = Rated::where('user_id', $profile_user_id)->where('rate', '>', 0)->count();
+        $profile_watched_series_number = Series_rated::where('user_id', $profile_user_id)->where('rate', '>', 0)->count();
 
         $user = User::where(['id' => $profile_user_id])->first();
         if(!$user) return redirect('/not-found');
@@ -56,7 +58,7 @@ class ProfileController extends Controller
         ->whereNotNull('listlikes.created_at')
         ->count();
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'list_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name'));
 	}
 
     public function get_rateds($rate, $user, $lang)
