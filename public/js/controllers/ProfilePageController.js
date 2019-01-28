@@ -48,6 +48,7 @@ $scope.switch_seen_unseen = function(mode){
 	$scope.is_waiting=false;
     $scope.get_page_data = function()
     {
+    	$scope.movies=null;
     	if($scope.active_tab=='get_laters' && $scope.page_variables.movies_or_series == 'series') temp=$scope.active_tab+'/'+$scope.page_variables.active_dropdown_3;
     	else temp=$scope.active_tab;
 		$scope.pagination=0;

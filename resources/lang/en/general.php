@@ -184,7 +184,7 @@ return [
     'share' => 'Share',                                                     //movie,
     'show_crew' => 'Show Crew',                                             //accountinterface,  
     'show_everyone' => 'Show Full Cast',                                    //movie,
-    'show_watched_movies' => 'Bring Movies That I Watched Too',             //recommendations,
+    'show_watched_movies' => 'Bring Already Seens Too',                     //recommendations,      /////////////////
     'sort_by' => 'SORT BY',                                                 //recommendations, 
     'sort_by_match' => 'Match Score',                                       //recommendations,      
     'sort_by_percent' => 'Match Percentage',                                //recommendations,      
