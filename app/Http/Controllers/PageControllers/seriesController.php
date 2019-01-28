@@ -80,7 +80,7 @@ class seriesController extends Controller
         ->groupBy('series.id')
         ->first();
 
-        $user_series_record = (array)$user_series_record;
+        $user_series_record = $user_series_record->id;
 
         //return response()->json($user_series_record->first());
 
