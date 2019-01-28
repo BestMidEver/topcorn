@@ -21,7 +21,7 @@ return [
     'ago_message' => 
         'Created :created_at ago, last updated :updated_at ago.',           //list,
     'airs_days_later' =>
-        'Airs <span class="h5 text-warning">@{{movie.day_difference_next}}</span> days later', //profile,   ////////////////////
+        'Airs <span class="h5 text-warning">{{movie.day_difference_next}}</span> days later', //profile,   ////////////////////
     'airs_tomorrow' =>
         'Airs <span class="h5 text-warning">tomorrow</span> days later',    //profile,   ////////////////////
     'airs_today' =>
@@ -43,6 +43,7 @@ return [
     'bitcoin_address' => 'Our Bitcoin Adress',                              //donation,
     'budget' => 'Budget',                                                   //movie,
     'camera' => 'Camera',                                                   //movie,
+    'canceled' => 'Canceled',                                               //profile,              /////////////////
     'change_password' => 'Change Password',                                 //accountpassword,
     'conclusion' => 'Conclusion',                                           //list             
     'continue_without_facebook' => 'Continue Without Facebook',             //home
@@ -69,6 +70,7 @@ return [
     'editing' => 'Editing',                                                 //person,
     'email' => 'Email',                                                     //email, reset, login, register,
     'email_confirmation' => 'Email Confirmation',                           //register,
+    'ended' => 'Ended',                                                     //profile,          /////////////////
     'enter_movie_name' => 'Please enter the name of the movie',             //list,                    
     'ethereum' => 'Ethereum',                                               //donation,
     'ethereum_address' => 'Our Ethereum Address',                           //donation,
@@ -77,6 +79,7 @@ return [
     'facebook_profile_photo' => 'Facebook Profile Picture',                 //account,
     'fb_comments' => 'Facebook Comments',                                   //movie,
     'filter' => 'FILTER',                                                   //recommendations,
+    'first_episode' => 'First Episode',                                     //profile,      ///////////////////////
     'primary_language' => 'Primary Language',                               //accountinterface,
     'forgot_my_password' => 'I Forgot My Password',                         //email, login,
     'genre' => 'GENRE COMBINATION',                                         //recommendations_genres,
@@ -124,6 +127,8 @@ return [
     'most_populer' => 'Most Popular',                                       //recommendations,
     'movies_original_language' => 'The Original Language of the Movie',     //accountinterface,
     'my_secondary_language' => 'My Secondary Language',                     //accountinterface,
+    'new_episode' => 'New Episode',                                         //profile,              /////////////////
+    'next_episode' => 'Next Episode',                                       //profile,              /////////////////
     'new_password' => 'New Password',                                       //reset, accountpassword,
     'new_password_confirmation' => 'New Password Confirmation',             //reset, accountpassword,
     'newest' => 'Newest',
