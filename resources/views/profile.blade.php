@@ -18,8 +18,8 @@
 						</div>
 						<div class="d-flex flex-row align-items-center text-light ml-2">
 							@if($profile_watched_movie_number > 0)
-							<div data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_movie_numbers') }}">
-								<i class="fas fa-check"></i><div class="d-inline pl-1" >{{ $profile_watched_series_number }}</div>
+							<div data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_movie_number') }}">
+								<i class="fas fa-film"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
 							</div>
 							@endif
 							@if($profile_watched_series_number > 0)
@@ -57,6 +57,11 @@
 						@if($profile_watched_movie_number > 0)
 						<div data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_movie_number') }}">
 							<i class="fas fa-film"></i></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
+						</div>
+						@endif
+						@if($profile_watched_series_number > 0)
+						<div data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_series_number') }}">
+							<i class="fas fa-tv"></i></i><div class="d-inline pl-1" >{{ $profile_watched_series_number }}</div>
 						</div>
 						@endif
 						@if($list_number > 0)
