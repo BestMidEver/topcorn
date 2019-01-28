@@ -47,7 +47,7 @@ class seriesController extends Controller
             }
         }
 
-        /*$user_series_record = DB::table('series')
+        $user_series_record = DB::table('series')
         ->where('series.id', '=', $series)
         ->leftjoin('series_rateds', function ($join) {
             $join->on('series_rateds.series_id', '=', 'series.id')
@@ -78,9 +78,9 @@ class seriesController extends Controller
             DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
         )
         ->groupBy('series.id')
-        ->first();*/
+        ->first();
 
-        $user_series_record = [5,2];//$user_series_record->count;
+        $user_series_record = json($user_series_record)->count;
 
         //return response()->json($user_series_record->first());
 
