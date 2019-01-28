@@ -79,7 +79,7 @@ class seriesController extends Controller
         )
         ->groupBy('series.id')
         ->first()
-        ->series_id;
+        ->rate_code;
 
         //return response()->json($user_series_record->first());
 
