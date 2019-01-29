@@ -79,9 +79,7 @@
                                     <div class="dropdown d-inline">
                                       <button class="btn btn-outline-secondary border-0 btn-lg hover-white dropdown-toggle" type="button" id="dropdownchoosetrailer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                       <div class="dropdown-menu" aria-labelledby="dropdownchoosetrailer">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item active" href="#">Another action</a>
-                                        <a class="dropdown-item" href="#">Something else here</a>
+                                        <a class="dropdown-item" ng-repeat="trailer in series.videos.results" ng-click="change_trailer($index)">trailer.name</a>
                                       </div>
                                     </div>
                                 </div>

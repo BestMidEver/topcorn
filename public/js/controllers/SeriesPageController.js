@@ -155,6 +155,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.current_trailer++;
 		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
 	}
+	$scope.change_trailer = function(index){
+		$scope.current_trailer=index;
+		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
+	}
 
 	$scope.set_recommendations = function(){
 		if($scope.page_variables.active_tab_1!=-1){
