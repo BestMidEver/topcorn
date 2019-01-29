@@ -72,6 +72,8 @@ return [
     'email_confirmation' => 'Email Confirmation',                           //register,
     'ended' => 'Ended',                                                     //profile,          /////////////////
     'enter_movie_name' => 'Please enter the name of the movie',             //list,                    
+    'episode' => 'Episode',                                                 //series,           ///////////////                    
+    'episodes' => 'Episodes',                                               //series,           ///////////////                    
     'ethereum' => 'Ethereum',                                               //donation,
     'ethereum_address' => 'Our Ethereum Address',                           //donation,
     'everyone' => 'Public',                                                 //list,             
@@ -190,6 +192,8 @@ return [
     'search_results' => 'Seach Results',                                    //recommendations,
     'search_person' => 'Search a person by name',                           //search,
     'search_user' => 'Search a user by name/email',                         //search,
+    'season' => 'Season',                                                   //serie,            ////////////
+    'seasons' => 'Seasons',                                                 //serie,            ////////////
     'secondary_language' => 'Secondary Language',                           //accountinterface,
     'seen' => 'Seen',
     'seen_movies' => 'Seen',                                                //profile,              /////////////////
