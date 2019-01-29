@@ -140,7 +140,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		}
 		rate.get_user_movies('series')
 		.then(function(response){
-			console.log(response.data);
+			console.log('get_pluck',response.data);
 			$scope.user_series = response.data;
 			$scope.set_recommendations();
 		});
