@@ -38,7 +38,7 @@
                             <div class="d-flex flex-column justify-content-end ml-2 mb-2"><img ng-src="{{config('constants.image.original')}}@{{page_variables.network_logo}}" on-error-src="" class="network-logo" alt=""></div>
                             <div ng-if="page_variables.vote_average > 0" class="text-right">
                                 <div><span class="text-warning display-4 d-none d-md-inline">@{{page_variables.vote_average}}</span><span class="text-warning h5 d-md-none">@{{page_variables.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count > 1">votes</span></small></span></div>
+                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="page_variables.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
                             </div>
                         </div>
                     </div>
