@@ -161,7 +161,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 	$scope.change_trailer = function(index){
 		$scope.current_trailer=index;
-		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
+		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.movie.videos.results[$scope.current_trailer].key);
 	}
 
 	$scope.page_variables={};
