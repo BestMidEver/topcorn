@@ -120,9 +120,9 @@
     <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto pb-5">
         <div class="d-flex flex-row justify-content-between text-center">
             @if(Auth::check())
-            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-warning':page_variables.later_id>0}" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div>Watch Later</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-warning':user_movie_record.later_id>0}" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div>Watch Later</button>
             <button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><div><span ng-show="!user_movie_record.rate_code>0"><i class="far fa-star"></i></span><span ng-show="user_movie_record.rate_code>0"><i class="fas fa-check"></i></span></div>Seen</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':page_variables.ban_id>0}" ng-click="this_ban()"><div><i class="fas fa-ban"></i></div>Ban</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id>0}" ng-click="this_ban()"><div><i class="fas fa-ban"></i></div>Ban</button>
             @endif
             <a ng-href="{{config('constants.facebook.share_website')}}/series/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban"><div><i class="fas fa-share"></i></div>Share</a>
         </div>
@@ -159,7 +159,7 @@
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
         </li>
         <li class="nav-item" ng-repeat="episode in series.episodes">
-            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
+            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
         </li>
     </ul>
 </div>
@@ -168,7 +168,7 @@
 <!-- Tabs_2 Button Mobile -->
 <div class="scrollmenu d-md-none tab2" ng-if="page_variables.active_tab_1!=-1">
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
+    <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
 </div>
 <!-- Tabs_2 Button Mobile -->
 
@@ -273,7 +273,7 @@
         <div class="d-flex flex-wrap justify-content-between">
             <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
                 <div class="d-flex flex-row justify-content-between text-center">
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-primary':user_movie_record.last_seen_season==page_variables.active_tab_1 && page_variables.last_seen_episode==page_variables.active_tab_2}" ng-click="toggle_last_Seen()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-primary':user_movie_record.last_seen_season==page_variables.active_tab_1 && user_movie_record.last_seen_episode==page_variables.active_tab_2}" ng-click="toggle_last_Seen()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
                 </div>
             </div>
         </div>
