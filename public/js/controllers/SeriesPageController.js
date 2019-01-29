@@ -1,4 +1,4 @@
-MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScroll, rate, external_internal_data_merger)
+MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorScroll, rate, external_internal_data_merger)
 {
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP /////////////////////////////////// CHECKED
