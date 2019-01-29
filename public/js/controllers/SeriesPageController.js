@@ -769,4 +769,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		angular.element( document.querySelector( '#buttonchoosetrailer' ) ).removeClass('text-white');
 		console.log('B')
 	});
+
+	$scope.toggle_dropdown = function(mode){
+		if(mode == 'choose_trailer'){
+			$scope.page_variables.choose_trailer == !$scope.page_variables.choose_trailer;
+			$('choose-trailer').dropdown('toggle')
+		}
+	}
 });
