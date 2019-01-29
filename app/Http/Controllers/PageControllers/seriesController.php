@@ -17,34 +17,21 @@ class seriesController extends Controller
         if(!is_numeric($id)){
             return redirect('/not-found');
         }else{
+            $rated_id = 'null';
+            $rate_code = 'null';
+            $later_id = 'null';
+            $ban_id = 'null';
+            $point = 'null';
+            $p2 = 'null';
+            $count = 'null';
+            $percent = 'null';
+            $last_seen_id = 'null';
+            $last_seen_season = 'null';
+            $last_seen_episode = 'null';
             if(Auth::check()){
                 $image_quality = Auth::User()->image_quality;
                 $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
                 $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
-            }else{
-                $image_quality = 1;
-                $target = '_self';
-                $watched_movie_number = null;
-                $rated_id = 'null';
-                $rate_code = 'null';
-                $later_id = 'null';
-                $ban_id = 'null';
-                $point = 'null';
-                $p2 = 'null';
-                $count = 'null';
-                $percent = 'null';
-            }
-
-            $series = DB::table('series')
-            ->where('series.id', '=', $id);
-            if($series->count() > 0){
-                $series = $series->first();
-                $series_name = $series->original_name;
-                $series_en_name = $series->en_name != $series_name ? $series->en_name : '';
-                $series_tr_name = $series->tr_name != $series_name ? ($series->tr_name != $series_en_name ? $series->tr_name :'') : '';
-                $series_hu_name = $series->hu_name != $series_name ? ($series->hu_name != $series_en_name ? ($series->hu_name != $series_tr_name ? $series->hu_name :'') :'') : '';
-                $series_year = substr($series->first_air_date, 0 ,4);
-                $poster_path = $series->en_poster_path;
                 $temp = DB::table('series')
                 ->where('series.id', '=', $id)
                 ->leftjoin('series_rateds', function ($join) {
@@ -93,19 +80,23 @@ class seriesController extends Controller
                     $last_seen_id = $temp->last_seen_id==''?'null':$temp->last_seen_id;
                     $last_seen_season = $temp->last_seen_season==''?'null':$temp->last_seen_season;
                     $last_seen_episode = $temp->last_seen_episode==''?'null':$temp->last_seen_episode;
-                }else{
-                    $rated_id = 'null';
-                    $rate_code = 'null';
-                    $later_id = 'null';
-                    $ban_id = 'null';
-                    $point = 'null';
-                    $p2 = 'null';
-                    $count = 'null';
-                    $percent = 'null';
-                    $last_seen_id = 'null';
-                    $last_seen_season = 'null';
-                    $last_seen_episode = 'null';
                 }
+            }else{
+                $image_quality = 1;
+                $target = '_self';
+                $watched_movie_number = null;
+            }
+
+            $series = DB::table('series')
+            ->where('series.id', '=', $id);
+            if($series->count() > 0){
+                $series = $series->first();
+                $series_name = $series->original_name;
+                $series_en_name = $series->en_name != $series_name ? $series->en_name : '';
+                $series_tr_name = $series->tr_name != $series_name ? ($series->tr_name != $series_en_name ? $series->tr_name :'') : '';
+                $series_hu_name = $series->hu_name != $series_name ? ($series->hu_name != $series_en_name ? ($series->hu_name != $series_tr_name ? $series->hu_name :'') :'') : '';
+                $series_year = substr($series->first_air_date, 0 ,4);
+                $poster_path = $series->en_poster_path;
             }else{
                 $series_name = '';
                 $series_en_name = '';
