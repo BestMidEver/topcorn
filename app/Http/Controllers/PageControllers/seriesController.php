@@ -22,7 +22,7 @@ class seriesController extends Controller
                 $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
                 $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
             }else{
-                $image_quality = 1
+                $image_quality = 1;
                 $target = '_self';
                 $watched_movie_number = null;
                 $rated_id = 'null';
@@ -34,7 +34,7 @@ class seriesController extends Controller
                 $count = 'null';
                 $percent = 'null';
             }
-            
+
             $series = DB::table('series')
             ->where('series.id', '=', $id);
             if($series->count() > 0){
