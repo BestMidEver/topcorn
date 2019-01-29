@@ -75,10 +75,10 @@
 								<div ng-if="movie.videos.results.length > 1">
 									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-class="{'btn-trailer':current_trailer==0}" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
 									<button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == movie.videos.results.length-1" ng-class="{'btn-trailer':current_trailer==movie.videos.results.length-1}" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
-                                    <div class="dropdown d-inline" ng-show="series.videos.results.length>1">
+                                    <div class="dropdown d-inline" ng-show="movie.videos.results.length>1">
                                         <button class="btn btn-outline-secondary border-0 btn-lg hover-white dropdown-toggle" type="button" id="dropdownchoosetrailer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownchoosetrailer">
-                                            <a class="dropdown-item" ng-repeat="trailer in series.videos.results" ng-click="change_trailer($index)">@{{trailer.name}}</a>
+                                            <a class="dropdown-item" ng-repeat="trailer in movie.videos.results" ng-click="change_trailer($index)">@{{trailer.name}}</a>
                                         </div>
                                     </div>
 								</div>
