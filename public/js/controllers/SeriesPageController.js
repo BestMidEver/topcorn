@@ -138,12 +138,14 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		}else{
 			$('#collapseCover').collapse("show");
 		}
-		rate.get_user_movies('series')
-		.then(function(response){
-			console.log('get_pluck',response.data);
-			$scope.user_series = response.data;
-			$scope.set_recommendations();
-		});
+		if(pass.is_auth==1){
+			rate.get_user_movies('series')
+			.then(function(response){
+				console.log('get_pluck',response.data);
+				$scope.user_series = response.data;
+				$scope.set_recommendations();
+			});
+		}
 	}
 
 	$scope.current_trailer = 0;
@@ -160,15 +162,17 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.series.videos.results[$scope.current_trailer].key);
 	}
 
-	$scope.set_recommendations = function(){
-		if($scope.page_variables.active_tab_1!=-1){
-			$scope.similar_movies=null;
-		}else if($scope.page_variables.active_tab_3 == 0){
-			external_internal_data_merger.merge_user_movies_to_external_data($scope.series.recommendations.results, $scope.user_series);
-			$scope.similar_movies=$scope.series.recommendations.results;
-		}else{
-			external_internal_data_merger.merge_user_movies_to_external_data($scope.series.similar.results, $scope.user_series);
-			$scope.similar_movies=$scope.series.similar.results;
+	if(pass.is_auth==1){
+		$scope.set_recommendations = function(){
+			if($scope.page_variables.active_tab_1!=-1){
+				$scope.similar_movies=null;
+			}else if($scope.page_variables.active_tab_3 == 0){
+				external_internal_data_merger.merge_user_movies_to_external_data($scope.series.recommendations.results, $scope.user_series);
+				$scope.similar_movies=$scope.series.recommendations.results;
+			}else{
+				external_internal_data_merger.merge_user_movies_to_external_data($scope.series.similar.results, $scope.user_series);
+				$scope.similar_movies=$scope.series.similar.results;
+			}
 		}
 	}
 
