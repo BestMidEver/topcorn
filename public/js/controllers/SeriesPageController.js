@@ -766,7 +766,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		console.log('A')
 	});
 	$('#dropdownchoosetrailer').on('shown.bs.dropdown', function () {
-		angular.element( document.querySelector( '#dropdownchoosetrailer' ) ).removeClass('text-white');
+		angular.element( document.querySelector( '#buttonchoosetrailer' ) ).removeClass('text-white');
 		console.log('B')
 	});
 });
