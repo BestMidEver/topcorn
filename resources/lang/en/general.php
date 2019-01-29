@@ -120,7 +120,7 @@ return [
     'movie' => 'Movie',
     'movie_lists_title' => 'Lists Which Contain This Movie',                //list, 
     'p_movies' => 'Movies',                                                 //list,recommendations  //////////////////         
-    'moviecard_percent' => '{{:suffix}}%',                                 //recommendations,
+    'moviecard_percent' => '{{:suffix}}%',                                  //recommendations,
     'movies' => 'movies',                                                   //person,
     'movie_details' => 'Movie Details',                                     //movie,
     'most_rated' => 'Most Rated',                                           //person,
