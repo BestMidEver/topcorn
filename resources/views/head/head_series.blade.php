@@ -13,6 +13,9 @@ pass={
 		"later_id":{{$later_id}},
 		"ban_id":{{$ban_id}},
 		"point":{{$point}},
+		"last_seen_id":{{$last_seen_id}},
+		"last_seen_season":{{$last_seen_season}},
+		"last_seen_episode":{{$last_seen_episode}},
 		"p2":{{$p2}},
 		"count":{{$count}},
 		"percent":{{$percent}}

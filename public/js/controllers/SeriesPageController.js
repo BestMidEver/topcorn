@@ -15,8 +15,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	console.log(pass)
-	$scope.user_movie_record=pass.user_movie_record
-
+	$scope.user_movie_record=pass.user_movie_record;
+	console.log=()$scope.user_movie_record;
 	/*if(pass.is_auth == 1){
 		$http({
 			method: 'GET',
