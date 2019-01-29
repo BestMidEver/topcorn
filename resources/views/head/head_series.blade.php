@@ -42,7 +42,7 @@ pass={
 @section('angular_controller_js')
 <script src="/js/controllers/SeriesPageController.js"></script>
 @endsection
-@section('controllername', 'SeriesPageController')
+@section('controllername', 'MoviePageController')
 
 @section('title')
 @if($series_name != '')
