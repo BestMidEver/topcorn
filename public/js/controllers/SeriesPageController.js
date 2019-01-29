@@ -145,6 +145,8 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				$scope.user_series = response.data;
 				$scope.set_recommendations();
 			});
+		}else{
+			$scope.set_recommendations();
 		}
 	}
 
@@ -171,6 +173,16 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				$scope.similar_movies=$scope.series.recommendations.results;
 			}else{
 				external_internal_data_merger.merge_user_movies_to_external_data($scope.series.similar.results, $scope.user_series);
+				$scope.similar_movies=$scope.series.similar.results;
+			}
+		}
+	}else{
+		$scope.set_recommendations = function(){
+			if($scope.page_variables.active_tab_1!=-1){
+				$scope.similar_movies=null;
+			}else if($scope.page_variables.active_tab_3 == 0){
+				$scope.similar_movies=$scope.series.recommendations.results;
+			}else{
 				$scope.similar_movies=$scope.series.similar.results;
 			}
 		}
