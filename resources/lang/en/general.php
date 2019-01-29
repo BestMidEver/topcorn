@@ -90,6 +90,7 @@ return [
     'forgot_my_password' => 'I Forgot My Password',                         //email, login,
     'general_info' => 'General Info',                                       //series,           //////////////
     'genre' => 'GENRE COMBINATION',                                         //recommendations_genres,
+    'guest_stars' => 'Guest Stars',                                         //series,   ///////////////
     'h' => 'h',                                                             //movie,
     'havent_seen' => 'Haven\'t Seen',                                       //ratemodal,
     'header' => 'Heading*',                                                 //list,             
@@ -103,6 +104,7 @@ return [
     'its_title' => 'Title',                                                 //movie,
     'lang' => 'Language',                                                   //accountinterface,
     'language' => 'ORIGINAL LANGUAGE',                                      //recommendations_languages,
+    'last_seen_episode' => 'Last Seen Episode',                             //series,           /////////////
     'like' => 'Like',                                                       //list   
     'liked_ones' => 'Liked',                                                //profile,               
     'like_count' => 'like',                                                 //list          
@@ -159,6 +161,8 @@ return [
     'ordering_123' => '1 - 2 - 3 - 4 - 5 - ...',                            //list,         
     'origin_country' => 'Origin Country',                                   //series,       ///////////////
     'origin_countries' => 'Origin Countries',                               //series,       ///////////////
+    'original_name' => 'Original Name',                                     //series,   ///////////////
+    'original_title' => 'Original Title',                                   //series,   ///////////////
     'original_language' => 'Original Language',                             //movie,
     'other' => 'OTHER',                                                     //recommendations,   
     'pagination' => 'Pagination',                                           //accountinterface,
@@ -166,6 +170,7 @@ return [
         '{{from:suffix}} - {{to:suffix}} <span class="px-2">of</span> {{in:suffix}}', //pagination,
     'password' => 'Password',                                               //login, register, account,
     'password_confirmation' => 'Password Confirmation',                     //register,
+    'people_who_liked_this_also_liked' => 'People Who Liked This Also Liked',//series,      ////////////////////
     'person' => 'Person',                                                   //search,
     'personal_website' => 'Personal Link',                                  //account           
     'person_time' => 'vote',                                                //movie,
@@ -210,14 +215,18 @@ return [
     'send_instructions' => 'Send Instructions',                             //email,
     'series' => 'Series',                                                   //recommendations,          //////////////////
     'share' => 'Share',                                                     //movie,
+    'show_all' => 'Show All',                                               //series,           ////////////////
     'show_crew' => 'Show Crew',                                             //accountinterface,  
     'show_everyone' => 'Show Full Cast',                                    //movie,
     'show_watched_movies' => 'Bring Already Seens Too',                     //recommendations,      /////////////////
+    'similar_movies' => 'Similar Movies',                                   //movie,      /////////////////
+    'similar_series' => 'Similar Series',                                   //series,      /////////////////
     'sort_by' => 'SORT BY',                                                 //recommendations, 
     'sort_by_match' => 'Match Score',                                       //recommendations,      
     'sort_by_percent' => 'Match Percentage',                                //recommendations,      
     'sort_by_tmdb' => 'TMDb score',                                         //recommendations,      
     'sort_by_pop' => 'Popularity',                                          //recommendations,      
+    'sorted_by_relevance' => 'Sorted by relevance',                         //series,           ///////////////,      
     'specials' => 'Specials',                                               //series,       //////////////////      
     'standard' => 'Standard',                                               //accountinterface,    
     'time_second' => 'second',                                              //list,             

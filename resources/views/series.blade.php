@@ -207,7 +207,7 @@
         <div class="container-fluid">
             <div class="h5 d-none d-lg-inline">{{ __('general.details') }}</div>
             <div ng-if="series.original_name.length > 0">
-                <div class="h6 pt-2">{{ __('general.original_title') }}</div>
+                <div class="h6 pt-2">{{ __('general.original_name') }}</div>
                 <a class="text-dark" ng-href="http://www.google.com/search?q=@{{series.original_name}}" target="_blank"><p>@{{series.original_name}}</p></a>
             </div>
             <div ng-if="secondary_name.length > 0">
@@ -260,7 +260,7 @@
         <div class="container-fluid">
             <p class="h6 pt-3 pt-md-0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}} • @{{series.episodes[page_variables.active_tab_2-1].name}}</p>
             <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length > 0"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
-            <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length == 0"><p>No overview found.</p></div>
+            <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length == 0"><p>{{ __('general.no_overview_found') }}</p></div>
             <div>
                 <div class="h6 pt-1"><span>{{ ucwords(__('general.air_date')) }}</span></div>
                 <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}}</p>
@@ -273,7 +273,7 @@
         <div class="d-flex flex-wrap justify-content-between">
             <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
                 <div class="d-flex flex-row justify-content-between text-center">
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-primary':user_movie_record.last_seen_season==page_variables.active_tab_1 && user_movie_record.last_seen_episode==page_variables.active_tab_2}" ng-click="toggle_last_Seen()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-primary':user_movie_record.last_seen_season==page_variables.active_tab_1 && user_movie_record.last_seen_episode==page_variables.active_tab_2}" ng-click="toggle_last_Seen()"><div><span><i class="fas fa-check"></i></span></div>{{ __('general.last_Seen_episode') }}</button>
                 </div>
             </div>
         </div>
@@ -360,7 +360,7 @@
 
 <!--Cast Section-->
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0" ng-hide="is_waiting">
-    <div class="px-3 px-md-0"><div class="h5">Guest Stars</div></div>
+    <div class="px-3 px-md-0"><div class="h5">{{ __('general.guest_stars') }}</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
             <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:6">
@@ -394,7 +394,7 @@
         </div>
     </div>
     <div class="text-center pt-1" ng-hide="iscast">
-        <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>Show All</small></button>
+        <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>{{ __('general.show_all') }}</small></button>
     </div>
     <div class="text-center pt-1" ng-show="iscast">
         <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast = false;" data-toggle="collapse" data-target="#collapseGuestStars"><i class="fa fa-angle-up"></i></button>
@@ -451,11 +451,11 @@
             <span class="h5">@{{page_variables.active_tab_3==0?'People Who Liked This Also Liked':'Similar Series'}}</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">People Who Liked This Also Liked</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">Similar Series</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">{{ __('general.people_who_liked_this_also_liked') }}</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">{{ __('general.similar_series') }}</button>
         </div>
     </div>
-    <span class="text-muted pl-2"><small>Sorted by relevance</small></span>
+    <span class="text-muted pl-2"><small>{{ __('general.sorted_by_relevance') }}</small></span>
     @include('layout.moviecard_6')
 </div>
 <!--People Who Liked Also Liked Section-->
