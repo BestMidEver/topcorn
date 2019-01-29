@@ -107,7 +107,7 @@ return [
     'minute' => 'perc',                                                     //movie,
     'movie' => 'Film',
     'p_movies' => 'Filmek',                                                   //list,         
-    'moviecard_percent' => '{{movie.percent}}%',                            //recommendations,  
+    'moviecard_percent' => '{{:suffix}}%',                                  //recommendations,  
     'movies' => 'Film',                         
     'movie_details' => 'Film részletei',                                    //movie,
     'most_rated' => 'Legnépszerűbb',

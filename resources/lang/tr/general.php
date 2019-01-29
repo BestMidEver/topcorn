@@ -108,7 +108,7 @@ return [
     'movie' => 'Film',
     'movie_lists_title' => 'Filmin Bulunduğu Listeler',                                 //list,    
     'p_movies' => 'Filmler',                                                            //list,         
-    'moviecard_percent' => '%{{movie.percent}}',                                        //recommendations,
+    'moviecard_percent' => '%{{:suffix}}',                                              //recommendations,
     'movies' => 'Film',                                                                 //person,
     'movie_details' => 'Film Detayları',
     'most_rated' => 'En Çok Oylanan',

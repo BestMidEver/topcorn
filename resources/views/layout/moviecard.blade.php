@@ -9,7 +9,7 @@
 							<div class="text-white">
 								<small ng-if="active_tab!='mood_pick'">{{ __('general.according_to_your_taste') }}</small>
 								<small ng-if="active_tab=='mood_pick'">{{ __('general.according_to_your_mood') }}</small>
-								<span class="d-block"><span class="h5 text-warning">{{ __('general.moviecard_percent') }}</span><small> {{ __('general.match') }}</small></span>
+								<span class="d-block"><span class="h5 text-warning">{!! __('general.moviecard_percent', ['suffix' => 'movie.percent']) !!}</span><small> {{ __('general.match') }}</small></span>
 								@if(Auth::check())
 									@if(Auth::User()->advanced_filter)
 								<small ng-if="active_tab!='mood_pick'"><span class="h5 text-warning">@{{movie.point*1+movie.p2*1}}</span>/@{{movie.p2*2}} {{ __('general.point') }}</small>
@@ -57,7 +57,7 @@
 						</div>
 					</div>
 					<div class="p-2 text-right moviecard-percent" ng-if="movie.percent > 0">
-						<div><span class="badge btn-verydark text-white">{{ __('general.moviecard_percent') }}</span></div>
+						<div><span class="badge btn-verydark text-white">{!! __('general.moviecard_percent', ['suffix' => 'movie.percent']) !!}</span></div>
 					</div>
 					<div class="p-2 text-right moviecard-rating" ng-if="movie.vote_average > 0">
 						<div><span class="badge btn-verydark text-white">@{{movie.vote_average}}</span></div>
