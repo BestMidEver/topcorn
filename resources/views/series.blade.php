@@ -13,7 +13,7 @@
                     <div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
                         <div class="d-flex flex-row no-gutters">
                             <div class="col pt-2 pl-2">
-                                <span class="text-white h6 lead lead-small" ng-if="page_variables.number_of_seasons>0">@{{page_variables.number_of_seasons}} <span nf-if="page_variables.number_of_seasons>1">{{ __("general.seasons") }}</span><span nf-if="page_variables.number_of_seasons==1">{{ __("general.season") }}</span> - @{{page_variables.number_of_episodes}} <span nf-if="page_variables.number_of_episodes>1">{{ __("general.episodes") }}</span><span nf-if="page_variables.number_of_episodes==1">{{ __("general.episode") }}</span></span>
+                                <span class="text-white h6 lead lead-small" ng-if="page_variables.number_of_seasons>0">@{{page_variables.number_of_seasons}} <span ng-if="page_variables.number_of_seasons>1">{{ __("general.seasons") }}</span><span ng-if="page_variables.number_of_seasons==1">{{ __("general.season") }}</span> - @{{page_variables.number_of_episodes}} <span ng-if="page_variables.number_of_episodes>1">{{ __("general.episodes") }}</span><span ng-if="page_variables.number_of_episodes==1">{{ __("general.episode") }}</span></span>
                             </div>
                             <div class="col p-2 text-right">
                                 <div ng-if="user_movie_record.percent > 0">
@@ -49,7 +49,7 @@
                     <div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
                         <div class="col">
                             <div class="h-100 d-flex flex-column justify-content-center pl-2">
-                                <span class="text-white h6 lead lead-small" ng-if="page_variables.number_of_seasons>0">@{{page_variables.number_of_seasons}} <span nf-if="page_variables.number_of_seasons>1">{{ __("general.seasons") }}</span><span nf-if="page_variables.number_of_seasons==1">{{ __("general.season") }}</span> - @{{page_variables.number_of_episodes}} <span nf-if="page_variables.number_of_episodes>1">{{ __("general.episodes") }}</span><span nf-if="page_variables.number_of_episodes==1">{{ __("general.episode") }}</span></span>
+                                <span class="text-white h6 lead lead-small" ng-if="page_variables.number_of_seasons>0">@{{page_variables.number_of_seasons}} <span ng-if="page_variables.number_of_seasons>1">{{ __("general.seasons") }}</span><span ng-if="page_variables.number_of_seasons==1">{{ __("general.season") }}</span> - @{{page_variables.number_of_episodes}} <span ng-if="page_variables.number_of_episodes>1">{{ __("general.episodes") }}</span><span ng-if="page_variables.number_of_episodes==1">{{ __("general.episode") }}</span></span>
                             </div>
                         </div>
                         <div class="col pb-2 pr-2 text-right">
