@@ -758,4 +758,13 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	}
+
+
+
+	$('#dropdownchoosetrailer').on('show.bs.dropdown', function () {
+		angular.element( document.querySelector( '#dropdownchoosetrailer' ) ).addClass('text-white');
+	});
+	$('#dropdownchoosetrailer').on('hide.bs.dropdown', function () {
+		angular.element( document.querySelector( '#dropdownchoosetrailer' ) ).removeClass('text-white');
+	});
 });

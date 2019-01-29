@@ -77,8 +77,8 @@
                                     <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == 0" ng-class="{'btn-trailer':current_trailer==0}" ng-click="previous_trailer();"><i class="fa fa-step-backward"></i></button>
                                     <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white" ng-disabled="current_trailer == series.videos.results.length-1" ng-class="{'btn-trailer':current_trailer==series.videos.results.length-1}" ng-click="next_trailer();"><i class="fa fa-step-forward"></i></button>
                                     <div class="dropdown d-inline">
-                                      <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white dropdown-toggle active-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <button class="btn btn-outline-secondary border-0 btn-lg text-muted hover-white dropdown-toggle" type="button" id="dropdownchoosetrailer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                      <div class="dropdown-menu" aria-labelledby="dropdownchoosetrailer">
                                         <a class="dropdown-item" href="#">Action</a>
                                         <a class="dropdown-item" href="#">Another action</a>
                                         <a class="dropdown-item" href="#">Something else here</a>
