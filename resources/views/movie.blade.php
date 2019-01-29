@@ -336,7 +336,7 @@
 <!--People Who Liked Also Liked Section-->
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-hide="is_waiting">
     <div class="dropdown d-inline mr-2">
-        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="h5" ng-if="page_variables.active_tab_3==0">People Who Liked This Also Liked</span>
         <span class="h5" ng-if="page_variables.active_tab_3==1">Similar Movies</span>
         <span class="h5" ng-if="page_variables.active_tab_3==2">{{ __('general.movie_lists_title') }}</span>
