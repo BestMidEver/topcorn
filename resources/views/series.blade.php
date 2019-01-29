@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row justify-content-center" ng-if="series.videos.results.length > 0">
-                            <button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>Videos</small></button>
+                            <button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.videos') }}</small></button>
                         </div>
                         <div class="d-flex flex-row justify-content-between p-2">
                             <div class="d-flex flex-column justify-content-end ml-2 mb-2"><img ng-src="{{config('constants.image.original')}}@{{page_variables.network_logo}}" on-error-src="" class="network-logo" alt=""></div>
@@ -448,7 +448,8 @@
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
     <div class="dropdown d-inline">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="h5">@{{page_variables.active_tab_3==0?'{{ __('general.people_who_liked_this_also_liked') }}':'{{ __('general.similar_series') }}'}}</span>
+            <span class="h5" ng-if="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>
+            <span class="h5" ng-if="page_variables.active_tab_3!=0">{{ __('general.similar_series') }}</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
             <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">{{ __('general.people_who_liked_this_also_liked') }}</button>

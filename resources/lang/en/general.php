@@ -264,6 +264,7 @@ return [
     'users_instagram' => 'İnstagram Link',                                  //account, profile      
     'users_twitter' => 'Twitter Link',                                      //account, profile      
     'users_youtube' => 'Youtube Channel',                                   //account, profile      
+    'videos' => 'Videos',                                                   //series,           //////////////////    
     'visibility' => 'Visibility',                                           //list    
     'watched_movies' => 'Watched Movies',                                   //profile, recommendations                 
     'watch_later' => 'Watch Later',
