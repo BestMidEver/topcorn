@@ -58,8 +58,8 @@
 								</div>
 								@if(Auth::check())
 									@if(Auth::User()->advanced_filter)
-								<div>
-									<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
+									<div>
+										<span class="text-white"><small>@{{user_movie_record.point*1+user_movie_record.p2*1}}/@{{user_movie_record.p2*2}}</small></span><span class="text-white"> <small>{{ __("general.point") }}</small></span>
 									</div>
 									@endif
 								@endif
