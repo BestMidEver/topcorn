@@ -98,7 +98,7 @@ class seriesController extends Controller
                 $p2 = $temp->p2==''?'null':$temp->p2;
                 $count = $temp->count==''?'null':$temp->count;
                 $percent = $temp->percent==''?'null':$temp->percent;
-                $last_seen_id = $temp->last_seen_id==''?'null':$temp->last_seen_id;
+                $last_seen_id = $temp->id==''?'null':$temp->id;
                 $last_seen_season = $temp->last_seen_season==''?'null':$temp->last_seen_season;
                 $last_seen_episode = $temp->last_seen_episode==''?'null':$temp->last_seen_episode;
             }else{
