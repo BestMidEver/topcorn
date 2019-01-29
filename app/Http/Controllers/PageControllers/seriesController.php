@@ -81,7 +81,7 @@ class seriesController extends Controller
                 'series_bans.id as ban_id',
                 'series_seens.id as last_seen_id',
                 'series_seens.season_number as last_seen_season',
-                'series_seens.episode_numvber as last_seen_episode',
+                'series_seens.episode_number as last_seen_episode',
                 DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*series_recommendations.rank, 0)) AS point'),
                 DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.rank, 0)) as p2'),
                 DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
