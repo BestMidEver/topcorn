@@ -104,13 +104,15 @@ return [
     'its_title' => 'Title',                                                 //movie,
     'lang' => 'Language',                                                   //accountinterface,
     'language' => 'ORIGINAL LANGUAGE',                                      //recommendations_languages,
+    'last_episode' => 'Last Episode',                                       //series,           /////////////
     'last_seen_episode' => 'Last Seen Episode',                             //series,           /////////////
     'like' => 'Like',                                                       //list   
     'liked_ones' => 'Liked',                                                //profile,               
     'like_count' => 'like',                                                 //list          
     'like_counts' => 'likes',                                               //list      
     'like_number' => 'Total like that user got',                            //profile                 
-    'links' => 'Profile links',                                             //account              
+    'links' => 'links',                                                     //series,       //////////////              
+    'profile_links' => 'Profile links',                                     //account           ///////////////          
     'loading' => 'loading...',                                              //series,           ///////////////
     'login_via_facebook' => 'Login via Facebook',                           //login, register,
     'low' => 'Low',                                                         //accountinterface,
@@ -139,7 +141,7 @@ return [
     'my_secondary_language' => 'My Secondary Language',                     //accountinterface,
     'networks' => 'Networks',                                               //series,              /////////////////
     'new_episode' => 'New Episode',                                         //profile,              /////////////////
-    'next_episode' => 'Next Episode',                                       //profile,              /////////////////
+    'next_episode' => 'Next Episode',                                       //profile,series,              /////////////////
     'new_password' => 'New Password',                                       //reset, accountpassword,
     'new_password_confirmation' => 'New Password Confirmation',             //reset, accountpassword,
     'newest' => 'Newest',

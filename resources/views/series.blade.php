@@ -227,15 +227,15 @@
                 <p>@{{series.episode_run_time[0]}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
             </div>
             <div ng-if="series.last_episode_to_air">
-                <div class="h6 pt-1">Last Episode</div>
+                <div class="h6 pt-1">{{ __('general.last_episode') }}</div>
                 <p>S@{{series.last_episode_to_air.season_number>9?series.last_episode_to_air.season_number:'0'+series.last_episode_to_air.season_number}}E@{{series.last_episode_to_air.episode_number>9?series.last_episode_to_air.episode_number:'0'+series.last_episode_to_air.episode_number}} <span class="small text-muted">(@{{series.last_episode_to_air.air_date}})</span></p>
             </div>
             <div ng-if="series.next_episode_to_air">
-                <div class="h6 pt-1">Next Episode</div>
+                <div class="h6 pt-1">{{ __('general.next_episode') }}</div>
                 <p>S@{{series.next_episode_to_air.season_number>9?series.next_episode_to_air.season_number:'0'+series.next_episode_to_air.season_number}}E@{{series.next_episode_to_air.episode_number>9?series.next_episode_to_air.episode_number:'0'+series.next_episode_to_air.episode_number}} <span class="small text-muted">(@{{series.next_episode_to_air.air_date}})</span></p>
             </div>
             <div ng-if="series.external_ids.facebook_id.length>0 || series.external_ids.instagram_id.length>0 || series.external_ids.twitter_id.length>0">
-                <div class="h6 pt-1">Links</div>
+                <div class="h6 pt-1">{{ __('general.links') }}</div>
                 <p>
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="{{config('constants.facebook.link')}}@{{series.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}" ng-if="series.external_ids.facebook_id.length>0"><i class="fab fa-facebook-square"></i></a>
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="{{config('constants.instagram.link')}}@{{series.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}" ng-if="series.external_ids.instagram_id.length>0"><i class="fab fa-instagram"></i></a>
