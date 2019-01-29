@@ -79,9 +79,9 @@ class seriesController extends Controller
                 'series_rateds.rate as rate_code',
                 'series_laters.id as later_id',
                 'series_bans.id as ban_id',
-                'series_seens.last_seen_id as ban_last_seen_id',
-                'series_seens.last_seen_season as ban_last_seen_season',
-                'series_seens.last_seen_episode as ban_last_seen_episode',
+                'series_seens.id as last_seen_id',
+                'series_seens.season_number as last_seen_season',
+                'series_seens.episode_numvber as last_seen_episode',
                 DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*series_recommendations.rank, 0)) AS point'),
                 DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.rank, 0)) as p2'),
                 DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
@@ -98,7 +98,7 @@ class seriesController extends Controller
                 $p2 = $temp->p2==''?'null':$temp->p2;
                 $count = $temp->count==''?'null':$temp->count;
                 $percent = $temp->percent==''?'null':$temp->percent;
-                $last_seen_id = $temp->id==''?'null':$temp->id;
+                $last_seen_id = $temp->last_seen_id==''?'null':$temp->last_seen_id;
                 $last_seen_season = $temp->last_seen_season==''?'null':$temp->last_seen_season;
                 $last_seen_episode = $temp->last_seen_episode==''?'null':$temp->last_seen_episode;
             }else{
