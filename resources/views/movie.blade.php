@@ -19,7 +19,7 @@
 								<div ng-if="user_movie_record.percent > 0">
 									<small class="text-white">{{ __("general.according_to_your_taste") }}</small>
 									<div>
-										<span class="text-warning display-4 d-none d-md-inline">{!! __('general.moviecard_percent', ['user_movie_record.percent' => 'suffix']) !!}</span><span class="text-warning h5 d-md-none">{!! __('general.moviecard_percent', ['user_movie_record.percent' => 'suffix']) !!}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
+										<span class="text-warning display-4 d-none d-md-inline">{!! __('general.moviecard_percent', ['suffix' => 'user_movie_record.percent']) !!}</span><span class="text-warning h5 d-md-none">{!! __('general.moviecard_percent', ['user_movie_record.percent' => 'suffix']) !!}</span><span class="text-white"> <small>{{ __("general.match") }}</small></span>
 									</div>
 									@if(Auth::check())
 										@if(Auth::User()->advanced_filter)
