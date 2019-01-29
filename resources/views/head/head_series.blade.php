@@ -7,7 +7,7 @@ pass={
 	"secondary_lang":"{{ Session::get('secondary_lang') }}", 
 	"api_key":"{{config('constants.api_key')}}",
 	"is_auth":"{{  Auth::Check()  }}",
-	"user_series_record":{
+	"user_movie_record":{
 		"rated_id":{{$rated_id}},
 		"rate_code":{{$rate_code}},
 		"later_id":{{$later_id}},
