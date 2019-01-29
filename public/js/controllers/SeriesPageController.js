@@ -15,16 +15,15 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	console.log(pass)
-	$scope.pass=pass;
-	$scope.user_movie_record={}
+	$scope.user_movie_record=pass.user_movie_record
 
-	if(pass.is_auth == 1){
+	/*if(pass.is_auth == 1){
 		$http({
 			method: 'GET',
 			url: '/api/series_laters/'+pass.seriesid
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.later_id = response.data.id;
+				$scope.user_movie_record.later_id = response.data.id;
 			}
 		}, function errorCallback(response) {
 		});
@@ -34,7 +33,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			url: '/api/series_rateds/'+pass.seriesid
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.rated_id = response.data.id;
+				$scope.user_movie_record.rated_id = response.data.id;
 				$scope.user_movie_record.rate_code = response.data.rate;
 			}
 		}, function errorCallback(response) {
@@ -45,7 +44,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			url: '/api/series_bans/'+pass.seriesid
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.ban_id = response.data.id;
+				$scope.user_movie_record.ban_id = response.data.id;
 			}
 		}, function errorCallback(response) {
 		});
@@ -55,13 +54,13 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			url: '/api/series_seens/'+pass.seriesid
 		}).then(function successCallback(response) {
 			if(response.data.hasOwnProperty('series_id')){
-				$scope.page_variables.last_seen_id = response.data.id;
-				$scope.page_variables.last_seen_season = response.data.season_number;
-				$scope.page_variables.last_seen_episode = response.data.episode_number;
+				$scope.user_movie_record.last_seen_id = response.data.id;
+				$scope.user_movie_record.last_seen_season = response.data.season_number;
+				$scope.user_movie_record.last_seen_episode = response.data.episode_number;
 			}
 		}, function errorCallback(response) {
 		});
-	}
+	}*/
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$scope.page_variables={};
@@ -387,20 +386,20 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_later=function()
 		{
-			if(!$scope.page_variables.later_id>0){
+			if(!$scope.user_movie_record.later_id>0){
 				rate.series_add_later(pass.seriesid)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.page_variables.later_id=response.data.data.id;
+						$scope.user_movie_record.later_id=response.data.data.id;
 					}
 				});
 			}else{
-				rate.series_un_later($scope.page_variables.later_id)
+				rate.series_un_later($scope.user_movie_record.later_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.page_variables.later_id=null;
+						$scope.user_movie_record.later_id=null;
 					}
 				});
 			}
@@ -414,17 +413,17 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.page_variables.rated_id=response.data.data.id;
+						$scope.user_movie_record.rated_id=response.data.data.id;
 						$scope.user_movie_record.rate_code=response.data.data.rate;
 						//if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
 				});
 			}else if(rate_code == null){
-				rate.series_un_rate($scope.page_variables.rated_id)
+				rate.series_un_rate($scope.user_movie_record.rated_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.page_variables.rated_id=null;
+						$scope.user_movie_record.rated_id=null;
 						$scope.user_movie_record.rate_code=null;
 						//if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 					}
@@ -434,20 +433,20 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.this_ban=function()
 		{
-			if(!$scope.page_variables.ban_id>0){
+			if(!$scope.user_movie_record.ban_id>0){
 				rate.series_add_ban(pass.seriesid)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.page_variables.ban_id=response.data.data.id;
+						$scope.user_movie_record.ban_id=response.data.data.id;
 					}
 				});
 			}else{
-				rate.series_un_ban($scope.page_variables.ban_id)
+				rate.series_un_ban($scope.user_movie_record.ban_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.page_variables.ban_id=null;
+						$scope.user_movie_record.ban_id=null;
 					}
 				});
 			}
@@ -455,7 +454,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.toggle_last_Seen=function()
 		{
-			if(!($scope.page_variables.last_seen_season==$scope.page_variables.active_tab_1 && $scope.page_variables.last_seen_episode==$scope.page_variables.active_tab_2)){
+			if(!($scope.user_movie_record.last_seen_season==$scope.page_variables.active_tab_1 && $scope.user_movie_record.last_seen_episode==$scope.page_variables.active_tab_2)){
 				temp=_.where($scope.series.episodes, {episode_number:$scope.page_variables.active_tab_2+1});
 				if(temp.length>0){
 					episode=temp[0].episode_number;
@@ -472,19 +471,19 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				.then(function(response){
 					console.log(response);
 					if(response.status == 201){
-						$scope.page_variables.last_seen_id=response.data.data.id;
-						$scope.page_variables.last_seen_season=response.data.data.season_number;
-						$scope.page_variables.last_seen_episode=response.data.data.episode_number;
+						$scope.user_movie_record.last_seen_id=response.data.data.id;
+						$scope.user_movie_record.last_seen_season=response.data.data.season_number;
+						$scope.user_movie_record.last_seen_episode=response.data.data.episode_number;
 					}
 				});
 			}else{
-				rate.series_un_last_seen($scope.page_variables.last_seen_id)
+				rate.series_un_last_seen($scope.user_movie_record.last_seen_id)
 				.then(function(response){
 					console.log(response);
 					if(response.status == 204){
-						$scope.page_variables.last_seen_id=null;
-						$scope.page_variables.last_seen_season=null;
-						$scope.page_variables.last_seen_episode=null;
+						$scope.user_movie_record.last_seen_id=null;
+						$scope.user_movie_record.last_seen_season=null;
+						$scope.user_movie_record.last_seen_episode=null;
 					}
 				});
 			}

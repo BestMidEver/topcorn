@@ -72,12 +72,16 @@ class seriesController extends Controller
                 $join->on('r2.series_id', '=', 'series_recommendations.series_id')
                 ->where('r2.user_id', Auth::user()->id);
             })
+            ->leftjoin('series_seens', 'series_seens.series_id', '=', 'series.id')
             ->select(
                 'series.id as series_id',
                 'series_rateds.id as rated_id',
                 'series_rateds.rate as rate_code',
                 'series_laters.id as later_id',
                 'series_bans.id as ban_id',
+                'series_bans.last_seen_id as ban_last_seen_id',
+                'series_bans.last_seen_season as ban_last_seen_season',
+                'series_bans.last_seen_episode as ban_last_seen_episode',
                 DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*series_recommendations.rank, 0)) AS point'),
                 DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.rank, 0)) as p2'),
                 DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
@@ -94,6 +98,9 @@ class seriesController extends Controller
                 $p2 = $temp->p2==''?'null':$temp->p2;
                 $count = $temp->count==''?'null':$temp->count;
                 $percent = $temp->percent==''?'null':$temp->percent;
+                $last_seen_id = $temp->last_seen_id==''?'null':$temp->last_seen_id;
+                $last_seen_season = $temp->last_seen_season==''?'null':$temp->last_seen_season;
+                $last_seen_episode = $temp->last_seen_episode==''?'null':$temp->last_seen_episode;
             }else{
                 $rated_id = 'null';
                 $rate_code = 'null';
@@ -103,9 +110,12 @@ class seriesController extends Controller
                 $p2 = 'null';
                 $count = 'null';
                 $percent = 'null';
+                $last_seen_id = 'null';
+                $last_seen_season = 'null';
+                $last_seen_episode = 'null';
             }
         }
 
-    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent'));
+    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent', 'last_seen_id', 'last_seen_season', 'last_seen_episode'));
     }
 }
