@@ -138,7 +138,7 @@
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
         </li>
         <li class="nav-item" ng-repeat="season in page_variables.seasons">
-            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==page_variables.last_seen_season, 'text-muted':season.season_number!=page_variables.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
         </li>
     </ul>
 </div>
@@ -147,7 +147,7 @@
 <!-- Tabs_1 Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==page_variables.last_seen_season, 'text-muted':season.season_number!=page_variables.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
 </div>
 <!-- Tabs_1 Button Mobile -->
 
@@ -159,7 +159,7 @@
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
         </li>
         <li class="nav-item" ng-repeat="episode in series.episodes">
-            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==page_variables.last_seen_season && episode.episode_number==page_variables.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==page_variables.last_seen_season && episode.episode_number==page_variables.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
+            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
         </li>
     </ul>
 </div>
@@ -168,7 +168,7 @@
 <!-- Tabs_2 Button Mobile -->
 <div class="scrollmenu d-md-none tab2" ng-if="page_variables.active_tab_1!=-1">
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==page_variables.last_seen_season && episode.episode_number==page_variables.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==page_variables.last_seen_season && episode.episode_number==page_variables.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
+    <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==page_variables.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
 </div>
 <!-- Tabs_2 Button Mobile -->
 
@@ -273,7 +273,7 @@
         <div class="d-flex flex-wrap justify-content-between">
             <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
                 <div class="d-flex flex-row justify-content-between text-center">
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-primary':page_variables.last_seen_season==page_variables.active_tab_1 && page_variables.last_seen_episode==page_variables.active_tab_2}" ng-click="toggle_last_Seen()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-primary':user_movie_record.last_seen_season==page_variables.active_tab_1 && page_variables.last_seen_episode==page_variables.active_tab_2}" ng-click="toggle_last_Seen()"><div><span><i class="fas fa-check"></i></span></div>Last Seen Episode</button>
                 </div>
             </div>
         </div>
