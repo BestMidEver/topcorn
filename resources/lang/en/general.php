@@ -43,15 +43,17 @@ return [
     'bitcoin_address' => 'Our Bitcoin Adress',                              //donation,
     'budget' => 'Budget',                                                   //movie,
     'camera' => 'Camera',                                                   //movie,
-    'canceled' => 'Canceled',                                               //profile,              /////////////////
+    'canceled' => 'Canceled',                                               //profile,series              /////////////////
     'change_password' => 'Change Password',                                 //accountpassword,
     'conclusion' => 'Conclusion',                                           //list             
     'continue_without_facebook' => 'Continue Without Facebook',             //home
+    'continuing' => 'Continuing',                                           //series            //////////////////
     'country' => 'Country',                                                 //donation,
     'cover_photo' => 'Cover Photo',                                         //account,
     'create_list' => 'Create Your Own List',                                //list,                 
     'create_new_password' => 'Create New Password',                         //reset,
     'created_ones' => 'Created',                                            //profile,
+    'creators' => 'Creators',                                               //series,           ////////////////////
     'crew' => 'Crew',                               
     'current_password' => 'Current Password',                               //accountpassword,
     'directing' => 'Directing',                                             //person
@@ -63,6 +65,7 @@ return [
     'definitely_dont_recommend_movies' => 'Garbage Movies',                 //recommendations,          
     'definitely_recommend' => 'Legendary',                                  //ratemodal, profile,
     'definitely_recommend_movies' => 'Legendary Movies',                    //recommendations,          
+    'details' => 'Details',                                                 //series,           ///////////////          
     'dollar_account' => 'Dollar Account',                                   //donation,
     'dont_recommend' => 'Bad',                                              //ratemodal, profile,
     'dont_recommend_movies' => 'Bad Movies',                                //recommendations,          
@@ -70,7 +73,7 @@ return [
     'editing' => 'Editing',                                                 //person,
     'email' => 'Email',                                                     //email, reset, login, register,
     'email_confirmation' => 'Email Confirmation',                           //register,
-    'ended' => 'Ended',                                                     //profile,          /////////////////
+    'ended' => 'Ended',                                                     //profile,series          /////////////////
     'enter_movie_name' => 'Please enter the name of the movie',             //list,                    
     'episode' => 'Episode',                                                 //series,           ///////////////                    
     'episodes' => 'Episodes',                                               //series,           ///////////////                    
@@ -81,9 +84,11 @@ return [
     'facebook_profile_photo' => 'Facebook Profile Picture',                 //account,
     'fb_comments' => 'Facebook Comments',                                   //movie,
     'filter' => 'FILTER',                                                   //recommendations,
-    'first_episode' => 'First Episode',                                     //profile,      ///////////////////////
+    'finale_date' => 'Finale Date',                                         //series,       ///////////////
+    'first_episode' => 'First Episode',                                     //profile,series,      ///////////////////////
     'primary_language' => 'Primary Language',                               //accountinterface,
     'forgot_my_password' => 'I Forgot My Password',                         //email, login,
+    'general_info' => 'General Info',                                       //series,           //////////////
     'genre' => 'GENRE COMBINATION',                                         //recommendations_genres,
     'h' => 'h',                                                             //movie,
     'havent_seen' => 'Haven\'t Seen',                                       //ratemodal,
@@ -104,6 +109,7 @@ return [
     'like_counts' => 'likes',                                               //list      
     'like_number' => 'Total like that user got',                            //profile                 
     'links' => 'Profile links',                                             //account              
+    'loading' => 'loading...',                                              //series,           ///////////////
     'login_via_facebook' => 'Login via Facebook',                           //login, register,
     'low' => 'Low',                                                         //accountinterface,
     'list' => 'List',                                                       //search,             
@@ -129,6 +135,7 @@ return [
     'most_populer' => 'Most Popular',                                       //recommendations,
     'movies_original_language' => 'The Original Language of the Movie',     //accountinterface,
     'my_secondary_language' => 'My Secondary Language',                     //accountinterface,
+    'networks' => 'Networks',                                               //series,              /////////////////
     'new_episode' => 'New Episode',                                         //profile,              /////////////////
     'next_episode' => 'Next Episode',                                       //profile,              /////////////////
     'new_password' => 'New Password',                                       //reset, accountpassword,
@@ -136,6 +143,7 @@ return [
     'newest' => 'Newest',
     'next' => 'Next',                                                       //pagination,
     'no_mode_movies' => 'You must define your mood.',                       //recommendations      //////////////////
+    'no_overview_found' => 'No overview found.',                            //series      //////////////////
     'no_result' => 'No result',                                             //profile,
     'no_result_review' => 'No review',                                      //movie
     'not_sure' => 'Not Sure',                                               //ratemodal, profile,
@@ -149,7 +157,8 @@ return [
     'ordering' => 'Ordering',                                               //list,         
     'ordering_321' => '... - 5 - 4 - 3 - 2 - 1',                            //list,         
     'ordering_123' => '1 - 2 - 3 - 4 - 5 - ...',                            //list,         
-    'original_title' => 'Original Title',                                   //movie,
+    'origin_country' => 'Origin Country',                                   //series,       ///////////////
+    'origin_countries' => 'Origin Countries',                               //series,       ///////////////
     'original_language' => 'Original Language',                             //movie,
     'other' => 'OTHER',                                                     //recommendations,   
     'pagination' => 'Pagination',                                           //accountinterface,
@@ -192,8 +201,9 @@ return [
     'search_results' => 'Seach Results',                                    //recommendations,
     'search_person' => 'Search a person by name',                           //search,
     'search_user' => 'Search a user by name/email',                         //search,
-    'season' => 'Season',                                                   //serie,            ////////////
-    'seasons' => 'Seasons',                                                 //serie,            ////////////
+    'season' => 'Season',                                                   //series,            ////////////
+    'seasons' => 'Seasons',                                                 //series,            ////////////
+    'season_info' => 'Season Info',                                         //series,            ////////////
     'secondary_language' => 'Secondary Language',                           //accountinterface,
     'seen' => 'Seen',
     'seen_movies' => 'Seen',                                                //profile,              /////////////////
@@ -208,6 +218,7 @@ return [
     'sort_by_percent' => 'Match Percentage',                                //recommendations,      
     'sort_by_tmdb' => 'TMDb score',                                         //recommendations,      
     'sort_by_pop' => 'Popularity',                                          //recommendations,      
+    'specials' => 'Specials',                                               //series,       //////////////////      
     'standard' => 'Standard',                                               //accountinterface,    
     'time_second' => 'second',                                              //list,             
     'time_seconds' => 'seconds',                                            //list,             

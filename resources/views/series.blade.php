@@ -95,7 +95,7 @@
                         <div class="col pb-2 pr-2 text-right">
                             <div ng-if="page_variables.vote_average > 0">
                                 <div><span class="text-warning h4 d-none d-md-inline">@{{page_variables.vote_average}}</span><span class="text-warning h5 d-md-none">@{{page_variables.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count > 1">votes</span></small></span></div>
+                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="page_variables.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
                             </div>
                         </div>
                     </div>
@@ -120,11 +120,11 @@
     <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto pb-5">
         <div class="d-flex flex-row justify-content-between text-center">
             @if(Auth::check())
-            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-warning':user_movie_record.later_id>0}" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div>Watch Later</button>
-            <button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><div><span ng-show="!user_movie_record.rate_code>0"><i class="far fa-star"></i></span><span ng-show="user_movie_record.rate_code>0"><i class="fas fa-check"></i></span></div>Seen</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id>0}" ng-click="this_ban()"><div><i class="fas fa-ban"></i></div>Ban</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-warning':user_movie_record.later_id>0}" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div>{{ __('general.watch_later') }}</button>
+            <button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><div><span ng-show="!user_movie_record.rate_code>0"><i class="far fa-star"></i></span><span ng-show="user_movie_record.rate_code>0"><i class="fas fa-check"></i></span></div>{{ __('general.seen') }}</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id>0}" ng-click="this_ban()"><div><i class="fas fa-ban"></i></div>{{ __('general.ban') }}</button>
             @endif
-            <a ng-href="{{config('constants.facebook.share_website')}}/series/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban"><div><i class="fas fa-share"></i></div>Share</a>
+            <a ng-href="{{config('constants.facebook.share_website')}}/series/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban"><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</a>
         </div>
     </div>
 </div>
@@ -135,10 +135,10 @@
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">{{ __('general.general_info') }}</button>
         </li>
         <li class="nav-item" ng-repeat="season in page_variables.seasons">
-            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+            <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">{{ __('general.specials') }}</span></button>
         </li>
     </ul>
 </div>
@@ -146,8 +146,8 @@
 
 <!-- Tabs_1 Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">General Info</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">Specials</span></button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">{{ __('general.general_info') }}</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">{{ __('general.specials') }}</span></button>
 </div>
 <!-- Tabs_1 Button Mobile -->
 
@@ -156,7 +156,7 @@
 <div class="container-fluid p-0 d-none d-md-inline" ng-if="page_variables.active_tab_1!=-1">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">{{ __('general.season_info') }}</button>
         </li>
         <li class="nav-item" ng-repeat="episode in series.episodes">
             <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
@@ -167,7 +167,7 @@
 
 <!-- Tabs_2 Button Mobile -->
 <div class="scrollmenu d-md-none tab2" ng-if="page_variables.active_tab_1!=-1">
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">Season Info</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">{{ __('general.season_info') }}</button>
     <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
 </div>
 <!-- Tabs_2 Button Mobile -->
@@ -175,7 +175,7 @@
 
 <!--Poster Plot Details Section-->
 <div class="p-5" ng-if="is_waiting">
-    <div class="text-muted text-center">Loading...</div>
+    <div class="text-muted text-center">{{ __('general.loading') }}</div>
 </div>
 <div class="row no-gutters mt-3 mt-md-5 mb-md-5" ng-hide="is_waiting">
     <div class="col-12 col-md-3 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
@@ -186,18 +186,18 @@
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==-1">@{{series.first_air_date.substring(0, 4)}}-@{{series.status!='Returning Series'?series.last_air_date.substring(0, 4):''}} <span class="text-muted" ng-if="series.genres.length > 0" ng-class="{'ml-3':series.status=='Returning Series'}">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=-1">@{{series.name}}</p>
             <div class="pt-2" ng-if="series.overview.length > 0"><p>@{{series.overview}}</p></div>
-            <div class="pt-2" ng-if="series.overview.length == 0"><p>No overview found.</p></div>
+            <div class="pt-2" ng-if="series.overview.length == 0"><p>{{ __('general.no_overview_found') }}</p></div>
             <div ng-if="page_variables.active_tab_1==-1">
-                <div class="h6 pt-1"><span>Creators</span></div>
+                <div class="h6 pt-1"><span>{{ __('general.creators') }}</span></div>
                 <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
             <div ng-if="page_variables.active_tab_1==-1 && series.networks.length>0">
-                <div class="h6 pt-1"><span>Networks</span></div>
+                <div class="h6 pt-1"><span>{{ __('general.networks') }}</span></div>
                 <p>
                     <span class="d-inline" ng-repeat="network in series.networks"><span ng-if="$index!=0">, </span>@{{network.name}}</span>
-                    <span class="ml-1 text-muted" ng-if="series.status=='Returning Series'">(Continuing)</span>
-                    <span class="ml-1 text-muted" ng-if="series.status=='Ended'">(Ended)</span>
-                    <span class="ml-1 text-muted" ng-if="series.status=='Canceled'">(Canceled)</span>
+                    <span class="ml-1 text-muted" ng-if="series.status=='Returning Series'">({{ __('general.continuing') }})</span>
+                    <span class="ml-1 text-muted" ng-if="series.status=='Ended'">({{ __('general.ended') }})</span>
+                    <span class="ml-1 text-muted" ng-if="series.status=='Canceled'">({{ __('general.canceled') }})</span>
                 </p>
             </div>
         </div>
@@ -205,7 +205,7 @@
     <div class="col-3 d-none d-md-inline d-lg-none"></div>
     <div class="col-9 col-lg-3" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <div class="container-fluid">
-            <div class="h5 d-none d-lg-inline">Details</div>
+            <div class="h5 d-none d-lg-inline">{{ __('general.details') }}</div>
             <div ng-if="series.original_name.length > 0">
                 <div class="h6 pt-2">{{ __('general.original_title') }}</div>
                 <a class="text-dark" ng-href="http://www.google.com/search?q=@{{series.original_name}}" target="_blank"><p>@{{series.original_name}}</p></a>
@@ -215,11 +215,11 @@
                 <a class="text-dark" ng-href="http://www.google.com/search?q=@{{secondary_name}}" target="_blank"><p>@{{secondary_name}}</p></a>
             </div>
             <div ng-if="page_variables.active_tab_1==-1 && series.original_language.length > 0">
-                <div class="h6 pt-1">Original Language</div>
+                <div class="h6 pt-1">{{ __('general.original_language') }}</div>
                 <p>@{{series.original_language}}</p>
             </div>
             <div ng-if="page_variables.active_tab_1==-1 && series.countries.length > 0">
-                <div class="h6 pt-1"><span ng-if="series.countries.length == 1">Origin Country</span><span ng-if="series.countries.length > 1">Origin Countries</span></div>
+                <div class="h6 pt-1"><span ng-if="series.countries.length == 1">{{ __('general.origin_country') }}</span><span ng-if="series.countries.length > 1">{{ __('general.origin_countries') }}</span></div>
                 <p><span ng-repeat="country in series.countries"><span ng-if="$index!=0">, </span>@{{country}}</span></p>
             </div>
             <div ng-if="page_variables.active_tab_1==-1 && series.episode_run_time[0] > 0">
@@ -243,15 +243,15 @@
                 </p>
             </div>
             <div ng-if="page_variables.active_tab_1!=-1">
-                <div class="h6 pt-1">First Episode</div>
+                <div class="h6 pt-1">{{ __('general.first_episode') }}</div>
                 <p>@{{series.air_date}}</p>
             </div>
             <div ng-if="page_variables.active_tab_1!=-1">
-                <div class="h6 pt-1">Finale Date</div>
+                <div class="h6 pt-1">{{ __('general.finale_date') }}</div>
                 <p>@{{series.episodes[series.episodes.length-1].air_date}}</p>
             </div>
             <div ng-if="page_variables.active_tab_1!=-1">
-                <div class="h6 pt-1">Episodes</div>
+                <div class="h6 pt-1">{{ __('general.episodes') }}</div>
                 <p>@{{series.episodes.length}}</p>
             </div>
         </div>
@@ -262,7 +262,7 @@
             <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length > 0"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
             <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length == 0"><p>No overview found.</p></div>
             <div>
-                <div class="h6 pt-1"><span>Air Date</span></div>
+                <div class="h6 pt-1"><span>{{ ucwords(__('general.air_date')) }}</span></div>
                 <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}}</p>
             </div>
         </div>
