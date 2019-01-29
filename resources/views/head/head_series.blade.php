@@ -53,7 +53,7 @@ pass={
 @endsection
 
 @section('meta_description')
-
+Watch trailer of series {{$series_name}} {{$series_year}}. Read summary, reviews and every detail. See full cast, director, writer, original name, original language, producers, budget, revenue, official website. English {{$series_en_name}}, Türkçe {{$series_tr_name}}, Magyar {{$series_hu_name}}
 @endsection
 
 @section('og_tags')
