@@ -42,7 +42,7 @@ pass={
 @section('angular_controller_js')
 <script src="/js/controllers/SeriesPageController.js"></script>
 @endsection
-@section('controllername', 'MoviePageController')
+@section('controllername', 'SeriesPageController')
 
 @section('title')
 @if($series_name != '')
@@ -58,7 +58,7 @@ pass={
 
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/series/{{$id}}"/>
-<meta property="og:title" content="{{$series_name}} ({{$movie_year}})"/>
+<meta property="og:title" content="{{$series_name}} ({{$series_year}})"/>
 <meta property="og:description" content="Check every detail of {{$series_name}} ({{$series_year}}). Read reviews, watch trailers. Find out series score based on your taste. And so on..."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
