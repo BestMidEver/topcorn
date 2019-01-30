@@ -97,6 +97,8 @@ return [
     'high' => 'High',                                                       //accountinterface,
     'hismovies' => 'Movies',                                                //person,
     'hover_title_language' => 'Movie Tooltip',                              //accountinterface,
+    'image' => 'image',                                                     //person,       /////////////////
+    'images' => 'images',                                                   //person,       /////////////////
     'image_quality' => 'Image Quality',                                     //accountinterface,
     'info_updated' => 'Your information has been changed successfully.',    //account,
     'interface' => 'Interface',                                             //account,
@@ -112,7 +114,6 @@ return [
     'like_counts' => 'likes',                                               //list      
     'like_number' => 'Total like that user got',                            //profile                 
     'links' => 'links',                                                     //series,       //////////////              
-    'profile_links' => 'Profile links',                                     //account           ///////////////          
     'loading' => 'loading...',                                              //series,           ///////////////
     'login_via_facebook' => 'Login via Facebook',                           //login, register,
     'low' => 'Low',                                                         //accountinterface,
@@ -184,7 +185,8 @@ return [
     'production' => 'Production',                                           //person,
     'producer_countries' => 'Producer Countries',                           //movie,
     'producer_country' => 'Producer Country',                               //movie,
-    'profile' => 'Profile',                                                 //account,
+    'profile' => 'Profile',                                                 //account,person
+    'profile_links' => 'Profile links',                                     //account           ///////////////          
     'pw_updated' => 'Your password has been changed successfully.',         //account,
     'profile_photo' => 'Profile Photo',                                     //account,
     'profile_photo_help' => '(Actors from the Movie)',                      //account,
@@ -215,8 +217,7 @@ return [
     'seen' => 'Seen',
     'seen_movies' => 'Seen',                                                //profile,              /////////////////
     'send_instructions' => 'Send Instructions',                             //email,
-    'series' => 'Series',                                                   //recommendations,          //////////////////
-    'seriess' => 'Seriess',                                                 //person,          //////////////////
+    'series' => 'Series',                                                   //recommendations,person          //////////////////
     'share' => 'Share',                                                     //movie,
     'show_all' => 'Show All',                                               //series,           ////////////////
     'show_crew' => 'Show Crew',                                             //accountinterface,  
@@ -232,6 +233,7 @@ return [
     'sorted_by_relevance' => 'Sorted by relevance',                         //series,           ///////////////,      
     'specials' => 'Specials',                                               //series,       //////////////////      
     'standard' => 'Standard',                                               //accountinterface,    
+    'tagged' => 'Tagged',                                                   //person,           /////////////             
     'time_second' => 'second',                                              //list,             
     'time_seconds' => 'seconds',                                            //list,             
     'time_minute' => 'minute',                                              //list,             
