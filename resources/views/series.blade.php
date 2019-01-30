@@ -183,7 +183,7 @@
     </div>
     <div class="col-12 col-md-9 col-lg-6" ng-if="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <div class="container-fluid">
-            <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==-1">@{{series.first_air_date.substring(0, 4)}}-@{{series.status!='Returning Series'?series.last_air_date.substring(0, 4):''}} <span class="text-muted" ng-if="series.genres.length > 0" ng-class="{'ml-3':series.status=='Returning Series'}">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
+            <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1==-1"><span data-toggle="tooltip" data-placement="top" data-original-title="@{{series.first_air_date}}">@{{series.first_air_date.substring(0, 4)}}</span>-<span data-toggle="tooltip" data-placement="top" data-original-title="@{{series.last_air_date}}">@{{series.status!='Returning Series'?series.last_air_date.substring(0, 4):''}}</span> <span class="text-muted" ng-if="series.genres.length > 0" ng-class="{'ml-3':series.status=='Returning Series'}">•</span> <span ng-repeat="genre in series.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=-1">@{{series.name}}</p>
             <div class="pt-2" ng-if="series.overview.length > 0"><p>@{{series.overview}}</p></div>
             <div class="pt-2" ng-if="series.overview.length == 0"><p>{{ __('general.no_overview_found') }}</p></div>
