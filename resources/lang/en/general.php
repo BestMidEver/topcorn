@@ -254,7 +254,7 @@ return [
     'top_rated' => 'Top Rated',                                                                     //recommendations,
     'tooltip_watchlater' => 'Watch Later',                                                          //recommendations,
     'tooltip_ban' => 'Ban',                                                                         //recommendations,
-    'trailer' => 'TRAILER',                                                                         //movie,
+    'trailer' => 'TRAILERS & VIDEOS',                                                               //movie,
     'tr' => 'Turkey',                                                                               //donation
     'try_account' => 'TRY Account',                                                                 //donation,
     'understand_my_taste' => 'Let\'s Get Started',                                                  //home,
@@ -266,7 +266,6 @@ return [
     'users_instagram' => 'İnstagram Link',                                                          //account, profile      
     'users_twitter' => 'Twitter Link',                                                              //account, profile      
     'users_youtube' => 'Youtube Channel',                                                           //account, profile      
-    'videos' => 'Videos',                                                                           //series,    
     'visibility' => 'Visibility',                                                                   //list    
     'watch_later' => 'Watch Later',
     'watch_together' => 'Watch Together',                                                           //profile,

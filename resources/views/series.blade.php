@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="d-flex flex-row justify-content-center" ng-if="series.videos.results.length > 0">
-                            <button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.videos') }}</small></button>
+                            <button class="btn btn-link text-white btn-lg" ng-click="isfragman=true;scroll_to_top()" data-toggle="collapse" data-target="#collapseFragman" aria-expanded="false" aria-controls="collapseFragman"><i class="far fa-play-circle mr-2"></i><small>{{ __('general.trailer') }}</small></button>
                         </div>
                         <div class="d-flex flex-row justify-content-between p-2">
                             <div class="d-flex flex-column justify-content-end ml-2 mb-2"><img ng-src="{{config('constants.image.original')}}@{{page_variables.network_logo}}" on-error-src="" class="network-logo" alt=""></div>

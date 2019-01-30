@@ -254,7 +254,7 @@ return [
     'tooltip_watchlater' => 'Később megnézem',                                                          //recommendations,
     'tooltip_ban' => 'Letilt',                                                                          //recommendations,
     'tr' => 'Törökország',         
-    'trailer' => 'FILMELŐZETES',                                                                        //movie
+    'trailer' => 'FILMELŐZETES & VIDEÓK',                                                               //movie
     'try_account' => 'TRY számla',                                                                      //donation,
     'understand_my_taste' => 'Ismerd meg az ízlésemet!',                                                //home,
     'unknown' => 'ismeretlen',                                                                          //profile,
@@ -265,7 +265,6 @@ return [
     'users_instagram' => 'Instagram link',                                                              //account, profile
     'users_twitter' => 'Twitter link',                                                                  //account, profile
     'users_youtube' => 'Youtube Csatorna',                                                              //account, profile
-    'videos' => 'Videók',                                                                               //series, 
     'visibility' => 'Láthatóság',                                                                       //list       
     'watch_later' => 'Később megnézem',                         
     'watch_together' => 'Nézzük meg együtt!',                                                           //profile,
