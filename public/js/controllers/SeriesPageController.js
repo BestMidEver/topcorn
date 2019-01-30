@@ -16,13 +16,13 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 //////////////////////////////////////////////////////////////////////////////////////////
 	$('#collapseMovies').on('show.bs.collapse', function () {
 		console.log('A')
-		angular.element( document.querySelector( '#top_moviecard_6' ) ).addClass('d-none');
+		//angular.element( document.querySelector( '#top_moviecard_6' ) ).addClass('d-none');
 	});
 	$('#collapseMovies').on('hide.bs.collapse', function () {
 		console.log('B')
-		angular.element( document.querySelector( '#top_moviecard_6' ) ).removeClass('d-none');
+		//angular.element( document.querySelector( '#top_moviecard_6' ) ).removeClass('d-none');
 	});
-	
+
 	$scope.user_movie_record=pass.user_movie_record;
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
