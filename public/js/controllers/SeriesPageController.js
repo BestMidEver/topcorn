@@ -778,4 +778,13 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	}
+
+	$('#collapseMovies').on('show.bs.collapse', function () {
+		angular.element( document.querySelector( '#top_moviecard_6' ) ).addClass('d-none');
+		console.log('A')
+	});
+	$('#collapseMovies').on('hide.bs.collapse', function () {
+		angular.element( document.querySelector( '#top_moviecard_6' ) ).removeClass('d-none');
+		console.log('B')
+	});
 });
