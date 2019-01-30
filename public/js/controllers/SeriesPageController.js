@@ -780,11 +780,11 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 	}
 
 	$('#collapseMovies').on('show.bs.collapse', function () {
-		angular.element( document.querySelector( '#top_moviecard_6' ) ).addClass('d-none');
 		console.log('A')
+		angular.element( document.querySelector( '#top_moviecard_6' ) ).addClass('d-none');
 	});
 	$('#collapseMovies').on('hide.bs.collapse', function () {
-		angular.element( document.querySelector( '#top_moviecard_6' ) ).removeClass('d-none');
 		console.log('B')
+		angular.element( document.querySelector( '#top_moviecard_6' ) ).removeClass('d-none');
 	});
 });
