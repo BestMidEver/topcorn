@@ -1,13 +1,13 @@
-<div class="card-group no-gutters" ng-hide="iscast_movies">
+<div class="card-group no-gutters">
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in similar_movies | limitTo:6">
-		@include('layout.moviecard_6_inside')
+        @include('layout.moviecard_6_inside', ['suffix' => ''])
 	</div>
 </div>
 <div class="collapse" id="collapseMovies">
 	<div ng-if="similar_movies.length > 6">
 		<div class="card-group no-gutters">
         	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="movie in similar_movies">
-        		@include('layout.moviecard_6_inside')
+                @include('layout.moviecard_6_inside', ['suffix' => '+6'])
         	</div>
         </div>
     </div>
