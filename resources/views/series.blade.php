@@ -242,15 +242,15 @@
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="{{config('constants.twitter.link')}}@{{series.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}" ng-if="series.external_ids.twitter_id.length>0"><i class="fab fa-twitter-square"></i></a>
                 </p>
             </div>
-            <div ng-if="page_variables.active_tab_1!=-1">
+            <div ng-if="page_variables.active_tab_1!=-1 && series.air_date.length>0">
                 <div class="h6 pt-1">{{ __('general.first_episode') }}</div>
                 <p>@{{series.air_date}}</p>
             </div>
-            <div ng-if="page_variables.active_tab_1!=-1">
+            <div ng-if="page_variables.active_tab_1!=-1 && series.episodes[series.episodes.length-1].air_date.length>0">
                 <div class="h6 pt-1">{{ __('general.finale_date') }}</div>
                 <p>@{{series.episodes[series.episodes.length-1].air_date}}</p>
             </div>
-            <div ng-if="page_variables.active_tab_1!=-1">
+            <div ng-if="page_variables.active_tab_1!=-1 && series.episodes.length>0">
                 <div class="h6 pt-1">{{ __('general.episodes') }}</div>
                 <p>@{{series.episodes.length}}</p>
             </div>
