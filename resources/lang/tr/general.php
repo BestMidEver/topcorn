@@ -186,6 +186,7 @@ return [
     'profile' => 'Profil',                                                                              //account,
     'profile_links' => 'Profilde paylaşılan bağlantılar',                                               //account,
     'profile_photo' => 'Profil Fotoğrafı',                                                              //account,
+    'profile_photos' => 'Profil Fotoğrafları',                                                          //person,
     'pw_updated' => 'Şifreniz başarıyla güncellendi.',                                                  //account,
     'read_all' => 'Hepsini oku',                            
     'recipient_name' => 'Alıcının Adı',                                                                 //donation,

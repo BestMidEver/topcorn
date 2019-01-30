@@ -187,6 +187,7 @@ return [
     'profile_links' => 'Profile links',                                                                 //account           ///////////////    
     'pw_updated' => 'Sikeresen megváltoztattad a jelszavadat.',                                         //account,
     'profile_photo' => 'Profilkép',                                                                     //account,
+    'profile_photos' => 'Profilképek',                                                                  //person,
     'profile_photo_help' => '(A film szereplői közül)',                                                 //account,
     'read_all' => 'Több',                                                                               //movie
     'recipient_name' => 'A címzett neve',                                                               //donation,

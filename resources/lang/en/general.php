@@ -187,6 +187,7 @@ return [
     'profile_links' => 'Profile links',                                                             //account,          
     'pw_updated' => 'Your password has been changed successfully.',                                 //account,
     'profile_photo' => 'Profile Photo',                                                             //account,
+    'profile_photos' => 'Profile Photos',                                                           //person,
     'profile_photo_help' => '(Actors from the Movie)',                                              //account,
     'read_all' => 'Read more',                                                                      //movie,
     'recipient_name' => 'Recipient Name',                                                           //donation,

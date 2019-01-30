@@ -116,12 +116,12 @@
 	<div class="container-fluid">
 		<div class="dropdown d-inline" ng-init="page_variables.image_tab='profile'">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<i class="fa fa-filter"></i> <span ng-if="page_variables.image_tab=='profile'">{{ __('general.profile') }}</span><span ng-if="page_variables.image_tab=='tagged'">{{ __('general.tagged') }}</span>
+				<i class="fa fa-filter"></i> <span ng-if="page_variables.image_tab=='profile'">{{ __('general.profile_photos') }}</span><span ng-if="page_variables.image_tab=='tagged'">{{ __('general.tagged') }}</span>
 			</button>
 			<span class="text-muted pl-2" ng-if="page_variables.image_tab=='profile'"><small>@{{profile_images.length}} <span ng-show="profile_images.length < 2">{{ __('general.image') }}</span><span ng-show="profile_images.length > 1">{{ __('general.images') }}</span></small></span>
 			<span class="text-muted pl-2" ng-if="page_variables.image_tab!='profile'"><small>@{{tagged_images.total_results}} <span ng-show="tagged_images.total_results < 2">{{ __('general.image') }}</span><span ng-show="tagged_images.total_results > 1">{{ __('general.images') }}</span></small></span>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<button class="dropdown-item" ng-click="page_variables.image_tab='profile'">{{ __('general.profile') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.image_tab='profile'">{{ __('general.profile_photos') }}</button>
 				<button class="dropdown-item" ng-click="page_variables.image_tab='tagged'">{{ __('general.tagged') }}</button>
 			</div>
 		</div>
