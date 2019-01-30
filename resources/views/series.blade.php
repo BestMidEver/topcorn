@@ -269,7 +269,7 @@
     </div>
     @if(Auth::check())
     <div class="col-12 col-lg-5" ng-if="page_variables.active_tab_1!=-1 && page_variables.active_tab_2!=-1">
-        <img src="{{config('constants.image.cover')[$image_quality]}}@{{series.episodes[page_variables.active_tab_2-1].still_path}}" on-error-src="" class="img-fluid" alt="Responsive image">
+        <img src="{{config('constants.image.cover')[$image_quality]}}@{{series.episodes[page_variables.active_tab_2-1].still_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid" alt="Responsive image">
         <div class="d-flex flex-wrap justify-content-between">
             <div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
                 <div class="d-flex flex-row justify-content-between text-center">
