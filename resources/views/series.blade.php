@@ -285,7 +285,15 @@
 
 <!--Cast Section-->
 <div class="container-fluid px-0 mt-5" id="cast" ng-if="series.credits.cast.length > 0" ng-hide="is_waiting">
-    <div class="px-3 px-md-0"><div class="h5">{{ __('general.actors') }}</div></div>
+    <div class="px-3 px-md-0">
+        <div class="h5">{{ __('general.actors') }}
+        @if(Auth::check())
+        @if(Auth::User()->show_crew)
+        & {{ __('general.crew') }}
+        @endif
+        @endif
+        </div>
+    </div>
     <div class="">
         <div class="d-flex flex-wrap">
             <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.credits.cast | limitTo:6">
