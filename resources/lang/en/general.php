@@ -216,6 +216,7 @@ return [
     'seen_movies' => 'Seen',                                                //profile,              /////////////////
     'send_instructions' => 'Send Instructions',                             //email,
     'series' => 'Series',                                                   //recommendations,          //////////////////
+    'seriess' => 'Seriess',                                                 //person,          //////////////////
     'share' => 'Share',                                                     //movie,
     'show_all' => 'Show All',                                               //series,           ////////////////
     'show_crew' => 'Show Crew',                                             //accountinterface,  
