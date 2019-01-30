@@ -31,7 +31,7 @@
 				</div>
 				<div class="d-flex flex-column">
 					<div class="d-flex flex-row align-items-center ml-2">
-						<h5><a ng-href="http://www.google.com/search?q=@{{person.name}}" class="text-light" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="@{{person.birthday.length>0?person.birthday:''}}"><span class="yeswrap text-left">@{{person.name}} <span>@{{age}}</span></span></a></h5>
+						<h5><a ng-href="http://www.google.com/search?q=@{{person.name}}" class="text-light" target="_blank" data-toggle="tooltip" data-placement="top" data-original-title="@{{person.birthday.length>0?person.birthday:''}}"><span class="yeswrap text-left">@{{person.name}} <span data-toggle="tooltip" data-placement="top" data-original-title="@{{person.birthday.length>0?person.birthday:''}}">@{{age}}</span></span></a></h5>
 					</div>
 					<div class="d-flex flex-row align-items-center text-light ml-2" ng-if="person.place_of_birth">
 						<a ng-href="http://www.google.com/search?q=@{{person.place_of_birth}}" class="text-light" target="_blank"><i class="fas fa-map-marker"></i><div class="d-inline pl-1" >@{{person.place_of_birth}}</div></a>
