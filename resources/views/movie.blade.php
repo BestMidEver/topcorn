@@ -190,10 +190,14 @@
 				<div class="h6 pt-1">{{ __('general.revenue') }}</div>
 				<p>$@{{fancyrevenue}}.00</p>
 			</div>
-			<div ng-if="movie.homepage.length > 0">
-				<div class="h6 pt-1">{{ __('general.official_website') }}</div>
-				<a ng-href="@{{movie.homepage}}" target="_blank" class="text-dark break-word"><p><i class="fas fa-external-link-alt"></i> @{{movie.homepage}}</p></a>
-			</div>
+            <div ng-if="movie.external_ids.facebook_id.length>0 || movie.external_ids.instagram_id.length>0 || movie.external_ids.twitter_id.length>0">
+                <div class="h6 pt-1">{{ __('general.links') }}</div>
+                <p>
+                    <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="{{config('constants.facebook.link')}}@{{movie.external_ids.facebook_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}" ng-if="movie.external_ids.facebook_id.length>0"><i class="fab fa-facebook-square"></i></a>
+                    <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="{{config('constants.instagram.link')}}@{{movie.external_ids.instagram_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}" ng-if="movie.external_ids.instagram_id.length>0"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="{{config('constants.twitter.link')}}@{{movie.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}" ng-if="movie.external_ids.twitter_id.length>0"><i class="fab fa-twitter-square"></i></a>
+                </p>
+            </div>
 			<div ng-if="movie.belongs_to_collection">
 				<div class="h6 pt-1">@{{movie.belongs_to_collection.name}}</div>
 				<div ng-repeat="c in collection"><a ng-href="/movie/@{{c.id}}" target={{$target}} class="text-dark">@{{c.title + (c.release_date ? ' (' + c.release_date.substring(0, 4) + ')' : '') }}</a></div>
