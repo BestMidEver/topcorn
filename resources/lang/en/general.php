@@ -222,7 +222,7 @@ return [
     'share' => 'Share',                                                     //movie,
     'show_all' => 'Show All',                                               //series,           ////////////////
     'show_crew' => 'Show Crew',                                             //accountinterface,  
-    'show_everyone' => 'Show Full Cast',                                    //movie,
+    'show_everyone' => 'Show Everyone',                                    //movie,
     'show_watched_movies' => 'Bring Already Seens Too',                     //recommendations,      /////////////////
     'similar_movies' => 'Similar Movies',                                   //movie,      /////////////////
     'similar_series' => 'Similar Series',                                   //series,      /////////////////
