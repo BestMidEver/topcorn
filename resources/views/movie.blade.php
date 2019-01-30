@@ -180,7 +180,7 @@
 			</div>
 			<div ng-if="movie.runtime > 0">
 				<div class="h6 pt-1">{{ __('general.runtime') }}</div>
-				<p>@{{movie.runtime}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
+				<p>@{{movie.runtime}} {{ __('general.time_minutes') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
 			</div>
 			<div ng-if="movie.budget > 0 && movie.budget != 0">
 				<div class="h6 pt-1">{{ __('general.budget') }}</div>

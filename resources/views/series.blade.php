@@ -224,7 +224,7 @@
             </div>
             <div ng-if="page_variables.active_tab_1==-1 && series.episode_run_time[0] > 0">
                 <div class="h6 pt-1">{{ __('general.runtime') }}</div>
-                <p>@{{series.episode_run_time[0]}} {{ __('general.minute') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
+                <p>@{{series.episode_run_time[0]}} {{ __('general.time_minutes') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
             </div>
             <div ng-if="series.last_episode_to_air">
                 <div class="h6 pt-1">{{ __('general.last_episode') }}</div>
