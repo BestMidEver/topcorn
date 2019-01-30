@@ -261,7 +261,7 @@
             <p class="h6 pt-3 pt-md-0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}} • @{{series.episodes[page_variables.active_tab_2-1].name}}</p>
             <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length > 0"><p>@{{series.episodes[page_variables.active_tab_2-1].overview}}</p></div>
             <div class="pt-2" ng-if="series.episodes[page_variables.active_tab_2-1].overview.length == 0"><p>{{ __('general.no_overview_found') }}</p></div>
-            <div>
+            <div ng-if="series.episodes[page_variables.active_tab_2-1].air_date.length>0">
                 <div class="h6 pt-1"><span>{{ ucwords(__('general.air_date')) }}</span></div>
                 <p><span class="d-inline">@{{series.episodes[page_variables.active_tab_2-1].air_date}}</p>
             </div>
