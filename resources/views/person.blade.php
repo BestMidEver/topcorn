@@ -63,7 +63,7 @@
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">{{ __('general.series') }}</button>
 		</li>
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='images';switch_tab()">{{ ucfirst(__('general.images')) }}</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='images';switch_tab()">{{ __('general.gallery') }}</button>
 		</li>
 	</ul>
 </div>
@@ -76,7 +76,7 @@
 <div class="scrollmenu my-3 d-md-none tab2">
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">{{ __('general.p_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">{{ __('general.series') }}</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='images';switch_tab()">{{ ucfirst(__('general.images')) }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='images';switch_tab()">{{ __('general.gallery') }}</button>
 </div>
 <!-- Tabs Button Mobile -->
 
