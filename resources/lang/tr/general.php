@@ -19,7 +19,9 @@ return [
     'add_review' => 'Eleştiri Ekle',                                                    //movie,
     'advanced_recommendations' => 'Gelişmiş Tavsiyeler',                                //accountinterface,
     'ago_message' => 
-        ':created_at önce ekledi, en son :updated_at önce güncelledi.',                 //list,   
+        ':created_at önce ekledi, en son :updated_at önce güncelledi.',                 //list,
+    'airs_days_later' =>
+        '<span class="h5 text-warning">{{movie.day_difference_next}}</span> gün sonra yayınlanacak', //profile,   ////////////////////
     'all' => 'Hepsi',                                                                   //profile,
     'all_movies' => 'Bütün Filmler',                                                    //recommendations,          
     'author' => 'Yaratıcı',         
