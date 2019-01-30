@@ -151,6 +151,7 @@ return [
     'no_overview_found' => 'No overview found.',                            //series      //////////////////
     'no_result' => 'No result',                                             //profile,
     'no_result_review' => 'No review',                                      //movie
+    'not_found' => 'Not found.',                                            //person      //////////////////
     'not_sure' => 'Not Sure',                                               //ratemodal, profile,
     'not_sure_movies' => 'The Movies I Am Not Sure About',                  //recommendations,      
     'novel' => 'Novel',                                                     //person,

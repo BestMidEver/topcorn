@@ -137,6 +137,9 @@
 				</a>
 			</div>
 		</div>
+		<div class="p-5" ng-show="!profile_images.length>0">
+			<div class="text-muted text-center">{{ __('general.not_found') }}</div>
+		</div>
 	</div>
 
 	<div class="card-columns mt-4" ng-if="page_variables.image_tab=='tagged'">
@@ -148,8 +151,8 @@
 				</a>
 			</div>
 		</div>
-		<div class="p-5" ng-show="tagged_images.results.length==0">
-			<div class="text-muted text-center">{{ __('general.no_result') }}</div>
+		<div class="p-5" ng-show="!tagged_images.results.length>0">
+			<div class="text-muted text-center">{{ __('general.not_found') }}</div>
 		</div>
 	</div>
 
