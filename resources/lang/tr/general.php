@@ -110,7 +110,7 @@ return [
     'like_count' => 'beğeni',                                                                           //list          
     'like_counts' => 'beğeni',                                                                          //list          
     'like_number' => 'Aldığı beğeni sayısı',                                                            //profile                 
-    'links' => 'Bağlantılar',                                                                           //series
+    'links' => 'Bağlantılar',                                                                           //series,account,
     'loading' => 'Yükleniyor...',                                                                       //series,
     'login_via_facebook' => 'Facebook ile Bağlan',                                                      //login, register,
     'low' => 'Düşük',                                                                                   //accountinterface,
@@ -171,7 +171,7 @@ return [
         '{{in:suffix}} <span class="pr-2"> sonuç içinde</span> {{from:suffix}} - {{to:suffix}}',        //pagination,
     'password' => 'Şifre',                                                                              //login, register, account,
     'password_confirmation' => 'Tekrar Şifre',                                                          //register
-    'people_who_liked_this_also_liked' => 'Bunu Beğenenlerin Diğer Beğendikleri',                       //series,movie,
+    'people_who_liked_this_also_liked' => 'Bunu Beğenenlerin Beğenebilecekleri',                        //series,movie,
     'person' => 'Kişi',                         
     'personal_website' => 'Kişisel İnternet Sitesi',                                                    //account           
     'person_time' => 'oy',                                                                              //movie,
@@ -184,7 +184,6 @@ return [
     'producer_countries' => 'Yapımcı Ülkeler',                          
     'producer_country' => 'Yapımcı Ülke',                           
     'profile' => 'Profil',                                                                              //account,
-    'profile_links' => 'Profilde paylaşılan bağlantılar',                                               //account,
     'profile_photo' => 'Profil Fotoğrafı',                                                              //account,
     'profile_photos' => 'Profil Fotoğrafları',                                                          //person,
     'pw_updated' => 'Şifreniz başarıyla güncellendi.',                                                  //account,

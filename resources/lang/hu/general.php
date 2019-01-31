@@ -110,7 +110,7 @@ return [
     'like_count' => 'Tetszik-ek száma',                                                                 //list          
     'like_counts' => 'Tetszik-ek száma',                                                                //list         
     'like_number' => 'A felhasználó ennyire kedvelt',                                                   //profile          
-    'links' => 'Linkek',                                                                                //series
+    'links' => 'Linkek',                                                                                //series,account
     'loading' => 'Töltődik...',                                                                         //series,
     'login_via_facebook' => 'Belépés Facebook-on keresztül',                                            //login, register,
     'low' => 'Alacsony adatforgalom',                                                                   //accountinterface,
@@ -184,7 +184,6 @@ return [
     'producer_countries' => 'Gyártó országok',                                                          //movie
     'producer_country' => 'Gyártó ország',                                                              //movie
     'profile' => 'Profil',                                                                              //account,
-    'profile_links' => 'Profile links',                                                                 //account           ///////////////    
     'pw_updated' => 'Sikeresen megváltoztattad a jelszavadat.',                                         //account,
     'profile_photo' => 'Profilkép',                                                                     //account,
     'profile_photos' => 'Profilképek',                                                                  //person,

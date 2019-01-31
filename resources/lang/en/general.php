@@ -110,7 +110,7 @@ return [
     'like_count' => 'like',                                                                         //list          
     'like_counts' => 'likes',                                                                       //list      
     'like_number' => 'Total like that user got',                                                    //profile                 
-    'links' => 'Links',                                                                             //series,
+    'links' => 'Links',                                                                             //series,account,
     'loading' => 'Loading...',                                                                      //series,
     'login_via_facebook' => 'Login via Facebook',                                                   //login, register,
     'low' => 'Low',                                                                                 //accountinterface,
@@ -171,7 +171,7 @@ return [
         '{{from:suffix}} - {{to:suffix}} <span class="px-2">of</span> {{in:suffix}}',               //pagination,
     'password' => 'Password',                                                                       //login, register, account,
     'password_confirmation' => 'Password Confirmation',                                             //register,
-    'people_who_liked_this_also_liked' => 'People Who Liked This Also Liked',                       //series,
+    'people_who_liked_this_also_liked' => 'If You Liked This You Might Also Like',                  //series,
     'person' => 'Person',                                                                           //search,
     'personal_website' => 'Personal Link',                                                          //account           
     'person_time' => 'vote',                                                                        //movie,
@@ -184,7 +184,6 @@ return [
     'producer_countries' => 'Producer Countries',                                                   //movie,
     'producer_country' => 'Producer Country',                                                       //movie,
     'profile' => 'Profile',                                                                         //account,person
-    'profile_links' => 'Profile links',                                                             //account,          
     'pw_updated' => 'Your password has been changed successfully.',                                 //account,
     'profile_photo' => 'Profile Photo',                                                             //account,
     'profile_photos' => 'Profile Photos',                                                           //person,
