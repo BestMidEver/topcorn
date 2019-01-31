@@ -126,7 +126,7 @@ return array(
 
   ),
 
-  'version' => 2,
+  'version' => 3,
 
 
 );

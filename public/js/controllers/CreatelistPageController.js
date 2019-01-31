@@ -17,7 +17,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		if(temp.length == 0){
 			movie.movies='';
 		}else{
-			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1)
+			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1, 'movies')
 			.then(function(response){
 				console.log(response.data);
 				movie.movies=response.data.results.slice(0, 10);
