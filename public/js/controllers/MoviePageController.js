@@ -72,10 +72,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				url: 'https://api.themoviedb.org/3/collection/'+desireddata.belongs_to_collection.id+'?api_key='+pass.api_key+'&language='+pass.lang
 			}).then(function successCallback(response) {
 				$scope.collection=_.sortBy(response.data.parts, 'release_date');
+				$scope.page_variables.active_tab_3 = 3;
 				console.log('collection', $scope.collection);
 			}, function errorCallback(response) {
 			});
-		}
+		}else $scope.page_variables.active_tab_3 = 0;
 		$http({
 			method: 'GET',
 			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
@@ -165,9 +166,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	}
 
 	$scope.page_variables={};
-	$scope.page_variables.active_tab_3 = 0;
 	$scope.set_recommendations = function(){
-		if($scope.page_variables.active_tab_3 == 0){
+		if($scope.page_variables.active_tab_3 == 3){
+			external_internal_data_merger.merge_user_movies_to_external_data($scope.collection, $scope.user_movies);
+			$scope.similar_movies=$scope.collection;
+		}if($scope.page_variables.active_tab_3 == 0){
 			external_internal_data_merger.merge_user_movies_to_external_data($scope.movie.recommendations.results, $scope.user_movies);
 			$scope.similar_movies=$scope.movie.recommendations.results;
 		}else{
