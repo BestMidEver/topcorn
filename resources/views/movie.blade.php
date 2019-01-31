@@ -362,11 +362,11 @@
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;">{{ __('general.movie_lists_title') }}</button>
         </div>
     </div>
-    <span class="text-muted" ng-if="page_variables.active_tab_3<2"><small>Sorted by relevance</small></span>
+    <span class="text-muted" ng-if="page_variables.active_tab_3!=2"><small>Sorted by relevance</small></span>
 	<a href="/createlist/new" class="btn btn-outline-success" ng-if="page_variables.active_tab_3==2" target="{{$target}}">
 		<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 	</a>
-	<div ng-if="page_variables.active_tab_3<2">
+	<div ng-if="page_variables.active_tab_3!=2">
     @include('layout.moviecard_6')
 	</div>
 	<div class="p-5" ng-show="(page_variables.active_tab_3==2 && listes.length==0) || !similar_movies.length>0">
