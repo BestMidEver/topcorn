@@ -51,7 +51,10 @@ class seriesController extends Controller
                     $join->on('r2.series_id', '=', 'series_recommendations.series_id')
                     ->where('r2.user_id', Auth::user()->id);
                 })
-                ->leftjoin('series_seens', 'series_seens.series_id', '=', 'series.id')
+                ->leftjoin('series_seens', function ($join) {
+                    $join->on('series_seens.series_id', '=', 'series.id')
+                    ->where('series_seens.user_id', '=', Auth::user()->id);
+                })
                 ->select(
                     'series.id as series_id',
                     'series_rateds.id as rated_id',
