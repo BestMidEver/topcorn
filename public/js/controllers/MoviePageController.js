@@ -170,6 +170,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if($scope.page_variables.active_tab_3 == 3){
 			external_internal_data_merger.merge_user_movies_to_external_data($scope.collection, $scope.user_movies);
 			$scope.similar_movies=$scope.collection;
+			console.log($scope.similar_movies)
 		}if($scope.page_variables.active_tab_3 == 0){
 			external_internal_data_merger.merge_user_movies_to_external_data($scope.movie.recommendations.results, $scope.user_movies);
 			$scope.similar_movies=$scope.movie.recommendations.results;
