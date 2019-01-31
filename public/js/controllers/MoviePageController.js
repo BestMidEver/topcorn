@@ -177,7 +177,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			external_internal_data_merger.merge_user_movies_to_external_data($scope.movie.similar.results, $scope.user_movies);
 			$scope.similar_movies=$scope.movie.similar.results;
 		}
-			console.log($scope.similar_movies)
+		console.log($scope.similar_movies, $scope.page_variables.active_tab_3)
 	}
 
 
