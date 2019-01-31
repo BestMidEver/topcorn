@@ -37,6 +37,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 /////////////////////////////////// RETRIEVE LISTCARD DATA ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
+	$scope.page_variables={};
 
 	if(pass.is_auth == 1){
 		$http({
@@ -165,7 +166,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.trailerurl=$sce.trustAsResourceUrl('https://www.youtube.com/embed/'+$scope.movie.videos.results[$scope.current_trailer].key);
 	}
 
-	$scope.page_variables={};
 	$scope.set_recommendations = function(){
 		if($scope.page_variables.active_tab_3 == 3){
 			external_internal_data_merger.merge_user_movies_to_external_data($scope.collection, $scope.user_movies);
