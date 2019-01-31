@@ -40,7 +40,6 @@
 								</span>
 							</div>
 							<div class="text-white" ng-if="!movie.last_seen_air_date.length>0 && movie.last_episode_air_date.length>0">
-								<small>{{ __('general.first_episode') }}</small>
 								<span class="d-block"><span class="h5 text-warning">
 									<span class="h5 text-warning">{{ __('general.unseen') }}</span>
 								</span>
