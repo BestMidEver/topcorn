@@ -350,7 +350,7 @@
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-hide="is_waiting">
     <div class="dropdown d-inline mr-2">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="h5" ng-if="page_variables.active_tab_3==3">@{{movie.belongs_to_collection.name}}</span>
+        <span class="h5" ng-show="page_variables.active_tab_3==3">@{{movie.belongs_to_collection.name}}</span>
         <span class="h5" ng-if="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>
         <span class="h5" ng-if="page_variables.active_tab_3==1">{{ __('general.similar_movies') }}</span>
         <span class="h5" ng-if="page_variables.active_tab_3==2">{{ __('general.movie_lists_title') }}</span>
@@ -366,7 +366,7 @@
 	<a href="/createlist/new" class="btn btn-outline-success" ng-if="page_variables.active_tab_3==2" target="{{$target}}">
 		<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 	</a>
-	<div ng-if="page_variables.active_tab_3!=2">
+	<div ng-show="page_variables.active_tab_3!=2">
     @include('layout.moviecard_6')
 	</div>
 	<div class="p-5" ng-show="(page_variables.active_tab_3==2 && listes.length==0) || !similar_movies.length>0">
