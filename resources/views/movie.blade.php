@@ -198,10 +198,6 @@
                     <a class="btn btn-link btn-sm fa40 text-muted px-0 mr-2" ng-href="{{config('constants.twitter.link')}}@{{movie.external_ids.twitter_id}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}" ng-if="movie.external_ids.twitter_id.length>0"><i class="fab fa-twitter-square"></i></a>
                 </p>
             </div>
-			<div ng-if="movie.belongs_to_collection">
-				<div class="h6 pt-1">@{{movie.belongs_to_collection.name}}</div>
-				<div ng-repeat="c in collection"><a ng-href="/movie/@{{c.id}}" target={{$target}} class="text-dark">@{{c.title + (c.release_date ? ' (' + c.release_date.substring(0, 4) + ')' : '') }}</a></div>
-			</div>
 		</div>
 	</div>
 </div>
