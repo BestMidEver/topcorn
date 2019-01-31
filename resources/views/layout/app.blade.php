@@ -13,7 +13,7 @@
         @show
     </title>
 
-    <link rel="icon" type="image/png" href="/images/topcorn_logo.png">
+    <link rel="icon" type="image/png" href="/images/topcorn_logo.png?v={{config('constants.version')}}">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/style.css?v={{config('constants.version')}}">
@@ -43,9 +43,9 @@
 
     @yield('passdata')
 
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js?v={{config('constants.version')}}"></script>
 
-    <script src="/js/functions/rate_by_index.js"></script>
+    <script src="/js/functions/rate_by_index.js?v={{config('constants.version')}}"></script>
 
     @yield('external_internal_data_merger')
 

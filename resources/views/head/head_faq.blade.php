@@ -17,7 +17,7 @@ pass={
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/FaqPageController.js"></script>
+<script src="/js/controllers/FaqPageController.js?v={{config('constants.version')}}"></script>
 @endsection
 @section('controllername','FaqPageController')
 

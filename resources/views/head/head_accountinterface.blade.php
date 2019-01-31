@@ -23,7 +23,7 @@ pass={
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/AccountInterfacePageController.js"></script>
+<script src="/js/controllers/AccountInterfacePageController.js?v={{config('constants.version')}}"></script>
 @endsection
 @section('controllername','AccountInterfacePageController')
 

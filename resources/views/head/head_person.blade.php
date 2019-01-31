@@ -12,7 +12,7 @@ pass={
 	@endif
 };
 </script>
-<script src="/js/code_translations/{{ App::getlocale() }}/jobs.js"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/jobs.js?v={{config('constants.version')}}"></script>
 @endsection
 
 @section('underscore')
@@ -20,15 +20,15 @@ pass={
 @endsection
 
 @section('external_internal_data_merger')
-<script src="/js/functions/external_internal_data_merger.js"></script>
+<script src="/js/functions/external_internal_data_merger.js?v={{config('constants.version')}}"></script>
 @endsection
 
 @section('age_calculator')
-<script src="/js/functions/age_calculator.js"></script>
+<script src="/js/functions/age_calculator.js?v={{config('constants.version')}}"></script>
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/PersonPageController.js"></script>
+<script src="/js/controllers/PersonPageController.js?v={{config('constants.version')}}"></script>
 @endsection
 @section('controllername', 'PersonPageController')
 

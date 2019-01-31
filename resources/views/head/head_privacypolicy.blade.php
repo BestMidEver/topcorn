@@ -17,7 +17,7 @@ pass={
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/PrivacypolicyPageController.js"></script>
+<script src="/js/controllers/PrivacypolicyPageController.js?v={{config('constants.version')}}"></script>
 @endsection
 @section('controllername','PrivacypolicyPageController')
 

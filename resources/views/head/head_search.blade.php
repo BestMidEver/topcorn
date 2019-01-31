@@ -17,11 +17,11 @@ pass={
 @endsection
 
 @section('external_internal_data_merger')
-<script src="/js/functions/external_internal_data_merger.js"></script>
+<script src="/js/functions/external_internal_data_merger.js?v={{config('constants.version')}}"></script>
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/SearchPageController.js"></script>
+<script src="/js/controllers/SearchPageController.js?v={{config('constants.version')}}"></script>
 @endsection
 @section('controllername','SearchPageController')
 

@@ -18,9 +18,9 @@ pass={
 	"constants_angular_slider_min_vote_count":"{{config('constants.angular_slider.vote_count')}}"
 };
 </script>
-<script src="/js/code_translations/{{ App::getlocale() }}/genres.js"></script>
-<script src="/js/code_translations/{{ App::getlocale() }}/series_genres.js"></script>
-<script src="/js/code_translations/{{ App::getlocale() }}/languages.js"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/genres.js?v={{config('constants.version')}}"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/series_genres.js?v={{config('constants.version')}}"></script>
+<script src="/js/code_translations/{{ App::getlocale() }}/languages.js?v={{config('constants.version')}}"></script>
 @endsection
 
 @section('angular_slider')
@@ -32,7 +32,7 @@ pass={
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/RecommendationsPageController.js"></script>
+<script src="/js/controllers/RecommendationsPageController.js?v={{config('constants.version')}}"></script>
 @endsection
 @section('controllername' ,'RecommendationsPageController')
 
