@@ -60,11 +60,11 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				console.log("seriesscope", $scope.series)
 			}, function errorCallback(response_2) {
 				console.log('error2')
-				//window.location.replace("/not-found");
+				window.location.replace("/not-found");
 			});
 		}, function errorCallback(response) {
 			console.log('error1')
-			//window.location.replace("/not-found");
+			window.location.replace("/not-found");
 		});
 	}
 	$scope.pull_data();
