@@ -307,7 +307,7 @@
 			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>
 	</div>
 	<div class="dropdown d-inline mr-2" ng-show="movie.reviews.results.length>1">
-		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> 
 			<span ng-show="page_variables.reviews_sort_by=='most_liked'">{{ __('general.most_liked') }}</span>
 			<span ng-show="page_variables.reviews_sort_by=='newest'">{{ __('general.newest') }}</span>
