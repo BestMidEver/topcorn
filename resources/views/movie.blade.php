@@ -308,7 +308,7 @@
 	</div>
 	<div class="container-fluid">
 		<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
-			<div class="d-flex justify-content-center">
+			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2">@{{review.author}}</div>
 				<div class="h6 pb-2">@{{review.author}}</div>
 			</div>
