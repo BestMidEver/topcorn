@@ -132,6 +132,7 @@ return [
     'moviecard_percent' => '{{:suffix}}%',                                                              //recommendations,  
     'movies' => 'Film',                                                     
     'movie_details' => 'Film részletei',                                                                //movie,
+    'most_liked' => 'Most Liked',                                                                       //movie,    /////////////////////
     'most_rated' => 'Legnépszerűbb',                            
     'most_populer' => 'Legnépszerűbb',                                                                  //recommendations,
     'movies_original_language' => 'A film eredeti nyelve',                                              //recommendations,

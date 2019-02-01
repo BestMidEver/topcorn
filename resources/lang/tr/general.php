@@ -132,6 +132,7 @@ return [
     'moviecard_percent' => '%{{:suffix}}',                                                              //recommendations,
     'movies' => 'Film',                                                                                 //person,
     'movie_details' => 'Film Detayları',                
+    'most_liked' => 'En Çok Beğenilen',                                                                 //movie,
     'most_rated' => 'En Çok Oylanan',               
     'most_populer' => 'En Popüler',                                                                     //recommendations,
     'movies_original_language' => 'Filmin Orijinal Dili',                                               //accountinterface,

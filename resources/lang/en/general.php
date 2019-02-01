@@ -132,6 +132,7 @@ return [
     'moviecard_percent' => '{{:suffix}}%',                                                          //recommendations,
     'movies' => 'movies',                                                                           //person,
     'movie_details' => 'Movie Details',                                                             //movie,
+    'most_liked' => 'Most Liked',                                                                   //movie,
     'most_rated' => 'Most Rated',                                                                   //person,
     'most_populer' => 'Most Popular',                                                               //recommendations,
     'movies_original_language' => 'The Original Language of the Movie',                             //accountinterface,
