@@ -310,7 +310,12 @@
 		<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
 			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2">@{{review.author}}</div>
-				<div class="h6 pb-2">@{{review.author}}</div>
+				<div class="h6 pb-2">
+					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 px-lg-4 addseen opacity-1" ng-click="like_list()">
+						<div><i class="fas fa-heart" ng-show="false"></i><i class="far fa-heart"></i> 12</div>
+						likes
+					</button>
+				</div>
 			</div>
 			<div id="@{{'accordion'+$index}}">
 				<div ng-if="review.id == 'long'">
