@@ -333,7 +333,7 @@
 							</button>
 							@endif
 						@endif
-						<div ng-if="review.id == 'long'">
+						<div ng-if="review.id == 'long'" class="d-inline">
 							<div class="text-center pt-1">
 								<button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
 							</div>
