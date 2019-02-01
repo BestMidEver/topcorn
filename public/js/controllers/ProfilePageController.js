@@ -285,7 +285,7 @@ $scope.switch_seen_unseen = function(mode){
 	$scope.later=function(index)
 	{
 		console.log(index, $scope.page_variables.movies_or_series)
-		if($scope.page_variables.movies_or_series == 'movie'){
+		if($scope.page_variables.movies_or_series == 'movies'){
 			f1 = 'add_later';
 			f2 = 'un_later';
 			v1 = 'later_id';
@@ -316,7 +316,7 @@ $scope.switch_seen_unseen = function(mode){
 	$scope.rate=function(index, rate_code)
 	{
 		console.log(index, rate_code)
-		if($scope.page_variables.movies_or_series == 'movie'){
+		if($scope.page_variables.movies_or_series == 'movies'){
 			f1 = 'add_rate';
 			f2 = 'un_rate';
 			v1 = 'rated_id';
@@ -356,7 +356,7 @@ $scope.switch_seen_unseen = function(mode){
 	$scope.ban=function(index)
 	{
 		console.log(index)
-		if($scope.page_variables.movies_or_series == 'movie'){
+		if($scope.page_variables.movies_or_series == 'movies'){
 			f1 = 'add_ban';
 			f2 = 'un_ban';
 			v1 = 'ban_id';
