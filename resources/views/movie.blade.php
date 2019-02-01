@@ -298,23 +298,23 @@
 <div class="container-fluid px-0 mt-5">	
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<span class="mb-0 pr-2 align-middle mt-3">{{ __('general.reviews') }}</span>
-		<button ng-click="" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-outline-secondary addblack border-0"
+		<!--<button ng-click="" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-outline-secondary addblack border-0"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
             @endif
-			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>
+			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>-->
 	</div>
 	<div class="container-fluid">
 		<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
 			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2">@{{review.author}}</div>
-				<div class="h6">
+				<!--<div class="h6">
 					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen" ng-click="like_list()">
 						<div><i class="fas fa-heart" ng-show="false"></i><i class="far fa-heart"></i> 12</div>
 					</button>
-				</div>
+				</div>-->
 			</div>
 			<div id="@{{'accordion'+$index}}">
 				<div ng-if="review.id == 'long'">

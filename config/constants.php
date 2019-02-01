@@ -2,6 +2,16 @@
 
 return array(
 
+  'api_key' => 'ead313dad89e27e7f2c9bdc7d6c12b71',
+
+
+
+
+  'version' => 4,
+
+
+
+
   'image' => array(
 
     'fb_http' => 'http://image.tmdb.org/t/p/w200',
@@ -103,11 +113,6 @@ return array(
 
 
 
-  'api_key' => 'ead313dad89e27e7f2c9bdc7d6c12b71',
-
-
-
-
   'angular_slider' => array(
 
     'min_value' => 1917,
@@ -125,8 +130,6 @@ return array(
     'ethereum' => '0xd389f3125126a98407831b007a516a7fdb4344a2',
 
   ),
-
-  'version' => 4,
 
 
 );
