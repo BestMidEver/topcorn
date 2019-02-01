@@ -359,7 +359,7 @@
         <form>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Memento</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <textarea rows="5" class="form-control" id="message-text"></textarea>
           </div>
         </form>
       </div>
