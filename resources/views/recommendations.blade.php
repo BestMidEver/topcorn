@@ -226,7 +226,10 @@
 
 
 <!-- Filter secion -->
-<div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter" ng-hide="active_tab=='top_rated'">
+<div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter"
+	@if(auth::guest()) ng-hide="active_tab=='top_rated'"
+	@endif
+	>
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="mt-3 pb-3">
