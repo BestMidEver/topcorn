@@ -298,13 +298,13 @@
 <div class="container-fluid px-0 mt-5">	
 	<div class="h5 px-3 px-md-0">
 		<span class="mb-0 pr-2">{{ __('general.reviews') }}</span>
-		<a href="https://www.themoviedb.org/movie/{{$id}}/reviews" class="btn btn-outline-success" target="_blank"
+		<button ng-click="" class="btn btn-outline-success"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
             @endif
-			><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</a>
+			><i class="fas fa-pencil-alt"></i> {{ __('general.add_review') }}</button>
 	</div>
 	<div class="dropdown d-inline mr-2" ng-show="movie.reviews.results.length>1">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
