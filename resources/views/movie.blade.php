@@ -296,8 +296,8 @@
 
 <!--Review Section-->
 <div class="container-fluid px-0 mt-5">	
-	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between align-middle">
-		<span class="mb-0 pr-2 align-middle">{{ __('general.reviews') }}</span>
+	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
+		<span class="mb-0 pr-2 align-middle mt-1">{{ __('general.reviews') }}</span>
 		<button ng-click="" class="btn btn-outline-secondary addblack border-0"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
