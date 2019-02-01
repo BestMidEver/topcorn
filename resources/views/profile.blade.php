@@ -88,7 +88,7 @@
 		@endif
 	</div>
 	@endif
-	<div class="right-bottom pr-2 fa30">{{$another_link_url}}|{{$another_link_name}}|
+	<div class="right-bottom pr-2 fa30">
 		@if($another_link_url)
 		<a class="btn btn-link mb-2 text-light btn-sm" ng-if="'{{$another_link_url}}' != ''" href="{{$another_link_url}}" data-toggle="tooltip" data-placement="top" title="{{ $another_link_url }}" target="_blank"><span class="h6">{{$another_link_name ? $another_link_name : __('general.personal_website')}}</span></a>
 		@endif
