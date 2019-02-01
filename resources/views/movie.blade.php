@@ -327,7 +327,7 @@
 						</div>
 						@if(Auth::check())
 							@if(Auth::id()==7)
-							<button class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addseen opacity-1" ng-click="like_list()">
+							<button class="btn btn-outline-secondary btn-sm border-0 mt-0 px-lg-4 addseen opacity-1" ng-click="like_list()">
 								<div><i class="fas fa-heart" ng-show="false"></i><i class="far fa-heart"></i> 12</div>
 								likes
 							</button>
