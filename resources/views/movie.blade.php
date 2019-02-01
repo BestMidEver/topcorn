@@ -358,7 +358,7 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Memento</label>
+            <label for="message-text" class="col-form-label text-muted">Memento (2000)</label>
             <textarea rows="5" class="form-control" id="message-text"></textarea>
           </div>
         </form>
