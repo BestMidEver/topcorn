@@ -72,12 +72,6 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 	$scope.implement_static_data = function(){
 		if($scope.page_variables.active_tab_1 == -1){
 			$scope.movie = $scope.series;
-			$scope.page_variables.number_of_seasons = $scope.series.number_of_seasons;
-			$scope.page_variables.number_of_episodes = $scope.series.number_of_episodes;
-			$scope.page_variables.vote_average = $scope.series.vote_average;
-			$scope.page_variables.vote_count = $scope.series.vote_count;
-			$scope.page_variables.name = $scope.series.name;
-			$scope.page_variables.seasons = $scope.series.seasons;
 			if($scope.series.networks.length>0) $scope.page_variables.network_logo = $scope.series.networks[0].logo_path.split('.')[0]+'.svg';
 		}
 	}
@@ -434,7 +428,6 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				if(temp.length>0){
 					episode=temp[0].episode_number;
 					season=temp[0].season_number;
-				}else if($scope.movie.in_production || $scope.page_variables.active_tab_1!=$scope.page_variables.seasons[$scope.page_variables.seasons.length-1].season_number){
 					episode=1;
 					season=$scope.page_variables.active_tab_1+1;
 				}else{

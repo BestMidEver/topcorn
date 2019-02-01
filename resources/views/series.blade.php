@@ -13,7 +13,7 @@
                     <div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
                         <div class="d-flex flex-row no-gutters">
                             <div class="col pt-2 pl-2">
-                                <span class="text-white h6 lead lead-small" ng-if="page_variables.number_of_seasons>0">@{{page_variables.number_of_seasons}} <span ng-if="page_variables.number_of_seasons>1">{{ __("general.seasons") }}</span><span ng-if="page_variables.number_of_seasons==1">{{ __("general.season") }}</span> - @{{page_variables.number_of_episodes}} <span ng-if="page_variables.number_of_episodes>1">{{ __("general.episodes") }}</span><span ng-if="page_variables.number_of_episodes==1">{{ __("general.episode") }}</span></span>
+                                <span class="text-white h6 lead lead-small" ng-if="movie.number_of_seasons>0">@{{movie.number_of_seasons}} <span ng-if="movie.number_of_seasons>1">{{ __("general.seasons") }}</span><span ng-if="movie.number_of_seasons==1">{{ __("general.season") }}</span> - @{{movie.number_of_episodes}} <span ng-if="movie.number_of_episodes>1">{{ __("general.episodes") }}</span><span ng-if="movie.number_of_episodes==1">{{ __("general.episode") }}</span></span>
                             </div>
                             <div class="col p-2 text-right">
                                 <div ng-if="user_movie_record.percent > 0">
@@ -36,9 +36,9 @@
                         </div>
                         <div class="d-flex flex-row justify-content-between p-2">
                             <div class="d-flex flex-column justify-content-end ml-2 mb-2"><img ng-src="{{config('constants.image.original')}}@{{page_variables.network_logo}}" on-error-src="" class="network-logo" alt=""></div>
-                            <div ng-if="page_variables.vote_average > 0" class="text-right">
-                                <div><span class="text-warning display-4 d-none d-md-inline">@{{page_variables.vote_average}}</span><span class="text-warning h5 d-md-none">@{{page_variables.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="page_variables.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
+                            <div ng-if="movie.vote_average > 0" class="text-right">
+                                <div><span class="text-warning display-4 d-none d-md-inline">@{{movie.vote_average}}</span><span class="text-warning h5 d-md-none">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+                                <div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="d-flex flex-row background-black no-gutters pl-2 pt-2 pb-3">
                         <div class="col">
                             <div class="h-100 d-flex flex-column justify-content-center pl-2">
-                                <span class="text-white h6 lead lead-small" ng-if="page_variables.number_of_seasons>0">@{{page_variables.number_of_seasons}} <span ng-if="page_variables.number_of_seasons>1">{{ __("general.seasons") }}</span><span ng-if="page_variables.number_of_seasons==1">{{ __("general.season") }}</span> - @{{page_variables.number_of_episodes}} <span ng-if="page_variables.number_of_episodes>1">{{ __("general.episodes") }}</span><span ng-if="page_variables.number_of_episodes==1">{{ __("general.episode") }}</span></span>
+                                <span class="text-white h6 lead lead-small" ng-if="movie.number_of_seasons>0">@{{movie.number_of_seasons}} <span ng-if="movie.number_of_seasons>1">{{ __("general.seasons") }}</span><span ng-if="movie.number_of_seasons==1">{{ __("general.season") }}</span> - @{{movie.number_of_episodes}} <span ng-if="movie.number_of_episodes>1">{{ __("general.episodes") }}</span><span ng-if="movie.number_of_episodes==1">{{ __("general.episode") }}</span></span>
                             </div>
                         </div>
                         <div class="col pb-2 pr-2 text-right">
@@ -93,9 +93,9 @@
                             </div>
                         </div>
                         <div class="col pb-2 pr-2 text-right">
-                            <div ng-if="page_variables.vote_average > 0">
-                                <div><span class="text-warning h4 d-none d-md-inline">@{{page_variables.vote_average}}</span><span class="text-warning h5 d-md-none">@{{page_variables.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
-                                <div><span class="text-white"><small>@{{page_variables.vote_count}}</small></span><span class="text-white"> <small><span ng-if="page_variables.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="page_variables.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
+                            <div ng-if="movie.vote_average > 0">
+                                <div><span class="text-warning h4 d-none d-md-inline">@{{movie.vote_average}}</span><span class="text-warning h5 d-md-none">@{{movie.vote_average}}</span><span class="text-white"> <small>/10</small></span></div>
+                                <div><span class="text-white"><small>@{{movie.vote_count}}</small></span><span class="text-white"> <small><span ng-if="movie.vote_count == 1">{{ __('general.person_time') }}</span><span ng-if="movie.vote_count > 1">{{ __('general.person_times') }}</span></small></span></div>
                             </div>
                         </div>
                     </div>
@@ -111,8 +111,8 @@
     <div>
         <div class="d-flex flex-column">
             <div class="px-3 px-md-0">
-                <a class="text-dark" ng-href="http://www.google.com/search?q=@{{page_variables.name+' '+series.first_air_date.substring(0, 4)}}" target="_blank">
-                    <h1 class="h4 pb-2 pt-3">@{{page_variables.name}}</h1>
+                <a class="text-dark" ng-href="http://www.google.com/search?q=@{{movie.name+' '+series.first_air_date.substring(0, 4)}}" target="_blank">
+                    <h1 class="h4 pb-2 pt-3">@{{movie.name}}</h1>
                 </a>
             </div>
         </div>
@@ -137,7 +137,7 @@
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">{{ __('general.general_info') }}</button>
         </li>
-        <li class="nav-item" ng-repeat="season in page_variables.seasons">
+        <li class="nav-item" ng-repeat="season in movie.seasons">
             <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">{{ __('general.specials') }}</span></button>
         </li>
     </ul>
@@ -147,7 +147,7 @@
 <!-- Tabs_1 Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">{{ __('general.general_info') }}</button>
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in page_variables.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">{{ __('general.specials') }}</span></button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in movie.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">{{ __('general.specials') }}</span></button>
 </div>
 <!-- Tabs_1 Button Mobile -->
 
