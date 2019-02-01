@@ -72,7 +72,6 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 	$scope.implement_static_data = function(){
 		if($scope.page_variables.active_tab_1 == -1){
 			$scope.movie = $scope.series;
-			$scope.page_variables.backdrop_path = $scope.series.backdrop_path;
 			$scope.page_variables.number_of_seasons = $scope.series.number_of_seasons;
 			$scope.page_variables.number_of_episodes = $scope.series.number_of_episodes;
 			$scope.page_variables.vote_average = $scope.series.vote_average;
