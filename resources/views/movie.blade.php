@@ -308,7 +308,10 @@
 	</div>
 	<div class="container-fluid">
 		<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
-			<div class="h6 pb-2">@{{review.author}}</div>
+			<div class="d-flex justify-content-center">
+				<div class="h6 pb-2">@{{review.author}}</div>
+				<div class="h6 pb-2">@{{review.author}}</div>
+			</div>
 			<div id="@{{'accordion'+$index}}">
 				<div ng-if="review.id == 'long'">
 					<div id="@{{'collapse'+$index+'a'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse">
@@ -325,27 +328,10 @@
 						<div>
 							<div ng-bind-html="review.url"></div>
 						</div>
-						<div class="d-flex justify-content-between">
-							@if(Auth::check())
-								@if(Auth::id()==7)
-								<button class="btn btn-outline-secondary btn-sm border-0 mt-0 p-0 addseen opacity-1" ng-click="like_list()">
-									<div><i class="fas fa-heart" ng-show="false"></i><i class="far fa-heart"></i> 12</div>
-									likes
-								</button>
-								@endif
-							@endif
-							<div ng-if="review.id == 'long'">
-								<div class="text-center pt-1">
-									<button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
-								</div>
+						<div ng-if="review.id == 'long'">
+							<div class="text-center pt-1">
+								<button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
 							</div>
-							@if(Auth::check())
-								@if(Auth::id()==7)
-								<button class="btn btn-outline-secondary btn-sm border-0 mt-0 px-lg-4 addseen opacity-1" ng-click="like_list()">
-									<div><i class="fas fa-heart" ng-show="false"></i><i class="far fa-flag"></i></div>
-								</button>
-								@endif
-							@endif
 						</div>
 					</div>
 				</div>
