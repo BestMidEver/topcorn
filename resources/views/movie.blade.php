@@ -298,7 +298,7 @@
 <div class="container-fluid px-0 mt-5">	
 	<div class="h5 px-3 px-md-0 d-flex justify-content-between">
 		<span class="mb-0 pr-2">{{ __('general.reviews') }}</span>
-		<button ng-click="" class="btn btn-sm border-0 mt-0 px-lg-4 addseen"
+		<button ng-click="" class="btn btn-outline-success"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
