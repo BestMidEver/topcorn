@@ -313,7 +313,6 @@
 				<div class="h6 pb-2">
 					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen" ng-click="like_list()">
 						<div><i class="fas fa-heart" ng-show="false"></i><i class="far fa-heart"></i> 12</div>
-						likes
 					</button>
 				</div>
 			</div>
