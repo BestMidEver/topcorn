@@ -9,7 +9,7 @@
         <div id="accordion">
             <div>
                 <div id="collapseCover" class="collapse show" data-parent="#accordion">
-                    <img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{page_variables.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
+                    <img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{movie.backdrop_path}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid trailercover" alt="Responsive image">
                     <div class="custom-over-layer h-100 d-flex flex-column justify-content-between">
                         <div class="d-flex flex-row no-gutters">
                             <div class="col pt-2 pl-2">
