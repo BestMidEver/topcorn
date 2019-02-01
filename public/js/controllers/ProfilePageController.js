@@ -284,7 +284,7 @@ $scope.switch_seen_unseen = function(mode){
 
 	$scope.later=function(index)
 	{
-		console.log(index)
+		console.log(index, $scope.page_variables.movies_or_series)
 		if($scope.page_variables.movies_or_series == 'movie'){
 			f1 = 'add_later';
 			f2 = 'un_later';
