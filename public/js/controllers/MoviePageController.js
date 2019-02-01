@@ -37,7 +37,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 /////////////////////////////////// RETRIEVE LISTCARD DATA ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
-	$scope.page_variables={reviews_sort_by:'most_liked'};
+	$scope.page_variables={};
 
 	if(pass.is_auth == 1){
 		$http({
