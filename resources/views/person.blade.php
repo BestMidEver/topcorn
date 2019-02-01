@@ -142,7 +142,7 @@
 		</div>
 	</div>
 
-	<div class="card-columns mt-4" ng-if="page_variables.image_tab=='tagged'">
+	<div class="card-columns mt-4" ng-show="page_variables.image_tab=='tagged'">
 		<div class="card" ng-repeat="image in tagged_images.results">
 			<img class="card-img-top cursor-zoom-in" ng-src="{{config('constants.image.cover')[$image_quality]}}@{{image.file_path}}" alt="Card image cap" ng-click="image_full_screen(image)">
 			<div class="card-block">
