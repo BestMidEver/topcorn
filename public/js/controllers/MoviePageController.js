@@ -38,6 +38,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 //////////////////////////////////////////////////////////////////////////////////////////
 
 	$scope.page_variables={};
+	$scope.page_reviews=1;
 
 	if(pass.is_auth == 1){
 		$http({
@@ -84,6 +85,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}).then(function successCallback(response) {
 			secondarydata=response.data;
 			console.log('secondary_data',secondarydata);
+			rate.get_reviews(pass.movieid, $scope.page_reviews)
+			.then(function(response){
+				console.log(response);
+			});
 			$scope.merge_movie_data(desireddata, secondarydata);
 			$scope.prepeare_movie_data(desireddata);
 		}, function errorCallback(response) {

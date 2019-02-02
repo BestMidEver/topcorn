@@ -36,6 +36,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_reviews = function(movie_series_id, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/reviews/'+movie_series_id+'?page='page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     add_later = function(movie_id) 
     {
         return $http({
@@ -537,6 +554,7 @@ MyApp.factory('rate', function($http) {
     return {
     	get_quick_rate: get_quick_rate,
     	get_watched_movie_number: get_watched_movie_number,
+    	get_reviews: get_reviews,
     	add_later: add_later,
     	series_add_later: series_add_later,
     	un_later: un_later,
