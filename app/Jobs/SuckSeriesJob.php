@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Jobs\SuckSeriesJob;
+use App\Model\Review;
 use App\Model\Serie;
 use App\Model\Series_genre;
 use App\Model\Series_network;
@@ -38,8 +39,20 @@ class SuckSeriesJob implements ShouldQueue
      */
     public function handle()
     {
+        function set_review($series, $lang){
+            for ($k=0; $k < count($series['reviews']['results']); $k++) { 
+                $review = new Review;
+                $review->mode = 2;
+                $review->movie_series_id = $series['id'];
+                $review->tmdb_author_name = $series['reviews']['results'][$k]['author'];
+                $review->tmdb_review_id = $series['reviews']['results'][$k]['id'];
+                $review->lang = $lang;
+                $review->review = $series['reviews']['results'][$k]['content'];
+                $review->save();
+            }
+        }
         if($this->isWithRecommendation){
-            $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations'), true);
+            $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
             Series_recommendation::where(['series_id' => $this->id])->delete();
             for ($k=0; $k < count($series['recommendations']['results']); $k++) {
                 $temp = $series['recommendations']['results'][$k];
@@ -51,8 +64,8 @@ class SuckSeriesJob implements ShouldQueue
                     'rank' => 5-intval($k/4),]
                 );
             }
-            $series_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
-            $series_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu'), true);
+            $series_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr&append_to_response=reviews'), true);
+            $series_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu&append_to_response=reviews'), true);
             $first_air_date = null;
             if($series['first_air_date'] != null){$first_air_date = new Carbon($series['first_air_date']);}
             $next_episode_air_date = null;
@@ -101,15 +114,19 @@ class SuckSeriesJob implements ShouldQueue
                 $network->network_id = $series['networks'][$k]['id'];
                 $network->save();
             }
+            Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
+            set_review($series, 'en');
+            set_review($series_tr, 'tr');
+            set_review($series_hu, 'hu');
         }else{
             $is_recent = Serie::where('id', $this->id)
             ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
             ->first();
             if($is_recent) return;
             
-            $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en'), true);
-            $series_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
-            $series_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu'), true);
+            $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=reviews'), true);
+            $series_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr&append_to_response=reviews'), true);
+            $series_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu&append_to_response=reviews'), true);
             $first_air_date = null;
             if($series['first_air_date'] != null){$first_air_date = new Carbon($series['first_air_date']);}
             $next_episode_air_date = null;
@@ -158,6 +175,10 @@ class SuckSeriesJob implements ShouldQueue
                 $network->network_id = $series['networks'][$k]['id'];
                 $network->save();
             }
+            Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
+            set_review($series, 'en');
+            set_review($series_tr, 'tr');
+            set_review($series_hu, 'hu');
         }
     }
 }
