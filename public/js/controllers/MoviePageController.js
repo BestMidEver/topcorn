@@ -64,7 +64,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.temp={};
 	$http({
 		method: 'GET',
-		url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits%2Cvideos%2Creviews%2Crecommendations%2Csimilar%2Cexternal_ids'
+		url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.lang+'&append_to_response=credits,videos,recommendations,similar,external_ids'
 	}).then(function successCallback(response) {
 		desireddata=response.data;
 		console.log('desired_data',desireddata);
@@ -81,12 +81,13 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}else $scope.page_variables.active_tab_3 = 0;
 		$http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos%2Creviews'
+			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos'
 		}).then(function successCallback(response) {
 			secondarydata=response.data;
 			console.log('secondary_data',secondarydata);
 			rate.get_reviews(pass.movieid, $scope.page_reviews)
 			.then(function(response){
+				$scope.page_variables.reviews=response.data;
 				console.log(response);
 			});
 			$scope.merge_movie_data(desireddata, secondarydata);
@@ -104,7 +105,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
 		if(!desireddata.overview) desireddata.overview=secondarydata.overview;
 		if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
-		if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
+		//if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
 		if(!desireddata.tagline)	desireddata.tagline=secondarydata.tagline;
 		if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
 		if(desireddata.runtime < 1) desireddata.runtime=secondarydata.runtime;
@@ -132,7 +133,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.fancyruntime={"hour":parseInt($scope.movie.runtime/60),"minute":$scope.movie.runtime%60};
 		$scope.fancybudget=$scope.movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		$scope.fancyrevenue=$scope.movie.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		_.each($scope.movie.reviews.results, function(review){
+		_.each($scope.page_variables.reviews, function(review){
 			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\r\n/g , "<br>");
 			if(review.content.length>500){
 				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
