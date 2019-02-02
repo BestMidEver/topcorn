@@ -6,6 +6,7 @@ use App\Jobs\SuckMovieJob;
 use App\Model\Genre;
 use App\Model\Movie;
 use App\Model\Recommendation;
+use App\Model\Review;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -37,13 +38,13 @@ class SuckMovieJob implements ShouldQueue
      */
     public function handle()
     {
-        $is_recent = Movie::where('id', $this->id)
+        /*$is_recent = Movie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
-        if($is_recent) return;
+        if($is_recent) return;*/
 
         if($this->isWithRecommendation){
-            $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations'), true);
+            $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
             Recommendation::where(['movie_id' => $this->id])->delete();
             /*for ($k=0; $k < count($movie['similar']['results']); $k++) {
                 $temp = $movie['similar']['results'][$k];
@@ -66,8 +67,8 @@ class SuckMovieJob implements ShouldQueue
                     'is_similar' => 5-intval($k/4),]
                 );
             }
-            $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
-            $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu'), true);
+            $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr&append_to_response=reviews'), true);
+            $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu&append_to_response=reviews'), true);
             Movie::updateOrCreate(
                 ['id' => $movie['id']],
                 ['original_title' => $movie['original_title'],
@@ -96,6 +97,17 @@ class SuckMovieJob implements ShouldQueue
                 $genre->movie_id = $movie['id'];
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
+            }
+            Review::where(['movie_series_id' => $this->id, 'tmdb_review_id'])->delete();
+            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
+                $review = new Review;
+                $review->mode = 0;
+                $review->movie_series_id = $movie['id'];
+                $review->tmdb_author_name = $movie['reviews']['results'][$k]['author'];
+                $review->tmdb_review_id = $movie['reviews']['results'][$k]['id'];
+                $review->lang = 'en';
+                $review->review = $movie['reviews']['results'][$k]['content'];
+                $review->save();
             }
         }else{
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en'), true);

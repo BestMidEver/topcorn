@@ -57,7 +57,7 @@ class SuckDataJob implements ShouldQueue
 
 
 
-        /*foreach(Rated::All()->pluck('movie_id')->unique() as $id){
+        foreach(Rated::All()->pluck('movie_id')->unique() as $id){
             SuckMovieJob::dispatch($id, true)->onQueue("low");
         }
         foreach(Later::All()->pluck('movie_id')->unique() as $id){
@@ -68,7 +68,7 @@ class SuckDataJob implements ShouldQueue
         }
         foreach(Listitem::All()->pluck('movie_id')->unique() as $id){
             SuckMovieJob::dispatch($id, false)->onQueue("low");
-        }*/
+        }
 
 
 
