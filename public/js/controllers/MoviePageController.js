@@ -89,9 +89,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			.then(function(response){
 				$scope.page_variables.reviews=response.data;
 				console.log(response);
+				$scope.merge_movie_data(desireddata, secondarydata);
+				$scope.prepeare_movie_data(desireddata);
 			});
-			$scope.merge_movie_data(desireddata, secondarydata);
-			$scope.prepeare_movie_data(desireddata);
 		}, function errorCallback(response) {
 			console.log('1')
 			window.location.replace("/not-found");
