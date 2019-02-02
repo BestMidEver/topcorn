@@ -559,7 +559,28 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				$scope.user_movies.push(movie);
 			}
 		}
-	//////////////////////////////////////////////////////////////////////////////////////////
+
+		$scope.like_review=function(index){
+			console.log(index)
+			if($scope.page_variables.reviews[index].is_liked == 0){
+				rate.add_review_like($scope.page_variables.reviews[index].review_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.page_variables.reviews[index].is_liked = 1;
+					}
+				});
+			}else{
+				rate.un_review_like($scope.page_variables.reviews[index].review_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204 || response.status == 404){
+						$scope.page_variables.reviews[index].is_liked = 0;
+					}
+				});
+			}
+		}
+//////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SAME PART(MOVIES) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	}

@@ -11,6 +11,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ReviewLikeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +43,10 @@ class ReviewLikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review_like = Review_like::updateOrCreate(array('user_id' => Auth::id(), 'review_id' => $request->review_id));
+        return Response([
+            'data' => $review_like,
+        ], Response::HTTP_CREATED);
     }
 
     /**
@@ -82,8 +89,15 @@ class ReviewLikeController extends Controller
      * @param  \App\Model\Review_like  $review_like
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review_like $review_like)
+    public function destroy($review_id)
     {
-        //
+        $will_be_deleted = Review_like::where('review_id', $review_id)
+        ->where('user_id', Auth::id())->first();
+        
+        if($will_be_deleted){
+            $will_be_deleted->delete();
+        }
+        
+        return Response(null, Response::HTTP_NO_CONTENT);
     }
 }
