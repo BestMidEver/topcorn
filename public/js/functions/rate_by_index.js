@@ -40,7 +40,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: '/api/reviews/'+movie_series_id+'?page='page,
+			url: '/api/reviews/'+movie_series_id+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
