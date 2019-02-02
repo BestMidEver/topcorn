@@ -30,18 +30,7 @@ class SuckMovieJob implements ShouldQueue
         $this->id = $id;
         $this->isWithRecommendation = $isWithRecommendation;
     }
-public function set_review($movie, $lang){
-            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
-                $review = new Review;
-                $review->mode = 0;
-                $review->movie_series_id = $movie['id'];
-                $review->tmdb_author_name = $movie['reviews']['results'][$k]['author'];
-                $review->tmdb_review_id = $movie['reviews']['results'][$k]['id'];
-                $review->lang = $lang;
-                $review->review = $movie['reviews']['results'][$k]['content'];
-                $review->save();
-            }
-        }
+
     /**
      * Execute the job.
      *
@@ -53,7 +42,18 @@ public function set_review($movie, $lang){
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
         if($is_recent) return;*/
-
+        function set_review($movie, $lang){
+            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
+                $review = new Review;
+                $review->mode = 0;
+                $review->movie_series_id = $movie['id'];
+                $review->tmdb_author_name = $movie['reviews']['results'][$k]['author'];
+                $review->tmdb_review_id = $movie['reviews']['results'][$k]['id'];
+                $review->lang = $lang;
+                $review->review = $movie['reviews']['results'][$k]['content'];
+                $review->save();
+            }
+        }
         if($this->isWithRecommendation){
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
             Recommendation::where(['movie_id' => $this->id])->delete();
