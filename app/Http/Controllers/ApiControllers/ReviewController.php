@@ -54,11 +54,11 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $movie_series_id)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->select(
-            'review.tmdb_author_name as author',
-            'review.review as content',
-            'review.tmdb_review_id as id',
-            'review.lang as url',
-            'review.id as review_id',
+            'reviews.tmdb_author_name as author',
+            'reviews.review as content',
+            'reviews.tmdb_review_id as id',
+            'reviews.lang as url',
+            'reviews.id as review_id',
             'users.name as name',
             'users.id as user_id'
             //'movies.'.Auth::User()->lang.'_title as title',
