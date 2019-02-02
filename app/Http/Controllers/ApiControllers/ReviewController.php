@@ -64,7 +64,7 @@ class ReviewController extends Controller
             //'movies.'.Auth::User()->lang.'_title as title',
         );
 
-        return $review->paginate(1);
+        return $review->paginate(10);
     }
 
     /**
