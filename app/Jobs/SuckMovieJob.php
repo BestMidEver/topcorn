@@ -109,7 +109,7 @@ class SuckMovieJob implements ShouldQueue
                 $review->review = $movie['reviews']['results'][$k]['content'];
                 $review->save();
             }
-            set_review($movie_tr, 'tr');
+            $this->set_review($movie_tr, 'tr');
         }else{
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en'), true);
             $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
