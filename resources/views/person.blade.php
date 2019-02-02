@@ -132,7 +132,7 @@
 
 	<div ng-if="page_variables.image_tab=='profile'">
 		<div class="card-group no-gutters">
-			<div class="col-12 col-sm-3 col-md-4 mt-4" ng-repeat="image in profile_images">
+			<div class="col-12 col-sm-4 col-md-3 mt-4" ng-repeat="image in profile_images">
 				<div class="card h-100 d-flex flex-column justify-content-between mx-2">
 					<a ng-click="image_full_screen(image)" class="cursor-zoom-in">
 						<div class="position-relative text-center min-height-200">
