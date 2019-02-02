@@ -87,7 +87,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log('secondary_data',secondarydata);
 			rate.get_reviews(pass.movieid, $scope.page_reviews)
 			.then(function(response){
-				$scope.page_variables.reviews=response.data;
+				$scope.page_variables.reviews=response.data.data;
 				console.log(response.data);
 				$scope.merge_movie_data(desireddata, secondarydata);
 				$scope.prepeare_movie_data(desireddata);
