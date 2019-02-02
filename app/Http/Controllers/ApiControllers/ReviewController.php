@@ -53,6 +53,8 @@ class ReviewController extends Controller
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $movie_series_id)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
+        ->leftjoin('reviewlikes', 'reviewlikes.review_id', '=', 'reviews.id')
+        ->groupBy('reviews.id')
         ->select(
             'reviews.tmdb_author_name as author',
             'reviews.review as content',
@@ -60,7 +62,8 @@ class ReviewController extends Controller
             'reviews.lang as url',
             'reviews.id as review_id',
             'users.name as name',
-            'users.id as user_id'
+            'users.id as user_id',
+            DB::raw('COUNT(reviewlikes.id) as count')
             //'movies.'.Auth::User()->lang.'_title as title',
         );
 

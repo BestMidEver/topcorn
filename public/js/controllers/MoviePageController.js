@@ -88,7 +88,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			rate.get_reviews(pass.movieid, $scope.page_reviews)
 			.then(function(response){
 				$scope.page_variables.reviews=response.data.data;
-				console.log(response.data);
+				console.log('reviews',response.data.data);
 				$scope.merge_movie_data(desireddata, secondarydata);
 				$scope.prepeare_movie_data(desireddata);
 			});
@@ -142,7 +142,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				review.url=review.content;
 				review.id='short';
 			}
-			console.log(review)
 		});
 		temp=_.where(languages,{i:$scope.movie.original_language});
 		if(temp.length > 0)$scope.movie.original_language=temp[0].o;
