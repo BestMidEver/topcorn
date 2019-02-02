@@ -568,7 +568,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					if(response.status == 201){
 						$scope.page_variables.reviews[index].is_liked = 1;
-						$scope.page_variables.reviews[index].review.count ++;
+						$scope.page_variables.reviews[index].count ++;
 					}
 				});
 			}else{
@@ -577,7 +577,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					console.log(response);
 					if(response.status == 204 || response.status == 404){
 						$scope.page_variables.reviews[index].is_liked = 0;
-						$scope.page_variables.reviews[index].review.count --;
+						$scope.page_variables.reviews[index].count --;
 					}
 				});
 			}
