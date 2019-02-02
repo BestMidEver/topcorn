@@ -307,7 +307,7 @@
 			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>-->
 	</div>
 	<div class="container-fluid">
-		<div ng-if="movie.reviews.results.length>0" class="py-4" ng-repeat="review in movie.reviews.results">
+		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews">
 			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2">@{{review.author}}</div>
 				<!--<div class="h6">
@@ -342,7 +342,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="p-5" ng-if="!movie.reviews.results.length>0">
+	<div class="p-5" ng-if="!page_variables.reviews.length>0">
 		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
 	</div>
 </div>
