@@ -142,6 +142,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				review.url=review.content;
 				review.id='short';
 			}
+			console.log(review)
 		});
 		temp=_.where(languages,{i:$scope.movie.original_language});
 		if(temp.length > 0)$scope.movie.original_language=temp[0].o;
