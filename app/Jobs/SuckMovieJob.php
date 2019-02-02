@@ -30,7 +30,18 @@ class SuckMovieJob implements ShouldQueue
         $this->id = $id;
         $this->isWithRecommendation = $isWithRecommendation;
     }
-
+public function set_review($movie, $lang){
+            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
+                $review = new Review;
+                $review->mode = 0;
+                $review->movie_series_id = $movie['id'];
+                $review->tmdb_author_name = $movie['reviews']['results'][$k]['author'];
+                $review->tmdb_review_id = $movie['reviews']['results'][$k]['id'];
+                $review->lang = $lang;
+                $review->review = $movie['reviews']['results'][$k]['content'];
+                $review->save();
+            }
+        }
     /**
      * Execute the job.
      *
@@ -109,7 +120,7 @@ class SuckMovieJob implements ShouldQueue
                 $review->review = $movie['reviews']['results'][$k]['content'];
                 $review->save();
             }
-            $this->set_review($movie_tr, 'tr');
+            set_review($movie_tr, 'tr');
         }else{
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en'), true);
             $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
@@ -142,18 +153,6 @@ class SuckMovieJob implements ShouldQueue
                 $genre->movie_id = $movie['id'];
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
-            }
-        }
-        function set_review($movie, $lang){
-            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
-                $review = new Review;
-                $review->mode = 0;
-                $review->movie_series_id = $movie['id'];
-                $review->tmdb_author_name = $movie['reviews']['results'][$k]['author'];
-                $review->tmdb_review_id = $movie['reviews']['results'][$k]['id'];
-                $review->lang = $lang;
-                $review->review = $movie['reviews']['results'][$k]['content'];
-                $review->save();
             }
         }
     }
