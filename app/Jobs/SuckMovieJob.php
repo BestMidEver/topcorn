@@ -57,17 +57,6 @@ class SuckMovieJob implements ShouldQueue
         if($this->isWithRecommendation){
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
             Recommendation::where(['movie_id' => $this->id])->delete();
-            /*for ($k=0; $k < count($movie['similar']['results']); $k++) {
-                $temp = $movie['similar']['results'][$k];
-                SuckMovieJob::dispatch($temp['id'], false)->onQueue("default");
-                if($temp['vote_count'] < config('constants.suck_page.min_vote_count') || $temp['vote_average'] < config('constants.suck_page.min_vote_average')) continue;
-                $recommendation = new Recommendation;
-                $recommendation->id = $this->id*10000000 + $temp['id'];
-                $recommendation->this_id = $temp['id'];
-                $recommendation->movie_id = $this->id;
-                $recommendation->is_similar = true;
-                $recommendation->save();
-            }*/
             for ($k=0; $k < count($movie['recommendations']['results']); $k++) {
                 $temp = $movie['recommendations']['results'][$k];
                 SuckMovieJob::dispatch($temp['id'], false)->onQueue("default");
@@ -110,17 +99,9 @@ class SuckMovieJob implements ShouldQueue
                 $genre->save();
             }
             Review::where(['movie_series_id' => $this->id, 'mode' => 0])->delete();
-            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
-                $review = new Review;
-                $review->mode = 0;
-                $review->movie_series_id = $movie['id'];
-                $review->tmdb_author_name = $movie['reviews']['results'][$k]['author'];
-                $review->tmdb_review_id = $movie['reviews']['results'][$k]['id'];
-                $review->lang = 'en';
-                $review->review = $movie['reviews']['results'][$k]['content'];
-                $review->save();
-            }
+            set_review($movie, 'en');
             set_review($movie_tr, 'tr');
+            set_review($movie_hu, 'hu');
         }else{
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en'), true);
             $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr'), true);
@@ -154,6 +135,10 @@ class SuckMovieJob implements ShouldQueue
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
             }
+            Review::where(['movie_series_id' => $this->id, 'mode' => 0])->delete();
+            set_review($movie, 'en');
+            set_review($movie_tr, 'tr');
+            set_review($movie_hu, 'hu');
         }
     }
 }
