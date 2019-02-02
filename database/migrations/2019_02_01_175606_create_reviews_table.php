@@ -23,7 +23,7 @@ class CreateReviewsTable extends Migration
             $table->string('tmdb_review_id')->nullable();
             $table->string('lang')->nullable();
             $table->integer('user_id')->nullable();
-            $table->text('review')->nullable();
+            $table->text('review');
             $table->timestamps();
         });
     }
