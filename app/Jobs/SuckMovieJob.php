@@ -98,7 +98,7 @@ class SuckMovieJob implements ShouldQueue
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
             }
-            Review::where(['movie_series_id' => $this->id, 'tmdb_review_id'])->delete();
+            Review::where(['movie_series_id' => $this->id, 'mode' => 0])->delete();
             for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
                 $review = new Review;
                 $review->mode = 0;
