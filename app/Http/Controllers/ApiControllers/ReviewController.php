@@ -82,7 +82,6 @@ class ReviewController extends Controller
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
-        ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
 
         if(Auth::check()){
@@ -98,7 +97,8 @@ class ReviewController extends Controller
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
-            );
+            )
+            ->orderBy('is_mine', 'desc');
         }else{
             $review = $review
             ->select(
