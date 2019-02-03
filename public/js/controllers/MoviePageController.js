@@ -595,6 +595,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if(response.status == 201){
 					$scope.prepeare_reviews(response.data.data.data);
 					$scope.page_variables.reviews=response.data.data.data;
+					if($scope.page_variables.reviews.length>0)	if($scope.page_variables.reviews[0].is_mine==1)	$scope.page_variables.review_textarea=$scope.page_variables.reviews[0].content;
 				}
 			});
 		}
