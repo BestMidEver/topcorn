@@ -134,7 +134,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.fancybudget=$scope.movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		$scope.fancyrevenue=$scope.movie.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		_.each($scope.page_variables.reviews, function(review){
-			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\r\n/g , "<br>");
+			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");
 			if(review.content.length>500){
 				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
 				review.id='long';
