@@ -123,7 +123,7 @@ class ReviewController extends Controller
      */
     public function show_reviews(Request $request)
     {
-        $review = DB::table('reviews')
+        $reviews = DB::table('reviews')
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
@@ -131,13 +131,13 @@ class ReviewController extends Controller
         ->groupBy('reviews.id');
 
         if($request->mode[0]==0){
-            $review=$review
+            $reviews=$reviews
             ->leftjoin('rateds as r1', function ($join) {
                 $join->on('r1.movie_id', '=', 'reviews.movie_series_id')
                 ->where('r1.user_id', '=', 'reviews.user_id');
             });
         }else{
-            $review=$review
+            $reviews=$reviews
             ->leftjoin('series_rateds as r1', function ($join) {
                 $join->on('r1.series_id', '=', 'reviews.movie_series_id')
                 ->where('r1.user_id', '=', 'reviews.user_id');
@@ -146,22 +146,22 @@ class ReviewController extends Controller
 
         if($request->season_number != -1){
             if($request->episode_number != -1){
-                $review=$review
+                $reviews=$reviews
                 ->where('reviews.season_number', '=', $request->season_number)
                 ->where('reviews.episode_number', '=', $request->episode_number);
             }else{
-                $review=$review
+                $reviews=$reviews
                 ->where('reviews.season_number', '=', $request->season_number)
                 ->whereNull('reviews.episode_number');
             }
         }else{
-            $review=$review
+            $reviews=$reviews
             ->whereNull('reviews.season_number')
             ->whereNull('reviews.episode_number');
         }
 
         if(Auth::check()){
-            $review = $review
+            $reviews = $reviews
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
@@ -178,7 +178,7 @@ class ReviewController extends Controller
             ->orderBy('is_mine', 'desc')
             ->orderBy('count', 'desc');
         }else{
-            $review = $review
+            $reviews = $reviews
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
@@ -193,7 +193,7 @@ class ReviewController extends Controller
             ->orderBy('count', 'desc');
         }
 
-        return $review->paginate(25);
+        return $request->mode[0];//$reviews->paginate(25);
     }
 
     /**
