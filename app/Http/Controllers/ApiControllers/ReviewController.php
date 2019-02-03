@@ -99,7 +99,21 @@ class ReviewController extends Controller
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
 
-        if($request->season_number==0) $review=$review;
+        if($request->season_number != -1){
+            if($request->episode_number != -1){
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->where('reviews.episode_number', '=', $request->episode_number);
+            }else{
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->whereNull('reviews.episode_number');
+            }
+        }else{
+            $review=$review
+            ->whereNull('reviews.season_number')
+            ->whereNull('reviews.episode_number');
+        }
 
         if(Auth::check()){
             $review = $review
