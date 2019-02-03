@@ -199,7 +199,7 @@ return [
     'remember_me' => 'Remember me',                                                                 //login,
     'remove' => 'Remove',                                                                           //recommendations,
     'revenue' => 'Revenue',                                                                         //movie,
-    'reviews' => 'Reviews & Comments',                                                              //movie,    ///////////////
+    'reviews' => 'Reviews',                                                                         //movie,
     'runtime' => 'Runtime',                                                                         //movie,
     'save' => 'Save',                                                                               //register,
     'save_changes' => 'Save Changes',                                                               //account, accountinterface,
