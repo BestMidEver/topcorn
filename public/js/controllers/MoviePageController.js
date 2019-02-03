@@ -152,7 +152,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.prepeare_reviews = function(reviews){
 		_.each(reviews, function(review){
 			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
-			if(review.content.length>500 || (review.content.match(/<br>/g) || []).length>3){
+			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>3){
 				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
 				review.id='long';
 			}else{
