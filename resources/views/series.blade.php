@@ -410,7 +410,7 @@
 </div>
 <!--Cast Section-->
 
-<div ng-hide="is_waiting"> 
+<div ng-show="!is_waiting"> 
 @include('layout.reviews')
 </div>
 
