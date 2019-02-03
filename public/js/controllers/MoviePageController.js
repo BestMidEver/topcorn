@@ -59,6 +59,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log($scope.user_movie_record)
 		}, function errorCallback(response) {
 		});
+	}else{
+		$scope.page_variables.is_liked = 0;
 	}
 
 	$scope.temp={};
