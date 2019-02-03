@@ -298,13 +298,13 @@
 <div class="container-fluid px-0 mt-5">	
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<span class="mb-0 pr-2 align-middle mt-3">{{ __('general.reviews') }}</span>
-		<button ng-click="" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-outline-secondary addblack border-0"
+		<button data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-outline-secondary addblack border-0"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
             @endif
-			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>
+			><div><i class="fas fa-pencil-alt"></i></div> <span ng-if="page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-if="!page_variables.is_with_review">{{ __('general.edit_review') }}</span></button>
 	</div>
 	<div class="container-fluid">
 		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews" ng-hide="review.content==''">
