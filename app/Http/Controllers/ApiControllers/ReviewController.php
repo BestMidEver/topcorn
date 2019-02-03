@@ -68,6 +68,22 @@ class ReviewController extends Controller
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
 
+        if($request->season_number != -1){
+            if($request->episode_number != -1){
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->where('reviews.episode_number', '=', $request->episode_number);
+            }else{
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->whereNull('reviews.episode_number');
+            }
+        }else{
+            $review=$review
+            ->whereNull('reviews.season_number')
+            ->whereNull('reviews.episode_number');
+        }
+
         return Response([
             'data' => $review->paginate(25),
         ], Response::HTTP_CREATED);
@@ -189,22 +205,18 @@ class ReviewController extends Controller
      * @param  \App\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy_review($movie_series_id, $mode)
+    public function destroy_review(Request $request)
     {
-        $will_be_deleted = Review::where('movie_series_id', $movie_series_id)
-        ->where('mode', $mode)
+        $will_be_deleted = Review::where('id', $request->review_id)
         ->where('user_id', Auth::id())->first();
         
         if($will_be_deleted){
             $will_be_deleted->delete();
         }
 
-        if($mode==1) $mode=[0,1];
-        else $mode=[2,3];
-
         $review = DB::table('reviews')
-        ->where('reviews.movie_series_id', $movie_series_id)
-        ->whereIn('reviews.mode', $mode)
+        ->where('reviews.movie_series_id', $request->movie_series_id)
+        ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
@@ -222,6 +234,22 @@ class ReviewController extends Controller
         )
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
+
+        if($request->season_number != -1){
+            if($request->episode_number != -1){
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->where('reviews.episode_number', '=', $request->episode_number);
+            }else{
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->whereNull('reviews.episode_number');
+            }
+        }else{
+            $review=$review
+            ->whereNull('reviews.season_number')
+            ->whereNull('reviews.episode_number');
+        }
         
         return Response([
             'data' => $review->paginate(25),

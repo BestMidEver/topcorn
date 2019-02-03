@@ -611,7 +611,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.save_review=function(){
 			console.log($scope.page_variables.review_textarea)
-			rate.add_review($scope.page_variables.review_textarea, pass.movieid, 1)
+			rate.add_review($scope.page_variables.review_textarea, pass.movieid, 1, -1, -1)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
@@ -622,8 +622,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			});
 		}
 
-		$scope.delete_review=function(){
-			rate.un_review(pass.movieid, 1)
+		$scope.delete_review=function(review_id){
+			rate.un_review(review_id, pass.movieid, [0,1], -1, -1)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){

@@ -59,7 +59,7 @@ MyApp.factory('rate', function($http) {
 
 
 
-    add_review = function(review, movie_series_id, mode) 
+    add_review = function(review, movie_series_id, mode, season_number, episode_number) 
     {
         return $http({
 			method: 'POST',
@@ -71,7 +71,9 @@ MyApp.factory('rate', function($http) {
 			data: {
 				"review":review,
 				"movie_series_id":movie_series_id,
-				"mode":mode
+				"mode":mode,
+				"season_number":season_number,
+				"episode_number":episode_number
 			}
 		}).then(function successCallback(response) {
 			return response;
@@ -81,14 +83,21 @@ MyApp.factory('rate', function($http) {
 
 
 
-    un_review = function(movie_series_id, mode) 
+    un_review = function(review_id, movie_series_id, mode, season_number, episode_number) 
     {
         return $http({
-			method: 'DELETE',
-			url: '/api/reviews/'+movie_series_id+'/'+mode,
+			method: 'POST',
+			url: '/api/destroy_review',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
+			},
+			data: {
+				"review_id":review_id,
+				"movie_series_id":movie_series_id,
+				"mode":mode,
+				"season_number":season_number,
+				"episode_number":episode_number
 			}
 		}).then(function successCallback(response) {
 			return response;
