@@ -296,7 +296,7 @@
 </div>
 <!--Cast Section-->
 
-include('layout.reviews')
+@include('layout.reviews')
 
 
 <!--People Who Liked Also Liked Section-->
