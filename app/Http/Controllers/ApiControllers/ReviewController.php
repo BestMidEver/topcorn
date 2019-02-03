@@ -140,7 +140,7 @@ class ReviewController extends Controller
         }
 
         $review = DB::table('reviews')
-        ->where('reviews.movie_series_id', 77)
+        ->where('reviews.movie_series_id', $movie_series_id)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
@@ -160,7 +160,7 @@ class ReviewController extends Controller
         ->orderBy('count', 'desc');
         
         return Response([
-            'data' => $review->paginate(10),
+            'data' => $movie_series_id,
         ], Response::HTTP_NO_CONTENT);
     }
 }
