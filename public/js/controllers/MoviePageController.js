@@ -607,7 +607,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			rate.un_review(pass.movieid)
 			.then(function(response){
 				console.log(response);
-				if(response.status == 204 || response.status == 404){
+				if(response.status == 201){
 					$scope.prepeare_reviews(response.data.data.data);
 					$scope.page_variables.reviews=response.data.data.data;
 					$scope.page_variables.is_with_review=false;
