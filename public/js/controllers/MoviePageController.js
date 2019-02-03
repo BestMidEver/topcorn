@@ -611,6 +611,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$scope.prepeare_reviews(response.data.data.data);
 					$scope.page_variables.reviews=response.data.data.data;
 					$scope.page_variables.is_with_review=false;
+					$scope.page_variables.review_textarea='';
 				}
 			});
 		}
