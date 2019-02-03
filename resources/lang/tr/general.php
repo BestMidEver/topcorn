@@ -44,7 +44,7 @@ return [
     'camera' => 'Kameramanlık',                                                                         //movie,
     'canceled' => 'İptal edildi',                                                                       //profile,series
     'change_password' => 'Şifreyi Değiştir',                                                            //accountpassword,
-    'close' => 'Close',                                                                                 //movie,    ////////////////
+    'close' => 'Kapat',                                                                                 //movie,
     'conclusion' => 'Sonuç Yazısı',                                                                     //list              
     'continue_without_facebook' => 'Facebook Olmadan Devam Et',                                         //home
     'continuing' => 'Devam ediyor',                                                                     //series
