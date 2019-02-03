@@ -97,8 +97,8 @@ class ReviewController extends Controller
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
             )
-            ->orderBy('count', 'desc')
-            ->orderBy('is_mine', 'desc');
+            ->orderBy('is_mine', 'desc')
+            ->orderBy('count', 'desc');
         }else{
             $review = $review
             ->select(
