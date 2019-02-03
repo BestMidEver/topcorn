@@ -16,7 +16,7 @@ return [
     'add' => 'Ekle',                                                                                    //recommendations,
     'add_movie' => 'Film Ekle',                                                                         //list,           
     'add_person' => 'Beraber İzle',                                                                     //recommendations,
-    'add_review' => 'Eleştiri Ekle',                                                                    //movie,
+    'add_review' => 'Bi\'şey Yaz',                                                                      //movie,
     'advanced_recommendations' => 'Gelişmiş Tavsiyeler',                                                //accountinterface,
     'ago_message' => 
         ':created_at önce ekledi, en son :updated_at önce güncelledi.',                                 //list,
@@ -149,7 +149,7 @@ return [
     'no_mode_movies' => 'Modunu belirlemelisin.',                                                       //recommendations      
     'no_overview_found' => 'Özet bulunamadı.',                                                          //series
     'no_result' => 'Sonuç bulunamadı.',                                                                 //profile, search
-    'no_result_review' => 'Eleştiri yazısı bulunamadı.',                                                //movie
+    'no_result_review' => 'Yazı bulunamadı.',                                                           //movie
     'not_found' => 'Bulunamadı.',                                                                       //person
     'not_sure' => 'Kararsızım',                                                                         //ratemodal, profile,
     'novel' => 'Roman',             
@@ -197,7 +197,7 @@ return [
     'remember_me' => 'Beni hatırla',                                                                    //login,
     'remove' => 'Sil',                                                                                  //recommendations,
     'revenue' => 'Gelir',                           
-    'reviews' => 'Eleştiri Yazıları',                           
+    'reviews' => 'Eleştiriler & Yorumlar',                           
     'runtime' => 'Süre',                            
     'save' => 'Kaydet',                                                                                 //register,
     'save_changes' => 'Değişiklikleri Kaydet',                                                          //account, accountinterface,
