@@ -160,7 +160,7 @@ class ReviewController extends Controller
         ->orderBy('count', 'desc');
         
         return Response([
-            'data' => $movie_series_id,
+            'deta' => $movie_series_id,
         ], Response::HTTP_NO_CONTENT);
     }
 }
