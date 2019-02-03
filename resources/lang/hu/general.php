@@ -65,7 +65,8 @@ return [
     'details' => 'Részletek',                                                                           //series,      
     'dollar_account' => 'Dollár számla',                                                                //donation,
     'dont_recommend' => 'Rossz',                                                                        //ratemodal, profile,
-    'edit' => 'Szerkesztés',                                                                            //list                      
+    'edit' => 'Szerkesztés',                                                                            //list
+    'edit_review' => 'Edit Review',                                                                     //movie,series, ///////////
     'editing' => 'Vágás',                                                                               //person
     'email' => 'E-mail cím',                                                                            //email, reset, login, register,
     'email_confirmation' => 'E-mail cím megerősítése',                                                  //register,
