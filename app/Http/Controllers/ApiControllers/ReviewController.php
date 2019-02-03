@@ -127,18 +127,19 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        
-            ->leftjoin('series_rateds', function ($join) {
-                $join->on('series_rateds.series_id', '=', 'reviews.movie_series_id');
-                $join->on('series_rateds.user_id', '=', 'reviews.user_id');
-                //->where('series_rateds.user_id', '=', 'reviews.user_id')
-            })
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
 
         if($request->mode[0]==0){
-            
+            ->leftjoin('rateds as r1', function ($join) {
+                $join->on('r1.series_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            })
         }else{
+            ->leftjoin('series_rateds as r1', function ($join) {
+                $join->on('r1.series_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            })
         }
 
         if($request->season_number != -1){
@@ -167,7 +168,7 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
-                'series_rateds.*',
+                'r1.rate as rate',
                 'reviews.movie_series_id as movie_series_id',
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
@@ -185,7 +186,7 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
-                'series_rateds.rate as rate',
+                'r1.rate as rate',
                 DB::raw('COUNT(review_likes.id) as count')
             )
             ->orderBy('count', 'desc');
