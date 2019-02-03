@@ -71,23 +71,22 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				rate.get_reviews(pass.seriesid, $scope.page_reviews, [2,3], $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2)
 				.then(function(response){
 					$scope.page_variables.reviews=response.data.data;
-					if($scope.page_variables.reviews.length>0)	if($scope.page_variables.reviews[0].is_mine==1){
+					$scope.page_variables.is_with_review=false;
+					$scope.page_variables.review_textarea='';
+					$scope.page_variables.this_review_id='';
+					if($scope.page_variables.reviews.length>0){if($scope.page_variables.reviews[0].is_mine==1){
 						$scope.page_variables.review_textarea=$scope.page_variables.reviews[0].content;
 						$scope.page_variables.is_with_review=true;
 						$scope.page_variables.this_review_id=$scope.page_variables.reviews[0].review_id;
-					}else{
-						$scope.page_variables.is_with_review=false;
-						$scope.page_variables.review_textarea='';
-						$scope.page_variables.this_review_id='';
 					}
 					console.log('reviews',response.data.data);
 					$scope.merge_series_data(desireddata, secondarydata);
 					$scope.prepeare_series_data(desireddata);
 					$scope.implement_static_data();
+					$scope.is_waiting = false;
 					//console.log('SERIES_secondary_data',secondarydata);
 					//console.log("seriesscope", $scope.series)
 				});
-				$scope.is_waiting = false;
 			}, function errorCallback(response_2) {
 				console.log('error2')
 				window.location.replace("/not-found");
