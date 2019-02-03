@@ -222,8 +222,9 @@ Route::apiResource('api/series_bans','ApiControllers\SeriesBanController');
 Route::apiResource('api/series_laters','ApiControllers\SeriesLaterController');
 Route::apiResource('api/series_rateds','ApiControllers\SeriesRatedController');
 Route::apiResource('api/series_seens','ApiControllers\SeriesSeenController');
-Route::apiResource('api/review_like','ApiControllers\ReviewLikeController');
 Route::delete('api/reviews/{movie_series_id}/{mode}','ApiControllers\ReviewController@destroy_review');
+Route::apiResource('api/reviews','ApiControllers\ReviewController');
+Route::apiResource('api/review_like','ApiControllers\ReviewLikeController');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// API RATE (AUTH) //////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
