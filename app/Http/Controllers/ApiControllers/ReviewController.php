@@ -41,7 +41,7 @@ class ReviewController extends Controller
     {
         Review::updateOrCreate(
             array('user_id' => Auth::id(), 'movie_series_id' => $request->movie_series_id),
-            array('review' => strip_tags($request->review), 'mode' => 1, 'lang' => Auth::User()->lang)
+            array('review' => strip_tags($request->review), 'mode' => $request->mode, 'lang' => Auth::User()->lang)
         );
 
         $review = DB::table('reviews')
@@ -145,9 +145,9 @@ class ReviewController extends Controller
      * @param  \App\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy($movie_series_id)
+    public function destroy($review_id)
     {
-        $will_be_deleted = Review::where('movie_series_id', $movie_series_id)
+        $will_be_deleted = Review::where('id', $review_id)
         ->where('user_id', Auth::id())->first();
         
         if($will_be_deleted){
