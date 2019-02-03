@@ -127,8 +127,7 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
-        ->groupBy('reviews.id');
+        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id');
 
         if($request->season_number != -1){
             if($request->episode_number != -1){
@@ -177,7 +176,8 @@ class ReviewController extends Controller
             ->orderBy('count', 'desc');
         }
 
-        $qqSql = $subq->toSql();
+        $qqSql = $subq
+        ->groupBy('reviews.id')->toSql();
 
         $reviews = DB::table('reviews')
         ->join(
