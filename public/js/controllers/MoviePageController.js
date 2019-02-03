@@ -106,6 +106,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				if($scope.page_variables.reviews.length>0)	if($scope.page_variables.reviews[0].is_mine==1){
 					$scope.page_variables.review_textarea=$scope.page_variables.reviews[0].content;
 					$scope.page_variables.is_with_review=true;
+					$scope.page_variables.this_review_id=$scope.page_variables.reviews[0].review_id;
 				}
 				console.log('reviews',response.data.data);
 				$scope.merge_movie_data(desireddata, secondarydata);
