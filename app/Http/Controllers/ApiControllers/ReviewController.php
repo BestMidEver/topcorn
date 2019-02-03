@@ -166,7 +166,7 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
-                'series_rateds*',
+                'series_rateds.*',
                 'reviews.movie_series_id as movie_series_id',
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
