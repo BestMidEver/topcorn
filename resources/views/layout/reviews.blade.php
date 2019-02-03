@@ -13,7 +13,7 @@
 		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews" ng-hide="review.content==''">
 			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2" ng-if="review.author.length>0">@{{review.author}}</div>
-				<div class="d-inline" ng-if="review.name.length>0"><a class="h6 pb-2 text-dark d-inline" ng-href="/profile/@{{review.user_id}}">@{{review.name}}</a> <i class="fas fa-star"ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star"ng-repeat="n in [] | range:(5-review.rate)"></i></div>
+				<div class="d-inline" ng-if="review.name.length>0"><a class="h6 pb-2 text-dark d-inline" ng-href="/profile/@{{review.user_id}}">@{{review.name}}</a> <i class="fas fa-star"ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star" ng-repeat="n in [] | range:(5-review.rate)"></i></div>
 				<div class="h6">
 					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen opacity-1" ng-disabled="review.is_mine==1||review.is_mine==undefined" ng-click="like_review($index)">
 						<div ng-class="{'text-success':review.count>0}"><i class="fa-heart" ng-class="{0:'far', 1:'fas', undefined:'far'}[review.is_liked]"></i><span ng-if="review.count>0"> @{{review.count}}</span></div>
