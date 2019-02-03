@@ -134,16 +134,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$scope.fancyruntime={"hour":parseInt($scope.movie.runtime/60),"minute":$scope.movie.runtime%60};
 		$scope.fancybudget=$scope.movie.budget.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 		$scope.fancyrevenue=$scope.movie.revenue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-		_.each($scope.page_variables.reviews, function(review){
-			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
-			if(review.content.length>500){
-				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
-				review.id='long';
-			}else{
-				review.url=review.content;
-				review.id='short';
-			}
-		});
+		$scope.prepeare_reviews($scope.page_variables.reviews);
 		temp=_.where(languages,{i:$scope.movie.original_language});
 		if(temp.length > 0)$scope.movie.original_language=temp[0].o;
 		console.log(countries)
@@ -156,6 +147,18 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			console.log(response.data);
 			$scope.user_movies = response.data;
 			$scope.set_recommendations();
+		});
+	}
+	$scope.prepeare_reviews = function(reviews){
+		_.each(reviews, function(review){
+			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
+			if(review.content.length>500){
+				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
+				review.id='long';
+			}else{
+				review.url=review.content;
+				review.id='short';
+			}
 		});
 	}
 
@@ -590,7 +593,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-
+					$scope.prepeare_review(response.data.data.data)
 				}
 			});
 		}
