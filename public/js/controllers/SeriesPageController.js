@@ -109,7 +109,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		}
 		if($scope.page_variables.active_tab_1 == -1){
 			if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
-			if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
+			//if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
 		}else if($scope.page_variables.active_tab_2 == -1){
 		}else{
 			if(pass.secondary_lang!=pass.lang)	desireddata.results=_.union(desireddata.results, secondarydata.results);
