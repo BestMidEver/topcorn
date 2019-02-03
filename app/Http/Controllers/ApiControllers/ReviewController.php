@@ -73,7 +73,8 @@ class ReviewController extends Controller
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
             DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
             //'movies.'.Auth::User()->lang.'_title as title',
-        );
+        )
+        ->orderBy('count', 'desc');;
 
         return $review->paginate(10);
     }
