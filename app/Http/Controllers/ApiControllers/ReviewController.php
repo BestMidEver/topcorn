@@ -123,31 +123,45 @@ class ReviewController extends Controller
      */
     public function show_reviews(Request $request)
     {
-        $subq = DB::table('reviews')
+        $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
 
+        if($request->mode[0]==0){
+            $review=$review
+            ->leftjoin('rateds as r1', function ($join) {
+                $join->on('r1.movie_id', '=', 'reviews.movie_series_id')
+                ->where('r1.user_id', '=', 'users.id');
+            });
+        }else{
+            $review=$review
+            ->leftjoin('series_rateds as r1', function ($join) {
+                $join->on('r1.series_id', '=', 'reviews.movie_series_id')
+                ->where('r1.user_id', '=', 'users.id');
+            });
+        }
+
         if($request->season_number != -1){
             if($request->episode_number != -1){
-                $subq=$subq
+                $review=$review
                 ->where('reviews.season_number', '=', $request->season_number)
                 ->where('reviews.episode_number', '=', $request->episode_number);
             }else{
-                $subq=$subq
+                $review=$review
                 ->where('reviews.season_number', '=', $request->season_number)
                 ->whereNull('reviews.episode_number');
             }
         }else{
-            $subq=$subq
+            $review=$review
             ->whereNull('reviews.season_number')
             ->whereNull('reviews.episode_number');
         }
 
         if(Auth::check()){
-            $subq = $subq
+            $review = $review
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
@@ -156,6 +170,7 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
+                'r1.rate as rate',
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
@@ -163,7 +178,7 @@ class ReviewController extends Controller
             ->orderBy('is_mine', 'desc')
             ->orderBy('count', 'desc');
         }else{
-            $subq = $subq
+            $review = $review
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
@@ -172,24 +187,13 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
+                'r1.rate as rate',
                 DB::raw('COUNT(review_likes.id) as count')
             )
             ->orderBy('count', 'desc');
         }
 
-        $qqSql = $subq->toSql();
-
-        $reviews = DB::table('reviews')
-        ->join(
-            DB::raw('(' . $qqSql. ') as ss'),
-            function($join) use ($subq) {
-                $join->on('reviews.id', '=', 'ss.review_id')
-                ->addBinding($subq->getBindings());  
-            }
-        )
-        ->leftjoin('rateds', 'rateds.user_id', '=', 'reviews.user_id');
-
-        return $reviews->paginate(25);
+        return $review->paginate(25);
     }
 
     /**
