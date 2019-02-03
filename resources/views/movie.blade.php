@@ -307,7 +307,7 @@
 			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>
 	</div>
 	<div class="container-fluid">
-		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews | filter:{review:''}">
+		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews | filter:review.review==''">
 			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2">@{{review.author}}@{{review.name}}</div>
 				<div class="h6">
