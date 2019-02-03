@@ -43,6 +43,7 @@ return [
     'budget' => 'Budget',                                                                           //movie,
     'camera' => 'Camera',                                                                           //movie,
     'canceled' => 'Canceled',                                                                       //profile,series
+    'close' => 'Close',                                                                             //movie,
     'change_password' => 'Change Password',                                                         //accountpassword,
     'conclusion' => 'Conclusion',                                                                   //list             
     'continue_without_facebook' => 'Continue Without Facebook',                                     //home

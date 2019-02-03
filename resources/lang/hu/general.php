@@ -44,6 +44,7 @@ return [
     'camera' => 'Kamera',                                                                               //movie
     'canceled' => 'Megszűnt',                                                                           //profile,series
     'change_password' => 'Jelszó módosítása',                                                           //accountpassword,
+    'close' => 'Close',                                                                                 //movie,            //////////////
     'conclusion' => 'Befejezés',                                                                        //list              
     'continue_without_facebook' => 'Folytatás Facebook nélkül',                                         //home
     'continuing' => 'Folytatódik',                                                                      //series
