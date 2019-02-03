@@ -589,7 +589,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					console.log(response)
 				}
 			});
 		}

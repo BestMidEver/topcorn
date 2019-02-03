@@ -309,7 +309,7 @@
 	<div class="container-fluid">
 		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews">
 			<div class="d-flex justify-content-between">
-				<div class="h6 pb-2">@{{review.author}}</div>
+				<div class="h6 pb-2">@{{review.author}}@{{review.name}}</div>
 				<div class="h6">
 					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen" ng-click="like_review($index)">
 						<div ng-class="{'text-success':review.count>0}"><i class="fas fa-heart" ng-show="review.is_liked==1"></i><i class="far fa-heart" ng-show="review.is_liked==0"></i><span ng-if="review.count>0"> @{{review.count}}</span></div>
