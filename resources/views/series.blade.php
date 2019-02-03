@@ -410,9 +410,9 @@
 </div>
 <!--Cast Section-->
 
-
+<div ng-hide="is_waiting"> 
 @include('layout.reviews')
-
+</div>
 
 <!--People Who Liked Also Liked Section-->
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
