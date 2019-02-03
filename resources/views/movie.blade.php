@@ -313,12 +313,8 @@
 			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2">@{{review.author}}@{{review.name}}</div>
 				<div class="h6">
-					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen opacity-1" ng-disabled="review.is_mine==1" ng-click="like_review($index)"
-					@if(!Auth::check())
-					disabled
-					@endif
-					>
-						<div ng-class="{'text-success':review.count>0}"><i class="fas fa-heart" ng-show="review.is_liked==1"></i><i class="far fa-heart" ng-show="review.is_liked==0"></i><span ng-if="review.count>0"> @{{review.count}}</span></div>
+					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen opacity-1" ng-disabled="review.is_mine==1" ng-click="like_review($index)">
+						<div ng-class="{'text-success':review.count>0}"><i class="fa-heart" ng-class="{0:'far', 1:'fas'}[review.is_liked]"></i><span ng-if="review.count>0"> @{{review.count}}</span></div>
 					</button>
 				</div>
 			</div>
