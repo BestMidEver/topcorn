@@ -36,7 +36,7 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_reviews = function(movie_series_id, page, mode) 
+    get_reviews = function(movie_series_id, page, mode, season_number, episode_number) 
     {
         return $http({
 			method: 'POST',
@@ -47,7 +47,9 @@ MyApp.factory('rate', function($http) {
 			},
 			data: {
 				"movie_series_id":movie_series_id,
-				"mode":mode
+				"mode":mode,
+				"season_number":season_number,
+				"episode_number":episode_number
 			}
 		}).then(function successCallback(response) {
 			return response;

@@ -68,7 +68,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+api_spice+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response='+append_to_response_2
 			}).then(function successCallback(response_2) {
 				secondarydata=response_2.data;
-				rate.get_reviews(pass.seriesid, $scope.page_reviews, [2,3])
+				rate.get_reviews(pass.seriesid, $scope.page_reviews, [2,3], $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2)
 				.then(function(response){
 					$scope.page_variables.reviews=response.data.data;
 					if($scope.page_variables.reviews.length>0)	if($scope.page_variables.reviews[0].is_mine==1){
