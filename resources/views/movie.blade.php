@@ -300,20 +300,24 @@
 <div class="container-fluid px-0 mt-5">	
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<span class="mb-0 pr-2 align-middle mt-3">{{ __('general.reviews') }}</span>
+		@if(Auth::check())
 		<button data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-outline-secondary addblack border-0"
-			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
-            @endif
 			><div><i class="fas fa-pencil-alt"></i></div> <span ng-if="!page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-if="page_variables.is_with_review">{{ __('general.edit_review') }}</span></button>
+        @endif
 	</div>
 	<div class="container-fluid">
 		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews" ng-hide="review.content==''">
 			<div class="d-flex justify-content-between">
 				<div class="h6 pb-2">@{{review.author}}@{{review.name}}</div>
 				<div class="h6">
-					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen opacity-1" ng-disabled="review.is_mine==1" ng-click="like_review($index)">
+					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen opacity-1" ng-disabled="review.is_mine==1" ng-click="like_review($index)"
+					@if(Auth::guest())
+					disabled
+					@endif
+					>
 						<div ng-class="{'text-success':review.count>0}"><i class="fas fa-heart" ng-show="review.is_liked==1"></i><i class="far fa-heart" ng-show="review.is_liked==0"></i><span ng-if="review.count>0"> @{{review.count}}</span></div>
 					</button>
 				</div>
