@@ -138,9 +138,9 @@ class ReviewController extends Controller
             });
         }else{
             $reviews=$reviews
-            ->leftjoin('series_rateds as r1', function ($join) {
-                $join->on('r1.series_id', '=', 'reviews.movie_series_id')
-                ->where('r1.user_id', '=', 'reviews.user_id');
+            ->leftjoin('series_rateds', function ($join) {
+                $join->on('series_rateds.series_id', '=', 'reviews.movie_series_id')
+                ->where('series_rateds.user_id', '=', 'reviews.user_id');
             });
         }
 
@@ -170,7 +170,7 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
-                'r1.rate as rate',
+                'series_rateds.rate as rate',
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
@@ -187,7 +187,7 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
-                'r1.rate as rate',
+                'series_rateds.rate as rate',
                 DB::raw('COUNT(review_likes.id) as count')
             )
             ->orderBy('count', 'desc');
