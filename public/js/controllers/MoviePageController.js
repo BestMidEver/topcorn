@@ -589,8 +589,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.page_variables.reviews[index].is_liked = 1;
-					$scope.page_variables.reviews[index].count ++;
+					console.log(response)
 				}
 			});
 		}
