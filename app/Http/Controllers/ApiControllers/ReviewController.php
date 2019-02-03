@@ -187,7 +187,7 @@ class ReviewController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->left('rateds', 'rateds.user_id', '=', 'reviews.user_id');
+        ->leftjoin('rateds', 'rateds.user_id', '=', 'reviews.user_id');
 
         return $reviews->paginate(25);
     }
