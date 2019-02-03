@@ -53,6 +53,44 @@ MyApp.factory('rate', function($http) {
 
 
 
+    add_review = function(review, movie_series_id) 
+    {
+        return $http({
+			method: 'POST',
+			url: '/api/reviews',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {
+				"review":review,
+				"movie_series_id":movie_series_id
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+    un_review = function(movie_series_id) 
+    {
+        return $http({
+			method: 'DELETE',
+			url: '/api/reviews/'+movie_series_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     add_review_like = function(review_id) 
     {
         return $http({
@@ -590,6 +628,8 @@ MyApp.factory('rate', function($http) {
     	get_quick_rate: get_quick_rate,
     	get_watched_movie_number: get_watched_movie_number,
     	get_reviews: get_reviews,
+    	add_review: add_review,
+    	un_review: un_review,
     	add_review_like: add_review_like,
     	un_review_like: un_review_like,
     	add_later: add_later,

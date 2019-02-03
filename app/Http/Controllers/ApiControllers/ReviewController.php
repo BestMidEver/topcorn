@@ -106,8 +106,15 @@ class ReviewController extends Controller
      * @param  \App\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review $review)
+    public function destroy($movie_series_id)
     {
-        //
+        $will_be_deleted = Review::where('movie_series_id', $movie_series_id)
+        ->where('user_id', Auth::id())->first();
+        
+        if($will_be_deleted){
+            $will_be_deleted->delete();
+        }
+        
+        return Response(null, Response::HTTP_NO_CONTENT);
     }
 }

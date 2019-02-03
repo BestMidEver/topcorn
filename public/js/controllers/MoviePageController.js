@@ -585,6 +585,14 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.save_review=function(){
 			console.log($scope.page_variables.review_textarea)
+			rate.add_review($scope.page_variables.review_textarea, pass.movieid)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 201){
+					$scope.page_variables.reviews[index].is_liked = 1;
+					$scope.page_variables.reviews[index].count ++;
+				}
+			});
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SAME PART(MOVIES) //////////////////////////////////
