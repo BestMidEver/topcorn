@@ -127,7 +127,7 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        ->rightjoin('rateds', 'rateds.user_id', '=', 'users.id')
+        ->join('rateds', 'rateds.user_id', '=', 'users.id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
 
