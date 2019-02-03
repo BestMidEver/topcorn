@@ -39,7 +39,13 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $review = Review::updateOrCreate(
+            array('user_id' => Auth::id(), 'movie_series_id' => $request->movie_series_id),
+            array('review' => $request->review, 'mode' => 1, 'lang' => Auth::User()->lang)
+        );
+        return Response([
+            'data' => $review,
+        ], Response::HTTP_CREATED);
     }
 
     /**

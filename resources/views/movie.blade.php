@@ -298,13 +298,13 @@
 <div class="container-fluid px-0 mt-5">	
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<span class="mb-0 pr-2 align-middle mt-3">{{ __('general.reviews') }}</span>
-		<!--<button ng-click="" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-outline-secondary addblack border-0"
+		<button ng-click="" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-outline-secondary addblack border-0"
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
             @endif
-			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>-->
+			><div><i class="fas fa-pencil-alt"></i></div> {{ __('general.add_review') }}</button>
 	</div>
 	<div class="container-fluid">
 		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews">
@@ -347,29 +347,29 @@
 	</div>
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel">{{ __('general.add_review') }}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label text-muted">Memento (2000)</label>
-            <textarea rows="5" class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
-        <button type="button" class="btn btn-primary">{{ __('general.save') }}</button>
-      </div>
-    </div>
-  </div>
-</div>
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h6 class="modal-title" id="exampleModalLabel">{{ __('general.add_review') }}</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="message-text" class="col-form-label text-muted">@{{movie.title}}</label>
+							<textarea rows="5" class="form-control" id="message-text" ng-model="page_variables.review_textarea"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
+					<button type="button" class="btn btn-primary" ng-click="save_review()">{{ __('general.save') }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
 <!--Review Section-->
 
 
