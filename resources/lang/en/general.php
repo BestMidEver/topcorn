@@ -68,7 +68,7 @@ return [
     'dollar_account' => 'Dollar Account',                                                           //donation,
     'dont_recommend' => 'Bad',                                                                      //ratemodal, profile,
     'edit' => 'Edit',                                                                               //list
-    'edit_review' => 'Edit Review',                                                                 //movie,series, 
+    'edit_review' => 'Edit',                                                                        //movie,series, 
     'editing' => 'Editing',                                                                         //person,
     'email' => 'Email',                                                                             //email, reset, login, register,
     'email_confirmation' => 'Email Confirmation',                                                   //register,
