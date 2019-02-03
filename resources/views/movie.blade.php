@@ -350,7 +350,7 @@
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h6 class="modal-title" id="exampleModalLabel">{{ __('general.add_review') }}</h5>
+				<h6 class="modal-title" id="exampleModalLabel"><span ng-if="!page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-if="page_variables.is_with_review">{{ __('general.edit_review') }}</span></h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -364,7 +364,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-danger" data-dismiss="modal" ng-if="page_variables.is_with_review">{{ __('general.delete') }}</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal" ng-if="page_variables.is_with_review" ng-click="delete_review()">{{ __('general.delete') }}</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="save_review()">{{ __('general.save') }}</button>
 				</div>

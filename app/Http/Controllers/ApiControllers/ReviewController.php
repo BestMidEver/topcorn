@@ -138,7 +138,29 @@ class ReviewController extends Controller
         if($will_be_deleted){
             $will_be_deleted->delete();
         }
+
+        $review = DB::table('reviews')
+        ->where('reviews.movie_series_id', $request->movie_series_id)
+        ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
+        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+        ->groupBy('reviews.id')
+        ->select(
+            'reviews.tmdb_author_name as author',
+            'reviews.review as content',
+            'reviews.tmdb_review_id as id',
+            'reviews.lang as url',
+            'reviews.id as review_id',
+            'users.name as name',
+            'users.id as user_id',
+            DB::raw('COUNT(review_likes.id) as count'),
+            DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
+            DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+        )
+        ->orderBy('is_mine', 'desc')
+        ->orderBy('count', 'desc');
         
-        return Response(null, Response::HTTP_NO_CONTENT);
+        return Response([
+            'data' => $review->paginate(10),
+        ], Response::HTTP_NO_CONTENT);
     }
 }
