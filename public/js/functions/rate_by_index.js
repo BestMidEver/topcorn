@@ -36,15 +36,19 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_reviews = function(movie_series_id, page) 
+    get_reviews = function(movie_series_id, page, mode) 
     {
         return $http({
-			method: 'GET',
-			url: '/api/reviews/'+movie_series_id+'?page='+page,
+			method: 'POST',
+			url: '/api/show_reviews?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
 			},
+			data: {
+				"movie_series_id":movie_series_id,
+				"mode":mode
+			}
 		}).then(function successCallback(response) {
 			return response;
 		}, function errorCallback(response) {

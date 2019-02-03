@@ -100,7 +100,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}).then(function successCallback(response) {
 			secondarydata=response.data;
 			console.log('secondary_data',secondarydata);
-			rate.get_reviews(pass.movieid, $scope.page_reviews)
+			rate.get_reviews(pass.movieid, $scope.page_reviews, [0,1])
 			.then(function(response){
 				$scope.page_variables.reviews=response.data.data;
 				if($scope.page_variables.reviews.length>0)	if($scope.page_variables.reviews[0].is_mine==1){

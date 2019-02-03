@@ -77,8 +77,20 @@ class ReviewController extends Controller
      */
     public function show($movie_series_id)
     {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Model\Review  $review
+     * @return \Illuminate\Http\Response
+     */
+    public function show_reviews(request $Request)
+    {
         $review = DB::table('reviews')
-        ->where('reviews.movie_series_id', $movie_series_id)
+        ->where('reviews.movie_series_id', $Request->movie_series_id)
+        ->whereIn('reviews.mode', $Request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
