@@ -63,7 +63,8 @@ return [
     'display' => 'Görüntü',                                                                             //accountinterface,
     'definitely_dont_recommend' => 'Çöp',                                                               //ratemodal, profile,
     'definitely_recommend' => 'Efsanevi',                                                               //ratemodal, profile,
-    'details' => 'Detaylar',                                                                            //series,       
+    'details' => 'Detaylar',                                                                            //series,
+    'delete' => 'Sil',                                                                                  //movie,series,    
     'dollar_account' => 'Dolar Hesabı',                                                                 //donation,
     'dont_recommend' => 'Kötü',                                                                         //ratemodal, profile,
     'edit' => 'Düzenle',                                                                                //list

@@ -62,6 +62,7 @@ return [
     'display' => 'Display',                                                                         //accountinterface,
     'definitely_dont_recommend' => 'Garbage',                                                       //ratemodal, profile,
     'definitely_recommend' => 'Legendary',                                                          //ratemodal, profile,
+    'delete' => 'Delete',                                                                           //movie,series,
     'details' => 'Details',                                                                         //series,          
     'dollar_account' => 'Dollar Account',                                                           //donation,
     'dont_recommend' => 'Bad',                                                                      //ratemodal, profile,

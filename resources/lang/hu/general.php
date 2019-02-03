@@ -62,7 +62,8 @@ return [
 	'display' => 'Kijelző',                            
     'definitely_dont_recommend' => 'Szörnyű',                                                           //ratemodal, profile,
     'definitely_recommend' => 'Legendás',                                                               //ratemodal, profile,
-    'details' => 'Részletek',                                                                           //series,      
+    'details' => 'Részletek',                                                                           //series,
+    'delete' => 'Delete',                                                                               //movie,series,     //////////////
     'dollar_account' => 'Dollár számla',                                                                //donation,
     'dont_recommend' => 'Rossz',                                                                        //ratemodal, profile,
     'edit' => 'Szerkesztés',                                                                            //list
