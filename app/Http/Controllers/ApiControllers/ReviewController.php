@@ -140,7 +140,7 @@ class ReviewController extends Controller
         }
 
         $review = DB::table('reviews')
-        ->where('reviews.movie_series_id', $request->movie_series_id)
+        ->where('reviews.movie_series_id', $movie_series_id)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
