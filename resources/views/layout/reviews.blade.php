@@ -6,7 +6,7 @@
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
-			><div><i class="fas fa-pencil-alt"></i></div> <span ng-show="!page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-show="page_variables.is_with_review">{{ __('general.edit_review') }}</span></button>
+			><div><i class="fas fa-pencil-alt"></i></div> <span ng-if="!page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-if="page_variables.is_with_review">{{ __('general.edit_review') }}</span></button>
         @endif
 	</div>
 	<div class="container-fluid">
