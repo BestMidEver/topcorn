@@ -31,7 +31,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 //////////////////////////////////////////////////////////////////////////////////////////
 
 	$scope.user_movie_record=pass.user_movie_record;
-	console.log($scope.user_movie_record)
+	//console.log($scope.user_movie_record)
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$scope.page_variables={};
@@ -78,11 +78,11 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 					console.log('reviews',response.data.data);
 					$scope.merge_series_data(desireddata, secondarydata);
 					$scope.prepeare_series_data(desireddata);
+					$scope.implement_static_data();
+					$scope.is_waiting = false;
+					//console.log('SERIES_secondary_data',secondarydata);
+					//console.log("seriesscope", $scope.series)
 				});
-				console.log('SERIES_secondary_data',secondarydata);
-				$scope.implement_static_data();
-				$scope.is_waiting = false;
-				console.log("seriesscope", $scope.series)
 			}, function errorCallback(response_2) {
 				console.log('error2')
 				window.location.replace("/not-found");
@@ -161,7 +161,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		if(pass.is_auth==1){
 			rate.get_user_movies('series')
 			.then(function(response){
-				console.log('get_pluck',response.data);
+				//console.log('get_pluck',response.data);
 				$scope.user_series = response.data;
 				$scope.set_recommendations();
 			});
