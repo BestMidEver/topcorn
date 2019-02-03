@@ -304,7 +304,7 @@
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
             @endif
-			><div><i class="fas fa-pencil-alt"></i></div> <span ng-if="page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-if="!page_variables.is_with_review">{{ __('general.edit_review') }}</span></button>
+			><div><i class="fas fa-pencil-alt"></i></div> <span ng-if="!page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-if="page_variables.is_with_review">{{ __('general.edit_review') }}</span></button>
 	</div>
 	<div class="container-fluid">
 		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews" ng-hide="review.content==''">
@@ -364,6 +364,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal" ng-if="page_variables.is_with_review">{{ __('general.delete') }}</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="save_review()">{{ __('general.save') }}</button>
 				</div>
