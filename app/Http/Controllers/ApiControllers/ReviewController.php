@@ -193,7 +193,7 @@ class ReviewController extends Controller
             ->orderBy('count', 'desc');
         }
 
-        return $request->mode[0];//$reviews->paginate(25);
+        return $reviews->paginate(25);
     }
 
     /**
