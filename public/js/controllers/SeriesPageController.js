@@ -35,6 +35,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
 	$scope.page_variables={};
+	$scope.page_reviews=1;
 
 	$scope.page_variables.active_tab_1 = -1;
 	$scope.page_variables.active_tab_3 = 0;
@@ -44,11 +45,11 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		$scope.is_waiting = true;
 		if($scope.page_variables.active_tab_1 == -1){
 			api_spice = '';
-			append_to_response_1 = 'credits%2Cvideos%2Creviews%2Cexternal_ids%2Crecommendations%2Csimilar';
-			append_to_response_2 = 'videos%2Creviews';
+			append_to_response_1 = 'credits,videos,external_ids,recommendations,similar';
+			append_to_response_2 = 'videos';
 		}else if($scope.page_variables.active_tab_2 == -1){
 			api_spice = '/season/'+$scope.page_variables.active_tab_1;
-			append_to_response_1 = 'credits%2Cvideos';
+			append_to_response_1 = 'credits,videos';
 			append_to_response_2 = 'videos';
 		}else{
 			api_spice = '/season/'+$scope.page_variables.active_tab_1+'/episode/'+$scope.page_variables.active_tab_2+'/videos';
@@ -67,9 +68,18 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				url: 'https://api.themoviedb.org/3/tv/'+pass.seriesid+api_spice+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response='+append_to_response_2
 			}).then(function successCallback(response_2) {
 				secondarydata=response_2.data;
+				rate.get_reviews(pass.seriesid, $scope.page_reviews, [2,3])
+				.then(function(response){
+					$scope.page_variables.reviews=response.data.data;
+					if($scope.page_variables.reviews.length>0)	if($scope.page_variables.reviews[0].is_mine==1){
+						$scope.page_variables.review_textarea=$scope.page_variables.reviews[0].content;
+						$scope.page_variables.is_with_review=true;
+					}
+					console.log('reviews',response.data.data);
+					$scope.merge_series_data(desireddata, secondarydata);
+					$scope.prepeare_series_data(desireddata);
+				});
 				console.log('SERIES_secondary_data',secondarydata);
-				$scope.merge_series_data(desireddata, secondarydata);
-				$scope.prepeare_series_data(desireddata);
 				$scope.implement_static_data();
 				$scope.is_waiting = false;
 				console.log("seriesscope", $scope.series)
@@ -123,7 +133,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 			});
 			$scope.secondary_language=_.where(languages,{i:pass.secondary_lang})[0].o;
 			$scope.fancyruntime={"hour":parseInt($scope.series.episode_run_time[0]/60),"minute":$scope.series.episode_run_time[0]%60};
-			_.each($scope.series.reviews.results, function(review){
+			/*_.each($scope.series.reviews.results, function(review){
 				review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\r\n/g , "<br>");
 				if(review.content.length>500){
 					review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
@@ -132,7 +142,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 					review.url=review.content;
 					review.id='short';
 				}
-			});
+			});*/
 			temp=_.where(languages,{i:$scope.series.original_language});
 			if(temp.length > 0)$scope.series.original_language=temp[0].o;
 			$scope.series.countries=[];
@@ -158,6 +168,19 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		}else{
 			$scope.set_recommendations();
 		}
+		$scope.prepeare_reviews($scope.page_variables.reviews);
+	}
+	$scope.prepeare_reviews = function(reviews){
+		_.each(reviews, function(review){
+			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");
+			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>1){
+				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
+				review.id='long';
+			}else{
+				review.url=review.content;
+				review.id='short';
+			}
+		});
 	}
 
 	$scope.current_trailer = 0;
@@ -606,6 +629,55 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 			}else{
 				$scope.user_series.push(movie);
 			}
+		}
+
+		$scope.like_review=function(index){
+			console.log(index)
+			if($scope.page_variables.reviews[index].is_liked == 0){
+				rate.add_review_like($scope.page_variables.reviews[index].review_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.page_variables.reviews[index].is_liked = 1;
+						$scope.page_variables.reviews[index].count ++;
+					}
+				});
+			}else{
+				rate.un_review_like($scope.page_variables.reviews[index].review_id)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 204 || response.status == 404){
+						$scope.page_variables.reviews[index].is_liked = 0;
+						$scope.page_variables.reviews[index].count --;
+					}
+				});
+			}
+		}
+
+		$scope.save_review=function(){
+			console.log($scope.page_variables.review_textarea)
+			rate.add_review($scope.page_variables.review_textarea, pass.movieid, 1)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 201){
+					$scope.prepeare_reviews(response.data.data.data);
+					$scope.page_variables.reviews=response.data.data.data;
+					$scope.page_variables.is_with_review=true;
+				}
+			});
+		}
+
+		$scope.delete_review=function(){
+			rate.un_review(pass.movieid, 1)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 201){
+					$scope.prepeare_reviews(response.data.data.data);
+					$scope.page_variables.reviews=response.data.data.data;
+					$scope.page_variables.is_with_review=false;
+					$scope.page_variables.review_textarea='';
+				}
+			});
 		}
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SAME PART(SERIES) //////////////////////////////////

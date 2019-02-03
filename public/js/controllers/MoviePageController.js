@@ -124,7 +124,6 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		if(!desireddata.backdrop_path)	desireddata.backdrop_path=secondarydata.backdrop_path;
 		if(!desireddata.overview) desireddata.overview=secondarydata.overview;
 		if(!desireddata.poster_path)	desireddata.poster_path=secondarydata.poster_path;
-		//if(pass.secondary_lang!=pass.lang)	desireddata.reviews.results=_.union(desireddata.reviews.results, secondarydata.reviews.results);
 		if(!desireddata.tagline)	desireddata.tagline=secondarydata.tagline;
 		if(pass.secondary_lang!=pass.lang)	desireddata.videos.results=_.union(desireddata.videos.results, secondarydata.videos.results);
 		if(desireddata.runtime < 1) desireddata.runtime=secondarydata.runtime;
@@ -175,7 +174,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 	$scope.prepeare_reviews = function(reviews){
 		_.each(reviews, function(review){
 			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
-			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>3){
+			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>1){
 				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
 				review.id='long';
 			}else{
