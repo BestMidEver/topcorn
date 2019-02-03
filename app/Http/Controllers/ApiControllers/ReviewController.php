@@ -135,13 +135,13 @@ class ReviewController extends Controller
             ->leftjoin('rateds as r1', function ($join) {
                 $join->on('r1.series_id', '=', 'reviews.movie_series_id');
                 $join->on('r1.user_id', '=', 'reviews.user_id');
-            })
+            });
         }else{
             $review=$review
             ->leftjoin('series_rateds as r1', function ($join) {
                 $join->on('r1.series_id', '=', 'reviews.movie_series_id');
                 $join->on('r1.user_id', '=', 'reviews.user_id');
-            })
+            });
         }
 
         if($request->season_number != -1){
