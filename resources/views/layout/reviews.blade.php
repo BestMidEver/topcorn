@@ -63,7 +63,7 @@
 					<div class="form-group">
 						<label for="message-text" class="col-form-label text-muted">
 							<span>@{{movie.title}}@{{series.name}}</span> 
-							<span ng-if="!movie.title.length>0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}}</span>
+							<span ng-if="page_variables.active_tab_2>0">S@{{series.episodes[page_variables.active_tab_2-1].season_number>9?series.episodes[page_variables.active_tab_2-1].season_number:'0'+series.episodes[page_variables.active_tab_2-1].season_number}}E@{{series.episodes[page_variables.active_tab_2-1].episode_number>9?series.episodes[page_variables.active_tab_2-1].episode_number:'0'+series.episodes[page_variables.active_tab_2-1].episode_number}}</span>
 						</label>
 						<textarea rows="5" class="form-control" id="input_review" ng-model="page_variables.review_textarea"></textarea>
 					</div>
