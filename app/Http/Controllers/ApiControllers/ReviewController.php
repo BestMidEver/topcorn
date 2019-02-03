@@ -123,32 +123,31 @@ class ReviewController extends Controller
      */
     public function show_reviews(Request $request)
     {
-        $review = DB::table('reviews')
+        $subq = DB::table('reviews')
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        ->join('rateds', 'users.id', '=', 'rateds.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
 
         if($request->season_number != -1){
             if($request->episode_number != -1){
-                $review=$review
+                $subq=$subq
                 ->where('reviews.season_number', '=', $request->season_number)
                 ->where('reviews.episode_number', '=', $request->episode_number);
             }else{
-                $review=$review
+                $subq=$subq
                 ->where('reviews.season_number', '=', $request->season_number)
                 ->whereNull('reviews.episode_number');
             }
         }else{
-            $review=$review
+            $subq=$subq
             ->whereNull('reviews.season_number')
             ->whereNull('reviews.episode_number');
         }
 
         if(Auth::check()){
-            $review = $review
+            $subq = $subq
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
@@ -164,7 +163,7 @@ class ReviewController extends Controller
             ->orderBy('is_mine', 'desc')
             ->orderBy('count', 'desc');
         }else{
-            $review = $review
+            $subq = $subq
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
@@ -178,7 +177,19 @@ class ReviewController extends Controller
             ->orderBy('count', 'desc');
         }
 
-        return $review->paginate(25);
+        $qqSql = $subq->toSql();
+
+        $reviews = DB::table('reviews')
+        ->join(
+            DB::raw('(' . $qqSql. ') as ss'),
+            function($join) use ($subq) {
+                $join->on('reviews.id', '=', 'ss.review_id')
+                ->addBinding($subq->getBindings());  
+            }
+        )
+        ->leftjoin('rateds', 'rateds.user_id', '=', 'ss.user_id');
+
+        return $reviews->paginate(25);
     }
 
     /**
