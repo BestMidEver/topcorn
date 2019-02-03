@@ -90,14 +90,16 @@ class ReviewController extends Controller
      * @param  \App\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show_reviews(request $Request)
+    public function show_reviews(Request $request)
     {
         $review = DB::table('reviews')
-        ->where('reviews.movie_series_id', $Request->movie_series_id)
-        ->whereIn('reviews.mode', $Request->mode)
+        ->where('reviews.movie_series_id', $request->movie_series_id)
+        ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
+
+        if($request->season_number==0) $review=$review;
 
         if(Auth::check()){
             $review = $review
