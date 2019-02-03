@@ -592,15 +592,18 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 
 		$scope.save_review=function(){
 			console.log($scope.page_variables.review_textarea)
-			rate.add_review($scope.page_variables.review_textarea, pass.movieid)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.prepeare_reviews(response.data.data.data);
-					$scope.page_variables.reviews=response.data.data.data;
-					$scope.page_variables.is_with_review=true;
-				}
-			});
+			if($scope.page_variables.review_textarea=='') $scope.delete_review;
+			else{
+				rate.add_review($scope.page_variables.review_textarea, pass.movieid)
+				.then(function(response){
+					console.log(response);
+					if(response.status == 201){
+						$scope.prepeare_reviews(response.data.data.data);
+						$scope.page_variables.reviews=response.data.data.data;
+						$scope.page_variables.is_with_review=true;
+					}
+				});
+			}
 		}
 
 		$scope.delete_review=function(){

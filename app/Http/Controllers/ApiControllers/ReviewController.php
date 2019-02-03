@@ -65,7 +65,7 @@ class ReviewController extends Controller
         ->orderBy('count', 'desc');
 
         return Response([
-            'data' => $review->paginate(10),
+            'data' => $review->paginate(25),
         ], Response::HTTP_CREATED);
     }
 
@@ -98,7 +98,7 @@ class ReviewController extends Controller
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
 
-        return $review->paginate(10);
+        return $review->paginate(25);
     }
 
     /**
@@ -160,7 +160,7 @@ class ReviewController extends Controller
         ->orderBy('count', 'desc');
         
         return Response([
-            'data' => $review->paginate(10),
+            'data' => $review->paginate(25),
         ], Response::HTTP_CREATED);
     }
 }
