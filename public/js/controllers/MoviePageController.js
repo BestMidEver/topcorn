@@ -145,12 +145,17 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 			temp=_.where(countries,{i:t.iso_3166_1});
 			if(temp.length > 0)t.name=temp[0].o;
 		})
-		rate.get_user_movies('movies')
-		.then(function(response){
-			console.log(response.data);
-			$scope.user_movies = response.data;
+		if(pass.is_auth==1){
+			rate.get_user_movies('movies')
+			.then(function(response){
+				console.log(response.data);
+				$scope.user_movies = response.data;
+				$scope.set_recommendations();
+			});
+		}else{
+			$scope.user_movies = [];
 			$scope.set_recommendations();
-		});
+		}
 	}
 	$scope.prepeare_reviews = function(reviews){
 		_.each(reviews, function(review){
