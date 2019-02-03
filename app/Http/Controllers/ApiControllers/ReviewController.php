@@ -145,7 +145,7 @@ class ReviewController extends Controller
      * @param  \App\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy($review_id)
+    public function destroy($review_id, $yet)
     {
         $will_be_deleted = Review::where('id', $review_id)
         ->where('user_id', Auth::id())->first();
@@ -155,7 +155,7 @@ class ReviewController extends Controller
         }
 
         $review = DB::table('reviews')
-        ->where('reviews.movie_series_id', $movie_series_id)
+        ->where('reviews.movie_series_id', $yet)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')

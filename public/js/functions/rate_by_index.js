@@ -79,7 +79,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'DELETE',
-			url: '/api/reviews/'+review_id,
+			url: '/api/reviews/'+review_id+'/77',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
