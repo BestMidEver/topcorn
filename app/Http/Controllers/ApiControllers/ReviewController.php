@@ -127,7 +127,6 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        ->join('rateds', 'rateds.user_id', '=', 'users.id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id');
 
@@ -157,7 +156,6 @@ class ReviewController extends Controller
                 'reviews.id as review_id',
                 'users.name as name',
                 'users.id as user_id',
-                'rateds.rate as rate',
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
