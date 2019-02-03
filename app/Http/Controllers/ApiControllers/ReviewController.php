@@ -39,10 +39,25 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        Review::updateOrCreate(
-            array('user_id' => Auth::id(), 'movie_series_id' => $request->movie_series_id),
-            array('review' => strip_tags($request->review), 'mode' => $request->mode, 'lang' => Auth::User()->lang)
-        );
+
+        if($request->season_number != -1){
+            if($request->episode_number != -1){
+                Review::updateOrCreate(
+                    array('user_id' => Auth::id(), 'movie_series_id' => $request->movie_series_id, 'season_number' => $request->season_number, 'episode_number' => $request->episode_number),
+                    array('review' => strip_tags($request->review), 'mode' => $request->mode, 'lang' => Auth::User()->lang)
+                );
+            }else{
+                Review::updateOrCreate(
+                    array('user_id' => Auth::id(), 'movie_series_id' => $request->movie_series_id, 'season_number' => $request->season_number, 'episode_number' => null),
+                    array('review' => strip_tags($request->review), 'mode' => $request->mode, 'lang' => Auth::User()->lang)
+                );
+            }
+        }else{
+            Review::updateOrCreate(
+                array('user_id' => Auth::id(), 'movie_series_id' => $request->movie_series_id, 'season_number' => null, 'episode_number' => null),
+                array('review' => strip_tags($request->review), 'mode' => $request->mode, 'lang' => Auth::User()->lang)
+            );
+        }
 
         if($request->mode==1) $mode=[0,1];
         else $mode=[2,3];
