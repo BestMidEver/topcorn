@@ -98,7 +98,7 @@ class ReviewController extends Controller
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
-            )
+            );
         }else{
             $review = $review
             ->select(
@@ -110,7 +110,7 @@ class ReviewController extends Controller
                 'users.name as name',
                 'users.id as user_id',
                 DB::raw('COUNT(review_likes.id) as count')
-            )
+            );
         }
 
         return $review->paginate(25);
