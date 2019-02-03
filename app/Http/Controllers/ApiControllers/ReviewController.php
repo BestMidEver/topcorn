@@ -44,8 +44,12 @@ class ReviewController extends Controller
             array('review' => strip_tags($request->review), 'mode' => $request->mode, 'lang' => Auth::User()->lang)
         );
 
+        if($request->mode==1) $mode=[0,1];
+        else $mode=[2,3];
+
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $request->movie_series_id)
+        ->whereIn('reviews.mode', $mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
@@ -179,8 +183,12 @@ class ReviewController extends Controller
             $will_be_deleted->delete();
         }
 
+        if($mode==1) $mode=[0,1];
+        else $mode=[2,3];
+
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $movie_series_id)
+        ->whereIn('reviews.mode', $Request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
