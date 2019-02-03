@@ -74,7 +74,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 					$scope.page_variables.is_with_review=false;
 					$scope.page_variables.review_textarea='';
 					$scope.page_variables.this_review_id='';
-					if($scope.page_variables.reviews.length>0){if($scope.page_variables.reviews[0].is_mine==1){
+					if($scope.page_variables.reviews.length>0) if($scope.page_variables.reviews[0].is_mine==1){
 						$scope.page_variables.review_textarea=$scope.page_variables.reviews[0].content;
 						$scope.page_variables.is_with_review=true;
 						$scope.page_variables.this_review_id=$scope.page_variables.reviews[0].review_id;
