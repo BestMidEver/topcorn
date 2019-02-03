@@ -197,7 +197,7 @@ return [
     'remember_me' => 'Beni hatırla',                                                                    //login,
     'remove' => 'Sil',                                                                                  //recommendations,
     'revenue' => 'Gelir',                           
-    'reviews' => 'Eleştiriler & Yorumlar',                           
+    'reviews' => 'Eleştiriler',                           
     'runtime' => 'Süre',                            
     'save' => 'Kaydet',                                                                                 //register,
     'save_changes' => 'Değişiklikleri Kaydet',                                                          //account, accountinterface,
