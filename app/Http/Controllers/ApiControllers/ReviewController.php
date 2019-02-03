@@ -145,9 +145,21 @@ class ReviewController extends Controller
      * @param  \App\Model\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy($review_id, $yet)
+    public function destroy($movie_series_id)
     {
-        $will_be_deleted = Review::where('id', $review_id)
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Model\Review  $review
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy_review($movie_series_id, $mode)
+    {
+        $will_be_deleted = Review::where('movie_series_id', $movie_series_id)
+        ->where('mode', $mode)
         ->where('user_id', Auth::id())->first();
         
         if($will_be_deleted){
@@ -155,7 +167,7 @@ class ReviewController extends Controller
         }
 
         $review = DB::table('reviews')
-        ->where('reviews.movie_series_id', $yet)
+        ->where('reviews.movie_series_id', $movie_series_id)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
