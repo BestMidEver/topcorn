@@ -66,7 +66,7 @@ return [
     'details' => 'Detaylar',                                                                            //series,       
     'dollar_account' => 'Dolar Hesabı',                                                                 //donation,
     'dont_recommend' => 'Kötü',                                                                         //ratemodal, profile,
-    'edit' => 'Düzenle',                                                                                //list                      
+    'edit' => 'Düzenle',                                                                                //list
     'edit_review' => 'Yazını Düzenle',                                                                  //movie,series,                   
     'editing' => 'Kurgu',   
     'email' => 'E-Posta',                                                                               //email, reset, login, register,
