@@ -619,6 +619,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$scope.prepeare_reviews(response.data.data.data);
 					$scope.page_variables.reviews=response.data.data.data;
 					$scope.page_variables.is_with_review=true;
+					$scope.page_variables.this_review_id=$scope.page_variables.reviews[0].review_id;
 				}
 			});
 		}
@@ -632,6 +633,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 					$scope.page_variables.reviews=response.data.data.data;
 					$scope.page_variables.is_with_review=false;
 					$scope.page_variables.review_textarea='';
+					$scope.page_variables.this_review_id='';
 				}
 			});
 		}
