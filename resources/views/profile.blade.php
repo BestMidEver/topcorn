@@ -172,7 +172,8 @@
 			<button class="dropdown-item" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data();">{{ __('general.all') }}</button>
 		</div>
 	</div>
-	<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
+	<div class="text-muted pl-2" ng-hide="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></div>
+	<div class="text-muted pl-2" ng-show="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></div>
 </div>
 
 <div class="container-fluid" ng-show="active_tab=='get_lists' && !is_waiting">
@@ -203,6 +204,7 @@
 			<button class="dropdown-item" ng-click="switch_seen_unseen('all')">{{ __('general.all') }}</button>
 		</div>
 	</div>
+	<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
 </div>
 
 <div id="scroll_top_point">
