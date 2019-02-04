@@ -133,7 +133,7 @@ class ReviewController extends Controller
         if($request->mode[0]==0){
             $review=$review
             ->leftjoin('rateds as r1', function ($join) {
-                $join->on('r1.series_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.movie_id', '=', 'reviews.movie_series_id');
                 $join->on('r1.user_id', '=', 'reviews.user_id');
             });
         }else{
