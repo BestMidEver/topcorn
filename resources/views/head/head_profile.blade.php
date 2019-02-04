@@ -6,6 +6,7 @@ pass={
 	"profile_user_id":"{{ $profile_user_id }}", 
 	"is_auth":"{{  Auth::Check()  }}",
 	@if(Auth::check())
+	"user_id":{{ Auth::id() }},
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"watched_movie_number":{{ $watched_movie_number }}
 	@endif

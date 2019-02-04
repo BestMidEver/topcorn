@@ -14,6 +14,8 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 
 $scope.page_variables={};
 
+if(pass.profile_user_id==pass.user_id) $scope.page_variables.is_my_profile = true;
+
 $scope.switch_seen_unseen = function(mode){
 	$scope.page_variables.active_dropdown_3=mode;
 	$scope.get_first_page_data();
