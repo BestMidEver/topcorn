@@ -187,7 +187,7 @@
 	</div>
 </div>
 
-<div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series'">
+<div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series' && !page_variables.is_guest">
 	<div class="dropdown d-inline" ng-init="page_variables.active_dropdown_3 = 'all'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<span ng-if="page_variables.active_dropdown_3=='unseen'">{{ __('general.unseen') }}</span>
