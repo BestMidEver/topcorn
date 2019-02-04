@@ -45,7 +45,7 @@ class SuckSeriesJob implements ShouldQueue
                     ['mode' => 2, 'movie_series_id' => $series['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series['reviews']['results'][$k]['id']],
                     ['tmdb_author_name' => $series['reviews']['results'][$k]['author'],
                     'lang' =>  $lang,
-                    'review' => $series['reviews']['results'][$k]['content']]s
+                    'review' => $series['reviews']['results'][$k]['content']]
                 );
             }
         }
