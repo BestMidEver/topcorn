@@ -38,10 +38,10 @@ class SuckMovieJob implements ShouldQueue
      */
     public function handle()
     {
-        /*$is_recent = Movie::where('id', $this->id)
+        $is_recent = Movie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
-        if($is_recent) return;*/
+        if($is_recent) return;
         function set_review($movie, $lang){
             for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
                 $review = new Review;

@@ -41,14 +41,12 @@ class SuckSeriesJob implements ShouldQueue
     {
         function set_review($series, $lang){
             for ($k=0; $k < count($series['reviews']['results']); $k++) { 
-                $review = new Review;
-                $review->mode = 2;
-                $review->movie_series_id = $series['id'];
-                $review->tmdb_author_name = $series['reviews']['results'][$k]['author'];
-                $review->tmdb_review_id = $series['reviews']['results'][$k]['id'];
-                $review->lang = $lang;
-                $review->review = $series['reviews']['results'][$k]['content'];
-                $review->save();
+                Review::updateOrCreate(
+                    ['mode' => 2, 'movie_series_id' => $series['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $series['reviews']['results'][$k]['author'],
+                    'lang' =>  $lang,
+                    'review' => $series['reviews']['results'][$k]['content']]
+                );
             }
         }
         if($this->isWithRecommendation){
@@ -114,7 +112,7 @@ class SuckSeriesJob implements ShouldQueue
                 $network->network_id = $series['networks'][$k]['id'];
                 $network->save();
             }
-            Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
+            //Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
             set_review($series, 'en');
             set_review($series_tr, 'tr');
             set_review($series_hu, 'hu');
@@ -175,7 +173,7 @@ class SuckSeriesJob implements ShouldQueue
                 $network->network_id = $series['networks'][$k]['id'];
                 $network->save();
             }
-            Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
+            //Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
             set_review($series, 'en');
             set_review($series_tr, 'tr');
             set_review($series_hu, 'hu');

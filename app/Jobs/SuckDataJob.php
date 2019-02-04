@@ -103,8 +103,8 @@ class SuckDataJob implements ShouldQueue
 
 
 
-        //RefreshSiteMapJob::dispatch()->onQueue("low");
+        RefreshSiteMapJob::dispatch()->onQueue("low");
 
-        //RestartJob::dispatch()->onQueue("low");
+        RestartJob::dispatch()->onQueue("low");
     }
 }
