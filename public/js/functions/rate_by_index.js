@@ -623,7 +623,6 @@ MyApp.factory('rate', function($http) {
     {
     	temp = active_tab.split('get_');
     	active_tab = (mode=='series'?'get_series_':'get_')+temp[1];
-    	console.log(active_tab, temp,mode)
         return $http({
 			method: 'GET',
 			url: '/api/'+active_tab+'/'+profile_user_id+'/'+pass.lang+'?page='+page,
