@@ -102,7 +102,7 @@ class SuckMovieJob implements ShouldQueue
                 Review::updateOrCreate(
                     ['mode' => 0, 'movie_series_id' => $movie['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie['reviews']['results'][$k]['id']],
                     ['tmdb_author_name' => $movie['reviews']['results'][$k]['author'],
-                    'lang' =>  $en,
+                    'lang' =>  'en',
                     'review' => $movie['reviews']['results'][$k]['content']]
                 );
             }
@@ -110,7 +110,7 @@ class SuckMovieJob implements ShouldQueue
                 Review::updateOrCreate(
                     ['mode' => 0, 'movie_series_id' => $movie_tr['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_tr['reviews']['results'][$k]['id']],
                     ['tmdb_author_name' => $movie_tr['reviews']['results'][$k]['author'],
-                    'lang' =>  $tr,
+                    'lang' =>  'tr',
                     'review' => $movie_tr['reviews']['results'][$k]['content']]
                 );
             }
@@ -118,7 +118,7 @@ class SuckMovieJob implements ShouldQueue
                 Review::updateOrCreate(
                     ['mode' => 0, 'movie_series_id' => $movie_hu['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_hu['reviews']['results'][$k]['id']],
                     ['tmdb_author_name' => $movie_hu['reviews']['results'][$k]['author'],
-                    'lang' =>  $hu,
+                    'lang' =>  'hu',
                     'review' => $movie_hu['reviews']['results'][$k]['content']]
                 );
             }
@@ -159,7 +159,7 @@ class SuckMovieJob implements ShouldQueue
                 Review::updateOrCreate(
                     ['mode' => 0, 'movie_series_id' => $movie['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie['reviews']['results'][$k]['id']],
                     ['tmdb_author_name' => $movie['reviews']['results'][$k]['author'],
-                    'lang' =>  $en,
+                    'lang' =>  'en',
                     'review' => $movie['reviews']['results'][$k]['content']]
                 );
             }
@@ -167,7 +167,7 @@ class SuckMovieJob implements ShouldQueue
                 Review::updateOrCreate(
                     ['mode' => 0, 'movie_series_id' => $movie_tr['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_tr['reviews']['results'][$k]['id']],
                     ['tmdb_author_name' => $movie_tr['reviews']['results'][$k]['author'],
-                    'lang' =>  $tr,
+                    'lang' =>  'tr',
                     'review' => $movie_tr['reviews']['results'][$k]['content']]
                 );
             }
@@ -175,7 +175,7 @@ class SuckMovieJob implements ShouldQueue
                 Review::updateOrCreate(
                     ['mode' => 0, 'movie_series_id' => $movie_hu['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_hu['reviews']['results'][$k]['id']],
                     ['tmdb_author_name' => $movie_hu['reviews']['results'][$k]['author'],
-                    'lang' =>  $hu,
+                    'lang' =>  'hu',
                     'review' => $movie_hu['reviews']['results'][$k]['content']]
                 );
             }
