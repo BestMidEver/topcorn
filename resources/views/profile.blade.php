@@ -172,8 +172,8 @@
 			<button class="dropdown-item" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data();">{{ __('general.all') }}</button>
 		</div>
 	</div>
-	<span class="text-muted pl-2" ng-hide="page_variables.movies_or_series=='series' || is_waiting"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
-	<span class="text-muted pl-2" ng-show="page_variables.movies_or_series=='series' && !is_waiting"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
+	<span class="text-muted pl-2" ng-hide="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
+	<span class="text-muted pl-2" ng-show="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
 </div>
 
 <div class="container-fluid" ng-show="active_tab=='get_lists' && !is_waiting">
@@ -188,7 +188,7 @@
 	</div>
 </div>
 
-<div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series' && !page_variables.is_guest">
+<div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series' && !page_variables.is_guest && !is_waiting">
 	<div class="dropdown d-inline" ng-init="page_variables.active_dropdown_3 = 'all'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<span ng-if="page_variables.active_dropdown_3=='unseen'">{{ __('general.unseen') }}</span>
