@@ -71,9 +71,9 @@
 				</form>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal" ng-if="page_variables.is_with_review" ng-click="delete_review(page_variables.this_review_id)">{{ __('general.delete') }}</button>
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
-				<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="save_review()">{{ __('general.save') }}</button>
+				<button type="button" class="btn btn-outline-danger" data-dismiss="modal" ng-if="page_variables.is_with_review" ng-click="delete_review(page_variables.this_review_id)">{{ __('general.delete') }}</button>
+				<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
+				<button type="button" class="btn btn-outline-primary" data-dismiss="modal" ng-click="save_review()">{{ __('general.save') }}</button>
 			</div>
 		</div>
 	</div>
