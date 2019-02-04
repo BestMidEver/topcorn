@@ -39,16 +39,6 @@ class SuckSeriesJob implements ShouldQueue
      */
     public function handle()
     {
-        function set_review($series, $lang){
-            for ($k=0; $k < count($series['reviews']['results']); $k++) { 
-                Review::updateOrCreate(
-                    ['mode' => 2, 'movie_series_id' => $series['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series['reviews']['results'][$k]['id']],
-                    ['tmdb_author_name' => $series['reviews']['results'][$k]['author'],
-                    'lang' =>  $lang,
-                    'review' => $series['reviews']['results'][$k]['content']]
-                );
-            }
-        }
         if($this->isWithRecommendation){
             $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
             Series_recommendation::where(['series_id' => $this->id])->delete();
@@ -112,10 +102,30 @@ class SuckSeriesJob implements ShouldQueue
                 $network->network_id = $series['networks'][$k]['id'];
                 $network->save();
             }
-            //Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
-            set_review($series, 'en');
-            set_review($series_tr, 'tr');
-            set_review($series_hu, 'hu');
+            for ($k=0; $k < count($series['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 2, 'movie_series_id' => $series['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $series['reviews']['results'][$k]['author'],
+                    'lang' =>  $en,
+                    'review' => $series['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($series_tr['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 2, 'movie_series_id' => $series_tr['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series_tr['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $series_tr['reviews']['results'][$k]['author'],
+                    'lang' =>  $tr,
+                    'review' => $series_tr['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($series_hu['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 2, 'movie_series_id' => $series_hu['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series_hu['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $series_hu['reviews']['results'][$k]['author'],
+                    'lang' =>  $hu,
+                    'review' => $series_hu['reviews']['results'][$k]['content']]
+                );
+            }
         }else{
             $is_recent = Serie::where('id', $this->id)
             ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
@@ -173,10 +183,30 @@ class SuckSeriesJob implements ShouldQueue
                 $network->network_id = $series['networks'][$k]['id'];
                 $network->save();
             }
-            //Review::where(['movie_series_id' => $this->id, 'mode' => 2])->delete();
-            set_review($series, 'en');
-            set_review($series_tr, 'tr');
-            set_review($series_hu, 'hu');
+            for ($k=0; $k < count($series['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 2, 'movie_series_id' => $series['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $series['reviews']['results'][$k]['author'],
+                    'lang' =>  $en,
+                    'review' => $series['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($series_tr['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 2, 'movie_series_id' => $series_tr['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series_tr['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $series_tr['reviews']['results'][$k]['author'],
+                    'lang' =>  $tr,
+                    'review' => $series_tr['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($series_hu['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 2, 'movie_series_id' => $series_hu['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $series_hu['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $series_hu['reviews']['results'][$k]['author'],
+                    'lang' =>  $hu,
+                    'review' => $series_hu['reviews']['results'][$k]['content']]
+                );
+            }
         }
     }
 }
