@@ -12,9 +12,9 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-$scope.page_variables={};
 
-if(pass.profile_user_id==pass.user_id) $scope.page_variables.is_my_profile = true;
+if(pass.profile_user_id.split("-")[0]==pass.user_id) $scope.page_variables={$scope.page_variables.is_my_profile:true};
+else $scope.page_variables={};
 console.log(pass,$scope.page_variables.is_my_profile)
 
 $scope.switch_seen_unseen = function(mode){
