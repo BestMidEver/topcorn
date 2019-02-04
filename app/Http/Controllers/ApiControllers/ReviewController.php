@@ -76,12 +76,27 @@ class ReviewController extends Controller
             'reviews.id as review_id',
             'users.name as name',
             'users.id as user_id',
+            'r1.rate as rate',
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
             DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
         )
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
+
+        if($mode[0]==0){
+            $review=$review
+            ->leftjoin('rateds as r1', function ($join) {
+                $join->on('r1.movie_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            });
+        }else{
+            $review=$review
+            ->leftjoin('series_rateds as r1', function ($join) {
+                $join->on('r1.series_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            });
+        }
 
         if($request->season_number != -1){
             if($request->episode_number != -1){
