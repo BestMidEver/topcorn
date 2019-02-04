@@ -98,10 +98,30 @@ class SuckMovieJob implements ShouldQueue
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
             }
-            Review::where(['movie_series_id' => $this->id, 'mode' => 0])->delete();
-            set_review($movie, 'en');
-            set_review($movie_tr, 'tr');
-            set_review($movie_hu, 'hu');
+            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 0, 'movie_series_id' => $movie['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $movie['reviews']['results'][$k]['author'],
+                    'lang' =>  $en,
+                    'review' => $movie['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($movie_tr['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 0, 'movie_series_id' => $movie_tr['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_tr['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $movie_tr['reviews']['results'][$k]['author'],
+                    'lang' =>  $tr,
+                    'review' => $movie_tr['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($movie_hu['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 0, 'movie_series_id' => $movie_hu['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_hu['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $movie_hu['reviews']['results'][$k]['author'],
+                    'lang' =>  $hu,
+                    'review' => $movie_hu['reviews']['results'][$k]['content']]
+                );
+            }
         }else{
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=reviews'), true);
             $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr&append_to_response=reviews'), true);
@@ -135,10 +155,30 @@ class SuckMovieJob implements ShouldQueue
                 $genre->genre_id = $movie['genres'][$k]['id'];
                 $genre->save();
             }
-            Review::where(['movie_series_id' => $this->id, 'mode' => 0])->delete();
-            set_review($movie, 'en');
-            set_review($movie_tr, 'tr');
-            set_review($movie_hu, 'hu');
+            for ($k=0; $k < count($movie['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 0, 'movie_series_id' => $movie['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $movie['reviews']['results'][$k]['author'],
+                    'lang' =>  $en,
+                    'review' => $movie['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($movie_tr['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 0, 'movie_series_id' => $movie_tr['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_tr['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $movie_tr['reviews']['results'][$k]['author'],
+                    'lang' =>  $tr,
+                    'review' => $movie_tr['reviews']['results'][$k]['content']]
+                );
+            }
+            for ($k=0; $k < count($movie_hu['reviews']['results']); $k++) { 
+                Review::updateOrCreate(
+                    ['mode' => 0, 'movie_series_id' => $movie_hu['id'], 'season_number' => null, 'episode_number' => null, 'tmdb_review_id' => $movie_hu['reviews']['results'][$k]['id']],
+                    ['tmdb_author_name' => $movie_hu['reviews']['results'][$k]['author'],
+                    'lang' =>  $hu,
+                    'review' => $movie_hu['reviews']['results'][$k]['content']]
+                );
+            }
         }
     }
 }
