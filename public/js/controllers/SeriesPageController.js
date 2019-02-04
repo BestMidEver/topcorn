@@ -467,16 +467,18 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 		{
 			if(!($scope.user_movie_record.last_seen_season==$scope.page_variables.active_tab_1 && $scope.user_movie_record.last_seen_episode==$scope.page_variables.active_tab_2)){
 				temp=_.where($scope.series.episodes, {episode_number:$scope.page_variables.active_tab_2+1});
+				temp_2=_.where($scope.movie.seasons, {season_number:$scope.page_variables.active_tab_1+1});
 				if(temp.length>0){
 					episode=temp[0].episode_number;
 					season=temp[0].season_number;
+				}else if(temp_2.length>0){
 					episode=1;
 					season=$scope.page_variables.active_tab_1+1;
 				}else{
 					episode=null;
 					season=null;
 				}
-
+				console.log(':D:D:D')
 				rate.series_add_last_seen(pass.seriesid, $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2, $scope.series.episodes[$scope.page_variables.active_tab_2-1].air_date, season, episode)
 				.then(function(response){
 					console.log(response);
