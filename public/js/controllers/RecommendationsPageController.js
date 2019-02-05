@@ -107,11 +107,11 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$('#collapseGenres').on('hide.bs.collapse', function () {
 				angular.element( document.querySelector( '#genres_button' ) ).removeClass('active');
 		});
-		$('#collapseYears').on('show.bs.collapse', function () {
-				angular.element( document.querySelector( '#years_button' ) ).addClass('active');
+		$('#collapseYear').on('show.bs.collapse', function () {
+				angular.element( document.querySelector( '#year_button' ) ).addClass('active');
 		});
-		$('#collapseYears').on('hide.bs.collapse', function () {
-				angular.element( document.querySelector( '#years_button' ) ).removeClass('active');
+		$('#collapseYear').on('hide.bs.collapse', function () {
+				angular.element( document.querySelector( '#year_button' ) ).removeClass('active');
 		});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
