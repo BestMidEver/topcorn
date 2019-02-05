@@ -229,8 +229,8 @@
 <div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter"	@if(auth::guest()) ng-hide="active_tab=='top_rated'" @endif>
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
-	<div class="mt-3 pb-3 d-inline">
-		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0" type="button" data-toggle="collapse" data-target="#collapseYear"><span class="h6">{{ __('general.year') }}</span></button>
+	<div class="pb-3 d-inline">
+		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseYear"><span class="h6">{{ __('general.year') }}</span></button>
 		<div class="collapse" id="collapseYears">
 			<rzslider rz-slider-model="slider.minValue"
 			rz-slider-high="slider.maxValue"
