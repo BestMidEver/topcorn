@@ -22,7 +22,6 @@
 							<div ng-hide="page_variables.is_guest">
 								<div class="text-white" ng-if="movie.day_difference_last<1 && movie.last_seen_air_date.length>0">
 									<small ng-if="movie.status=='Returning Series' || movie.next_episode>0">{{ __('general.new_episode') }}</small>
-									<div ng-if="movie.next_episode>0" class="h5 text-warning mb-1"> S@{{movie.next_season>9?movie.next_season:'0'+movie.next_season}}E@{{movie.next_episode>9?movie.next_episode:'0'+movie.next_episode}}</div>
 									<div>
 										<span ng-if="movie.day_difference_next==null&&movie.status=='Returning Series'"><span class="h5 text-warning">{{  ucfirst(__('general.unknown')) }}</span></span>
 										<span ng-if="movie.day_difference_next>1">{!! __('general.airs_days_later') !!}</span>
