@@ -279,4 +279,5 @@ return [
     'writers' => 'Írók',                            
     'writing' => 'Író',                         
     'year' => 'ÉV',                                                                                     //recommendations
+    'yesterday' => 'Yesterday',                                                                         //moviecard,
 ];

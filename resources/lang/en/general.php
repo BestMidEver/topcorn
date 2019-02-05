@@ -280,4 +280,5 @@ return [
     'writers' => 'Writers',
     'writing' => 'Writing',
     'year' => 'YEAR',                                                                                //recommendations
+    'yesterday' => 'Yesterday',                                                                      //moviecard,
 ];
