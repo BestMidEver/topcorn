@@ -199,6 +199,7 @@ return [
     'remove' => 'Törlés',                                                                               //recommendations,
     'revenue' => 'Bevétel',                                                                             //movie,
     'reviews' => 'Vélemények',                                                                          //movie,
+    'review_number' => 'Added review count',                                                            //profile,  //////////////////
     'runtime' => 'Hossz',                                                                               //movie,
     'save' => 'Mentés',                                                                                 //register,
     'save_changes' => 'Változtatások mentése',                                                          //account, accountinterface,

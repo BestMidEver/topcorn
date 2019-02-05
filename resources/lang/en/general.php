@@ -200,6 +200,7 @@ return [
     'remove' => 'Remove',                                                                           //recommendations,
     'revenue' => 'Revenue',                                                                         //movie,
     'reviews' => 'Reviews',                                                                         //movie,
+    'review_number' => 'Added review count',                                                        //profile,
     'runtime' => 'Runtime',                                                                         //movie,
     'save' => 'Save',                                                                               //register,
     'save_changes' => 'Save Changes',                                                               //account, accountinterface,
