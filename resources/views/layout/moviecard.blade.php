@@ -33,7 +33,6 @@
 									</div>
 								</div>
 								<div class="text-white" ng-if="movie.day_difference_last>0">
-									<small>{{ __('general.next_episode') }}</small>
 									<div ng-if="movie.next_episode>0" class="h5 text-warning mb-1"> S@{{movie.next_season>9?movie.next_season:'0'+movie.next_season}}E@{{movie.next_episode>9?movie.next_episode:'0'+movie.next_episode}}</div>
 									<span class="d-block">
 										<span ng-if="movie.day_difference_last==1" class="h5 text-warning">{{ __('general.yesterday') }}</span>
