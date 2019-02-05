@@ -1,5 +1,5 @@
 <div class="">
-	<p class="h6 text-muted pt-3">{{ __('general.language') }} <button id="filter_button" class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#collapseLanguages"><i class="fas fa-caret-down"></i></button></p>
+	<p class="h6 text-muted pt-3">{{ __('general.language') }} <button id="languages_button" class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#collapseLanguages"><i class="fas fa-caret-down"></i></button></p>
 	<div class="collapse" id="collapseLanguages">
 		<div class="">
 			<!--<label class="form-check-label nowrap">col-6 col-sm-4 col-md-3 col-lg-2 
