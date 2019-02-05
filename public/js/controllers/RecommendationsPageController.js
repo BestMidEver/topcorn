@@ -85,34 +85,16 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_2 = 'vote_average';
 		$scope.sort_by_4 = 'point';
 
-		$('#collapseFilter').on('show.bs.collapse', function (e) {
-			if ($(this).is(e.target)) {
-				angular.element( document.querySelector( '#filter_button' ) ).addClass('active');
-		    }
-		});
-		$('#collapseFilter').on('hide.bs.collapse', function (e) {
-			if ($(this).is(e.target)) {
-				angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
-			}
-		});
-		$('#collapseLanguages').on('show.bs.collapse', function () {
-				angular.element( document.querySelector( '#languages_button' ) ).addClass('active');
-		});
-		$('#collapseLanguages').on('hide.bs.collapse', function () {
-				angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');
-		});
-		$('#collapseGenres').on('show.bs.collapse', function () {
-				angular.element( document.querySelector( '#genres_button' ) ).addClass('active');
-		});
-		$('#collapseGenres').on('hide.bs.collapse', function () {
-				angular.element( document.querySelector( '#genres_button' ) ).removeClass('active');
-		});
-		$('#collapseYear').on('show.bs.collapse', function () {
-				angular.element( document.querySelector( '#year_button' ) ).addClass('active');
-		});
-		$('#collapseYear').on('hide.bs.collapse', function () {
-				angular.element( document.querySelector( '#year_button' ) ).removeClass('active');
-		});
+		$('#collapseFilter').on('show.bs.collapse', function (e) {if ($(this).is(e.target)) {angular.element( document.querySelector( '#filter_button' ) ).addClass('active');}});
+		$('#collapseFilter').on('hide.bs.collapse', function (e) {if ($(this).is(e.target)) {angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');}});
+		$('#collapseLanguages').on('show.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).addClass('active');});
+		$('#collapseLanguages').on('hide.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');});
+		$('#collapseGenres').on('show.bs.collapse', function () {angular.element( document.querySelector( '#genres_button' ) ).addClass('active');});
+		$('#collapseGenres').on('hide.bs.collapse', function () {angular.element( document.querySelector( '#genres_button' ) ).removeClass('active');});
+		$('#collapseYear').on('show.bs.collapse', function () {angular.element( document.querySelector( '#year_button' ) ).addClass('active');});
+		$('#collapseYear').on('hide.bs.collapse', function () {angular.element( document.querySelector( '#year_button' ) ).removeClass('active');});
+		$('#collapseVoteCount').on('show.bs.collapse', function () {angular.element( document.querySelector( '#votecount_button' ) ).addClass('active');});
+		$('#collapseVoteCount').on('hide.bs.collapse', function () {angular.element( document.querySelector( '#votecount_button' ) ).removeClass('active');});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
 			angular.element( document.querySelector( '#addperson_button' ) ).addClass('btn-outline-secondary-hover');
