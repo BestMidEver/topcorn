@@ -11,8 +11,8 @@
 			  <label class="custom-control-label" for="customCheck@{{$index}}">@{{language.o}}</label>
 			</div>-->
 			<div class="btn-group-toggle">
-				<label class="btn btn-outline-secondary m-1 border-0" ng-repeat="language in languages">
-					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-class="{'active':f_lang_model[language.i]}" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()"> @{{language.o}}
+				<label class="btn btn-outline-secondary m-1 border-0" ng-class="{'active':f_lang_model[language.i]}" ng-repeat="language in languages">
+					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()"> @{{language.o}}
 				</label>
 			</div>
 		</div>
