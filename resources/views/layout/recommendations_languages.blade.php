@@ -2,7 +2,7 @@
 	<p class="h6 text-muted pt-3">{{ __('general.language') }}</p>
 	<div class="">
 		<div class="" >
-			<!--<label class="form-check-label nowrap">col-6 col-sm-4 col-md-3 col-lg-2 
+			<!--<label class="form-check-label nowrap">
 				<input type="checkbox" class="form-check-input" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()">
 				@{{language.o}}
 			</label>
@@ -11,7 +11,7 @@
 			  <label class="custom-control-label" for="customCheck@{{$index}}">@{{language.o}}</label>
 			</div>-->
 			<div class="btn-group-toggle d-flex flex-wrap" data-toggle="buttons">
-				<label class="btn btn-outline-secondary m-1 border-0" ng-repeat="language in languages">
+				<label class="btn btn-outline-secondary m-1 border-0 col-6 col-sm-4 col-md-3 col-lg-2" ng-repeat="language in languages">
 					<input type="checkbox" autocomplete="off" ng-attr-id="customCheck@{{$index}}" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()"> @{{language.o}}
 				</label>
 			</div>
