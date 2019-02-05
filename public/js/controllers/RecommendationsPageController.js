@@ -91,12 +91,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$('#collapseFilter').on('hide.bs.collapse', function () {
 			angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
 		});
-		
+
 		$('#collapseLanguages').on('show.bs.collapse', function () {
-			angular.element( document.querySelector( '#languages_button' ) ).addClass('active');
+			angular.element( document.querySelector( '#languages_button' ) ).addClass('actives');
 		});
 		$('#collapseLanguages').on('hide.bs.collapse', function () {
-			angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');
+			angular.element( document.querySelector( '#languages_button' ) ).removeClass('actives');
 		});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
