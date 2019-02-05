@@ -34,7 +34,7 @@
 							@endif
 							@if($list_number > 0)
 							<div class="pl-2 pl-sm-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.list_number') }}">
-								<i class="fas fa-plus mr-1"></i><div class="d-inline" >{{ $list_number }}</div>
+								<i class="fas fa-th-list mr-1"></i><div class="d-inline" >{{ $list_number }}</div>
 							</div>
 							@endif
 							@if($like_number > 0)
@@ -76,7 +76,7 @@
 						@endif
 						@if($list_number > 0)
 						<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.list_number') }}">
-							<i class="fas fa-plus"></i><div class="d-inline pl-1" >{{ $list_number }}</div>
+							<i class="fas fa-th-list"></i><div class="d-inline pl-1" >{{ $list_number }}</div>
 						</div>
 						@endif
 						@if($like_number > 0)
