@@ -5,15 +5,10 @@
 			<!--<label class="form-check-label nowrap">
 				<input type="checkbox" class="form-check-input" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()">
 				@{{language.o}}
-			</label>
+			</label>-->
 			<div class="custom-control custom-checkbox">
 			  <input type="checkbox" class="custom-control-input" ng-attr-id="customCheck@{{$index}}" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()">
 			  <label class="custom-control-label" for="customCheck@{{$index}}">@{{language.o}}</label>
-			</div>-->
-			<div class="btn-group-toggle" data-toggle="buttons">
-				<label class="btn btn-outline-secondary border-0">
-					<input type="checkbox" checked autocomplete="off"> @{{language.o}}
-				</label>
 			</div>
 		</div>
 	</div>	
