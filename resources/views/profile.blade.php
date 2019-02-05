@@ -27,6 +27,11 @@
 								<i class="fas fa-tv"></i></i><div class="d-inline pl-1" >{{ $profile_watched_series_number }}</div>
 							</div>
 							@endif
+							@if($review_number > 0)
+							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.review_number') }}">
+								<i class="fas fa-pencil-alt"></i><div class="d-inline pl-1" >{{ $review_number }}</div>
+							</div>
+							@endif
 							@if($list_number > 0)
 							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.list_number') }}">
 								<i class="fas fa-plus"></i><div class="d-inline pl-1" >{{ $list_number }}</div>
@@ -62,6 +67,11 @@
 						@if($profile_watched_series_number > 0)
 						<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_series_number') }}">
 							<i class="fas fa-tv"></i></i><div class="d-inline pl-1" >{{ $profile_watched_series_number }}</div>
+						</div>
+						@endif
+						@if($review_number > 0)
+						<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.review_number') }}">
+							<i class="fas fa-plus"></i></i><div class="d-inline pl-1" >{{ $review_number }}</div>
 						</div>
 						@endif
 						@if($list_number > 0)

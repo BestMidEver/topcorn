@@ -46,6 +46,10 @@ class ProfileController extends Controller
             $profile_profile_pic = config('constants.image.thumb_nail')[$image_quality].$user->profile_pic;
         }
 
+        $review_number = DB::table('reviews')
+        ->where('reviews.user_id', '=', $profile_user_id)
+        ->count();
+
         $list_number = DB::table('listes')
         ->where('listes.user_id', '=', $profile_user_id)
         ->count();
@@ -58,7 +62,7 @@ class ProfileController extends Controller
         ->whereNotNull('listlikes.created_at')
         ->count();
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name'));
 	}
 
     public function get_rateds($rate, $user, $lang)
