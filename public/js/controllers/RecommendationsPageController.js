@@ -87,14 +87,12 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 
 		$('#collapseFilter').on('show.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-		      snippet.log(this.id)
 				angular.element( document.querySelector( '#filter_button' ) ).addClass('active');
 		    }
 		});
 		$('#collapseFilter').on('hide.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
 			angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
-      snippet.log(this.id)
     }
 		});
 
