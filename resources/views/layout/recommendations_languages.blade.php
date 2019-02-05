@@ -5,17 +5,22 @@
 			<!--<label class="form-check-label nowrap">
 				<input type="checkbox" class="form-check-input" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()">
 				@{{language.o}}
-			</label>-->
+			</label>
 			<div class="custom-control custom-checkbox">
 			  <input type="checkbox" class="custom-control-input" ng-attr-id="customCheck@{{$index}}" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()">
 			  <label class="custom-control-label" for="customCheck@{{$index}}">@{{language.o}}</label>
+			</div>-->
+			<div class="btn-group-toggle row" data-toggle="buttons">
+				<label class="btn col btn-outline-secondary m-1 border-0" ng-repeat="language in languages">
+					<input type="checkbox" autocomplete="off" ng-attr-id="customCheck@{{$index}}" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()"> @{{language.o}}
+				</label>
 			</div>
 		</div>
 	</div>
 	<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Choose</button>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -37,4 +42,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div>-->
