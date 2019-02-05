@@ -1,5 +1,5 @@
-<div>
-	<button id="genres_button" class="btn btn-outline-secondary dropdown-toggle h6 mt-2 border-0" type="button" data-toggle="collapse" data-target="#collapseGenres"><span class="h6">{{ __('general.genre') }}</span></button>
+<div class="d-inline">
+	<button id="genres_button" class="btn btn-outline-secondary dropdown-toggle h6 mt-3 border-0" type="button" data-toggle="collapse" data-target="#collapseGenres"><span class="h6">{{ __('general.genre') }}</span></button>
 	<div class="collapse" id="collapseGenres">
 		<div>
 			<!--<label class="form-check-label">col-6 col-sm-4 col-md-3 col-lg-2 ng-repeat="genre in genres" class="d-flex flex-wrap"
