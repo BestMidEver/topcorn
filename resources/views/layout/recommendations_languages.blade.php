@@ -24,8 +24,8 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body" ng-repeat="language in languages">
-				<div class="btn-group-toggle" data-toggle="buttons">
+			<div class="modal-body">
+				<div class="btn-group-toggle" data-toggle="buttons" ng-repeat="language in languages">
 					<label class="btn btn-secondary active">
 						<input type="checkbox" checked autocomplete="off"> @{{language.o}}
 					</label>
