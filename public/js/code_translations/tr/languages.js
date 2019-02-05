@@ -31,10 +31,10 @@ languages=[
 		"i":"ar",
 		"o":"Arapça"
 	},
-	{
+	/*{
 		"i":"az",
 		"o":"Azerice"
-	},
+	},*/
 	{
 		"i":"hu",
 		"o":"Macarca"
@@ -67,10 +67,10 @@ languages=[
 		"i":"nl",
 		"o":"Flemenkçe"
 	},
-	{
+	/*{
 		"i":"et",
 		"o":"Estonca"
-	},
+	},*/
 	{
 		"i":"fi",
 		"o":"Fince"
@@ -87,10 +87,10 @@ languages=[
 		"i":"id",
 		"o":"Endonezce"
 	},
-	{
+	/*{
 		"i":"ga",
 		"o":"İrlandaca"
-	},
+	},*/
 	{
 		"i":"it",
 		"o":"İtalyanca"
@@ -99,19 +99,19 @@ languages=[
 		"i":"ja",
 		"o":"Japonca"
 	},
-	{
+	/*{
 		"i":"kk",
 		"o":"Kazakça"
 	},
 	{
 		"i":"ky",
 		"o":"Kırgızca"
-	},
+	},*/
 	{
 		"i":"ko",
 		"o":"Korece"
 	},
-	{
+	/*{
 		"i":"ku",
 		"o":"Kürtçe"
 	},
@@ -130,19 +130,19 @@ languages=[
 	{
 		"i":"mk",
 		"o":"Makedonca"
-	},
+	},*/
 	{
 		"i":"ms",
 		"o":"Malayca"
 	},
-	{
+	/*{
 		"i":"mi",
 		"o":"Maorice"
 	},
 	{
 		"i":"mn",
 		"o":"Moğolca"
-	},
+	},*/
 	{
 		"i":"no",
 		"o":"Norveççe"
@@ -167,10 +167,10 @@ languages=[
 		"i":"sk",
 		"o":"Slovakça"
 	},
-	{
+	/*{
 		"i":"sl",
 		"o":"Slovence"
-	},
+	},*/
 	{
 		"i":"sv",
 		"o":"İsveççe"
@@ -179,7 +179,7 @@ languages=[
 		"i":"th",
 		"o":"Tai Dili"
 	},
-	{
+	/*{
 		"i":"tk",
 		"o":"Türkmence"
 	},
@@ -190,15 +190,15 @@ languages=[
 	{
 		"i":"ug",
 		"o":"Uygurca"
-	},
+	},*/
 	{
 		"i":"uk",
 		"o":"Ukraynaca"
 	},
-	{
+	/*{
 		"i":"uz",
 		"o":"Özbekçe"
-	},
+	},*/
 	{
 		"i":"vi",
 		"o":"Vietnamca"

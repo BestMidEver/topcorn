@@ -31,10 +31,10 @@ languages=[
 		"i":"ar",
 		"o":"Arabic"
 	},
-	{
+	/*{
 		"i":"az",
 		"o":"Azerbaijani"
-	},
+	},*/
 	{
 		"i":"hu",
 		"o":"Hungarian"
@@ -67,10 +67,10 @@ languages=[
 		"i":"nl",
 		"o":"Dutch"
 	},
-	{
+	/*{
 		"i":"et",
 		"o":"Estonian"
-	},
+	},*/
 	{
 		"i":"fi",
 		"o":"Finnish"
@@ -87,10 +87,10 @@ languages=[
 		"i":"id",
 		"o":"Indonesian"
 	},
-	{
+	/*{
 		"i":"ga",
 		"o":"Irish"
-	},
+	},*/
 	{
 		"i":"it",
 		"o":"Italian"
@@ -99,50 +99,50 @@ languages=[
 		"i":"ja",
 		"o":"Japanese"
 	},
-	{
+	/*{
 		"i":"kk",
 		"o":"Kazakh"
-	},
-	{
+	},*/
+	/*{
 		"i":"ky",
 		"o":"Kirghiz"
-	},
+	},*/
 	{
 		"i":"ko",
 		"o":"Korean"
 	},
-	{
+	/*{
 		"i":"ku",
 		"o":"Kurdish"
-	},
-	{
+	},*/
+	/*{
 		"i":"la",
 		"o":"Latin"
-	},
-	{
+	},*/
+	/*{
 		"i":"lt",
 		"o":"Lithuanian"
-	},
-	{
+	},*/
+	/*{
 		"i":"lv",
 		"o":"Latvian"
-	},
-	{
+	},*/
+	/*{
 		"i":"mk",
 		"o":"Macedonian"
-	},
+	},*/
 	{
 		"i":"ms",
 		"o":"Malay"
 	},
-	{
+	/*{
 		"i":"mi",
 		"o":"Maori"
-	},
-	{
+	},*/
+	/*{
 		"i":"mn",
 		"o":"Mongolian"
-	},
+	},*/
 	{
 		"i":"no",
 		"o":"Norwegian"
@@ -167,38 +167,38 @@ languages=[
 		"i":"sk",
 		"o":"Slovak"
 	},
-	{
+	/*{
 		"i":"sl",
 		"o":"Slovenian"
-	},
+	},*/
 	{
 		"i":"sv",
 		"o":"Swedish"
 	},
-	{
+	/*{
 		"i":"tk",
 		"o":"Turkmen"
-	},
-	{
+	},*/
+	/*{
 		"i":"tt",
 		"o":"Tatar"
-	},
+	},*/
 	{
 		"i":"th",
 		"o":"Thai"
 	},
-	{
+	/*{
 		"i":"ug",
 		"o":"Uighur"
-	},
+	},*/
 	{
 		"i":"uk",
 		"o":"Ukrainian"
 	},
-	{
+	/*{
 		"i":"uz",
 		"o":"Uzbek"
-	},
+	},*/
 	{
 		"i":"vi",
 		"o":"Vietnamese"
