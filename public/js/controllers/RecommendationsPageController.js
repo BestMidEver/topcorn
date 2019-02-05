@@ -56,7 +56,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			options: {
 		        floor: 0,
 		        ceil: 5000,
-		        step: 25
+		        step: 10
 			}
 		};
 	    $scope.drawslider=function(){
