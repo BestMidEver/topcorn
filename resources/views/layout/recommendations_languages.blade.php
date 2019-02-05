@@ -11,7 +11,7 @@
 			  <label class="custom-control-label" for="customCheck@{{$index}}">@{{language.o}}</label>
 			</div>-->
 			<div class="btn-group-toggle" data-toggle="buttons">
-				<label class="btn btn-secondary active">
+				<label class="btn btn-outline-secondary border-0">
 					<input type="checkbox" checked autocomplete="off"> @{{language.o}}
 				</label>
 			</div>
