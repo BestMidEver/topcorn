@@ -37,7 +37,7 @@
 									<div ng-if="movie.next_episode>0" class="h5 text-warning mb-1"> S@{{movie.next_season>9?movie.next_season:'0'+movie.next_season}}E@{{movie.next_episode>9?movie.next_episode:'0'+movie.next_episode}}</div>
 									<span class="d-block">
 										<span ng-if="movie.day_difference_last==1">Aired <span class="h5 text-warning">yesterday</span></span>
-										<span ng-if="movie.day_difference_last>1">{{ __('general.available') }}</span>
+										<span ng-if="movie.day_difference_last>1" class="h5 text-warning">{{ __('general.available') }}</span>
 									</span>
 								</div>
 								<div class="text-white" ng-if="!movie.last_seen_air_date.length>0 && movie.last_episode_air_date.length>0">
