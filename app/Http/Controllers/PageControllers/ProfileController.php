@@ -349,7 +349,7 @@ class ProfileController extends Controller
             'series.id as id',
             'series.'.$lang.'_name as name',
             'series.'.$hover_name.' as original_name',
-            'series_seens.next(array)_season as next_season',
+            'series_seens.next_season as next_season',
             'series_seens.next_episode as next_episode',
             'series_seens.season_number as season_number',
             'series_seens.episode_number as episode_number',
