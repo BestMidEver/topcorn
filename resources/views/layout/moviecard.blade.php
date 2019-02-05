@@ -27,8 +27,8 @@
 										<span ng-if="movie.day_difference_next>1">{!! __('general.airs_days_later') !!}</span>
 										<span ng-if="movie.day_difference_next==1">{!! __('general.airs_tomorrow') !!}</span>
 										<span ng-if="movie.day_difference_next==0">
-											<span ng-if="movie.day_difference_las!=0">{!! __('general.airs_today') !!}</span>
-											<span ng-if="movie.day_difference_las==0">{!! __('general.unknown') !!}</span>
+											<span ng-if="movie.day_difference_last!=0">{!! __('general.airs_today') !!}</span>
+											<span ng-if="movie.day_difference_last==0">{!! __('general.unknown') !!}</span>
 										</span>
 										<span ng-if="movie.day_difference_next<0" class="h5 text-warning">{{ __('general.available') }}</span>
 										<span ng-if="movie.day_difference_last==0 && !movie.next_episode>0" class="h5 text-warning"><span ng-if="movie.status=='Ended'">{{ __('general.ended') }}</span><span ng-if="movie.status=='Canceled'">{{ __('general.canceled') }}</span></span>
