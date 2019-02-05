@@ -12,7 +12,7 @@
 			</div>-->
 			<div class="btn-group-toggle" data-toggle="buttons">
 				<label class="btn btn-outline-secondary m-1 border-0" ng-repeat="language in languages">
-					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()"> @{{language.o}}
+					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_lang_model[language.i]" [ng-change]="get_first_page_data()"> @{{language.o}}
 				</label>
 			</div>
 		</div>
