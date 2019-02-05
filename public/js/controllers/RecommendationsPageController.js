@@ -93,10 +93,10 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		});
 		
 		$('#collapseLanguages').on('show.bs.collapse', function () {
-			angular.element( document.querySelector( '#language_button' ) ).addClass('active');
+			angular.element( document.querySelector( '#languages_button' ) ).addClass('active');
 		});
 		$('#collapseLanguages').on('hide.bs.collapse', function () {
-			angular.element( document.querySelector( '#language_button' ) ).removeClass('active');
+			angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');
 		});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
