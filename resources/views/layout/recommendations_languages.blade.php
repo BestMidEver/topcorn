@@ -1,5 +1,5 @@
 <div class="">
-	<button id="languages_button" class="btn btn-outline-secondary btn-sm dropdown-toggle h6 text-muted mt-3" type="button" data-toggle="collapse" data-target="#collapseLanguages">{{ __('general.language') }} </button>
+	<button id="languages_button" class="btn btn-outline-secondary dropdown-toggle h6 mt-3" type="button" data-toggle="collapse" data-target="#collapseLanguages">{{ __('general.language') }} </button>
 	<div class="collapse" id="collapseLanguages">
 		<div class="">
 			<!--<label class="form-check-label nowrap">col-6 col-sm-4 col-md-3 col-lg-2 
