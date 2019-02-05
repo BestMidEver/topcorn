@@ -19,26 +19,26 @@
 						<div class="d-flex flex-row align-items-center text-light ml-2">
 							@if($profile_watched_movie_number > 0)
 							<div data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_movie_number') }}">
-								<i class="fas fa-film"></i><div class="d-inline pl-1" >{{ $profile_watched_movie_number }}</div>
+								<i class="fas fa-film"></i><div class="d-inline pl-0 pl-md-1" >{{ $profile_watched_movie_number }}</div>
 							</div>
 							@endif
 							@if($profile_watched_series_number > 0)
-							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_series_number') }}">
+							<div class="pl-2 pl-md-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.watched_series_number') }}">
 								<i class="fas fa-tv"></i><div class="d-inline pl-1" >{{ $profile_watched_series_number }}</div>
 							</div>
 							@endif
 							@if($review_number > 0)
-							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.review_number') }}">
+							<div class="pl-2 pl-md-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.review_number') }}">
 								<i class="fas fa-pencil-alt"></i><div class="d-inline pl-1" >{{ $review_number }}</div>
 							</div>
 							@endif
 							@if($list_number > 0)
-							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.list_number') }}">
+							<div class="pl-2 pl-md-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.list_number') }}">
 								<i class="fas fa-plus"></i><div class="d-inline pl-1" >{{ $list_number }}</div>
 							</div>
 							@endif
 							@if($like_number > 0)
-							<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.like_number') }}">
+							<div class="pl-2 pl-md-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.like_number') }}">
 								<i class="fas fa-heart"></i><div class="d-inline pl-1" >{{ $like_number }}</div>
 							</div>
 							@endif
