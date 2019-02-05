@@ -26,7 +26,7 @@
 			</div>
 			<div class="modal-body">
 				<div class="btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-outline-secondary m-1 border-0 d-flex justify-content-between" ng-repeat="language in languages">
+					<label class="btn btn-outline-secondary m-1 border-0 align-items-stretch" ng-repeat="language in languages">
 						<input type="checkbox" checked autocomplete="off"> @{{language.o}}
 					</label>
 				</div>
