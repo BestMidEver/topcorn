@@ -229,7 +229,7 @@
 <div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter"	@if(auth::guest()) ng-hide="active_tab=='top_rated'" @endif>
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
-	<div class="pb-3 d-inline">
+	<div class="pb-3">
 		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseYear" ng-click="drawslider();"><span class="h6">{{ __('general.year') }}</span></button>
 		<div class="collapse" id="collapseYear">
 			<rzslider rz-slider-model="slider.minValue"
@@ -239,7 +239,7 @@
 	</div>
 	@if(auth::check())
 		@if(Auth::User()->advanced_filter)
-	<div class="pb-3 d-inline">
+	<div class="pb-3">
 		<button id="votecount_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseVoteCount" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
 		<div class="collapse" id="collapseVoteCount">
 			<rzslider rz-slider-model="slider_vote_count.value"

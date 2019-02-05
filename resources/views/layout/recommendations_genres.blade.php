@@ -1,4 +1,4 @@
-<div class="d-inline">
+<div class="">
 	<button id="genres_button" class="btn btn-outline-secondary dropdown-toggle h6 mt-3 border-0" type="button" data-toggle="collapse" data-target="#collapseGenres"><span class="h6">{{ __('general.genre') }}</span></button>
 	<div class="collapse" id="collapseGenres">
 		<div>
