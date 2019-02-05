@@ -187,7 +187,7 @@
             <p class="h6 pt-3 pt-md-0" ng-if="page_variables.active_tab_1!=-1">@{{series.name}}</p>
             <div class="pt-2" ng-if="series.overview.length > 0"><p>@{{series.overview}}</p></div>
             <div class="pt-2" ng-if="series.overview.length == 0"><p>{{ __('general.no_overview_found') }}</p></div>
-            <div ng-if="page_variables.active_tab_1==-1">
+            <div ng-if="page_variables.active_tab_1==-1 && series.created_by.length>0">
                 <div class="h6 pt-1"><span>{{ __('general.creators') }}</span></div>
                 <p><span class="d-inline" ng-repeat="creator in series.created_by"><span ng-if="$index!=0">, </span><a href="/person/@{{creator.id}}" target={{$target}} class="text-dark">@{{creator.name}}</a></span></p>
             </div>
