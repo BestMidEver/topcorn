@@ -95,6 +95,18 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
 			}
 		});
+		$('#collapseLanguages').on('show.bs.collapse', function () {
+				angular.element( document.querySelector( '#languages_button' ) ).addClass('active');
+		});
+		$('#collapseLanguages').on('hide.bs.collapse', function () {
+				angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');
+		});
+		$('#collapseGenres').on('show.bs.collapse', function () {
+				angular.element( document.querySelector( '#genres_button' ) ).addClass('active');
+		});
+		$('#collapseGenres').on('hide.bs.collapse', function () {
+				angular.element( document.querySelector( '#genres_button' ) ).removeClass('active');
+		});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
 			angular.element( document.querySelector( '#addperson_button' ) ).addClass('btn-outline-secondary-hover');
