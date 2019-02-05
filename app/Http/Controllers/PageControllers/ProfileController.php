@@ -64,7 +64,7 @@ class ProfileController extends Controller
 
         $comment_like_number = DB::table('reviews')
         ->where('reviews.user_id', '=', $profile_user_id)
-        ->leftjoin('review_likes.review_id', '=', 'reviews.id')
+        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->count();
 
         $like_number = $like_number + $comment_like_number;
