@@ -381,7 +381,7 @@ class ProfileController extends Controller
             ->orderBy('series_laters.updated_at', 'desc');
         }else if($mode == 'awaited'){
             $return_val = $return_val
-            ->whereRaw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) = 0')
+            ->whereRaw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) <= 0')
             ->orderByRaw('ISNULL(day_difference_next), day_difference_next asc');
         }else{
             $return_val = $return_val
