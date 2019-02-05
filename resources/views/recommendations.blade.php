@@ -231,7 +231,7 @@
 	@include('layout.recommendations_genres')
 	<div class="pb-3 d-inline">
 		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseYear" ng-click="drawslider();"><span class="h6">{{ __('general.year') }}</span></button>
-		<div class="collapse" id="collapseYears">
+		<div class="collapse" id="collapseYear">
 			<rzslider rz-slider-model="slider.minValue"
 			rz-slider-high="slider.maxValue"
 			rz-slider-options="slider.options"></rzslider>
