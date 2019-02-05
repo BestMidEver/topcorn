@@ -86,10 +86,23 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_4 = 'point';
 
 		$('#collapseFilter').on('show.bs.collapse', function () {
-			angular.element( document.querySelector( '#filter_button' ) ).addClass('active');
+			if ($(this).is(e.target)) {
+		      snippet.log(this.id)
+				angular.element( document.querySelector( '#filter_button' ) ).addClass('active');
+		    }
 		});
 		$('#collapseFilter').on('hide.bs.collapse', function () {
+			if ($(this).is(e.target)) {
 			angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
+      snippet.log(this.id)
+    }
+		});
+
+		$('#collapseLanguages').on('show.bs.collapse', function () {
+			angular.element( document.querySelector( '#languages_button' ) ).addClass('active');
+		});
+		$('#collapseLanguages').on('hide.bs.collapse', function () {
+			angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');
 		});
 
 		$('#collapseAdd').on('show.bs.collapse', function () {
