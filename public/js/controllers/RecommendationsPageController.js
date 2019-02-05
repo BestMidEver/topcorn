@@ -91,10 +91,10 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$('#collapseFilter').on('hide.bs.collapse', function () {
 			angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');
 		});
-		$('#collapseFilter').on('show.bs.collapse', function () {
+		$('#collapseLanguages').on('show.bs.collapse', function () {
 			angular.element( document.querySelector( '#language_button' ) ).addClass('active');
 		});
-		$('#collapseFilter').on('hide.bs.collapse', function () {
+		$('#collapseLanguages').on('hide.bs.collapse', function () {
 			angular.element( document.querySelector( '#language_button' ) ).removeClass('active');
 		});
 
