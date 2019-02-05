@@ -19,14 +19,14 @@
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h6 class="modal-title" id="exampleModalLabel"><span ng-if="!page_variables.is_with_review">{{ __('general.add_review') }}</span><span ng-if="page_variables.is_with_review">{{ __('general.edit_review') }}</span></h6>
+				<h6 class="modal-title" id="exampleModalLabel"><span>Choose Original Languages</span></h6>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
 				<div class="btn-group-toggle" data-toggle="buttons">
-					<label class="btn btn-secondary active" ng-repeat="language in languages">
+					<label class="btn btn-secondary m-2" ng-repeat="language in languages">
 						<input type="checkbox" checked autocomplete="off"> @{{language.o}}
 					</label>
 				</div>
