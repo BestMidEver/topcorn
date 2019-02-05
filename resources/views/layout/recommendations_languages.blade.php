@@ -1,6 +1,6 @@
 <div class="">
-	<p class="h6 text-muted pt-3">{{ __('general.language') }}</p>
-	<div class="">
+	<p class="h6 text-muted pt-3">{{ __('general.language') }}</p> <button id="filter_button" class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#collapseLanguages"><i class="fas fa-caret-down"></i></button>
+	<div class="collapse" id="collapseLanguages">
 		<div class="">
 			<!--<label class="form-check-label nowrap">col-6 col-sm-4 col-md-3 col-lg-2 
 				<input type="checkbox" class="form-check-input" ng-model="f_lang_model[language.i]" ng-change="get_first_page_data()">
