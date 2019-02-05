@@ -239,19 +239,19 @@
 	</div>
 	@if(auth::check())
 		@if(Auth::User()->advanced_filter)
-	<div class="pb-3">
+	<div class="">
 		<button id="votecount_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseVoteCount" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
 		<div class="collapse" id="collapseVoteCount">
 			<rzslider rz-slider-model="slider_vote_count.value"
 			rz-slider-options="slider_vote_count.options"></rzslider>
 		</div>
 	</div>
-	<div class="mt-3 pb-3">
-		<p class="h6 text-muted">{{ __('general.other') }}</p>
+	<div class="mt-3">
 		<div class="col">
-			<div class="custom-control custom-checkbox">
-			  <input type="checkbox" class="custom-control-input" id="customCheckWL" ng-model="f_add_watched" ng-change="get_first_page_data()">
-			  <label class="custom-control-label" for="customCheckWL">{{ __('general.show_watched_movies') }}</label>
+			<div class="btn-group-toggle">
+				<label class="btn btn-outline-secondary border-0" ng-class="{'active':f_add_watched}">
+					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_add_watched" ng-change="get_first_page_data()"> {{ __('general.show_watched_movies') }}
+				</label>
 			</div>
 		</div>
 	</div>
