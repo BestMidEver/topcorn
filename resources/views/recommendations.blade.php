@@ -231,7 +231,7 @@
 	@include('layout.recommendations_genres')
 	<div class="pt-3">
 		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseYear" ng-click="drawslider();"><span class="h6">{{ __('general.year') }}</span></button>
-		<div class="collapse" id="collapseYear">
+		<div class="collapse mt-2" id="collapseYear">
 			<rzslider rz-slider-model="slider.minValue"
 			rz-slider-high="slider.maxValue"
 			rz-slider-options="slider.options"></rzslider>
@@ -241,14 +241,14 @@
 		@if(Auth::User()->advanced_filter)
 	<div class="pt-3">
 		<button id="votecount_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseVoteCount" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
-		<div class="collapse" id="collapseVoteCount">
+		<div class="collapse mt-2" id="collapseVoteCount">
 			<rzslider rz-slider-model="slider_vote_count.value"
 			rz-slider-options="slider_vote_count.options"></rzslider>
 		</div>
 	</div>
 	<div ng-hide="active_tab=='top_rated'" class="pt-3">
 		<button id="matchrate_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseMatchRate" ng-click="drawslider();"><span class="h6">{{ __('general.min_match_rate') }}</span></button>
-		<div class="collapse" id="collapseMatchRate">
+		<div class="collapse mt-2" id="collapseMatchRate">
 			<rzslider rz-slider-model="slider_match_rate.value"
 			rz-slider-options="slider_match_rate.options"></rzslider>
 		</div>
@@ -256,7 +256,7 @@
 	<div class="m-0">
 		<div class="pt-3" ng-show="page_variables.movies_or_series=='series'">
 			<button id="status_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseStatus"><span class="h6">{{ strtoupper (__('general.status')) }}</span></button>
-			<div class="collapse" id="collapseStatus">
+			<div class="collapse mt-2" id="collapseStatus">
 				<div class="btn-group" role="group" aria-label="Returning or Ended">
 					<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
 					<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
