@@ -253,6 +253,12 @@
 			rz-slider-options="slider_match_rate.options"></rzslider>
 		</div>
 	</div>
+	<div class="btn-group mt-3" role="group" aria-label="Returning or Ended" ng-show="page_variables.movies_or_series=='series'">
+		<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status=='All';get_first_page_data()">{{ __('general.all') }}</button>
+		<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status=='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
+		<button type="button" class="btn" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status=='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
+		<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status=='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
+	</div>
 	<div class="">
 		<div class="btn-group-toggle">
 			<label class="btn btn-outline-secondary mt-3" ng-class="{'active':f_add_watched}">

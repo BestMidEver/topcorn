@@ -308,6 +308,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
     $scope.f_lang_model = [];
     $scope.f_genre_model = [];
     $scope.f_add_watched = false;
+    $scope.f_status = 'All';
 	$scope.active_tab= pass.watched_movie_number < 50 ? 'top_rated' : 'pemosu';
 	$scope.is_waiting=false;
 
@@ -337,7 +338,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_sort": $scope.active_tab == 'top_rated' ? $scope.sort_by_2 : $scope.sort_by_4,
 				"f_vote": $scope.slider_vote_count.value,
 				"f_match_rate": $scope.slider_match_rate.value,
-				"f_add_watched": $scope.f_add_watched
+				"f_add_watched": $scope.f_add_watched,
+				"f_status": $scope.f_status
 			}	
 		}else{
 			console.log($scope.f_mode_movies)
@@ -352,7 +354,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_vote": $scope.slider_vote_count.value,
 				"f_match_rate": $scope.slider_match_rate.value,
 				"f_mode_movies": $scope.f_mode_movies,
-				"f_add_watched": $scope.f_add_watched
+				"f_add_watched": $scope.f_add_watched,
+				"f_status": $scope.f_status
 			}
 		}
 
