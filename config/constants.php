@@ -117,7 +117,16 @@ return array(
 
     'min_value' => 1917,
     'max_value' => 2019,
-    'vote_count' => 50
+
+    'vote_count' => 50,
+    'vote_count_floor' => 0,
+    'vote_count_ceil' => 5000,
+    'vote_count_step' => 25,
+
+    'match_percentage' => 80,
+    'match_percentage_floor' => 0,
+    'match_percentage_ceil' => 100,
+    'match_percentage_step' => 1,
 
   ),
 

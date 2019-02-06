@@ -54,18 +54,18 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.slider_vote_count = {
 			value: parseInt(pass.constants_angular_slider_min_vote_count),
 			options: {
-		        floor: 0,
-		        ceil: 5000,
-		        step: 10
+		        floor: parseInt(pass.constants_angular_slider_vote_count_floor),
+		        ceil: parseInt(pass.constants_angular_slider_vote_count_ceil),
+		        step: parseInt(pass.constants_angular_slider_vote_count_step)
 			}
 		};
 		$scope.slider_match_rate={};
 		$scope.slider_match_rate = {
-			value: 80,
+			value: parseInt(pass.constants_angular_slider_min_match_percentage),
 			options: {
-		        floor: 0,
-		        ceil: 100,
-		        step: 1
+		        floor: parseInt(pass.constants_angular_slider_match_percentage_floor),
+		        ceil: parseInt(pass.constants_angular_slider_match_percentage_ceil),
+		        step: parseInt(pass.constants_angular_slider_match_percentage_step)
 			}
 		};
 	    $scope.drawslider=function(){

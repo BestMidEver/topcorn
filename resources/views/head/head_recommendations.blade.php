@@ -15,7 +15,14 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"constants_angular_slider_min_value":"{{config('constants.angular_slider.min_value')}}",
 	"constants_angular_slider_max_value":"{{config('constants.angular_slider.max_value')}}",
-	"constants_angular_slider_min_vote_count":"{{config('constants.angular_slider.vote_count')}}"
+	"constants_angular_slider_min_vote_count":"{{config('constants.angular_slider.vote_count')}}",
+	"constants_angular_slider_vote_count_floor":"{{config('constants.angular_slider.vote_count_floor')}}",
+	"constants_angular_slider_vote_count_ceil":"{{config('constants.angular_slider.vote_count_ceil')}}",
+	"constants_angular_slider_vote_count_step":"{{config('constants.angular_slider.vote_count_step')}}",
+	"constants_angular_slider_min_match_percentage":"{{config('constants.angular_slider.match_percentage')}}",
+	"constants_angular_slider_match_percentage_floor":"{{config('constants.angular_slider.match_percentage_floor')}}",
+	"constants_angular_slider_match_percentage_ceil":"{{config('constants.angular_slider.match_percentage_ceil')}}",
+	"constants_angular_slider_match_percentage_step":"{{config('constants.angular_slider.match_percentage_step')}}"
 };
 </script>
 <script src="/js/code_translations/{{ App::getlocale() }}/genres.js?v={{config('constants.version')}}"></script>
