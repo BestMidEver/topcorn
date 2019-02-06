@@ -247,6 +247,13 @@
 		</div>
 	</div>
 	<div class="">
+		<button id="matchrate_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseMatchRate" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
+		<div class="collapse" id="collapseMatchRate">
+			<rzslider rz-slider-model="slider_match_rate.value"
+			rz-slider-options="slider_match_rate.options"></rzslider>
+		</div>
+	</div>
+	<div class="">
 		<div class="btn-group-toggle">
 			<label class="btn btn-outline-secondary mt-3" ng-class="{'active':f_add_watched}">
 				<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_add_watched" ng-change="get_first_page_data()"><span class="h6">{{ strtoupper (__('general.show_watched_movies')) }}</span>

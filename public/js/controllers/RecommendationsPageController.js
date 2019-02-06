@@ -59,6 +59,15 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		        step: 10
 			}
 		};
+		$scope.slider_match_rate={};
+		$scope.slider_match_rate = {
+			value: 80,
+			options: {
+		        floor: 0,
+		        ceil: 100,
+		        step: 1
+			}
+		};
 	    $scope.drawslider=function(){
 	    	$scope.refreshSlider();
 	    }
@@ -327,6 +336,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_max": $scope.slider.maxValue,
 				"f_sort": $scope.active_tab == 'top_rated' ? $scope.sort_by_2 : $scope.sort_by_4,
 				"f_vote": $scope.slider_vote_count.value,
+				"f_match_rate": $scope.slider_match_rate.value,
 				"f_add_watched": $scope.f_add_watched
 			}	
 		}else{
@@ -340,6 +350,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				"f_max": $scope.slider.maxValue,
 				"f_sort": $scope.sort_by_4,
 				"f_vote": $scope.slider_vote_count.value,
+				"f_match_rate": $scope.slider_match_rate.value,
 				"f_mode_movies": $scope.f_mode_movies,
 				"f_add_watched": $scope.f_add_watched
 			}
@@ -368,6 +379,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 	$scope.get_first_page_data();
 	$scope.slider.options.onEnd = $scope.get_first_page_data;
 	$scope.slider_vote_count.options.onEnd = $scope.get_first_page_data;
+	$scope.slider_match_rate.options.onEnd = $scope.get_first_page_data;
 
 	$scope.reset_add_person_input = function()
 	{
