@@ -394,7 +394,7 @@ class recommendationsController extends Controller
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
         )
         ->groupBy('movies.id')
-        ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) > 74 AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15*'.count($request->f_users));
+        ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) > '.$request->f_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15*'.count($request->f_users));
 
         if($request->f_lang != [])
         {
@@ -534,7 +534,7 @@ class recommendationsController extends Controller
             DB::raw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) as percent')
         )
         ->groupBy('series.id')
-        ->havingRaw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) > 74 AND sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.rank) > 15*'.count($request->f_users));
+        ->havingRaw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) > '.$request->f_match_rate.' AND sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.rank) > 15*'.count($request->f_users));
 
         if($request->f_lang != [])
         {
