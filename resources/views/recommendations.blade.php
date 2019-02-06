@@ -259,9 +259,9 @@
 			<div class="collapse mt-2" id="collapseStatus">
 				<div class="btn-group" role="group" aria-label="Returning or Ended">
 					<button type="button" class="btn border-0" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
-					<button type="button" class="btn border-0" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
-					<button type="button" class="btn border-0" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
-					<button type="button" class="btn border-0" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
+					<button type="button" class="btn border-0" ng-class="f_status=='Returning Series'?'bbtn-tab':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
+					<button type="button" class="btn border-0" ng-class="f_status=='Ended'?'bbtn-tab':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
+					<button type="button" class="btn border-0" ng-class="f_status=='Canceled'?'bbtn-tab':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
 				</div>
 			</div>
 		</div>
