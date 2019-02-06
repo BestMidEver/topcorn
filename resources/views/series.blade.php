@@ -401,7 +401,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center pt-1" ng-hide="iscast">
+    <div class="text-center pt-1" ng-hide="iscast || !series.episodes[page_variables.active_tab_2-1].guest_stars.length>6">
         <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>{{ __('general.show_all') }}</small></button>
     </div>
     <div class="text-center pt-1" ng-show="iscast">
@@ -415,7 +415,7 @@
 </div>
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
+<div class="container-fluid px-0 mt-5" id="pwhlal" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
     <div class="dropdown d-inline">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="h5" ng-if="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>
