@@ -97,7 +97,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$('#collapseFilter').on('show.bs.collapse', function (e) {if ($(this).is(e.target)) {angular.element( document.querySelector( '#filter_button' ) ).addClass('active');}});
 		$('#collapseFilter').on('hide.bs.collapse', function (e) {if ($(this).is(e.target)) {angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');}});
 		$('#collapseLanguages').on('show.bs.collapse', function (e) {
-			console.log(f_lang, $scope.f_lang_model)
+			console.log($scope.f_lang_model)
 			if ($(this).is(e.target)) {
 				angular.element( document.querySelector( '#languages_button' ) ).addClass('active');
 			}
