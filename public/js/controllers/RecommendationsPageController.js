@@ -121,7 +121,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		});
 		$('#collapseGenres').on('hide.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-				if($scope.f_lang.length>0){
+				if($scope.f_genre.length>0){
 					angular.element( document.querySelector( '#genres_button' ) ).addClass('btn-tab');
 					angular.element( document.querySelector( '#genres_button' ) ).removeClass('btn-outline-secondary');
 				}else{
