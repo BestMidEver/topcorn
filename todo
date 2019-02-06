@@ -4,5 +4,6 @@ recommendations
 
 	filter
 
-		match rate slider
+		X adult boolean
+		X match rate slider
 		networks slider
