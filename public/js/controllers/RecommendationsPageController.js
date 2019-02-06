@@ -107,7 +107,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				$scope.slider.minValue!=parseInt(pass.constants_angular_slider_min_value) || $scope.slider.maxValue!=parseInt(pass.constants_angular_slider_max_value) ||
 				$scope.slider_vote_count.value!=parseInt(pass.constants_angular_slider_min_vote_count) ||
 				$scope.slider_match_rate.value!=parseInt(pass.constants_angular_slider_min_match_percentage) ||
-				$scope.f_status!='All'){
+				$scope.f_status!='All'||
+				$scope.f_add_watched==true){
 					angular.element( document.querySelector( '#filter_button' ) ).addClass('btn-tab');
 					angular.element( document.querySelector( '#filter_button' ) ).removeClass('btn-outline-secondary active');
 				}else{
