@@ -1,6 +1,6 @@
 <div class="pt-2">
 	<button id="languages_button" class="btn btn-outline-secondary dropdown-toggle h6 m-0 border-0" type="button" data-toggle="collapse" data-target="#collapseLanguages"><span class="h6">{{ __('general.language') }}</span></button> 
-    <span class="text-muted" ng-if="!f_lang.length>0"><small>@{{f_lang_model}}</small></span>
+    <span class="text-muted" ng-if="!f_lang.length>0"><small>@{{f_languages}}</small></span>
 	<div class="collapse" id="collapseLanguages">
 		<div class="">
 			<!--<label class="form-check-label nowrap">col-6 col-sm-4 col-md-3 col-lg-2 

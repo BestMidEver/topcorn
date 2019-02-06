@@ -306,6 +306,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
    	var f_users = [pass.user_id];
 	$scope.user_id = pass.user_id;
     $scope.f_lang_model = [];
+    $scope.f_languages = [];
     $scope.f_genre_model = [];
     $scope.f_add_watched = false;
     $scope.f_status = 'All';
@@ -320,7 +321,10 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
     	var f_lang = [];
         var temp = _.pairs($scope.f_lang_model);
         for (var i = 0; i < temp.length; i++) {
-        	if(temp[i][1]) f_lang.push( temp[i][0] );
+        	if(temp[i][1]){
+        		f_lang.push( temp[i][0] );
+        		f_languages.push( temp[o][0] );
+        	}
         }
         var f_genre = [];
         temp = _.pairs($scope.f_genre_model);
