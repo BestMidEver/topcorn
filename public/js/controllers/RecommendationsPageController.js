@@ -317,7 +317,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
     	$scope.movies=[];
     	$scope.pagination=0;
     	$scope.is_waiting=true;
-    	var $scope.f_lang = [];
+    	$scope.f_lang = [];
         var temp = _.pairs($scope.f_lang_model);
         for (var i = 0; i < temp.length; i++) {
         	if(temp[i][1]) $scope.f_lang.push( temp[i][0] );
