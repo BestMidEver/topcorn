@@ -98,14 +98,13 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$('#collapseFilter').on('hide.bs.collapse', function (e) {if ($(this).is(e.target)) {angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');}});
 		$('#collapseLanguages').on('show.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-				if(!$scope.f_lang.length>0) angular.element( document.querySelector( '#languages_button' ) ).addClass('btn-tab');
-				else angular.element( document.querySelector( '#languages_button' ) ).addClass('active');
+				angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');
+				angular.element( document.querySelector( '#languages_button' ) ).removeClass('btn-tab');
 			}
 		});
 		$('#collapseLanguages').on('hide.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-				if(!$scope.f_lang.length>0) angular.element( document.querySelector( '#languages_button' ) ).removeClass('btn-tab');
-				else angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');
+				if($scope.f_lang.length>0) angular.element( document.querySelector( '#languages_button' ) ).addClass('btn-tab');
 			}
 		});
 		/*$('#collapseLanguages').on('show.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).addClass('active');});
