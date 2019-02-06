@@ -113,6 +113,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				}
 			}
 		});
+		
 		$('#collapseGenres').on('show.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
 				angular.element( document.querySelector( '#genres_button' ) ).removeClass('btn-tab');
@@ -127,6 +128,24 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				}else{
 					angular.element( document.querySelector( '#genres_button' ) ).addClass('btn-outline-secondary');
 					angular.element( document.querySelector( '#genres_button' ) ).removeClass('btn-tab');
+				}
+			}
+		});
+
+		$('#collapseYear').on('show.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				angular.element( document.querySelector( '#year_button' ) ).removeClass('btn-tab');
+				angular.element( document.querySelector( '#year_button' ) ).addClass('btn-outline-secondary');
+			}
+		});
+		$('#collapseYear').on('hide.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				if($scope.slider.minValue!=parseInt(pass.constants_angular_slider_min_value) || $scope.slider.maxValue!=parseInt(pass.constants_angular_slider_max_value)){
+					angular.element( document.querySelector( '#year_button' ) ).addClass('btn-tab');
+					angular.element( document.querySelector( '#year_button' ) ).removeClass('btn-outline-secondary');
+				}else{
+					angular.element( document.querySelector( '#year_button' ) ).addClass('btn-outline-secondary');
+					angular.element( document.querySelector( '#year_button' ) ).removeClass('btn-tab');
 				}
 			}
 		});
