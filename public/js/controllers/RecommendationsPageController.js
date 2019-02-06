@@ -113,6 +113,23 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				}
 			}
 		});
+		$('#collapseGenres').on('show.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				angular.element( document.querySelector( '#genres_button' ) ).removeClass('btn-tab');
+				angular.element( document.querySelector( '#genres_button' ) ).addClass('btn-outline-secondary');
+			}
+		});
+		$('#collapseGenres').on('hide.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				if($scope.f_lang.length>0){
+					angular.element( document.querySelector( '#genres_button' ) ).addClass('btn-tab');
+					angular.element( document.querySelector( '#genres_button' ) ).removeClass('btn-outline-secondary');
+				}else{
+					angular.element( document.querySelector( '#genres_button' ) ).addClass('btn-outline-secondary');
+					angular.element( document.querySelector( '#genres_button' ) ).removeClass('btn-tab');
+				}
+			}
+		});
 		/*$('#collapseLanguages').on('show.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).addClass('active');});
 		$('#collapseLanguages').on('hide.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');});
 		$('#collapseGenres').on('show.bs.collapse', function () {angular.element( document.querySelector( '#genres_button' ) ).addClass('active');});
@@ -339,17 +356,17 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
         for (var i = 0; i < temp.length; i++) {
         	if(temp[i][1]) $scope.f_lang.push( temp[i][0] );
         }
-        var f_genre = [];
+        $scope.f_genre = [];
         temp = _.pairs($scope.f_genre_model);
         for (var i = 0; i < temp.length; i++) {
-        	if(temp[i][1]) f_genre.push( temp[i][0].split("_")[1] );
+        	if(temp[i][1]) $scope.f_genre.push( temp[i][0].split("_")[1] );
         }
 
 		if($scope.active_tab != 'mood_pick'){
 			var data = {
 				"f_users": f_users,
 				"f_lang": $scope.f_lang,
-				"f_genre": f_genre,
+				"f_genre": $scope.f_genre,
 				"f_min": $scope.slider.minValue,
 				"f_max": $scope.slider.maxValue,
 				"f_sort": $scope.active_tab == 'top_rated' ? $scope.sort_by_2 : $scope.sort_by_4,
@@ -364,7 +381,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			var data = {
 				"f_users": f_users,
 				"f_lang": $scope.f_lang,
-				"f_genre": f_genre,
+				"f_genre": $scope.f_genre,
 				"f_min": $scope.slider.minValue,
 				"f_max": $scope.slider.maxValue,
 				"f_sort": $scope.sort_by_4,
