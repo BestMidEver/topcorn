@@ -255,7 +255,7 @@
 	</div>
 	<div class="m-0">
 		<div class="pt-3" ng-show="page_variables.movies_or_series=='series'">
-			<button id="status_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapsestatus"><span class="h6">{{ strtoupper (__('general.status')) }}</span></button>
+			<button id="status_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseStatus"><span class="h6">{{ strtoupper (__('general.status')) }}</span></button>
 			<div class="collapse" id="collapseStatus">
 				<div class="btn-group" role="group" aria-label="Returning or Ended">
 					<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
