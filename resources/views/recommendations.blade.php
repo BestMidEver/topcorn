@@ -256,10 +256,10 @@
 	<div class="m-0">
 		<div class="pt-3" ng-show="page_variables.movies_or_series=='series'">
 			<div class="btn-group" role="group" aria-label="Returning or Ended">
-				<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.all')) }}</span></button>
-				<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.continuing')) }}</span></button>
-				<button type="button" class="btn" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.ended')) }}</span></button>
-				<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.canceled')) }}</span></button>
+				<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()"><span class="">{{ strtoupper (__('general.all')) }}</span></button>
+				<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()"><span class="">{{ strtoupper (__('general.continuing')) }}</span></button>
+				<button type="button" class="btn" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()"><span class="">{{ strtoupper (__('general.ended')) }}</span></button>
+				<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()"><span class="">{{ strtoupper (__('general.canceled')) }}</span></button>
 			</div>
 		</div>
 		<div class="pt-3">
