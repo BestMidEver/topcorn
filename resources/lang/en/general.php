@@ -238,6 +238,7 @@ return [
     'sorted_by_relevance' => 'Sorted by relevance',                                                 //series,     
     'specials' => 'Specials',                                                                       //series,      
     'standard' => 'Standard',                                                                       //accountinterface,    
+    'status' => 'Status',                                                                           //recommendations,
     'tagged' => 'Tagged',                                                                           //person,             
     'time_second' => 'second',                                                                      //list,             
     'time_seconds' => 'seconds',                                                                    //list,             

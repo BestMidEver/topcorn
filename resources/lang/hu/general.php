@@ -236,7 +236,8 @@ return [
     'sort_by_pop' => 'Népszerűség szerint',                                                             //recommendations,      
     'sorted_by_relevance' => 'Rendezés jelentőség szerint',                                             //series,     
     'specials' => 'Extrák',                                                                             //series, 
-    'standard' => 'Alapértelmezett',                                                                    //accountinterface,  
+    'standard' => 'Alapértelmezett',                                                                    //accountinterface,   
+    'status' => 'Status',                                                                               //recommendations,///////////////
     'tagged' => 'Megjelölt',                                                                            //person,   
     'time_second' => 'másodperc',                                                                       //list,             
     'time_seconds' => 'másodperc',                                                                      //list,             

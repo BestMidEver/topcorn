@@ -255,11 +255,14 @@
 	</div>
 	<div class="m-0">
 		<div class="pt-3" ng-show="page_variables.movies_or_series=='series'">
-			<div class="btn-group" role="group" aria-label="Returning or Ended">
-				<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()"><small>{{ strtoupper (__('general.all')) }}</small></button>
-				<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()"><small>{{ strtoupper (__('general.continuing')) }}</small></button>
-				<button type="button" class="btn" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()"><small>{{ strtoupper (__('general.ended')) }}</small></button>
-				<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()"><small>{{ strtoupper (__('general.canceled')) }}</small></button>
+			<button id="status_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapsestatus"><span class="h6">{{ strtoupper (__('general.status')) }}</span></button>
+			<div class="collapse" id="collapseStatus">
+				<div class="btn-group" role="group" aria-label="Returning or Ended">
+					<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
+					<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
+					<button type="button" class="btn" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
+					<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
+				</div>
 			</div>
 		</div>
 		<div class="pt-3">
