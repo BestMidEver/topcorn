@@ -11,8 +11,8 @@
 			  <label class="custom-control-label" for="customCheckGenre@{{$index}}">@{{genre.o}}</label>
 			</div>-->
 			<div class="btn-group-toggle">
-				<label class="btn btn-outline-secondary m-1 border-0" ng-class="{'active':f_genre_model[genre.i]}" ng-repeat="genre in genres">
-					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_genre_model[genre.i]" ng-change="get_first_page_data()"> @{{genre.o}}
+				<label class="btn btn-outline-secondary m-1 border-0" ng-class="{'active':f_genre_model['id_'+genre.i]}" ng-repeat="genre in genres">
+					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_genre_model['id_'+genre.i]" ng-change="get_first_page_data()"> @{{genre.o}}
 				</label>
 			</div>
 		</div>
