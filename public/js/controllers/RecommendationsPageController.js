@@ -317,10 +317,10 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
     	$scope.movies=[];
     	$scope.pagination=0;
     	$scope.is_waiting=true;
-    	var f_lang = [];
+    	$scope.f_lang = [];
         var temp = _.pairs($scope.f_lang_model);
         for (var i = 0; i < temp.length; i++) {
-        	if(temp[i][1]) f_lang.push( temp[i][0] );
+        	if(temp[i][1]) $scope.f_lang.push( temp[i][0] );
         }
         var f_genre = [];
         temp = _.pairs($scope.f_genre_model);
@@ -331,7 +331,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		if($scope.active_tab != 'mood_pick'){
 			var data = {
 				"f_users": f_users,
-				"f_lang": f_lang,
+				"f_lang": $scope.f_lang,
 				"f_genre": f_genre,
 				"f_min": $scope.slider.minValue,
 				"f_max": $scope.slider.maxValue,
@@ -346,7 +346,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			if($scope.f_mode_movies == []) return;
 			var data = {
 				"f_users": f_users,
-				"f_lang": f_lang,
+				"f_lang": $scope.f_lang,
 				"f_genre": f_genre,
 				"f_min": $scope.slider.minValue,
 				"f_max": $scope.slider.maxValue,
