@@ -265,7 +265,7 @@
 		<div class="pt-3">
 			<div class="btn-group-toggle">
 				<label class="btn btn-outline-secondary m-0" ng-class="{'active':f_add_watched}">
-					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_add_watched" ng-change="get_first_page_data()"><span class="h6">{{ strtoupper (__('general.show_watched_movies')) }}</span>
+					<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_add_watched" ng-change="get_first_page_data()"><small>{{ strtoupper (__('general.show_watched_movies')) }}</small>
 				</label>
 			</div>
 		</div>
