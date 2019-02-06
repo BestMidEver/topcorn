@@ -254,13 +254,15 @@
 		</div>
 	</div>
 	<div class="">
-		<div class="btn-group d-inline mr-2" role="group" aria-label="Returning or Ended" ng-show="page_variables.movies_or_series=='series'">
+		<div class="btn-group" role="group" aria-label="Returning or Ended" ng-show="page_variables.movies_or_series=='series'">
 			<button type="button" class="btn mt-3" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.all')) }}</span></button>
 			<button type="button" class="btn mt-3" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.continuing')) }}</span></button>
 			<button type="button" class="btn mt-3" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.ended')) }}</span></button>
 			<button type="button" class="btn mt-3" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.canceled')) }}</span></button>
 		</div>
-		<div class="btn-group-toggle d-inline">
+	</div>
+	<div class="">
+		<div class="btn-group-toggle">
 			<label class="btn btn-outline-secondary mt-3" ng-class="{'active':f_add_watched}">
 				<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_add_watched" ng-change="get_first_page_data()"><span class="h6">{{ strtoupper (__('general.show_watched_movies')) }}</span>
 			</label>
