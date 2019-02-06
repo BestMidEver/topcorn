@@ -258,10 +258,10 @@
 			<button id="status_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseStatus"><span class="h6">{{ strtoupper (__('general.status')) }}</span></button>
 			<div class="collapse mt-2" id="collapseStatus">
 				<div class="btn-group" role="group" aria-label="Returning or Ended">
-					<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
-					<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
-					<button type="button" class="btn" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
-					<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
+					<button type="button" class="btn border-0" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
+					<button type="button" class="btn border-0" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
+					<button type="button" class="btn border-0" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
+					<button type="button" class="btn border-0" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
 				</div>
 			</div>
 		</div>
