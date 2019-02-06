@@ -158,7 +158,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		});
 		$('#collapseVoteCount').on('hide.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-				if($scope.slider_vote_count.minValue!=parseInt(pass.constants_angular_slider_min_vote_count))){
+				if($scope.slider_vote_count.minValue!=parseInt(pass.constants_angular_slider_min_vote_count)){
 					angular.element( document.querySelector( '#votecount_button' ) ).addClass('btn-tab');
 					angular.element( document.querySelector( '#votecount_button' ) ).removeClass('btn-outline-secondary');
 				}else{
