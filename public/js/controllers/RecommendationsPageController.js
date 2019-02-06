@@ -323,7 +323,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
         for (var i = 0; i < temp.length; i++) {
         	if(temp[i][1]){
         		f_lang.push( temp[i][0] );
-        		$scope.f_languages.push( temp[o][0] );
+        		$scope.f_languages.push( temp[i][1] );
         	}
         }
         var f_genre = [];
