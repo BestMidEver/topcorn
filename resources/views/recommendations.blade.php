@@ -246,7 +246,7 @@
 			rz-slider-options="slider_vote_count.options"></rzslider>
 		</div>
 	</div>
-	<div class="">
+	<div ng-hide="active_tab=='top_rated'">
 		<button id="matchrate_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseMatchRate" ng-click="drawslider();"><span class="h6">{{ __('general.min_match_rate') }}</span></button>
 		<div class="collapse" id="collapseMatchRate">
 			<rzslider rz-slider-model="slider_match_rate.value"
