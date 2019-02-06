@@ -286,6 +286,11 @@ class recommendationsController extends Controller
                 $subq_2 = $subq_2->where('m2.first_air_date', '<=', Carbon::create($request->f_max,12,31));
             }
 
+            if($request->f_status != 'All')
+            {
+                $subq_2 = $subq_2->where('m2.status', '==', $request->f_status);
+            }
+
             $qqSql_2 = $subq_2->toSql();
 
         /////////////////////////////////////////////////////////
