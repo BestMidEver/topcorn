@@ -230,7 +230,7 @@
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="">
-		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseYear" ng-click="drawslider();"><span class="h6">{{ __('general.year') }}</span></button>
+		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseYear" ng-click="drawslider();"><span class="h6">{{ __('general.year') }}</span></button>
 		<div class="collapse" id="collapseYear">
 			<rzslider rz-slider-model="slider.minValue"
 			rz-slider-high="slider.maxValue"
@@ -240,20 +240,20 @@
 	@if(auth::check())
 		@if(Auth::User()->advanced_filter)
 	<div class="">
-		<button id="votecount_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseVoteCount" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
+		<button id="votecount_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseVoteCount" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
 		<div class="collapse" id="collapseVoteCount">
 			<rzslider rz-slider-model="slider_vote_count.value"
 			rz-slider-options="slider_vote_count.options"></rzslider>
 		</div>
 	</div>
 	<div ng-hide="active_tab=='top_rated'">
-		<button id="matchrate_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 mt-3" type="button" data-toggle="collapse" data-target="#collapseMatchRate" ng-click="drawslider();"><span class="h6">{{ __('general.min_match_rate') }}</span></button>
+		<button id="matchrate_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseMatchRate" ng-click="drawslider();"><span class="h6">{{ __('general.min_match_rate') }}</span></button>
 		<div class="collapse" id="collapseMatchRate">
 			<rzslider rz-slider-model="slider_match_rate.value"
 			rz-slider-options="slider_match_rate.options"></rzslider>
 		</div>
 	</div>
-	<div class="mt-4">
+	<div class="m-0">
 		<div class="btn-group" role="group" aria-label="Returning or Ended" ng-show="page_variables.movies_or_series=='series'">
 			<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.all')) }}</span></button>
 			<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.continuing')) }}</span></button>
@@ -261,7 +261,7 @@
 			<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()"><span class="h6">{{ strtoupper (__('general.canceled')) }}</span></button>
 		</div>
 		<div class="btn-group-toggle">
-			<label class="btn btn-outline-secondary mt-3" ng-class="{'active':f_add_watched}">
+			<label class="btn btn-outline-secondary m-0" ng-class="{'active':f_add_watched}">
 				<input type="checkbox" ng-attr-id="customCheck@{{$index}}" ng-model="f_add_watched" ng-change="get_first_page_data()"><span class="h6">{{ strtoupper (__('general.show_watched_movies')) }}</span>
 			</label>
 		</div>
