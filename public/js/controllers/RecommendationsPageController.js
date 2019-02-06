@@ -99,12 +99,18 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$('#collapseLanguages').on('show.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
 				angular.element( document.querySelector( '#languages_button' ) ).removeClass('btn-tab');
+				angular.element( document.querySelector( '#languages_button' ) ).addClass('btn-outline-secondary');
 			}
 		});
 		$('#collapseLanguages').on('hide.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-				if($scope.f_lang.length>0) angular.element( document.querySelector( '#languages_button' ) ).addClass('btn-tab');
-				else angular.element( document.querySelector( '#languages_button' ) ).addClass('btn-outline-secondary');
+				if($scope.f_lang.length>0){
+					angular.element( document.querySelector( '#languages_button' ) ).addClass('btn-tab');
+					angular.element( document.querySelector( '#languages_button' ) ).removeClass('btn-outline-secondary');
+				}else{
+					angular.element( document.querySelector( '#languages_button' ) ).addClass('btn-outline-secondary');
+					angular.element( document.querySelector( '#languages_button' ) ).removeClass('btn-tab');
+				}
 			}
 		});
 		/*$('#collapseLanguages').on('show.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).addClass('active');});
