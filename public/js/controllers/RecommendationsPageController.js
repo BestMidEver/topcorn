@@ -167,6 +167,42 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 				}
 			}
 		});
+
+		$('#collapseMatchRate').on('show.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				angular.element( document.querySelector( '#matchrate_button' ) ).removeClass('btn-tab');
+				angular.element( document.querySelector( '#matchrate_button' ) ).addClass('btn-outline-secondary');
+			}
+		});
+		$('#collapseMatchRate').on('hide.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				if($scope.slider_match_rate.value!=parseInt(pass.constants_angular_slider_min_match_percentage)){
+					angular.element( document.querySelector( '#matchrate_button' ) ).addClass('btn-tab');
+					angular.element( document.querySelector( '#matchrate_button' ) ).removeClass('btn-outline-secondary');
+				}else{
+					angular.element( document.querySelector( '#matchrate_button' ) ).addClass('btn-outline-secondary');
+					angular.element( document.querySelector( '#matchrate_button' ) ).removeClass('btn-tab');
+				}
+			}
+		});
+
+		$('#collapseStatus').on('show.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				angular.element( document.querySelector( '#status_button' ) ).removeClass('btn-tab');
+				angular.element( document.querySelector( '#status_button' ) ).addClass('btn-outline-secondary');
+			}
+		});
+		$('#collapseStatus').on('hide.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				if($scope.f_status!='All'){
+					angular.element( document.querySelector( '#status_button' ) ).addClass('btn-tab');
+					angular.element( document.querySelector( '#status_button' ) ).removeClass('btn-outline-secondary');
+				}else{
+					angular.element( document.querySelector( '#status_button' ) ).addClass('btn-outline-secondary');
+					angular.element( document.querySelector( '#status_button' ) ).removeClass('btn-tab');
+				}
+			}
+		});
 		/*$('#collapseLanguages').on('show.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).addClass('active');});
 		$('#collapseLanguages').on('hide.bs.collapse', function () {angular.element( document.querySelector( '#languages_button' ) ).removeClass('active');});
 		$('#collapseGenres').on('show.bs.collapse', function () {angular.element( document.querySelector( '#genres_button' ) ).addClass('active');});
