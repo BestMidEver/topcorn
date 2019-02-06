@@ -288,7 +288,7 @@ class recommendationsController extends Controller
 
             if($request->f_status != 'All')
             {
-                $subq_2 = $subq_2->where('m2.status', '==', $request->f_status);
+                $subq_2 = $subq_2->where('m2.status', '=', $request->f_status);
             }
 
             $qqSql_2 = $subq_2->toSql();
