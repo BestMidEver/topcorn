@@ -128,6 +128,7 @@ return [
     'match' => 'eşleşme',                                                                               //recommendations,
     'margin_x_setting' => 'Tam Ekran',                                                                  //accountinterface,
     'medium' => 'Orta',                                                                                 //accountinterface,
+    'min_match_rate' => 'MİNİMUM EŞLEŞME YÜZDESİ',                                                      //recommendations,
     'min_vote_count' => 'MİNİMUM OY SAYISI',                                                            //recommendations,
     'minute' => 'dakika',               
     'movie' => 'Film',              

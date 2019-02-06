@@ -128,6 +128,7 @@ return [
 	'match' => '-os egyezés',
     'margin_x_setting' => 'Teljes képernyő',                                                            //accountinterface,
     'medium' => 'Közepes adatforgalom',                                                                 //accountinterface,
+    'min_match_rate' => 'MINIMUM MATCH PERCENTAGE',                                                     //recommendations,//////////////////
     'min_vote_count' => 'MINIMUM SZAVAZATSZÁM',                                                         //recommendations,
     'minute' => 'perc',                                                                                 //movie,
     'movie' => 'Film',
