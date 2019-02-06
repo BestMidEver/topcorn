@@ -253,12 +253,12 @@
 			rz-slider-options="slider_match_rate.options"></rzslider>
 		</div>
 	</div>
-	<div class="mt-3">
+	<div class="">
 		<div class="btn-group" role="group" aria-label="Returning or Ended" ng-show="page_variables.movies_or_series=='series'">
-			<button type="button" class="btn" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
-			<button type="button" class="btn" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
-			<button type="button" class="btn" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
-			<button type="button" class="btn" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
+			<button type="button" class="btn mt-3" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>
+			<button type="button" class="btn mt-3" ng-class="f_status=='Returning Series'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Returning Series';get_first_page_data()">{{ __('general.continuing') }}</button>
+			<button type="button" class="btn mt-3" ng-class="f_status=='Ended'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Ended';get_first_page_data()">{{ __('general.ended') }}</button>
+			<button type="button" class="btn mt-3" ng-class="f_status=='Canceled'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='Canceled';get_first_page_data()">{{ __('general.canceled') }}</button>
 		</div>
 	</div>
 	<div class="">
