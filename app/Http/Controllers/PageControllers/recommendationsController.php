@@ -556,6 +556,11 @@ class recommendationsController extends Controller
             $subq = $subq->where('series.first_air_date', '<=', Carbon::create($request->f_max,12,31));
         }
 
+        if($request->f_status != 'All')
+        {
+            $subq = $subq->where('series.status', '=', $request->f_status);
+        }
+
         $qqSql = $subq->toSql();
     ////////////////////////////////////////////////////
         $subq_2 = DB::table('series')
@@ -695,6 +700,11 @@ class recommendationsController extends Controller
         if($request->f_max != 2019)
         {
             $subq = $subq->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31));
+        }
+
+        if($request->f_status != 'All')
+        {
+            $subq = $subq->where('series.status', '=', $request->f_status);
         }
 
         if(Auth::check()){
