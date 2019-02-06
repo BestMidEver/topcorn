@@ -401,7 +401,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center pt-1" ng-hide="iscast || !series.episodes[page_variables.active_tab_2-1].guest_stars.length>6">
+    <div class="text-center pt-1" ng-hide="iscast || !(series.episodes[page_variables.active_tab_2-1].guest_stars.length>6)">
         <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast = true;" data-toggle="collapse" data-target="#collapseGuestStars"><small>{{ __('general.show_all') }}</small></button>
     </div>
     <div class="text-center pt-1" ng-show="iscast">
