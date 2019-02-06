@@ -94,8 +94,29 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		$scope.sort_by_2 = 'vote_average';
 		$scope.sort_by_4 = 'point';
 
-		$('#collapseFilter').on('show.bs.collapse', function (e) {if ($(this).is(e.target)) {angular.element( document.querySelector( '#filter_button' ) ).addClass('active');}});
-		$('#collapseFilter').on('hide.bs.collapse', function (e) {if ($(this).is(e.target)) {angular.element( document.querySelector( '#filter_button' ) ).removeClass('active');}});
+		$('#collapseFilter').on('show.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				angular.element( document.querySelector( '#filter_button' ) ).removeClass('btn-tab');
+				angular.element( document.querySelector( '#filter_button' ) ).addClass('btn-outline-secondary active');
+			}
+		});
+		$('#collapseFilter').on('hide.bs.collapse', function (e) {
+			if ($(this).is(e.target)) {
+				if($scope.f_lang.length>0 ||
+				$scope.f_genre.length>0 ||
+				$scope.slider.minValue!=parseInt(pass.constants_angular_slider_min_value) || $scope.slider.maxValue!=parseInt(pass.constants_angular_slider_max_value) ||
+				$scope.slider_vote_count.value!=parseInt(pass.constants_angular_slider_min_vote_count) ||
+				$scope.slider_match_rate.value!=parseInt(pass.constants_angular_slider_min_match_percentage) ||
+				$scope.f_status!='All'){
+					angular.element( document.querySelector( '#filter_button' ) ).addClass('btn-tab');
+					angular.element( document.querySelector( '#filter_button' ) ).removeClass('btn-outline-secondary active');
+				}else{
+					angular.element( document.querySelector( '#filter_button' ) ).addClass('btn-outline-secondary');
+					angular.element( document.querySelector( '#filter_button' ) ).removeClass('btn-tab active');
+				}
+			}
+		});
+
 		$('#collapseLanguages').on('show.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
 				angular.element( document.querySelector( '#languages_button' ) ).removeClass('btn-tab');
