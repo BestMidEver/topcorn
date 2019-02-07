@@ -46,7 +46,7 @@ class LoginController extends Controller
     public function socialLogin($social, $remember_me)
     {
         Session::flash('remember_me', $remember_me);
-        session(['link' => url()->previous()]);
+        session(['link' => url()->current()]);
         return Socialite::driver($social)->redirect();
     }
 
