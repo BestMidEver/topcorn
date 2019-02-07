@@ -64,7 +64,7 @@ class LoginController extends Controller
                 $user->facebook_profile_pic = $userSocial->avatar;
                 $user->save();
             }
-            return redirect()->intended();
+            return redirect(session()->has('links') ? session('links') : '/recommendations');
         }else{
             $user = new User;
             $user->name = $userSocial->name;
