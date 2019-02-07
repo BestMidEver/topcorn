@@ -32,7 +32,6 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = session()->has('links')?session('links'):'/recommendations';
-    Session::flush();
     /**
      * Create a new controller instance.
      *
@@ -40,6 +39,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        Session::delete('links');
         $this->middleware('guest')->except('logout');
     }
 
