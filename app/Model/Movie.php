@@ -22,6 +22,8 @@ class Movie extends Model
     	'release_date',
     	'popularity',
         'vote_count',
+        'budget',
+        'revenue',
         'en_title',
         'tr_title',
         'hu_title',

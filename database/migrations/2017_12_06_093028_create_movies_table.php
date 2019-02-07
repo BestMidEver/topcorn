@@ -18,6 +18,8 @@ class CreateMoviesTable extends Migration
             $table->string('original_title')->nullable();
             $table->double('vote_average',3,1)->nullable();
             $table->integer('vote_count')->nullable();
+            $table->integer('budget')->nullable();
+            $table->integer('revenue')->nullable();
             $table->double('popularity',11,8)->nullable();
             $table->string('original_language')->nullable();
             $table->dateTime('release_date')->nullable();
