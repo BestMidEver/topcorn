@@ -4,13 +4,13 @@
 
 @section('body')
 @if(session()->has('link'))
-<div class="alert alert-success"> 
-    {!! session('link') !!}
-</div>
-@endif
+
 <!-- H1 +AddPerson +AddMode row  -->
 <div class="col mb-2 mt-3 mt-md-4">
-	<h1 class="h5 d-inline align-middle my-2 mr-3">{{ __('navbar.recommendations') }}</h1>
+	<div class="alert alert-success"> 
+    {!! session('link') !!}
+</div>
+@endif<h1 class="h5 d-inline align-middle my-2 mr-3">{{ __('navbar.recommendations') }}</h1>
 	@if(auth::check())
 	<div class="d-inline" ng-show="active_tab!='mood_pick'">
 		<button class="btn btn-outline-secondary mr-2 my-2" ng-show="party_members.length>0" type="button" disabled>{{ Auth::user()->name }}</button>
