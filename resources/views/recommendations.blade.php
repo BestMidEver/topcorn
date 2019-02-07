@@ -203,6 +203,8 @@
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
 			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.highest_budget') }}';change_sort_by('budget');">{{ __('general.highest_budget') }}</button>
+			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.highest_revenue') }}';change_sort_by('revenue');">{{ __('general.highest_revenue') }}</button>
 		</div>
 	</div>
 	@if(auth::check())
