@@ -426,7 +426,7 @@
             <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">{{ __('general.similar_series') }}</button>
         </div>
     </div>
-    <span class="text-muted pl-2 scrollmenu"><small>{{ __('general.sorted_by_relevance') }}</small></span>
+    <span class="text-muted px-3 px-md-0 scrollmenu"><small>{{ __('general.sorted_by_relevance') }}</small></span>
     @include('layout.moviecard_6')
 </div>
 <!--People Who Liked Also Liked Section-->
