@@ -45,13 +45,13 @@ class LoginController extends Controller
 
     public function socialLogin($social, $remember_me)
     {
+        session(['link' => url()->previous()]);
         Session::flash('remember_me', $remember_me);
         return Socialite::driver($social)->redirect();
     }
 
     public function handleProviderCallBack($social)
     {
-        session(['link' => url()->previous()]);
         $userSocial = Socialite::driver($social)->user();
 
         $findUser = User::where(['email' => $userSocial->getEmail()])->first();
