@@ -46,7 +46,6 @@ class LoginController extends Controller
     public function socialLogin($social, $remember_me)
     {
         Session::flash('remember_me', $remember_me);
-        Session::flash('link', url()->previous());
         return Socialite::driver($social)->redirect();
     }
 
@@ -65,7 +64,7 @@ class LoginController extends Controller
                 $user->facebook_profile_pic = $userSocial->avatar;
                 $user->save();
             }
-            return redirect(session('link'));
+            return redirect('movie/77')//->intended();
         }else{
             $user = new User;
             $user->name = $userSocial->name;
@@ -77,7 +76,7 @@ class LoginController extends Controller
             $user->facebook_profile_pic = $userSocial->avatar;
             $user->save();
             Auth::login($user, filter_var(session('remember_me'), FILTER_VALIDATE_BOOLEAN) );
-            return redirect(session('link'));
+            return redirect()->intended();
         }
     }
 }
