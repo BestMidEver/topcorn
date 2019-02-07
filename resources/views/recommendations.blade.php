@@ -5,11 +5,6 @@
 @section('body')
 <!-- H1 +AddPerson +AddMode row  -->
 <div class="col mb-2 mt-3 mt-md-4">
-	@if(session()->has('links'))
-	<div class="alert alert-success"> 
-		{!! session('links') !!}
-	</div>
-	@endif
 	<h1 class="h5 d-inline align-middle my-2 mr-3">{{ __('navbar.recommendations') }}</h1>
 	@if(auth::check())
 	<div class="d-inline" ng-show="active_tab!='mood_pick'">
