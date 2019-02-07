@@ -50,7 +50,8 @@ class LoginController extends Controller
     }
 
     public function handleProviderCallBack($social)
-    {session(['link' => 'value']);
+    {
+        session(['link' => url()->previous()]);
         $userSocial = Socialite::driver($social)->user();
 
         $findUser = User::where(['email' => $userSocial->getEmail()])->first();
