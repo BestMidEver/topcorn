@@ -19,7 +19,7 @@ trait AuthenticatesUsers
     public function showLoginForm()
     {
         //if(session()->has('links')){
-            if(url()->previous()!='https://topcorn.io/login'){
+            if(url()->previous()!='https://topcorn.io/login' && (url()->previous()!='https://topcorn.io/register'){
                 session(['links' => url()->previous()]);
             }
         //}
