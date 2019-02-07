@@ -52,7 +52,7 @@ class LoginController extends Controller
     public function handleProviderCallBack($social)
     {
         $return_to = session()->has('links') ? session('links') : '/recommendations';
-        Session::delete('links');
+        Session::forget('links');
 
         $userSocial = Socialite::driver($social)->user();
 
