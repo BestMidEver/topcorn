@@ -70,6 +70,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 	$scope.paginate = function(page)
 	{	
 		$scope.page_variables.is_waiting=true;
+		$scope.tagged_images={};
 		$scope.page = page;
 		$scope.get_tagged_images('not_first_time');
 		$scope.scroll_to_top();
