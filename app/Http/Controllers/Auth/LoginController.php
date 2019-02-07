@@ -50,7 +50,7 @@ class LoginController extends Controller
     }
 
     public function handleProviderCallBack($social)
-    {
+    {$request->session()->put('link', 'value');
         $userSocial = Socialite::driver($social)->user();
 
         $findUser = User::where(['email' => $userSocial->getEmail()])->first();
@@ -64,7 +64,7 @@ class LoginController extends Controller
                 $user->facebook_profile_pic = $userSocial->avatar;
                 $user->save();
             }
-            return redirect()->intended()->with('link', 'Profile updated!');
+            return redirect()->intended();
         }else{
             $user = new User;
             $user->name = $userSocial->name;
@@ -76,7 +76,7 @@ class LoginController extends Controller
             $user->facebook_profile_pic = $userSocial->avatar;
             $user->save();
             Auth::login($user, filter_var(session('remember_me'), FILTER_VALIDATE_BOOLEAN) );
-            return redirect()->intended()->with('link', 'Profile updated!');
+            return redirect()->intended();
         }
     }
 }
