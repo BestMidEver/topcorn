@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/recommendations';
+    protected $redirectTo = session('link');
 
     /**
      * Create a new controller instance.
@@ -38,6 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        session(['link' => url()->previous()]);
         $this->middleware('guest');
     }
 
