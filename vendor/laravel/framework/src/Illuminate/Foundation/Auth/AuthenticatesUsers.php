@@ -17,6 +17,7 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
+        session(['links' => url()->previous()]);
         return view('auth.login');
     }
 
