@@ -19,10 +19,8 @@ trait AuthenticatesUsers
     public function showLoginForm()
     {
         //if(session()->has('links')){
-            if(session('links')!='https://topcorn.io/login'){
+            if(url()->previous()!='https://topcorn.io/login'){
                 session(['links' => url()->previous()]);
-            }else{
-                Session::flush();
             }
         //}
         return view('auth.login');
