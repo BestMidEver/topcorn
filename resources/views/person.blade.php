@@ -161,7 +161,7 @@
 		</div>
 	</div>
 
-	<div ng-if="page_variables.image_tab!='profile'">
+	<div ng-if="page_variables.image_tab!='profile' && !page_variables.is_waiting">
 		@include('layout.pagination', ['suffix' => ''])
 	</div>
 </div>
