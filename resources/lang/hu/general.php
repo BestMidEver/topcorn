@@ -95,6 +95,8 @@ return [
     'havent_seen' => 'Nem láttam',                                                                      //ratemodal,
     'header' => 'Cím*',                                                                                 //list,             
     'high' => 'Magas adatforgalom',                                                                     //accountinterface,
+    'highest_budget' => 'Highest Budget',                                                               //recommendations,/////////////////////
+    'highest_revenue' => 'Highest Revenue',                                                             //recommendations,/////////////////////
     'hismovies' => 'Filmjei',                                                                           //person
     'hover_title_language' => 'Buboréksúgó',                                                            //accountinterface,
     'image' => 'képek',                                                                                 //person,

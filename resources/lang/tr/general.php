@@ -95,6 +95,8 @@ return [
     'havent_seen' => 'İzlemedim',                                                                       //ratemodal,
     'header' => 'Manşet*',                                                                              //list,             
     'high' => 'Yüksek',                                                                                 //accountinterface,
+    'highest_budget' => 'En Yüksek Bütçe',                                                              //recommendations,
+    'highest_revenue' => 'En Yüksek Gelir',                                                             //recommendations,
     'hismovies' => 'Filmleri',
     'hover_title_language' => 'Film İpucu',                                                             //accountinterface,
     'image' => 'görsel',                                                                                //person,

@@ -95,6 +95,8 @@ return [
     'havent_seen' => 'Haven\'t Seen',                                                               //ratemodal,
     'header' => 'Heading*',                                                                         //list,             
     'high' => 'High',                                                                               //accountinterface,
+    'highest_budget' => 'Highest Budget',                                                           //recommendations,
+    'highest_revenue' => 'Highest Revenue',                                                         //recommendations,
     'hismovies' => 'Movies',                                                                        //person,
     'hover_title_language' => 'Movie Tooltip',                                                      //accountinterface,
     'image' => 'image',                                                                             //person,
