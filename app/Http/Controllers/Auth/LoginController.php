@@ -31,7 +31,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/recommendations';//session()->has('links')?session('links'):'/recommendations';
+    //protected $redirectTo = '/recommendations';//session()->has('links')?session('links'):'/recommendations';
     //Session::delete('links');
     /**
      * Create a new controller instance.
