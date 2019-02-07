@@ -88,7 +88,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				method: 'GET',
 				url: 'https://api.themoviedb.org/3/collection/'+desireddata.belongs_to_collection.id+'?api_key='+pass.api_key+'&language='+pass.lang
 			}).then(function successCallback(response) {
-				$scope.collection=_.sortBy(response.data.parts, 'release_date');
+				//$scope.collection=_.sortBy(response.data.parts, 'release_date');
+				$scope.collection=_.sortBy(response.data.parts, function(obj){ return obj.release_date!=null?obj.release_date:9999999999999; });
 				$scope.page_variables.active_tab_3 = 3;
 				console.log('collection', $scope.collection);
 			}, function errorCallback(response) {
