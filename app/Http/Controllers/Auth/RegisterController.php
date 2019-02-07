@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\session;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -30,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = session('link');
+    protected $redirectTo = '/recommendations';
 
     /**
      * Create a new controller instance.
@@ -39,7 +38,6 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        session(['link' => url()->previous()]);
         $this->middleware('guest');
     }
 

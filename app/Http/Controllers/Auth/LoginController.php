@@ -64,7 +64,7 @@ class LoginController extends Controller
                 $user->facebook_profile_pic = $userSocial->avatar;
                 $user->save();
             }
-            return redirect()->intended();
+            return redirect()->intended()->with('link', 'Profile updated!');
         }else{
             $user = new User;
             $user->name = $userSocial->name;
@@ -76,7 +76,7 @@ class LoginController extends Controller
             $user->facebook_profile_pic = $userSocial->avatar;
             $user->save();
             Auth::login($user, filter_var(session('remember_me'), FILTER_VALIDATE_BOOLEAN) );
-            return redirect()->intended();
+            return redirect()->intended()->with('link', 'Profile updated!');
         }
     }
 }
