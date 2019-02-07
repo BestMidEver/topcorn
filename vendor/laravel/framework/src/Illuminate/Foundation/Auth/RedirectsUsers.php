@@ -17,6 +17,7 @@ trait RedirectsUsers
 
         //return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
         $return_to = session()->has('links') ? session('links') : '/recommendations';
+        Session::forget('links');
         
         return $return_to;
     }
