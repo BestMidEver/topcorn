@@ -91,7 +91,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			}
 		}
 		$scope.switch_genre();
-		$scope.sort_by_2 = 'vote_average';
+		$scope.sort_by_2 = 'most_popular';
 		$scope.sort_by_4 = 'point';
 
 		$('#collapseFilter').on('show.bs.collapse', function (e) {

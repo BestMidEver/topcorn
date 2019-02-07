@@ -192,7 +192,7 @@
 
 <!-- Sort by and Filter section -->
 <div class="container-fluid">
-	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_2='{{ __('general.most_popular') }}';" ng-show="active_tab=='most_popular'">
+	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_2='{{ __('general.most_popular') }}';" ng-show="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
 		</button>
