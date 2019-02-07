@@ -112,7 +112,7 @@
 
 @include('layout.moviecard')
 <div class="p-5" ng-if="active_tab_0!='images'&&!movies.length>0">
-	<div class="text-muted text-center">{{ __('general.not_found') }}</div>
+	<div class="text-muted text-center"><span ng-show="!page_variables.is_waiting">{{ __('general.not_found') }}</span><span ng-show="page_variables.is_waiting">{{ __('general.loading') }}</span></div>
 </div>
 
 <div ng-if="active_tab_0 == 'images'" id="scroll_top_point">
@@ -143,7 +143,7 @@
 			</div>
 		</div>
 		<div class="p-5" ng-if="!profile_images.length>0">
-			<div class="text-muted text-center">{{ __('general.not_found') }}</div>
+			<div class="text-muted text-center"><span ng-show="!page_variables.is_waiting">{{ __('general.not_found') }}</span><span ng-show="page_variables.is_waiting">{{ __('general.loading') }}</span></div>
 		</div>
 	</div>
 
@@ -157,7 +157,7 @@
 			</div>
 		</div>
 		<div class="p-5" ng-if="!tagged_images.results.length>0">
-			<div class="text-muted text-center">{{ __('general.not_found') }}</div>
+			<div class="text-muted text-center"><span ng-show="!page_variables.is_waiting">{{ __('general.not_found') }}</span><span ng-show="page_variables.is_waiting">{{ __('general.loading') }}</span></div>
 		</div>
 	</div>
 

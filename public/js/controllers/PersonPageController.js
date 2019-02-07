@@ -14,7 +14,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 
 
 
-	$scope.page_variables={};
+	$scope.page_variables={is_waiting:true};
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -45,6 +45,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 			else $scope.cover=$scope.movies[0].backdrop_path;
 			$scope.set_imagecard_data();
 			$scope.get_tagged_images('first_time');
+			$scope.page_variables.is_waiting=false;
 		}, function errorCallback(response) {
 			window.location.replace("/not-found");
 		});
@@ -67,7 +68,8 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 	}
 
 	$scope.paginate = function(page)
-	{
+	{	
+		$scope.page_variables.is_waiting=true;
 		$scope.page = page;
 		$scope.get_tagged_images('not_first_time');
 		$scope.scroll_to_top();
@@ -96,6 +98,7 @@ MyApp.controller('PersonPageController', function($scope, $http, $anchorScroll, 
 		$scope.from=($scope.tagged_images.page-1)*20+1;
 		$scope.to=($scope.tagged_images.page-1)*20+$scope.tagged_images.results.length;
 		$scope.in=$scope.tagged_images.total_results;
+		$scope.page_variables.is_waiting=false;
 	}
 
 	$scope.filter = function(mod,name){
