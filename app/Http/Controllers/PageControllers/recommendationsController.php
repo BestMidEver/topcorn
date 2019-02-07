@@ -166,13 +166,13 @@ class recommendationsController extends Controller
 
             if($request->f_sort == 'most_popular'){
                 $return_val = $return_val->orderBy('movies.popularity', 'desc');
-            }else if('top_rated'){
+            }else if($request->f_sort == 'top_rated'){
                 $return_val = $return_val->orderBy('movies.vote_average', 'desc')
                 ->orderBy('movies.vote_count', 'desc');
-            }else if('budget'){
+            }else if($request->f_sort == 'budget'){
                 $return_val = $return_val->orderBy('movies.budget', 'desc')
                 ->orderBy('movies.revenue', 'desc');
-            }else if('revenue'){
+            }else if($request->f_sort == 'revenue'){
                 $return_val = $return_val->orderBy('movies.revenue', 'desc')
                 ->orderBy('movies.budget', 'desc');
             }
@@ -195,13 +195,13 @@ class recommendationsController extends Controller
 
             if($request->f_sort == 'most_popular'){
                 $return_val = $return_val->orderBy('movies.popularity', 'desc');
-            }else if('top_rated'){
+            }else if($request->f_sort == 'top_rated'){
                 $return_val = $return_val->orderBy('movies.vote_average', 'desc')
                 ->orderBy('movies.vote_count', 'desc');
-            }else if('budget'){
+            }else if($request->f_sort == 'budget'){
                 $return_val = $return_val->orderBy('movies.budget', 'desc')
                 ->orderBy('movies.revenue', 'desc');
-            }else if('revenue'){
+            }else if($request->f_sort == 'revenue'){
                 $return_val = $return_val->orderBy('movies.revenue', 'desc')
                 ->orderBy('movies.budget', 'desc');
             }
@@ -511,10 +511,10 @@ class recommendationsController extends Controller
             $return_val = $return_val->orderBy('popularity', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
-        }else if('budget'){
+        }else if($request->f_sort == 'budget'){
             $return_val = $return_val->orderBy('movies.budget', 'desc')
             ->orderBy('movies.revenue', 'desc');
-        }else if('revenue'){
+        }else if($request->f_sort == 'revenue'){
             $return_val = $return_val->orderBy('movies.revenue', 'desc')
             ->orderBy('movies.budget', 'desc');
         }
@@ -819,10 +819,10 @@ class recommendationsController extends Controller
             $return_val = $return_val->orderBy('popularity', 'desc')
             ->orderBy('point', 'desc')
             ->orderBy('percent', 'desc');
-        }else if('budget'){
+        }else if($request->f_sort == 'budget'){
             $return_val = $return_val->orderBy('movies.budget', 'desc')
             ->orderBy('movies.revenue', 'desc');
-        }else if('revenue'){
+        }else if($request->f_sort == 'revenue'){
             $return_val = $return_val->orderBy('movies.revenue', 'desc')
             ->orderBy('movies.budget', 'desc');
         }
