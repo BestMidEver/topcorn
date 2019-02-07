@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
 
 trait AuthenticatesUsers
@@ -20,6 +21,8 @@ trait AuthenticatesUsers
         //if(session()->has('links')){
             if(session('links')!='https://topcorn.io/login'){
                 session(['links' => url()->previous()]);
+            }else{
+                Session::flush();
             }
         //}
         return view('auth.login');
