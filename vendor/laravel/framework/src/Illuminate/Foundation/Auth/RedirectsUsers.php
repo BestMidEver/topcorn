@@ -2,6 +2,8 @@
 
 namespace Illuminate\Foundation\Auth;
 
+use Illuminate\Support\Facades\Session;
+
 trait RedirectsUsers
 {
     /**
