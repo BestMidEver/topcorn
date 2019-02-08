@@ -216,7 +216,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		});
 		$('#collapseStatus').on('hide.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-				if($scope.f_status!='All' && page_variables.movies_or_series=='movies'){
+				if($scope.f_status!='All' && page_variables.movies_or_series=='series'){
 					angular.element( document.querySelector( '#status_button' ) ).addClass('btn-tab');
 					angular.element( document.querySelector( '#status_button' ) ).removeClass('btn-outline-secondary');
 				}else{
