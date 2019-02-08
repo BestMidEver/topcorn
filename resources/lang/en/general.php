@@ -178,7 +178,7 @@ return [
         '{{from:suffix}} - {{to:suffix}} <span class="px-2">of</span> {{in:suffix}}',               //pagination,
     'password' => 'Password',                                                                       //login, register, account,
     'password_confirmation' => 'Password Confirmation',                                             //register,
-    'people_who_liked_this_also_liked' => 'If You Liked This You Might Also Like',                  //series,
+    'people_who_liked_this_also_liked' => 'Recommendations',                                        //series,
     'person' => 'Person',                                                                           //search,
     'personal_website' => 'Personal Link',                                                          //account           
     'person_time' => 'vote',                                                                        //movie,

@@ -178,7 +178,7 @@ return [
         '{{in:suffix}} <span class="pr-2"> sonuç içinde</span> {{from:suffix}} - {{to:suffix}}',        //pagination,
     'password' => 'Şifre',                                                                              //login, register, account,
     'password_confirmation' => 'Tekrar Şifre',                                                          //register
-    'people_who_liked_this_also_liked' => 'Bunu Beğenenlerin Beğenebilecekleri',                        //series,movie,
+    'people_who_liked_this_also_liked' => 'Bunu Beğenenlere Tavsiyeler',                                //series,movie,
     'person' => 'Kişi',                         
     'personal_website' => 'Kişisel İnternet Sitesi',                                                    //account           
     'person_time' => 'oy',                                                                              //movie,
