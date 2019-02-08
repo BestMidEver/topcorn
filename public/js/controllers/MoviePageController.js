@@ -97,6 +97,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}else if(desireddata.recommendations.results.length>0) $scope.page_variables.active_tab_3 = 0;
 		else if(desireddata.similar.results.length>0) $scope.page_variables.active_tab_3 = 1;
 		else $scope.page_variables.active_tab_3 = -1;
+		$scope.page_variables.has_recommendation = desireddata.recommendations.results.length>0?true:false;
 		$scope.page_variables.has_similar = desireddata.similar.results.length>0?true:false;
 		$http({
 			method: 'GET',
