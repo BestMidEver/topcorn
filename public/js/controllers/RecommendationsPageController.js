@@ -27,6 +27,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		}else{
 			$scope.page_variables.movies_or_series = 'series';
 		}
+		$scope.refresh_filter_variables();
 		$scope.page_mode=1;
 		$scope.f_genre_model = [];
 		$scope.f_mode_movies = [];
@@ -248,6 +249,8 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		    $scope.f_add_watched = false;
 			angular.element( document.querySelector( '.filterButtons' ) ).removeClass('btn-tab');
 			angular.element( document.querySelector( '.filterButtons' ) ).addClass('btn-outline-secondary');
+			$scope.sort_by_2 = 'most_popular';
+			$scope.sort_by_4 = 'point';
 	    }
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////

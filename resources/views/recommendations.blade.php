@@ -149,8 +149,8 @@
 <!-- Tabs Button -->
 <div class="mt-3 d-none d-md-inline">
 	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('series')">{!! __('general.p_series') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{!! __('general.p_series') !!}</button>
 	</div>
 </div>
 <div class="container-fluid p-0 d-none d-md-inline" id="filter">
@@ -176,8 +176,8 @@
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu mt-3 d-md-none tab2">
 	<div class="btn-group btn-group d-block mb-2 text-center" role="group" aria-label="Movies or Series">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('series')">{!! __('general.p_series') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{!! __('general.p_series') !!}</button>
 	</div>
 </div>
 <div class="scrollmenu mb-3 d-md-none tab2">
@@ -196,30 +196,40 @@
 
 <!-- Sort by and Filter section -->
 <div class="container-fluid">
-	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_2='{{ __('general.most_populer') }}';" ng-show="active_tab=='top_rated'">
+	<div class="dropdown d-inline mr-2" ng-show="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_2}}
+			<i class="fas fa-sort-amount-down"></i> 
+			<span ng-if="sort_by_2=='top_rated">{{ __('general.top_rated') }}</span>
+			<span ng-if="sort_by_2=='most_popular">{{ __('general.most_populer') }}</span>
+			<span ng-if="sort_by_2=='budget">{{ __('general.highest_budget') }}</span>
+			<span ng-if="sort_by_2=='revenue">{{ __('general.highest_revenue') }}</span>
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.highest_budget') }}';change_sort_by('budget');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_budget') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_2='{{ __('general.highest_revenue') }}';change_sort_by('revenue');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_revenue') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('budget');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_budget') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('revenue');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_revenue') }}</button>
 		</div>
 	</div>
 	@if(auth::check())
 		@if(Auth::User()->advanced_filter)
-	<div class="dropdown d-inline mr-2" ng-init="sort_by_title_4='{{ __('general.sort_by_match') }}';" ng-hide="active_tab=='top_rated'">
+	<div class="dropdown d-inline mr-2" ng-hide="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<i class="fas fa-sort-amount-down"></i> @{{sort_by_title_4}}
+			<i class="fas fa-sort-amount-down"></i> 
+			<span ng-if="sort_by_2=='point">{{ __('general.sort_by_match') }}</span>
+			<span ng-if="sort_by_2=='percent">{{ __('general.sort_by_percent') }}</span>
+			<span ng-if="sort_by_2=='top_rated">{{ __('general.top_rated') }}</span>
+			<span ng-if="sort_by_2=='most_popular">{{ __('general.most_populer') }}</span>
+			<span ng-if="sort_by_2=='budget">{{ __('general.highest_budget') }}</span>
+			<span ng-if="sort_by_2=='revenue">{{ __('general.highest_revenue') }}</span>
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_match') }}';change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.sort_by_percent') }}';change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.top_rated') }}';change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.most_populer') }}';change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.highest_budget') }}';change_sort_by('budget');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_budget') }}</button>
-			<button class="dropdown-item" ng-click="sort_by_title_4='{{ __('general.highest_revenue') }}';change_sort_by('revenue');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_revenue') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('budget');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_budget') }}</button>
+			<button class="dropdown-item" ng-click="change_sort_by('revenue');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_revenue') }}</button>
 		</div>
 	</div>
 		@endif
