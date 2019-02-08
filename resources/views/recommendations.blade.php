@@ -199,10 +199,10 @@
 	<div class="dropdown d-inline mr-2" ng-show="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> 
-			<span ng-if="sort_by_2=='top_rated">{{ __('general.top_rated') }}</span>
-			<span ng-if="sort_by_2=='most_popular">{{ __('general.most_populer') }}</span>
-			<span ng-if="sort_by_2=='budget">{{ __('general.highest_budget') }}</span>
-			<span ng-if="sort_by_2=='revenue">{{ __('general.highest_revenue') }}</span>
+			<span ng-if="sort_by_2=='top_rated'">{{ __('general.top_rated') }}</span>
+			<span ng-if="sort_by_2=='most_popular'">{{ __('general.most_populer') }}</span>
+			<span ng-if="sort_by_2=='budget'">{{ __('general.highest_budget') }}</span>
+			<span ng-if="sort_by_2=='revenue'">{{ __('general.highest_revenue') }}</span>
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
@@ -216,12 +216,12 @@
 	<div class="dropdown d-inline mr-2" ng-hide="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> 
-			<span ng-if="sort_by_2=='point">{{ __('general.sort_by_match') }}</span>
-			<span ng-if="sort_by_2=='percent">{{ __('general.sort_by_percent') }}</span>
-			<span ng-if="sort_by_2=='top_rated">{{ __('general.top_rated') }}</span>
-			<span ng-if="sort_by_2=='most_popular">{{ __('general.most_populer') }}</span>
-			<span ng-if="sort_by_2=='budget">{{ __('general.highest_budget') }}</span>
-			<span ng-if="sort_by_2=='revenue">{{ __('general.highest_revenue') }}</span>
+			<span ng-if="sort_by_2=='point'">{{ __('general.sort_by_match') }}</span>
+			<span ng-if="sort_by_2=='percent'">{{ __('general.sort_by_percent') }}</span>
+			<span ng-if="sort_by_2=='top_rated'">{{ __('general.top_rated') }}</span>
+			<span ng-if="sort_by_2=='most_popular'">{{ __('general.most_populer') }}</span>
+			<span ng-if="sort_by_2=='budget'">{{ __('general.highest_budget') }}</span>
+			<span ng-if="sort_by_2=='revenue'">{{ __('general.highest_revenue') }}</span>
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
