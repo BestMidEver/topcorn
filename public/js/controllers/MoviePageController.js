@@ -94,8 +94,8 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				console.log('collection', $scope.collection);
 			}, function errorCallback(response) {
 			});
-		}else if(desireddata.recommendations.results>0) $scope.page_variables.active_tab_3 = 0;
-		else if(desireddata.similar.results>0) $scope.page_variables.active_tab_3 = 1;
+		}else if(desireddata.recommendations.results.length>0) $scope.page_variables.active_tab_3 = 0;
+		else if(desireddata.similar.results.length>0) $scope.page_variables.active_tab_3 = 1;
 		else $scope.page_variables.active_tab_3 = -1;
 		$http({
 			method: 'GET',
