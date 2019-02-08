@@ -315,7 +315,7 @@
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;">{{ __('general.movie_lists_title') }}</button>
         </div>
     </div>
-    <span class="text-muted scrollmenu px-3 px-md-0" ng-if="page_variables.active_tab_3!=2"><small>Sorted by relevance</small></span>
+    <span class="text-muted scrollmenu px-3 px-md-0" ng-if="page_variables.active_tab_3!=2 && page_variables.active_tab_3!=3"><small>Sorted by relevance</small></span>
 	<a href="/createlist/new" class="btn btn-outline-success" ng-if="page_variables.active_tab_3==2" target="{{$target}}">
 		<i class="fas fa-plus"></i> {{ __('general.create_list') }}
 	</a>
