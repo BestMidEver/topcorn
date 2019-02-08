@@ -38,7 +38,6 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 	$scope.page_reviews=1;
 
 	$scope.page_variables.active_tab_1 = -1;
-	$scope.page_variables.active_tab_3 = 0;
 	$scope.temp={};
 	var api_spice, append_to_response_1, append_to_response_2;
 	$scope.pull_data = function(){
@@ -70,6 +69,9 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				secondarydata=response_2.data;
 				rate.get_reviews(pass.seriesid, $scope.page_reviews, [2,3], $scope.page_variables.active_tab_1, $scope.page_variables.active_tab_2)
 				.then(function(response){
+					$scope.page_variables.active_tab_3 = desireddata.recommendations.results.length>0 ? 0 : 1;
+					$scope.page_variables.has_recommendation = desireddata.recommendations.results.length>0?true:false;
+					$scope.page_variables.has_similar = desireddata.similar.results.length>0?true:false;
 					$scope.page_variables.reviews=response.data.data;
 					$scope.page_variables.is_with_review=false;
 					$scope.page_variables.review_textarea='';

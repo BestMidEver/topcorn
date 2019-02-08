@@ -300,7 +300,7 @@
 
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)">
+<div class="container-fluid px-0 mt-5" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)">
     <div class="dropdown d-inline mr-2">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="h5" ng-show="page_variables.active_tab_3==3">@{{movie.belongs_to_collection.name}}</span>

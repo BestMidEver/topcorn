@@ -415,15 +415,15 @@
 </div>
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="pwhlal" ng-if="similar_movies.length > 0" ng-hide="is_waiting">
+<div class="container-fluid px-0 mt-5" id="pwhlal" ng-if="similar_movies.length > 0" ng-hide="is_waiting || similar_movies.length==0">
     <div class="dropdown d-inline">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="h5" ng-if="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>
             <span class="h5" ng-if="page_variables.active_tab_3!=0">{{ __('general.similar_series') }}</span>
         </button>
         <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();">{{ __('general.people_who_liked_this_also_liked') }}</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();">{{ __('general.similar_series') }}</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='0';set_recommendations();" ng-show="page_variables.has_recommendation">{{ __('general.people_who_liked_this_also_liked') }}</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3='1';set_recommendations();" ng-show="page_variables.has_similar">{{ __('general.similar_series') }}</button>
         </div>
     </div>
     <span class="text-muted px-3 px-md-0 scrollmenu"><small>{{ __('general.sorted_by_relevance') }}</small></span>
