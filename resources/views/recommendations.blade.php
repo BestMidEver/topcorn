@@ -149,8 +149,8 @@
 <!-- Tabs Button -->
 <div class="mt-3 d-none d-md-inline">
 	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{!! __('general.p_series') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('series')">{!! __('general.p_series') !!}</button>
 	</div>
 </div>
 <div class="container-fluid p-0 d-none d-md-inline" id="filter">
@@ -176,8 +176,8 @@
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu mt-3 d-md-none tab2">
 	<div class="btn-group btn-group d-block mb-2 text-center" role="group" aria-label="Movies or Series">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{!! __('general.p_series') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="refresh_filter_variables();switch_page_mode('series')">{!! __('general.p_series') !!}</button>
 	</div>
 </div>
 <div class="scrollmenu mb-3 d-md-none tab2">
@@ -225,7 +225,7 @@
 		@endif
 	@endif
 	<div class="dropdown d-inline">
-		<button id="filter_button" class="btn btn-outline-secondary mt-3" ng-click="scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
+		<button id="filter_button" class="btn btn-outline-secondary mt-3 filterButtons" ng-click="scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
 	</div>
 </div>
 <!-- Sort by and Filter section -->
@@ -238,7 +238,7 @@
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="pt-3">
-		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseYear" ng-click="drawslider();"><span class="h6">{{ __('general.year') }}</span></button>
+		<button id="year_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0 filterButtons" type="button" data-toggle="collapse" data-target="#collapseYear" ng-click="drawslider();"><span class="h6">{{ __('general.year') }}</span></button>
 		<div class="collapse mt-2" id="collapseYear">
 			<rzslider rz-slider-model="slider.minValue"
 			rz-slider-high="slider.maxValue"
@@ -248,14 +248,14 @@
 	@if(auth::check())
 		@if(Auth::User()->advanced_filter)
 	<div class="pt-3">
-		<button id="votecount_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseVoteCount" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
+		<button id="votecount_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0 filterButtons" type="button" data-toggle="collapse" data-target="#collapseVoteCount" ng-click="drawslider();"><span class="h6">{{ __('general.min_vote_count') }}</span></button>
 		<div class="collapse mt-2" id="collapseVoteCount">
 			<rzslider rz-slider-model="slider_vote_count.value"
 			rz-slider-options="slider_vote_count.options"></rzslider>
 		</div>
 	</div>
 	<div ng-hide="active_tab=='top_rated'" class="pt-3">
-		<button id="matchrate_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseMatchRate" ng-click="drawslider();"><span class="h6">{{ __('general.min_match_rate') }}</span></button>
+		<button id="matchrate_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0 filterButtons" type="button" data-toggle="collapse" data-target="#collapseMatchRate" ng-click="drawslider();"><span class="h6">{{ __('general.min_match_rate') }}</span></button>
 		<div class="collapse mt-2" id="collapseMatchRate">
 			<rzslider rz-slider-model="slider_match_rate.value"
 			rz-slider-options="slider_match_rate.options"></rzslider>
@@ -263,7 +263,7 @@
 	</div>
 	<div class="m-0">
 		<div class="pt-3" ng-show="page_variables.movies_or_series=='series'">
-			<button id="status_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0" type="button" data-toggle="collapse" data-target="#collapseStatus"><span class="h6">{{ strtoupper (__('general.status')) }}</span></button>
+			<button id="status_button" class="btn btn-outline-secondary dropdown-toggle h6 border-0 m-0 filterButtons" type="button" data-toggle="collapse" data-target="#collapseStatus"><span class="h6">{{ strtoupper (__('general.status')) }}</span></button>
 			<div class="collapse mt-2" id="collapseStatus">
 				<div class="btn-group" role="group" aria-label="Returning or Ended">
 					<button type="button" class="btn border-0" ng-class="f_status=='All'?'btn-secondary':'btn-outline-secondary'" ng-click="f_status='All';get_first_page_data()">{{ __('general.all') }}</button>

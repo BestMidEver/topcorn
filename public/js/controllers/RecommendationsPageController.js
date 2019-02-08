@@ -216,7 +216,7 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 		});
 		$('#collapseStatus').on('hide.bs.collapse', function (e) {
 			if ($(this).is(e.target)) {
-				if($scope.f_status!='All' && page_variables.movies_or_series=='series'){
+				if($scope.f_status!='All'){
 					angular.element( document.querySelector( '#status_button' ) ).addClass('btn-tab');
 					angular.element( document.querySelector( '#status_button' ) ).removeClass('btn-outline-secondary');
 				}else{
@@ -236,6 +236,19 @@ MyApp.controller('RecommendationsPageController', function($scope, $http, $timeo
 			angular.element( document.querySelector( '#addperson_text' ) ).addClass('d-none');
 			angular.element( document.querySelector( '#addmovie_button' ) ).removeClass('btn-outline-secondary-hover');
 		});
+
+	    $scope.refresh_filter_variables=function(){
+		    $scope.f_lang_model = [];
+		    $scope.f_genre_model = [];
+		    $scope.slider.minValue = parseInt(pass.constants_angular_slider_min_value);
+		    $scope.slider.maxValue = parseInt(pass.constants_angular_slider_max_value);
+		    $scope.slider_vote_count.value = parseInt(pass.constants_angular_slider_min_vote_count);
+		    $scope.slider_match_rate.value = parseInt(pass.constants_angular_slider_min_match_percentage);
+		    $scope.f_status = 'All';
+		    $scope.f_add_watched = false;
+			angular.element( document.querySelector( '.filterButtons' ) ).removeClass('btn-tab');
+			angular.element( document.querySelector( '.filterButtons' ) ).addClass('btn-outline-secondary');
+	    }
 //////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////// ANGULAR SLIDER AND FILTER /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
