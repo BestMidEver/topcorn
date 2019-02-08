@@ -300,7 +300,7 @@
 
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-hide="is_waiting">
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)">
     <div class="dropdown d-inline mr-2">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="h5" ng-show="page_variables.active_tab_3==3">@{{movie.belongs_to_collection.name}}</span>
@@ -312,7 +312,7 @@
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=3;set_recommendations();" ng-if="movie.belongs_to_collection">@{{movie.belongs_to_collection.name}}</button>
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=0;set_recommendations();">{{ __('general.people_who_liked_this_also_liked') }}</button>
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;set_recommendations();">{{ __('general.similar_movies') }}</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;">{{ __('general.movie_lists_title') }}</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;" ng-show="listes.length>0">{{ __('general.movie_lists_title') }}</button>
         </div>
     </div>
     <span class="text-muted scrollmenu px-3 px-md-0" ng-if="page_variables.active_tab_3!=2 && page_variables.active_tab_3!=3"><small>Sorted by relevance</small></span>

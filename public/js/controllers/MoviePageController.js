@@ -94,7 +94,9 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 				console.log('collection', $scope.collection);
 			}, function errorCallback(response) {
 			});
-		}else $scope.page_variables.active_tab_3 = 0;
+		}else if(desireddata.recommendations.results>0) $scope.page_variables.active_tab_3 = 0;
+		else if(desireddata.similar.results>0) $scope.page_variables.active_tab_3 = 1;
+		else $scope.page_variables.active_tab_3 = -1;
 		$http({
 			method: 'GET',
 			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos'
@@ -207,10 +209,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}else if($scope.page_variables.active_tab_3 == 0){
 			external_internal_data_merger.merge_user_movies_to_external_data($scope.movie.recommendations.results, $scope.user_movies);
 			$scope.similar_movies=$scope.movie.recommendations.results;
-		}else{
+		}else if($scope.page_variables.active_tab_3 == 1){
 			external_internal_data_merger.merge_user_movies_to_external_data($scope.movie.similar.results, $scope.user_movies);
 			$scope.similar_movies=$scope.movie.similar.results;
-		}
+		}else $scope.similar_movies=[];
 	}
 
 
