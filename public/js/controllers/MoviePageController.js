@@ -97,6 +97,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}else if(desireddata.recommendations.results.length>0) $scope.page_variables.active_tab_3 = 0;
 		else if(desireddata.similar.results.length>0) $scope.page_variables.active_tab_3 = 1;
 		else $scope.page_variables.active_tab_3 = -1;
+		$scope.page_variables.has_similar = desireddata.similar.results.length>0?true:false;
 		$http({
 			method: 'GET',
 			url: 'https://api.themoviedb.org/3/movie/'+pass.movieid+'?api_key='+pass.api_key+'&language='+pass.secondary_lang+'&append_to_response=videos'

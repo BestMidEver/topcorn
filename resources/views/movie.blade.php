@@ -311,7 +311,7 @@
         <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=3;set_recommendations();" ng-if="movie.belongs_to_collection">@{{movie.belongs_to_collection.name}}</button>
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=0;set_recommendations();">{{ __('general.people_who_liked_this_also_liked') }}</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;set_recommendations();">{{ __('general.similar_movies') }}</button>
+            <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;set_recommendations();" ng-show="page_variables.has_similar">{{ __('general.similar_movies') }}</button>
             <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;" ng-show="listes.length>0">{{ __('general.movie_lists_title') }}</button>
         </div>
     </div>
