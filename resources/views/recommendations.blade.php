@@ -225,7 +225,7 @@
 		</button>
 		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
 			<button class="dropdown-item" ng-click="change_sort_by('point');">{{ __('general.sort_by_match') }}</button>
-			<button class="dropdown-item" ng-click="change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>
+			<!--<button class="dropdown-item" ng-click="change_sort_by('percent');">{{ __('general.sort_by_percent') }}</button>-->
 			<button class="dropdown-item" ng-click="change_sort_by('top_rated');">{{ __('general.top_rated') }}</button>
 			<button class="dropdown-item" ng-click="change_sort_by('most_popular');">{{ __('general.most_populer') }}</button>
 			<button class="dropdown-item" ng-click="change_sort_by('budget');" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.highest_budget') }}</button>
