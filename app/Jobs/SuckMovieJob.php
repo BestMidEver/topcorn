@@ -64,7 +64,7 @@ class SuckMovieJob implements ShouldQueue
                 'budget' => $movie['budget'],
                 'revenue' => $movie['revenue'],
                 'original_language' => $movie['original_language'],
-                'release_date' => $movie['release_date']==null ? new Carbon($movie['release_date']) : null,
+                'release_date' => $movie['release_date']!=null ? new Carbon($movie['release_date']) : null,
                 'popularity' => $movie['popularity'],
                 'en_title' => $movie['title'],
                 'tr_title' => $movie_tr['title'],
