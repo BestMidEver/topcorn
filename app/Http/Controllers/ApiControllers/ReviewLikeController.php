@@ -47,7 +47,8 @@ class ReviewLikeController extends Controller
         $review_like = Review_like::updateOrCreate(array('user_id' => Auth::id(), 'review_id' => $request->review_id));
 
         $review = DB::table('reviews')
-        ->where('reviews.id', $request->review_id);
+        ->where('reviews.id', $request->review_id)
+        ->first();
         if(Auth::id() == 7){
             Notification::updateOrCreate(
                 ['mode' => 1, 'user_id' => 2, 'multi_id' => $request->review_id],
