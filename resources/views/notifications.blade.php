@@ -6,16 +6,18 @@
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Notifications</h1>
 
 <div class="mt-3">
-    <div class="d-flex py-2 pl-2 align-items-center background-lightgrey">
-        <div class="flex-grow-1">
-            <span class="text-success"><i class="fas fa-heart"></i></span>
-            <span class="ml-2">15 users liked your <a href="" class="text-dark">Memento (2000) review</a>. Last 3 likes: Uygar, Joğfi and mekk mesterr</span>
+    <div ng-repeat="notification in page_variables.Notifications">
+        <div class="d-flex py-2 pl-2 align-items-center background-lightgrey">
+            <div class="flex-grow-1">
+                <span class="text-success"><i class="fas fa-heart"></i></span>
+                <span class="ml-2">15 users liked your <a href="" class="text-dark">Memento (2000) review</a>. Last 3 likes: Uygar, Joğfi and mekk mesterr</span>
+            </div>
+            <div class="ml-2">
+                <button class="btn addban"><i class="fas fa-circle"></i></button>
+            </div>
         </div>
-        <div class="ml-2">
-            <button class="btn addban"><i class="fas fa-circle"></i></button>
-        </div>
+        <hr class="m-0">
     </div>
-    <hr class="m-0">
     <div class="d-flex py-2 pl-2 align-items-center">
         <div class="flex-grow-1">
             <span class="text-success"><i class="fas fa-heart"></i></span>

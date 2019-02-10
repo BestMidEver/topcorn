@@ -1,7 +1,7 @@
 MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 {
 	console.log(pass)
-
+	$scope.page_variables = {notifications:pass.notifications};
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
