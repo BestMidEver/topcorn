@@ -57,7 +57,7 @@ class ReviewLikeController extends Controller
         }
 
         return Response([
-            'data' => $review_like,
+            'data' => $review,
         ], Response::HTTP_CREATED);
     }
 
