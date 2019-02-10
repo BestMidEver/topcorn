@@ -12,9 +12,9 @@ class NotificationsController extends Controller
 {
     public function notifications($id, $lang = '')
     {
-		$notifications = DB::table('notifications')->get();
+		$notifications = DB::table('notifications')->paginate(20);
 		$return_val = [];
-		foreach ($notifications as $notification) {
+		foreach ($notifications->data as $notification) {
 			if($notification->mode == 0){
 				$temp = DB::table('reviews')
 				->where('reviews.id', '=', $notification->multi_id)
@@ -40,6 +40,6 @@ class NotificationsController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $return_val);;
+		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $return_val)->with('paginate_info', $notifications);
     }
 }
