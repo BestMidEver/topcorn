@@ -7,6 +7,7 @@ use App\Jobs\SuckMovieJob;
 use App\Model\Liste;
 use App\Model\Listitem;
 use App\Model\Listlike;
+use App\Model\Notification;
 use App\Model\Rated;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -299,6 +300,16 @@ class listController extends Controller
             );
         }
 
+        $liste = DB::table('listes')
+        ->where('listes.id', $liste)
+        ->first();
+        if(Auth::id() == 7){
+            Notification::updateOrCreate(
+                ['mode' => 2, 'user_id' => $liste->user_id, 'multi_id' => $liste],
+                ['is_seen' => 0]
+            );
+        }
+
         $like_count = DB::table('listlikes')
         ->where('listlikes.list_id', '=', $liste)
         ->count();
@@ -318,6 +329,13 @@ class listController extends Controller
 
         if($q->count() > 0){
             $return_val = Listlike::where(['list_id' => $liste, 'user_id' => Auth::id()])->delete();
+        }
+
+        $will_be_deleted = Notification::where('multi_id', $liste)
+        ->where('mode', 2)->first();
+        
+        if($will_be_deleted){
+            $will_be_deleted->delete();
         }
         
         $like_count = DB::table('listlikes')
