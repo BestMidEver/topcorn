@@ -14,7 +14,7 @@ class NotificationsController extends Controller
     {
 		$notifications = DB::table('notifications')->paginate(20);
 		$return_val = [];
-		foreach ($notifications[0]->data as $notification) {
+		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
 				$temp = DB::table('reviews')
 				->where('reviews.id', '=', $notification->multi_id)
