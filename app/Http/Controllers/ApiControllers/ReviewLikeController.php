@@ -44,6 +44,16 @@ class ReviewLikeController extends Controller
     public function store(Request $request)
     {
         $review_like = Review_like::updateOrCreate(array('user_id' => Auth::id(), 'review_id' => $request->review_id));
+
+        $review = DB::table('reviews')
+        ->where('reviews.id', $request->review_id);
+        if(Auth::id() == 7){
+            Notification::updateOrCreate(
+                ['mode' => 1, 'user_id' => $review->first()->user_id, 'multi_id' => $request->review_id],
+                ['is_seen' => 0]
+            );
+        }
+
         return Response([
             'data' => $review_like,
         ], Response::HTTP_CREATED);
