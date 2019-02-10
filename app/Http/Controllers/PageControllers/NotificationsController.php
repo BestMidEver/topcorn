@@ -28,7 +28,6 @@ class NotificationsController extends Controller
 			}
 			array_push($return_val, $temp);
 		}
-		$notifications = DB::table('notifications')->paginate(20);
 
 
 
