@@ -49,15 +49,15 @@ class ReviewLikeController extends Controller
         $review = DB::table('reviews')
         ->where('reviews.id', $request->review_id)
         ->first();
-        if(Auth::id() == 7){
+        if(Auth::id() == 7 && $review->user_id != null){
             Notification::updateOrCreate(
-                ['mode' => 1, 'user_id' => 2, 'multi_id' => $request->review_id],
+                ['mode' => 1, 'user_id' => $review->user_id, 'multi_id' => $request->review_id],
                 ['is_seen' => 0]
             );
         }
 
         return Response([
-            'data' => $review,
+            'data' => $review_like,
         ], Response::HTTP_CREATED);
     }
 
