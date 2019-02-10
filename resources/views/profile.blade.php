@@ -121,13 +121,18 @@
 
 
 
-<!-- Tabs Button -->
-<div class="mt-3 d-none d-md-inline">
-	<div class="btn-group d-flex justify-content-center mt-3" role="group" aria-label="Movies or Series" ng-init="page_variables.movies_or_series = 'movies'">
+
+<div class="scrollmenu mt-3 d-md-none tab2">
+	<div class="btn-group btn-group d-block mb-2 mb-md-0 text-center" role="group" aria-label="Movies or Series">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
 	</div>
 </div>
+
+
+
+
+<!-- Tabs Button -->
 <div class="container-fluid p-0 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1 mb-3 mt-1">
 		<li class="nav-item">
@@ -150,12 +155,6 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu mt-3 d-md-none tab2">
-	<div class="btn-group btn-group d-block mb-2 text-center" role="group" aria-label="Movies or Series">
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
-	</div>
-</div>
 <div class="scrollmenu mb-3 d-md-none tab2">
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data()">{{ __('general.seen_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
