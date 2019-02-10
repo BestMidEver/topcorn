@@ -300,12 +300,12 @@ class listController extends Controller
             );
         }
 
-        $liste = DB::table('listes')
+        $list = DB::table('listes')
         ->where('listes.id', $liste)
         ->first();
         if(Auth::id() == 7){
             Notification::updateOrCreate(
-                ['mode' => 2, 'user_id' => $liste->user_id, 'multi_id' => $liste],
+                ['mode' => 2, 'user_id' => $list->user_id, 'multi_id' => $liste],
                 ['is_seen' => 0]
             );
         }
