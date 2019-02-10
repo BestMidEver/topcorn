@@ -2,6 +2,7 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
+use App\Model\Notification;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -268,7 +269,31 @@ Route::get('test', function(){
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
-	if(Auth::id() == 7) return 'gel babana';
+	if(Auth::id() == 7){
+		Notification::updateOrCreate(
+		    ['id' => $movie['id']],
+		    ['original_title' => $movie['original_title'],
+		    'vote_average' => $movie['vote_average'],
+		    'budget' => $movie['budget'],
+		    'revenue' => $movie['revenue'],
+		    'original_language' => $movie['original_language'],
+		    'release_date' => $movie['release_date']!=null ? new Carbon($movie['release_date']) : null,
+		    'popularity' => $movie['popularity'],
+		    'en_title' => $movie['title'],
+		    'tr_title' => $movie_tr['title'],
+		    'hu_title' => $movie_hu['title'],
+		    'en_poster_path' => $movie['poster_path'],
+		    'tr_poster_path' => $movie_tr['poster_path'],
+		    'hu_poster_path' => $movie_hu['poster_path'],
+		    'en_cover_path' => $movie['backdrop_path'],
+		    'tr_cover_path' => $movie_tr['backdrop_path'],
+		    'hu_cover_path' => $movie_hu['backdrop_path'],
+		    'en_plot' => $movie['overview'],
+		    'tr_plot' => $movie_tr['overview'],
+		    'hu_plot' => $movie_hu['overview'],
+		    'vote_count' => $movie['vote_count']]
+		);
+	}
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
