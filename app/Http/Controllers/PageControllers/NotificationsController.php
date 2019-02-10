@@ -15,7 +15,16 @@ class NotificationsController extends Controller
 		$notifications = DB::table('notifications')->get();
 		$return_val = [];
 		foreach ($notifications as $notification) {
-			array_push($return_val, $notification);
+			if($notification->mode == 0){
+				$temp = DB::table('reviews')
+				->where('reviews.id', '=', $notification->multi_id)
+				->get();
+			}else if($notification->mode == 1){
+				$temp = DB::table('listes')
+				->where('listes.id', '=', $notification->multi_id)
+				->get();
+			}
+			array_push($return_val, $temp);
 		}
 
 
