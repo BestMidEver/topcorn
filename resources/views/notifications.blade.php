@@ -5,7 +5,6 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Notifications</h1>
 
-
 <div class="mt-3">
     <div class="d-flex py-2 pl-2 align-items-center background-lightgrey">
         <div class="flex-grow-1">
