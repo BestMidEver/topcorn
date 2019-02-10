@@ -303,12 +303,10 @@ class listController extends Controller
         $list = DB::table('listes')
         ->where('listes.id', $liste)
         ->first();
-        if(Auth::id() == 7){
-            Notification::updateOrCreate(
-                ['mode' => 2, 'user_id' => $list->user_id, 'multi_id' => $liste],
-                ['is_seen' => 0]
-            );
-        }
+        Notification::updateOrCreate(
+            ['mode' => 2, 'user_id' => $list->user_id, 'multi_id' => $liste],
+            ['is_seen' => 0]
+        );
 
         $like_count = DB::table('listlikes')
         ->where('listlikes.list_id', '=', $liste)

@@ -49,7 +49,7 @@ class ReviewLikeController extends Controller
         $review = DB::table('reviews')
         ->where('reviews.id', $request->review_id)
         ->first();
-        if(Auth::id() == 7 && $review->user_id != null){
+        if($review->user_id != null){
             Notification::updateOrCreate(
                 ['mode' => 1, 'user_id' => $review->user_id, 'multi_id' => $request->review_id],
                 ['is_seen' => 0]
