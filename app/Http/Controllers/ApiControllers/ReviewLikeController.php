@@ -109,6 +109,13 @@ class ReviewLikeController extends Controller
         if($will_be_deleted){
             $will_be_deleted->delete();
         }
+
+        $will_be_deleted = Notification::where('multi_id', $review_id)
+        ->where('mode', 1)->first();
+        
+        if($will_be_deleted){
+            $will_be_deleted->delete();
+        }
         
         return Response(null, Response::HTTP_NO_CONTENT);
     }
