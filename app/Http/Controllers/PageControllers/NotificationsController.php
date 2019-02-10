@@ -18,7 +18,8 @@ class NotificationsController extends Controller
 			if($notification->mode == 0){
 				$temp = DB::table('reviews')
 				->where('reviews.id', '=', $notification->multi_id)
-				->get();
+            	->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+				->paginate(3);
 			}else if($notification->mode == 1){
 				$temp = DB::table('listes')
 				->where('listes.id', '=', $notification->multi_id)

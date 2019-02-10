@@ -51,7 +51,7 @@ class ReviewLikeController extends Controller
         ->first();
         if($review->user_id != null){
             Notification::updateOrCreate(
-                ['mode' => 1, 'user_id' => $review->user_id, 'multi_id' => $request->review_id],
+                ['mode' => 0, 'user_id' => $review->user_id, 'multi_id' => $request->review_id],
                 ['is_seen' => 0]
             );
         }
@@ -111,7 +111,7 @@ class ReviewLikeController extends Controller
         }
 
         $will_be_deleted = Notification::where('multi_id', $review_id)
-        ->where('mode', 1)->first();
+        ->where('mode', 0)->first();
         
         if($will_be_deleted){
             $will_be_deleted->delete();

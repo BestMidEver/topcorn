@@ -304,7 +304,7 @@ class listController extends Controller
         ->where('listes.id', $liste)
         ->first();
         Notification::updateOrCreate(
-            ['mode' => 2, 'user_id' => $list->user_id, 'multi_id' => $liste],
+            ['mode' => 1, 'user_id' => $list->user_id, 'multi_id' => $liste],
             ['is_seen' => 0]
         );
 
@@ -330,7 +330,7 @@ class listController extends Controller
         }
 
         $will_be_deleted = Notification::where('multi_id', $liste)
-        ->where('mode', 2)->first();
+        ->where('mode', 1)->first();
         
         if($will_be_deleted){
             $will_be_deleted->delete();
