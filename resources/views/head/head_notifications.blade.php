@@ -15,9 +15,9 @@ pass={
 @endsection
 
 @section('angular_controller_js')
-<script src="/js/controllers/AccountPageController.js?v={{config('constants.version')}}"></script>
+<script src="/js/controllers/NotificationsPageController.js?v={{config('constants.version')}}"></script>
 @endsection
-@section('controllername','AccountPageController')
+@section('controllername','NotificationsPageController')
 
 @section('title')
 {{ __('title.notifications') }}
