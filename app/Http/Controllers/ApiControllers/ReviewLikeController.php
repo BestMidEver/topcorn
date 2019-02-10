@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\Notification;
 use App\Model\Review_like;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
