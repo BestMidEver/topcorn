@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\Notification;
 use App\Model\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -39,7 +40,6 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-
         if($request->season_number != -1){
             if($request->episode_number != -1){
                 Review::updateOrCreate(
@@ -64,7 +64,16 @@ class ReviewController extends Controller
 
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $request->movie_series_id)
-        ->whereIn('reviews.mode', $mode)
+        ->whereIn('reviews.mode', $mode);
+
+        if(Auth::id() == 7){
+            Notification::updateOrCreate(
+                ['mode' => 1, 'user_id' => $review->first()->user_id, 'multi_id' => $request->movie_series_id],
+                ['is_seen' => 0]
+            );
+        }
+
+        $review = $review
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->groupBy('reviews.id')
