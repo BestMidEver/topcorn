@@ -26,6 +26,6 @@ class NotificationsController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('contractor', $notifications);;
+		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $notifications);;
     }
 }
