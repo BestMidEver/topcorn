@@ -15,7 +15,7 @@ class NotificationsController extends Controller
 		$notifications = DB::table('notifications')->get();
 		$return_val = [];
 		foreach ($notifications as $notification) {
-			array_push($return_val, $notification)
+			array_push($return_val, $notification);
 		}
 
 
