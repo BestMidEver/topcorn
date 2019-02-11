@@ -287,7 +287,7 @@ Route::get('test', function(){
 
         $temp = Serie::where('id', 1405)->first();
         $is_next_episode_defined_1 = $temp->next_episode_air_date == null ? true : false;
-        return $is_next_episode_defined_1;
+        return $is_next_episode_defined_1?1:0;
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
