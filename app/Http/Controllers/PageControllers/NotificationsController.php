@@ -12,7 +12,7 @@ class NotificationsController extends Controller
 {
     public function notifications($id, $lang = '')
     {
-		$notifications = DB::table('notifications')->select('multi_id', 'mode', 'is_seen')->paginate(20);
+		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate(20);
 		$return_val = [];
 		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
@@ -32,7 +32,8 @@ class NotificationsController extends Controller
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
                 		DB::raw($notification->is_seen.' as is_seen'),
-                		DB::raw($notification->mode.' as notification_mode')
+                		DB::raw($notification->mode.' as notification_mode'),
+                		DB::raw($notification->id.' as notification_id')
             		)
 					->paginate(3);
 				}else if($temp->first()->mode == 3){
@@ -48,7 +49,8 @@ class NotificationsController extends Controller
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
                 		DB::raw($notification->is_seen.' as is_seen'),
-                		DB::raw($notification->mode.' as notification_mode')
+                		DB::raw($notification->mode.' as notification_mode'),
+                		DB::raw($notification->id.' as notification_id')
             		)
 					->paginate(3);
 				}
@@ -63,7 +65,8 @@ class NotificationsController extends Controller
             		'users.name as user_name',
             		'users.id as user_id',
             		DB::raw($notification->is_seen.' as is_seen'),
-            		DB::raw($notification->mode.' as notification_mode')
+            		DB::raw($notification->mode.' as notification_mode'),
+            		DB::raw($notification->id.' as notification_id')
         		)
 				->paginate(3);
 			}
