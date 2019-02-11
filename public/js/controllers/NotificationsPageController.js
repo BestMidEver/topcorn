@@ -6,7 +6,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 	$scope.set_seen = function(notification){
 		rate.set_seen(notification.notification_id, notification.is_seen == 0 ? 1 : 0)
 		.then(function(response){
-			console.log(response.data);
+			console.log(response);
 		});
 	}
 
