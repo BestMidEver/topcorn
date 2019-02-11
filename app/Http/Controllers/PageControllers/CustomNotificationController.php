@@ -75,7 +75,6 @@ class CustomNotificationController extends Controller
 
 		    	$will_be_deleted = Notification::where('multi_id', $request->list_id)
 		    	->where('mode', '=', '2')
-		    	->where('user_id', '=', $user->id)
 		    	->delete();
 
 
