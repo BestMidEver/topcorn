@@ -69,7 +69,18 @@ class NotificationsController extends Controller
             		DB::raw($notification->id.' as notification_id')
         		)
 				->paginate(3);
-			}
+			}else if($notification->mode == 2){
+                $temp = DB::table('custom_notifications')
+                ->where('custom_notifications.id', '=', $notification->multi_id)
+                ->select(
+                    'custom_notifications.icon as icon',
+                    'custom_notifications.'.Auth::User()->lang.'_notification as notification',
+                    DB::raw($notification->is_seen.' as is_seen'),
+                    DB::raw($notification->mode.' as notification_mode'),
+                    DB::raw($notification->id.' as notification_id')
+                )
+                ->paginate(3);
+            }
 			array_push($return_val, $temp);
 		}
 
