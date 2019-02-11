@@ -10,7 +10,7 @@
         <div class="d-flex py-2 pl-2 align-items-center background-lightgrey">
             <div class="flex-grow-1">
                 <span class="text-success"><i class="fas fa-heart"></i></span>
-                <span class="ml-2">@{{notification.total}} users liked your <a ng-href="@{{notification.data[0].review_mode==1?'movie':'series'}}/@{{notification.data[0].movie_id}}" class="text-dark">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}} review</a>. Last 3 likes: Uygar, Joğfi and mekk mesterr</span>
+                <span class="ml-2">@{{notification.total}} users liked your <a ng-href="@{{notification.data[0].review_mode==1?'movie':'series'}}/@{{notification.data[0].movie_id}}" class="text-dark">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}} review</a>. @{{notification.total>3?'Last 3':notification.total}} likes: <span ng-repeat="item in notification.data"><span ng-hide="$index==0">, </span>@{{item.user_name}}</span></span>
             </div>
             <div class="ml-2">
                 <button class="btn addban"><i class="fas fa-circle"></i></button>
