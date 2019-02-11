@@ -35,7 +35,7 @@ class NotificationsController extends Controller
 				}else if($temp->first()->mode == 3){
 					$temp = $temp
             		->join('series', 'series.id', '=', 'reviews.movie_series_id')
-            		->join('users', 'users.id', '=', 'reviews.user_id')
+            		->join('users', 'users.id', '=', 'review_likes.user_id')
             		->select(
             			'series.id as movie_id',
             			'series.original_name as original_title',
