@@ -62,6 +62,6 @@ class CustomNotificationController extends Controller
         $request->session()->flash('status', __('general.list_updated'));
 
 
-        return redirect('/createnotification/'.$liste_id);
+        return redirect('/create_notification/'.$liste_id);
     } 
 }
