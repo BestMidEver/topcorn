@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Jobs\SuckSeriesJob;
+use App\Model\Notification;
 use App\Model\Review;
 use App\Model\Serie;
 use App\Model\Series_genre;
@@ -44,11 +45,10 @@ class SuckSeriesJob implements ShouldQueue
         ->first();
         if($is_recent) return;
         $temp = Serie::where('id', $this->id)->first();
-        if($temp) $old_next_air_date = $temp->next_episode_air_date;
-        else $old_next_air_date = null;
+        if($temp) $is_next_episode_defined = $temp->next_episode_air_date == null ? false : true;
+        else $is_next_episode_defined = false;
         if($this->isWithRecommendation){
             $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
-            
             Series_recommendation::where(['series_id' => $this->id])->delete();
             for ($k=0; $k < count($series['recommendations']['results']); $k++) {
                 $temp = $series['recommendations']['results'][$k];
@@ -67,6 +67,13 @@ class SuckSeriesJob implements ShouldQueue
             $next_episode_air_date = null;
             if($series['next_episode_to_air'] != null){
                 if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
+            }
+            if($next_episode_air_date!=null && !$is_next_episode_defined){
+
+                Notification::updateOrCreate(
+                    ['mode' => 3, 'user_id' => 7, 'multi_id' => $this->id],
+                    ['is_seen' => 0]
+                );
             }
             $last_episode_air_date = null;
             if($series['last_air_date'] != null){$last_episode_air_date = new Carbon($series['last_air_date']);}
