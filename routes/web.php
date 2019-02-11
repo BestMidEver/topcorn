@@ -285,7 +285,7 @@ Route::get('test', function(){
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
 
-        $temp = Serie::where('id', 1405)->first();
+        $temp = Serie::where('id', 1402222222222222222225)->first();
         $is_next_episode_defined_1 = $temp->next_episode_air_date == null ? true : false;
         return $is_next_episode_defined_1?1:0;
 });
