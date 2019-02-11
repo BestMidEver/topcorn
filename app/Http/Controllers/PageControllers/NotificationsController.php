@@ -102,8 +102,6 @@ class NotificationsController extends Controller
 		}
 
 
-
-
 		if($lang != '') App::setlocale($lang);
 
 		$image_quality = Auth::User()->image_quality;

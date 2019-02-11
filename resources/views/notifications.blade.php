@@ -21,7 +21,7 @@
                 <span class="ml-2"><a ng-href="series/@{{notification.data[0].movie_id}}" class="text-dark">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}</a> air date is defined. Date: @{{notification.data[0].next_episode_air_date.substring(0, 10)}} (@{{notification.data[0].day_difference_next}} days later)</span>
             </div>
             <div class="ml-2">
-                <button class="btn btn-outline-secondary border-0 addban" ng-click="toggle_is_seen()"><i class="fa-circle" ng-class="notification.data[0].is_seen?'far':'fas'"></i></button>
+                <button class="btn btn-outline-secondary border-0 addban" ng-click="toggle_is_seen(notification.data[0])"><i class="fa-circle" ng-class="notification.data[0].is_seen?'far':'fas'"></i></button>
             </div>
         </div>
         <hr class="m-0">

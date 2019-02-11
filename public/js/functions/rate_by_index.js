@@ -2,6 +2,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    set_seen = function(notification_id, is_seen) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/set_seen/'+notification_id+'/'+is_seen,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     get_quick_rate = function(lang) 
     {
         return $http({
