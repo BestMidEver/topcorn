@@ -43,7 +43,7 @@ class NotificationsController extends Controller
             			'series.id as movie_id',
             			'series.original_name as original_title',
                 		'series.'.Auth::User()->lang.'_name as title',
-                		'movies.first_air_date as release_date',
+                		'series.first_air_date as release_date',
                 		'users.name as user_name',
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
