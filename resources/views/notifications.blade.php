@@ -18,16 +18,6 @@
         </div>
         <hr class="m-0">
     </div>
-    <div class="d-flex py-2 pl-2 align-items-center">
-        <div class="flex-grow-1">
-            <span class="text-success"><i class="fas fa-heart"></i></span>
-            <span class="ml-2">15 users liked your <a href="" class="text-dark">"Best cartoon movies" list</a>. Last 3 likes: Nicoletta, Carlos sarboza and Movie Addicted</span>
-        </div>
-        <div class="ml-2">
-            <button class="btn addban"><i class="far fa-circle"></i></button>
-        </div>
-    </div>
-    <hr class="m-0">
     <div class="d-flex py-2 pl-2 align-items-center background-lightgrey">
         <div class="flex-grow-1">
             <span class="text-success"><i class="fas fa-wrench"></i></span>
