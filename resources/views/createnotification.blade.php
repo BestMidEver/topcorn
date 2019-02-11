@@ -100,7 +100,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort"></i></div>
 								</div>
-								<select class="form-control" id="mode" name="process">
+								<select class="form-control" id="mode" name="mode">
 									<option value="0" {{ $liste != '[]' ? ($liste[0]->mode == 0 ? 'selected' : '') : 'selected' }}>save</option>
 									<option value="1" {{ $liste != '[]' ? ($liste[0]->mode == 1 ? 'selected' : '') : '' }}>notificate yourself</option>
 									<option value="2" {{ $liste != '[]' ? ($liste[0]->mode == 2 ? 'selected' : '') : '' }}>delete notification</option>
