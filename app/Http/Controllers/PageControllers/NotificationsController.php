@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\Notification;
 use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -111,5 +112,19 @@ class NotificationsController extends Controller
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
 		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $return_val)->with('paginate_info', $notifications);
+    }
+
+
+
+    public function set_seen($notification_id, $is_seen)
+    {
+        $notification = Notification::updateOrCreate(
+            ['id' => $notification_id, 'user_id' => Auth::id()/*, 'multi_id' => $request->review_id*/],
+            ['is_seen' => $is_seen]
+        );
+
+        return Response([
+            'data' => $notification,
+        ], Response::HTTP_CREATED);
     }
 }
