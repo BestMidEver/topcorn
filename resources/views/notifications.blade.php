@@ -14,7 +14,6 @@
             </div>
             <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==2">
                 <span class="text-success"><i class="@{{notification.data[0].icon}}"></i></span>
-                <span class="text-success"><i class="fas fa-heart"></i></span>
                 <span class="ml-2">@{{notification.data[0].notification}}</span>
             </div>
             <div class="ml-2">
