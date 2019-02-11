@@ -165,6 +165,9 @@ Route::get('api/search_lists/{text}','ApiControllers\SearchController@search_lis
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('notifications/{lang?}', 'PageControllers\NotificationsController@notifications')
 	->where('lang', config('constants.supported_languages.for_web_php'));
+
+Route::get('create_notification/{id?}', 'PageControllers\CustomNotificationController@create_notification');
+Route::post('create_notification', 'PageControllers\CustomNotificationController@post_create_notification');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// NOTIFICATIONS PAGE (AUTH) ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
