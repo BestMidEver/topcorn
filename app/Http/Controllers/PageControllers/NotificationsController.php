@@ -120,7 +120,7 @@ class NotificationsController extends Controller
     public function set_seen($notification_id, $is_seen)
     {
         $notification = Notification::where('id', $notification_id)
-        ->where('user_id' => Auth::id())
+        ->where('user_id', Auth::id())
         ->update(array('is_seen' => $is_seen));
 
         return Response([
