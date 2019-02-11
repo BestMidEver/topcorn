@@ -43,6 +43,8 @@ class SuckSeriesJob implements ShouldQueue
         ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
         ->first();
         if($is_recent) return;
+        $temp = Serie::where('id', $this->id)->first();
+        $is_next_episode_defined_1 = $temp->next_episode_air_date == null ? true : false;
         if($this->isWithRecommendation){
             $series = json_decode(file_get_contents('https://api.themoviedb.org/3/tv/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
             Series_recommendation::where(['series_id' => $this->id])->delete();
