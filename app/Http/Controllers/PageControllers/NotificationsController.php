@@ -80,6 +80,21 @@ class NotificationsController extends Controller
                     DB::raw($notification->id.' as notification_id')
                 )
                 ->paginate(1);
+            }else if($notification->mode == 3){
+                $temp = DB::table('series')
+                ->where('series.id', '=', $notification->multi_id)
+                ->select(
+                    'series.id as movie_id',
+                    'series.original_name as original_title',
+                    'series.'.Auth::User()->lang.'_name as title',
+                    'series.first_air_date as release_date',
+                    'series.next_episode_air_date as next_episode_air_date',
+                    DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next'),
+                    DB::raw($notification->is_seen.' as is_seen'),
+                    DB::raw($notification->mode.' as notification_mode'),
+                    DB::raw($notification->id.' as notification_id')
+                )
+                ->paginate(1);
             }
 			array_push($return_val, $temp);
 		}
