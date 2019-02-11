@@ -17,11 +17,35 @@ class NotificationsController extends Controller
 		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
 				$temp = DB::table('reviews')
-				->where('reviews.id', '=', $notification->multi_id)
-            	->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
-            	->leftjoin('movies', 'movies.id', '=', 'reviews.movie_series_id')
-            	->leftjoin('series', 'series.id', '=', 'reviews.movie_series_id')
-				->paginate(3);
+				->where('reviews.id', '=', $notification->multi_id);
+        		->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+				if($temp->first()->mode == 1){
+					$temp = $temp
+            		->join('movies', 'movies.id', '=', 'reviews.movie_series_id')
+            		->join('users', 'users.id', '=', 'reviews.user_id')
+            		->select(
+            			'movies.id as movie_id',
+            			'movies.original_title as original_title',
+                		'movies.'.Auth::User()->lang.'_title as title',
+                		'users.name as user_name',
+                		'users.id as user_id',
+                		'reviews.mode as review_mode'
+            		)
+					->paginate(3);
+				}else if($temp->first()->mode == 3){
+					$temp = $temp
+            		->join('series', 'series.id', '=', 'reviews.movie_series_id')
+            		->join('users', 'users.id', '=', 'reviews.user_id')
+            		->select(
+            			'series.id as movie_id',
+            			'series.original_name as original_title',
+                		'series.'.Auth::User()->lang.'_name as title',
+                		'users.name as user_name',
+                		'users.id as user_id',
+                		'reviews.mode as review_mode'
+            		)
+					->paginate(3);
+				}
 			}else if($notification->mode == 1){
 				$temp = DB::table('listes')
 				->where('listes.id', '=', $notification->multi_id)
