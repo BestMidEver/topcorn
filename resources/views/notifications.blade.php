@@ -13,7 +13,7 @@
                 <span class="ml-2">@{{notification.total}} users liked your <a ng-href="@{{notification.data[0].review_mode==1?'movie':'series'}}/@{{notification.data[0].movie_id}}" class="text-dark" ng-if="notification.data[0].notification_mode==0">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}} review</a><a ng-href="list/@{{notification.data[0].list_id}}" class="text-dark" ng-if="notification.data[0].notification_mode==1">@{{notification.data[0].title}} list</a>. @{{notification.total>3?'Last 3':notification.total}} likes: <span ng-repeat="item in notification.data"><span ng-hide="$index==0">, </span>@{{item.user_name}}</span></span>
             </div>
             <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==2">
-                <span class="text-success"><i ng-class="notification.data[0].icon"></i></span>
+                <span class="text-success"><i ng-class="@{{notification.data[0].icon}}"></i></span>
                 <span class="ml-2">@{{}}</span>
             </div>
             <div class="ml-2">
