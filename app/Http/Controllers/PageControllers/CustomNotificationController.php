@@ -39,18 +39,29 @@ class CustomNotificationController extends Controller
     {
     	if(Auth::id()!=7) return 'You are unauthorized';
 
-        $liste = CustomNotification::updateOrCreate(
-            ['id' => $request->list_id],
-            ['mode' => $request->mode,
-            'icon' => $request->icon,
-            'en_notification' => $request->en_notification,
-            'tr_notification' => $request->tr_notification,
-            'hu_notification' => $request->hu_notification,]
-        );
+    	if($request->mode != 2){
+	        $liste = CustomNotification::updateOrCreate(
+	            ['id' => $request->list_id],
+	            ['mode' => $request->mode,
+	            'icon' => $request->icon,
+	            'en_notification' => $request->en_notification,
+	            'tr_notification' => $request->tr_notification,
+	            'hu_notification' => $request->hu_notification,]
+	        );
+	        $liste_id = $liste->id;
+	    }else{
+	    	$will_be_deleted = CustomNotification::where('id', $request->list_id)->first();
+	    	
+	    	if($will_be_deleted){
+	    	    $will_be_deleted->delete();
+	    	}
+
+	    	$liste_id = 'new';
+	    }
 
         $request->session()->flash('status', __('general.list_updated'));
 
 
-        return redirect('/createnotification/'.$liste->id);
+        return redirect('/createnotification/'.$liste_id);
     } 
 }
