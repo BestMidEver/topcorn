@@ -154,6 +154,15 @@ class SuckSeriesJob implements ShouldQueue
             if($series['next_episode_to_air'] != null){
                 if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
             }
+            if($next_episode_air_date!=null && !$is_next_episode_defined){
+                $items = Series_later::where('series_id', '=', '1399')->get();
+                foreach ($items as $item) {
+                    Notification::updateOrCreate(
+                        ['mode' => 3, 'user_id' => $item->user_id, 'multi_id' => $this->id],
+                        ['is_seen' => 0]
+                    );
+                }
+            }
             $last_episode_air_date = null;
             if($series['last_air_date'] != null){$last_episode_air_date = new Carbon($series['last_air_date']);}
             Serie::updateOrCreate(
