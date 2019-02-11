@@ -22,7 +22,7 @@ class NotificationsController extends Controller
 				if($temp->first()->mode == 1){
 					$temp = $temp
             		->join('movies', 'movies.id', '=', 'reviews.movie_series_id')
-            		->join('users', 'users.id', '=', 'reviews.user_id')
+            		->join('users', 'users.id', '=', 'review_likes.user_id')
             		->select(
             			'movies.id as movie_id',
             			'movies.original_title as original_title',
@@ -50,6 +50,13 @@ class NotificationsController extends Controller
 				$temp = DB::table('listes')
 				->where('listes.id', '=', $notification->multi_id)
             	->leftjoin('listlikes', 'listlikes.list_id', '=', 'listes.id')
+        		->join('users', 'users.id', '=', 'listlikes.user_id')
+        		->select(
+        			'listes.id as list_id',
+        			'listes.title as title',
+            		'users.name as user_name',
+            		'users.id as user_id'
+        		)
 				->paginate(3);
 			}
 			array_push($return_val, $temp);
