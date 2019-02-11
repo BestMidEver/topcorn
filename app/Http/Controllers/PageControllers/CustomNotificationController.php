@@ -4,6 +4,7 @@ namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\CustomNotification;
+use App\Model\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +26,7 @@ class CustomNotificationController extends Controller
                 ->get()
                 ->toArray();
             }else{
-                return 'nothing_found';
+                return 'nothing found';
             }
         }
 
@@ -49,6 +50,13 @@ class CustomNotificationController extends Controller
 	            'hu_notification' => $request->hu_notification,]
 	        );
 	        $liste_id = $liste->id;
+
+	        if($request->mode == 1){
+	        	Notification::updateOrCreate(
+	        	    ['mode' => 2, 'user_id' => 7, 'multi_id' => $liste->id],
+	        	    ['is_seen' => 0]
+	        	);
+	        }
 	    }else{
 	    	$will_be_deleted = CustomNotification::where('id', $request->list_id)->first();
 	    	
