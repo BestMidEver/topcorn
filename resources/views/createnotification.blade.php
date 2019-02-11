@@ -36,7 +36,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control auto-resize" id="entry_1" name="entry_1">{{ $liste != '[]' ? $liste[0]->entry_1 : '' }}</textarea>
+								<textarea type="text" class="form-control auto-resize" id="en_notification" name="en_notification">{{ $liste != '[]' ? $liste[0]->en_notification : '' }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -51,7 +51,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control auto-resize" id="entry_2" name="entry_2">{{ $liste != '[]' ? $liste[0]->entry_2 : '' }}</textarea>
+								<textarea type="text" class="form-control auto-resize" id="tr_notification" name="tr_notification">{{ $liste != '[]' ? $liste[0]->tr_notification : '' }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control auto-resize" id="entry_3" name="entry_3">{{ $liste != '[]' ? $liste[0]->entry_3 : '' }}</textarea>
+								<textarea type="text" class="form-control auto-resize" id="hu_notification" name="hu_notification">{{ $liste != '[]' ? $liste[0]->hu_notification : '' }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-pencil-alt"></i></div>
 								</div>
-								<textarea type="text" class="form-control auto-resize" id="entry_4" name="entry_4">{{ $liste != '[]' ? $liste[0]->entry_4 : '' }}</textarea>
+								<textarea type="text" class="form-control auto-resize" id="icon" name="icon">{{ $liste != '[]' ? $liste[0]->icon : '' }}</textarea>
 							</div>
 						</div>
 					</div>
@@ -100,11 +100,11 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-sort"></i></div>
 								</div>
-								<select class="form-control" id="process" name="process">
-									<option value="0" {{ $liste != '[]' ? ($liste[0]->sort == 0 ? 'selected' : '') : 'selected' }}>save</option>
-									<option value="1" {{ $liste != '[]' ? ($liste[0]->sort == 1 ? 'selected' : '') : '' }}>notificate yourself</option>
-									<option value="2" {{ $liste != '[]' ? ($liste[0]->sort == 2 ? 'selected' : '') : '' }}>delete notification</option>
-									<option value="3" {{ $liste != '[]' ? ($liste[0]->sort == 3 ? 'selected' : '') : '' }}>!!! PUBLISH NOTIFICATION WITH EVERYONE !!!</option>
+								<select class="form-control" id="mode" name="process">
+									<option value="0" {{ $liste != '[]' ? ($liste[0]->mode == 0 ? 'selected' : '') : 'selected' }}>save</option>
+									<option value="1" {{ $liste != '[]' ? ($liste[0]->mode == 1 ? 'selected' : '') : '' }}>notificate yourself</option>
+									<option value="2" {{ $liste != '[]' ? ($liste[0]->mode == 2 ? 'selected' : '') : '' }}>delete notification</option>
+									<option value="3" {{ $liste != '[]' ? ($liste[0]->mode == 3 ? 'selected' : '') : '' }}>!!! PUBLISH NOTIFICATION WITH EVERYONE !!!</option>
 								</select>
 							</div>
 						</div>

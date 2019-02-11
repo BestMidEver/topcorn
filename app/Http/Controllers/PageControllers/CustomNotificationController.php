@@ -41,11 +41,11 @@ class CustomNotificationController extends Controller
 
         $liste = CustomNotification::updateOrCreate(
             ['id' => $request->list_id],
-            ['mode' => $request->header,
-            'entry_1' => $request->entry_1,
-            'entry_2' => $request->entry_2,
-            'visibility' => $request->visibility,
-            'sort' => $request->sort_by]
+            ['mode' => $request->mode,
+            'icon' => $request->icon,
+            'en_notification' => $request->en_notification,
+            'tr_notification' => $request->tr_notification,
+            'hu_notification' => $request->hu_notification,]
         );
 
         $request->session()->flash('status', __('general.list_updated'));
