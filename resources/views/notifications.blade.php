@@ -10,7 +10,7 @@
         <div class="d-flex py-2 pl-2 align-items-center background-lightgrey">
             <div class="flex-grow-1">
                 <span class="text-success"><i class="fas fa-heart"></i></span>
-                <span class="ml-2">15 users liked your <a href="" class="text-dark">Memento (2000) review</a>. Last 3 likes: Uygar, Joğfi and mekk mesterr</span>
+                <span class="ml-2">@{{notification.total}} users liked your <a href="" class="text-dark">Memento (2000) review</a>. Last 3 likes: Uygar, Joğfi and mekk mesterr</span>
             </div>
             <div class="ml-2">
                 <button class="btn addban"><i class="fas fa-circle"></i></button>
