@@ -3,7 +3,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 	console.log(pass)
 	$scope.page_variables = {notifications:pass.notifications};
 
-	$scope.toggle_is_seen = function(notification){
+	$scope.set_seen = function(notification){
 		rate.set_seen(notification.notification_id, notification.is_seen == 0 ? 1 : 0)
 		.then(function(response){
 			console.log(response.data);

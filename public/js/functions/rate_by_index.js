@@ -657,6 +657,7 @@ MyApp.factory('rate', function($http) {
 
 
     return {
+    	set_seen: set_seen,
     	get_quick_rate: get_quick_rate,
     	get_watched_movie_number: get_watched_movie_number,
     	get_reviews: get_reviews,
