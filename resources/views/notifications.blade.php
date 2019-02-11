@@ -26,26 +26,6 @@
         </div>
         <hr class="m-0">
     </div>
-    <div class="d-flex py-2 pl-2 align-items-center background-lightgrey">
-        <div class="flex-grow-1">
-            <span class="text-success"><i class="fas fa-film"></i></span>
-            <span class="ml-2"><a href="" class="text-dark">Revenge (2017)</a> is recommended to you. Recommender user: Niki Szamos</span>
-        </div>
-        <div class="ml-2">
-            <button class="btn addban"><i class="fas fa-circle"></i></button>
-        </div>
-    </div>
-    <hr class="m-0">
-    <div class="d-flex py-2 pl-2 align-items-center">
-        <div class="flex-grow-1">
-            <span class="text-success"><i class="fas fa-tv"></i></span>
-            <span class="ml-2"><a href="" class="text-dark">Game of Thrones (2011)</a> air date is defined. Date: 2019-07-11 (55 days later)</span>
-        </div>
-        <div class="ml-2">
-            <button class="btn addban"><i class="far fa-circle"></i></button>
-        </div>
-    </div>
-    <hr class="m-0">
 </div>
 
 @endsection
