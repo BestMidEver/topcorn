@@ -30,7 +30,8 @@ class NotificationsController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
-                		DB::raw($notification->is_seen.' as is_seen')
+                		DB::raw($notification->is_seen.' as is_seen'),
+                		DB::raw($notification->mode.' as notification_mode')
             		)
 					->paginate(3);
 				}else if($temp->first()->mode == 3){
@@ -44,7 +45,8 @@ class NotificationsController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
-                		DB::raw($notification->is_seen.' as is_seen')
+                		DB::raw($notification->is_seen.' as is_seen'),
+                		DB::raw($notification->mode.' as notification_mode')
             		)
 					->paginate(3);
 				}
@@ -58,7 +60,8 @@ class NotificationsController extends Controller
         			'listes.title as title',
             		'users.name as user_name',
             		'users.id as user_id',
-            		DB::raw($notification->is_seen.' as is_seen')
+            		DB::raw($notification->is_seen.' as is_seen'),
+            		DB::raw($notification->mode.' as notification_mode')
         		)
 				->paginate(3);
 			}
