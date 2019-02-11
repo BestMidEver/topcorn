@@ -17,8 +17,8 @@ class NotificationsController extends Controller
 		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
 				$temp = DB::table('reviews')
-				->where('reviews.id', '=', $notification->multi_id);
-        		->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+				->where('reviews.id', '=', $notification->multi_id)
+        		->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id');
 				if($temp->first()->mode == 1){
 					$temp = $temp
             		->join('movies', 'movies.id', '=', 'reviews.movie_series_id')
