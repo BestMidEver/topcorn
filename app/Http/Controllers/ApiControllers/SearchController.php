@@ -27,7 +27,7 @@ class SearchController extends Controller
         $return_val = DB::table('parties')
     	->where('user_id', '=', Auth::user()->id)
     	->orderBy('parties.updated_at', 'desc')
-    	->leftjoin('users', 'users.id', '=', 'parties.watched_with_user_id')
+    	->join('users', 'users.id', '=', 'parties.watched_with_user_id')
     	->select('users.id as user_id',
                 'users.name as name',
                 'users.profile_pic as profile_path',

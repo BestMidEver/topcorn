@@ -10,7 +10,8 @@ pass={
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"tt_movie":{{ Auth::User()->tt_movie }},
-	"watched_movie_number":{{ $watched_movie_number }}
+	"watched_movie_number":{{ $watched_movie_number }},
+	"watch_togethers":{!! json_encode($watch_togethers) !!}
 	@endif
 };
 </script>

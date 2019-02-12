@@ -226,6 +226,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$('#share_modal_2').modal('show');
 	}
 
+	console.log(pass)
 
 
 	if(pass.is_auth==1){

@@ -49,12 +49,23 @@ class movieController extends Controller
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+            $watch_togethers = DB::table('parties')
+            ->where('parties.watched_with_user_id', '=', Auth::id())
+            ->join('users', 'users.id', '=', 'parties.user_id')
+            ->select(
+                'users.id as user_id',
+                'users.name as user_name'
+            )
+            ->orderBy('parties.updated_at', 'desc')
+            ->paginate('50');
         }else{
             $target = '_self';
             $watched_movie_number = null;
+            $watch_togethers = [];
         }
 
-    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'));
+
+    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'))->with('watch_togethers', $watch_togethers);
     }
 
 
