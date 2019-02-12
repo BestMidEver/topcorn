@@ -229,11 +229,10 @@ console.log(pass)
 	$scope.send_movie_to_users = function(){
     	var send_users = [];
         var temp = _.pairs($scope.page_variables.f_send_user);
-        console.log(temp)
         for (var i = 0; i < temp.length; i++) {
         	if(temp[i][1]) send_users.push( temp[i][0] );
         }
-		console.log($scope.page_variables.f_send_user)
+		console.log(send_users)
 	}
 
 
