@@ -9,7 +9,7 @@
 			</div>
 			<div class="modal-body">
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack" ng-click="show_party()">Topcorn</button>
-				<a class="btn btn-outline-secondary border-0 btn-lg btn-block addfacebook" ng-href="{{config('constants.facebook.share_website')}}/@{{movie.title.length>0?'movie':'series'}}/{{$id}}" target="_blank" data-dismiss="modal">Facebook</a>
+				<a class="btn btn-outline-secondary border-0 btn-lg btn-block addfacebook" ng-href="{{config('constants.facebook.share_website')}}/@{{movie.title.length>0?'movie':'series'}}/{{$id}}" target="_blank">Facebook</a>
 			</div>
 		</div>
 	</div>
