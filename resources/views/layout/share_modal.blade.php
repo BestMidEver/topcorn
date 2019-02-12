@@ -51,6 +51,10 @@
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">muhaha</button>
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
 			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
+				<button type="button" class="btn btn-outline-primary" data-dismiss="modal" ng-click="">Send</button>
+			</div>
 		</div>
 	</div>
 </div>
