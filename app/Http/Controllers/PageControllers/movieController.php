@@ -182,11 +182,11 @@ class movieController extends Controller
 
 
 
-    public function send_movie_to_user($request)
+    public function send_movie_to_user(Request $request)
     {
         $users = DB::table('parties')
         ->where('parties.watched_with_user_id', '=', Auth::id())
-        ->whereIn('parties.user_id', [2])
+        ->whereIn('parties.user_id', $request->users)
         ->select('parties.user_id as id')
         ->get();
 
@@ -198,7 +198,7 @@ class movieController extends Controller
         }
 
         return Response([
-            'data' => $notification,
+            'data' => $users,
         ], Response::HTTP_CREATED);
     }
 }
