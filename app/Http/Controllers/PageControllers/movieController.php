@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Response;
 
 class movieController extends Controller
 {
@@ -195,5 +196,9 @@ class movieController extends Controller
                 ['is_seen' => 0]
             );
         }
+
+        return Response([
+            'data' => $users,
+        ], Response::HTTP_CREATED);
     }
 }
