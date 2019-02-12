@@ -234,7 +234,10 @@ console.log(pass)
         }
         rate.send_movie_to_user(pass.movieid, send_users, 'movie')
         .then(function(response){
-        	console.log(response)
+        	console.log(response.data);
+			if(response.status == 201){
+				$('#share_modal_2').modal('hide');
+			}
         });
 	}
 
