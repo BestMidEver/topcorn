@@ -244,7 +244,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
         for (var i = 0; i < temp.length; i++) {
         	if(temp[i][1]) send_users.push( temp[i][0] );
         }
-        rate.send_movie_to_user(pass.movieid, send_users, 'series')
+        rate.send_movie_to_user(pass.seriesid, send_users, 'series')
         .then(function(response){
         	console.log(response.data);
 			if(response.status == 201){
