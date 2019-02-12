@@ -52,7 +52,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 /////////////////////////////////// RETRIEVE LISTCARD DATA ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 console.log(pass)
-	$scope.page_variables={watch_togethers:pass.watch_togethers!=[]?pass.watch_togethers.data:[], f_send_user:[]};
+	$scope.page_variables={watch_togethers:pass.watch_togethers!=[]?pass.watch_togethers.data:[]};
 	$scope.page_reviews=1;
 
 	if(pass.is_auth == 1){
@@ -225,9 +225,10 @@ console.log(pass)
 		$('#share_modal').modal('hide');
 		$('#share_modal_2').modal('show');
 	}
+		$scope.f_send_user = [];
 
 	$scope.send_movie_to_users = function(){
-		console.log($scope.page_variables.f_send_user)
+		console.log($scope.f_send_user)
 	}
 
 
