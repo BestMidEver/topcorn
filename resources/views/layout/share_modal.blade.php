@@ -24,31 +24,21 @@
 				</button>
 			</div>
 			<div class="modal-body scrollable-modal-body">
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">mekk mesterr</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">aykut</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Hüseyin</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Cuniiii iD:D:</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">muhaha</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">mekk mesterr</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">aykut</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Hüseyin</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Cuniiii iD:D:</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">muhaha</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">mekk mesterr</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">aykut</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Hüseyin</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Cuniiii iD:D:</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">muhaha</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">mekk mesterr</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">aykut</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Hüseyin</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Cuniiii iD:D:</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">muhaha</button>
+				<div class="btn-group-toggle">
+					<label class="btn btn-block border-0 btn-tab">
+						<input type="checkbox"> Zsofifiaas
+					</label>
+				</div>
+				<div class="btn-group-toggle">
+					<label class="btn btn-block border-0 btn-outline-secondary">
+						<input type="checkbox"> Zsofifiaas
+					</label>
+				</div>
+				<div class="btn-group-toggle">
+					<label class="btn btn-block border-0 btn-primary">
+						<input type="checkbox"> Zsofifiaas
+					</label>
+				</div>
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
 			</div>
 			<div class="modal-footer">
