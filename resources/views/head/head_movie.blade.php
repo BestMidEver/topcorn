@@ -7,11 +7,11 @@ pass={
 	"secondary_lang":"{{ Session::get('secondary_lang') }}", 
 	"api_key":"{{config('constants.api_key')}}",
 	"is_auth":"{{  Auth::Check()  }}",
+	"watch_togethers":{!! json_encode($watch_togethers) !!},
 	@if(Auth::check())
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"tt_movie":{{ Auth::User()->tt_movie }},
 	"watched_movie_number":{{ $watched_movie_number }},
-	"watch_togethers":{!! json_encode($watch_togethers) !!}
 	@endif
 };
 </script>
