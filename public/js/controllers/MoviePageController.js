@@ -52,7 +52,7 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 /////////////////////////////////// RETRIEVE LISTCARD DATA ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 console.log(pass)
-	$scope.page_variables={watch_togethers:pass.watch_togethers!=[]?pass.watch_togethers.data:[]};
+	$scope.page_variables={watch_togethers:pass.watch_togethers!=[]?pass.watch_togethers.data:[], f_send_user:[]};
 	$scope.page_reviews=1;
 
 	if(pass.is_auth == 1){
