@@ -19,6 +19,28 @@ MyApp.factory('rate', function($http) {
 
 
 
+    send_movie_to_user = function(movie_series_id, users, mode) 
+    {
+        return $http({
+			method: 'POST',
+			url: '/api/send_movie_to_user',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {
+				"movie_series_id":movie_series_id,
+				"mode":mode=='movie'?4:5,
+				"users":users
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     get_quick_rate = function(lang) 
     {
         return $http({
@@ -658,6 +680,7 @@ MyApp.factory('rate', function($http) {
 
     return {
     	set_seen: set_seen,
+    	send_movie_to_user: send_movie_to_user,
     	get_quick_rate: get_quick_rate,
     	get_watched_movie_number: get_watched_movie_number,
     	get_reviews: get_reviews,

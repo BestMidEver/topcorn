@@ -5,6 +5,7 @@ namespace App\Http\Controllers\PageControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Movie\SearchResource;
 use App\Model\Movie;
+use App\Model\Notification;
 use App\Model\Rated;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -175,5 +176,25 @@ class movieController extends Controller
         }
 
         return $return_val;
+    }
+
+
+
+
+    public function send_movie_to_user()
+    {
+        $users = DB::table('parties')
+        ->where('parties.watched_with_user_id', '=', Auth::id())
+        ->whereIn('parties.user_id', [2,11,33])
+        ->select('user.id as id')
+        ->get();
+
+        foreach ($users as $user) {
+            echo $user->id.'|';
+            /*Notification::updateOrCreate(
+                ['mode' => $request->mode, 'user_id' => $item->user_id, 'multi_id' => $this->id],
+                ['is_seen' => 0]
+            );*/
+        }
     }
 }
