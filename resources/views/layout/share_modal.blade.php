@@ -8,10 +8,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form>
-					<div class="form-group">
-					</div>
-				</form>
+				<button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button><button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
 			</div>
 		</div>
 	</div>
