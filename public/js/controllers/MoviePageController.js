@@ -221,6 +221,11 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		$('#share_modal').modal('show');
 	}
 
+	$scope.show_party = function(){
+		$('#share_modal').modal('hide');
+		$('#share_modal_2').modal('show');
+	}
+
 
 
 	if(pass.is_auth==1){
