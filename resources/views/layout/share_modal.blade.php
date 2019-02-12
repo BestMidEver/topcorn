@@ -24,49 +24,9 @@
 				</button>
 			</div>
 			<div class="modal-body scrollable-modal-body">
-				<div class="btn-group-toggle">
+				<div class="btn-group-toggle" ng-repeat="user in page_variables.watch_togethers">
 					<label class="btn btn-block border-0 btn-tab">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-outline-secondary">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-outline-secondary">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-outline-secondary">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-outline-secondary">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-outline-secondary">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-tab">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-tab">
-						<input type="checkbox"> Zsofifiaas
-					</label>
-				</div>
-				<div class="btn-group-toggle">
-					<label class="btn btn-block border-0 btn-tab">
-						<input type="checkbox"> Zsofifiaas
+						<input type="checkbox"> @{{user.user_name}}
 					</label>
 				</div>
 			</div>
