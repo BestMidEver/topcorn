@@ -18,21 +18,21 @@
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h6 class="modal-title">{{ __('general.share') }}</h6>
+				<h6 class="modal-title">Select User(s)</h6>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body scrollable-modal-body">
-				<div class="btn-group-toggle" ng-repeat="user in page_variables.watch_togethers">
+				<div class="btn-group-toggle" ng-class="page_variables.f_send_user[user.user_id]?'btn-tab':'btn-outline-secondary'" ng-repeat="user in page_variables.watch_togethers">
 					<label class="btn btn-block border-0 btn-tab">
-						<input type="checkbox"> @{{user.user_name}}
+						<input type="checkbox" ng-attr-id="customCheck@{{user.user_id}}" ng-model="page_variables.f_send_user[user.user_id]"> @{{user.user_name}}
 					</label>
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">{{ __('general.close') }}</button>
-				<button type="button" class="btn btn-outline-primary" data-dismiss="modal" ng-click="">Send</button>
+				<button type="button" class="btn btn-outline-primary" ng-click="send_movie_to_users()">Send</button>
 			</div>
 		</div>
 	</div>

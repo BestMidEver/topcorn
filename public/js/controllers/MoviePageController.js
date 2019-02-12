@@ -226,6 +226,10 @@ console.log(pass)
 		$('#share_modal_2').modal('show');
 	}
 
+	$scope.send_movie_to_users = function(){
+		console.log($scope.page_variables.f_send_user)
+	}
+
 
 	if(pass.is_auth==1){
 //////////////////////////////////////////////////////////////////////////////////////////
