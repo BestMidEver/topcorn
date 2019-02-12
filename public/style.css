@@ -96,7 +96,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .btn-trailer{color:#000!important;}
 .btn-trailer:hover{color:#000!important;}
 .cursor-zoom-in{cursor: zoom-in;}
-.scrollable-modal{overflow:scroll; max-height:400px; }
+.scrollable-modal-body{overflow:scroll; max-height:400px; }
 @media (hover: none) {
   .btn-danger:hover {    color: #fff;    background-color: #dc3545;}
   .btn-warning:hover {    color: #fff;    background-color: #ffc107;}

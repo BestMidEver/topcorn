@@ -23,7 +23,7 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body scrollable-modal-body">
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">ZSoofiiia</button>
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">mekk mesterr</button>
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">aykut</button>
