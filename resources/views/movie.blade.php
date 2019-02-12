@@ -341,6 +341,7 @@
 </div>-->
 
 @include('layout.this_ratemodal')
+@include('layout.share_modal')
 
 @if(Auth::check())
 	@if(Auth::User()->tt_movie < 50)
