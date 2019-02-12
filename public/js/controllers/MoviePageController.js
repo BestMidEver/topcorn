@@ -232,7 +232,7 @@ console.log(pass)
         for (var i = 0; i < temp.length; i++) {
         	if(temp[i][1]) send_users.push( temp[i][0] );
         }
-        rate.send_movie_to_user(pass.movieid, send_users, 'movie')
+        rate.send_movie_to_user(pass.seriesid, send_users, 'movie')
         .then(function(response){
         	console.log(response.data);
 			if(response.status == 201){
