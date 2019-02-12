@@ -24,7 +24,7 @@
 				</button>
 			</div>
 			<div class="modal-body scrollable-modal-body">
-				<div class="btn-group-toggle" ng-class="page_variables.f_send_user[user.user_id]?'btn-tab':'btn-outline-secondary'" ng-repeat="user in page_variables.watch_togethers">
+				<div class="btn-group-toggle mb-1" ng-class="page_variables.f_send_user[user.user_id]?'btn-tab':'btn-outline-secondary'" ng-repeat="user in page_variables.watch_togethers">
 					<label class="btn btn-block border-0 btn-tab">
 						<input type="checkbox" ng-attr-id="customCheck@{{user.user_id}}" ng-model="page_variables.f_send_user[user.user_id]"> @{{user.user_name}}
 					</label>
