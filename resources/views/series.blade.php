@@ -123,8 +123,11 @@
             <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban text-nowrap" ng-class="{'text-warning':user_movie_record.later_id>0}" ng-click="this_later()"><div><span><i class="far fa-clock"></i></span></div><span class="scrollmenu">{{ __('general.watch_later') }}</span></button>
             <button type="button" class="btn btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="rate_class(user_movie_record.rate_code)" ng-click="this_votemodal()"><div><span ng-show="!user_movie_record.rate_code>0"><i class="far fa-star"></i></span><span ng-show="user_movie_record.rate_code>0"><i class="fas fa-check"></i></span></div>{{ __('general.seen') }}</button>
             <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-class="{'text-danger':user_movie_record.ban_id>0}" ng-click="this_ban()"><div><i class="fas fa-ban"></i></div>{{ __('general.ban') }}</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-click="open_share_modal()"><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</button>
             @endif
+            @if(Auth::guest())
             <a ng-href="{{config('constants.facebook.share_website')}}/series/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban"><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</a>
+            @endif
         </div>
     </div>
 </div>
@@ -433,4 +436,5 @@
 
 
 @include('layout.this_ratemodal')
+@include('layout.share_modal')
 @endsection

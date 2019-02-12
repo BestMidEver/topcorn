@@ -34,7 +34,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 	//console.log($scope.user_movie_record)
 
 	///////////////////////////////////////////////////// YENİ YENİ YENİ YENİ //////////////////////////////////////////////////
-	$scope.page_variables={};
+	$scope.page_variables={watch_togethers:pass.watch_togethers!=[]?pass.watch_togethers.data:[], f_send_user:{}};
 	$scope.page_reviews=1;
 
 	$scope.page_variables.active_tab_1 = -1;
@@ -227,6 +227,30 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 				$scope.similar_movies=$scope.series.similar.results;
 			}
 		}
+	}
+
+	$scope.open_share_modal = function(){
+		$('#share_modal').modal('show');
+	}
+
+	$scope.show_party = function(){
+		$('#share_modal').modal('hide');
+		$('#share_modal_2').modal('show');
+	}
+
+	$scope.send_movie_to_users = function(){
+    	var send_users = [];
+        var temp = _.pairs($scope.page_variables.f_send_user);
+        for (var i = 0; i < temp.length; i++) {
+        	if(temp[i][1]) send_users.push( temp[i][0] );
+        }
+        rate.send_movie_to_user(pass.movieid, send_users, 'series')
+        .then(function(response){
+        	console.log(response.data);
+			if(response.status == 201){
+				$('#share_modal_2').modal('hide');
+			}
+        });
 	}
 
 	if(pass.is_auth==1){

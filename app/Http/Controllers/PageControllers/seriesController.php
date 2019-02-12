@@ -84,10 +84,20 @@ class seriesController extends Controller
                     $last_seen_season = $temp->last_seen_season==''?'null':$temp->last_seen_season;
                     $last_seen_episode = $temp->last_seen_episode==''?'null':$temp->last_seen_episode;
                 }
+                $watch_togethers = DB::table('parties')
+                ->where('parties.watched_with_user_id', '=', Auth::id())
+                ->join('users', 'users.id', '=', 'parties.user_id')
+                ->select(
+                    'users.id as user_id',
+                    'users.name as user_name'
+                )
+                ->orderBy('parties.updated_at', 'desc')
+                ->paginate('50');
             }else{
                 $image_quality = 1;
                 $target = '_self';
                 $watched_movie_number = null;
+                $watch_togethers = [];
             }
 
             $series = DB::table('series')
@@ -110,6 +120,6 @@ class seriesController extends Controller
             }
         }
 
-    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent', 'last_seen_id', 'last_seen_season', 'last_seen_episode', 'poster_path'));
+    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent', 'last_seen_id', 'last_seen_season', 'last_seen_episode', 'poster_path'))->with('watch_togethers', $watch_togethers);
     }
 }
