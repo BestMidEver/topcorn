@@ -8,7 +8,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Topcorn.io</button>
+				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addblack">Topcorn</button>
 				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addfacebook">Facebook</button>
 			</div>
 		</div>
