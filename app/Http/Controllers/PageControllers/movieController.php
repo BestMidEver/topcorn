@@ -181,20 +181,19 @@ class movieController extends Controller
 
 
 
-    public function send_movie_to_user()
+    public function send_movie_to_user($request)
     {
         $users = DB::table('parties')
         ->where('parties.watched_with_user_id', '=', Auth::id())
-        ->whereIn('parties.user_id', [2])
+        ->whereIn('parties.user_id', $request->users)
         ->select('parties.user_id as id')
         ->get();
 
         foreach ($users as $user) {
-            echo $user->id.'|';
-            /*Notification::updateOrCreate(
-                ['mode' => $request->mode, 'user_id' => $item->user_id, 'multi_id' => $this->id],
+            Notification::updateOrCreate(
+                ['mode' => $request->mode, 'user_id' => $user->id, 'multi_id' => $request->movie_series_id],
                 ['is_seen' => 0]
-            );*/
+            );
         }
     }
 }

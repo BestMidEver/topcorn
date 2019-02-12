@@ -84,7 +84,7 @@ Route::get('movie/{id}/{lang?}/{secondary_lang?}', 'PageControllers\movieControl
 
 Route::get('api/get_user_movie_record/{movie}','PageControllers\movieController@get_user_movie_record');//IMPLEMENT AUTH
 Route::get('api/get_movie_lists/{movie}','PageControllers\movieController@get_movie_lists');
-Route::get('api/send_movie_to_user','PageControllers\movieController@send_movie_to_user');
+Route::post('api/send_movie_to_user','PageControllers\movieController@send_movie_to_user');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// MOVIE PAGE (PULBIC) ////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
