@@ -186,7 +186,7 @@ class movieController extends Controller
     {
         $users = DB::table('parties')
         ->where('parties.watched_with_user_id', '=', Auth::id())
-        ->whereIn('parties.user_id', $request->users)
+        ->whereIn('parties.user_id', [2])
         ->select('parties.user_id as id')
         ->get();
 
