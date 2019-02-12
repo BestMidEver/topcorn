@@ -217,6 +217,10 @@ MyApp.controller('MoviePageController', function($scope, $http, $sce, $anchorScr
 		}else $scope.similar_movies=[];
 	}
 
+	$scope.open_share_modal = function(){
+		$('#share_modal').modal('show');
+	}
+
 
 
 	if(pass.is_auth==1){
