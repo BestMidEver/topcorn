@@ -7,6 +7,7 @@ use App\Http\Resources\Movie\SearchResource;
 use App\Model\Movie;
 use App\Model\Notification;
 use App\Model\Rated;
+use App\Model\SentItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -194,6 +195,10 @@ class movieController extends Controller
             $notification = Notification::updateOrCreate(
                 ['mode' => $request->mode, 'user_id' => $user->id, 'multi_id' => $request->movie_series_id],
                 ['is_seen' => 0]
+            );
+            $notification = SentItem::updateOrCreate(
+                ['mode' => $request->mode==4?0:1, 'sender_user_id' => Auth::id(), 'receiver_user_id' => $user->id, 'multi_id' => $request->movie_series_id],
+                []
             );
         }
 
