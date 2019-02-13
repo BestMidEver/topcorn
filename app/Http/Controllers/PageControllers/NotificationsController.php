@@ -114,7 +114,7 @@ class NotificationsController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(1);
+                ->paginate(3);
             }else if($notification->mode == 5){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
@@ -132,7 +132,7 @@ class NotificationsController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(1);
+                ->paginate(3);
             }
 			array_push($return_val, $temp);
 		}
