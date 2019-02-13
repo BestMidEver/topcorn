@@ -138,7 +138,7 @@
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">{{ __('general.general_info') }}</button>
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;page_variables.active_tab_2==-1;pull_data()">{{ __('general.general_info') }}</button>
         </li>
         <li class="nav-item" ng-repeat="season in movie.seasons">
             <button class="btn btn-link nav-link" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">{{ __('general.specials') }}</span></button>
@@ -149,7 +149,7 @@
 
 <!-- Tabs_1 Button Mobile -->
 <div class="scrollmenu d-md-none tab2">
-    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;pull_data()">{{ __('general.general_info') }}</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;page_variables.active_tab_2==-1;pull_data()">{{ __('general.general_info') }}</button>
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in movie.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-if="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-if="season.season_number == 0">{{ __('general.specials') }}</span></button>
 </div>
 <!-- Tabs_1 Button Mobile -->
