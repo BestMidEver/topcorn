@@ -70,7 +70,7 @@ class SuckSeriesJob implements ShouldQueue
                 if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
             }
             if($next_episode_air_date!=null && !$is_next_episode_defined){
-                $items = Series_later::where('series_id', '=', '1399')->get();
+                $items = Series_later::where('series_id', '=', $this->id)->get();
                 foreach ($items as $item) {
                     Notification::updateOrCreate(
                         ['mode' => 3, 'user_id' => $item->user_id, 'multi_id' => $this->id],
@@ -155,7 +155,7 @@ class SuckSeriesJob implements ShouldQueue
                 if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
             }
             if($next_episode_air_date!=null && !$is_next_episode_defined){
-                $items = Series_later::where('series_id', '=', '1399')->get();
+                $items = Series_later::where('series_id', '=', $this->id)->get();
                 foreach ($items as $item) {
                     Notification::updateOrCreate(
                         ['mode' => 3, 'user_id' => $item->user_id, 'multi_id' => $this->id],
