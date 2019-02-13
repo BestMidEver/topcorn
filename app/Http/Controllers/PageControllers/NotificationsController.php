@@ -133,6 +133,18 @@ class NotificationsController extends Controller
                     DB::raw($notification->id.' as notification_id')
                 )
                 ->paginate(3);
+            }else if($notification->mode == 6){
+                $temp = DB::table('notifications')
+                ->where('notifications.id', '=', $notification->id)
+                ->join('users', 'users.id', '=', 'notifications.multi_id')
+                ->select(
+                    'users.name as user_name',
+                    'users.id as user_id',
+                    DB::raw($notification->is_seen.' as is_seen'),
+                    DB::raw($notification->mode.' as notification_mode'),
+                    DB::raw($notification->id.' as notification_id')
+                )
+                ->paginate(3);
             }
 			array_push($return_val, $temp);
 		}

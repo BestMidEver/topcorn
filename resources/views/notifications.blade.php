@@ -24,6 +24,10 @@
                 <span class="text-success"><i class="fas fa-share"></i></span>
                 <span class="ml-2">@{{notification.total}} users recommended <a ng-href="@{{notification.data[0].notification_mode==4?'movie':'series'}}/@{{notification.data[0].movie_id}}" class="text-dark">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}</a>. @{{notification.total>3?'Last 3':notification.total}} recommenders: <span ng-repeat="item in notification.data"><span ng-hide="$index==0">, </span>@{{item.user_name}}</span></span>
             </div>
+            <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==6">
+                <span class="text-success"><i class="fas fa-user-friends"></i></span>
+                <span class="ml-2">@{{notification.data[0].user_name}} watched together with you. You can send movies/series to him/her.</span>
+            </div>
             <div class="ml-2">
                 <button class="btn btn-outline-secondary border-0 addban" ng-click="set_seen(notification.data[0])"><i class="fa-circle" ng-class="notification.data[0].is_seen?'far':'fas'"></i></button>
             </div>
