@@ -15,7 +15,9 @@ class CreateNotificationsTable extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('mode');//  0-reviewlike | 1-listlike | 2-newfeature | 3-seriesairdatechanged | 4-movierecommendation | 5-seriesrecommendation
+            $table->tinyInteger('mode');//  0-reviewlike | 1-listlike | 2-newfeature | 3-seriesairdatechanged | 4-movierecommendation | 5-seriesrecommendation |
+
+                                        //  6-watchtogetger
             $table->integer('user_id');
             $table->integer('multi_id');
             $table->tinyInteger('is_seen');

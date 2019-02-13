@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ApiControllers;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Movie\SearchResource;
 use App\Model\Movie;
+use App\Model\Notification;
 use App\Model\Partie;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -121,6 +122,11 @@ class SearchController extends Controller
 
     public function remove_from_parties($user_id)
     {
+        Notification::where('multi_id', Auth::id())
+        ->where('user_id', $user_id)
+        ->where('mode', 6)
+        ->delete();
+
     	return DB::table('parties')
     	->where('user_id', '=', Auth::user()->id)
     	->where('watched_with_user_id', '=', $user_id)
@@ -132,6 +138,11 @@ class SearchController extends Controller
 
     public function add_to_parties($user_id)
     {
+        Notification::updateOrCreate(
+            ['mode' => 6, 'user_id' => $user_id, 'multi_id' => Auth::id()],
+            ['is_seen' => 0]
+        );
+        
     	return Partie::updateOrCreate(
     		['user_id' => Auth::user()->id, 'watched_with_user_id' => $user_id]
     	)->touch() ? 1 : 0;
