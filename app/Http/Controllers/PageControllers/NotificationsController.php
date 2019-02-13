@@ -100,12 +100,16 @@ class NotificationsController extends Controller
             }else if($notification->mode == 4){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
-                ->join('movies', 'movies.id', '=', 'notifications.multi_id')
+                ->join('sent_items', 'sent_items.id', '=', 'notifications.multi_id')
+                ->join('users', 'users.id', '=', 'sent_items.sender_user_id')
+                ->join('movies', 'movies.id', '=', 'sent_items.multi_id')
                 ->select(
                     'movies.id as movie_id',
                     'movies.original_title as original_title',
                     'movies.'.Auth::User()->lang.'_title as title',
                     'movies.release_date as release_date',
+                    'users.name as user_name',
+                    'users.id as user_id',
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
@@ -114,12 +118,16 @@ class NotificationsController extends Controller
             }else if($notification->mode == 5){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
-                ->join('series', 'series.id', '=', 'notifications.multi_id')
+                ->join('sent_items', 'sent_items.id', '=', 'notifications.multi_id')
+                ->join('users', 'users.id', '=', 'sent_items.sender_user_id')
+                ->join('series', 'series.id', '=', 'sent_items.multi_id')
                 ->select(
                     'series.id as movie_id',
                     'series.original_name as original_title',
                     'series.'.Auth::User()->lang.'_name as title',
                     'series.first_air_date as release_date',
+                    'users.name as user_name',
+                    'users.id as user_id',
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
