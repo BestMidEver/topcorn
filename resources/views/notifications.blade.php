@@ -17,7 +17,7 @@
                 <span class="ml-2">@{{notification.data[0].notification}}</span>
             </div>
             <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==3">
-                <span class="text-warning"><i class="far fa-clock"></i></span>
+                <span class="text-warning"><i class="fas fa-clock"></i></span>
                 <span class="ml-2"><a ng-href="series/@{{notification.data[0].movie_id}}" class="text-dark">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}</a> air date is defined. Date: @{{notification.data[0].next_episode_air_date.substring(0, 10)}} (@{{notification.data[0].day_difference_next}} days later)</span>
             </div>
             <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==4 || notification.data[0].notification_mode==5">
