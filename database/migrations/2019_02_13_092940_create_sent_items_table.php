@@ -15,7 +15,7 @@ class CreateSentItemsTable extends Migration
     {
         Schema::create('sent_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('mode');//  0-movie | 1-series
+            $table->tinyInteger('mode');//  4-movie | 5-series
             $table->integer('sender_user_id');
             $table->integer('receiver_user_id');
             $table->integer('multi_id');

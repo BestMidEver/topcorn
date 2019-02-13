@@ -192,13 +192,13 @@ class movieController extends Controller
         ->get();
 
         foreach ($users as $user) {
-            $notification = Notification::updateOrCreate(
-                ['mode' => $request->mode, 'user_id' => $user->id, 'multi_id' => $request->movie_series_id],
-                ['is_seen' => 0]
-            );
-            $notification = SentItem::updateOrCreate(
-                ['mode' => $request->mode==4?0:1, 'sender_user_id' => Auth::id(), 'receiver_user_id' => $user->id, 'multi_id' => $request->movie_series_id],
+            $sent_item = SentItem::updateOrCreate(
+                ['mode' => $request->mode, 'sender_user_id' => Auth::id(), 'receiver_user_id' => $user->id, 'multi_id' => $request->movie_series_id],
                 []
+            );
+            Notification::updateOrCreate(
+                ['mode' => $request->mode, 'user_id' => $user->id, 'multi_id' => $sent_item->id],
+                ['is_seen' => 0]
             );
         }
 
