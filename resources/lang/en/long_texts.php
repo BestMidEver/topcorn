@@ -30,6 +30,6 @@ return [
       't41' => 'What are you waiting for?',
     ),
     'notifications' => array(
-      'like' => '@{{notification.total}} @{{notification.total>1?\'users\':\'user\'}} liked your <a ng-href="@{{notification.data[0].review_mode==1?\'movie\':\'series\'}}/@{{notification.data[0].movie_id}}" class="text-dark" ng-if="notification.data[0].notification_mode==0">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?\'(\'+notification.data[0].release_date.substring(0, 4)+\')\':''}} review</a><a ng-href="list/@{{notification.data[0].list_id}}" class="text-dark" ng-if="notification.data[0].notification_mode==1">@{{notification.data[0].title}} list</a>. From: <span ng-repeat="item in notification.data"><span ng-hide="$index==0">, </span>@{{item.user_name}}</span>'
+      'like' => "@{{notification.total}} @{{notification.total>1?'users':'user'}} liked your <a ng-href=\"@{{notification.data[0].review_mode==1?'movie':'series'}}/@{{notification.data[0].movie_id}}\" class=\"text-dark\" ng-if=\"notification.data[0].notification_mode==0\">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}} review</a><a ng-href=\"list/@{{notification.data[0].list_id}}\" class=\"text-dark\" ng-if=\"notification.data[0].notification_mode==1\">@{{notification.data[0].title}} list</a>. From: <span ng-repeat=\"item in notification.data\"><span ng-hide=\"$index==0\">, </span>@{{item.user_name}}</span>"
     )
 ];
