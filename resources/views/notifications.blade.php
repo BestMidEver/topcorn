@@ -22,7 +22,7 @@
             </div>
             <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==4 || notification.data[0].notification_mode==5">
                 <span class="text-primary"><i class="fas fa-share"></i></span>
-                <span class="ml-2">@{{notification.total}} users recommended <a ng-href="@{{notification.data[0].notification_mode==4?'movie':'series'}}/@{{notification.data[0].movie_id}}" class="text-dark">@{{notification.data[0].title}} @{{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}</a>. @{{notification.total>3?'Last 3':notification.total}} recommenders: <span ng-repeat="item in notification.data"><span ng-hide="$index==0">, </span>@{{item.user_name}}</span></span>
+                <span class="ml-2">{!! __('long_texts.notifications.sent_movie') !!}</span>
             </div>
             <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==6">
                 <span class="text-primary"><i class="fas fa-user-friends"></i></span>
