@@ -2,6 +2,7 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
+use App\Mail\Notification;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -275,7 +276,7 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	return dd(DB::table('users')
+	/*return dd(DB::table('users')
 	->leftjoin('laters', 'laters.user_id', 'users.id')
 	->select(
 		'users.id',
@@ -287,7 +288,8 @@ Route::get('test', function(){
 	)
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
-	->paginate(20));
+	->paginate(20));*/
+	Mail::to(Auth::user())->send(new Notification());
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
