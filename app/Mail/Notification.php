@@ -18,7 +18,7 @@ class Notification extends Mailable
      */
     public function __construct($neyi)
     {
-        $this->neyi = $neyi
+        $this->neyi = $neyi;
     }
 
     /**
