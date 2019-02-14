@@ -269,6 +269,7 @@ return [
     'try_account' => 'TRY Account',                                                                 //donation,
     'understand_my_taste' => 'Let\'s Get Started',                                                  //home,
     'unknown' => 'unknown',                                                                         //profile,
+    'un_read' => 'Unread',                                                                          //notifications,
     'unseen' => 'Unseen',                                                                           //profile,
     'user' => 'User',
     'user_name' => 'User Name',                                                                     //register, account,

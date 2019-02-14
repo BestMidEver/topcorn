@@ -268,6 +268,7 @@ return [
     'try_account' => 'Türk Lirası Hesabı',                                                              //donation,
     'understand_my_taste' => 'Haydi Başlayalım',                                                        //home,       
     'unknown' => 'bilinmiyor',                                                                          //profile,
+    'un_read' => 'Okunmamış',                                                                           //notifications,
     'unseen' => 'İzlenmemiş',                                                                           //profile,
     'user' => 'Kullanıcı',                          
     'user_name' => 'Kullanıcı Adı',                                                                     //register, account,

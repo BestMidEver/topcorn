@@ -268,6 +268,7 @@ return [
     'try_account' => 'TRY számla',                                                                      //donation,
     'understand_my_taste' => 'Ismerd meg az ízlésemet!',                                                //home,
     'unknown' => 'ismeretlen',                                                                          //profile,
+    'un_read' => 'Okunmamış',                                                                           //notifications,///////////
     'unseen' => 'Meg nem nézett',                                                                       //profile,
     'user' => 'Felhasználó',
     'user_name' => 'Felhasználónév',                                                                    //register, account,
