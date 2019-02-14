@@ -16,7 +16,7 @@ class NotificationsController extends Controller
 		$notifications = DB::table('notifications')
         ->where('notifications.is_seen', '=', $page_mode=='new'?0:1)
         ->select('id', 'multi_id', 'mode', 'is_seen')
-        ->paginate(5, ['*'], 'page', $page);
+        ->paginate(15, ['*'], 'page', $page);
 		$return_val = [];
 		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
