@@ -153,7 +153,7 @@ class NotificationsController extends Controller
 
     public function notifications($id, $lang = '')
     {
-        $notifications = $this->get_notifications('new', 1);
+        $notifications = $this->get_notifications('new', 2);
 
 		if($lang != '') App::setlocale($lang);
 
