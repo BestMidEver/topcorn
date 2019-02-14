@@ -21,7 +21,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 			console.log(response.data);
 			if(response.status == 201){
 				notification.is_seen = notification.is_seen == 0 ? 1 : 0;
-				$scope.page_variables.notification_count = response.data;
+				$scope.page_variables.notification_count = response.data.data;
 			}
 		});
 	}
