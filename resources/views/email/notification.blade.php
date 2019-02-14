@@ -1,3 +1,3 @@
 :D aldın mı?
 
-{{$neyi}}
+{{$this-neyi}}
