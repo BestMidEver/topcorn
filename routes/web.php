@@ -3,6 +3,7 @@
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
 use App\Mail\Recommendation;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
