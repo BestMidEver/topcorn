@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NotificationsController extends Controller
 {
-    public function get_notifications($page_mode, $page)
+    public function get_notifications($page_mode, $page){
         return 12;
     }
 
