@@ -81,6 +81,9 @@
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
+                        <a class="nav-link {{ (Request::segment(1) === 'notifications') ? 'active' : null }}" href="/notifications">{{ __('navbar.notifications') }}<span class="badge badge-danger ml-1" ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}" ng-show="page_variables.notification_count>0">@{{page_variables.notification_count}}</span></a>
+                    </li>
+                    <li class="nav-item d-md-none">
                         <a class="nav-link" href="/account"><i class="fas fa-cog"></i> {{ __('navbar.account') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
@@ -96,7 +99,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item">
-                        <a class="nav-link {{ (Request::segment(1) === 'notifications') ? 'active' : null }}" href="/notifications"><i class="far fa-bell"></i><span class="badge badge-danger ml-1" ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}">@{{page_variables.notification_count}}</span></a>
+                        <a class="nav-link {{ (Request::segment(1) === 'notifications') ? 'active' : null }}" href="/notifications"><i class="far fa-bell"></i><span class="badge badge-danger ml-1" ng-show="page_variables.notification_count>0">@{{page_variables.notification_count}}</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}"><i class="far fa-user"></i> <span class="">{{ __('navbar.profile') }}</span></a>
