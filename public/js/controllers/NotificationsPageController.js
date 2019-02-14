@@ -51,6 +51,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 
     $scope.merge_paginate_data = function()
     {
+    	console.log($scope.page_variables.paginate_info)
 		$scope.pagination=$scope.page_variables.paginate_info.last_page;
 		$scope.current_page=$scope.page_variables.paginate_info.current_page;
 		$scope.from=$scope.page_variables.paginate_info.from;
