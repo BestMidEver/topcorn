@@ -7,11 +7,12 @@
 The Sea Inside
 @endcomponent
 
-<small>If you don't want to receive emails from us, please click here and change your settings.</small>
 
-@component('mail::button', ['url' => 'https://topcorn.io/test', 'color' => 'gray'])
-Change Email Settings
-@endcomponent
+
+
+
+
+<small>If you don't want to receive emails from us, please click here and change your settings.</small>
 
 Thanks,<br>
 {{ config('app.name') }}
