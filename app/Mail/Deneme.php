@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class Try extends Mailable
+class Deneme extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,6 +28,6 @@ class Try extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.try');
+        return $this->markdown('emails.deneme');
     }
 }
