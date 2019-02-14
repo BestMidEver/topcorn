@@ -2,7 +2,7 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
-use App\Mail\Deneme;
+use App\Mail\Recommendation;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -289,7 +289,7 @@ Route::get('test', function(){
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
-	Mail::to(Auth::user())->send(new Deneme('gabarlı'));
+	Mail::to(Auth::user())->send(new Recommendation());
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
