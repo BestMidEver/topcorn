@@ -206,7 +206,7 @@ class movieController extends Controller
         }
 
         return Response([
-            'data' => $notification,
+            'data' => $notification->id,
         ], Response::HTTP_CREATED);
     }
 }
