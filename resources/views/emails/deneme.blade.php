@@ -1,9 +1,9 @@
 @component('mail::message')
 # Introduction
 
-The body of your message.
+mekk mesterr "watch together" with you. You can use share button to recommend movies and series to this user.
 
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => '/'])
 Button Text
 @endcomponent
 
