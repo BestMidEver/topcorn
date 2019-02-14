@@ -3,7 +3,7 @@
 
 Someone recommended {{$title}} to you.
 
-@component('mail::button', ['url' => '{!! URL::to('/') !!}{{$mode}}/{{$movie_id}}', 'color' => 'green'])
+@component('mail::button', ['url' => '{{ asset("/") }}{{$mode}}/{{$movie_id}}', 'color' => 'green'])
 Check it
 @endcomponent
 
