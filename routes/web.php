@@ -2,6 +2,7 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
+use App\Mail\Try;
 use App\Mail\notification;
 use Illuminate\Support\Facades\DB;
 
@@ -289,7 +290,7 @@ Route::get('test', function(){
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
-	Mail::to(Auth::user())->send(new notification());
+	Mail::to(Auth::user())->send(new Try());
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
