@@ -276,7 +276,7 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	$temp = DB::table('notifications')->where('id', $this->notification_id)->first()->multi_id;
+	$temp = DB::table('notifications')->where('id',334)->first()->multi_id;
 
                 return $temp;
 	return dd(DB::table('users')
