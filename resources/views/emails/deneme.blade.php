@@ -9,11 +9,8 @@ Button Text
 
 mekk mesterr "watch together" with you. You can use share button to recommend movies and series to this user.
 
-@component('mail::table')
-| Laravel       | Table         | Example  |
-| ------------- |:-------------:| --------:|
-| Col 2 is      | Centered      | $10      |
-| Col 3 is      | Right-Aligned | $20      |
+@component('mail::panel')
+This is the panel content.
 @endcomponent
 
 Thanks,<br>
