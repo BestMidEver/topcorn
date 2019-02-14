@@ -4,6 +4,7 @@ namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Movie\SearchResource;
+use App\Jobs\SendNotificationEmailJob;
 use App\Model\Movie;
 use App\Model\Notification;
 use App\Model\Rated;
@@ -196,10 +197,12 @@ class movieController extends Controller
                 ['mode' => $request->mode, 'sender_user_id' => Auth::id(), 'receiver_user_id' => $user->id, 'multi_id' => $request->movie_series_id],
                 []
             );
-            Notification::updateOrCreate(
+            $notification = Notification::updateOrCreate(
                 ['mode' => $request->mode, 'user_id' => $user->id, 'multi_id' => $sent_item->id],
                 ['is_seen' => 0]
             );
+
+            SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
         }
 
         return Response([

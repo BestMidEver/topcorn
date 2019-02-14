@@ -1,7 +1,7 @@
 @component('mail::message')
 # Hello!
 
-You are receiving this email because 1 user recommended {{$title}} to you.
+You are receiving this email because someone recommended {{$title}} to you.
 
 @component('mail::button', ['url' => url('/').'/'.$mode.'/'.$movie_id, 'color' => 'green'])
 Check it
