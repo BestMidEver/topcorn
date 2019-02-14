@@ -196,12 +196,12 @@ class NotificationsController extends Controller
 
     public function set_seen($notification_id, $is_seen)
     {
-        $notification = Notification::where('id', $notification_id)
+        Notification::where('id', $notification_id)
         ->where('user_id', Auth::id())
         ->update(array('is_seen' => $is_seen));
 
         return Response([
-            'data' => $notification,
+            'data' => get_notification_button(),
         ], Response::HTTP_CREATED);
     }
 }
