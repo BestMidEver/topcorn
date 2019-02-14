@@ -96,6 +96,9 @@
                 </ul>
                 <ul class="navbar-nav ml-auto d-none d-md-flex">
                     <li class="nav-item">
+                        <a class="nav-link {{ (Request::segment(1) === 'notifications') ? 'active' : null }}" href="/notifications"><i class="far fa-bell"></i><span class="badge badge-danger ml-1" ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}">@{{page_variables.notification_count}}</span></a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}"><i class="far fa-user"></i> <span class="">{{ __('navbar.profile') }}</span></a>
                     </li>
                     <li class="nav-item dropdown">
@@ -142,6 +145,7 @@
                     <div class="py-2 small"><a class="text-dark" href="/recommendations">{{ __('navbar.movie_recommendations') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/search">{{ __('navbar.movie_person_user_search') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/notifications">{{ __('general.notifications') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/account">{{ __('navbar.account') }}</a></div>
                 </div>
                 <div class="col-4 col-sm-2">

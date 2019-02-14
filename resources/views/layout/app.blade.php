@@ -178,7 +178,7 @@ else $theme='';
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fas fa-clock"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
                     </li>-->
                     <li class="nav-item">
-                        <a class="nav-link {{ (Request::segment(1) === 'notifications') ? 'active' : null }}" href="/notifications"><i class="far fa-bell"></i><span class="badge badge-danger ml-1" ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}">@{{page_variables.notification_count}}</span></a>
+                        <a class="nav-link {{ (Request::segment(1) === 'notifications') ? 'active' : null }}" href="/notifications"><i class="far fa-bell"></i><span class="badge badge-danger ml-1" ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}" ng-show="page_variables.notification_count>0">@{{page_variables.notification_count}}</span></a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
@@ -236,6 +236,7 @@ else $theme='';
                     <div class="py-2 small"><a class="text-dark" href="/recommendations">{{ __('navbar.movie_recommendations') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/search">{{ __('navbar.movie_person_user_search') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="/notifications">{{ __('general.notifications') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/account">{{ __('navbar.account') }}</a></div>
                 </div>
                 <div class="col-4 col-sm-2">
