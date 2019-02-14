@@ -201,7 +201,7 @@ class NotificationsController extends Controller
         ->update(array('is_seen' => $is_seen));
 
         return Response([
-            'data' => get_notification_button(),
+            'data' => $this->get_notification_button(),
         ], Response::HTTP_CREATED);
     }
 }
