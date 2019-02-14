@@ -147,15 +147,15 @@ class NotificationsController extends Controller
             }
 			array_push($return_val, $temp);
 		}
-        return array('notifications' => $notifications, 'return_val' => $return_val);
+        return [$notifications, $return_val];
     }
 
 
     public function notifications($id, $lang = '')
     {
         $get_notifications = $this->get_notifications('new', 1);
-        $notifications = $get_notifications->notifications;
-        $return_val = $get_notifications->return_val;
+        $notifications = $get_notifications[0];
+        $return_val = $get_notifications[1];
 
 		if($lang != '') App::setlocale($lang);
 
