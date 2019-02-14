@@ -28,6 +28,6 @@ class Notification extends Mailable
      */
     public function build()
     {
-        return view('email.notification');
+        return  $this->view('email.notification');
     }
 }
