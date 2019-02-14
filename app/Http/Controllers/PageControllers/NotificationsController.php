@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NotificationsController extends Controller
 {
-    public function get_notification_button(){
+    public static function get_notification_button(){
         if(Auth::check()){
             $notifications = DB::table('notifications')
             ->where('notifications.is_seen', '=', 0);
