@@ -276,15 +276,9 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	$temp = DB::table('notifications')
-                ->where('notifications.id', '=',  334)
-                ->join('sent_items', 'sent_items.id', '=', 'notifications.multi_id')
-                ->join('users', 'users.id', '=', 'sent_items.sender_user_id')
-                ->join('movies', 'movies.id', '=', 'sent_items.multi_id')
-                ->select('movies.id', 'movies.original_title', 'users.name as user_name')
-                ->first();
+	$temp = DB::table('notifications')->where('id', $this->notification_id)->first()->multi_id;
 
-                return $temp->id;
+                return $temp;
 	return dd(DB::table('users')
 	->leftjoin('laters', 'laters.user_id', 'users.id')
 	->select(
