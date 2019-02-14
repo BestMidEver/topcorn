@@ -12,6 +12,21 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NotificationsController extends Controller
 {
+    public function get_notification_button(){
+        $notifications = DB::table('notifications')
+        ->where('notifications.is_seen', '=', 0);
+
+        if(Auth::id()!=7) $notifications = $notifications->where('notifications.user_id', Auth::id());
+
+        $notifications = $notifications->count();
+
+        return $notifications;
+    }
+
+
+
+
+
     public function get_notifications($page_mode, $page){
 		$notifications = DB::table('notifications')
         ->where('notifications.is_seen', '=', $page_mode=='new'?0:1);

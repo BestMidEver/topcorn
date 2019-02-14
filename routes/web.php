@@ -172,6 +172,7 @@ Route::get('api/set_seen/{notification_id}/{is_seen}', 'PageControllers\Notifica
 Route::get('create_notification/{id?}', 'PageControllers\CustomNotificationController@create_notification');
 Route::post('create_notification', 'PageControllers\CustomNotificationController@post_create_notification');
 Route::get('api/get_notifications/{page_mode}/{page}', 'PageControllers\NotificationsController@get_notifications');
+Route::get('api/get_notification_button', 'PageControllers\NotificationsController@get_notification_button');
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////// NOTIFICATIONS PAGE (AUTH) ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
