@@ -152,6 +152,7 @@ return [
     'next' => 'Következő',                                                                              //pagination,
     'no_mode_movies' => 'Meg kell határoznod a hangulatod',                                             //recommendations,
     'no_overview_found' => 'Leírás nem található',                                                      //series,
+    'no_notification' => 'No notification found.',                                                      //notification,///////////////
     'no_result' => 'Nincs találat',                                                                     //profile,
     'no_result_review' => 'Nincs vélemény',                                                             //movie,
     'not_found' => 'Nem található',                                                                     //person

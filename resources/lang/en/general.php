@@ -151,6 +151,7 @@ return [
     'newest' => 'Newest',                       
     'next' => 'Next',                                                                               //pagination,
     'no_mode_movies' => 'You must define your mood.',                                               //recommendations,
+    'no_notification' => 'No notification found.',                                                  //notification,
     'no_overview_found' => 'No overview found.',                                                    //series
     'no_result' => 'No result',                                                                     //profile,
     'no_result_review' => 'No review',                                                              //movie

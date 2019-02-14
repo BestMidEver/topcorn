@@ -152,6 +152,7 @@ return [
     'next' => 'Sonraki',                                                                                //pagination,
     'no_mode_movies' => 'Modunu belirlemelisin.',                                                       //recommendations      
     'no_overview_found' => 'Özet bulunamadı.',                                                          //series
+    'no_notification' => 'Bildirim bulunamadı.',                                                        //notification,
     'no_result' => 'Sonuç bulunamadı.',                                                                 //profile, search
     'no_result_review' => 'Yazı bulunamadı.',                                                           //movie
     'not_found' => 'Bulunamadı.',                                                                       //person

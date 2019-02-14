@@ -67,6 +67,9 @@
             </div>
             <hr class="m-0">
         </div>
+        <div class="p-5" ng-show="is_waiting || page_variables.notifications.length==0">
+            <div class="text-muted text-center" ng-if="!is_waiting">{{ __('general.no_notification') }}</div><div class="text-muted text-center" ng-if="is_waiting">{{ __('general.loading') }}</div>
+        </div>
     </div>
 
     @include('layout.pagination', ['suffix' => ''])
