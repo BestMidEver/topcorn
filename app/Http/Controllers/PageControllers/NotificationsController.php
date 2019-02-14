@@ -13,14 +13,16 @@ use Symfony\Component\HttpFoundation\Response;
 class NotificationsController extends Controller
 {
     public function get_notification_button(){
-        $notifications = DB::table('notifications')
-        ->where('notifications.is_seen', '=', 0);
+        if(Auth::check()){
+            $notifications = DB::table('notifications')
+            ->where('notifications.is_seen', '=', 0);
 
-        if(Auth::id()!=7) $notifications = $notifications->where('notifications.user_id', Auth::id());
+            if(Auth::id()!=7) $notifications = $notifications->where('notifications.user_id', Auth::id());
 
-        $notifications = $notifications->count();
+            $notifications = $notifications->count();
 
-        return $notifications;
+            return $notifications;
+        }else return 0;
     }
 
 
@@ -175,6 +177,7 @@ class NotificationsController extends Controller
 
     public function notifications($id, $lang = '')
     {
+        $notification_button = $this->get_notification_button();
         $get_notifications = $this->get_notifications('new', 1);
         $notifications = $get_notifications[0];
         $return_val = $get_notifications[1];
@@ -187,7 +190,7 @@ class NotificationsController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $return_val)->with('paginate_info', $notifications);
+		return view('notifications', compact('image_quality', 'target', 'watched_movie_number', 'notification_button'))->with('notifications', $return_val)->with('paginate_info', $notifications);
     }
 
 
