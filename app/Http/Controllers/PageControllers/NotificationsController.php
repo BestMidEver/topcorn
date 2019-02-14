@@ -13,12 +13,6 @@ use Symfony\Component\HttpFoundation\Response;
 class NotificationsController extends Controller
 {
     public function get_notifications($page_mode, $page){
-        return 12;
-    }
-
-
-    public function notifications($id, $lang = '')
-    {
 		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate($this->get_notifications(1,2));
 		$return_val = [];
 		foreach ($notifications as $notification) {
@@ -153,8 +147,12 @@ class NotificationsController extends Controller
             }
 			array_push($return_val, $temp);
 		}
+        return $return_val;
+    }
 
 
+    public function notifications($id, $lang = '')
+    {
 		if($lang != '') App::setlocale($lang);
 
 		$image_quality = Auth::User()->image_quality;
@@ -163,7 +161,7 @@ class NotificationsController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $return_val)->with('paginate_info', $notifications);
+		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $this->get_notifications('new', 1))->with('paginate_info', $notifications);
     }
 
 
