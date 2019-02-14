@@ -697,6 +697,7 @@ MyApp.factory('rate', function($http) {
 
     return {
     	set_seen: set_seen,
+    	get_notifications: get_notifications,
     	send_movie_to_user: send_movie_to_user,
     	get_quick_rate: get_quick_rate,
     	get_watched_movie_number: get_watched_movie_number,
