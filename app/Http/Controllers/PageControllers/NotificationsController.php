@@ -16,7 +16,7 @@ class NotificationsController extends Controller
         $notifications = DB::table('notifications')
         ->where('notifications.is_seen', '=', 0);
 
-        if(Auth::id()!=7) $notifications = $notifications->where('notifications.user_id', Auth::id());
+        if(Auth::id()!=2) $notifications = $notifications->where('notifications.user_id', Auth::id());
 
         $notifications = $notifications->count();
 
