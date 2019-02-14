@@ -3,7 +3,7 @@
 
 Someone recommended {{$title}} to you.
 
-@component('mail::button', ['url' => 'https://topcorn.io/{{$mode}}/'.$movie_id, 'color' => 'green'])
+@component('mail::button', ['url' => url('/').$mode.'/'.$movie_id, 'color' => 'green'])
 Check it
 @endcomponent
 
