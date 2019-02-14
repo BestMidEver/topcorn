@@ -28,6 +28,6 @@ class Notification extends Mailable
      */
     public function build()
     {
-        return $this->view('view.whatmovieshouldiwatch');
+        return $this->view('views.whatmovieshouldiwatch');
     }
 }
