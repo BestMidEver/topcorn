@@ -20,7 +20,7 @@ class Recommendation extends Mailable
     {
         $this->title = $title;
         $this->mode = $mode;
-        $this->movie_id = $movie_id
+        $this->movie_id = $movie_id;
         $this->user_name = $user_name;
     }
 
