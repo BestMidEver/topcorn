@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class notification extends Mailable
+class Recommendation extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,6 +28,6 @@ class notification extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.notifications');
+        return $this->markdown('emails.recommendation');
     }
 }

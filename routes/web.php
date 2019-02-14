@@ -289,7 +289,7 @@ Route::get('test', function(){
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
-	Mail::to(Auth::user())->send(new Deneme());
+	Mail::to(Auth::user())->send(new Deneme('gabarlı'));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
