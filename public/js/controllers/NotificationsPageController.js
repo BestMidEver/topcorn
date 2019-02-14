@@ -14,7 +14,6 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 
 	console.log(pass)
 	$scope.page_variables = {notifications:pass.notifications,paginate_info:pass.paginate_info,page_mode:'new'};
-	$scope.merge_paginate_data();
 
 	$scope.set_seen = function(notification){
 		rate.set_seen(notification.notification_id, notification.is_seen == 0 ? 1 : 0)
@@ -58,6 +57,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 		$scope.to=$scope.page_variables.paginate_info.to;
 		$scope.in=$scope.page_variables.paginate_info.total;
 	}
+	$scope.merge_paginate_data();
 
     $scope.get_first_page_data = function()
     {
