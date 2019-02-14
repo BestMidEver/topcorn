@@ -4,6 +4,7 @@ use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
 use App\Mail\Recommendation;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -276,7 +277,8 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	/*return dd(DB::table('users')
+	Mail::to(User::find(7))->send(new Recommendation('memento', 'movie', '77', [2,7]));
+	return dd(DB::table('users')
 	->leftjoin('laters', 'laters.user_id', 'users.id')
 	->select(
 		'users.id',
@@ -288,8 +290,7 @@ Route::get('test', function(){
 	)
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
-	->paginate(20));*/
-	Mail::to(Auth::user())->send(new Recommendation('memento', 'movie', '77', [2,7]));
+	->paginate(20));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
