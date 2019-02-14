@@ -153,6 +153,8 @@ class NotificationsController extends Controller
 
     public function notifications($id, $lang = '')
     {
+        $notifications = $this->get_notifications('new', 1);
+
 		if($lang != '') App::setlocale($lang);
 
 		$image_quality = Auth::User()->image_quality;
@@ -161,7 +163,7 @@ class NotificationsController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $this->get_notifications('new', 1))->with('paginate_info', $notifications);
+		return view('notifications', compact('image_quality', 'target', 'watched_movie_number'))->with('notifications', $notifications)->with('paginate_info', $notifications);
     }
 
 
