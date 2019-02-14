@@ -13,7 +13,8 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 
 
 	console.log(pass)
-	$scope.page_variables = {notifications:pass.notifications,page_mode:'new'};
+	$scope.page_variables = {notifications:pass.notifications,paginate_info:pass.paginate_info,page_mode:'new'};
+	$scope.merge_paginate_data();
 
 	$scope.set_seen = function(notification){
 		rate.set_seen(notification.notification_id, notification.is_seen == 0 ? 1 : 0)
@@ -41,16 +42,21 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 		rate.get_notifications($scope.page_variables.page_mode, $scope.page)
 		.then(function(response){
 			console.log(response.data)
-			$scope.page_variables.notifications=response.data;
-			$scope.merge_data();
+			$scope.page_variables.notifications=response.data[1];
+			$scope.page_variables.paginate_info=response.data[0];
+			$scope.merge_paginate_data();
 			$scope.is_waiting=false;
 		});
 	}
 
-    $scope.merge_data = function()
+    $scope.merge_paginate_data = function()
     {
-    	
-    }
+		$scope.pagination=$scope.page_variables.paginate_info.last_page;
+		$scope.current_page=$scope.page_variables.paginate_info.current_page;
+		$scope.from=$scope.page_variables.paginate_info.from;
+		$scope.to=$scope.page_variables.paginate_info.to;
+		$scope.in=$scope.page_variables.paginate_info.total;
+	}
 
     $scope.get_first_page_data = function()
     {
