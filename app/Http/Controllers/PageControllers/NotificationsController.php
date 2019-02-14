@@ -12,9 +12,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NotificationsController extends Controller
 {
+    function deneme(){
+        return 12;
+    }
+
+
     public function notifications($id, $lang = '')
     {
-		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate(100);
+		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate(deneme());
 		$return_val = [];
 		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
@@ -172,5 +177,16 @@ class NotificationsController extends Controller
         return Response([
             'data' => $notification,
         ], Response::HTTP_CREATED);
+    }
+
+
+
+    public function get_notifications($page_mode, $page)
+    {
+        $notification = Notification::where('id', $notification_id)
+        ->where('user_id', Auth::id())
+        ->update(array('is_seen' => $is_seen));
+
+        return $notifications->paginate(5)
     }
 }

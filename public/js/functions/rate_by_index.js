@@ -19,6 +19,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_notifications = function(page_mode, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_notifications/'+page_mode+'/'+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     send_movie_to_user = function(movie_series_id, users, mode) 
     {
         return $http({

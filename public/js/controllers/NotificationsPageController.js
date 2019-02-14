@@ -1,7 +1,19 @@
 MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 {
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+	$scope.scroll_to_top=function(){
+		$anchorScroll.yOffset = 55;
+		$anchorScroll('scroll_top_point')
+	}
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
 	console.log(pass)
-	$scope.page_variables = {notifications:pass.notifications};
+	$scope.page_variables = {notifications:pass.notifications,page_mode:'new'};
 
 	$scope.set_seen = function(notification){
 		rate.set_seen(notification.notification_id, notification.is_seen == 0 ? 1 : 0)
@@ -11,6 +23,34 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 				notification.is_seen = notification.is_seen == 0 ? 1 : 0;
 			}
 		});
+	}
+
+	$scope.paginate = function(page)
+	{
+		$scope.page = page;
+		$scope.get_page_data();
+		$scope.scroll_to_top();
+	}
+
+	$scope.is_waiting=false;
+    $scope.get_page_data = function()
+    {
+    	$scope.page_variables.notifications=[];
+		$scope.pagination=0;
+		$scope.is_waiting=true;
+		rate.get_notifications($scope.page_variables.page_mode, $scope.page)
+		.then(function(response){
+			console.log(response.data)
+			$scope.page_variables.notifications=response.data;
+			$scope.is_waiting=false;
+		});
+	}
+
+    $scope.get_first_page_data = function()
+    {
+    	$scope.page_variables.notifications=[];
+    	$scope.page=1;
+    	$scope.get_page_data();
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////

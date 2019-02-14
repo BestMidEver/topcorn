@@ -5,7 +5,7 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Notifications</h1>
 
-<div class="mt-3">
+<div class="mt-3" id="scroll_top_point">
     <div ng-repeat="notification in page_variables.notifications">
         <div class="d-flex py-2 pl-2 align-items-center" ng-class="notification.data[0].is_seen?'':'background-lightgrey'">
             <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==0 || notification.data[0].notification_mode==1">
@@ -35,5 +35,7 @@
         <hr class="m-0">
     </div>
 </div>
+
+@include('layout.pagination', ['suffix' => ''])
 
 @endsection
