@@ -196,6 +196,7 @@ return [
     'profile_photo' => 'Profilkép',                                                                     //account,
     'profile_photos' => 'Profilképek',                                                                  //person,
     'profile_photo_help' => '(A film szereplői közül)',                                                 //account,
+    'read' => 'Okunmuş',                                                                                //notifications,
     'read_all' => 'Több',                                                                               //movie
     'recipient_name' => 'A címzett neve',                                                               //donation,
     'recommend' => 'Jó',                                                                                //ratemodal, profile,
