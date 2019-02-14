@@ -14,12 +14,8 @@ class NotificationsController extends Controller
 {
     public function get_notifications($page_mode, $page){
 		$notifications = DB::table('notifications')
-        ->select(
-            'id',
-            'multi_id',
-            'mode',
-            'is_seen'
-        )
+        ->where('notifications.is_seen', '=', $page_mode=='new'?0:1)
+        ->select('id', 'multi_id', 'mode', 'is_seen')
         ->paginate(5, ['*'], 'page', $page);
 		$return_val = [];
 		foreach ($notifications as $notification) {
