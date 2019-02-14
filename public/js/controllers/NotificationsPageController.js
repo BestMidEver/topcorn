@@ -42,9 +42,15 @@ MyApp.controller('NotificationsPageController', function($scope, $http, rate)
 		.then(function(response){
 			console.log(response.data)
 			$scope.page_variables.notifications=response.data;
+			$scope.merge_data();
 			$scope.is_waiting=false;
 		});
 	}
+
+    $scope.merge_data = function()
+    {
+    	
+    }
 
     $scope.get_first_page_data = function()
     {
