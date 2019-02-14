@@ -5,6 +5,38 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Notifications</h1>
 
+
+
+
+
+<!-- Tabs Button -->
+<div class="container-fluid mt-3 d-none d-md-inline">
+    <ul class="nav justify-content-md-center tab1">
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab=='new'}" ng-click="page_variables.active_tab='new';get_first_page_data();">{{ __('general.un_read') }}</button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab=='old'}" ng-click="page_variables.active_tab='old';get_first_page_data();">{{ __('general.read') }}</button>
+        </li>
+    </ul>
+</div>
+<!-- Tabs Button -->
+
+
+
+
+<!-- Tabs Button Mobile -->
+<div class="scrollmenu my-3 tab2 d-md-none">
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab=='new'}" ng-click="page_variables.active_tab='new';get_first_page_data();">{{ __('general.un_read') }}</button>
+    <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab=='old'}" ng-click="page_variables.active_tab='old';get_first_page_data();">{{ __('general.read') }}</button>
+</div>
+<!-- Tabs Button Mobile -->
+
+
+
+
+
+<!-- Page Body -->
 <div ng-hide="is_waiting">
     <div class="mt-3" id="scroll_top_point">
         <div ng-repeat="notification in page_variables.notifications">
@@ -39,5 +71,6 @@
 
     @include('layout.pagination', ['suffix' => ''])
 </div>
+<!-- Page Body -->
 
 @endsection

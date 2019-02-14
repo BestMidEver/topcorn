@@ -13,7 +13,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
 
 	console.log(pass)
-	$scope.page_variables = {notifications:pass.notifications,paginate_info:pass.paginate_info,page_mode:'new'};
+	$scope.page_variables = {notifications:pass.notifications,paginate_info:pass.paginate_info,active_tab:'new'};
 
 	$scope.set_seen = function(notification){
 		rate.set_seen(notification.notification_id, notification.is_seen == 0 ? 1 : 0)
@@ -38,7 +38,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
     	$scope.page_variables.notifications=[];
 		$scope.pagination=0;
 		$scope.is_waiting=true;
-		rate.get_notifications($scope.page_variables.page_mode, $scope.page)
+		rate.get_notifications($scope.page_variables.active_tab, $scope.page)
 		.then(function(response){
 			console.log(response.data)
 			$scope.page_variables.notifications=response.data[1];
@@ -60,7 +60,6 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
     $scope.get_first_page_data = function()
     {
-    	$scope.page_variables.notifications=[];
     	$scope.page=1;
     	$scope.get_page_data();
 	}
