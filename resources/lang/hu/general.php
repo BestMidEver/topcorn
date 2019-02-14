@@ -152,7 +152,7 @@ return [
     'next' => 'Következő',                                                                              //pagination,
     'no_mode_movies' => 'Meg kell határoznod a hangulatod',                                             //recommendations,
     'no_overview_found' => 'Leírás nem található',                                                      //series,
-    'no_notification' => 'No notification found.',                                                      //notification,///////////////
+    'no_notification' => 'Nincs értesítés.',                                                            //notification,
     'no_result' => 'Nincs találat',                                                                     //profile,
     'no_result_review' => 'Nincs vélemény',                                                             //movie,
     'not_found' => 'Nem található',                                                                     //person
@@ -196,7 +196,7 @@ return [
     'profile_photo' => 'Profilkép',                                                                     //account,
     'profile_photos' => 'Profilképek',                                                                  //person,
     'profile_photo_help' => '(A film szereplői közül)',                                                 //account,
-    'read' => 'Okunmuş',                                                                                //notifications,///////////
+    'read' => 'Régi',                                                                                   //notifications,
     'read_all' => 'Több',                                                                               //movie
     'recipient_name' => 'A címzett neve',                                                               //donation,
     'recommend' => 'Jó',                                                                                //ratemodal, profile,
@@ -269,7 +269,7 @@ return [
     'try_account' => 'TRY számla',                                                                      //donation,
     'understand_my_taste' => 'Ismerd meg az ízlésemet!',                                                //home,
     'unknown' => 'ismeretlen',                                                                          //profile,
-    'un_read' => 'Okunmamış',                                                                           //notifications,///////////
+    'un_read' => 'Új',                                                                                  //notifications,
     'unseen' => 'Meg nem nézett',                                                                       //profile,
     'user' => 'Felhasználó',
     'user_name' => 'Felhasználónév',                                                                    //register, account,

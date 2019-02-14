@@ -8,6 +8,7 @@ return [
     'home' => 'Customized Movie Recommendation Engine',
     'login' => 'Login - Topcorn',
     'movie' => ' - Topcorn',
+    'notifications' => 'Notifications - Topcorn',
     'register' => 'Register - Topcorn',
     'reset' => 'Forgot My Password - Topcorn',
     'person' => ' - Topcorn',

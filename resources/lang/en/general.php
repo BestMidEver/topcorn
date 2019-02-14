@@ -16,7 +16,7 @@ return [
     'add' => 'Add',                                                                                 //recommendations,
     'add_movie' => 'Add Movie',                                                                     //list,             
     'add_person' => 'Watch Together',                                                               //recommendations,
-    'add_review' => 'Write Something',                                                              //movie,    //////////////
+    'add_review' => 'Write Something',                                                              //movie,
     'advanced_recommendations' => 'Advanced Recommendations',                                       //accountinterface,
     'ago_message' =>                        
         'Created :created_at ago, last updated :updated_at ago.',                                   //list,
