@@ -3,7 +3,7 @@
 
 1 user recommended The Sea Inside.
 
-@component('mail::button', ['url' => '/movie/77', 'color' => 'green'])
+@component('mail::button', ['url' => 'https://laravel.com/docs/5.5/mail#generating-markdown-mailables', 'color' => 'green'])
 The Sea Inside
 @endcomponent
 
