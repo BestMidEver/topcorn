@@ -38,14 +38,24 @@ class SendNotificationEmailJob implements ShouldQueue
 
         if($notification){
             if($notification->mode == 4){
-                $temp =DB::table('notifications')
+                $temp = DB::table('notifications')
+
+
                 ->where('notifications.id', '=',  $notification->multi_id)
+
+
                 ->join('sent_items', 'sent_items.id', '=', 'notifications.multi_id')
+
+
                 ->join('users', 'users.id', '=', 'sent_items.sender_user_id')
+
+
                 ->join('movies', 'movies.id', '=', 'sent_items.multi_id')
+
+                
                 ->select('movies.id', 'movies.original_title', 'users.name as user_name')
                 ->first();
-                
+
                 Mail::to(User::find($notification->user_id))->send(new Recommendation($temp->original_title, 'movie', $temp->id, $temp->user_name));
             }
         }
