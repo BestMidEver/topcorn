@@ -45,14 +45,8 @@ class SendNotificationEmailJob implements ShouldQueue
                 ->join('movies', 'movies.id', '=', 'sent_items.multi_id')
                 ->select('movies.id', 'movies.original_title', 'users.name as user_name')
                 ->first();
-                $asd = $temp->original_title;
 
-                Mail::to(
-                    User::find($notification->user_id))
-                    ->send(new Recommendation($temp->original_title,
-                     'movie', $temp->id,
-                      $temp->user_name)
-                );
+                Mail::to(User::find($notification->user_id))->send(new Recommendation($temp->original_title, 'movie', $temp->id, $temp->user_name));
             }
         }
 
