@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 class NotificationsController extends Controller
 {
     public function get_notifications($page_mode, $page){
-		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate(5);
+		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate(5, ['*'], 'page', $page);
 		$return_val = [];
 		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
