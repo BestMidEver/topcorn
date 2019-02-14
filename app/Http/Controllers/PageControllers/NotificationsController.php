@@ -187,6 +187,6 @@ class NotificationsController extends Controller
         ->where('user_id', Auth::id())
         ->update(array('is_seen' => $is_seen));
 
-        return $notifications->paginate(5)
+        return $notifications->paginate(5);
     }
 }
