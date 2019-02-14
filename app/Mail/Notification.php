@@ -28,6 +28,6 @@ class Notification extends Mailable
      */
     public function build()
     {
-        return view('whatmovieshouldiwatch');
+        return view('email.notification');
     }
 }
