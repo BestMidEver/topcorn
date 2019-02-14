@@ -28,7 +28,6 @@ class NotificationsController extends Controller
 
 
 
-
     public function get_notifications($page_mode, $page){
 		$notifications = DB::table('notifications')
         ->where('notifications.is_seen', '=', $page_mode=='new'?0:1);

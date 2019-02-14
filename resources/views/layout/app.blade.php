@@ -177,6 +177,9 @@ else $theme='';
                     <!--<li class="nav-item {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">
                         <a class="nav-link" href="/profile/{{ Auth::user()->id }}#Watch-Later"><i class="fas fa-clock"></i> <span class="">{{ __('navbar.watchlater') }}</span></a>
                     </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link {{ (Request::segment(1) === 'notifications') ? 'active' : null }}" href="/notifications"><i class="far fa-bell"></i></a>
+                    </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="profile"
