@@ -9,7 +9,7 @@ The Sea Inside
 
 <small>If you don't want to receive emails from us, please click here and change your settings.</small>
 
-@component('mail::button', ['url' => 'https://laravel.com/docs/5.5/mail#generating-markdown-mailables', 'color' => 'green'])
+@component('mail::button', ['url' => 'https://laravels.com/docs/5.5/mail#generating-markdown-mailables', 'color' => 'green'])
 Change Email Settings
 @endcomponent
 
