@@ -289,7 +289,7 @@ Route::get('test', function(){
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
-	Mail::to(Auth::user())->send(new Recommendation());
+	Mail::to(Auth::user())->send(new Recommendation('memento', 'movie', '77', [{'id':2,'user_name':'zso'},{'id':7,'user_name':'mekk mesterr'}]));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////

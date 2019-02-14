@@ -16,9 +16,12 @@ class Recommendation extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($title, $mode, $movie_id, $users)
     {
-        //
+        $this->title = $title;
+        $this->mode = $mode;
+        $this->movie_id = $movie_id;
+        $this->users = $users;
     }
 
     /**
@@ -28,6 +31,10 @@ class Recommendation extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.recommendation');
+        return $this->markdown('emails.recommendation')
+        ->with('title', $this->title)
+        ->with('mode', $this->mode)
+        ->with('movie_id', $this->movie_id)
+        ->with('users', $this->users);
     }
 }
