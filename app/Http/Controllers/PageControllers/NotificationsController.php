@@ -153,7 +153,7 @@ class NotificationsController extends Controller
 
     public function notifications($id, $lang = '')
     {
-        $get_notifications = $this->get_notifications('new', 1)[0];
+        $get_notifications = $this->get_notifications('new', 1);
         $notifications = $get_notifications->notifications;
         $return_val = $get_notifications->return_val;
 
