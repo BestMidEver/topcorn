@@ -3,7 +3,7 @@
 @include('head.head_notifications')
 
 @section('body')
-<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">Notifications</h1>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.notifications') }}</h1>
 
 
 

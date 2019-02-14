@@ -195,7 +195,7 @@ return [
     'profile_photo' => 'Profil Fotoğrafı',                                                              //account,
     'profile_photos' => 'Profil Fotoğrafları',                                                          //person,
     'pw_updated' => 'Şifreniz başarıyla güncellendi.',                                                  //account,
-    'read' => 'Okunmuş',                                                                                //notifications,
+    'read' => 'Eski',                                                                                   //notifications,
     'read_all' => 'Hepsini oku',                            
     'recipient_name' => 'Alıcının Adı',                                                                 //donation,
     'recommend' => 'Güzel',                                                                             //ratemodal, profile,

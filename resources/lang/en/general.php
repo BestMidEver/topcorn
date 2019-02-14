@@ -196,7 +196,7 @@ return [
     'profile_photo' => 'Profile Photo',                                                             //account,
     'profile_photos' => 'Profile Photos',                                                           //person,
     'profile_photo_help' => '(Actors from the Movie)',                                              //account,
-    'read' => 'Read',                                                                               //notifications,
+    'read' => 'Old',                                                                                //notifications,
     'read_all' => 'Read more',                                                                      //movie,
     'recipient_name' => 'Recipient Name',                                                           //donation,
     'recommend' => 'Good',                                                                          //ratemodal, profile,
