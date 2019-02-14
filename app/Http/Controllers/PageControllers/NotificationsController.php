@@ -19,7 +19,7 @@ class NotificationsController extends Controller
 
     public function notifications($id, $lang = '')
     {
-		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate($this->deneme(1,2));
+		$notifications = DB::table('notifications')->select('id', 'multi_id', 'mode', 'is_seen')->paginate($this->get_notifications(1,2));
 		$return_val = [];
 		foreach ($notifications as $notification) {
 			if($notification->mode == 0){
