@@ -82,9 +82,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-tools"></i></div>
 				                </div>
 				                <select class="form-control" id="when_feature" name="when_feature">
-									<option value="0" {{Auth::User()->when_feature==0?'selected':''>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_feature==1?'selected':''>{{ __('general.do_notification') }}</option>
-									<option value="2" {{Auth::User()->when_feature==2?'selected':''>{{ __('general.notification_and_email') }}</option>
+									<option value="0" {{Auth::User()->when_feature==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_feature==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+									<option value="2" {{Auth::User()->when_feature==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -101,9 +101,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-clock"></i></div>
 				                </div>
 				                <select class="form-control" id="when_air_date" name="when_air_date">
-									<option value="0" {{Auth::User()->when_air_date==0?'selected':''>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_air_date==1?'selected':''>{{ __('general.do_notification') }}</option>
-									<option value="2" {{Auth::User()->when_air_date==3?'selected':''>{{ __('general.notification_and_email') }}</option>
+									<option value="0" {{Auth::User()->when_air_date==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_air_date==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+									<option value="2" {{Auth::User()->when_air_date==3?'selected':''}}>{{ __('general.notification_and_email') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -120,9 +120,9 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-share"></i></div>
 				                </div>
 				                <select class="form-control" id="when_recommendation" name="when_recommendation">
-									<option value="0" {{Auth::User()->when_recommendation==0?'selected':''>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_recommendation==1?'selected':''>{{ __('general.do_notification') }}</option>
-									<option value="2" {{Auth::User()->when_recommendation==2?'selected':''>{{ __('general.notification_and_email') }}</option>
+									<option value="0" {{Auth::User()->when_recommendation==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_recommendation==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+									<option value="2" {{Auth::User()->when_recommendation==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -139,8 +139,8 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-user-friends"></i></div>
 				                </div>
 				                <select class="form-control" id="when_watch_together" name="when_watch_together">
-									<option value="0" {{Auth::User()->when_watch_together==0?'selected':''>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_watch_together==1?'selected':''>{{ __('general.do_notification') }}</option>
+									<option value="0" {{Auth::User()->when_watch_together==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_watch_together==1?'selected':''}}>{{ __('general.do_notification') }}</option>
 								</select>
 				            </div>
 				        </div>
