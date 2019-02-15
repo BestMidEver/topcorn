@@ -20,6 +20,9 @@
 		<li class="nav-item mb-2">
 			<a class="nav-link active text-muted" href="/account/interface">{{ __('general.interface') }}</a>
 		</li>
+		<li class="nav-item mb-2">
+			<a class="nav-link text-muted" href="/account/notifications-emails">{{ __('general.notifications_emails') }}</a>
+		</li>
 	</ul>
 </div>
 <!-- Tabs Button -->
@@ -32,6 +35,7 @@
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account">{{ __('general.profile') }}</a>
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account/password">{{ __('general.password') }}</a>
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account/interface">{{ __('general.interface') }}</a>
+	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account/notifications-emails">{{ __('general.notifications_emails') }}</a>
 </div>
 <!-- Tabs Button Mobile -->
 
