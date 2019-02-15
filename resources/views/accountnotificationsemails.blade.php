@@ -79,7 +79,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_air_date">{{ __('general.when_air_date') }}</label>
+				        <label for="when_air_date" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_secondary_language') }}">{{ __('general.when_air_date') }}</label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
