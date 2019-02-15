@@ -194,7 +194,9 @@ class accountController extends Controller
 
 	public function notifications_emails()
 	{
-		return view('accountnotificationsemails');
+        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+		return view('accountnotificationsemails', compact('watched_movie_number'));
 	}
 
 
