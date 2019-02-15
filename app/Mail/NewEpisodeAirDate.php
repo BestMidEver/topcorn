@@ -32,6 +32,9 @@ class NewEpisodeAirDate extends Mailable
     public function build()
     {
         return $this->markdown('emails.new_episode_air_date')
-        ->with('notification', $this->notification);
+        ->with('series_id', $this->series_id)
+        ->with('name', $this->name)
+        ->with('next_episode_air_date', $this->next_episode_air_date)
+        ->with('day_difference_next', $this->day_difference_next);
     }
 }
