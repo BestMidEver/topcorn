@@ -289,7 +289,7 @@ return [
     'when' => 'Şunlar Olduğunda',                                                                       //account,
     'when_like' => 'Beğeni Alınca ',                                                                    //account,
     'when_feature' => 'Yeni Özellik Eklenince',                                                         //account,
-    'when_air_date' => 'Yeni Bölüm Tarihi Değişince',                                                   //account,
+    'when_air_date' => 'Yeni Bölüm Tarihi Belli Olunca',                                                //account,
     'when_recommendation' => 'Birisi Tavsiye Gönderince',                                               //account,
     'when_watch_together' => 'Birisi Beraber İzlerse',                                                  //account, 
     'writer' => 'Yazar',                

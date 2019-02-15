@@ -43,10 +43,10 @@ class SuckSeriesJob implements ShouldQueue
      */
     public function handle()
     {
-        /*$is_recent = Serie::where('id', $this->id)
+        $is_recent = Serie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
         ->first();
-        if($is_recent) return;*/
+        if($is_recent) return;
         $temp = Serie::where('id', $this->id)->first();
         if($temp) $is_next_episode_defined = $temp->next_episode_air_date == null ? false : true;
         else $is_next_episode_defined = false;
