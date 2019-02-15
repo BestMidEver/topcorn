@@ -56,6 +56,7 @@ class SendNotificationEmailJob implements ShouldQueue
                     'series.next_episode_air_date as next_episode_air_date',
                     DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next')
                 )
+                ->first();
 
                 Mail::to(User::find($notification->user_id))->send(new NewEpisodeAirDate($temp->series_id, $temp->name, $temp->next_episode_air_date, $temp->day_difference_next));
             }else if($notification->mode == 4){
