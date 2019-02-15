@@ -160,6 +160,7 @@ return [
     'not_found' => 'Nem található',                                                                     //person
     'not_sure' => 'Bizonytalan',                                                                        //ratemodal, profile,
     'notification_and_email' => 'Send Notification & Email',                                            //account,//////////////////
+    'notifications_emails' => 'Notification & Email',                                                   //account,/////////////////
     'novel' => 'Regény',                                                                                //person,
     'official_website' => 'Hivatalos honlap',                                                           //movie,
     'only_me' => 'Csak én',                                                                             //list,         

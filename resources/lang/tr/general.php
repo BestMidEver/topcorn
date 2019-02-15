@@ -160,6 +160,7 @@ return [
     'not_found' => 'Bulunamadı.',                                                                       //person
     'not_sure' => 'Kararsızım',                                                                         //ratemodal, profile,
     'notification_and_email' => 'Bildirim & E-Posta Yolla',                                             //account,
+    'notifications_emails' => 'Bildirim & E-posta',                                                     //account,
     'novel' => 'Roman',             
     'official_website' => 'Resmi İnternet Sitesi',              
     'only_me' => 'Sadece Ben',                                                                          //list,         

@@ -160,6 +160,7 @@ return [
     'not_found' => 'Not found.',                                                                    //person
     'not_sure' => 'Not Sure',                                                                       //ratemodal, profile,
     'notification_and_email' => 'Send Notification & Email',                                        //account,
+    'notifications_emails' => 'Notification & Email',                                               //account,
     'novel' => 'Novel',                                                                             //person,
     'official_website' => 'Official Website',                                                       //movie,
     'only_me' => 'Private',                                                                         //list,         
