@@ -61,7 +61,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heart"></i></div>
 				                </div>
 				                <select class="form-control" id="when_like" name="when_like" autofocus>
 									<option value="0">{{ __('general.dont_do_anything') }}</option>
@@ -79,7 +79,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-language"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-tools"></i></div>
 				                </div>
 				                <select class="form-control" id="when_feature" name="when_feature">
 									<option value="0">{{ __('general.dont_do_anything') }}</option>
@@ -98,7 +98,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-mouse-pointer"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-clock"></i></div>
 				                </div>
 				                <select class="form-control" id="when_air_date" name="when_air_date">
 									<option value="0">{{ __('general.dont_do_anything') }}</option>
@@ -117,7 +117,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="far fa-image"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-share"></i></div>
 				                </div>
 				                <select class="form-control" id="when_recommendation" name="when_recommendation">
 									<option value="0">{{ __('general.dont_do_anything') }}</option>
@@ -136,7 +136,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-expand-arrows-alt"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-user-friends"></i></div>
 				                </div>
 				                <select class="form-control" id="when_watch_together" name="when_watch_together">
 									<option value="0">{{ __('general.dont_do_anything') }}</option>
