@@ -52,7 +52,7 @@ class SendNotificationEmailJob implements ShouldQueue
                 ->where('series.id', '=', $notification->multi_id)
                 ->select(
                     'series.id as series_id',
-                    'series.name as name',
+                    'series.en_name as name',
                     'series.next_episode_air_date as next_episode_air_date',
                     DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next')
                 )
@@ -65,10 +65,10 @@ class SendNotificationEmailJob implements ShouldQueue
                 ->join('sent_items', 'sent_items.id', '=', 'notifications.multi_id')
                 ->join('users', 'users.id', '=', 'sent_items.sender_user_id')
                 ->join('movies', 'movies.id', '=', 'sent_items.multi_id')
-                ->select('movies.id', 'movies.original_title', 'users.name as user_name')
+                ->select('movies.id', 'movies.en_title', 'users.name as user_name')
                 ->first();
 
-                Mail::to(User::find($notification->user_id))->send(new Recommendation($temp->original_title, 'movie', $temp->id, $temp->user_name));
+                Mail::to(User::find($notification->user_id))->send(new Recommendation($temp->en_title, 'movie', $temp->id, $temp->user_name));
             }else if($notification->mode == 5){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=',  $notification->id)
