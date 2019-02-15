@@ -55,6 +55,11 @@
 				{{ csrf_field() }}
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
+						<div class="h6 text-muted">{{ __('general.when') }}</div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
 				        <label for="when_like">{{ __('general.when_like') }}</label>
 				    </div>
 				    <div class="col-md-6">
