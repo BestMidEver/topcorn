@@ -58,7 +58,7 @@ class SendNotificationEmailJob implements ShouldQueue
                 )
                 ->first();
 
-                Mail::to(User::find($notification->user_id))->send(new NewEpisodeAirDate($temp->series_id, $temp->name, $temp->next_episode_air_date, $temp->day_difference_next));
+                Mail::to(User::find($notification->user_id))->send(new NewEpisodeAirDate($temp->series_id, $temp->name, substr($temp->next_episode_air_date, 0, 10), $temp->day_difference_next));
             }else if($notification->mode == 4){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=',  $notification->id)
