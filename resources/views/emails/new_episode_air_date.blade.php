@@ -1,7 +1,7 @@
 @component('mail::message')
 # Hello!
 
-You are receiving this email because {{$name}} is in your watch later list and the new episode air date is defined. 
+You are receiving this email because {{$name}} is in your watch later list and air date of the new episode is defined. 
 
 Date: {{$next_episode_air_date}} ({{$day_difference_next}} days later)
 
