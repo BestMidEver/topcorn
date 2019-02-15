@@ -194,7 +194,7 @@ class accountController extends Controller
 
 	public function notifications_emails()
 	{
-		return view('accountnotificaionsemails');
+		return view('accountinterface');
 	}
 
 
