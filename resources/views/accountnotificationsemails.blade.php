@@ -1,6 +1,6 @@
-@extends('layout.applite')
+@extends('layout.app')
 
-@include('head.head_accountnotificationsemails')
+@include('head.head_accountinterface')
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.account') }}</h5>
@@ -79,9 +79,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_air_date">{{ __('general.when_air_date') }} <i class="far fa-question-circle"></i></label><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-  Tooltip on top
-</button>
+				        <label for="when_air_date" ng-mouseenter="hovering_air=true" ng-mouseleave="hovering_air=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_air_date') }}">{{ __('general.when_air_date') }} <span ng-show="!hovering_air"><i class="far fa-question-circle"></i></span><span ng-show="hovering_air"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
