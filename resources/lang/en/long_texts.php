@@ -13,6 +13,7 @@ return [
     'hint_advanced_filter' => 'It gives you advanced information and options on recommendations page.',
     'hint_cover_photo' => 'Choose a movie to use it\'s cover photo as your cover photo.',
     'hint_profile_pic' => 'Choose an actor/actress from your cover movie.',
+    'hint_when_air_date' => 'This works when you add a series to your watch later list.',
     'home' => array(
       'h1' => 'No time to waste on bad movies!',
       't11' => 'topcorn.io understands your movie taste and recommends movies based on it. Let\'s get started!',
