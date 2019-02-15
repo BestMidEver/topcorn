@@ -116,7 +116,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_watch_together" ng-mouseenter="hovering_tog=true" ng-mouseleave="hovering_tog=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_watch_together') }}">{{ __('general.when_air_date') }} <span ng-show="!hovering_tog"><i class="far fa-question-circle"></i></span><span ng-show="hovering_tog"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="when_watch_together" ng-mouseenter="hovering_tog=true" ng-mouseleave="hovering_tog=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_watch_together') }}">{{ __('general.when_watch_together') }} <span ng-show="!hovering_tog"><i class="far fa-question-circle"></i></span><span ng-show="hovering_tog"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -134,7 +134,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_recommendation" ng-mouseenter="hovering_rec=true" ng-mouseleave="hovering_rec=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_recommendation') }}">{{ __('general.when_air_date') }} <span ng-show="!hovering_rec"><i class="far fa-question-circle"></i></span><span ng-show="hovering_rec"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="when_recommendation" ng-mouseenter="hovering_rec=true" ng-mouseleave="hovering_rec=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_recommendation') }}">{{ __('general.when_recommendation') }} <span ng-show="!hovering_rec"><i class="far fa-question-circle"></i></span><span ng-show="hovering_rec"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
