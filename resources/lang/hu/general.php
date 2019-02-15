@@ -282,6 +282,12 @@ return [
     'watch_together' => 'Nézzük meg együtt!',                                                           //profile,
     'watched_movie_number' => 'Megnézett filmek száma',                                                 //profile,
     'watched_series_number' => 'Megnézett sorozatok száma',                                             //profile,  
+    'when' => 'When',                                                                                   //account,//////////////////////////////
+    'when_like' => 'You Get Like',                                                                      //account,//////////////////////////////
+    'when_feature' => 'New Feature Added',                                                              //account,//////////////////////////////
+    'when_air_date' => 'Next Air Date Changes',                                                         //account,//////////////////////////////
+    'when_recommendation' => 'You Get Recommendation',                                                  //account,//////////////////////////////
+    'when_watch_together' => 'Someone Watches Together',                                                //account,//////////////////////////////
     'writer' => 'Író',                          
     'writers' => 'Írók',                            
     'writing' => 'Író',                         
