@@ -292,7 +292,7 @@ return [
     'when_feature' => 'New Feature Added',                                                          //account,
     'when_air_date' => 'Next Air Date Changes',                                                     //account,
     'when_recommendation' => 'You Get Recommendation',                                              //account,
-    'when_watch_together' => 'Someone Watches Together',                                            //account,
+    'when_watch_together' => 'Watch Together',                                                      //account,
     'writer' => 'Writer',
     'writers' => 'Writers',
     'writing' => 'Writing',
