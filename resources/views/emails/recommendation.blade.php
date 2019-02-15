@@ -7,7 +7,7 @@ You are receiving this email because {{$user_name}} recommended {{$title}} to yo
 Check it
 @endcomponent
 
-<small>If you don't want to receive emails from us, please click <a href="{{url('/')}}/account"></a> and change your settings.</small>
+<small>If you don't want to receive emails from us, please click <a href="{{url('/')}}/account/">here</a> and change your settings.</small>
 
 Thanks,<br>
 {{ config('app.name') }}

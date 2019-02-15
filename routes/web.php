@@ -215,10 +215,12 @@ Route::get('account/password/{lang?}', 'PageControllers\accountController@passwo
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::get('account/interface/{lang?}', 'PageControllers\accountController@interface')
 	->where('lang', config('constants.supported_languages.for_web_php'));
+Route::get('account/notifications-emails', 'PageControllers\accountController@notifications_emails');
 
 Route::post('account', 'PageControllers\accountController@change_profile');
 Route::post('account/password', 'PageControllers\accountController@change_password');
 Route::post('account/interface', 'PageControllers\accountController@change_interface');
+Route::post('account/notifications-emails', 'PageControllers\accountController@change_notifications_emails');
 Route::get('theme/{mode?}', 'PageControllers\accountController@theme');
 Route::get('api/get_cover_pics/{lang}','PageControllers\accountController@get_cover_pics')
 	->where('lang', config('constants.supported_languages.for_web_php'));

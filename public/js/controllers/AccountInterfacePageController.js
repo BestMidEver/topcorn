@@ -10,11 +10,11 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 	$scope.open_new_tab=pass.open_new_tab;
 	$scope.show_crew=pass.show_crew;
 	$scope.advanced_filter=pass.advanced_filter;
-	$scope.is_save_disabled = true;
+	//$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
 		console.log($scope.lang)
-		if(
+		/*if(
 			(pass.lang != $scope.lang
 			|| pass.secondary_lang != $scope.secondary_lang
 			|| pass.hover_title_language != $scope.hover_title_language
@@ -29,10 +29,10 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 			$scope.is_save_disabled = false;
 		}else{
 			$scope.is_save_disabled = true;
-		}
+		}*/
 	}
 	window.onbeforeunload = function() {
-		if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
+		//if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
 	}
 
 	$('#the_form').submit(function() {

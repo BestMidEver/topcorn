@@ -47,6 +47,11 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('show_crew')->default(0);
             $table->tinyInteger('pagination')->default(24);
             $table->tinyInteger('theme')->default(0);
+            $table->tinyInteger('when_like')->default(1);
+            $table->tinyInteger('when_feature')->default(2);
+            $table->tinyInteger('when_air_date')->default(2);
+            $table->tinyInteger('when_recommendation')->default(2);
+            $table->tinyInteger('when_watch_together')->default(1);
         });
     }
 

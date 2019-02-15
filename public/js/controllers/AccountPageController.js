@@ -7,13 +7,13 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 	$scope.another_link_name = pass.another_link_name;
 	$scope.another_link_url = pass.another_link_url;
 	
-	$scope.is_save_disabled = true;
+	//$scope.is_save_disabled = true;
 
 	$scope.check_save_disabled = function(){
 		console.log(pass.user_name, $scope.user_name)
 		console.log(pass.cover_src, $scope.cover_path)
 		console.log(pass.profile_src, $scope.profile_path)
-		if(
+		/*if(
 			($scope.user_name != undefined && pass.user_name != $scope.user_name)
 			|| ($scope.cover_path != '' && pass.cover_src != $scope.cover_path)
 			|| (($scope.profile_path != '' || $scope.profile_path == 0) && pass.profile_src != $scope.profile_path)
@@ -21,10 +21,10 @@ MyApp.controller('AccountPageController', function($scope, $http, rate)
 			$scope.is_save_disabled = false;
 		}else{
 			$scope.is_save_disabled = true;
-		}
+		}*/
 	}
 	window.onbeforeunload = function() {
-		if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
+		//if(!$scope.is_save_disabled) return ""; //eğer değişiklik yapılmadıysa sayfayı değiştirebilsin.
 	}
 
 	$('#the_form').submit(function() {

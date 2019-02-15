@@ -192,6 +192,31 @@ class accountController extends Controller
 
 
 
+	public function notifications_emails()
+	{
+		return view('accountnotificaionsemails', compact());
+	}
+
+
+
+
+	public function change_notifications_emails(Request $request)
+	{
+		$user = Auth::User();
+		$user->when_like = $request->when_like;
+		$user->when_feature = $request->when_feature;
+		$user->when_air_date = $request->when_air_date;
+		$user->when_recommendation = $request->when_recommendation;
+		$user->when_watch_together = $request->when_watch_together;
+		$user->save();
+
+		$request->session()->flash('status', __('general.info_updated'));
+		return redirect('/account/notifications-emails');
+	}
+
+
+
+
 	public function theme($mode = '')
 	{
 		$user = Auth::User();
