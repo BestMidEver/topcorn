@@ -64,8 +64,8 @@
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heart"></i></div>
 				                </div>
 				                <select class="form-control" id="when_like" name="when_like" autofocus>
-									<option value="0">{{ __('general.dont_do_anything') }}</option>
-									<option value="1">{{ __('general.do_notification') }}</option>
+									<option value="0" {{Auth::User->when_like==0?'selected'}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User->when_like==1?'selected'}}>{{ __('general.do_notification') }}</option>
 								</select>
 				            </div>
 				        </div>
