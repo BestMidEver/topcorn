@@ -61,11 +61,16 @@ class CustomNotificationController extends Controller
             	
             	SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
 	        }else if($request->mode == 3){
-	        	foreach(User::all() as $user) {
+	        	$users = DB::table('users')
+	        	->where('users.when_feature', '>', 0)
+	        	->select('users.id', 'users.when_feature')
+	        	->get();
+	        	foreach($users as $user) {
 		        	Notification::updateOrCreate(
 		        	    ['mode' => 2, 'user_id' => $user->id, 'multi_id' => $liste->id],
 		        	    ['is_seen' => 0]
 		        	);
+		        	if($user->when_feature>1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
 	        	}
 	        }
 	    }else{

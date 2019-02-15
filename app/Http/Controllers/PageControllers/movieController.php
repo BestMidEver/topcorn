@@ -189,7 +189,9 @@ class movieController extends Controller
         $users = DB::table('parties')
         ->where('parties.watched_with_user_id', '=', Auth::id())
         ->whereIn('parties.user_id', $request->users)
-        ->select('parties.user_id as id')
+        ->join('users', 'users.id', '=', 'parties.user_id')
+        ->where('users.when_feature', '>', 0)
+        ->select('parties.user_id as id', 'users.when_feature')
         ->get();
 
         foreach ($users as $user) {
@@ -202,7 +204,7 @@ class movieController extends Controller
                 ['is_seen' => 0]
             );
 
-            SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+            if($user->when_feature > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
         }
 
         return Response([
