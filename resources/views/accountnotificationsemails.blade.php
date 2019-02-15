@@ -60,24 +60,6 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_like">{{ __('general.when_like') }}</label>
-				    </div>
-				    <div class="col-md-6">
-				        <div class="form-group">
-				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heart"></i></div>
-				                </div>
-				                <select class="form-control" id="when_like" name="when_like" autofocus>
-									<option value="0" {{Auth::User()->when_like==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_like==1?'selected':''}}>{{ __('general.do_notification') }}</option>
-								</select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
 				        <label for="when_feature">{{ __('general.when_feature') }}</label>
 				    </div>
 				    <div class="col-md-6">
@@ -90,6 +72,24 @@
 									<option value="0" {{Auth::User()->when_feature==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
 									<option value="1" {{Auth::User()->when_feature==1?'selected':''}}>{{ __('general.do_notification') }}</option>
 									<option value="2" {{Auth::User()->when_feature==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
+				        <label for="when_like">{{ __('general.when_like') }}</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heart"></i></div>
+				                </div>
+				                <select class="form-control" id="when_like" name="when_like" autofocus>
+									<option value="0" {{Auth::User()->when_like==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_like==1?'selected':''}}>{{ __('general.do_notification') }}</option>
 								</select>
 				            </div>
 				        </div>
