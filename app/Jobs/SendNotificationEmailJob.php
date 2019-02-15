@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Mail\Feature;
+use App\Mail\NewEpisodeAirDate;
 use App\Mail\Recommendation;
 use App\User;
 use Illuminate\Bus\Queueable;
@@ -42,20 +43,21 @@ class SendNotificationEmailJob implements ShouldQueue
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=',  $notification->id)
                 ->join('custom_notifications', 'custom_notifications.id', '=', 'notifications.multi_id')
-                ->join('users', 'users.id', '=', 'notifications.user_id')
-                ->select(
-                    'custom_notifications.en_notification',
-                    'custom_notifications.tr_notification',
-                    'custom_notifications.hu_notification',
-                    'users.lang'
-                )
+                ->select('custom_notifications.en_notification')
                 ->first();
 
-                if($temp->lang == 'en') $temp_2 = $temp->en_notification;
-                else if($temp->lang == 'tr') $temp_2 = $temp->tr_notification;
-                else if($temp->lang == 'hu') $temp_2 = $temp->hu_notification;
+                Mail::to(User::find($notification->user_id))->send(new Feature($temp->en_notification));
+            }else if($notification->mode == 3){
+                $temp = DB::table('series')
+                ->where('series.id', '=', $notification->multi_id)
+                ->select(
+                    'series.id as series_id',
+                    'series.name as name',
+                    'series.next_episode_air_date as next_episode_air_date',
+                    DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next')
+                )
 
-                Mail::to(User::find($notification->user_id))->send(new Feature($temp_2));
+                Mail::to(User::find($notification->user_id))->send(new NewEpisodeAirDate($temp->series_id, $temp->name, $temp->next_episode_air_date, $temp->day_difference_next));
             }else if($notification->mode == 4){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=',  $notification->id)

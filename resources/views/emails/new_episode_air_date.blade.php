@@ -1,9 +1,9 @@
 @component('mail::message')
 # Hello!
 
-You are receiving this email because {{$user_name}} recommended {{$title}} to you.
+You are receiving this email because {{$name}} new episode air date is defined. Date: {{$next_episode_air_date}} ({{$day_difference_next}} days later)
 
-@component('mail::button', ['url' => url('/').'/'.$mode.'/'.$movie_id, 'color' => 'green'])
+@component('mail::button', ['url' => url('/').'/series/'.$series_id, 'color' => 'green'])
 Check it
 @endcomponent
 
