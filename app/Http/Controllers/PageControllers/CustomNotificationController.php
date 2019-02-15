@@ -70,7 +70,7 @@ class CustomNotificationController extends Controller
 		        	    ['mode' => 2, 'user_id' => $user->id, 'multi_id' => $liste->id],
 		        	    ['is_seen' => 0]
 		        	);
-		        	if($user->when_feature>1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+		        	if($user->when_feature > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
 	        	}
 	        }
 	    }else{

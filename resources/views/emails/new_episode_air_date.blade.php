@@ -3,7 +3,9 @@
 
 You are receiving this email because {{$name}} is in your watch later list and air date of the new episode is defined. 
 
+@component('mail::panel')
 Date: {{$next_episode_air_date}} ({{$day_difference_next}} days later)
+@endcomponent
 
 @component('mail::button', ['url' => url('/').'/series/'.$series_id, 'color' => 'green'])
 Check it
