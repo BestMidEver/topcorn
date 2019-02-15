@@ -1,7 +1,7 @@
 @component('mail::message')
 # Hello!
 
-You are receiving this email because {{$name}} new episode air date is defined. Date: {{$next_episode_air_date}} ({{$day_difference_next}} days later)
+You are receiving this email because {{$name}} is in your watch later list and the new episode air date is defined. Date: {{substr($next_episode_air_date, 0, 10);}} ({{$day_difference_next}} days later)
 
 @component('mail::button', ['url' => url('/').'/series/'.$series_id, 'color' => 'green'])
 Check it
