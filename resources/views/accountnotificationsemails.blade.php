@@ -79,7 +79,9 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_air_date">{{ __('general.when_air_date') }} <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></i></label>
+				        <label for="when_air_date">{{ __('general.when_air_date') }} <i class="far fa-question-circle"></i></label><button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
