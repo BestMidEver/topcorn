@@ -103,7 +103,7 @@
 				                <select class="form-control" id="when_air_date" name="when_air_date">
 									<option value="0" {{Auth::User()->when_air_date==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
 									<option value="1" {{Auth::User()->when_air_date==1?'selected':''}}>{{ __('general.do_notification') }}</option>
-									<option value="2" {{Auth::User()->when_air_date==3?'selected':''}}>{{ __('general.notification_and_email') }}</option>
+									<option value="2" {{Auth::User()->when_air_date==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
 								</select>
 				            </div>
 				        </div>
