@@ -39,14 +39,23 @@ class SendNotificationEmailJob implements ShouldQueue
 
         if($notification){
             if($notification->mode == 2){
-                $temp = DB::table('custom_notifications')
-                ->where('custom_notifications.id', '=', $notification->multi_id)
+                $temp = DB::table('notifications')
+                ->where('notifications.id', '=',  $notification->id)
+                ->join('custom_notifications', 'custom_notifications.id', '=', 'notifications.multi_id')
+                ->join('users', 'users.id', '=', 'notifications.user_id')
                 ->select(
-                    'custom_notifications.'.Auth::User()->lang.'_notification as notification'
+                    'custom_notifications.en_notification',
+                    'custom_notifications.tr_notification',
+                    'custom_notifications.hu_notification',
+                    'users.lang'
                 )
                 ->first();
 
-                Mail::to(User::find($notification->user_id))->send(new Feature($temp->notification));
+                if($temp->lang == 'en') $temp_2 = $temp->en_notification;
+                else if($temp->lang == 'tr') $temp_2 = $temp->tr_notification;
+                else if($temp->lang == 'hu') $temp_2 = $temp->hu_notification;
+
+                Mail::to(User::find($notification->user_id))->send(new Feature($temp_2));
             }else if($notification->mode == 4){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=',  $notification->id)

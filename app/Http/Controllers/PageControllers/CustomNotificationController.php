@@ -59,7 +59,7 @@ class CustomNotificationController extends Controller
 	        	    ['is_seen' => 0]
 	        	);
             	
-            	SendNotificationEmailJob::dispatch($liste->tr_notification)->onQueue("high");
+            	SendNotificationEmailJob::dispatch($liste->id)->onQueue("high");
 	        }else if($request->mode == 3){
 	        	foreach(User::all() as $user) {
 		        	Notification::updateOrCreate(
