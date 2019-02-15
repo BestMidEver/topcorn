@@ -194,8 +194,6 @@ class accountController extends Controller
 
 	public function notifications_emails()
 	{
-    	if($lang != '') App::setlocale($lang);
-
     	$image_quality = Auth::User()->image_quality;
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
