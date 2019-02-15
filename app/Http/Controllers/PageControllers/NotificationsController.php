@@ -32,7 +32,7 @@ class NotificationsController extends Controller
 		$notifications = DB::table('notifications')
         ->where('notifications.is_seen', '=', $page_mode=='new'?0:1);
 
-        if(Auth::id()!=7) $notifications = $notifications->where('notifications.user_id', Auth::id());
+        //if(Auth::id()!=7) $notifications = $notifications->where('notifications.user_id', Auth::id());
         
         $notifications = $notifications
         ->select('id', 'multi_id', 'mode', 'is_seen')
