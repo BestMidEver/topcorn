@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Mail\Feature;
 use App\Mail\Recommendation;
 use App\User;
 use Illuminate\Bus\Queueable;

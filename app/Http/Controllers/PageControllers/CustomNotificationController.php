@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendNotificationEmailJob;
 use App\Model\CustomNotification;
 use App\Model\Notification;
 use App\User;
@@ -57,6 +58,8 @@ class CustomNotificationController extends Controller
 	        	    ['mode' => 2, 'user_id' => 7, 'multi_id' => $liste->id],
 	        	    ['is_seen' => 0]
 	        	);
+            	
+            	SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
 	        }else if($request->mode == 3){
 	        	foreach(User::all() as $user) {
 		        	Notification::updateOrCreate(
