@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@include('head.head_accountinterface')
+@include('head.head_accountnotificationsemails')
 
 @section('body')
 <h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.account') }}</h5>
