@@ -132,7 +132,7 @@
 				<div class="row mt-3">
 				    <div class="col-md-3"></div>
 				    <div class="col-md-6">
-				        <button type="submit" class="btn btn-primary btn-block" ng-disabled="myForm.$invalid">{{ __('general.change_password') }}</button>
+				        <button type="submit" class="btn btn-primary btn-block">{{ __('general.change_password') }}</button>
 				    </div>
 				</div>
 			</form>
