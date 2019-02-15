@@ -54,12 +54,12 @@ class CustomNotificationController extends Controller
 	        $liste_id = $liste->id;
 
 	        if($request->mode == 1){
-	        	Notification::updateOrCreate(
+	        	$notification = Notification::updateOrCreate(
 	        	    ['mode' => 2, 'user_id' => 7, 'multi_id' => $liste->id],
 	        	    ['is_seen' => 0]
 	        	);
             	
-            	SendNotificationEmailJob::dispatch($liste->id)->onQueue("high");
+            	SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
 	        }else if($request->mode == 3){
 	        	foreach(User::all() as $user) {
 		        	Notification::updateOrCreate(
