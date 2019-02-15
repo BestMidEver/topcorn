@@ -55,7 +55,7 @@ class CustomNotificationController extends Controller
 
 	        if($request->mode == 1){
 	        	$notification = Notification::updateOrCreate(
-	        	    ['mode' => 2, 'user_id' => 2, 'multi_id' => $liste->id],
+	        	    ['mode' => 2, 'user_id' => 1, 'multi_id' => $liste->id],
 	        	    ['is_seen' => 0]
 	        	);
             	
