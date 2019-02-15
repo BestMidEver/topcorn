@@ -116,6 +116,24 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
+				        <label for="when_watch_together">{{ __('general.when_watch_together') }}</label>
+				    </div>
+				    <div class="col-md-6">
+				        <div class="form-group">
+				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+				                <div class="input-group-prepend">
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-user-friends"></i></div>
+				                </div>
+				                <select class="form-control" id="when_watch_together" name="when_watch_together">
+									<option value="0" {{Auth::User()->when_watch_together==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_watch_together==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+								</select>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-md-3 field-label-responsive">
 				        <label for="when_recommendation">{{ __('general.when_recommendation') }}</label>
 				    </div>
 				    <div class="col-md-6">
@@ -128,24 +146,6 @@
 									<option value="0" {{Auth::User()->when_recommendation==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
 									<option value="1" {{Auth::User()->when_recommendation==1?'selected':''}}>{{ __('general.do_notification') }}</option>
 									<option value="2" {{Auth::User()->when_recommendation==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
-								</select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_watch_together">{{ __('general.when_watch_together') }}</label>
-				    </div>
-				    <div class="col-md-6">
-				        <div class="form-group">
-				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-user-friends"></i></div>
-				                </div>
-				                <select class="form-control" id="when_watch_together" name="when_watch_together">
-									<option value="0" {{Auth::User()->when_watch_together==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_watch_together==1?'selected':''}}>{{ __('general.do_notification') }}</option>
 								</select>
 				            </div>
 				        </div>
