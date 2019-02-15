@@ -67,6 +67,8 @@ return [
     'delete' => 'Sil',                                                                                  //movie,series,    
     'dollar_account' => 'Dolar Hesabı',                                                                 //donation,
     'dont_recommend' => 'Kötü',                                                                         //ratemodal, profile,
+    'dont_do_anything' => 'Hiçbir Şey Yapma',                                                           //account,
+    'do_notification' => 'Bildirim Yolla',                                                              //account,
     'edit' => 'Düzenle',                                                                                //list
     'edit_review' => 'Yazını Düzenle',                                                                  //movie,series,                   
     'editing' => 'Kurgu',   
@@ -157,6 +159,7 @@ return [
     'no_result_review' => 'Yazı bulunamadı.',                                                           //movie
     'not_found' => 'Bulunamadı.',                                                                       //person
     'not_sure' => 'Kararsızım',                                                                         //ratemodal, profile,
+    'notification_and_email' => 'Bildirim & E-Posta Yolla',                                             //account,
     'novel' => 'Roman',             
     'official_website' => 'Resmi İnternet Sitesi',              
     'only_me' => 'Sadece Ben',                                                                          //list,         

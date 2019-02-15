@@ -67,6 +67,8 @@ return [
     'delete' => 'Delete',                                                                               //movie,series,     //////////////
     'dollar_account' => 'Dollár számla',                                                                //donation,
     'dont_recommend' => 'Rossz',                                                                        //ratemodal, profile,
+    'dont_do_anything' => 'Don\'t Do Anything',                                                         //account,//////////////
+    'do_notification' => 'Send Notification',                                                           //account,//////////////
     'edit' => 'Szerkesztés',                                                                            //list
     'edit_review' => 'Edit Review',                                                                     //movie,series, ///////////
     'editing' => 'Vágás',                                                                               //person
@@ -157,6 +159,7 @@ return [
     'no_result_review' => 'Nincs vélemény',                                                             //movie,
     'not_found' => 'Nem található',                                                                     //person
     'not_sure' => 'Bizonytalan',                                                                        //ratemodal, profile,
+    'notification_and_email' => 'Send Notification & Email',                                            //account,//////////////////
     'novel' => 'Regény',                                                                                //person,
     'official_website' => 'Hivatalos honlap',                                                           //movie,
     'only_me' => 'Csak én',                                                                             //list,         

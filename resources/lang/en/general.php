@@ -67,6 +67,8 @@ return [
     'details' => 'Details',                                                                         //series,          
     'dollar_account' => 'Dollar Account',                                                           //donation,
     'dont_recommend' => 'Bad',                                                                      //ratemodal, profile,
+    'dont_do_anything' => 'Don\'t Do Anything',                                                     //account,
+    'do_notification' => 'Send Notification',                                                       //account,
     'edit' => 'Edit',                                                                               //list
     'edit_review' => 'Edit',                                                                        //movie,series, 
     'editing' => 'Editing',                                                                         //person,
@@ -157,6 +159,7 @@ return [
     'no_result_review' => 'No review',                                                              //movie
     'not_found' => 'Not found.',                                                                    //person
     'not_sure' => 'Not Sure',                                                                       //ratemodal, profile,
+    'notification_and_email' => 'Send Notification & Email',                                        //account,
     'novel' => 'Novel',                                                                             //person,
     'official_website' => 'Official Website',                                                       //movie,
     'only_me' => 'Private',                                                                         //list,         
