@@ -288,7 +288,7 @@ return [
     'when_feature' => 'New Feature Added',
     'when_air_date' => 'Next Air Date Changes',
     'when_recommendation' => 'You Get Recommendation',
-    'when_watch_together' => 'Someone Uses Watch Together With You',
+    'when_watch_together' => 'Someone Watches Together',
     'writer' => 'Writer',
     'writers' => 'Writers',
     'writing' => 'Writing',
