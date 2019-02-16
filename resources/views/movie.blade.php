@@ -205,7 +205,7 @@
             </div>
 			<div>
 				<div class="h6 pt-1">{{ __('general.advertisement') }}</div>
-				<a href="http://dolohen.com/afu.php?zoneid=2416650">{{ __('general.advertisement') }}</a>
+				<a href="http://dolohen.com/afu.php?zoneid=2416650" class="text-dark">{{ __('general.advertisement') }}</a>
 			</div>
 		</div>
 	</div>
