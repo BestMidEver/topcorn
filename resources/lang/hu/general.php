@@ -13,6 +13,7 @@ return [
     'active' => 'Aktív',                                                                                //accountinterface,                     
     'actor' => 'Színész',                                           
     'actors' => 'Színészek',                                                                            //movie,
+    'advertisement' => 'Reklám',                                                                        //recommendations,
     'add' => 'Hozzáad',                                                                                 //recommendations,
     'add_movie' => 'Film hozzáadása',                                                                   //list,             
     'add_person' => 'Nézzük együtt',                                                                    //recommendations,

@@ -13,6 +13,7 @@ return [
     'active' => 'Active',                                                                           //accountinterface,
     'actor' => 'Actor',                     
     'actors' => 'Actors',                                                                           //movie,
+    'advertisement' => 'Advertisement',                                                             //recommendations,
     'add' => 'Add',                                                                                 //recommendations,
     'add_movie' => 'Add Movie',                                                                     //list,             
     'add_person' => 'Watch Together',                                                               //recommendations,

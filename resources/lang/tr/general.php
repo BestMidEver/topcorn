@@ -13,6 +13,7 @@ return [
     'active' => 'Etkin',                                                                                //accountinterface,
     'actor' => 'Oyuncu',            
     'actors' => 'Oyuncular',            
+    'advertisement' => 'Reklam',                                                                        //recommendations,
     'add' => 'Ekle',                                                                                    //recommendations,
     'add_movie' => 'Film Ekle',                                                                         //list,           
     'add_person' => 'Beraber İzle',                                                                     //recommendations,
