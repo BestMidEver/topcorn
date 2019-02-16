@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('meta_description')">
 
+    <meta name="propeller" content="740b585a080f2a1b01cfb38a6bf3f78b">
+
     @yield('og_tags')
 
     <title>
@@ -41,13 +43,6 @@
     </script>
 
     @yield('adsense')
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5818851352711866",
-        enable_page_level_ads: true
-      });
-    </script>
 </head>
 
 
