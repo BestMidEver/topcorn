@@ -257,10 +257,6 @@
                 <div class="h6 pt-1">{{ __('general.episodes') }}</div>
                 <p>@{{series.episodes.length}}</p>
             </div>
-            <div>
-                <div class="h6 pt-1">{{ __('general.advertisement') }}</div>
-                <a href="http://dolohen.com/afu.php?zoneid=2416650" class="text-dark" target="_blank">{{ __('general.advertisement') }}</a>
-            </div>
         </div>
     </div>
     <div class="col-12 col-lg-7" ng-if="page_variables.active_tab_1!=-1 && page_variables.active_tab_2!=-1">

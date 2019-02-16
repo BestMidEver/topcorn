@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('meta_description')">
 
-    <meta name="propeller" content="740b585a080f2a1b01cfb38a6bf3f78b">
 
     @yield('og_tags')
 
