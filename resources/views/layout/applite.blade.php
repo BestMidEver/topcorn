@@ -7,7 +7,6 @@
     <meta name="description" content="@yield('meta_description')">
 
     <meta name="propeller" content="740b585a080f2a1b01cfb38a6bf3f78b">
-    <script type="text/javascript" src="//dolohen.com/apu.php?zoneid=2416634"></script>
 
     @yield('og_tags')
 
