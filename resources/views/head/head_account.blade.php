@@ -33,6 +33,6 @@ pass={
 @section('controllername','AccountPageController')
 
 @section('title')
-<span ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}" ng-show="page_variables.notification_count>0">(@{{page_variables.notification_count}})</span> 
+({{App\Model\Notification::get_notification_button()}}) 
 {{ __('title.account') }}
 @endsection
