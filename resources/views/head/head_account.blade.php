@@ -33,6 +33,6 @@ pass={
 @section('controllername','AccountPageController')
 
 @section('title')
-({{App\Model\Notification::get_notification_button()}}) 
+(@{{page_variables.notification_count}}) 
 {{ __('title.account') }}
 @endsection
