@@ -149,7 +149,6 @@
 	<div class="col-12 col-md-3 col-lg-3">
 		<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
 	</div>
-	<input type="hidden" name="IL_IN_ARTICLE">
 	<div class="col-12 col-md-9 col-lg-6">
 		<div class="container-fluid">
 			<p class="h6 pt-3 pt-md-0"><span data-toggle="tooltip" data-placement="top" data-original-title="@{{movie.release_date}}" ng-if="movie.release_date.length>0">@{{movie.release_date.substring(0, 4)}}</span> <span class="text-muted" ng-if="movie.genres.length > 0 && movie.release_date.length>0">•</span> <span ng-repeat="genre in movie.genres"><span ng-if="$index!=0">, </span>@{{genre.name}}</span></p>
