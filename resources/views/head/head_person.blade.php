@@ -33,5 +33,6 @@ pass={
 @section('controllername', 'PersonPageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 @{{person.name}}{{ __('title.person') }}
 @endsection

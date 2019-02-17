@@ -28,5 +28,6 @@ pass={
 @section('controllername','AccountInterfacePageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 {{ __('title.account') }}
 @endsection

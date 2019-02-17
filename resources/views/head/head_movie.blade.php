@@ -38,6 +38,7 @@ pass={
 @section('controllername', 'MoviePageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 @if($movie_title != '')
 {{$movie_title}} ({{$movie_year}}) - topcorn.io
 @else

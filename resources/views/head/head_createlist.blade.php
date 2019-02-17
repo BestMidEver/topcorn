@@ -18,5 +18,6 @@ pass={
 @section('controllername','CreatelistPageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 {{ $liste != '[]' ? __('title.editlist', ['title' => $liste[0]->title]) : __('title.createlist') }}
 @endsection

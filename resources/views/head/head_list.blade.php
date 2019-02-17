@@ -22,5 +22,6 @@ pass={
 @section('controllername','ListPageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 {{ $liste[0]->title.__('title.list') }}
 @endsection
