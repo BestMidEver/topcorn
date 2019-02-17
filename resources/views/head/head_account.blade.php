@@ -33,6 +33,6 @@ pass={
 @section('controllername','AccountPageController')
 
 @section('title')
-<span class="badge badge-danger ml-1" ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}" ng-show="page_variables.notification_count>0">(@{{page_variables.notification_count}})</span> 
+<span ng-init="page_variables.notification_count={{App\Model\Notification::get_notification_button()}}" ng-show="page_variables.notification_count>0">(@{{page_variables.notification_count}})</span> 
 {{ __('title.account') }}
 @endsection
