@@ -104,7 +104,7 @@
 	</div>
 </div>
 <!--Trailer Section-->
-
+<input type="hidden" name="IL_IN_ARTICLE">
 <!--Under Trailer Section-->
 <div class="d-flex flex-wrap justify-content-between">
 	<div>
@@ -143,7 +143,7 @@
 	</div>
 </div>
 <!--Under Trailer Section-->
-<input type="hidden" name="IL_IN_ARTICLE">
+
 <!--Poster Plot Details Section-->
 <div class="row no-gutters mt-3 mt-md-5">
 	<div class="col-12 col-md-3 col-lg-3">
