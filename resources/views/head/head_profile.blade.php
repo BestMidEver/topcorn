@@ -24,5 +24,6 @@ pass={
 @section('controllername' ,'ProfilePageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 {{ $profile_user_name.__('title.profile') }}
 @endsection

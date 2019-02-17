@@ -26,5 +26,6 @@ pass={
 @section('controllername','SearchPageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 {{ __('title.search') }}
 @endsection

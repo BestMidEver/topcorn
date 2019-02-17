@@ -46,6 +46,7 @@ pass={
 @section('controllername', 'SeriesPageController')
 
 @section('title')
+@{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 @if($series_name != '')
 {{$series_name}} ({{$series_year}}) - topcorn.io
 @else
