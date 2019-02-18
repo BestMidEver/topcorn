@@ -133,6 +133,7 @@
 </div>
 <!--Under Trailer Section-->
 
+
 <!-- Tabs_1 Button -->
 <div class="container-fluid p-0 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
@@ -411,7 +412,6 @@
     </div>
 </div>
 <!--Cast Section-->
-<input type="hidden" name="IL_IN_ARTICLE">
 
 <div ng-hide="is_waiting"> 
 @include('layout.reviews')

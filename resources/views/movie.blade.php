@@ -143,7 +143,7 @@
 	</div>
 </div>
 <!--Under Trailer Section-->
-
+<input type="hidden" name="IL_IN_ARTICLE">
 <!--Poster Plot Details Section-->
 <div class="row no-gutters mt-2 mt-md-3">
 	<div class="col-12 col-md-3 col-lg-3">
@@ -298,7 +298,6 @@
 </div>
 </div>
 <!--Cast Section-->
-<input type="hidden" name="IL_IN_ARTICLE">
 
 @include('layout.reviews')
 
