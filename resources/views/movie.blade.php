@@ -298,6 +298,7 @@
 </div>
 </div>
 <!--Cast Section-->
+<input type="hidden" name="IL_IN_ARTICLE">
 
 @include('layout.reviews')
 
