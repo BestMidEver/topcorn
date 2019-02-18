@@ -106,7 +106,7 @@
 <!--Trailer Section-->
 
 <!--Under Trailer Section-->
-<div class="d-flex flex-wrap justify-content-between mb-2 mb-md-3">
+<div class="d-flex flex-wrap justify-content-between">
 	<div>
 		<div class="d-flex flex-column">
 			<div class="px-3 px-md-0">
@@ -143,9 +143,9 @@
 	</div>
 </div>
 <!--Under Trailer Section-->
-<input type="hidden" name="IL_IN_ARTICLE">
+
 <!--Poster Plot Details Section-->
-<div class="row no-gutters mt-2 mt-md-3">
+<div class="row no-gutters mt-3 mt-md-5">
 	<div class="col-12 col-md-3 col-lg-3">
 		<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
 	</div>
