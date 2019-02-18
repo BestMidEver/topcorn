@@ -59,15 +59,15 @@ class RefreshSiteMapJob implements ShouldQueue
 ';
         }
 
-        $movies = DB::table('series')
+        $seriess = DB::table('series')
         ->select(
             'series.id',
             'series.original_name',
             'series.updated_at'
         )
         ->get();
-        foreach ($movies as $movie) {
-            $xml = $xml.'<url> <loc>https://topcorn.io/series/'.$movie->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $movie->original_name).'</loc> <lastmod>'.substr($movie->updated_at, 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> 
+        foreach ($seriess as $series) {
+            $xml = $xml.'<url> <loc>https://topcorn.io/series/'.$series->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $series->original_name).'</loc> <lastmod>'.substr($series->updated_at, 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>0.80</priority> </url> 
 ';
         }
 
