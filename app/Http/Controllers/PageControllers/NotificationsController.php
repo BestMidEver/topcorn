@@ -36,7 +36,7 @@ class NotificationsController extends Controller
         
         $notifications = $notifications
         ->select('id', 'multi_id', 'mode', 'is_seen')
-        ->orderBy('updated_at', 'asc')
+        ->orderBy('updated_at', 'desc')
         ->paginate(15, ['*'], 'page', $page);
 		$return_val = [];
 		foreach ($notifications as $notification) {
