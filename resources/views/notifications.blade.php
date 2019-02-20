@@ -8,8 +8,8 @@
 
 
 
-<!--@if(Auth::id()==7)
- Tabs Button -->
+@if(Auth::id()==7)
+<!-- Tabs Button -->
 <div class="container-fluid mt-3 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
@@ -30,9 +30,9 @@
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab=='new'}" ng-click="page_variables.active_tab='new';get_first_page_data();">{{ __('general.un_read') }}</button>
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab=='old'}" ng-click="page_variables.active_tab='old';get_first_page_data();">{{ __('general.read') }}</button>
 </div>
-<!-- Tabs Button Mobile 
+<!-- Tabs Button Mobile -->
 @endif
--->
+
 
 
 
