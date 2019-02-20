@@ -296,7 +296,8 @@ Route::get('test', function(){
 	->where('id', '=', 1399)
 	->first();
 
-	return new Carbon($series->next_episode_air_date)->diffInDays(Carbon::now());
+	$next_episode_air_date = new Carbon($series->next_episode_air_date);
+	return $next_episode_air_date->diffInDays(Carbon::now());
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
