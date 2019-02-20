@@ -46,7 +46,7 @@ class SuckSeriesJob implements ShouldQueue
         $is_recent = Serie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
         ->first();
-        if($is_recent) return;
+        //if($is_recent) return;
         
         $temp = Serie::where('id', $this->id)->first();
         if($temp) $is_next_episode_defined = $temp->next_episode_air_date == null ? false : true;
@@ -85,6 +85,14 @@ class SuckSeriesJob implements ShouldQueue
                         ['is_seen' => 0]
                     );
                     if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                }
+            }
+            if($next_episode_air_date != null){
+                if($next_episode_air_date->diffInDays(Carbon::now()) == 0){
+                    $notification = Notification::updateOrCreate(
+                        ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                        ['is_seen' => 0]
+                    );
                 }
             }
             $last_episode_air_date = null;
@@ -176,6 +184,14 @@ class SuckSeriesJob implements ShouldQueue
                         ['is_seen' => 0]
                     );
                     if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                }
+            }
+            if($next_episode_air_date != null){
+                if($next_episode_air_date->diffInDays(Carbon::now()) == 0){
+                    $notification = Notification::updateOrCreate(
+                        ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                        ['is_seen' => 0]
+                    );
                 }
             }
             $last_episode_air_date = null;

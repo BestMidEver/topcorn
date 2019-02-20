@@ -41,18 +41,18 @@ class SuckDataJob implements ShouldQueue
      */
     public function handle()
     {
-        foreach(Series_rated::All()->pluck('series_id')->unique() as $id){
+        /*foreach(Series_rated::All()->pluck('series_id')->unique() as $id){
             SuckSeriesJob::dispatch($id, true)->onQueue("low");
-        }
+        }*/
         foreach(Series_later::All()->pluck('series_id')->unique() as $id){
             SuckSeriesJob::dispatch($id, false)->onQueue("low");
         }
-        foreach(Series_ban::All()->pluck('series_id')->unique() as $id){
+        /*foreach(Series_ban::All()->pluck('series_id')->unique() as $id){
             SuckSeriesJob::dispatch($id, false)->onQueue("low");
-        }
+        }*/
 
 
-        foreach(Rated::All()->pluck('movie_id')->unique() as $id){
+        /*foreach(Rated::All()->pluck('movie_id')->unique() as $id){
             SuckMovieJob::dispatch($id, true)->onQueue("low");
         }
         foreach(Later::All()->pluck('movie_id')->unique() as $id){
@@ -92,6 +92,6 @@ class SuckDataJob implements ShouldQueue
 
         RefreshSiteMapJob::dispatch()->onQueue("low");
 
-        RestartJob::dispatch()->onQueue("low");
+        RestartJob::dispatch()->onQueue("low");*/
     }
 }

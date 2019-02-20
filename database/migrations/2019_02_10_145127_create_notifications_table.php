@@ -17,7 +17,7 @@ class CreateNotificationsTable extends Migration
             $table->increments('id');
             $table->tinyInteger('mode');//  0-reviewlike | 1-listlike | 2-newfeature | 3-seriesairdatechanged | 4-movierecommendation | 5-seriesrecommendation |
 
-                                        //  6-watchtogetger
+                                        //  6-watchtogetger | 7-airingtoday
             $table->integer('user_id');
             $table->integer('multi_id');
             $table->tinyInteger('is_seen');
