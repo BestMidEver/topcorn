@@ -104,7 +104,7 @@ class SuckSeriesJob implements ShouldQueue
                             }
                         }else{
                             $notification = Notification::updateOrCreate(
-                                ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                                ['mode' => 7, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                                 ['is_seen' => 0]
                             );
                             //if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
@@ -220,7 +220,7 @@ class SuckSeriesJob implements ShouldQueue
                             }
                         }else{
                             $notification = Notification::updateOrCreate(
-                                ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                                ['mode' => 7, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                                 ['is_seen' => 0]
                             );
                             //if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
