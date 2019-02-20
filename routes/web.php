@@ -295,7 +295,7 @@ Route::get('test', function(){
 	->paginate(20));*/
 	$old_notification = Notification::where('mode', '=', 7)
     ->where('user_id', '=', 7)
-    ->where('multi_id', '=', 1421)
+    ->where('multi_id', '=', 37680)
     ->first();
     if($old_notification){
     	$notification_time = new Carbon($old_notification->created_at);
