@@ -3,6 +3,7 @@
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -295,7 +296,7 @@ Route::get('test', function(){
 	->where('id', '=', 1399)
 	->first();
 
-	return $series->next_episode_air_date;
+	return Carbon($series->next_episode_air_date);
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
