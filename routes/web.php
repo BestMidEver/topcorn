@@ -299,14 +299,14 @@ Route::get('test', function(){
     ->first();
     if($old_notification){
     	$notification_time = new Carbon($old_notification->created_at);
-    	if($notification_time->diffInDays(Carbon::now()) > 5){
+    	if($notification_time->diffInDays(Carbon::now()) > 2){
+			$old_notification->created_at = Carbon::now();
+			$old_notification->save();
     		return 'gene mail atıldı';
     	}
     }else{
     	return 'mail atıldı';
     }
-	$old_notification->created_at = Carbon::now();
-	$old_notification->save();
 
     return $old_notification->id;
 

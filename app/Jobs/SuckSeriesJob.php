@@ -91,14 +91,23 @@ class SuckSeriesJob implements ShouldQueue
                 if($next_episode_air_date->diffInDays(Carbon::today()) == 0){
                     foreach ($items as $item) {
                         $old_notification = Notification::where('mode', '=', 7)
-                        ->where('user_id', '=', 7)
+                        ->where('user_id', '=', $item->user_id)
                         ->where('multi_id', '=', $this->id)
                         ->first();
-                        $notification = Notification::updateOrCreate(
-                            ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
-                            ['is_seen' => 0]
-                        );
-                        if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                        if($old_notification){
+                            $notification_time = new Carbon($old_notification->created_at);
+                            if($notification_time->diffInDays(Carbon::now()) > 2){
+                                $old_notification->created_at = Carbon::now();
+                                $old_notification->save();
+                                if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
+                            }
+                        }else{
+                            $notification = Notification::updateOrCreate(
+                                ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                                ['is_seen' => 0]
+                            );
+                            if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                        }
                     }
                 }
             }
@@ -196,11 +205,24 @@ class SuckSeriesJob implements ShouldQueue
             if($next_episode_air_date != null){
                 if($next_episode_air_date->diffInDays(Carbon::today()) == 0){
                     foreach ($items as $item) {
-                        $notification = Notification::updateOrCreate(
-                            ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
-                            ['is_seen' => 0]
-                        );
-                        if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                        $old_notification = Notification::where('mode', '=', 7)
+                        ->where('user_id', '=', $item->user_id)
+                        ->where('multi_id', '=', $this->id)
+                        ->first();
+                        if($old_notification){
+                            $notification_time = new Carbon($old_notification->created_at);
+                            if($notification_time->diffInDays(Carbon::now()) > 2){
+                                $old_notification->created_at = Carbon::now();
+                                $old_notification->save();
+                                if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
+                            }
+                        }else{
+                            $notification = Notification::updateOrCreate(
+                                ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                                ['is_seen' => 0]
+                            );
+                            if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                        }
                     }
                 }
             }
