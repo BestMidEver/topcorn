@@ -2,7 +2,6 @@
 
 namespace Illuminate\Foundation\Auth;
 
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -119,8 +118,7 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        $user->last_login = Carbon::now()->toDateTimeString();
-        $user->save();
+        //
     }
 
     /**
