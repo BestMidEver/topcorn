@@ -297,7 +297,8 @@ Route::get('test', function(){
 	->first();
 
 	$next_episode_air_date = new Carbon($series->next_episode_air_date);
-	return $next_episode_air_date->diffInDays(Carbon::now());
+	$last_episode_air_date = new Carbon($series->last_episode_air_date);
+	return $last_episode_air_date->diffInDays(Carbon::now());
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
