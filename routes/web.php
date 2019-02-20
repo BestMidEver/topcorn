@@ -292,6 +292,7 @@ Route::get('test', function(){
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
 	$series = DB::table('series')
+	->where('id', '=', 1399)
 	->first();
 
 	return $series->next_episode_air_date;
