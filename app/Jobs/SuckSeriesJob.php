@@ -90,6 +90,10 @@ class SuckSeriesJob implements ShouldQueue
             if($next_episode_air_date != null){
                 if($next_episode_air_date->diffInDays(Carbon::today()) == 0){
                     foreach ($items as $item) {
+                        $old_notification = Notification::where('mode', '=', 7)
+                        ->where('user_id', '=', 7)
+                        ->where('multi_id', '=', $this->id)
+                        ->first();
                         $notification = Notification::updateOrCreate(
                             ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
                             ['is_seen' => 0]

@@ -1,7 +1,7 @@
 @component('mail::message')
 # Hello!
 
-You are receiving this email because {{$name}} is in your watch later list and the new episode air date is today.
+You are receiving this email because {{$name}} is in your watch later list and the new episode is airing today.
 
 @component('mail::button', ['url' => url('/').'/series/'.$series_id, 'color' => 'green'])
 Check details

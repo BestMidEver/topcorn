@@ -292,6 +292,19 @@ Route::get('test', function(){
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
 	->paginate(20));*/
+	$old_notification = Notification::where('mode', '=', 7)
+    ->where('user_id', '=', 7)
+    ->where('multi_id', '=', 1421)
+    ->first();
+
+    return $old_notification->id;
+
+
+
+
+
+
+
 	$series = DB::table('series')
 	->where('id', '=', 60708)
 	->first();
