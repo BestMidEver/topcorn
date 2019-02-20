@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Mail\AiringToday;
 use App\Mail\Feature;
 use App\Mail\NewEpisodeAirDate;
 use App\Mail\Recommendation;
@@ -79,6 +80,17 @@ class SendNotificationEmailJob implements ShouldQueue
                 ->first();
 
                 Mail::to(User::find($notification->user_id))->send(new Recommendation($temp->original_name, 'series', $temp->id, $temp->user_name));
+            }else if($notification->mode == 7){
+                $temp = DB::table('notifications')
+                ->where('notifications.id', '=', $notification->id)
+                ->join('series', 'series.id', '=', 'notifications.multi_id')
+                ->select(
+                    'series.id as series_id',
+                    'series.en_name as name'
+                )
+                ->first();
+
+                Mail::to(User::find($notification->user_id))->send(new AiringToday($temp->series_id, $temp->name));
             }
         }
 

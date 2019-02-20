@@ -8,7 +8,7 @@ Date: {{$next_episode_air_date}} ({{$day_difference_next}} days later)
 @endcomponent
 
 @component('mail::button', ['url' => url('/').'/series/'.$series_id, 'color' => 'green'])
-Check it
+Check details
 @endcomponent
 
 <small>Feel free to reply this mail for any reason. We would appriciate your feedback. (Questions, bugs, critics, advices, grammer correction etc.)</small>

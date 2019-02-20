@@ -72,13 +72,13 @@ class SuckSeriesJob implements ShouldQueue
             if($series['next_episode_to_air'] != null){
                 if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
             }
+            $items = DB::table('series_laters')
+            ->where('series_laters.series_id', '=', $this->id)
+            ->join('users', 'users.id', '=', 'series_laters.user_id')
+            ->where('users.when_air_date', '>', 0)
+            ->select('users.id as user_id', 'users.when_air_date')
+            ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
-                $items = DB::table('series_laters')
-                ->where('series_laters.series_id', '=', $this->id)
-                ->join('users', 'users.id', '=', 'series_laters.user_id')
-                ->where('users.when_air_date', '>', 0)
-                ->select('users.id as user_id', 'users.when_air_date')
-                ->get();
                 foreach ($items as $item) {
                     $notification = Notification::updateOrCreate(
                         ['mode' => 3, 'user_id' => $item->user_id, 'multi_id' => $this->id],
@@ -89,10 +89,13 @@ class SuckSeriesJob implements ShouldQueue
             }
             if($next_episode_air_date != null){
                 if($next_episode_air_date->diffInDays(Carbon::today()) == 0){
-                    $notification = Notification::updateOrCreate(
-                        ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
-                        ['is_seen' => 0]
-                    );
+                    foreach ($items as $item) {
+                        $notification = Notification::updateOrCreate(
+                            ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                            ['is_seen' => 0]
+                        );
+                        if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                    }
                 }
             }
             $last_episode_air_date = null;
@@ -171,13 +174,13 @@ class SuckSeriesJob implements ShouldQueue
             if($series['next_episode_to_air'] != null){
                 if($series['next_episode_to_air']['air_date'] != null){$next_episode_air_date = new Carbon($series['next_episode_to_air']['air_date']);}
             }
+            $items = DB::table('series_laters')
+            ->where('series_laters.series_id', '=', $this->id)
+            ->join('users', 'users.id', '=', 'series_laters.user_id')
+            ->where('users.when_air_date', '>', 0)
+            ->select('users.id as user_id', 'users.when_air_date')
+            ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
-                $items = DB::table('series_laters')
-                ->where('series_laters.series_id', '=', $this->id)
-                ->join('users', 'users.id', '=', 'series_laters.user_id')
-                ->where('users.when_air_date', '>', 0)
-                ->select('users.id as user_id', 'users.when_air_date')
-                ->get();
                 foreach ($items as $item) {
                     $notification = Notification::updateOrCreate(
                         ['mode' => 3, 'user_id' => $item->user_id, 'multi_id' => $this->id],
@@ -188,10 +191,13 @@ class SuckSeriesJob implements ShouldQueue
             }
             if($next_episode_air_date != null){
                 if($next_episode_air_date->diffInDays(Carbon::today()) == 0){
-                    $notification = Notification::updateOrCreate(
-                        ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
-                        ['is_seen' => 0]
-                    );
+                    foreach ($items as $item) {
+                        $notification = Notification::updateOrCreate(
+                            ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
+                            ['is_seen' => 0]
+                        );
+                        if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                    }
                 }
             }
             $last_episode_air_date = null;
