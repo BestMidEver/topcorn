@@ -360,7 +360,7 @@ class ProfileController extends Controller
             'series.status as status',
             'series_seens.air_date as last_seen_air_date',
             DB::raw('DATEDIFF(series.last_episode_air_date, series_seens.air_date) AS day_difference_last'),
-            DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next'),
+            DB::raw('DATEDIFF(series.next_episode_air_date, CURDATE()) AS day_difference_next'),
             'series.'.$lang.'_poster_path as poster_path',
             'series.vote_average as vote_average',
             'series.vote_count as vote_count',
@@ -377,7 +377,7 @@ class ProfileController extends Controller
             ->orderBy('series_laters.updated_at', 'desc');
         }else if($mode == 'available'){
             $return_val = $return_val
-            ->whereRaw('(DATEDIFF(series.last_episode_air_date, series_seens.air_date) > 0) OR (DATEDIFF(series.next_episode_air_date, NOW()) < 0)')
+            ->whereRaw('(DATEDIFF(series.last_episode_air_date, series_seens.air_date) > 0) OR (DATEDIFF(series.next_episode_air_date, CURDATE()) < 0)')
             ->orderByRaw('ISNULL(series_seens.updated_at), series_seens.updated_at desc')
             ->orderBy('series_laters.updated_at', 'desc');
         }else if($mode == 'awaited'){

@@ -181,7 +181,7 @@ class NotificationsController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(3);
+                ->paginate(1);
             }
 			array_push($return_val, $temp);
 		}
