@@ -100,14 +100,14 @@ class SuckSeriesJob implements ShouldQueue
                                 $old_notification->created_at = Carbon::now();
                                 $old_notification->is_seen = 0;
                                 $old_notification->save();
-                                //if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
+                                if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
                             }
                         }else{
                             $notification = Notification::updateOrCreate(
                                 ['mode' => 7, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                                 ['is_seen' => 0]
                             );
-                            //if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                            if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
                         }
                     }
                 }
@@ -216,14 +216,14 @@ class SuckSeriesJob implements ShouldQueue
                                 $old_notification->created_at = Carbon::now();
                                 $old_notification->is_seen = 0;
                                 $old_notification->save();
-                                //if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
+                                if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
                             }
                         }else{
                             $notification = Notification::updateOrCreate(
                                 ['mode' => 7, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                                 ['is_seen' => 0]
                             );
-                            //if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                            if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
                         }
                     }
                 }
