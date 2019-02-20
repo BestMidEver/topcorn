@@ -297,7 +297,14 @@ Route::get('test', function(){
     ->where('user_id', '=', 7)
     ->where('multi_id', '=', 1421)
     ->first();
-
+    if($old_notification){
+    	$notification_time = new Carbon($old_notification->created_at);
+    	if($notification_time->diffInDays(Carbon::now()) > 5){
+    		return 'gene mail atıldı';
+    	}
+    }else{
+    	return 'mail atıldı';
+    }
 	$old_notification->created_at = Carbon::now();
 	$old_notification->save();
 
