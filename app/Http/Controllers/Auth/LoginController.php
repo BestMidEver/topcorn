@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Auth\authenticated;
 use App\Http\Controllers\Controller;
 use App\User;
 use Carbon\Carbon;
