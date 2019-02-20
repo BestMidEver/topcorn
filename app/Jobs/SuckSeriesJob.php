@@ -88,7 +88,7 @@ class SuckSeriesJob implements ShouldQueue
                 }
             }
             if($next_episode_air_date != null){
-                if($next_episode_air_date->diffInDays(Carbon::now()) == 0){
+                if($next_episode_air_date->diffInDays(Carbon::today()) == 0){
                     $notification = Notification::updateOrCreate(
                         ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
                         ['is_seen' => 0]
@@ -187,7 +187,7 @@ class SuckSeriesJob implements ShouldQueue
                 }
             }
             if($next_episode_air_date != null){
-                if($next_episode_air_date->diffInDays(Carbon::now()) == 0){
+                if($next_episode_air_date->diffInDays(Carbon::today()) == 0){
                     $notification = Notification::updateOrCreate(
                         ['mode' => 7, 'user_id' => 7, 'multi_id' => $this->id],
                         ['is_seen' => 0]
