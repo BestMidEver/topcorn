@@ -171,10 +171,12 @@ class NotificationsController extends Controller
             }else if($notification->mode == 7){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
-                ->join('users', 'users.id', '=', 'notifications.multi_id')
+                ->join('series', 'series.id', '=', 'notifications.multi_id')
                 ->select(
-                    'users.name as user_name',
-                    'users.id as user_id',
+                    'series.id as movie_id',
+                    'series.original_name as original_title',
+                    'series.'.Auth::User()->lang.'_name as title',
+                    DB::raw('DATEDIFF(series.next_episode_air_date, CURDATE()) AS day_difference_next'),
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
