@@ -2,6 +2,7 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
+use App\Model\Notification;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
