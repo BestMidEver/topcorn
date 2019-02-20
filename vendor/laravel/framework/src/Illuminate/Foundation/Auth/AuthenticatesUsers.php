@@ -118,7 +118,8 @@ trait AuthenticatesUsers
      */
     protected function authenticated(Request $request, $user)
     {
-        //
+        $user->last_login = Carbon::now()->toDateTimeString();
+        $user->save();
     }
 
     /**
