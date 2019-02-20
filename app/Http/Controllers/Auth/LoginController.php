@@ -27,6 +27,11 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    function authenticated(Request $request, $user)
+    {
+        $user->last_login = Carbon::now()->toDateTimeString();
+        $user->save();
+    }
     /**
      * Where to redirect users after login.
      *
@@ -44,11 +49,6 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    function authenticated(Request $request, $user)
-    {
-        $user->last_login = Carbon::now()->toDateTimeString();
-        $user->save();
-    }
 
     public function socialLogin($social, $remember_me)
     {
