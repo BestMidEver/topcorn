@@ -8,7 +8,7 @@
 
 
 
-@if(Auth::id()==7)
+@if(Auth::id()==2)
 <!-- Tabs Button -->
 <div class="container-fluid mt-3 d-none d-md-inline">
     <ul class="nav justify-content-md-center tab1">
