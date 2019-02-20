@@ -23,7 +23,7 @@ class LastSeen
 
         $user = Auth::User();
         $user->last_login = Carbon::now()->toDateTimeString();
-        $user->save();
+        $user->save(['timestamps' => false]);
         
         return $next($request);
     }
