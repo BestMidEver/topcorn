@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Foundation\Auth\authenticated;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -28,11 +26,6 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    function authenticated(Request $request, $user)
-    {
-        $user->last_login = Carbon::now()->toDateTimeString();
-        $user->save();
-    }
     /**
      * Where to redirect users after login.
      *
@@ -49,7 +42,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
 
     public function socialLogin($social, $remember_me)
     {
