@@ -2,9 +2,7 @@
 
 use App\Jobs\RefreshSiteMapJob;
 use App\Jobs\SuckDataJob;
-use App\Model\Notification;
 use App\User;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -280,7 +278,7 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	/*return dd(DB::table('users')
+	return dd(DB::table('users')
 	->leftjoin('laters', 'laters.user_id', 'users.id')
 	->select(
 		'users.id',
@@ -292,37 +290,7 @@ Route::get('test', function(){
 	)
 	->groupBy('users.id')
     ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
-	->paginate(20));*/
-	$old_notification = Notification::where('mode', '=', 7)
-    ->where('user_id', '=', 7)
-    ->where('multi_id', '=', 37680)
-    ->first();
-    if($old_notification){
-    	$notification_time = new Carbon($old_notification->created_at);
-    	if($notification_time->diffInDays(Carbon::now()) > 2){
-			$old_notification->created_at = Carbon::now();
-			$old_notification->save();
-    		return 'gene mail atıldı';
-    	}
-    }else{
-    	return 'mail atıldı';
-    }
-
-    return $old_notification->id;
-
-
-
-
-
-
-
-	$series = DB::table('series')
-	->where('id', '=', 60708)
-	->first();
-
-	$next_episode_air_date = new Carbon($series->next_episode_air_date);
-	$last_episode_air_date = new Carbon($series->last_episode_air_date);
-	return $next_episode_air_date->diffInDays(Carbon::today());
+	->paginate(20));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
