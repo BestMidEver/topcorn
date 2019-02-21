@@ -119,7 +119,8 @@
 </div>
 
 
-
+@if(Auth::check())
+	@if(Auth::id()==7)
 <div class="d-flex flex-wrap justify-content-between">
 	<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 		<div class="d-flex flex-row justify-content-between text-center">
@@ -140,7 +141,8 @@
 		</div>
 	</div>
 </div>
-
+	@endif
+@endif
 
 
 
