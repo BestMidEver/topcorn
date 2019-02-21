@@ -88,6 +88,8 @@ return [
     'filter' => 'SZŰRŐ',                                                                                //recommendations,
     'finale_date' => 'Utolsó epizód',                                                                   //series,
     'first_episode' => 'Első epizód',                                                                   //profile,series,
+    'follow' => 'Follow',                                                                           //profile,  ///////////////////
+    'following' => 'Following',                                                                     //profile,/////////////////////////
     'primary_language' => 'Elsődleges nyelv',                                                           //accountinterface,
     'forgot_my_password' => 'Elfelejtettem a jelszavam',                                                //email, login,
     'gallery' => 'Képek',                                                                               //series,
@@ -273,6 +275,7 @@ return [
     'trailer' => 'FILMELŐZETES & VIDEÓK',                                                               //movie
     'try_account' => 'TRY számla',                                                                      //donation,
     'understand_my_taste' => 'Ismerd meg az ízlésemet!',                                                //home,
+    'unfollow' => 'Unfollow',                                                                           //profile,////////////////////
     'unknown' => 'ismeretlen',                                                                          //profile,
     'un_read' => 'Új',                                                                                  //notifications,
     'unseen' => 'Meg nem nézett',                                                                       //profile,

@@ -88,6 +88,8 @@ return [
     'filter' => 'FILTER',                                                                           //recommendations,
     'finale_date' => 'Finale Date',                                                                 //series,
     'first_episode' => 'First Episode',                                                             //profile,series,
+    'follow' => 'Follow',                                                                           //profile,
+    'following' => 'Following',                                                                     //profile,
     'primary_language' => 'Primary Language',                                                       //accountinterface,
     'forgot_my_password' => 'I Forgot My Password',                                                 //email, login,
     'gallery' => 'Images',                                                                          //series,
@@ -274,6 +276,7 @@ return [
     'tr' => 'Turkey',                                                                               //donation
     'try_account' => 'TRY Account',                                                                 //donation,
     'understand_my_taste' => 'Let\'s Get Started',                                                  //home,
+    'unfollow' => 'Unfollow',                                                                       //profile,
     'unknown' => 'unknown',                                                                         //profile,
     'un_read' => 'New',                                                                             //notifications,
     'unseen' => 'Unseen',                                                                           //profile,
