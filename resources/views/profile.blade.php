@@ -125,8 +125,7 @@
 	<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 		<div class="d-flex flex-row justify-content-between text-center">
 			@if(Auth::check())
-			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':false}" ng-click=""><div><span ng-show="true"><i class="fas fa-clock"></i></span><span ng-show="false"><i class="far fa-clock"></i></span></div><span class="scrollmenu">{{ __('general.follow') }}</span></button>
-			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':false}" ng-click=""><div><span ng-show="true"><i class="fas fa-clock"></i></span><span ng-show="false"><i class="far fa-clock"></i></span></div><span class="scrollmenu">{{ __('general.following') }}</span></button>
+			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':false}" ng-click=""><div><span ng-show="true"><i class="fas fa-user-friends"></i></span><span ng-show="false"><i class="far fa-clock"></i></span></div><span class="scrollmenu">{{ __('general.follow') }}</span></button>
 			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-click="open_share_modal()"><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</button>
 			@endif
 			@if(Auth::guest())
