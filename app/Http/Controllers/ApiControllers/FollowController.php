@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\SendNotificationEmailJob;
 use App\Model\Follow;
 use App\Model\Notification;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
