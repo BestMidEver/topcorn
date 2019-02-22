@@ -9,6 +9,7 @@ return [
     'according_to_your_mood' => 'Moduna Göre',                                                          //recommendations,
     'according_to_movie_combination' => 'Moduma Göre',                                                  //recommendations,     
     'according_to_popular_taste' => 'Genel Zevke Göre',                                                 //recommendations,     
+    'according_to_user' => 'Profil Sahibine Göre',                                                      //profile,     
     'acting' => 'Oyunculuk',            
     'active' => 'Etkin',                                                                                //accountinterface,
     'actor' => 'Oyuncu',            

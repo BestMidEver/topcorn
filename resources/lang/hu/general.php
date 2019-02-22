@@ -7,6 +7,7 @@ return [
 	'according_to_your_taste' => 'A Te ízlésed szerint',               
     'according_to_your_mood' => 'A hangulatodnak megfelelően',                                          //recommendations,
     'according_to_movie_combination' => 'Az én hangulatom szerint',                                     //recommendations,
+    'according_to_user' => 'According To Profile Owner',                                                //profile,   //////////////   
     'according_to_popular_taste' => 'Népszerűség szerint',                                              //recommendations,
     'according_to_themoviedb' => 'TMDb pontszám',                                                       //recommendations,
     'acting' => 'Szereplő',                                                                             //person,                       
