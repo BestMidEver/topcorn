@@ -23,6 +23,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 
 	$scope.toggle_follow = function(){
 		if($scope.page_variables.follow_id == -1){
+			console.log('bu1')
 			rate.add_follow(pass.profile_user_id)
 			.then(function(response){
 				console.log(response);
@@ -31,6 +32,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				}
 			});
 		}else{
+			console.log('bu1')
 			rate.un_follow(pass.profile_user_id)
 			.then(function(response){
 				console.log(response);
