@@ -356,6 +356,10 @@ class ProfileController extends Controller
             $join->on('series_rateds.series_id', '=', 'series.id')
             ->where('series_rateds.user_id', '=', Auth::id());
         })
+        ->leftjoin('series_rateds as r2', function ($join) use ($user) {
+            $join->on('r2.movie_id', '=', 'movies.id')
+            ->where('r2.user_id', '=', $user);
+        })
         ->leftjoin('series_laters as l2', function ($join) {
             $join->on('l2.series_id', '=', 'series.id')
             ->where('l2.user_id', Auth::id());
@@ -385,7 +389,8 @@ class ProfileController extends Controller
             'series_rateds.id as rated_id',
             'series_rateds.rate as rate_code',
             'l2.id as later_id',
-            'series_bans.id as ban_id'
+            'series_bans.id as ban_id',
+            'r2.rate as profile_user_rate'
         );
 
         if($mode == 'unseen'){
@@ -454,7 +459,8 @@ class ProfileController extends Controller
             'r2.id as rated_id',
             'r2.rate as rate_code',
             'series_laters.id as later_id',
-            'series_bans.id as ban_id'
+            'series_bans.id as ban_id',
+            'series_rateds.rate as profile_user_rate'
         )
         ->orderBy('series_rateds.updated_at', 'desc');
 
@@ -491,6 +497,10 @@ class ProfileController extends Controller
             $join->on('series_rateds.series_id', '=', 'series.id')
             ->where('series_rateds.user_id', '=', Auth::id());
         })
+        ->leftjoin('series_rateds as r2', function ($join) use ($user) {
+            $join->on('r2.movie_id', '=', 'movies.id')
+            ->where('r2.user_id', '=', $user);
+        })
         ->leftjoin('series_laters', function ($join) {
             $join->on('series_laters.series_id', '=', 'series.id')
             ->where('series_laters.user_id', '=', Auth::id());
@@ -510,7 +520,8 @@ class ProfileController extends Controller
             'series_rateds.id as rated_id',
             'series_rateds.rate as rate_code',
             'series_laters.id as later_id',
-            'b2.id as ban_id'
+            'b2.id as ban_id',
+            'r2.rate as profile_user_rate'
         )
         ->orderBy('series_bans.updated_at', 'desc');
 
