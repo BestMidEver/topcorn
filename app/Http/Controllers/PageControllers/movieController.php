@@ -55,6 +55,7 @@ class movieController extends Controller
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
             $watch_togethers = DB::table('follows')
             ->where('follows.object_id', '=', Auth::id())
+            ->where('is_deleted', '=', 0)
             ->join('users', 'users.id', '=', 'follows.subject_id')
             ->select(
                 'users.id as user_id',
@@ -188,6 +189,7 @@ class movieController extends Controller
     {
         $users = DB::table('follows')
         ->where('follows.object_id', '=', Auth::id())
+        ->where('is_deleted', '=', 0)
         ->whereIn('follows.subject_id', $request->users)
         ->join('users', 'users.id', '=', 'follows.subject_id')
         ->where('users.when_feature', '>', 0)

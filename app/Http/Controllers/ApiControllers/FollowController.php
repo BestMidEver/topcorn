@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\ApiControllers;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendNotificationEmailJob;
 use App\Model\Follow;
+use App\Model\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,13 +19,7 @@ class FollowController extends Controller
      */
     public function index()
     {
-        $follow = Follow::updateOrCreate(
-            ['subject_id' => Auth::id(), 'object_id' => 22],
-            ['is_deleted' => 0]
-        );
-        return Response([
-            'data' => $follow,
-        ], Response::HTTP_CREATED);
+        //
     }
 
     /**
@@ -44,10 +40,20 @@ class FollowController extends Controller
      */
     public function store(Request $request)
     {
+        $old_follow = Follow::where('subject_id', '=', Auth::id())
+        ->where('object_id', '=', $request->object_id);
         $follow = Follow::updateOrCreate(
             ['subject_id' => Auth::id(), 'object_id' => $request->object_id],
             ['is_deleted' => 0]
         );
+        if(!$old_follow && $follow){
+            $notification = Notification::updateOrCreate(
+                ['mode' => 8, 'user_id' => $request->object_id, 'multi_id' => Auth::id()],
+                ['is_seen' => 0]
+            );
+
+            //if(User::find($request->object_id)->when_recommendation > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+        }
         return Response([
             'data' => $follow,
         ], Response::HTTP_CREATED);
@@ -99,6 +105,12 @@ class FollowController extends Controller
             ['subject_id' => Auth::id(), 'object_id' => $object_id],
             ['is_deleted' => 1]
         );
+
+        Notification::where('multi_id', Auth::id())
+        ->where('user_id', $object_id)
+        ->where('mode', 8)
+        ->delete();
+
         return Response([
             'data' => $follow,
         ], Response::HTTP_NO_CONTENT);
