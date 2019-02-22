@@ -6,6 +6,7 @@ use App\Mail\AiringToday;
 use App\Mail\Feature;
 use App\Mail\NewEpisodeAirDate;
 use App\Mail\Recommendation;
+use App\Mail\StartedFollowingYou;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
