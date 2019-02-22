@@ -8,7 +8,7 @@ class Follow extends Model
 {
     protected $fillable = [
     	'is_deleted',
-    	'subject',
-    	'object'
+    	'subject_id',
+    	'object_id'
     ];
 }
