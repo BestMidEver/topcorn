@@ -17,7 +17,10 @@ class FollowController extends Controller
      */
     public function index()
     {
-        $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => 2), array('is_deleted' => 0));
+        $follow = Follow::updateOrCreate(
+            ['subject_id' => Auth::id(), 'object_id' => $request->object_id],
+            ['is_deleted' => 0]
+        );
         return Response([
             'data' => $follow,
         ], Response::HTTP_CREATED);
@@ -41,7 +44,10 @@ class FollowController extends Controller
      */
     public function store(Request $request)
     {
-        $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->object_id), array('is_deleted' => 0));
+        $follow = Follow::updateOrCreate(
+            ['subject_id' => Auth::id(), 'object_id' => $request->object_id],
+            ['is_deleted' => 0]
+        );
         return Response([
             'data' => $follow,
         ], Response::HTTP_CREATED);
