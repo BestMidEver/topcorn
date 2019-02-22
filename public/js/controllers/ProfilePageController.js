@@ -11,7 +11,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
-	console.log(pass.follow_id);
+	console.log(pass);
 
 	if(pass.profile_user_id.split("-")[0] != pass.user_id) $scope.page_variables = {is_guest:true, movies_or_series:'movies', follow_id:pass.follow_id};
 	else $scope.page_variables = {movies_or_series:'movies', follow_id:pass.follow_id};
@@ -23,7 +23,6 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 
 	$scope.toggle_follow = function(){
 		if($scope.page_variables.follow_id == -1){
-			console.log('bu1')
 			rate.add_follow(pass.profile_user_id)
 			.then(function(response){
 				console.log(response);
@@ -33,7 +32,6 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				}
 			});
 		}else{
-			console.log('bu2')
 			rate.un_follow(pass.profile_user_id)
 			.then(function(response){
 				console.log(response);
