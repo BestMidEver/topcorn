@@ -19,7 +19,24 @@ class FollowController extends Controller
      */
     public function index()
     {
-        //
+        $old_follow = Follow::where('subject_id', '=', Auth::id())
+        ->where('object_id', '=', 1)
+        ->first();
+        $follow = Follow::updateOrCreate(
+            ['subject_id' => Auth::id(), 'object_id' => 1],
+            ['is_deleted' => 0]
+        );
+        if(!$old_follow && $follow){
+            $notification = Notification::updateOrCreate(
+                ['mode' => 8, 'user_id' => 1, 'multi_id' => Auth::id()],
+                ['is_seen' => 0]
+            );
+
+            if(User::find(1)->when_recommendation > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+        }
+        return Response([
+            'data' => $follow,
+        ], Response::HTTP_CREATED);
     }
 
     /**
