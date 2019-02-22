@@ -18,7 +18,7 @@ class FollowController extends Controller
     public function index()
     {
         $follow = Follow::updateOrCreate(
-            ['subject_id' => Auth::id(), 'object_id' => $request->object_id],
+            ['subject_id' => Auth::id(), 'object_id' => 22],
             ['is_deleted' => 0]
         );
         return Response([
