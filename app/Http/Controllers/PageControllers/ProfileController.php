@@ -120,7 +120,8 @@ class ProfileController extends Controller
             'r2.id as rated_id',
             'r2.rate as rate_code',
             'laters.id as later_id',
-            'bans.id as ban_id'
+            'bans.id as ban_id',
+            'rateds.rate as profile_user_rate'
         )
         ->orderBy('rateds.updated_at', 'desc');
 
