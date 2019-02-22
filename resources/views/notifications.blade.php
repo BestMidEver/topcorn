@@ -37,6 +37,10 @@
                     <span class="text-primary"><i class="fas fa-clock"></i></span>
                     <span class="ml-2">{!! __('long_texts.notifications.airing_today') !!}</span>
                 </div>
+                <div class="flex-grow-1" ng-if="notification.data[0].notification_mode==8">
+                    <span class="text-success"><i class="fas fa-user-friends"></i></span>
+                    <span class="ml-2">{!! __('long_texts.notifications.started_following') !!}</span>
+                </div>
                 <div class="ml-2">
                     <button class="btn btn-outline-secondary border-0 addban" ng-click="set_seen(notification.data[0])"><i class="fa-circle" ng-class="notification.data[0].is_seen?'far':'fas'"></i></button>
                 </div>
