@@ -32,7 +32,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				}
 			});
 		}else{
-			console.log('bu1')
+			console.log('bu2')
 			rate.un_follow(pass.profile_user_id)
 			.then(function(response){
 				console.log(response);
