@@ -90,6 +90,7 @@ return [
     'first_episode' => 'Başlangıç',                                                                     //profile,series,
     'follow' => 'Takip Et',                                                                             //profile,
     'following' => 'Takiptesin',                                                                        //profile,
+    'follows_you' => 'Seni takip ediyor',                                                               //profile,
     'primary_language' => 'Ana Dil',                                                                    //accountinterface,
     'forgot_my_password' => 'Şifremi Unuttum',                                                          //email, login,
     'gallery' => 'Görseller',                                                                           //series,

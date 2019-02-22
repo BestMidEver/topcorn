@@ -90,6 +90,7 @@ return [
     'first_episode' => 'Első epizód',                                                                   //profile,series,
     'follow' => 'Follow',                                                                           //profile,  ///////////////////
     'following' => 'Following',                                                                     //profile,/////////////////////////
+    'follows_you' => 'Follows  you',                                                                //profile,//////////////////
     'primary_language' => 'Elsődleges nyelv',                                                           //accountinterface,
     'forgot_my_password' => 'Elfelejtettem a jelszavam',                                                //email, login,
     'gallery' => 'Képek',                                                                               //series,

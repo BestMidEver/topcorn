@@ -90,6 +90,7 @@ return [
     'first_episode' => 'First Episode',                                                             //profile,series,
     'follow' => 'Follow',                                                                           //profile,
     'following' => 'Following',                                                                     //profile,
+    'follows_you' => 'Follows  you',                                                                //profile,
     'primary_language' => 'Primary Language',                                                       //accountinterface,
     'forgot_my_password' => 'I Forgot My Password',                                                 //email, login,
     'gallery' => 'Images',                                                                          //series,
