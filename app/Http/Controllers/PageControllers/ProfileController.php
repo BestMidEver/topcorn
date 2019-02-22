@@ -77,7 +77,7 @@ class ProfileController extends Controller
 
         $like_number = $like_number + $comment_like_number;
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name', 'follow_id'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name', 'follow_id', 'is_following_you'));
 	}
 
     public function get_rateds($rate, $user, $lang)
