@@ -41,7 +41,8 @@ class FollowController extends Controller
     public function store(Request $request)
     {
         $old_follow = Follow::where('subject_id', '=', Auth::id())
-        ->where('object_id', '=', $request->object_id);
+        ->where('object_id', '=', $request->object_id)
+        ->first();
         $follow = Follow::updateOrCreate(
             ['subject_id' => Auth::id(), 'object_id' => $request->object_id],
             ['is_deleted' => 0]
