@@ -14,7 +14,7 @@
 					</div>
 					<div class="d-flex flex-column">
 						<div class="d-flex flex-row align-items-center ml-2">
-							<h5><span class="yeswrap text-left text-light">{{ $profile_user_name }}</span> <small>{{ __('general.follows_you') }}</small></h5>
+							<h5><span class="yeswrap text-left text-light">{{ $profile_user_name }} <small>{{ __('general.follows_you') }}</small></span></h5>
 						</div>
 						<div class="d-flex flex-row align-items-center text-light ml-2">
 							@if($profile_watched_movie_number > 0)
@@ -56,7 +56,7 @@
 				</div>
 				<div class="d-flex flex-column">
 					<div class="d-flex flex-row align-items-center ml-2">
-						<h5><span class="yeswrap text-left text-light">{{ $profile_user_name }}</span> <small>{{ __('general.follows_you') }}</small></h5>
+						<h5><span class="yeswrap text-left text-light">{{ $profile_user_name }} <small>{{ __('general.follows_you') }}</small></span></h5>
 					</div>
 					<div class="d-flex flex-row align-items-center text-light ml-2">
 						@if($profile_watched_movie_number > 0)
