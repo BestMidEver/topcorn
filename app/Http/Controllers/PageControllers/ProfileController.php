@@ -357,7 +357,7 @@ class ProfileController extends Controller
             ->where('series_rateds.user_id', '=', Auth::id());
         })
         ->leftjoin('series_rateds as r2', function ($join) use ($user) {
-            $join->on('r2.movie_id', '=', 'movies.id')
+            $join->on('r2.series_id', '=', 'series.id')
             ->where('r2.user_id', '=', $user);
         })
         ->leftjoin('series_laters as l2', function ($join) {
@@ -498,7 +498,7 @@ class ProfileController extends Controller
             ->where('series_rateds.user_id', '=', Auth::id());
         })
         ->leftjoin('series_rateds as r2', function ($join) use ($user) {
-            $join->on('r2.movie_id', '=', 'movies.id')
+            $join->on('r2.series_id', '=', 'series.id')
             ->where('r2.user_id', '=', $user);
         })
         ->leftjoin('series_laters', function ($join) {
