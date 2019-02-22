@@ -53,14 +53,14 @@ class movieController extends Controller
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
-            $watch_togethers = DB::table('parties')
-            ->where('parties.watched_with_user_id', '=', Auth::id())
-            ->join('users', 'users.id', '=', 'parties.user_id')
+            $watch_togethers = DB::table('follows')
+            ->where('follows.object_id', '=', Auth::id())
+            ->join('users', 'users.id', '=', 'follows.subject_id')
             ->select(
                 'users.id as user_id',
                 'users.name as user_name'
             )
-            ->orderBy('parties.updated_at', 'desc')
+            ->orderBy('follows.updated_at', 'desc')
             ->paginate('50');
         }else{
             $target = '_self';
@@ -186,12 +186,12 @@ class movieController extends Controller
 
     public function send_movie_to_user(Request $request)
     {
-        $users = DB::table('parties')
-        ->where('parties.watched_with_user_id', '=', Auth::id())
-        ->whereIn('parties.user_id', $request->users)
-        ->join('users', 'users.id', '=', 'parties.user_id')
+        $users = DB::table('follows')
+        ->where('follows.object_id', '=', Auth::id())
+        ->whereIn('follows.subject_id', $request->users)
+        ->join('users', 'users.id', '=', 'follows.subject_id')
         ->where('users.when_feature', '>', 0)
-        ->select('parties.user_id as id', 'users.when_feature')
+        ->select('users.id as id', 'users.when_feature')
         ->get();
 
         foreach ($users as $user) {
