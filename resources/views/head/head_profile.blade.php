@@ -5,11 +5,12 @@ pass={
 	"lang":"{{ App::getlocale() }}",
 	"profile_user_id":"{{ $profile_user_id }}", 
 	"is_auth":"{{  Auth::Check()  }}",
+	"follow_id":{{ $follow_id }},
+	"is_following_you":{{ $is_following_you }},
 	@if(Auth::check())
 	"user_id":{{ Auth::id() }},
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
-	"watched_movie_number":{{ $watched_movie_number }},
-	"follow_id":{{ $follow_id }}
+	"watched_movie_number":{{ $watched_movie_number }}
 	@endif
 };
 </script>

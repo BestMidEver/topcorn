@@ -26,10 +26,13 @@ class ProfileController extends Controller
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '>', 0)->count();
             $follow_id = Follow::where('subject_id', Auth::id())->where('object_id', $profile_user_id)->where('is_deleted', 0)->first();
             $follow_id = $follow_id ? $follow_id->id : -1;
+            $is_following_you = Follow::where('object_id', Auth::id())->where('subject_id', $profile_user_id)->where('is_deleted', 0)->first();
+            $is_following_you = $is_following_you ? $is_following_you->id : -1;
         }else{
             $target = '_self';
             $watched_movie_number = null;
             $follow_id = -1;
+            $is_following_you = -1;
         }
         $profile_watched_movie_number = Rated::where('user_id', $profile_user_id)->where('rate', '>', 0)->count();
         $profile_watched_series_number = Series_rated::where('user_id', $profile_user_id)->where('rate', '>', 0)->count();
