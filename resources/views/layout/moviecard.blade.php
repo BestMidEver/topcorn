@@ -45,6 +45,16 @@
 								</div>
 							</div>
 						</div>
+						<div class="d-flex flex-row justify-content-center" ng-if="!isNaN(movie.profile_user_rate)">
+							<div ng-hide="page_variables.is_guest">
+								<div class="text-white">
+									<small>{{ __('general.according_to_user') }}</small>
+									<div>
+										<span><i class="fas fa-star" ng-class="{1:'text-danger', 2:'text-warning', 3:'text-secondary', 4:'text-info', 5:'text-success'}[movie.profile_user_rate]" ng-repeat="n in [] | range:movie.profile_user_rate"></i><i class="far fa-star text-muted" ng-repeat="n in [] | range:(5-movie.profile_user_rate)"></i></span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
