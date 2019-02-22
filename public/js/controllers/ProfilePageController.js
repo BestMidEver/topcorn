@@ -11,7 +11,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
-
+console.log(pass.follow_id);
 
 if(pass.profile_user_id.split("-")[0]!=pass.user_id) $scope.page_variables={is_guest:true, movies_or_series:'movies'};
 else $scope.page_variables={movies_or_series:'movies'};

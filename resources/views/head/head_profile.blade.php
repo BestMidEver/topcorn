@@ -8,7 +8,8 @@ pass={
 	@if(Auth::check())
 	"user_id":{{ Auth::id() }},
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
-	"watched_movie_number":{{ $watched_movie_number }}
+	"watched_movie_number":{{ $watched_movie_number }},
+	"follow_id":{{ $follow_id }}
 	@endif
 };
 </script>

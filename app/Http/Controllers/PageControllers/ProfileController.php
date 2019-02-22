@@ -23,9 +23,12 @@ class ProfileController extends Controller
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '>', 0)->count();
+            $follow_id = Follows::where('subject_id', Auth::id())->where('object_id', $profile_user_id)->where('is_deleted', 0)->first();
+            $follow_id = $follow_id ? $follow_id->id : null;
         }else{
             $target = '_self';
             $watched_movie_number = null;
+            $follow_id = null;
         }
         $profile_watched_movie_number = Rated::where('user_id', $profile_user_id)->where('rate', '>', 0)->count();
         $profile_watched_series_number = Series_rated::where('user_id', $profile_user_id)->where('rate', '>', 0)->count();
@@ -70,7 +73,7 @@ class ProfileController extends Controller
 
         $like_number = $like_number + $comment_like_number;
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name', 'follow_id'));
 	}
 
     public function get_rateds($rate, $user, $lang)
