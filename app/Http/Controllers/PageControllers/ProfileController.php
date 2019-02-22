@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
+use App\Model\Follow;
 use App\Model\Rated;
 use App\Model\Series_rated;
 use App\User;
@@ -23,7 +24,7 @@ class ProfileController extends Controller
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '>', 0)->count();
-            $follow_id = Follows::where('subject_id', Auth::id())->where('object_id', $profile_user_id)->where('is_deleted', 0)->first();
+            $follow_id = Follow::where('subject_id', Auth::id())->where('object_id', $profile_user_id)->where('is_deleted', 0)->first();
             $follow_id = $follow_id ? $follow_id->id : null;
         }else{
             $target = '_self';
