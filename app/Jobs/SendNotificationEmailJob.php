@@ -91,6 +91,17 @@ class SendNotificationEmailJob implements ShouldQueue
                 ->first();
 
                 Mail::to(User::find($notification->user_id))->send(new AiringToday($temp->series_id, $temp->name));
+            }else if($notification->mode == 8){
+                $temp = DB::table('notifications')
+                ->where('notifications.id', '=', $notification->id)
+                ->join('users', 'users.id', '=', 'notifications.multi_id')
+                ->select(
+                    'users.id as user_id',
+                    'users.name as user_name'
+                )
+                ->first();
+
+                Mail::to(User::find($notification->user_id))->send(new StartedFollowingYou($temp->user_id, $temp->user_name));
             }
         }
 
