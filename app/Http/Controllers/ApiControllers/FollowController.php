@@ -72,6 +72,7 @@ class FollowController extends Controller
             );
 
             if(User::find($request->object_id)->when_recommendation > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+            return 1;
         }
         return Response([
             'data' => $follow,
