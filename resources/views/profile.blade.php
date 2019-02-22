@@ -123,8 +123,8 @@
 	<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 		<div class="d-flex flex-row justify-content-between text-center">
 			@if($profile_user_id != Auth::user()->id || true)
-			<a class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" href="/recommendations/{{$profile_user_id}}"><div><i class="fa fa-plus"></i></div><span class="scrollmenu">{{ __('general.watch_together') }}</span></a>
-			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':false}" ng-click="toggle_follow()" ng-mouseenter="hovering_fol=true" ng-mouseleave="hovering_fol=false">
+			<a class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addblack" href="/recommendations/{{$profile_user_id}}"><div><i class="fa fa-plus"></i></div><span class="scrollmenu">{{ __('general.watch_together') }}</span></a>
+			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addblack" ng-class="{'text-warning':false}" ng-click="toggle_follow()" ng-mouseenter="hovering_fol=true" ng-mouseleave="hovering_fol=false">
 				<div><i class="fas fa-user-friends"></i></div>
 				<span class="scrollmenu" ng-show="page_variables.follow_id == -1">{{ __('general.follow') }}</span>
 				<span class="scrollmenu" ng-hide="page_variables.follow_id == -1"><span ng-hide="hovering_fol">{{ __('general.following') }}</span><span ng-show="hovering_fol">{{ __('general.unfollow') }}</span></span>
