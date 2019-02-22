@@ -28,7 +28,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.page_variables.follow_id == response.data.data.id;
+					$scope.page_variables.follow_id = response.data.data.id;
 					console.log($scope.page_variables.follow_id, response.data.data.id)
 				}
 			});
