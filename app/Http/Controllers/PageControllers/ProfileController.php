@@ -213,6 +213,10 @@ class ProfileController extends Controller
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->where('rateds.user_id', '=', Auth::id());
         })
+        ->leftjoin('rateds as r2', function ($join) use ($user) {
+            $join->on('r2.movie_id', '=', 'movies.id')
+            ->where('r2.user_id', '=', $user);
+        })
         ->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'movies.id')
             ->where('laters.user_id', '=', Auth::id());
@@ -232,7 +236,8 @@ class ProfileController extends Controller
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
-            'b2.id as ban_id'
+            'b2.id as ban_id',
+            'r2.rate as profile_user_rate'
         )
         ->orderBy('bans.updated_at', 'desc');
 
