@@ -158,7 +158,7 @@ class ProfileController extends Controller
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->where('rateds.user_id', '=', Auth::id());
         })
-        ->leftjoin('rateds as r2', function ($join) {
+        ->leftjoin('rateds as r2', function ($join) use ($user) {
             $join->on('r2.movie_id', '=', 'movies.id')
             ->where('r2.user_id', '=', $user);
         })
