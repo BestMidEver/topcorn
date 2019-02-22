@@ -63,7 +63,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			$scope.active_tab = 'get_lists';
 			break;
 		case '':
-			$scope.active_tab = 'get_rateds/5';
+			$scope.active_tab = 'get_rateds/all';
 			break;
 	}
 
