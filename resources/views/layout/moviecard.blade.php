@@ -45,7 +45,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="d-flex flex-row justify-content-center" ng-if="!isNaN(movie.profile_user_rate)">
+						<div class="d-flex flex-row justify-content-center" ng-if="!isNaN(movie.profile_user_rate) && page_variables.is_guest">
 							<div>
 								<div class="text-white">
 									<small>{{ __('general.according_to_user') }}</small>
