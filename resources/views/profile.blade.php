@@ -124,7 +124,7 @@
 		<div class="d-flex flex-row justify-content-between text-center">
 			@if($profile_user_id != Auth::user()->id || true)
 			<a class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" href="/recommendations/{{$profile_user_id}}"><div><i class="fa fa-plus"></i></div><span class="scrollmenu">{{ __('general.watch_together') }}</span></a>
-			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':false}" ng-click=""><div><span ng-show="true"><i class="fas fa-user-friends"></i></span><span ng-show="false"><i class="far fa-clock"></i></span></div><span class="scrollmenu">{{ __('general.follow') }}</span></button>
+			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addlater" ng-class="{'text-warning':false}" ng-click="toggle_follow()"><div><span ng-show="true"><i class="fas fa-user-friends"></i></span><span ng-show="false"><i class="far fa-clock"></i></span></div><span class="scrollmenu">{{ __('general.follow') }}</span></button>
 			@endif
 		</div>
 	</div>
