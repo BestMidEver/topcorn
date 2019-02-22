@@ -2,6 +2,41 @@ MyApp.factory('rate', function($http) {
 
 
 
+    add_follow = function(object_id) 
+    {
+        return $http({
+			method: 'POST',
+			url: '/api/follow',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+			data: {"object_id":object_id}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
+    un_follow = function(object_id) 
+    {
+        return $http({
+			method: 'DELETE',
+			url: '/api/follow/'+object_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     set_seen = function(notification_id, is_seen) 
     {
         return $http({
@@ -696,6 +731,8 @@ MyApp.factory('rate', function($http) {
 
 
     return {
+    	add_follow: add_follow,
+    	un_follow: un_follow,
     	set_seen: set_seen,
     	get_notifications: get_notifications,
     	send_movie_to_user: send_movie_to_user,

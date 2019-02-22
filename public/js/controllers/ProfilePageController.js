@@ -11,15 +11,35 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
-console.log(pass.follow_id);
+	console.log(pass.follow_id);
 
-if(pass.profile_user_id.split("-")[0]!=pass.user_id) $scope.page_variables={is_guest:true, movies_or_series:'movies'};
-else $scope.page_variables={movies_or_series:'movies'};
+	if(pass.profile_user_id.split("-")[0] != pass.user_id) $scope.page_variables = {is_guest:true, movies_or_series:'movies', follow_id:pass.follow_id};
+	else $scope.page_variables = {movies_or_series:'movies', follow_id:pass.follow_id};
 
-$scope.switch_seen_unseen = function(mode){
-	$scope.page_variables.active_dropdown_3=mode;
-	$scope.get_first_page_data();
-}
+	$scope.switch_seen_unseen = function(mode){
+		$scope.page_variables.active_dropdown_3=mode;
+		$scope.get_first_page_data();
+	}
+
+	$scope.toggle_follow = function(){
+		if($scope.page_variables.follow_id == -1){
+			rate.add_follow(pass.profile_user_id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 201){
+					$scope.page_variables.follow_id == response.data.data.id;
+				}
+			});
+		}else{
+			rate.un_follow(pass.profile_user_id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 204 || response.status == 404){
+					$scope.page_variables.follow_id = -1
+				}
+			});
+		}
+	}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
