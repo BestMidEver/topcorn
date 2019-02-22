@@ -121,7 +121,7 @@
 <div class="d-flex flex-wrap justify-content-between">
 	<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 		<div class="d-flex flex-row justify-content-between text-center">
-			@if($profile_user_id != Auth::user()->id || true)
+			@if($profile_user_id != Auth::user()->id)
 			<a class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addblack" href="/recommendations/{{$profile_user_id}}"><div><i class="fa fa-plus"></i></div><span class="scrollmenu">{{ __('general.watch_together') }}</span></a>
 			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addblack" ng-class="{'text-success':page_variables.follow_id != -1}" ng-click="toggle_follow()" ng-mouseenter="hovering_fol=true" ng-mouseleave="hovering_fol=false">
 				<div><i class="fas" ng-class="page_variables.follow_id == -1 ? 'fa-user' : 'fa-user-friends'"></i></div>
