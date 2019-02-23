@@ -582,41 +582,19 @@ class ProfileController extends Controller
 
     public function get_follows($user, $mode)
     {
-        $review = DB::table('follows')
+        $follows = DB::table('follows')
         ->where($mode == 'following' ? 'follows.subject_id':'follows.object_id', '=', $user)
         ->where('follows.is_deleted', '=', 0)
         ->leftjoin('users', 'users.id', '=', 'follows.subject_id')
-        ->leftjoin('users as u1', 'users.id', '=', 'follows.object_id');
-
-
-
-
-        $review = DB::table('reviews')
-        ->where('reviews.user_id', $user)
-        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
-        ->leftjoin('rateds', function ($join) {
-            $join->on('rateds.movie_id', '=', 'reviews.movie_series_id');
-            $join->on('rateds.user_id', '=', 'reviews.user_id')
-            ->where('reviews.mode', '=', 1);
-        })
-        ->leftjoin('series_rateds', function ($join) {
-            $join->on('series_rateds.series_id', '=', 'reviews.movie_series_id');
-            $join->on('series_rateds.user_id', '=', 'reviews.user_id')
-            ->where('reviews.mode', '=', 3);
-        })
-        ->groupBy('reviews.id')
+        ->leftjoin('users as u1', 'users.id', '=', 'follows.object_id')
+        ->orderBy('follows.updated_at', 'desc')
         ->select(
-            'reviews.id as review_id',
-            'reviews.review as content',
-            'reviews.mode as mode',
-            'rateds.rate as movie_rate',
-            'series_rateds.rate as series_rate',
-            'reviews.movie_series_id as movie_series_id',
-            DB::raw('COUNT(review_likes.id) as count'),
-            DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked')
-        )
-        ->orderBy('count', 'desc');
+            'users.id as subject_id',
+            'users.name as subject_name',
+            'u1.id as object_id',
+            'u1.name as object_name'
+        );
 
-        return $review->paginate(50);
+        return $follows->paginate(50);
     }
 }
