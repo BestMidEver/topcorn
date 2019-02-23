@@ -547,6 +547,64 @@ class ProfileController extends Controller
             ->where('reviews.mode', '=', 3);
         })
         ->groupBy('reviews.id')
+        ->orderBy('count', 'desc');
+
+        if(Auth::check()){
+            $review = $review
+            ->select(
+                'reviews.id as review_id',
+                'reviews.review as content',
+                'reviews.mode as mode',
+                'rateds.rate as movie_rate',
+                'series_rateds.rate as series_rate',
+                'reviews.movie_series_id as movie_series_id',
+                DB::raw('COUNT(review_likes.id) as count'),
+                DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked')
+            );
+        }else{
+            $review = $review
+            ->select(
+                'reviews.id as review_id',
+                'reviews.review as content',
+                'reviews.mode as mode',
+                'rateds.rate as movie_rate',
+                'series_rateds.rate as series_rate',
+                'reviews.movie_series_id as movie_series_id',
+                DB::raw('COUNT(review_likes.id) as count')
+            );
+        }
+
+        return $review->paginate(50);
+    }
+
+
+
+
+    public function get_follows($user, $mode)
+    {
+        $review = DB::table('follows')
+        ->where($mode == 'following' ? 'follows.subject_id':'follows.object_id', '=', $user)
+        ->where('follows.is_deleted', '=', 0)
+        ->leftjoin('users', 'users.id', '=', 'follows.subject_id')
+        ->leftjoin('users as u1', 'users.id', '=', 'follows.object_id')
+
+
+
+
+        $review = DB::table('reviews')
+        ->where('reviews.user_id', $user)
+        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'reviews.movie_series_id');
+            $join->on('rateds.user_id', '=', 'reviews.user_id')
+            ->where('reviews.mode', '=', 1);
+        })
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series_rateds.series_id', '=', 'reviews.movie_series_id');
+            $join->on('series_rateds.user_id', '=', 'reviews.user_id')
+            ->where('reviews.mode', '=', 3);
+        })
+        ->groupBy('reviews.id')
         ->select(
             'reviews.id as review_id',
             'reviews.review as content',
@@ -560,60 +618,5 @@ class ProfileController extends Controller
         ->orderBy('count', 'desc');
 
         return $review->paginate(50);
-    }
-
-
-
-
-    public function get_follows($user, $mode)
-    {
-        if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_name = Auth::User()->secondary_lang.'_name';
-            }else{
-                $hover_name = 'original_name';
-            }
-            $pagin=Auth::User()->pagination;
-        }else{
-            $hover_name = 'original_name';
-            $pagin=24;
-        }
-
-        $return_val = DB::table('series_bans')
-        ->where('series_bans.user_id', $user)
-        ->join('series', 'series.id', '=', 'series_bans.series_id')
-        ->leftjoin('series_rateds', function ($join) {
-            $join->on('series_rateds.series_id', '=', 'series.id')
-            ->where('series_rateds.user_id', '=', Auth::id());
-        })
-        ->leftjoin('series_rateds as r2', function ($join) use ($user) {
-            $join->on('r2.series_id', '=', 'series.id')
-            ->where('r2.user_id', '=', $user);
-        })
-        ->leftjoin('series_laters', function ($join) {
-            $join->on('series_laters.series_id', '=', 'series.id')
-            ->where('series_laters.user_id', '=', Auth::id());
-        })
-        ->leftjoin('series_bans as b2', function ($join) {
-            $join->on('b2.series_id', '=', 'series.id')
-            ->where('b2.user_id', Auth::id());
-        })
-        ->select(
-            'series.id as id',
-            'series.'.$lang.'_name as name',
-            'series.'.$hover_name.' as original_name',
-            'series.first_air_date as first_air_date',
-            'series.'.$lang.'_poster_path as poster_path',
-            'series.vote_average as vote_average',
-            'series.vote_count as vote_count',
-            'series_rateds.id as rated_id',
-            'series_rateds.rate as rate_code',
-            'series_laters.id as later_id',
-            'b2.id as ban_id',
-            'r2.rate as profile_user_rate'
-        )
-        ->orderBy('series_bans.updated_at', 'desc');
-
-        return $return_val->paginate($pagin);
     }
 }
