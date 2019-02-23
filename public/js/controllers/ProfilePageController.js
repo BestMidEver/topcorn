@@ -135,14 +135,15 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 
 	$scope.prepeare_reviews = function(reviews){
 		_.each(reviews, function(review){
-			review.content=$sce.trustAsHtml(review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>"));//replace(/\r\n/g , "<br>");
+			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
 			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>1){
-				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
+				review.url=$sce.trustAsHtml(review.content.replace(/<br>/g , " ").substring(0, 500)+'...');
 				review.id='long';
 			}else{
-				review.url=review.content;
+				review.url=$sce.trustAsHtml(review.content);
 				review.id='short';
 			}
+			$review.content=$sce.trustAsHtml(review.content);
 		});
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
