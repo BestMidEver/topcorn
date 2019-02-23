@@ -253,7 +253,7 @@
 </div>
 
 <div id="scroll_top_point">
-	<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && listes.length==0) || is_waiting">
+	<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && listes.length==0) || (active_tab == 'get_follows' && page_variables.follows.length==0) || is_waiting">
 		<div class="text-muted text-center" ng-if="!is_waiting">{{ __('general.no_result') }}</div><div class="text-muted text-center" ng-if="is_waiting">{{ __('general.searching') }}</div>
 	</div>
 	@include('layout.moviecard')
