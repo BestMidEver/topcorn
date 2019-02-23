@@ -163,11 +163,11 @@
 		</li>
 		@if(Auth::check())
 			@if(Auth::id()==7)
-		<li class="nav-item" ng-show="page_variables.movies_or_series=='movies'">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">Reviews</button>
+		<li class="nav-item">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_reviews'}" ng-click="active_tab='get_reviews';get_first_page_data();">Reviews</button>
 		</li>
-		<li class="nav-item" ng-show="page_variables.movies_or_series=='movies'">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">Follows</button>
+		<li class="nav-item">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_follows'}" ng-click="active_tab='get_follows';follows_mode='following';get_first_page_data();">Follows</button>
 		</li>
 			@endif
 		@endif

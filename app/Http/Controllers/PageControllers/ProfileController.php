@@ -575,10 +575,9 @@ class ProfileController extends Controller
                 'reviews.id as review_id',
                 'reviews.review as content',
                 'reviews.mode as mode',
-                'rateds.rate as movie_rate',
-                'series_rateds.rate as series_rate',
                 'reviews.movie_series_id as movie_series_id',
-                'movies.'.App::getlocale().'_title as movie_title',
+                DB::raw('IF(movies.id>0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) as movie_title'),
+                DB::raw('IF(movies.id>0, rateds.rate, series_rateds.rate) as rate'),
                 DB::raw('COUNT(review_likes.id) as count')
             );
         }
