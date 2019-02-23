@@ -137,7 +137,7 @@
 
 
 <div class="scrollmenu mt-3 tab2">
-	<div class="btn-group btn-group d-block mb-2 mb-md-0 text-center" role="group" aria-label="Movies or Series">
+	<div class="btn-group d-block mb-2 mb-md-0 text-center" role="group" aria-label="Movies or Series">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
 	</div>

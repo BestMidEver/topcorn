@@ -170,7 +170,7 @@
 
 							
 							<div class="input-group col mt-3 mt-md-0">
-								<div class="input-group-prepend pl-md-3">
+								<div class="input-group-prepend btn-group pl-md-3">
 									<button class="btn btn-outline-secondary" type="button">Movies</button>
 									<button class="btn btn-outline-secondary" type="button">Series</button>
 								</div>
