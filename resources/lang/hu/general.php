@@ -90,6 +90,7 @@ return [
     'finale_date' => 'Utolsó epizód',                                                                   //series,
     'first_episode' => 'Első epizód',                                                                   //profile,series,
     'follow' => 'Follow',                                                                           //profile,  ///////////////////
+    'followers' => 'Followers',                                                                     //profile,/////////////
     'following' => 'Following',                                                                     //profile,/////////////////////////
     'follows_you' => 'Follows  you',                                                                //profile,//////////////////
     'primary_language' => 'Elsődleges nyelv',                                                           //accountinterface,

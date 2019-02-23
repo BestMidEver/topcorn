@@ -90,6 +90,7 @@ return [
     'finale_date' => 'Bitiş',                                                                           //series,
     'first_episode' => 'Başlangıç',                                                                     //profile,series,
     'follow' => 'Takip Et',                                                                             //profile,
+    'followers' => 'Takipçiler',                                                                        //profile,
     'following' => 'Takiptesin',                                                                        //profile,
     'follows_you' => 'Seni takip ediyor',                                                               //profile,
     'primary_language' => 'Ana Dil',                                                                    //accountinterface,
