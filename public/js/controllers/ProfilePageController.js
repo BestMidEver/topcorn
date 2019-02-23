@@ -143,7 +143,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				review.url=$sce.trustAsHtml(review.content);
 				review.id='short';
 			}
-			$review.content=$sce.trustAsHtml(review.content);
+			review.content=$sce.trustAsHtml(review.content);
 		});
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
