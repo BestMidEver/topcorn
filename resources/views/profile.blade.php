@@ -140,6 +140,13 @@
 	<div class="btn-group btn-group d-block mb-2 mb-md-0 text-center" role="group" aria-label="Movies or Series">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
+		@if(Auth::check())
+			@if(Auth::id()==7)
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='lists'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('lists')">{{ __('general.p_lists') }}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='reviews'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('reviews')">{{ __('general.p_reviews') }}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='follows'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('follows')">{{ __('general.p_follows') }}</button>
+			@endif
+		@endif
 	</div>
 </div>
 
