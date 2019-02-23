@@ -710,7 +710,7 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_reviews = function(user_id) 
+    get_profile_reviews = function(user_id) 
     {
         return $http({
 			method: 'GET',

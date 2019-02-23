@@ -84,7 +84,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				$scope.is_waiting=false;
 			});
     	}else if($scope.active_tab == 'get_reviews'){
-    		rate.get_reviews(pass.profile_user_id)
+    		rate.get_profile_reviews(pass.profile_user_id)
 			.then(function(response){
 				console.log(response.data)
 				$scope.reviews=response.data;
