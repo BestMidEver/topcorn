@@ -434,6 +434,29 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 			});
 		}
 	};
+
+	$scope.like_review=function(index){
+		console.log(index)
+		if($scope.page_variables.reviews[index].is_liked == 0){
+			rate.add_review_like($scope.page_variables.reviews[index].review_id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 201){
+					$scope.page_variables.reviews[index].is_liked = 1;
+					$scope.page_variables.reviews[index].count ++;
+				}
+			});
+		}else{
+			rate.un_review_like($scope.page_variables.reviews[index].review_id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 204 || response.status == 404){
+					$scope.page_variables.reviews[index].is_liked = 0;
+					$scope.page_variables.reviews[index].count --;
+				}
+			});
+		}
+	}
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// SAME PART //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
