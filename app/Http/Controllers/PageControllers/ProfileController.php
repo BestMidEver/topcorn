@@ -561,10 +561,9 @@ class ProfileController extends Controller
                 'reviews.id as review_id',
                 'reviews.review as content',
                 'reviews.mode as mode',
-                'rateds.rate as movie_rate',
-                'series_rateds.rate as series_rate',
                 'reviews.movie_series_id as movie_series_id',
                 DB::raw('IF(movies.id>0, movies.'.Auth::User()->lang.'_title, series.'.Auth::User()->lang.'_name) as movie_title'),
+                DB::raw('IF(movies.id>0, rateds.rate, series_rateds.rate) as rate'),
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked')
             );
