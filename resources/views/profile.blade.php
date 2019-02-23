@@ -140,13 +140,6 @@
 	<div class="btn-group btn-group d-block mb-2 mb-md-0 text-center" role="group" aria-label="Movies or Series">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
-		@if(Auth::check())
-			@if(Auth::id()==7)
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='lists'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('lists')">{{ __('general.p_lists') }}</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='reviews'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('reviews')">{{ __('general.p_reviews') }}</button>
-		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='follows'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('follows')">{{ __('general.p_follows') }}</button>
-			@endif
-		@endif
 	</div>
 </div>
 
@@ -168,6 +161,16 @@
 		<li class="nav-item" ng-show="page_variables.movies_or_series=='movies'">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">{{ __('general.lists') }}</button>
 		</li>
+		@if(Auth::check())
+			@if(Auth::id()==7)
+		<li class="nav-item" ng-show="page_variables.movies_or_series=='movies'">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">Reviews</button>
+		</li>
+		<li class="nav-item" ng-show="page_variables.movies_or_series=='movies'">
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">Follows</button>
+		</li>
+			@endif
+		@endif
 	</ul>
 </div>
 <!-- Tabs Button -->
