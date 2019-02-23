@@ -566,6 +566,8 @@ class ProfileController extends Controller
                 'reviews.movie_series_id as movie_series_id',
                 DB::raw('IF(movies.id>0, movies.'.Auth::User()->lang.'_title, series.'.Auth::User()->lang.'_name) as movie_title'),
                 DB::raw('IF(movies.id>0, rateds.rate, series_rateds.rate) as rate'),
+                DB::raw('IF(movies.id>0, movies.original_title, series.original_name) as original_title'),
+                DB::raw('IF(movies.id>0, movies.release_date, series.first_air_date) as release_date'),
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked')
             );
@@ -578,6 +580,8 @@ class ProfileController extends Controller
                 'reviews.movie_series_id as movie_series_id',
                 DB::raw('IF(movies.id>0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) as movie_title'),
                 DB::raw('IF(movies.id>0, rateds.rate, series_rateds.rate) as rate'),
+                DB::raw('IF(movies.id>0, movies.original_title, series.original_name) as original_title'),
+                DB::raw('IF(movies.id>0, movies.release_date, series.first_air_date) as release_date'),
                 DB::raw('COUNT(review_likes.id) as count')
             );
         }
