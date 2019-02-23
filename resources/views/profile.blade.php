@@ -271,7 +271,7 @@
 			@endif
 		@endif
 	</div>
-	<div class="container-fluid">
+	<div class="container-fluid" ng-if="active_tab=='get_reviews'">
 		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews" ng-hide="review.content==''">
 			<div class="d-flex justify-content-between">
 				<div class="d-inline"><a class="h6 pb-2 text-dark d-inline" ng-href="/@{{review.mode==1?'movie':'series'}}/@{{review.movie_series_id}}" data-toggle="tooltip" data-placement="top" title="@{{review.original_title}}">@{{review.movie_title}} <small class="text-muted" ng-if="review.release_date.length > 0"><em>(@{{review.release_date.substring(0, 4)}})</em></small></a> <span class="ml-2" ng-if="review.rate>0"><i class="fas fa-star" ng-class="{1:'text-danger', 2:'text-warning', 3:'text-secondary', 4:'text-info', 5:'text-success'}[review.rate]" ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star text-muted" ng-repeat="n in [] | range:(5-review.rate)"></i></span></div>
@@ -307,7 +307,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="p-5" ng-if="!page_variables.reviews.length>0">
+	<div class="p-5" ng-if="!page_variables.reviews.length>0 && active_tab=='get_reviews'">
 		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
 	</div>
 </div>
