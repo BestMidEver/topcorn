@@ -1,4 +1,4 @@
-MyApp.controller('ProfilePageController', function($scope, $http, $sce, $anchorScroll, rate)
+MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll, rate)
 {
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
@@ -88,7 +88,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $sce, $anchorS
 			.then(function(response){
 				console.log(response.data)
 				$scope.page_variables.reviews=response.data.data;
-				$scope.prepeare_reviews($scope.page_variables.reviews);
+				
 				$(".tooltip").hide();
 				$scope.is_waiting=false;
 			});
