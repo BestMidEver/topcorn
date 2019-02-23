@@ -96,7 +96,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     		rate.get_follows(pass.profile_user_id, $scope.follows_mode)
 			.then(function(response){
 				console.log(response.data)
-				$scope.follows=response.data;
+				$scope.page_variables.follows=response.data.data;
 				$(".tooltip").hide();
 				$scope.is_waiting=false;
 			});
