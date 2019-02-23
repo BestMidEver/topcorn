@@ -772,7 +772,7 @@ MyApp.factory('rate', function($http) {
     	send_movie_to_user: send_movie_to_user,
     	get_quick_rate: get_quick_rate,
     	get_watched_movie_number: get_watched_movie_number,
-    	get_reviews: get_reviews,
+    	get_profile_reviews: get_profile_reviews,
     	add_review: add_review,
     	un_review: un_review,
     	add_review_like: add_review_like,
