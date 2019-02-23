@@ -586,7 +586,7 @@ class ProfileController extends Controller
         ->where($mode == 'following' ? 'follows.subject_id':'follows.object_id', '=', $user)
         ->where('follows.is_deleted', '=', 0)
         ->leftjoin('users', 'users.id', '=', 'follows.subject_id')
-        ->leftjoin('users as u1', 'users.id', '=', 'follows.object_id')
+        ->leftjoin('users as u1', 'u1.id', '=', 'follows.object_id')
         ->orderBy('follows.updated_at', 'desc')
         ->select(
             'users.id as subject_id',
