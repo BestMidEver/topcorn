@@ -601,10 +601,10 @@ class ProfileController extends Controller
         ->leftjoin('users as u1', 'u1.id', '=', 'follows.object_id')
         ->orderBy('follows.updated_at', 'desc')
         ->select(
-            $mode == 'following' ? 'users.id':'u1.id'.' as user_id',
-            $mode == 'following' ? 'users.name':'u1.name'.' as name',
-            $mode == 'following' ? 'users.facebook_profile_pic':'u1.facebook_profile_pic'.' as facebook_profile_path',
-            $mode == 'following' ? 'users.profile_pic':'u1.profile_pic'.' as profile_path'
+            $mode != 'following' ? 'users.id':'u1.id'.' as user_id',
+            $mode != 'following' ? 'users.name':'u1.name'.' as name',
+            $mode != 'following' ? 'users.facebook_profile_pic':'u1.facebook_profile_pic'.' as facebook_profile_path',
+            $mode != 'following' ? 'users.profile_pic':'u1.profile_pic'.' as profile_path'
         );
 
         return $follows->paginate(50);
