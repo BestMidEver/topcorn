@@ -557,7 +557,6 @@ class ProfileController extends Controller
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked')
         )
-        ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
 
         return $review->paginate(50);
