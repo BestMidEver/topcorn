@@ -222,13 +222,13 @@
 </div>
 
 <div class="container-fluid" ng-show="active_tab=='get_follows' && !is_waiting">
-	<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.followings') }}';">
+	<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.following') }}';">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{follow_mod_title}}
 		</button>
 		<div class="dropdown-menu">
 			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.following') }}';follows_mode='following';get_first_page_data();">{{ __('general.following') }}</button>
-			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.follower') }}';follows_mode='follower';get_first_page_data();">{{ __('general.follower') }}</button>
+			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.followers') }}';follows_mode='followers';get_first_page_data();">{{ __('general.followers') }}</button>
 		</div>
 	</div>
 </div>
@@ -270,6 +270,45 @@
 		</div>
 			@endif
 		@endif
+	</div>
+	<div class="container-fluid">
+		<div ng-if="page_variables.reviews.length>0" class="py-4" ng-repeat="review in page_variables.reviews" ng-hide="review.content==''">
+			<div class="d-flex justify-content-between">
+				<div class="d-inline"><a class="h6 pb-2 text-dark d-inline" ng-href="/@{{review.mode==1?'movie':'series'}}/@{{review.movie_series_id}}">@{{review.movie_title}}</a> <span class="ml-2" ng-if="review.rate>0"><i class="fas fa-star" ng-class="{1:'text-danger', 2:'text-warning', 3:'text-secondary', 4:'text-info', 5:'text-success'}[review.rate]" ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star text-muted" ng-repeat="n in [] | range:(5-review.rate)"></i></span></div>
+				<div class="h6">
+					<button class="btn btn-outline-secondary btn-sm border-0 mt-0 addseen opacity-1" ng-disabled="!page_variables.is_guest" ng-click="like_review($index)">
+						<div ng-class="{'text-success':review.count>0}"><i class="fa-heart" ng-class="{0:'far', 1:'fas', undefined:'far'}[review.is_liked]"></i><span ng-if="review.count>0"> @{{review.count}}</span></div>
+					</button>
+				</div>
+			</div>
+			<div id="@{{'accordion'+$index}}">
+				<div ng-if="review.id == 'long'">
+					<div id="@{{'collapse'+$index+'a'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse">
+						<div>
+							<div ng-bind-html="review.content"></div>
+						</div>
+						<div class="text-center pt-0">
+							<button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'b'}}" aria-expanded="true"><i class="fa fa-angle-up"></i></button>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div id="@{{'collapse'+$index+'b'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse show">
+						<div>
+							<div ng-bind-html="review.url"></div>
+						</div>
+						<div ng-if="review.id == 'long'">
+							<div class="text-center pt-1">
+								<button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="p-5" ng-if="!page_variables.reviews.length>0">
+		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
 	</div>
 </div>
 @include('layout.pagination', ['suffix' => ''])

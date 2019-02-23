@@ -87,7 +87,8 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     		rate.get_profile_reviews(pass.profile_user_id)
 			.then(function(response){
 				console.log(response.data)
-				$scope.reviews=response.data;
+				$scope.page_variables.reviews=response.data.data;
+				$scope.prepeare_reviews($scope.page_variables.reviews);
 				$(".tooltip").hide();
 				$scope.is_waiting=false;
 			});
@@ -130,6 +131,19 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 	$scope.switch_page_mode = function(mode){
 		$scope.page_variables.movies_or_series = mode;
 		$scope.get_first_page_data()
+	}
+
+	$scope.prepeare_reviews = function(reviews){
+		_.each(reviews, function(review){
+			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
+			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>1){
+				review.url=review.content.replace(/<br>/g , " ").substring(0, 500)+'...';
+				review.id='long';
+			}else{
+				review.url=review.content;
+				review.id='short';
+			}
+		});
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
