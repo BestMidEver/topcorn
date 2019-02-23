@@ -199,6 +199,8 @@ Route::get('api/get_bans/{user}/{lang}','PageControllers\ProfileController@get_b
 	->where('lang', config('constants.supported_languages.for_web_php'));
 Route::get('api/get_series_bans/{user}/{lang}','PageControllers\ProfileController@get_series_bans')
 	->where('lang', config('constants.supported_languages.for_web_php'));
+Route::get('api/get_reviews/{user}','PageControllers\ProfileController@get_reviews');
+Route::get('api/get_follows/{user}/{mode}','PageControllers\ProfileController@get_follows');
 Route::get('api/get_lists/{list_mode}/{user}','PageControllers\ProfileController@get_lists');
 Route::apiResource('api/follow','ApiControllers\FollowController');
 //////////////////////////////////////////////////////////////////////////////////////////

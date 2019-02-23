@@ -68,16 +68,14 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 	}
 
 	$scope.list_mode='created_ones';
+	$scope.follows_mode='following';
 	$scope.is_waiting=false;
     $scope.get_page_data = function()
     {
     	$scope.movies=null;
-    	if($scope.active_tab=='get_laters' && $scope.page_variables.movies_or_series == 'series') temp=$scope.active_tab+'/'+$scope.page_variables.active_dropdown_3;
-    	else temp=$scope.active_tab;
 		$scope.pagination=0;
 		$scope.is_waiting=true;
     	if($scope.active_tab == 'get_lists'){
-    		$scope.movies=null;
     		rate.get_list_data($scope.list_mode, pass.profile_user_id)
 			.then(function(response){
 				console.log(response.data)
@@ -85,7 +83,25 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 				$(".tooltip").hide();
 				$scope.is_waiting=false;
 			});
+    	}else if($scope.active_tab == 'get_reviews'){
+    		rate.get_reviews(pass.profile_user_id)
+			.then(function(response){
+				console.log(response.data)
+				$scope.reviews=response.data;
+				$(".tooltip").hide();
+				$scope.is_waiting=false;
+			});
+    	}else if($scope.active_tab == 'get_follows'){
+    		rate.get_follows(pass.profile_user_id, $scope.follows_mode)
+			.then(function(response){
+				console.log(response.data)
+				$scope.follows=response.data;
+				$(".tooltip").hide();
+				$scope.is_waiting=false;
+			});
     	}else{
+	    	if($scope.active_tab == 'get_laters' && $scope.page_variables.movies_or_series == 'series') temp=$scope.active_tab+'/'+$scope.page_variables.active_dropdown_3;
+	    	else temp=$scope.active_tab;
     		rate.get_profile_data(temp, pass.profile_user_id, $scope.page, $scope.page_variables.movies_or_series)
 			.then(function(response){
 				console.log(response.data.data, $scope.page_variables.movies_or_series)
@@ -105,18 +121,15 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
     {
     	$scope.movies=null;
     	$scope.listes=null;
+    	$scope.reviews=null;
     	$scope.page=1;
     	$scope.get_page_data();
 	}
 	$scope.get_first_page_data();
 
 	$scope.switch_page_mode = function(mode){
-		if(mode == 'movies'){
-			$scope.page_variables.movies_or_series = 'movies';
-		}else{
-			$scope.page_variables.movies_or_series = 'series';
-		}
-		$scope.get_page_data()
+		$scope.page_variables.movies_or_series = mode;
+		$scope.get_first_page_data()
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////

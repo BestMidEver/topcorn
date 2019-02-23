@@ -710,6 +710,40 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_reviews = function(user_id) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_reviews/'+user_id,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
+    get_follows = function(user_id, mode) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_follows/'+user_id+'/'+mode,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			}
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     get_profile_data = function(active_tab, profile_user_id, page, mode) 
     {
     	temp = active_tab.split('get_');
@@ -768,6 +802,8 @@ MyApp.factory('rate', function($http) {
     	search_listes: search_listes,
     	suck_movie: suck_movie,
     	get_list_data: get_list_data,//Kullanıcının listelerini getirir.
+    	get_reviews: get_reviews,
+    	get_follows: get_follows,
     	get_profile_data: get_profile_data,//Kullanıcının izlediği/oyladığı filmleri getirir.
     	tt_manipulate: tt_manipulate,
     };
