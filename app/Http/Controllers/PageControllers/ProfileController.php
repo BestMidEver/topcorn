@@ -538,13 +538,13 @@ class ProfileController extends Controller
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'reviews.movie_series_id');
-            $join->on('rateds.user_id', '=', 'reviews.user_id');
-            $join->on('reviews.mode', '=', 1);
+            $join->on('rateds.user_id', '=', 'reviews.user_id')
+            ->where('reviews.mode', '=', 1);
         })
         ->leftjoin('series_rateds', function ($join) {
             $join->on('series_rateds.series_id', '=', 'reviews.movie_series_id');
-            $join->on('series_rateds.user_id', '=', 'reviews.user_id');
-            $join->on('reviews.mode', '=', 3);
+            $join->on('series_rateds.user_id', '=', 'reviews.user_id')
+            ->where('reviews.mode', '=', 3);
         })
         ->groupBy('reviews.id')
         ->select(
