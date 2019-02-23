@@ -190,7 +190,7 @@
 
 
 
-<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && !is_waiting">
+<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows' && !is_waiting">
 	<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.all') }}'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{mod_title}}
@@ -217,6 +217,18 @@
 		<div class="dropdown-menu">
 			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
 			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';list_mode='liked_ones';get_first_page_data();">{{ __('general.liked_ones') }}</button>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" ng-show="active_tab=='get_follows' && !is_waiting">
+	<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.followings') }}';">
+		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			@{{follow_mod_title}}
+		</button>
+		<div class="dropdown-menu">
+			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.following') }}';follows_mode='following';get_first_page_data();">{{ __('general.followings') }}</button>
+			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.follower') }}';follows_mode='follower';get_first_page_data();">{{ __('general.followers') }}</button>
 		</div>
 	</div>
 </div>
