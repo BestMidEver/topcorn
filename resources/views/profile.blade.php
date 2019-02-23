@@ -222,7 +222,7 @@
 </div>
 
 <div class="container-fluid" ng-show="active_tab=='get_follows' && !is_waiting">
-	<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.following') }}';">
+	<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.followings') }}';">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			@{{follow_mod_title}}
 		</button>
