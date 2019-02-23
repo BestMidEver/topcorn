@@ -295,7 +295,7 @@
 				<div>
 					<div id="@{{'collapse'+$index+'b'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse show">
 						<div>
-							<div ng-bind-html=""></div>
+							<div ng-bind-html="review.url"></div>
 						</div>
 						<div ng-if="review.id == 'long'">
 							<div class="text-center pt-1">
