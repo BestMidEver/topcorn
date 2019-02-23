@@ -542,7 +542,8 @@ class ProfileController extends Controller
             ->where('reviews.mode', '=', 1);
         })
         ->leftjoin('movies', function ($join) {
-            $join->on('rateds.movie_id', '=', 'movies.id');
+            $join->on('movies.id', '=', 'reviews.movie_series_id')
+            ->where('reviews.mode', '=', 1);
         })
         ->leftjoin('series_rateds', function ($join) {
             $join->on('series_rateds.series_id', '=', 'reviews.movie_series_id');
@@ -550,7 +551,8 @@ class ProfileController extends Controller
             ->where('reviews.mode', '=', 3);
         })
         ->leftjoin('series', function ($join) {
-            $join->on('series_rateds.series_id', '=', 'series.id');
+            $join->on('series.id', '=', 'reviews.movie_series_id')
+            ->where('reviews.mode', '=', 3);
         })
         ->groupBy('reviews.id')
         ->orderBy('count', 'desc');
