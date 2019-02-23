@@ -549,6 +549,9 @@ class ProfileController extends Controller
             $join->on('series_rateds.user_id', '=', 'reviews.user_id')
             ->where('reviews.mode', '=', 3);
         })
+        ->leftjoin('series', function ($join) {
+            $join->on('series_rateds.movie_id', '=', 'series.id');
+        })
         ->groupBy('reviews.id')
         ->orderBy('count', 'desc');
 
@@ -561,7 +564,7 @@ class ProfileController extends Controller
                 'rateds.rate as movie_rate',
                 'series_rateds.rate as series_rate',
                 'reviews.movie_series_id as movie_series_id',
-                'movies.'.Auth::User()->lang.'_title as movie_title',
+                DB::raw('IF(movies.id>0, movies.'.Auth::User()->lang.'_title, series.'.Auth::User()->lang.'_name) as movie_title'),
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked')
             );
