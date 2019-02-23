@@ -92,6 +92,7 @@ return [
     'follow' => 'Takip Et',                                                                             //profile,
     'followers' => 'Takipçiler',                                                                        //profile,
     'following' => 'Takiptesin',                                                                        //profile,
+    'followings' => 'Takip Edilenler',                                                                  //profile,
     'follows_you' => 'Seni takip ediyor',                                                               //profile,
     'primary_language' => 'Ana Dil',                                                                    //accountinterface,
     'forgot_my_password' => 'Şifremi Unuttum',                                                          //email, login,

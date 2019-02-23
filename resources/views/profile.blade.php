@@ -227,7 +227,7 @@
 			@{{follow_mod_title}}
 		</button>
 		<div class="dropdown-menu">
-			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.following') }}';follows_mode='following';get_first_page_data();">{{ __('general.following') }}</button>
+			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.following') }}';follows_mode='following';get_first_page_data();">{{ __('general.followings') }}</button>
 			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.followers') }}';follows_mode='followers';get_first_page_data();">{{ __('general.followers') }}</button>
 		</div>
 	</div>

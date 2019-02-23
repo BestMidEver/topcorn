@@ -92,6 +92,7 @@ return [
     'follow' => 'Follow',                                                                           //profile,  ///////////////////
     'followers' => 'Followers',                                                                     //profile,/////////////
     'following' => 'Following',                                                                     //profile,/////////////////////////
+    'followings' => 'Following',                                                                    //profile,//////////////////////
     'follows_you' => 'Follows  you',                                                                //profile,//////////////////
     'primary_language' => 'Elsődleges nyelv',                                                           //accountinterface,
     'forgot_my_password' => 'Elfelejtettem a jelszavam',                                                //email, login,
