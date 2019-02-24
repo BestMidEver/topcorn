@@ -155,8 +155,10 @@ class listController extends Controller
 
         if(Auth::User()->hover_title_language == 0){
             $hover_title = Auth::User()->secondary_lang.'_title';
+            $hover_name = Auth::User()->secondary_lang.'_name';
         }else{
             $hover_title = 'original_title';
+            $hover_name = 'original_name';
         }
 
         $id_dash_title = $id;
@@ -176,13 +178,15 @@ class listController extends Controller
 
                 $movies = $temp
                 ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
-                ->join('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->leftjoin('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->leftjoin('series', 'listitems.movie_id', '=', 'series.id')
                 ->select(
                     'listitems.movie_id',
                     'listitems.position',
                     'listitems.explanation',
                     'listitems.mode',
-                    'movies.'.$hover_title.' as original_title',
+                    DB::raw('IF(listitems.mode==0, movies.'.$hover_title.' AS original_title, series.'.$hover_name.' AS original_title)'),
+                    //'movies.'.$hover_title.' as original_title',
                     'movies.'.App::getlocale().'_title as movie_title',
                     'movies.'.App::getlocale().'_poster_path as poster_path',
                     'movies.'.App::getlocale().'_plot as overview',
