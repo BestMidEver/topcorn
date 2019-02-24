@@ -676,11 +676,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    suck_movie = function(movie_id) 
+    suck_movie_series = function(movie_series_id, mode) 
     {
         return $http({
 			method: 'GET',
-			url: '/api/suck_movie/'+movie_id,
+			url: '/api/suck_'+mode!=1?'movie':'series'+'/'+movie_series_id,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'

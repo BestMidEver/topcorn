@@ -243,6 +243,7 @@ Route::get('api/search_users/{text?}','ApiControllers\SearchController@search_us
 Route::get('api/get_quick_rate/{lang}','ApiControllers\RatedController@get_quick_rate');
 Route::get('api/get_watched_movie_number','ApiControllers\RatedController@get_watched_movie_number');
 Route::get('api/suck_movie/{movie_id}','ApiControllers\JobController@suck_movie');
+Route::get('api/suck_series/{series_id}','ApiControllers\JobController@suck_series');
 Route::post('api/tooltip','ApiControllers\LevelController@tt_manipulate');
 Route::apiResource('api/series_bans','ApiControllers\SeriesBanController');
 Route::apiResource('api/series_laters','ApiControllers\SeriesLaterController');

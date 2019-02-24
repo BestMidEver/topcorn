@@ -17,7 +17,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		if(temp.length == 0){
 			movie.movies='';
 		}else{
-			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1, movie.mode == 0 ? 'movies':'tv')
+			rate.search_movies(pass.constants_api_key, pass.lang, temp, 1, movie.mode != 1 ? 'movies':'tv')
 			.then(function(response){
 				console.log(response.data);
 				movie.movies=response.data.results.slice(0, 10);
@@ -27,12 +27,12 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 
 	$scope.choose_movie = function(index, movie){
 		console.log(index, movie);
-		rate.suck_movie(movie.id);
+		rate.suck_movie(movie.id, movie.mode);
 		$scope.movies[index].movie_id=movie.id;
 		$scope.movies[index].searchmode=false;
 		$scope.movies[index].overview=movie.overview;
 		$scope.movies[index].poster_path=movie.poster_path;
-		$scope.movies[index].movie_title=movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '');
+		$scope.movies[index].movie_title=mode!=1?(movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '')):(movie.name + (movie.first_air_date.length > 0 ? ' ('+movie.first_air_date.substring(0, 4)+')' : ''));
 	}
 
 	$scope.refresh_list = function(){
