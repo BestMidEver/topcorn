@@ -34,11 +34,14 @@ class listController extends Controller
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
             if(Auth::User()->hover_title_language == 0){
                 $hover_title = Auth::User()->secondary_lang.'_title';
+                $hover_name = Auth::User()->secondary_lang.'_name';
             }else{
                 $hover_title = 'original_title';
+                $hover_name = 'original_name';
             }
         }else{
             $hover_title = 'original_title';
+            $hover_title = 'original_name';
             $target = '_self';
             $watched_movie_number = null;
         }
@@ -95,10 +98,10 @@ class listController extends Controller
                     'listitems.position',
                     'listitems.explanation',
                     'listitems.mode',
-                    'movies.'.$hover_title.' as original_title',
-                    'movies.'.App::getlocale().'_title as title',
-                    'movies.'.App::getlocale().'_poster_path as poster_path',
-                    'movies.'.App::getlocale().'_plot as overview',
+                    DB::raw('IF(listitems.mode=0, movies.'.$hover_title.', series.'.$hover_name.') AS original_title'),
+                    DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) AS movie_title'),
+                    DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_poster_path, series.'.App::getlocale().'_poster_path) AS poster_path'),
+                    DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_plot, series.'.App::getlocale().'_plot) AS overview'),
                     'movies.release_date',
                     'rateds.id as rated_id',
                     'rateds.rate as rate_code',
@@ -117,10 +120,10 @@ class listController extends Controller
                     'listitems.position',
                     'listitems.explanation',
                     'listitems.mode',
-                    'movies.'.$hover_title.' as original_title',
-                    'movies.'.App::getlocale().'_title as title',
-                    'movies.'.App::getlocale().'_poster_path as poster_path',
-                    'movies.'.App::getlocale().'_plot as overview',
+                    DB::raw('IF(listitems.mode=0, movies.'.$hover_title.', series.'.$hover_name.') AS original_title'),
+                    DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) AS movie_title'),
+                    DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_poster_path, series.'.App::getlocale().'_poster_path) AS poster_path'),
+                    DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_plot, series.'.App::getlocale().'_plot) AS overview'),
                     'movies.release_date'
                 )
                 ->get()
