@@ -104,7 +104,7 @@ class listController extends Controller
                     DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) AS movie_title'),
                     DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_poster_path, series.'.App::getlocale().'_poster_path) AS poster_path'),
                     DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_plot, series.'.App::getlocale().'_plot) AS overview'),
-                    'movies.release_date',
+                    DB::raw('IF(listitems.mode=0, movies.release_date, series.first_air_date) AS release_date'),
                     'rateds.id as rated_id',
                     'rateds.rate as rate_code',
                     'laters.id as later_id',
@@ -127,7 +127,7 @@ class listController extends Controller
                     DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) AS movie_title'),
                     DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_poster_path, series.'.App::getlocale().'_poster_path) AS poster_path'),
                     DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_plot, series.'.App::getlocale().'_plot) AS overview'),
-                    'movies.release_date'
+                    DB::raw('IF(listitems.mode=0, movies.release_date, series.first_air_date) AS release_date')
                 )
                 ->get()
                 ->toArray();
