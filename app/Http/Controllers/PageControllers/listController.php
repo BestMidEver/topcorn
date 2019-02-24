@@ -80,7 +80,8 @@ class listController extends Controller
             if(auth::check()){
                 $movies = $temp
                 ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
-                ->join('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->leftjoin('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->leftjoin('series', 'listitems.movie_id', '=', 'series.id')
                 ->leftjoin('rateds', function ($join) {
                     $join->on('rateds.movie_id', '=', 'movies.id')
                     ->where('rateds.user_id', Auth::id());
