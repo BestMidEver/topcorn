@@ -400,24 +400,6 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 
 	$scope.later=function(index)
 	{
-		/*if($scope.movies[index].later_id == null){
-			rate.add_later($scope.movies[index].id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 201){
-					$scope.movies[index].later_id=response.data.data.later_id;
-				}
-			});
-		}else{
-			rate.un_later($scope.movies[index].later_id)
-			.then(function(response){
-				console.log(response);
-				if(response.status == 204 || response.status == 404){
-					$scope.movies[index].later_id=null;
-				}
-			});
-		}*/
-
 		if($scope.movies[index].mode == 0){
 			f1 = 'add_later';
 			f2 = 'un_later';
@@ -448,14 +430,22 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 	
 	$scope.rate=function(index, rate_code)
 	{
-		console.log(index, rate_code)
+		if($scope.movies[index].mode == 0){
+			f1 = 'add_rate';
+			f2 = 'un_rate';
+			v1 = 'rated_id';
+		}else{
+			f1 = 'series_add_rate';
+			f2 = 'series_un_rate';
+			v1 = 'id';
+		}
 		$('#myModal').modal('hide');
 		if(rate_code != null){
-			rate.add_rate($scope.movies[index].id, rate_code)
+			rate[f1]($scope.movies[index].id, rate_code)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].rated_id=response.data.data.rated_id;
+					$scope.movies[index].rated_id=response.data.data[v1];
 					$scope.movies[index].rate_code=response.data.data.rate;
 					if(pass.tt_navbar < 100) $scope.get_watched_movie_number();
 				}else{
@@ -463,7 +453,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 				}
 			});
 		}else if(rate_code == null){
-			rate.un_rate($scope.movies[index].rated_id)
+			rate[f2]($scope.movies[index].rated_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
