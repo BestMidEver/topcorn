@@ -9,6 +9,7 @@ class Listitem extends Model
     protected $fillable = [
     	'user_id',
     	'movie_id',
+    	'mode',
     	'explanation'
     ];
 }

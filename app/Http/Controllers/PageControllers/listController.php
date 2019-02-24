@@ -239,12 +239,14 @@ class listController extends Controller
         $temp = array();
         $temp2 = array();
         $temp3 = array();
+        $temp4 = array();
         foreach ($request->items as $index=>$value) {
             if(!in_array( $value[1], $temp2)){
                 array_push($temp, $value[0]);
                 array_push($temp2, $value[1]);
                 $explanation = count($value)>2 ? $value[2]: '';
                 array_push($temp3, $explanation);
+                array_push($temp4, $value[3]!=1 ? 0:1);
             }
         }
         array_multisort($temp,$temp2,$temp3);
@@ -252,6 +254,7 @@ class listController extends Controller
             if($value > 0){
                 $listitem = new Listitem;
                 $listitem->list_id = $liste->id;
+                $listitem->mode = $temp4[$index];
                 $listitem->movie_id = $value;
                 $listitem->position = $index+1;
                 $listitem->explanation = $temp3[$index];
