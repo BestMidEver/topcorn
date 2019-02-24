@@ -170,9 +170,9 @@
 
 							
 							<div class="input-group col mt-3 mt-md-0">
-								<div class="input-group-prepend btn-group pl-md-3">
-									<button class="btn btn-outline-secondary" type="button">Movies</button>
-									<button class="btn btn-outline-secondary" type="button">Series</button>
+								<div class="input-group-prepend pl-md-3">
+									<button class="btn btn-outline-secondary" ng-class="{'active':movie.mode==0}" type="button">Movies</button>
+									<button class="btn btn-outline-secondary" ng-class="{'active':movie.mode!=0}" type="button">Series</button>
 								</div>
 								<input ng-attr-id="vitrin_@{{$index}}" ng-show="!movie.searchmode" type="text" class="form-control" ng-click="movie.searchmode=true;set_focus($index)" ng-init="movie.movie_title=movie.movie_title+(movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '')" ng-model="movie.movie_title" placeholder="{{ __('general.enter_movie_name') }}">
 								<input ng-attr-id="movie_id_@{{$index}}" ng-show="false" type="text" class="form-control" ng-model="movie.movie_id" name="items[@{{$index}}][1]">
