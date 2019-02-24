@@ -25,14 +25,14 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 		}
 	}
 
-	$scope.choose_movie = function(index, movie){
+	$scope.choose_movie = function(index, movie, mode){
 		console.log(index, movie);
 		rate.suck_movie_series(movie.id, movie.mode);
 		$scope.movies[index].movie_id=movie.id;
 		$scope.movies[index].searchmode=false;
 		$scope.movies[index].overview=movie.overview;
 		$scope.movies[index].poster_path=movie.poster_path;
-		$scope.movies[index].movie_title=movie.mode!=1?(movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '')):(movie.name + (movie.first_air_date.length > 0 ? ' ('+movie.first_air_date.substring(0, 4)+')' : ''));
+		$scope.movies[index].movie_title=mode!=1?(movie.title + (movie.release_date.length > 0 ? ' ('+movie.release_date.substring(0, 4)+')' : '')):(movie.name + (movie.first_air_date.length > 0 ? ' ('+movie.first_air_date.substring(0, 4)+')' : ''));
 	}
 
 	$scope.refresh_list = function(){
