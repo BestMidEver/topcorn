@@ -187,9 +187,10 @@ class listController extends Controller
                     'listitems.mode',
                     DB::raw('IF(listitems.mode=0, movies.'.$hover_title.', series.'.$hover_name.') AS original_title'),
                     DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) AS movie_title'),
+                    DB::raw('IF(listitems.mode=0, movies.'.App::getlocale().'_poster_path, series.'.App::getlocale().'_poster_path) AS poster_path'),
                     //'movies.'.$hover_title.' as original_title',
                     //'movies.'.App::getlocale().'_title as movie_title',
-                    'movies.'.App::getlocale().'_poster_path as poster_path',
+                    //'movies.'.App::getlocale().'_poster_path as poster_path',
                     'movies.'.App::getlocale().'_plot as overview',
                     'movies.release_date'
                 )
