@@ -82,7 +82,7 @@
 								<img ng-src="{{ $liste[0]->profile_pic }}" on-error-src="{{config('constants.image.thumb_nail_error')}}" class="list-thumbnail" alt="Responsive image">
 							</div>
 							<div class="d-flex flex-column justify-content-center ml-2">
-								<h6 class="text-dark text-hover-underline mb-0">{{ $liste[0]->user_id }}</h6>
+								<h6 class="text-dark text-hover-underline mb-0">{{ $liste[0]->name }}{{ $liste[0]->user_id==Auth::id() }}</h6>
 								<div class="text-muted"><small class="text-no-decoration">{{ __('general.ago_message', ['created_at' => timeAgo($created_at) , 'updated_at' => timeAgo($updated_at)]) }}</small></div>
 							</div>
 						</div>
