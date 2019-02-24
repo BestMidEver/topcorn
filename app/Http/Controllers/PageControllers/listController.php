@@ -110,7 +110,7 @@ class listController extends Controller
                 ->leftjoin('series_bans', function ($join) {
                     $join->on('series_bans.series_id', '=', 'movies.id')
                     ->where('series_bans.user_id', Auth::id())
-                    ->where('listitems.mode', '0');
+                    ->where('listitems.mode', '1');
                 })
                 ->select(
                     'listitems.movie_id as id',
