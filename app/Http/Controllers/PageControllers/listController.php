@@ -87,6 +87,11 @@ class listController extends Controller
                     ->where('rateds.user_id', Auth::id())
                     ->where('listitems.mode', '0');
                 })
+                ->leftjoin('series_rateds', function ($join) {
+                    $join->on('series_rateds.series_id', '=', 'series.id')
+                    ->where('series_rateds.user_id', Auth::id())
+                    ->where('listitems.mode', '1');
+                })
                 ->leftjoin('laters', function ($join) {
                     $join->on('laters.movie_id', '=', 'movies.id')
                     ->where('laters.user_id', '=', Auth::id())
