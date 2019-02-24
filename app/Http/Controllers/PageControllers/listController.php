@@ -327,9 +327,11 @@ class listController extends Controller
     {
         $q = DB::table('listes')
         ->where('listes.id', '=', $liste)
-        ->where('listes.visibility', '>', 0);
+        ->where('listes.visibility', '>', 0)
+        ->join('users', 'users.id', '=', 'listes.user_id');
 
         if($q->count() > 0){
+            if($q->first()->user_id == Auth::id()) return 'unauthorized';
             $return_val = Listlike::updateOrCreate(
                 ['user_id' => Auth::id(),
                 'list_id' => $liste],
