@@ -400,8 +400,7 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 
 	$scope.later=function(index)
 	{
-		console.log(index)
-		if($scope.movies[index].later_id == null){
+		/*if($scope.movies[index].later_id == null){
 			rate.add_later($scope.movies[index].id)
 			.then(function(response){
 				console.log(response);
@@ -411,6 +410,33 @@ MyApp.controller('ListPageController', function($scope, $http, rate, $window)
 			});
 		}else{
 			rate.un_later($scope.movies[index].later_id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 204 || response.status == 404){
+					$scope.movies[index].later_id=null;
+				}
+			});
+		}*/
+
+		if($scope.movies[index].mode == 0){
+			f1 = 'add_later';
+			f2 = 'un_later';
+			v1 = 'later_id';
+		}else{
+			f1 = 'series_add_later';
+			f2 = 'series_un_later';
+			v1 = 'id';
+		}
+		if($scope.movies[index].later_id == null){
+			rate[f1]($scope.movies[index].id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 201){
+					$scope.movies[index].later_id=response.data.data[v1];
+				}
+			});
+		}else{
+			rate[f2]($scope.movies[index].later_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
