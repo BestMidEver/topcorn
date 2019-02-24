@@ -97,6 +97,11 @@ class listController extends Controller
                     ->where('laters.user_id', '=', Auth::id())
                     ->where('listitems.mode', '0');
                 })
+                ->leftjoin('series_laters', function ($join) {
+                    $join->on('series_laters.series_id', '=', 'movies.id')
+                    ->where('series_laters.user_id', '=', Auth::id())
+                    ->where('listitems.mode', '1');
+                })
                 ->leftjoin('bans', function ($join) {
                     $join->on('bans.movie_id', '=', 'movies.id')
                     ->where('bans.user_id', Auth::id())
@@ -115,7 +120,7 @@ class listController extends Controller
                     DB::raw('IF(listitems.mode=0, movies.release_date, series.first_air_date) AS release_date'),
                     DB::raw('IF(listitems.mode=0, rateds.id, series_rateds.id) AS rated_id'),
                     DB::raw('IF(listitems.mode=0, rateds.rate, series_rateds.rate) AS rate_code'),
-                    'laters.id as later_id',
+                    DB::raw('IF(listitems.mode=0, laters.id, series_laters.id) AS later_id'),
                     'bans.id as ban_id'
                 )
                 ->orderBy('listitems.position', $order_mode)
