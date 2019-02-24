@@ -10,7 +10,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 	$scope.movies = pass.movies == '[]' ? []:pass.movies;
 
 	$scope.search_movie = function(movie){
-		if(!movie.input.length>0) return;
+		if(movie.input==undefined) return;
 		var temp=movie.input.replace(/ /g , "%20");
 		movie.movie_title='';
 		movie.movie_id='';
