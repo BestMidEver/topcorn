@@ -800,7 +800,7 @@ MyApp.factory('rate', function($http) {
     	search_people: search_people,
     	search_users: search_users,
     	search_listes: search_listes,
-    	suck_movie: suck_movie,
+    	suck_movie_series: suck_movie_series,
     	get_list_data: get_list_data,//Kullanıcının listelerini getirir.
     	get_reviews: get_reviews,
     	get_follows: get_follows,
