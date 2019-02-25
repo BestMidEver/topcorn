@@ -151,7 +151,7 @@
 <div class="container-fluid mt-3 pb-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1 mb-3 mt-1">
 		<li class="nav-item">
-			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
+			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
 		</li>
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
@@ -177,10 +177,12 @@
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu my-3 d-md-none tab2">
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_bans'}" ng-click="active_tab='get_bans';get_first_page_data();">{{ __('general.banneds') }}</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();" ng-show="page_variables.movies_or_series=='movies'">{{ __('general.lists') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">{{ __('general.lists') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_reviews'}" ng-click="active_tab='get_reviews';get_first_page_data();">{{ __('general.lists') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_follows'}" ng-click="active_tab='get_follows';follows_mode='following';get_first_page_data();">{{ __('general.lists') }}</button>
 </div>
 <!-- Tabs Button Mobile -->
 
