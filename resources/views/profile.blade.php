@@ -161,16 +161,12 @@
 		<li class="nav-item" ng-show="page_variables.movies_or_series=='movies'">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_lists'}" ng-click="active_tab='get_lists';list_mode='created_ones';get_first_page_data();">{{ __('general.lists') }}</button>
 		</li>
-		@if(Auth::check())
-			@if(Auth::id()==7)
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_reviews'}" ng-click="active_tab='get_reviews';get_first_page_data();">Reviews</button>
 		</li>
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='get_follows'}" ng-click="active_tab='get_follows';follows_mode='following';get_first_page_data();">Follows</button>
 		</li>
-			@endif
-		@endif
 	</ul>
 </div>
 <!-- Tabs Button -->
@@ -234,6 +230,10 @@
 </div>
 
 <div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series' && !page_variables.is_guest && !is_waiting">
+	<div class="btn-group" role="group" aria-label="Movies or Series">
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
+	</div>
 	<div class="dropdown d-inline" ng-init="page_variables.active_dropdown_3 = 'all'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<span ng-if="page_variables.active_dropdown_3=='unseen'">{{ __('general.unseen') }}</span>
