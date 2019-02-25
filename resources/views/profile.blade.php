@@ -185,28 +185,29 @@
 
 
 
-
-<div class="btn-group" role="group" aria-label="Movies or Series">
-	<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
-	<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
-</div>
-<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows' && !is_waiting">
-	<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.all') }}'">
-		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			@{{mod_title}}
-		</button>
-		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			<button class="dropdown-item" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data();">{{ __('general.definitely_recommend') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='{{ __('general.recommend') }}';active_tab='get_rateds/4';get_first_page_data();">{{ __('general.recommend') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='{{ __('general.not_sure') }}';active_tab='get_rateds/3';get_first_page_data();">{{ __('general.not_sure') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='{{ __('general.dont_recommend') }}';active_tab='get_rateds/2';get_first_page_data();">{{ __('general.dont_recommend') }}</button>
-			<button class="dropdown-item" ng-click="mod_title='{{ __('general.definitely_dont_recommend') }}';active_tab='get_rateds/1';get_first_page_data();">{{ __('general.definitely_dont_recommend') }}</button>
-			<div class="dropdown-divider"></div>
-			<button class="dropdown-item" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data();">{{ __('general.all') }}</button>
-		</div>
+<div class="row">
+	<div class="btn-group" role="group" aria-label="Movies or Series">
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
+		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
 	</div>
-	<span class="text-muted pl-2" ng-hide="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
-	<span class="text-muted pl-2" ng-show="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
+	<div class="container-fluid" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows' && !is_waiting">
+		<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.all') }}'">
+			<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				@{{mod_title}}
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<button class="dropdown-item" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data();">{{ __('general.definitely_recommend') }}</button>
+				<button class="dropdown-item" ng-click="mod_title='{{ __('general.recommend') }}';active_tab='get_rateds/4';get_first_page_data();">{{ __('general.recommend') }}</button>
+				<button class="dropdown-item" ng-click="mod_title='{{ __('general.not_sure') }}';active_tab='get_rateds/3';get_first_page_data();">{{ __('general.not_sure') }}</button>
+				<button class="dropdown-item" ng-click="mod_title='{{ __('general.dont_recommend') }}';active_tab='get_rateds/2';get_first_page_data();">{{ __('general.dont_recommend') }}</button>
+				<button class="dropdown-item" ng-click="mod_title='{{ __('general.definitely_dont_recommend') }}';active_tab='get_rateds/1';get_first_page_data();">{{ __('general.definitely_dont_recommend') }}</button>
+				<div class="dropdown-divider"></div>
+				<button class="dropdown-item" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data();">{{ __('general.all') }}</button>
+			</div>
+		</div>
+		<span class="text-muted pl-2" ng-hide="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
+		<span class="text-muted pl-2" ng-show="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
+	</div>
 </div>
 
 <div class="container-fluid" ng-show="active_tab=='get_lists' && !is_waiting">
