@@ -148,7 +148,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid d-none d-md-inline">
+<div class="container-fluid d-none d-md-inline p-0">
 	<ul class="nav justify-content-md-center tab1 mb-4">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
