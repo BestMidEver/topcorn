@@ -188,7 +188,7 @@
 
 
 
-<div class="container-fluid" ng-show="!is_waiting">
+<div class="container-fluid mt-3" ng-show="!is_waiting">
 	<div class="btn-group mr-2" role="group" aria-label="Movies or Series" ng-show="active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'">
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='movies'?'active':''" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='series'?'active':''" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
