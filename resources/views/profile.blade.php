@@ -176,7 +176,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu mb-3 d-md-none tab2">
+<div class="scrollmenu my-3 d-md-none tab2">
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_bans'}" ng-click="active_tab='get_bans';get_first_page_data();">{{ __('general.banneds') }}</button>
