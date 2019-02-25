@@ -197,7 +197,7 @@
 	<div class="d-inline" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows' && !is_waiting">
 		<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.all') }}'">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<i class="fa fa-filter"></i> @{{mod_title}}
+				@{{mod_title}}
 			</button>
 			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 				<button class="dropdown-item" ng-click="mod_title='{{ __('general.definitely_recommend') }}';active_tab='get_rateds/5';get_first_page_data();">{{ __('general.definitely_recommend') }}</button>
