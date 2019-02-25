@@ -189,7 +189,7 @@
 
 
 <div>
-	<div class="btn-group" role="group" aria-label="Movies or Series">
+	<div class="btn-group mr-2" role="group" aria-label="Movies or Series">
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='movies'?'active':''" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='series'?'active':''" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
 	</div>
