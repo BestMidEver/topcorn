@@ -78,6 +78,7 @@ return [
     'email_confirmation' => 'Tekrar E-Posta',                                                           //register,
     'ended' => 'Bitti',                                                                                 //profile,series
     'enter_movie_name' => 'Filmin adını giriniz.',                                                      //list,
+    'enter_series_name' => 'Dizinin adını giriniz.',                                                    //list,
     'episode' => 'Bölüm',                                                                               //series,                    
     'episodes' => 'Bölüm',                                                                              //series,  
     'ethereum' => 'Ethereum',                                                                           //donation,

@@ -78,6 +78,7 @@ return [
     'email_confirmation' => 'E-mail cím megerősítése',                                                  //register,
     'ended' => 'Befejezett',                                                                            //profile,series
     'enter_movie_name' => 'Kérjük, add meg a film nevét',                                               //list,
+    'enter_series_name' => 'Kérjük, add meg a film nevét',                                               //list,//////////////////////////
     'episode' => 'Epizód',                                                                              //series,                    
     'episodes' => 'Epizód',                                                                             //series, 
     'ethereum' => 'Ethereum',                                                                           //donation,

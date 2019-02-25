@@ -78,6 +78,7 @@ return [
     'email_confirmation' => 'Email Confirmation',                                                   //register,
     'ended' => 'Ended',                                                                             //profile,series
     'enter_movie_name' => 'Please enter the name of the movie',                                     //list,
+    'enter_series_name' => 'Please enter the name of the series',                                   //list,
     'episode' => 'Episode',                                                                         //series,                    
     'episodes' => 'Episodes',                                                                       //series,                    
     'ethereum' => 'Ethereum',                                                                       //donation,
