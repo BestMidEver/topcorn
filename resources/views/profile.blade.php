@@ -148,7 +148,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 pb-3 d-none d-md-inline">
+<div class="container-fluid mt-3 d-none d-md-inline">
 	<ul class="nav justify-content-md-center tab1 mb-3 mt-1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
@@ -176,7 +176,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu my-3 d-md-none tab2">
+<div class="scrollmenu mt-3 d-md-none tab2">
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_bans'}" ng-click="active_tab='get_bans';get_first_page_data();">{{ __('general.banneds') }}</button>
@@ -193,6 +193,7 @@
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='movies'?'active':''" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='series'?'active':''" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
 	</div>
+
 	<div class="d-inline" ng-show="active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows' && !is_waiting">
 		<div class="dropdown d-inline" ng-init="mod_title='{{ __('general.all') }}'">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -211,50 +212,51 @@
 		<span class="text-muted pl-2" ng-hide="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.movie')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.movies')) }}</span></small></span>
 		<span class="text-muted pl-2" ng-show="page_variables.movies_or_series=='series'"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
 	</div>
-</div>
 
-<div class="container-fluid" ng-show="active_tab=='get_lists' && !is_waiting">
-	<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}';">
-		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			@{{list_mod_title}}
-		</button>
-		<div class="dropdown-menu">
-			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
-			<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';list_mode='liked_ones';get_first_page_data();">{{ __('general.liked_ones') }}</button>
+	<div class="d-inline" ng-show="active_tab=='get_lists' && !is_waiting">
+		<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}';">
+			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				@{{list_mod_title}}
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
+				<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';list_mode='liked_ones';get_first_page_data();">{{ __('general.liked_ones') }}</button>
+			</div>
 		</div>
+	</div>
+
+	<div class="d-inline" ng-show="active_tab=='get_follows' && !is_waiting">
+		<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.followings') }}';">
+			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				@{{follow_mod_title}}
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.following') }}';follows_mode='following';get_first_page_data();">{{ __('general.followings') }}</button>
+				<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.followers') }}';follows_mode='followers';get_first_page_data();">{{ __('general.followers') }}</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="d-inline" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series' && !page_variables.is_guest && !is_waiting">
+		<div class="dropdown d-inline" ng-init="page_variables.active_dropdown_3 = 'all'">
+			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span ng-if="page_variables.active_dropdown_3=='unseen'">{{ __('general.unseen') }}</span>
+				<span ng-if="page_variables.active_dropdown_3=='available'">{{ __('general.available') }}</span>
+				<span ng-if="page_variables.active_dropdown_3=='awaited'">{{ __('general.awaited') }}</span>
+				<span ng-if="page_variables.active_dropdown_3=='all'">{{ __('general.all') }}</span>
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" ng-click="switch_seen_unseen('unseen')">{{ __('general.unseen') }}</button>
+				<button class="dropdown-item" ng-click="switch_seen_unseen('available')">{{ __('general.available') }}</button>
+				<button class="dropdown-item" ng-click="switch_seen_unseen('awaited')">{{ __('general.awaited') }}</button>
+				<div class="dropdown-divider"></div>
+				<button class="dropdown-item" ng-click="switch_seen_unseen('all')">{{ __('general.all') }}</button>
+			</div>
+		</div>
+		<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
 	</div>
 </div>
 
-<div class="container-fluid" ng-show="active_tab=='get_follows' && !is_waiting">
-	<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.followings') }}';">
-		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			@{{follow_mod_title}}
-		</button>
-		<div class="dropdown-menu">
-			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.following') }}';follows_mode='following';get_first_page_data();">{{ __('general.followings') }}</button>
-			<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.followers') }}';follows_mode='followers';get_first_page_data();">{{ __('general.followers') }}</button>
-		</div>
-	</div>
-</div>
-
-<div class="container-fluid" ng-show="active_tab=='get_laters' && page_variables.movies_or_series == 'series' && !page_variables.is_guest && !is_waiting">
-	<div class="dropdown d-inline" ng-init="page_variables.active_dropdown_3 = 'all'">
-		<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<span ng-if="page_variables.active_dropdown_3=='unseen'">{{ __('general.unseen') }}</span>
-			<span ng-if="page_variables.active_dropdown_3=='available'">{{ __('general.available') }}</span>
-			<span ng-if="page_variables.active_dropdown_3=='awaited'">{{ __('general.awaited') }}</span>
-			<span ng-if="page_variables.active_dropdown_3=='all'">{{ __('general.all') }}</span>
-		</button>
-		<div class="dropdown-menu">
-			<button class="dropdown-item" ng-click="switch_seen_unseen('unseen')">{{ __('general.unseen') }}</button>
-			<button class="dropdown-item" ng-click="switch_seen_unseen('available')">{{ __('general.available') }}</button>
-			<button class="dropdown-item" ng-click="switch_seen_unseen('awaited')">{{ __('general.awaited') }}</button>
-			<div class="dropdown-divider"></div>
-			<button class="dropdown-item" ng-click="switch_seen_unseen('all')">{{ __('general.all') }}</button>
-		</div>
-	</div>
-	<span class="text-muted pl-2"><small>@{{in}} <span ng-show="in < 2">{{ strtolower(__('general.series')) }}</span><span ng-show="in > 1">{{ strtolower(__('general.seriess')) }}</span></small></span>
-</div>
 
 <div id="scroll_top_point">
 	<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && listes.length==0) || (active_tab == 'get_follows' && page_variables.follows.length==0) || is_waiting">
