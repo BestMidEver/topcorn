@@ -91,6 +91,7 @@ return [
     'finale_date' => 'Bitiş',                                                                           //series,
     'first_episode' => 'Başlangıç',                                                                     //profile,series,
     'follow' => 'Takip Et',                                                                             //profile,
+    'follows' => 'Takipler',                                                                            //profile,
     'followers' => 'Takipçiler',                                                                        //profile,
     'following' => 'Takiptesin',                                                                        //profile,
     'followings' => 'Takip Edilenler',                                                                  //profile,

@@ -91,6 +91,7 @@ return [
     'finale_date' => 'Finale Date',                                                                 //series,
     'first_episode' => 'First Episode',                                                             //profile,series,
     'follow' => 'Follow',                                                                           //profile,
+    'follows' => 'Follows',                                                                         //profile,
     'followers' => 'Followers',                                                                     //profile,
     'following' => 'Following',                                                                     //profile,
     'followings' => 'Following',                                                                    //profile,
