@@ -183,6 +183,7 @@ return [
     'original_title' => 'Orijinal Adı',             
     'original_language' => 'Orijinal Dili',             
     'other' => 'DİĞER',                                                                                 //recommendations,   
+    'p_items' => 'Ögeler',                                                                              //list       
     'p_movies' => 'Filmler',                                                                            //list,         
     'p_series' => 'Diziler',                                                                            //person,    
     'pagination' => 'Sayfalama',                                                                        //accountinterface,

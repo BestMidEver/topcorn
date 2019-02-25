@@ -183,6 +183,7 @@ return [
     'original_title' => 'Eredeti cím',                                                                  //movie,
     'original_language' => 'Eredeti nyelv',                                                             //movie,
     'other' => 'MÁS',                                                                                   //recommendations,
+    'p_items' => 'Items',                                                                           //list       //////////////////////
     'p_movies' => 'Filmek',                                                                             //list,         
     'p_series' => 'Sorozatok',                                                                          //person,
 	'pagination' => 'Lapszámozás',

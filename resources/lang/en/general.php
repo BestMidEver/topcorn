@@ -183,6 +183,7 @@ return [
     'original_title' => 'Original Title',                                                           //series,
     'original_language' => 'Original Language',                                                     //movie,
     'other' => 'OTHER',                                                                             //recommendations,   
+    'p_items' => 'Items',                                                                           //list         
     'p_movies' => 'Movies',                                                                         //list,recommendations         
     'p_series' => 'Series',                                                                         //list,recommendations         
     'pagination' => 'Pagination',                                                                   //accountinterface,
