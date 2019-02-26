@@ -238,6 +238,7 @@ return [
     'secondary_language' => 'Secondary Language',                                                   //accountinterface,
     'seen' => 'Seen',                       
     'seen_movies' => 'Seen',                                                                        //profile,
+    'select_users' => 'Select User(s)',                                                             //movie,seies,
     'send_instructions' => 'Send Instructions',                                                     //email,
     'series' => 'Series',                                                                           //recommendations,person
     'seriess' => 'Series',                                                                          //recommendations,person

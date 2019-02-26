@@ -235,6 +235,7 @@ return [
     'seasons' => 'Évad',                                                                                //series,
     'season_info' => 'Évad info',                                                                       //series,
     'secondary_language' => 'Másodlagos nyelv',                                                         //accountinterface,
+    'select_users' => 'Select User(s)',                                                             //movie,seies,///////////////
     'seen' => 'Láttam',                         
     'seen_movies' => 'Láttam',                                                                          //profile,
     'send_instructions' => 'Utasítások küldése',                                                        //email,
