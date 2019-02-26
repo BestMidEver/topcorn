@@ -235,7 +235,7 @@ return [
     'seasons' => 'Sezon',                                                                               //series,
     'season_info' => 'Sezon Hakkında',                                                                  //series,
     'secondary_language' => 'İkinci Dil',                                                               //accountinterface,
-    'select_users' => 'Kullanıcı Veya Kullanıcıları Seçin',                                             //movie,seies,
+    'select_users' => 'Kullanıcı veya Kullanıcıları Seçin',                                             //movie,seies,
     'seen' => 'İzledim',            
     'seen_movies' => 'İzlenenler',                                                                      //profile,
     'send_instructions' => 'Talimatları Gönder',                                                        //email,
