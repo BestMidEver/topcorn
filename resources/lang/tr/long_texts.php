@@ -14,9 +14,9 @@ return [
     'hint_advanced_filter' => 'Tavsiyelerde daha fazla seçenek ve bilgi yükler.',
     'hint_cover_photo' => 'Efsanevi filmlerinden birisini seç.',                            
     'hint_profile_pic' => 'Facebook profil resmini veya bir oyuncunun fotoğrafını profil fotoğrafın olarak seç.',
-    'hint_when_user_interaction' => 'Sonra İzle\'ndeki dizilerin yeni bölüm tarihleri belli olunca çalışır.',//////////////////
-    'hint_when_automatic_notification' => 'Birisi Beraber İzle özelliğini senin profilinle beraber kullanırsa çalışır.',//////////////////
-    'hint_when_system_change' => 'Birisi seninle Beraber İzle\'rse, ona film ve dizi önerisinde bulunabilirsin.',//////////////////
+    'hint_when_user_interaction' => 'Başka bir kullanıcı senin listeni, eleştirini beğenirse; seni takibe başlarsa vb.',
+    'hint_when_automatic_notification' => 'Sonra izle\'ndeki dizinin yeni sezon veya bölüm tarihi belli olduğunda vb. otomatik oluşturulan hatırlatmalar.',
+    'hint_when_system_change' => 'Yeni bir özellik geldiğinde veya sistemde bir değişiklik olduğunda.',
     'home' => array(
       'h1' => 'Film çok, zaman yok!',
       't11' => 'Topcorn.io senin film zevkini anlar, senin seveceğini anladığı filmleri sana sıralar. Hazırsan başlayalım!',

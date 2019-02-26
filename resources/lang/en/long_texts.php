@@ -13,9 +13,9 @@ return [
     'hint_advanced_filter' => 'It gives you advanced information and options on recommendations page.',
     'hint_cover_photo' => 'Choose a movie to use it\'s cover photo as your cover photo.',
     'hint_profile_pic' => 'Choose an actor/actress from your cover movie.',
-    'hint_when_user_interaction' => 'This works when you add a series to your watch later list.',///////////////////
-    'hint_when_automatic_notification' => 'This works when someone uses Watch Together feature with your profile.',///////////////////////
-    'hint_when_system_change' => 'If someone uses Watch Together with you, you can send movies and series to them via Topcorn.io',///////////////////////
+    'hint_when_user_interaction' => 'When a user likes your list, review or starts to follow you; etc.',
+    'hint_when_automatic_notification' => 'When the new season or episode air date of a series in your watch later list is defined system reminds it to you, etc.',
+    'hint_when_system_change' => 'New features and system updates.',
     'home' => array(
       'h1' => 'No time to waste on bad movies!',
       't11' => 'topcorn.io understands your movie taste and recommends movies based on it. Let\'s get started!',
