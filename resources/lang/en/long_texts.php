@@ -14,7 +14,7 @@ return [
     'hint_cover_photo' => 'Choose a movie to use it\'s cover photo as your cover photo.',
     'hint_profile_pic' => 'Choose an actor/actress from your cover movie.',
     'hint_when_user_interaction' => 'When a user likes your list, review or starts to follow you; etc.',
-    'hint_when_automatic_notification' => 'When the new season or episode air date of a series in your watch later list is defined system reminds it to you, etc.',
+    'hint_when_automatic_notification' => 'When the new season or episode air date of a series in your watch later list is defined, system reminds it to you, etc.',
     'hint_when_system_change' => 'New features and system updates.',
     'home' => array(
       'h1' => 'No time to waste on bad movies!',

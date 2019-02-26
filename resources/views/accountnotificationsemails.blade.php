@@ -61,7 +61,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-clock"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-tools"></i></div>
 				                </div>
 				                <select class="form-control" id="when_system_change" name="when_system_change">
 									<option value="0" {{Auth::User()->when_system_change==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
@@ -80,7 +80,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-user-friends"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-clock"></i></div>
 				                </div>
 				                <select class="form-control" id="when_automatic_notification" name="when_automatic_notification">
 									<option value="0" {{Auth::User()->when_automatic_notification==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
@@ -99,7 +99,7 @@
 				        <div class="form-group">
 				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
 				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-share"></i></div>
+				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-user-friends"></i></div>
 				                </div>
 				                <select class="form-control" id="when_user_interaction" name="when_user_interaction">
 									<option value="0" {{Auth::User()->when_user_interaction==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
