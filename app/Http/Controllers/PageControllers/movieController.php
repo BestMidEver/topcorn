@@ -192,8 +192,8 @@ class movieController extends Controller
         ->where('is_deleted', '=', 0)
         ->whereIn('follows.subject_id', $request->users)
         ->join('users', 'users.id', '=', 'follows.subject_id')
-        ->where('users.when_feature', '>', 0)
-        ->select('users.id as id', 'users.when_feature')
+        ->where('users.when_user_interaction', '>', 0)
+        ->select('users.id as id', 'users.when_user_interaction')
         ->get();
 
         foreach ($users as $user) {
@@ -206,7 +206,7 @@ class movieController extends Controller
                 ['is_seen' => 0]
             );
 
-            if($user->when_feature > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+            if($user->when_user_interaction > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
         }
 
         return Response([

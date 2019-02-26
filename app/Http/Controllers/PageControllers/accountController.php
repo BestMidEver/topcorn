@@ -209,11 +209,9 @@ class accountController extends Controller
 	public function change_notifications_emails(Request $request)
 	{
 		$user = Auth::User();
-		$user->when_like = $request->when_like;
-		$user->when_feature = $request->when_feature;
-		$user->when_air_date = $request->when_air_date;
-		$user->when_recommendation = $request->when_recommendation;
-		$user->when_watch_together = $request->when_watch_together;
+		$user->when_user_interaction = $request->when_user_interaction;
+		$user->when_automatic_notification = $request->when_automatic_notification;
+		$user->when_system_change = $request->when_system_change;
 		$user->save();
 
 		$request->session()->flash('status', __('general.info_updated'));

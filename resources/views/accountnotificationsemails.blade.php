@@ -55,26 +55,7 @@
 				{{ csrf_field() }}
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_feature">{{ __('general.when_feature') }}</label>
-				    </div>
-				    <div class="col-md-6">
-				        <div class="form-group">
-				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-tools"></i></div>
-				                </div>
-				                <select class="form-control" id="when_feature" name="when_feature" autofocus>
-									<option value="0" {{Auth::User()->when_feature==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_feature==1?'selected':''}}>{{ __('general.do_notification') }}</option>
-									<option value="2" {{Auth::User()->when_feature==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
-								</select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_air_date" ng-mouseenter="hovering_air=true" ng-mouseleave="hovering_air=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_air_date') }}">{{ __('general.when_air_date') }} <span ng-show="!hovering_air"><i class="far fa-question-circle"></i></span><span ng-show="hovering_air"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="when_system_change" ng-mouseenter="hovering_air=true" ng-mouseleave="hovering_air=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_system_change') }}">{{ __('general.when_system_change') }} <span ng-show="!hovering_air"><i class="far fa-question-circle"></i></span><span ng-show="hovering_air"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -82,10 +63,10 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-clock"></i></div>
 				                </div>
-				                <select class="form-control" id="when_air_date" name="when_air_date">
-									<option value="0" {{Auth::User()->when_air_date==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_air_date==1?'selected':''}}>{{ __('general.do_notification') }}</option>
-									<option value="2" {{Auth::User()->when_air_date==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
+				                <select class="form-control" id="when_system_change" name="when_system_change">
+									<option value="0" {{Auth::User()->when_system_change==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_system_change==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+									<option value="2" {{Auth::User()->when_system_change==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -93,25 +74,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_like">{{ __('general.when_like') }}</label>
-				    </div>
-				    <div class="col-md-6">
-				        <div class="form-group">
-				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-heart"></i></div>
-				                </div>
-				                <select class="form-control" id="when_like" name="when_like">
-									<option value="0" {{Auth::User()->when_like==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_like==1?'selected':''}}>{{ __('general.do_notification') }}</option>
-								</select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
-				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_watch_together" ng-mouseenter="hovering_tog=true" ng-mouseleave="hovering_tog=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_watch_together') }}">{{ __('general.when_watch_together') }} <span ng-show="!hovering_tog"><i class="far fa-question-circle"></i></span><span ng-show="hovering_tog"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="when_automatic_notification" ng-mouseenter="hovering_tog=true" ng-mouseleave="hovering_tog=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_automatic_notification') }}">{{ __('general.when_automatic_notification') }} <span ng-show="!hovering_tog"><i class="far fa-question-circle"></i></span><span ng-show="hovering_tog"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -119,9 +82,10 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-user-friends"></i></div>
 				                </div>
-				                <select class="form-control" id="when_watch_together" name="when_watch_together">
-									<option value="0" {{Auth::User()->when_watch_together==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_watch_together==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+				                <select class="form-control" id="when_automatic_notification" name="when_automatic_notification">
+									<option value="0" {{Auth::User()->when_automatic_notification==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_automatic_notification==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+									<option value="2" {{Auth::User()->when_automatic_notification==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
 								</select>
 				            </div>
 				        </div>
@@ -129,7 +93,7 @@
 				</div>
 				<div class="row">
 				    <div class="col-md-3 field-label-responsive">
-				        <label for="when_recommendation" ng-mouseenter="hovering_rec=true" ng-mouseleave="hovering_rec=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_recommendation') }}">{{ __('general.when_recommendation') }} <span ng-show="!hovering_rec"><i class="far fa-question-circle"></i></span><span ng-show="hovering_rec"><i class="fas fa-question-circle"></i></span></label>
+				        <label for="when_user_interaction" ng-mouseenter="hovering_rec=true" ng-mouseleave="hovering_rec=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_when_user_interaction') }}">{{ __('general.when_user_interaction') }} <span ng-show="!hovering_rec"><i class="far fa-question-circle"></i></span><span ng-show="hovering_rec"><i class="fas fa-question-circle"></i></span></label>
 				    </div>
 				    <div class="col-md-6">
 				        <div class="form-group">
@@ -137,10 +101,10 @@
 				                <div class="input-group-prepend">
 				                	<div class="input-group-text" style="width: 2.6rem"><i class="fas fa-share"></i></div>
 				                </div>
-				                <select class="form-control" id="when_recommendation" name="when_recommendation">
-									<option value="0" {{Auth::User()->when_recommendation==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
-									<option value="1" {{Auth::User()->when_recommendation==1?'selected':''}}>{{ __('general.do_notification') }}</option>
-									<option value="2" {{Auth::User()->when_recommendation==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
+				                <select class="form-control" id="when_user_interaction" name="when_user_interaction">
+									<option value="0" {{Auth::User()->when_user_interaction==0?'selected':''}}>{{ __('general.dont_do_anything') }}</option>
+									<option value="1" {{Auth::User()->when_user_interaction==1?'selected':''}}>{{ __('general.do_notification') }}</option>
+									<option value="2" {{Auth::User()->when_user_interaction==2?'selected':''}}>{{ __('general.notification_and_email') }}</option>
 								</select>
 				            </div>
 				        </div>

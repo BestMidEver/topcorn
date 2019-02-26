@@ -13,9 +13,9 @@ return [
     'hint_advanced_filter' => 'Az ajánlások oldalon még több részletet és opciót kínál számodra.',
     'hint_cover_photo' => 'Válasssz borítóképet a kedvenc filmjeid közül.',   
     'hint_profile_pic' => 'Profilképként beállíthatod a Facebook profilképedet vagy egy színész fotóját.',
-    'hint_when_air_date' => 'This works when you add a series to your watch later list.',////////////////////
-    'hint_when_watch_together' => 'This works when someone uses Watch Together feature with your profile.',/////////////////////////
-    'hint_when_recommendation' => 'If someone uses Watch Together with you, you can send movies and series to them via Topcorn.io',////////////////
+    'hint_when_user_interaction' => 'This works when you add a series to your watch later list.',////////////////////
+    'hint_when_automatic_notification' => 'This works when someone uses Watch Together feature with your profile.',/////////////////////////
+    'hint_when_system_change' => 'If someone uses Watch Together with you, you can send movies and series to them via Topcorn.io',////////////////
     'home' => array(
       'h1' => 'Túl sok a jó film ahhoz, hogy az idődet rossz filmekre pazarold.',
       't11' => 'A topcorn.io megismeri az ízlésedet és ennek megfelelően ajánl újabb filmeket számodra. Lássunk neki!',

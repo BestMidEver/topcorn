@@ -75,8 +75,8 @@ class SuckSeriesJob implements ShouldQueue
             $items = DB::table('series_laters')
             ->where('series_laters.series_id', '=', $this->id)
             ->join('users', 'users.id', '=', 'series_laters.user_id')
-            ->where('users.when_air_date', '>', 0)
-            ->select('users.id as user_id', 'users.when_air_date')
+            ->where('users.when_automatic_notification', '>', 0)
+            ->select('users.id as user_id', 'users.when_automatic_notification')
             ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
                 foreach ($items as $item) {
@@ -84,7 +84,7 @@ class SuckSeriesJob implements ShouldQueue
                         ['mode' => 3, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                         ['is_seen' => 0]
                     );
-                    if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                    if($item->when_automatic_notification > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
                 }
             }
             if($next_episode_air_date != null){
@@ -100,14 +100,14 @@ class SuckSeriesJob implements ShouldQueue
                                 $old_notification->created_at = Carbon::now();
                                 $old_notification->is_seen = 0;
                                 $old_notification->save();
-                                if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
+                                if($item->when_automatic_notification > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
                             }
                         }else{
                             $notification = Notification::updateOrCreate(
                                 ['mode' => 7, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                                 ['is_seen' => 0]
                             );
-                            if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                            if($item->when_automatic_notification > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
                         }
                     }
                 }
@@ -191,8 +191,8 @@ class SuckSeriesJob implements ShouldQueue
             $items = DB::table('series_laters')
             ->where('series_laters.series_id', '=', $this->id)
             ->join('users', 'users.id', '=', 'series_laters.user_id')
-            ->where('users.when_air_date', '>', 0)
-            ->select('users.id as user_id', 'users.when_air_date')
+            ->where('users.when_automatic_notification', '>', 0)
+            ->select('users.id as user_id', 'users.when_automatic_notification')
             ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
                 foreach ($items as $item) {
@@ -200,7 +200,7 @@ class SuckSeriesJob implements ShouldQueue
                         ['mode' => 3, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                         ['is_seen' => 0]
                     );
-                    if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                    if($item->when_automatic_notification > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
                 }
             }
             if($next_episode_air_date != null){
@@ -216,14 +216,14 @@ class SuckSeriesJob implements ShouldQueue
                                 $old_notification->created_at = Carbon::now();
                                 $old_notification->is_seen = 0;
                                 $old_notification->save();
-                                if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
+                                if($item->when_automatic_notification > 1) SendNotificationEmailJob::dispatch($old_notification->id)->onQueue("high");
                             }
                         }else{
                             $notification = Notification::updateOrCreate(
                                 ['mode' => 7, 'user_id' => $item->user_id, 'multi_id' => $this->id],
                                 ['is_seen' => 0]
                             );
-                            if($item->when_air_date > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+                            if($item->when_automatic_notification > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
                         }
                     }
                 }
