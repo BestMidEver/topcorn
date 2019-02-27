@@ -15,6 +15,7 @@ class CreatePartiesTable extends Migration
     {
         Schema::create('parties', function (Blueprint $table) {
             $table->increments('id');
+            $table->tinyInteger('is_deleted')->default(0);
             $table->integer('user_id');
             $table->integer('watched_with_user_id');
             $table->timestamps();

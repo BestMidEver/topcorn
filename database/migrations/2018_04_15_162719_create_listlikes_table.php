@@ -15,6 +15,7 @@ class CreateListlikesTable extends Migration
     {
         Schema::create('listlikes', function (Blueprint $table) {
             $table->increments('id');
+            $table->tinyInteger('is_deleted')->default(0);
             $table->integer('user_id');
             $table->integer('list_id');
             $table->timestamps();

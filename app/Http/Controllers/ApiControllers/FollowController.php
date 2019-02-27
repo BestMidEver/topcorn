@@ -114,32 +114,4 @@ class FollowController extends Controller
             'data' => $follow,
         ], Response::HTTP_NO_CONTENT);
     }
-
-
-
-
-    public function show_followers($object_id, $mode)
-    {
-        $follow = Follow::updateOrCreate(
-            ['subject_id' => Auth::id(), 'object_id' => $object_id],
-            ['is_deleted' => 1]
-        );
-        return Response([
-            'data' => $follow,
-        ], Response::HTTP_NO_CONTENT);
-    }
-
-
-
-
-    public function show_followings($object_id, $mode)
-    {
-        $follow = Follow::updateOrCreate(
-            ['subject_id' => Auth::id(), 'object_id' => $object_id],
-            ['is_deleted' => 1]
-        );
-        return Response([
-            'data' => $follow,
-        ], Response::HTTP_NO_CONTENT);
-    }
 }

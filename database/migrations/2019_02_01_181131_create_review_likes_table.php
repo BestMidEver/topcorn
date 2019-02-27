@@ -15,6 +15,7 @@ class CreateReviewLikesTable extends Migration
     {
         Schema::create('review_likes', function (Blueprint $table) {
             $table->increments('id');
+            $table->tinyInteger('is_deleted')->default(0);
             $table->integer('review_id');
             $table->integer('user_id');
             $table->timestamps();

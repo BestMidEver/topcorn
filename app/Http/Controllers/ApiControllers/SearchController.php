@@ -7,6 +7,7 @@ use App\Http\Resources\Movie\SearchResource;
 use App\Model\Movie;
 use App\Model\Notification;
 use App\Model\Partie;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -27,6 +28,7 @@ class SearchController extends Controller
     {
         $return_val = DB::table('parties')
     	->where('user_id', '=', Auth::user()->id)
+        ->where('parties.is_deleted', '=', 0)
     	->orderBy('parties.updated_at', 'desc')
     	->join('users', 'users.id', '=', 'parties.watched_with_user_id')
     	->select('users.id as user_id',
@@ -122,15 +124,17 @@ class SearchController extends Controller
 
     public function remove_from_parties($user_id)
     {
-        Notification::where('multi_id', Auth::id())
+        $party = Partie::updateOrCreate(
+            ['user_id' => Auth::id(), 'watched_with_user_id' => $user_id],
+            ['is_deleted' => 1]
+        );
+
+        /*Notification::where('multi_id', Auth::id())
         ->where('user_id', $user_id)
         ->where('mode', 6)
-        ->delete();
+        ->delete();*/
 
-    	return DB::table('parties')
-    	->where('user_id', '=', Auth::user()->id)
-    	->where('watched_with_user_id', '=', $user_id)
-    	->delete();
+    	return $party;
     }
 
 
@@ -143,9 +147,21 @@ class SearchController extends Controller
             ['is_seen' => 0]
         );
         
-    	return Partie::updateOrCreate(
-    		['user_id' => Auth::user()->id, 'watched_with_user_id' => $user_id]
-    	)->touch() ? 1 : 0;
+
+        $party = Partie::updateOrCreate(
+            ['user_id' => Auth::id(), 'watched_with_user_id' => $user_id],
+            ['is_deleted' => 0]
+        );
+        if($party->wasRecentlyCreated && User::find($user_id)->when_user_interaction > 0){
+            $notification = Notification::updateOrCreate(
+                ['mode' => 8, 'user_id' => $request->object_id, 'multi_id' => Auth::id()],
+                ['is_seen' => 0]
+            );
+
+            //if(User::find($request->object_id)->when_user_interaction > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+        }
+        
+    	return $party->touch() ? 1 : 0;
     }
 
 
