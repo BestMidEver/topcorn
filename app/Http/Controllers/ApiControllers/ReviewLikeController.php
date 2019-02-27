@@ -49,7 +49,8 @@ class ReviewLikeController extends Controller
         $review = DB::table('reviews')
         ->where('reviews.id', $request->review_id)
         ->first();
-        if($review->user_id != null){
+
+        if($review_like->wasRecentlyCreated && User::find($review->user_id)->when_user_interaction > 0){
             Notification::updateOrCreate(
                 ['mode' => 0, 'user_id' => $review->user_id, 'multi_id' => $request->review_id],
                 ['is_seen' => 0]
@@ -103,20 +104,18 @@ class ReviewLikeController extends Controller
      */
     public function destroy($review_id)
     {
-        $will_be_deleted = Review_like::where('review_id', $review_id)
-        ->where('user_id', Auth::id())->first();
-        
-        if($will_be_deleted){
-            $will_be_deleted->delete();
-        }
+        $review = Review_like::updateOrCreate(
+            ['user_id' => Auth::id(), 'review_id' => $review_id],
+            ['is_deleted' => 1]
+        );
 
-        $will_be_deleted = Notification::where('multi_id', $review_id)
-        ->where('mode', 0)->first();
-        
-        if($will_be_deleted){
-            $will_be_deleted->delete();
-        }
-        
-        return Response(null, Response::HTTP_NO_CONTENT);
+        Notification::where('multi_id', $review_id)
+        ->where('user_id', Auth::id())
+        ->where('mode', 0)
+        ->delete();
+
+        return Response([
+            'data' => $review,
+        ], Response::HTTP_NO_CONTENT);
     }
 }
