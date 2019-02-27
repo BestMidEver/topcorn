@@ -45,7 +45,10 @@ class ReviewLikeController extends Controller
      */
     public function store(Request $request)
     {
-        $review_like = Review_like::updateOrCreate(array('user_id' => Auth::id(), 'review_id' => $request->review_id));
+        $review_like = Review_like::updateOrCreate(
+            ['user_id' => Auth::id(), 'review_id' => $request->review_id],
+            ['is_deleted' => 0]
+        );
 
         $review = DB::table('reviews')
         ->where('reviews.id', $request->review_id)
