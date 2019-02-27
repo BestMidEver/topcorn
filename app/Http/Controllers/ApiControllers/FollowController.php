@@ -45,7 +45,7 @@ class FollowController extends Controller
             ['subject_id' => Auth::id(), 'object_id' => $request->object_id],
             ['is_deleted' => 0]
         );
-        if($follow->wasRecentlyCreated){
+        if($follow->wasRecentlyCreated && User::find($request->object_id)->when_user_interaction > 0){
             $notification = Notification::updateOrCreate(
                 ['mode' => 8, 'user_id' => $request->object_id, 'multi_id' => Auth::id()],
                 ['is_seen' => 0]

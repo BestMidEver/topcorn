@@ -142,25 +142,19 @@ class SearchController extends Controller
 
     public function add_to_parties($user_id)
     {
-        Notification::updateOrCreate(
-            ['mode' => 6, 'user_id' => $user_id, 'multi_id' => Auth::id()],
-            ['is_seen' => 0]
-        );
-        
-
         $party = Partie::updateOrCreate(
             ['user_id' => Auth::id(), 'watched_with_user_id' => $user_id],
             ['is_deleted' => 0]
         );
         if($party->wasRecentlyCreated && User::find($user_id)->when_user_interaction > 0){
             $notification = Notification::updateOrCreate(
-                ['mode' => 8, 'user_id' => $request->object_id, 'multi_id' => Auth::id()],
+                ['mode' => 6, 'user_id' => $user_id, 'multi_id' => Auth::id()],
                 ['is_seen' => 0]
             );
-
+            
             //if(User::find($request->object_id)->when_user_interaction > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
         }
-        
+
     	return $party->touch() ? 1 : 0;
     }
 
