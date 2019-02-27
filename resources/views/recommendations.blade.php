@@ -201,6 +201,9 @@
 
 <!-- Sort by and Filter section -->
 <div class="container-fluid">
+	<div class="dropdown d-inline mr-2">
+		<button id="filter_button" class="btn btn-outline-secondary mt-3 filterButtons" ng-click="scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
+	</div>
 	<div class="dropdown d-inline mr-2" ng-show="active_tab=='top_rated'">
 		<button class="btn btn-outline-secondary dropdown-toggle mt-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> 
@@ -239,9 +242,6 @@
 	</div>
 		@endif
 	@endif
-	<div class="dropdown d-inline">
-		<button id="filter_button" class="btn btn-outline-secondary mt-3 filterButtons" ng-click="scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
-	</div>
 </div>
 <!-- Sort by and Filter section -->
 
