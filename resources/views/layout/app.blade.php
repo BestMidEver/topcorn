@@ -319,7 +319,7 @@ else $theme='';
     </div>
 </div>
 @endif
-@if(Auth::id()>1)
+@if(Auth::id()>7)
 <script type="text/javascript">
 var infolinks_pid = 3165314;
 var infolinks_wsid = 0;
