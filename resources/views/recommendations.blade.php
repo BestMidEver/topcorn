@@ -177,6 +177,7 @@
 <!-- Tabs Button -->
 
 
+<input type="hidden" name="IL_IN_ARTICLE">
 
 
 <!-- Tabs Button Mobile -->
