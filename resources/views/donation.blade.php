@@ -25,10 +25,10 @@
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='ethereum'}" ng-click="active_tab='ethereum'">{{ __('general.ethereum') }}</button>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item d-none">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='patreon'}" ng-click="active_tab='patreon'">Patreon</button>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item d-none">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='bank_transfer'}" ng-click="active_tab='bank_transfer'">{{ __('general.bank_transfer') }}</button>
 		</li>
 	</ul>
@@ -42,8 +42,8 @@
 <div class="scrollmenu my-3 d-md-none tab2">
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='bitcoin'}" ng-click="active_tab='bitcoin'">{{ __('general.bitcoin') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='ethereum'}" ng-click="active_tab='ethereum'">{{ __('general.ethereum') }}</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='patreon'}" ng-click="active_tab='patreon'">Patreon</button>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='bank_transfer'}" ng-click="active_tab='bank_transfer'">{{ __('general.bank_transfer') }}</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration d-none" ng-class="{'active':active_tab=='patreon'}" ng-click="active_tab='patreon'">Patreon</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration d-none" ng-class="{'active':active_tab=='bank_transfer'}" ng-click="active_tab='bank_transfer'">{{ __('general.bank_transfer') }}</button>
 </div>
 <!-- Tabs Button Mobile -->
 
