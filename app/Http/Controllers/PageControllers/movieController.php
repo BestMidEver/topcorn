@@ -122,6 +122,7 @@ class movieController extends Controller
         ->leftjoin('listlikes', function ($join) {
             $join->on('listlikes.list_id', '=', 'listes.id');
         })
+        ->where('listlikes.is_deleted', '=', 0)
         ->join('listitems as l0', function ($join) use ($movie) {
             $join->on('l0.list_id', '=', 'listes.id')
             ->where('l0.movie_id', '=', $movie);

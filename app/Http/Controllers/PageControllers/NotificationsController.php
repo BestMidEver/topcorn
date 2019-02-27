@@ -84,6 +84,7 @@ class NotificationsController extends Controller
 				$temp = DB::table('listes')
 				->where('listes.id', '=', $notification->multi_id)
             	->leftjoin('listlikes', 'listlikes.list_id', '=', 'listes.id')
+                ->where('listlikes.is_deleted', '=', 0)
         		->join('users', 'users.id', '=', 'listlikes.user_id')
         		->select(
         			'listes.id as list_id',

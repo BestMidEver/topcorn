@@ -41,6 +41,7 @@ class accountController extends Controller
         ->leftjoin('listlikes', function ($join) {
             $join->on('listlikes.list_id', '=', 'listes.id');
         })
+        ->where('listlikes.is_deleted', '=', 0)
         ->whereNotNull('listlikes.created_at')
         ->count();
 

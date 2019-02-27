@@ -161,6 +161,7 @@ class listController extends Controller
 
             $is_liked = $temp
             ->where('listlikes.user_id', '=', Auth::id())
+            ->where('listlikes.is_deleted', '=', 0)
             ->count();
         }else{
             return redirect('/not-found');
@@ -354,6 +355,7 @@ class listController extends Controller
 
         $like_count = DB::table('listlikes')
         ->where('listlikes.list_id', '=', $liste)
+        ->where('listlikes.is_deleted', '=', 0)
         ->count();
 
         return [$return_val, $like_count];
@@ -376,6 +378,7 @@ class listController extends Controller
         
         $like_count = DB::table('listlikes')
         ->where('listlikes.list_id', '=', $liste)
+        ->where('listlikes.is_deleted', '=', 0)
         ->count();
 
         return [$return_val, $like_count];
