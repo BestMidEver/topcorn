@@ -176,9 +176,9 @@
 </div>
 <!-- Tabs Button -->
 
-
-<input type="hidden" name="IL_IN_ARTICLE">
-
+<div class="my-2">
+	<input type="hidden" name="IL_IN_ARTICLE">
+</div>
 
 <!-- Tabs Button Mobile -->
 <div class="scrollmenu mb-3 d-md-none tab2">
