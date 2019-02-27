@@ -92,4 +92,8 @@
 		</div>
 	</div>
 </div>
+
+<div class="my-2 d-flex justify-content-center">
+	<input type="hidden" name="IL_IN_ARTICLE">
+</div>
 @endsection

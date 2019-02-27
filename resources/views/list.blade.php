@@ -23,6 +23,10 @@
 			@endif
 		</div>
 
+<div class="my-2 d-flex justify-content-center">
+	<input type="hidden" name="IL_IN_ARTICLE">
+</div>
+
 		<div class="py-3">
 			<h6 class="lead">{{ $liste[0]->entry_1 }}</h6>
 		</div>

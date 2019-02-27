@@ -138,6 +138,10 @@
 </div>
 <!--Under Trailer Section-->
 
+<div class="my-2 d-flex justify-content-center">
+	<input type="hidden" name="IL_IN_ARTICLE">
+</div>
+
 <!--Poster Plot Details Section-->
 <div class="row no-gutters mt-3 mt-md-5">
 	<div class="col-12 col-md-3 col-lg-3">

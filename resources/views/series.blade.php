@@ -133,6 +133,10 @@
 </div>
 <!--Under Trailer Section-->
 
+<div class="my-2 d-flex justify-content-center">
+    <input type="hidden" name="IL_IN_ARTICLE">
+</div>
+
 
 <!-- Tabs_1 Button -->
 <div class="container-fluid p-0 d-none d-md-inline">

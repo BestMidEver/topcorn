@@ -25,6 +25,10 @@
 	<div class="col"></div>
 </div>
 
+<div class="my-2 d-flex justify-content-center">
+	<input type="hidden" name="IL_IN_ARTICLE">
+</div>
+
 	@if(session()->has('status'))
     <div class="alert alert-success"> 
     {!! session('status') !!}

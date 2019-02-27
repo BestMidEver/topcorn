@@ -134,6 +134,10 @@
 </div>
 @endif
 
+<div class="my-2 d-flex justify-content-center">
+	<input type="hidden" name="IL_IN_ARTICLE">
+</div>
+
 
 <!--
 <div class="scrollmenu mt-3 tab2">
