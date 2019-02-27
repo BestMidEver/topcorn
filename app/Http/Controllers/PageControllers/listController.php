@@ -9,6 +9,7 @@ use App\Model\Listitem;
 use App\Model\Listlike;
 use App\Model\Notification;
 use App\Model\Rated;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -336,17 +337,20 @@ class listController extends Controller
             $return_val = Listlike::updateOrCreate(
                 ['user_id' => Auth::id(),
                 'list_id' => $liste],
-                []
+                ['is_deleted' => 0]
             );
-        }
 
-        $list = DB::table('listes')
-        ->where('listes.id', $liste)
-        ->first();
-        Notification::updateOrCreate(
-            ['mode' => 1, 'user_id' => $list->user_id, 'multi_id' => $liste],
-            ['is_seen' => 0]
-        );
+            $list = DB::table('listes')
+            ->where('listes.id', $liste)
+            ->first();
+
+            if($return_val->wasRecentlyCreated && User::find($list->user_id)->when_user_interaction > 0){
+                Notification::updateOrCreate(
+                    ['mode' => 1, 'user_id' => $list->user_id, 'multi_id' => $liste],
+                    ['is_seen' => 0]
+                );
+            }
+        }
 
         $like_count = DB::table('listlikes')
         ->where('listlikes.list_id', '=', $liste)
@@ -360,21 +364,15 @@ class listController extends Controller
 
     public function unlike_list($liste)
     {
-        $q = DB::table('listes')
-        ->leftjoin('listlikes', 'listes.id', '=', 'listlikes.list_id')
-        ->where('listes.id', '=', $liste)
-        ->where('listes.visibility', '>', 0);
-
-        if($q->count() > 0){
-            $return_val = Listlike::where(['list_id' => $liste, 'user_id' => Auth::id()])->delete();
-        }
+        $return_val = Listlike::updateOrCreate(
+            ['list_id' => $liste, 'user_id' => Auth::id()],
+            ['is_deleted' => 1]
+        );
 
         $will_be_deleted = Notification::where('multi_id', $liste)
-        ->where('mode', 1)->first();
-        
-        if($will_be_deleted){
-            $will_be_deleted->delete();
-        }
+        ->where('user_id', Auth::id())
+        ->where('mode', 1)
+        ->delete();
         
         $like_count = DB::table('listlikes')
         ->where('listlikes.list_id', '=', $liste)

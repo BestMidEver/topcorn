@@ -67,6 +67,7 @@ class ReviewController extends Controller
         ->whereIn('reviews.mode', $mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+        ->where('review_likes.is_deleted', '=', 0)
         ->groupBy('reviews.id')
         ->select(
             'reviews.tmdb_author_name as author',
@@ -143,6 +144,7 @@ class ReviewController extends Controller
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+        ->where('review_likes.is_deleted', '=', 0)
         ->groupBy('reviews.id');
 
         if($request->mode[0]==0){
@@ -266,6 +268,7 @@ class ReviewController extends Controller
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
+        ->where('review_likes.is_deleted', '=', 0)
         ->groupBy('reviews.id')
         ->select(
             'reviews.tmdb_author_name as author',
