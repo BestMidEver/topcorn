@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class mainController extends Controller
 {
-    
 	public function main($lang = '')
 	{
     	if($lang != '') App::setlocale($lang);
