@@ -7,6 +7,7 @@ pass={
 	"is_auth":"{{  Auth::Check()  }}",
 	"follow_id":{{ $follow_id }},
 	"is_following_you":{{ $is_following_you }},
+    "constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	@if(Auth::check())
 	"user_id":{{ Auth::id() }},
 	"tt_navbar":{{ Auth::User()->tt_navbar }},

@@ -12,6 +12,7 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 //////////////////////////////////////////////////////////////////////////////////////////
 
 	console.log(pass);
+	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
 
 	if(pass.profile_user_id.split("-")[0] != pass.user_id) $scope.page_variables = {is_guest:true, movies_or_series:'movies', follow_id:pass.follow_id};
 	else $scope.page_variables = {movies_or_series:'movies', follow_id:pass.follow_id};
