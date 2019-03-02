@@ -45,10 +45,10 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.get_first_page_data(1);
 
-	$scope.paginate = function(page, mode)
+	$scope.paginate_1 = function(page)
 	{
-		$scope['page_'+mode] = page;
-		$scope.get_page_data(mode);
+		$scope.page_1 = page;
+		$scope.get_page_data(1);
 		$scope.scroll_to_top();
 	}
 
