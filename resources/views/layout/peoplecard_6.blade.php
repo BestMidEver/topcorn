@@ -31,7 +31,7 @@
 			</div>
 		</div>
 	</div>
-	<div ng-show="iscast_movies{{  $suffix  }}">
+	<div ng-show="iscast{{  $suffix  }}">
 	@include('layout.pagination', ['suffix' => '_'.$suffix])
 	</div>
 	<div ng-if="people{{  $suffix  }}.length > 6">
