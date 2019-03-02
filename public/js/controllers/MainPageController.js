@@ -36,7 +36,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 			case 2:
 				rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
 				.then(function(response){
-					console.log(response);
+					//console.log(response);
 					$scope.similar_movies2=response.data.results;
 					if(response.data.total_pages<1000) $scope.pagination_2=response.data.total_pages;
 					else $scope.pagination_2=1000;
@@ -122,7 +122,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	{
 		rate.get_quick_rate(pass.lang)
 		.then(function(response){
-			console.log(response.data)
+			//console.log(response.data)
 			if(response.data.length>0){
 				$scope.modalmovies=response.data;
 				$scope.next_quick_rate();
