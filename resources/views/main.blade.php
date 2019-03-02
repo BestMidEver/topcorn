@@ -56,7 +56,7 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;">Most Popular</button>
 	    </div>
 	</div>
-	<div ng-show="similar_movies2.length>0">
+	<div ng-show="people3.length>0">
     @include('layout.peoplecard_6', ['suffix' => '3'])
 	</div>
 </div>
