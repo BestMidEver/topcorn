@@ -45,6 +45,12 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.get_first_page_data(1);
 
+	$scope.paginate = function(page, mode)
+	{
+		$scope['page_'+mode = page;
+		$scope.get_page_data(mode);
+		$scope.scroll_to_top();
+	}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
