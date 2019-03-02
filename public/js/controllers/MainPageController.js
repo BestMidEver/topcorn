@@ -75,12 +75,12 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				rate.get_popular_users(0, $scope.page_4)
 				.then(function(response){
 					console.log(response);
-					$scope.users4 = response.data;
-					$scope.pagination_4=response.last_page;
-					$scope.current_page_4=response.current_page;
-					$scope.from_4=response.from;
-					$scope.to_4=response.to;
-					$scope.in_4=response.total;
+					$scope.users4 = response.data.data;
+					$scope.pagination_4=response.data.last_page;
+					$scope.current_page_4=response.data.current_page;
+					$scope.from_4=response.data.from;
+					$scope.to_4=response.data.to;
+					$scope.in_4=response.data.total;
 				});
 				break;
 			default:
