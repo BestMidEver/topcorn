@@ -23,6 +23,13 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				.then(function(response){
 					console.log(response);
 					$scope.similar_movies1=response.data.results;
+					if(response.data.total_pages<1000) $scope.pagination_1=response.data.total_pages;
+					else $scope.pagination_1=1000;
+					$scope.current_page_1=response.data.page;
+					$scope.from_1=(response.data.page-1)*20+1;
+					$scope.to_1=(response.data.page-1)*20+response.data.results.length;
+					$scope.in_1=response.data.total_results;
+					$scope.is_1=false;
 				});
 				break;
 			default:

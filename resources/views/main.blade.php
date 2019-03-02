@@ -26,6 +26,7 @@
 	</div>
 	<div ng-show="similar_movies1.length>0">
     @include('layout.moviecard_6', ['suffix' => '1'])
+	@include('layout.pagination', ['suffix' => '_1'])
 	</div>
 </div>
 <div class="mt-5">
