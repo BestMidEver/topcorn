@@ -11,13 +11,21 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
-	console.log(pass.reviews)
 	$scope.users4 = pass.users.data;
 	$scope.pagination_4=pass.users.last_page;
 	$scope.current_page_4=pass.users.current_page;
 	$scope.from_4=pass.users.from;
 	$scope.to_4=pass.users.to;
 	$scope.in_4=pass.users.total;
+
+
+	console.log(pass.reviews)
+	$scope.reviews5 = pass.reviews.data;
+	$scope.pagination_5=pass.reviews.last_page;
+	$scope.current_page_5=pass.reviews.current_page;
+	$scope.from_5=pass.reviews.from;
+	$scope.to_5=pass.reviews.to;
+	$scope.in_5=pass.reviews.total;
 
 
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
@@ -83,6 +91,18 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.in_4=response.data.total;
 				});
 				break;
+			case 5:
+				rate.get_popular_reviews(0, $scope.page_5)
+				.then(function(response){
+					console.log(response);
+					$scope.reviews5 = response.data.data;
+					$scope.pagination_5=response.data.last_page;
+					$scope.current_page_5=response.data.current_page;
+					$scope.from_5=response.data.from;
+					$scope.to_5=response.data.to;
+					$scope.in_5=response.data.total;
+				});
+				break;
 			default:
 		}
 		$(".tooltip").hide();
@@ -123,6 +143,13 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	{
 		$scope.page_4 = page;
 		$scope.get_page_data(4);
+		$scope.scroll_to_top();
+	}
+
+	$scope.paginate_5 = function(page)
+	{
+		$scope.page_5 = page;
+		$scope.get_page_data(5);
 		$scope.scroll_to_top();
 	}
 
