@@ -18,7 +18,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	{
 		$scope.is_waiting=true;
 		switch(mode) {
-			case '1':
+			case 1:
 					console.log(mode);
 				rate.get_now_playing(pass.constants_api_key, pass.lang, pass.lang=='en'?'us':(pass.lang=='tr'?'tr':'hu'), $scope.page_1)
 				.then(function(response){
