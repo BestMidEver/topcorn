@@ -73,6 +73,25 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=2;">Most Followed</button>
 	    </div>
 	</div>
+	<div class="d-flex flex-wrap" ng-show="active_tab=='get_follows'">
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users">
+			<div class="card moviecard h-100 d-flex flex-column justify-content-between">
+				<a ng-href="/profile/@{{ user.user_id }}" target={{$target}}>
+					<img class="card-img-top" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+					<div class="card-block">
+						<h6 class="card-title px-1 pt-1 text-muted text-center">@{{user.name}}</h6>
+					</div>
+				</a>
+				<div class="card-footer p-0">
+					<div class="row no-gutters">
+						<div class="col">
+							<a class="btn btn-outline-secondary btn-sm btn-block addlater border-0" ng-class="{'disabled':user.user_id == user_id}" ng-href="/recommendations/@{{user.user_id}}"><i class="fa fa-plus" aria-hidden="true" disabled></i> {{ __('general.watch_together') }}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline">
