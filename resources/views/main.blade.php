@@ -47,7 +47,7 @@
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline pl-3">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3=0">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3=1">
 	    <span class="h5" ng-show="page_variables.active_tab_3==0">People: Who Born Today</span>
 	    <span class="h5" ng-if="page_variables.active_tab_3==1">People: Most Popular</span>
 	    </button>
@@ -55,6 +55,9 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_3=0;">Who Born Today</button>
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;">Most Popular</button>
 	    </div>
+	</div>
+	<div ng-show="similar_movies2.length>0">
+    @include('layout.moviecard_6', ['suffix' => '3'])
 	</div>
 </div>
 <div class="mt-5">

@@ -47,6 +47,20 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.is_2=false;
 				});
 				break;
+			case 3:
+				rate.get_popular_people(pass.api_key, pass.lang, $scope.page_3)
+				.then(function(response){
+					console.log(response);
+					$scope.similar_movies3=response.data.results;
+					if(response.data.total_pages<1000) $scope.pagination_3=response.data.total_pages;
+					else $scope.pagination_3=1000;
+					$scope.current_page_3=response.data.page;
+					$scope.from_3=(response.data.page-1)*20+1;
+					$scope.to_3=(response.data.page-1)*20+response.data.results.length;
+					$scope.in_3=response.data.total_results;
+					$scope.is_3=false;
+				});
+				break;
 			default:
 		}
 		$(".tooltip").hide();
@@ -60,6 +74,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.get_first_page_data(1);
 	$scope.get_first_page_data(2);
+	$scope.get_first_page_data(3);
 
 	$scope.paginate_1 = function(page)
 	{
@@ -72,6 +87,13 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	{
 		$scope.page_2 = page;
 		$scope.get_page_data(2);
+		$scope.scroll_to_top();
+	}
+
+	$scope.paginate_3 = function(page)
+	{
+		$scope.page_3 = page;
+		$scope.get_page_data(3);
 		$scope.scroll_to_top();
 	}
 

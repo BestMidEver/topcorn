@@ -36,6 +36,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_popular_people = function(constants_api_key, lang, page) 
+    {
+		return $http({
+			method: 'GET',
+			url: 'https://api.themoviedb.org/3/person/popular?api_key='+constants_api_key+'&language='+lang+'&page='+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     add_follow = function(object_id) 
     {
         return $http({
@@ -801,6 +818,7 @@ MyApp.factory('rate', function($http) {
     return {
     	get_now_playing: get_now_playing,
     	get_now_on_air: get_now_on_air,
+    	get_popular_people: get_popular_people,
     	add_follow: add_follow,
     	un_follow: un_follow,
     	set_seen: set_seen,
