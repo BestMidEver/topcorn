@@ -22,7 +22,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 			case 1:
 				rate.get_now_playing(pass.api_key, pass.lang, pass.lang=='en'?'us':(pass.lang=='tr'?'tr':'hu'), $scope.page_1)
 				.then(function(response){
-					console.log(response);
+					//console.log(response);
 					$scope.similar_movies1=response.data.results;
 					if(response.data.total_pages<1000) $scope.pagination_1=response.data.total_pages;
 					else $scope.pagination_1=1000;
