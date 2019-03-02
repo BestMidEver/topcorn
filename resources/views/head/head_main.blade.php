@@ -10,7 +10,8 @@ pass={
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	@endif
 	"watched_movie_number":{{ $watched_movie_number }},
-	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}"
+	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
+	"users":{!! json_encode($users) !!}
 };
 </script>
 @endsection

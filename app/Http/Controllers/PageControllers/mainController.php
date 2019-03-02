@@ -4,11 +4,35 @@ namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\Rated;
+use Illuminate\Auth\Middleware\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class mainController extends Controller
 {
+    public static function get_popular_users(mode)
+    {
+        $pagination = 24;
+        if(Auth::check()){
+            $pagination = Auth::User()->pagination;
+        }
+
+        $users = DB::table('users')
+        ->leftjoin('reviews', function ($join) {
+            $join->on('reviews.user_id', '=', 'users.id');
+        })
+        ->select(
+            'users.id as user_id',
+            'users.name as name',
+            'users.facebook_profile_pic as facebook_profile_path',
+            'users.profile_pic as profile_path'
+        );
+
+        return $users->paginate($pagination);
+    }
+
+
+
 	public function main($lang = '')
 	{
     	if($lang != '') App::setlocale($lang);
@@ -18,7 +42,9 @@ class mainController extends Controller
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+        
+        $users = $this->get_popular_users('commenters');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'));
+		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('users', $users);
 	}
 }
