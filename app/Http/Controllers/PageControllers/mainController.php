@@ -24,6 +24,7 @@ class mainController extends Controller
         ->leftjoin('review_likes', function ($join) {
             $join->on('review_likes.review_id', '=', 'reviews.id');
         })
+        ->where('review_likes.is_deleted', '=', 0)
         ->whereNotNull('review_likes.id')
         ->select(
             'users.id as user_id',
@@ -54,6 +55,7 @@ class mainController extends Controller
         ->leftjoin('review_likes', function ($join) {
             $join->on('review_likes.review_id', '=', 'reviews.id');
         })
+        ->where('review_likes.is_deleted', '=', 0)
         ->whereNotNull('review_likes.id')
         ->select(
             'users.id as user_id',
@@ -84,6 +86,25 @@ class mainController extends Controller
         ->leftjoin('review_likes', function ($join) {
             $join->on('review_likes.review_id', '=', 'reviews.id');
         })
+        ->where('review_likes.is_deleted', '=', 0)
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'reviews.movie_series_id');
+            $join->on('rateds.user_id', '=', 'reviews.user_id')
+            ->where('reviews.mode', '=', 1);
+        })
+        ->leftjoin('movies', function ($join) {
+            $join->on('movies.id', '=', 'reviews.movie_series_id')
+            ->where('reviews.mode', '=', 1);
+        })
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series_rateds.series_id', '=', 'reviews.movie_series_id');
+            $join->on('series_rateds.user_id', '=', 'reviews.user_id')
+            ->where('reviews.mode', '=', 3);
+        })
+        ->leftjoin('series', function ($join) {
+            $join->on('series.id', '=', 'reviews.movie_series_id')
+            ->where('reviews.mode', '=', 3);
+        })
         ->whereNotNull('review_likes.id')
         ->groupBy('reviews.id')
         ->orderBy('count', 'desc');
@@ -91,15 +112,14 @@ class mainController extends Controller
         if(Auth::check()){
             $reviews = $reviews
             ->select(
-                'reviews.tmdb_author_name as author',
-                'reviews.review as content',
-                'reviews.tmdb_review_id as id',
-                'reviews.lang as url',
                 'reviews.id as review_id',
-                'users.name as name',
-                'users.id as user_id',
-                'r1.rate as rate',
+                'reviews.review as content',
+                'reviews.mode as mode',
                 'reviews.movie_series_id as movie_series_id',
+                DB::raw('IF(movies.id>0, movies.'.Auth::User()->lang.'_title, series.'.Auth::User()->lang.'_name) as movie_title'),
+                DB::raw('IF(movies.id>0, rateds.rate, series_rateds.rate) as rate'),
+                DB::raw('IF(movies.id>0, movies.original_title, series.original_name) as original_title'),
+                DB::raw('IF(movies.id>0, movies.release_date, series.first_air_date) as release_date'),
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
@@ -107,14 +127,14 @@ class mainController extends Controller
         }else{
             $reviews = $reviews
             ->select(
-                'reviews.tmdb_author_name as author',
-                'reviews.review as content',
-                'reviews.tmdb_review_id as id',
-                'reviews.lang as url',
                 'reviews.id as review_id',
-                'users.name as name',
-                'users.id as user_id',
-                'r1.rate as rate',
+                'reviews.review as content',
+                'reviews.mode as mode',
+                'reviews.movie_series_id as movie_series_id',
+                DB::raw('IF(movies.id>0, movies.'.App::getlocale().'_title, series.'.App::getlocale().'_name) as movie_title'),
+                DB::raw('IF(movies.id>0, rateds.rate, series_rateds.rate) as rate'),
+                DB::raw('IF(movies.id>0, movies.original_title, series.original_name) as original_title'),
+                DB::raw('IF(movies.id>0, movies.release_date, series.first_air_date) as release_date'),
                 DB::raw('COUNT(review_likes.id) as count')
             );
         }
