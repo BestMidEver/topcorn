@@ -71,7 +71,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.is_3=false;
 				});
 				break;
-			case 3:
+			case 4:
 				rate.get_popular_users(0, $scope.page_4)
 				.then(function(response){
 					console.log(response);
