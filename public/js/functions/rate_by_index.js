@@ -836,6 +836,7 @@ MyApp.factory('rate', function($http) {
     	get_now_playing: get_now_playing,
     	get_now_on_air: get_now_on_air,
     	get_popular_people: get_popular_people,
+    	get_popular_users: get_popular_users,
     	add_follow: add_follow,
     	un_follow: un_follow,
     	set_seen: set_seen,
