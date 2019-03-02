@@ -34,7 +34,7 @@
 	<div ng-show="iscast{{  $suffix  }}">
 	@include('layout.pagination', ['suffix' => '_'.$suffix])
 	</div>
-	<div ng-if="people{{  $suffix  }}.length > 6">
+	<div ng-show="people{{  $suffix  }}.length > 6">
 		<div class="text-center pt-1" ng-hide="iscast{{  $suffix  }}">
 			<button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast{{  $suffix  }} = true;" data-toggle="collapse" data-target="#collapseCast{{  $suffix  }}"><small>{{ __('general.show_everyone') }}</small></button>
 		</div>
