@@ -34,7 +34,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				});
 				break;
 			case 2:
-				rate.get_now_playing(pass.api_key, pass.lang, $scope.page_2)
+				rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
 				.then(function(response){
 					console.log(response);
 					$scope.similar_movies2=response.data.results;
