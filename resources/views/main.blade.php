@@ -57,7 +57,7 @@
 	    </div>
 	</div>
 	<div ng-show="similar_movies2.length>0">
-    @include('layout.moviecard_6', ['suffix' => '3'])
+    @include('layout.peoplecard_6', ['suffix' => '3'])
 	</div>
 </div>
 <div class="mt-5">
