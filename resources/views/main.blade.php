@@ -77,15 +77,6 @@
     @include('layout.userscard_6', ['suffix' => '4'])
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
 <div class="mt-5">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
@@ -96,6 +87,9 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=0;">Most Liked</button>
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=1;">Newest</button>
 	    </div>
+	</div>
+	<div ng-show="users4.length>0">
+    @include('layout.reviews_6', ['suffix' => '5'])
 	</div>
 </div>
 <div class="mt-5">
