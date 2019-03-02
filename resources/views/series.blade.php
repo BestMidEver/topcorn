@@ -434,7 +434,7 @@
         </div>
     </div>
     <span class="text-muted px-3 px-md-0 scrollmenu"><small>{{ __('general.sorted_by_relevance') }}</small></span>
-    @include('layout.moviecard_6')
+    @include('layout.moviecard_6', ['suffix' => ''])
 </div>
 <!--People Who Liked Also Liked Section-->
 
