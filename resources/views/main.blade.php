@@ -13,7 +13,7 @@
 </div>
 <div>
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=0">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=0">
 	    <span class="h5" ng-show="page_variables.active_tab_1==0">Movies: Now Playing</span>
 	    <span class="h5" ng-if="page_variables.active_tab_1==1">Movies: Legendary</span>
 	    <span class="h5" ng-if="page_variables.active_tab_1==2">Movies: Garbage</span>
