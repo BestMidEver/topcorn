@@ -11,6 +11,20 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
+	$scope.prepeare_reviews = function(reviews){
+		_.each(reviews, function(review){
+			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
+			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>1){
+				review.url=$sce.trustAsHtml(review.content.replace(/<br>/g , " ").substring(0, 500)+'...');
+				review.id='long';
+			}else{
+				review.url=$sce.trustAsHtml(review.content);
+				review.id='short';
+			}
+			review.content=$sce.trustAsHtml(review.content);
+		});
+	}
+
 	$scope.users4 = pass.users.data;
 	$scope.pagination_4=pass.users.last_page;
 	$scope.current_page_4=pass.users.current_page;
@@ -153,20 +167,6 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		$scope.page_5 = page;
 		$scope.get_page_data(5);
 		$scope.scroll_to_top();
-	}
-
-	$scope.prepeare_reviews = function(reviews){
-		_.each(reviews, function(review){
-			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
-			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>1){
-				review.url=$sce.trustAsHtml(review.content.replace(/<br>/g , " ").substring(0, 500)+'...');
-				review.id='long';
-			}else{
-				review.url=$sce.trustAsHtml(review.content);
-				review.id='short';
-			}
-			review.content=$sce.trustAsHtml(review.content);
-		});
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////
