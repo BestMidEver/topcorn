@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:2">
+	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:6">
         <div class="d-flex justify-content-between">
             <div class="h6 pb-2" ng-if="review.author.length>0">@{{review.author}}</div>
             <div class="d-inline" ng-if="review.name.length>0"><a class="h6 pb-2 text-dark d-inline" ng-href="/profile/@{{review.user_id}}">@{{review.name}}</a> <span class="ml-2" ng-if="review.rate>0"><i class="fas fa-star" ng-class="{1:'text-danger', 2:'text-warning', 3:'text-secondary', 4:'text-info', 5:'text-success'}[review.rate]" ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star text-muted" ng-repeat="n in [] | range:(5-review.rate)"></i></span></div>
@@ -36,8 +36,8 @@
 	</div>
 </div>
 <div class="collapse" id="collapseMovies{{ $suffix }}">
-	<div ng-if="reviews{{ $suffix }}.length > 2">
-    	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:100:2">
+	<div ng-if="reviews{{ $suffix }}.length > 6">
+    	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:100:6">
             <div class="d-flex justify-content-between">
                 <div class="h6 pb-2" ng-if="review.author.length>0">@{{review.author}}</div>
                 <div class="d-inline" ng-if="review.name.length>0"><a class="h6 pb-2 text-dark d-inline" ng-href="/profile/@{{review.user_id}}">@{{review.name}}</a> <span class="ml-2" ng-if="review.rate>0"><i class="fas fa-star" ng-class="{1:'text-danger', 2:'text-warning', 3:'text-secondary', 4:'text-info', 5:'text-success'}[review.rate]" ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star text-muted" ng-repeat="n in [] | range:(5-review.rate)"></i></span></div>
@@ -77,9 +77,9 @@
 <div ng-show="iscast_movies{{  $suffix  }}">
 @include('layout.pagination', ['suffix' => '_'.$suffix])
 </div>
-<div class="text-center pt-1" ng-hide="iscast_movies{{ $suffix }} || !(reviews{{ $suffix }}.length>2)">
+<div class="text-center pt-1" ng-hide="iscast_movies{{ $suffix }} || !(reviews{{ $suffix }}.length>6)">
     <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast_movies{{ $suffix }} = true;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><small>{{__('general.show_all')}}</small></button>
 </div>
-<div class="text-center pt-1" ng-show="iscast_movies{{ $suffix }} && reviews{{ $suffix }}.length>2">
+<div class="text-center pt-1" ng-show="iscast_movies{{ $suffix }} && reviews{{ $suffix }}.length>6">
     <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast_movies{{ $suffix }} = false;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><i class="fa fa-angle-up"></i></button>
 </div>

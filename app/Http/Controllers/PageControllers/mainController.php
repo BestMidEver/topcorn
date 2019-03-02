@@ -143,7 +143,7 @@ class mainController extends Controller
             );
         }
 
-        return $reviews->paginate(4);
+        return $reviews->paginate($pagination);
     }
 
 
