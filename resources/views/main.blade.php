@@ -43,9 +43,6 @@
 	</div>
 	<div ng-show="similar_movies2.length>0">
     @include('layout.moviecard_6', ['suffix' => '2'])
-	    <div ng-show="iscast_movies2">
-		@include('layout.pagination', ['suffix' => '_2'])
-	    </div>
 	</div>
 </div>
 <div class="mt-5">
