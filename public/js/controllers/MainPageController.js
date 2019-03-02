@@ -12,7 +12,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 //////////////////////////////////////////////////////////////////////////////////////////
 
 	console.log(pass.users)
-	$scope.users = pass.users;
+	$scope.users = pass.users.data;
 	$scope.page_variables={};
 	$scope.page_1=0;
 	$scope.page_2=0;
