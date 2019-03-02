@@ -13,6 +13,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.page_variables={};
 	$scope.page_1=0;
+	$scope.page_2=0;
 
 	$scope.get_page_data = function(mode)
 	{
@@ -32,6 +33,20 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.is_1=false;
 				});
 				break;
+			case 2:
+				rate.get_now_playing(pass.api_key, pass.lang, $scope.page_2)
+				.then(function(response){
+					console.log(response);
+					$scope.similar_movies2=response.data.results;
+					if(response.data.total_pages<1000) $scope.pagination_2=response.data.total_pages;
+					else $scope.pagination_2=1000;
+					$scope.current_page_2=response.data.page;
+					$scope.from_2=(response.data.page-1)*20+1;
+					$scope.to_2=(response.data.page-1)*20+response.data.results.length;
+					$scope.in_2=response.data.total_results;
+					$scope.is_2=false;
+				});
+				break;
 			default:
 		}
 		$(".tooltip").hide();
@@ -44,11 +59,19 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	}
 
 	$scope.get_first_page_data(1);
+	$scope.get_first_page_data(2);
 
 	$scope.paginate_1 = function(page)
 	{
 		$scope.page_1 = page;
 		$scope.get_page_data(1);
+		$scope.scroll_to_top();
+	}
+
+	$scope.paginate_2 = function(page)
+	{
+		$scope.page_2 = page;
+		$scope.get_page_data(2);
 		$scope.scroll_to_top();
 	}
 

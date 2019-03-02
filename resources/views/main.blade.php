@@ -26,9 +26,9 @@
 	</div>
 	<div ng-show="similar_movies1.length>0">
     @include('layout.moviecard_6', ['suffix' => '1'])
-    <div ng-show="iscast_movies1">
-	@include('layout.pagination', ['suffix' => '_1'])
-    </div>
+	    <div ng-show="iscast_movies1">
+		@include('layout.pagination', ['suffix' => '_1'])
+	    </div>
 	</div>
 </div>
 <div class="mt-5">
@@ -42,6 +42,12 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_2=0;">On The Air</button>
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_2=1;">Legendary</button>
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_2=2;">Garbage</button>
+	    </div>
+	</div>
+	<div ng-show="similar_movies2.length>0">
+    @include('layout.moviecard_6', ['suffix' => '2'])
+	    <div ng-show="iscast_movies2">
+		@include('layout.pagination', ['suffix' => '_2'])
 	    </div>
 	</div>
 </div>
