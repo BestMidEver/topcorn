@@ -23,7 +23,7 @@ MyApp.factory('rate', function($http) {
     {
 		return $http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/movie/now_playing?api_key='+constants_api_key+'&language='+lang+'&page='+page,
+			url: 'https://api.themoviedb.org/3/tv/on_the_air?api_key='+constants_api_key+'&language='+lang+'&page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
