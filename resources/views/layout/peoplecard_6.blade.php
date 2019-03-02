@@ -1,4 +1,4 @@
-<div class="container-fluid px-0 mt-5" id="cast{{  $suffix  }}" ng-if="people{{  $suffix  }}.length > 0">
+<div class="container-fluid" id="cast{{  $suffix  }}" ng-if="people{{  $suffix  }}.length > 0">
 	<div class="">
 		<div class="d-flex flex-wrap">
 			<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in people{{  $suffix  }} | limitTo:6">
