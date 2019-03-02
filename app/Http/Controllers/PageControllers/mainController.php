@@ -32,7 +32,7 @@ class mainController extends Controller
             'users.profile_pic as profile_path',
             DB::raw('COUNT(users.id) as count')
         )
-        //->groupBy('users.id')
+        ->groupBy('users.id')
         ->orderBy('count', 'desc');
 
         return $users->paginate($pagination);
