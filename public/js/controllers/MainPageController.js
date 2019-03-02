@@ -47,7 +47,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.paginate = function(page, mode)
 	{
-		$scope['page_'+mode = page;
+		$scope['page_'+mode] = page;
 		$scope.get_page_data(mode);
 		$scope.scroll_to_top();
 	}
