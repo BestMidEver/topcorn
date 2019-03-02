@@ -4,7 +4,6 @@ namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
 use App\Model\Rated;
-use Illuminate\Auth\Middleware\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
