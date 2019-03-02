@@ -2,6 +2,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_now_playing = function(constants_api_key, lang, region, page) 
+    {
+		return $http({
+			method: 'GET',
+			url: 'https://api.themoviedb.org/3/movie/now_playing?api_key='+constants_api_key+'&language='+lang+'&page='+page+'&region='+region,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    }
+
+
+
     add_follow = function(object_id) 
     {
         return $http({
@@ -765,6 +782,7 @@ MyApp.factory('rate', function($http) {
 
 
     return {
+    	get_now_playing: get_now_playing,
     	add_follow: add_follow,
     	un_follow: un_follow,
     	set_seen: set_seen,

@@ -4,6 +4,7 @@ pass={
 	"angular_module_array":[], 
 	"lang":"{{ App::getlocale() }}",
 	"is_auth":"{{  Auth::Check()  }}",
+	"api_key":"{{config('constants.api_key')}}",
 	@if(Auth::check())
 	"user_id":{{ Auth::id() }},
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
