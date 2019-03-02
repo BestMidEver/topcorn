@@ -53,6 +53,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_popular_users = function(mode, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_popular_users/'+mode+'/'+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     add_follow = function(object_id) 
     {
         return $http({

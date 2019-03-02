@@ -71,6 +71,18 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.is_3=false;
 				});
 				break;
+			case 3:
+				rate.get_popular_users($scope.page_4)
+				.then(function(response){
+					console.log(response);
+					$scope.users4 = response.data;
+					$scope.pagination_4=response.last_page;
+					$scope.current_page_4=response.current_page;
+					$scope.from_4=response.from;
+					$scope.to_4=response.to;
+					$scope.in_4=response.total;
+				});
+				break;
 			default:
 		}
 		$(".tooltip").hide();
