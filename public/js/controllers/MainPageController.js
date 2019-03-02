@@ -51,7 +51,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				rate.get_popular_people(pass.api_key, pass.lang, $scope.page_3)
 				.then(function(response){
 					console.log(response);
-					$scope.similar_movies3=response.data.results;
+					$scope.similar_people3=response.data.results;
 					if(response.data.total_pages<1000) $scope.pagination_3=response.data.total_pages;
 					else $scope.pagination_3=1000;
 					$scope.current_page_3=response.data.page;
