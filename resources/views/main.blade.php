@@ -88,7 +88,7 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=1;">Newest</button>
 	    </div>
 	</div>
-	<div ng-show="users4.length>0">
+	<div ng-show="reviews5.length>0">
     @include('layout.reviews_6', ['suffix' => '5'])
 	</div>
 </div>

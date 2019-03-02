@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:6">
+	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:6">
         <div class="d-flex justify-content-between">
             <div class="h6 pb-2" ng-if="review.author.length>0">@{{review.author}}</div>
             <div class="d-inline" ng-if="review.name.length>0"><a class="h6 pb-2 text-dark d-inline" ng-href="/profile/@{{review.user_id}}">@{{review.name}}</a> <span class="ml-2" ng-if="review.rate>0"><i class="fas fa-star" ng-class="{1:'text-danger', 2:'text-warning', 3:'text-secondary', 4:'text-info', 5:'text-success'}[review.rate]" ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star text-muted" ng-repeat="n in [] | range:(5-review.rate)"></i></span></div>
@@ -38,7 +38,7 @@
 <div class="collapse" id="collapseMovies{{ $suffix }}">
 	<div ng-if="reviews{{ $suffix }}.length > 6">
 		<div class="card-group no-gutters">
-        	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:100:6">
+        	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:100:6">
                 <div class="d-flex justify-content-between">
                     <div class="h6 pb-2" ng-if="review.author.length>0">@{{review.author}}</div>
                     <div class="d-inline" ng-if="review.name.length>0"><a class="h6 pb-2 text-dark d-inline" ng-href="/profile/@{{review.user_id}}">@{{review.name}}</a> <span class="ml-2" ng-if="review.rate>0"><i class="fas fa-star" ng-class="{1:'text-danger', 2:'text-warning', 3:'text-secondary', 4:'text-info', 5:'text-success'}[review.rate]" ng-repeat="n in [] | range:review.rate"></i><i class="far fa-star text-muted" ng-repeat="n in [] | range:(5-review.rate)"></i></span></div>
