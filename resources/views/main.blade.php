@@ -13,7 +13,7 @@
 </div>
 <div>
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=0">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=0">
 	    <span class="h5" ng-show="page_variables.active_tab_1==0">Movies: Now Playing</span>
 	    <span class="h5" ng-if="page_variables.active_tab_1==1">Movies: Legendary</span>
 	    <span class="h5" ng-if="page_variables.active_tab_1==2">Movies: Garbage</span>
@@ -30,7 +30,7 @@
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2=0">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2=0">
 	    <span class="h5" ng-show="page_variables.active_tab_2==0">Series: On The Air</span>
 	    <span class="h5" ng-if="page_variables.active_tab_2==1">Series: Legendary</span>
 	    <span class="h5" ng-if="page_variables.active_tab_2==1">Series: Garbage</span>
@@ -47,7 +47,7 @@
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3=1">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3=1">
 	    <span class="h5" ng-show="page_variables.active_tab_3==0">People: Who Born Today</span>
 	    <span class="h5" ng-if="page_variables.active_tab_3==1">People: Most Popular</span>
 	    </button>
@@ -62,7 +62,7 @@
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
 	    <span class="h5" ng-show="page_variables.active_tab_4==0">Users: Most Liked Commenters</span>
 	    <span class="h5" ng-if="page_variables.active_tab_4==1">Users: Most Liked List Creators</span>
 	    <span class="h5" ng-if="page_variables.active_tab_4==2">Users: Most Followed</span>
@@ -76,7 +76,7 @@
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
 	    <span class="h5" ng-show="page_variables.active_tab_4==0">Reviews: Most Liked</span>
 	    <span class="h5" ng-if="page_variables.active_tab_4==1">Reviews: Newest</span>
 	    </button>
@@ -88,7 +88,7 @@
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_5=0">
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_5=0">
 	    <span class="h5" ng-show="page_variables.active_tab_5==0">Lists: Most Liked</span>
 	    <span class="h5" ng-if="page_variables.active_tab_5==1">Lists: Newest</span>
 	    </button>
