@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class mainController extends Controller
 {
-    public static function get_popular_users(mode)
+    public static function get_popular_users($mode)
     {
         $pagination = 24;
         if(Auth::check()){
