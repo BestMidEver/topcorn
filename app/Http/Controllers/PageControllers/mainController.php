@@ -112,6 +112,8 @@ class mainController extends Controller
         if(Auth::check()){
             $reviews = $reviews
             ->select(
+            	'users.name as name',
+            	'users.id as user_id',
                 'reviews.id as review_id',
                 'reviews.review as content',
                 'reviews.mode as mode',
@@ -127,6 +129,8 @@ class mainController extends Controller
         }else{
             $reviews = $reviews
             ->select(
+            	'users.name as name',
+            	'users.id as user_id',
                 'reviews.id as review_id',
                 'reviews.review as content',
                 'reviews.mode as mode',
