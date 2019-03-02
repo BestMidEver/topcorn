@@ -74,7 +74,7 @@
 	    </div>
 	</div>
 	<div ng-show="users4.length>0">
-    @include('layout.userscard_6', ['suffix' => '4'])
+    @include('layout.usersscard_6', ['suffix' => '4'])
 	</div>
 </div>
 
