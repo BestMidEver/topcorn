@@ -21,6 +21,10 @@ class mainController extends Controller
         ->leftjoin('reviews', function ($join) {
             $join->on('reviews.user_id', '=', 'users.id');
         })
+        ->leftjoin('review_likes', function ($join) {
+            $join->on('review_likes.review_id', '=', 'reviews.id');
+        })
+        ->whereNotNull('review_likes.id')
         ->select(
             'users.id as user_id',
             'users.name as name',
