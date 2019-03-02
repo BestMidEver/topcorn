@@ -11,7 +11,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
-	console.log(pass.users)
+	console.log(pass.reviews)
 	$scope.users4 = pass.users.data;
 	$scope.pagination_4=pass.users.last_page;
 	$scope.current_page_4=pass.users.current_page;

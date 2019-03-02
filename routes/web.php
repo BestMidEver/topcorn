@@ -154,6 +154,8 @@ Route::get('main/{lang?}', 'PageControllers\mainController@main')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
 Route::get('api/get_popular_users/{mode}','PageControllers\mainController@get_popular_users');
+Route::get('api/get_popular_lists/{mode}','PageControllers\mainController@get_popular_lists');
+Route::get('api/get_popular_reviews/{mode}','PageControllers\mainController@get_popular_reviews');
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////// MAIN PAGE (PUBLIC) ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////

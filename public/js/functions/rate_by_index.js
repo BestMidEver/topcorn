@@ -70,6 +70,40 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_popular_lists = function(mode, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_popular_lists/'+mode+'?page='+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
+    get_popular_reviews = function(mode, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_popular_reviews/'+mode+'?page='+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     add_follow = function(object_id) 
     {
         return $http({
@@ -837,6 +871,8 @@ MyApp.factory('rate', function($http) {
     	get_now_on_air: get_now_on_air,
     	get_popular_people: get_popular_people,
     	get_popular_users: get_popular_users,
+    	get_popular_lists: get_popular_lists,
+    	get_popular_reviews: get_popular_reviews,
     	add_follow: add_follow,
     	un_follow: un_follow,
     	set_seen: set_seen,
