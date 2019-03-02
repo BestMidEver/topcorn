@@ -1,4 +1,4 @@
-MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, rate)
+MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, rate, $sce)
 {
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
@@ -21,6 +21,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	console.log(pass.reviews)
 	$scope.reviews5 = pass.reviews.data;
+	$scope.prepeare_reviews($scope.reviews5);
 	$scope.pagination_5=pass.reviews.last_page;
 	$scope.current_page_5=pass.reviews.current_page;
 	$scope.from_5=pass.reviews.from;
@@ -96,6 +97,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				.then(function(response){
 					console.log(response);
 					$scope.reviews5 = response.data.data;
+					$scope.prepeare_reviews($scope.reviews5);
 					$scope.pagination_5=response.data.last_page;
 					$scope.current_page_5=response.data.current_page;
 					$scope.from_5=response.data.from;
@@ -151,6 +153,20 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		$scope.page_5 = page;
 		$scope.get_page_data(5);
 		$scope.scroll_to_top();
+	}
+
+	$scope.prepeare_reviews = function(reviews){
+		_.each(reviews, function(review){
+			review.content=review.content.replace(/(<([^>]+)>)/ig , "").replace(/\n/g , "<br>");//replace(/\r\n/g , "<br>");
+			if(review.content.length>500 || (review.content.match(/<br>/g)||[]).length>1){
+				review.url=$sce.trustAsHtml(review.content.replace(/<br>/g , " ").substring(0, 500)+'...');
+				review.id='long';
+			}else{
+				review.url=$sce.trustAsHtml(review.content);
+				review.id='short';
+			}
+			review.content=$sce.trustAsHtml(review.content);
+		});
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////
