@@ -73,7 +73,7 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=2;">Most Followed</button>
 	    </div>
 	</div>
-	<div class="d-flex flex-wrap" ng-show="active_tab=='get_follows'">
+	<div class="d-flex flex-wrap">
 		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users">
 			<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 				<a ng-href="/profile/@{{ user.user_id }}" target={{$target}}>
