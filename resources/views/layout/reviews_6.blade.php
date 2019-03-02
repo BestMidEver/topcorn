@@ -83,6 +83,3 @@
 <div class="text-center pt-1" ng-show="iscast_movies{{ $suffix }} && reviews{{ $suffix }}.length>6">
     <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast_movies{{ $suffix }} = false;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><i class="fa fa-angle-up"></i></button>
 </div>
-<div class="p-5" ng-if="reviews{{  $suffix  }}.length>0">
-    <div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
-</div>
