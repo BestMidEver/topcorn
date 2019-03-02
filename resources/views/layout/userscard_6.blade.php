@@ -44,7 +44,7 @@
 @include('layout.pagination', ['suffix' => '_'.$suffix])
 </div>
 <div class="text-center pt-1" ng-hide="iscast{{ $suffix }} || !(users{{ $suffix }}.length>6)">
-    <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast{{ $suffix }} = true;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><small>{{__('general.show_all')}}</small></button>
+    <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast{{ $suffix }} = true;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><small>{{__('general.show_everyone')}}</small></button>
 </div>
 <div class="text-center pt-1" ng-show="iscast{{ $suffix }} && users{{ $suffix }}.length>6">
     <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast{{ $suffix }} = false;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><i class="fa fa-angle-up"></i></button>

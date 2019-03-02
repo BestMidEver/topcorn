@@ -13,11 +13,11 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	console.log(pass.users)
 	$scope.users4 = pass.users.data;
-	$scope.pagination_4=pass.users.data.last_page;
-	$scope.current_page_4=pass.users.data.current_page;
-	$scope.from_4=pass.users.data.from;
-	$scope.to_4=pass.users.data.to;
-	$scope.in_4=pass.users.data.total;
+	$scope.pagination_4=pass.users.last_page;
+	$scope.current_page_4=pass.users.current_page;
+	$scope.from_4=pass.users.from;
+	$scope.to_4=pass.users.to;
+	$scope.in_4=pass.users.total;
 
 
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
