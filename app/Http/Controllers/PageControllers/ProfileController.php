@@ -306,7 +306,6 @@ class ProfileController extends Controller
             $return_val = $return_val
             ->where('listes.user_id', $user)
             ->orderBy('listes.updated_at', 'desc');
-            return [$user];
         }else{
             $return_val = $return_val
             ->leftjoin('listlikes as lili2', function ($join) {
