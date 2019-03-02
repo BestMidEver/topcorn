@@ -57,7 +57,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_popular_users/'+mode+'/'+page,
+			url: '/api/get_popular_users/'+mode+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -126,7 +126,7 @@ MyApp.factory('rate', function($http) {
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_notifications/'+page_mode+'?page='+page,
+			url: '/api/get_notifications/'+page_mode+'/'+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
