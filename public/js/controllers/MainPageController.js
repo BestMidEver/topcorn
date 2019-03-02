@@ -16,6 +16,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.get_page_data = function(mode)
 	{
+					console.log(2);
 		$scope.is_waiting=true;
 		switch(mode) {
 			case '1':
