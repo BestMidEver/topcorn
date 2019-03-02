@@ -253,9 +253,9 @@ class ProfileController extends Controller
     {
         $return_val = DB::table('listes')
         ->leftjoin('listlikes', function ($join) {
-            $join->on('listlikes.list_id', '=', 'listes.id');
+            $join->on('listlikes.list_id', '=', 'listes.id')
+            ->where('listlikes.is_deleted', '=', 0);
         })
-        ->where('listlikes.is_deleted', '=', 0)
         ->leftjoin('listitems as l1', function ($join) {
             $join->on('l1.list_id', '=', 'listes.id')
             ->where('l1.position', '=', 1);
