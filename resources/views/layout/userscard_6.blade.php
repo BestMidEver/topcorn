@@ -1,6 +1,6 @@
-<div id="cast{{  $suffix  }}" ng-if="users.length > 0">
+<div id="cast{{  $suffix  }}" ng-if="users4.length > 0">
 	<div class="d-flex flex-wrap">
-		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users | limitTo:6">
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users4 | limitTo:6">
 			<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 				<a ng-href="/profile/@{{ user.user_id }}" target={{$target}}>
 					<img class="card-img-top" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="d-flex flex-wrap" class="collapse" id="collapseCast{{  $suffix  }}">
-		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users | limitTo:100:6">
+		<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users4 | limitTo:100:6">
 			<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 				<a ng-href="/profile/@{{ user.user_id }}" target={{$target}}>
 					<img class="card-img-top" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
