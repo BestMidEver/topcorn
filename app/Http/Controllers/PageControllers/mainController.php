@@ -49,7 +49,7 @@ class mainController extends Controller
         }
 
         $people = DB::table('people')
-        ->whereNotNull('people.birthday')
+        ->where('people.birthday', '=', Carbon::today())
         ->select(
             'people.id',
             'people.profile_path',
@@ -57,7 +57,7 @@ class mainController extends Controller
             'people.birthday',
             'people.deathday'
         )
-        ->orderBy('people.birthday', 'desc');
+        ->orderBy('people.popularity', 'desc');
 
         return $people->paginate($pagination);
     }
