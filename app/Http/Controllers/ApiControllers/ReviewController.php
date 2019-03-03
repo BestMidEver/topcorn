@@ -66,8 +66,10 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
-        ->where('review_likes.is_deleted', '=', 0)
+        ->leftjoin('review_likes', function ($join) {
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
+        })
         ->groupBy('reviews.id')
         ->select(
             'reviews.tmdb_author_name as author',
@@ -109,11 +111,11 @@ class ReviewController extends Controller
                 ->where('reviews.season_number', '=', $request->season_number)
                 ->whereNull('reviews.episode_number');
             }
-        }else{
+        }/*else{
             $review=$review
             ->whereNull('reviews.season_number')
             ->whereNull('reviews.episode_number');
-        }
+        }*/
 
         return Response([
             'data' => $review->paginate(25),
@@ -143,8 +145,10 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
-        ->where('review_likes.is_deleted', '=', 0)
+        ->leftjoin('review_likes', function ($join) {
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
+        })
         ->groupBy('reviews.id');
 
         if($request->mode[0]==0){
@@ -267,8 +271,10 @@ class ReviewController extends Controller
         ->where('reviews.movie_series_id', $request->movie_series_id)
         ->whereIn('reviews.mode', $request->mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
-        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
-        ->where('review_likes.is_deleted', '=', 0)
+        ->leftjoin('review_likes', function ($join) {
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
+        })
         ->groupBy('reviews.id')
         ->select(
             'reviews.tmdb_author_name as author',
