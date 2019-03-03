@@ -68,14 +68,14 @@
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
-	    <span class="h5" ng-show="page_variables.active_tab_4==0">Users: Most Liked Commenters</span>
-	    <span class="h5" ng-if="page_variables.active_tab_4==1">Users: Most Liked List Creators</span>
-	    <span class="h5" ng-if="page_variables.active_tab_4==2">Users: Most Followed</span>
+	    <span class="h5" ng-show="page_variables.active_tab_4=='comment'">Users: Most Liked Commenters</span>
+	    <span class="h5" ng-if="page_variables.active_tab_4=='list'">Users: Most Liked List Creators</span>
+	    <span class="h5" ng-if="page_variables.active_tab_4=='follow'">Users: Most Followed</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=0;">Most Liked Commenters</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=1;">Most Liked List Creators</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=2;">Most Followed</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';">Most Liked Commenters</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='list';">Most Liked List Creators</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='follow';">Most Followed</button>
 	    </div>
 	</div>
 	<div ng-show="users4.length>0">

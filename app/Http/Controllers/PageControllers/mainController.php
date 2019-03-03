@@ -37,6 +37,28 @@ class mainController extends Controller
         ->groupBy('users.id')
         ->orderBy('count', 'desc');
 
+        if($mode == 'comment'){
+            $users = $users
+            ->leftjoin('reviews', function ($join) {
+                $join->on('reviews.user_id', '=', 'users.id');
+            })
+            ->leftjoin('review_likes', function ($join) {
+                $join->on('review_likes.review_id', '=', 'reviews.id');
+            })
+            ->where('review_likes.is_deleted', '=', 0)
+            ->whereNotNull('review_likes.id');
+        }else if($mode == 'list'){
+            $users = $users
+            ->leftjoin('listes', function ($join) {
+                $join->on('listes.user_id', '=', 'users.id');
+            })
+            ->leftjoin('list_likes', function ($join) {
+                $join->on('list_likes.list_id', '=', 'listes.id');
+            })
+            ->where('list_likes.is_deleted', '=', 0)
+            ->whereNotNull('list_likes.id');
+        }
+
         return $users->paginate($pagination);
     }
 
