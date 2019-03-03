@@ -15,8 +15,8 @@
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=0">
 	    <span class="h5" ng-show="page_variables.active_tab_1==0">Movies: Now Playing</span>
-	    <span class="h5" ng-if="page_variables.active_tab_1==1">Movies: Legendary</span>
-	    <span class="h5" ng-if="page_variables.active_tab_1==2">Movies: Garbage</span>
+	    <span class="h5" ng-show="page_variables.active_tab_1==1">Movies: Legendary</span>
+	    <span class="h5" ng-show="page_variables.active_tab_1==2">Movies: Garbage</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_1=0;">Now Playing</button>
@@ -33,8 +33,8 @@
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2=0">
 	    <span class="h5" ng-show="page_variables.active_tab_2==0">Series: On The Air</span>
-	    <span class="h5" ng-if="page_variables.active_tab_2==1">Series: Legendary</span>
-	    <span class="h5" ng-if="page_variables.active_tab_2==1">Series: Garbage</span>
+	    <span class="h5" ng-show="page_variables.active_tab_2==1">Series: Legendary</span>
+	    <span class="h5" ng-show="page_variables.active_tab_2==1">Series: Garbage</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_2=0;">On The Air</button>
@@ -52,7 +52,7 @@
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
 	    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">People: Born Today</span>
 	    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">People: Died Today</span>
-	    <span class="h5" ng-if="page_variables.active_tab_3=='most popular'">People: Most Popular</span>
+	    <span class="h5" ng-show="page_variables.active_tab_3=='most popular'">People: Most Popular</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data(3);">Born Today</button>
@@ -69,8 +69,8 @@
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4='comment'">
 	    <span class="h5" ng-show="page_variables.active_tab_4=='comment'">Users: Most Liked Commenters</span>
-	    <span class="h5" ng-if="page_variables.active_tab_4=='list'">Users: Most Liked List Creators</span>
-	    <span class="h5" ng-if="page_variables.active_tab_4=='follow'">Users: Most Followed</span>
+	    <span class="h5" ng-show="page_variables.active_tab_4=='list'">Users: Most Liked List Creators</span>
+	    <span class="h5" ng-show="page_variables.active_tab_4=='follow'">Users: Most Followed</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';get_first_page_data(4);">Most Liked Commenters</button>
@@ -87,7 +87,7 @@
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
 	    <span class="h5" ng-show="page_variables.active_tab_4==0">Reviews: Most Liked</span>
-	    <span class="h5" ng-if="page_variables.active_tab_4==1">Reviews: Newest</span>
+	    <span class="h5" ng-show="page_variables.active_tab_4==1">Reviews: Newest</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4=0;">Most Liked</button>
@@ -103,7 +103,7 @@
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_5=0">
 	    <span class="h5" ng-show="page_variables.active_tab_5==0">Lists: Most Liked</span>
-	    <span class="h5" ng-if="page_variables.active_tab_5==1">Lists: Newest</span>
+	    <span class="h5" ng-show="page_variables.active_tab_5==1">Lists: Newest</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_5=0;">Most Liked</button>
