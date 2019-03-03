@@ -29,7 +29,7 @@
 	</div>
 </div>
 <hr>
-<div class="mt-5">
+<div class="mt-3">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2=0">
 	    <span class="h5" ng-show="page_variables.active_tab_2==0">Series: On The Air</span>
@@ -46,7 +46,8 @@
     @include('layout.moviecard_6', ['suffix' => '2'])
 	</div>
 </div>
-<div class="mt-5">
+<hr>
+<div class="mt-3">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
 	    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">People: Born Today</span>
@@ -63,7 +64,8 @@
     @include('layout.peoplecard_6', ['suffix' => '3'])
 	</div>
 </div>
-<div class="mt-5">
+<hr>
+<div class="mt-3">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
 	    <span class="h5" ng-show="page_variables.active_tab_4==0">Users: Most Liked Commenters</span>
@@ -80,7 +82,8 @@
     @include('layout.userscard_6', ['suffix' => '4'])
 	</div>
 </div>
-<div class="mt-5">
+<hr>
+<div class="mt-3">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
 	    <span class="h5" ng-show="page_variables.active_tab_4==0">Reviews: Most Liked</span>
@@ -95,7 +98,8 @@
     @include('layout.reviews_6', ['suffix' => '5'])
 	</div>
 </div>
-<div class="mt-5">
+<hr>
+<div class="mt-3">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_5=0">
 	    <span class="h5" ng-show="page_variables.active_tab_5==0">Lists: Most Liked</span>
