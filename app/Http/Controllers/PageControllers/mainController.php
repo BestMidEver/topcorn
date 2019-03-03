@@ -160,8 +160,7 @@ class mainController extends Controller
             ->where('reviews.mode', '=', 3);
         })
         ->whereNotNull('review_likes.id')
-        ->groupBy('reviews.id')
-        ->orderBy('count', 'desc');
+        ->groupBy('reviews.id');
 
         if(Auth::check()){
             $reviews = $reviews
@@ -197,6 +196,14 @@ class mainController extends Controller
             );
         }
 
+        if($mode == 'most liked'){
+            $reviews = $reviews
+            ->orderBy('count', 'desc');
+        }else if($mode == 'newest'){
+            $reviews = $reviews
+            ->orderBy('reviews.updated_at', 'desc');
+        }
+
         return $reviews->paginate($pagination);
     }
 
@@ -214,7 +221,7 @@ class mainController extends Controller
         
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
-        $reviews = $this->get_popular_reviews('most liked');
+        $reviews = $this->get_popular_reviews('newest');
 
 		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('people', $people)->with('users', $users)->with('reviews', $reviews);
 	}
