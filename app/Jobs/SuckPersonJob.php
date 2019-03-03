@@ -43,10 +43,8 @@ class SuckPersonJob implements ShouldQueue
             ['profile_path' => $person['profile_path'],
             'name' => $person['name'],
             'popularity' => $person['popularity'],
-            'birthday' => $person['birthday']!=null ? new Carbon($movie['birthday']) : null,
-            'deathday' => $person['deathday']!=null ? new Carbon($movie['deathday']) : null]
+            'birthday' => $person['birthday']!=null ? new Carbon($person['birthday']) : null,
+            'deathday' => $person['deathday']!=null ? new Carbon($person['deathday']) : null]
         );
-
-        sleep(1);
     }
 }
