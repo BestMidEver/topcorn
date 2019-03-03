@@ -47,13 +47,15 @@
 </div>
 <div class="mt-5">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3=1">
-	    <span class="h5" ng-show="page_variables.active_tab_3==0">People: Who Born Today</span>
-	    <span class="h5" ng-if="page_variables.active_tab_3==1">People: Most Popular</span>
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
+	    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">People: Born Today</span>
+	    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">People: Died Today</span>
+	    <span class="h5" ng-if="page_variables.active_tab_3=='most popular'">People: Most Popular</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_3=0;">Who Born Today</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;">Most Popular</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data();">Born Today</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='died today';get_first_page_data();">Died Popular</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='most popular';get_first_page_data();">Most Popular</button>
 	    </div>
 	</div>
 	<div ng-show="people3.length>0">

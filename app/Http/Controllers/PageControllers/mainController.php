@@ -50,8 +50,6 @@ class mainController extends Controller
         }
 
         $people = DB::table('people')
-        ->whereMonth('people.birthday', Carbon::now()->month)
-        ->whereDay('people.birthday', Carbon::now()->day)
         ->select(
             'people.id',
             'people.profile_path',
@@ -61,6 +59,16 @@ class mainController extends Controller
             'people.popularity'
         )
         ->orderBy('people.popularity', 'desc');
+
+        if($mode == 'born today'){
+            $people = $people
+            ->whereMonth('people.birthday', Carbon::now()->month)
+            ->whereDay('people.birthday', Carbon::now()->day);
+        }else if($mode == 'died today'){
+            $people = $people
+            ->whereMonth('people.deathday', Carbon::now()->month)
+            ->whereDay('people.deathday', Carbon::now()->day);
+        }
 
         return $people->paginate($pagination);
     }
