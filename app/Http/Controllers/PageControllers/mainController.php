@@ -35,9 +35,9 @@ class mainController extends Controller
                 $join->on('reviews.user_id', '=', 'users.id');
             })
             ->leftjoin('review_likes', function ($join) {
-                $join->on('review_likes.review_id', '=', 'reviews.id');
+                $join->on('review_likes.review_id', '=', 'reviews.id')
+                ->where('review_likes.is_deleted', '=', 0);
             })
-            ->where('review_likes.is_deleted', '=', 0)
             ->whereNotNull('review_likes.id');
         }else if($mode == 'list'){
             $users = $users
@@ -45,10 +45,16 @@ class mainController extends Controller
                 $join->on('listes.user_id', '=', 'users.id');
             })
             ->leftjoin('listlikes', function ($join) {
-                $join->on('listlikes.list_id', '=', 'listes.id');
+                $join->on('listlikes.list_id', '=', 'listes.id')
+                ->where('listlikes.is_deleted', '=', 0);
             })
-            ->where('listlikes.is_deleted', '=', 0)
             ->whereNotNull('listlikes.id');
+        }else if($mode == 'follow'){
+            $users = $users
+            ->leftjoin('follows', function ($join) {
+                $join->on('follows.object_id', '=', 'users.id');
+            })
+            ->whereNotNull('follows.id');
         }
 
         return $users->paginate($pagination);
@@ -101,9 +107,9 @@ class mainController extends Controller
             $join->on('reviews.user_id', '=', 'users.id');
         })
         ->leftjoin('review_likes', function ($join) {
-            $join->on('review_likes.review_id', '=', 'reviews.id');
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
         })
-        ->where('review_likes.is_deleted', '=', 0)
         ->whereNotNull('review_likes.id')
         ->select(
             'users.id as user_id',
@@ -132,9 +138,9 @@ class mainController extends Controller
             $join->on('reviews.user_id', '=', 'users.id');
         })
         ->leftjoin('review_likes', function ($join) {
-            $join->on('review_likes.review_id', '=', 'reviews.id');
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
         })
-        ->where('review_likes.is_deleted', '=', 0)
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'reviews.movie_series_id');
             $join->on('rateds.user_id', '=', 'reviews.user_id')
@@ -207,7 +213,7 @@ class mainController extends Controller
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         
         $people = $this->get_popular_people('born today');
-        $users = $this->get_popular_users('commenters');
+        $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('most liked');
 
 		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('people', $people)->with('users', $users)->with('reviews', $reviews);
