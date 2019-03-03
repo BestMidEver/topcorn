@@ -57,7 +57,7 @@ class mainController extends Controller
             'people.name',
             'people.birthday',
             'people.deathday',
-            DB::raw("FROM_UNIXTIME(people.birthday)")
+            DB::raw("FROM_UNIXTIME(people.birthday) as XXXXXX")
         )
         ->orderBy('people.popularity', 'desc');
 
