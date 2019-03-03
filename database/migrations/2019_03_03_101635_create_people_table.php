@@ -18,8 +18,8 @@ class CreatePeopleTable extends Migration
             $table->string('profile_path')->nullable();
             $table->string('name');
             $table->double('popularity',8,4);
-            $table->timestamp('birthday')->nullable();
-            $table->timestamp('deathday')->nullable();
+            $table->dateTime('birthday')->nullable();
+            $table->dateTime('deathday')->nullable();
             $table->timestamps();
         });
     }

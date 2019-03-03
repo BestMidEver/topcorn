@@ -12,7 +12,8 @@ pass={
 	"watched_movie_number":{{ $watched_movie_number }},
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"users":{!! json_encode($users) !!},
-	"reviews":{!! json_encode($reviews) !!}
+	"reviews":{!! json_encode($reviews) !!},
+	"people":{!! json_encode($people) !!}
 };
 </script>
 @endsection

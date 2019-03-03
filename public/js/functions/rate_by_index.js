@@ -36,11 +36,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_popular_people = function(constants_api_key, lang, page) 
+    get_popular_people = function(mode, page) 
     {
-		return $http({
+        return $http({
 			method: 'GET',
-			url: 'https://api.themoviedb.org/3/person/popular?api_key='+constants_api_key+'&language='+lang+'&page='+page,
+			url: '/api/get_popular_people/'+mode+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -49,7 +49,7 @@ MyApp.factory('rate', function($http) {
 			return response;
 		}, function errorCallback(response) {
 		});
-    }
+    };
 
 
 

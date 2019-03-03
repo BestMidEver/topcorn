@@ -25,6 +25,15 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		});
 	}
 
+	console.log(pass.people)
+	$scope.people3 = pass.users.data;
+	$scope.pagination_3=pass.users.last_page;
+	$scope.current_page_3=pass.users.current_page;
+	$scope.from_3=pass.users.from;
+	$scope.to_3=pass.users.to;
+	$scope.in_3=pass.users.total;
+
+
 	$scope.users4 = pass.users.data;
 	$scope.pagination_4=pass.users.last_page;
 	$scope.current_page_4=pass.users.current_page;
@@ -33,7 +42,6 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	$scope.in_4=pass.users.total;
 
 
-	console.log(pass.reviews)
 	$scope.reviews5 = pass.reviews.data;
 	$scope.prepeare_reviews($scope.reviews5);
 	$scope.pagination_5=pass.reviews.last_page;
@@ -81,17 +89,15 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				});
 				break;
 			case 3:
-				rate.get_popular_people(pass.api_key, pass.lang, $scope.page_3)
+				rate.get_popular_people(0, $scope.page_3)
 				.then(function(response){
 					console.log(response);
-					$scope.people3=response.data.results;
-					if(response.data.total_pages<1000) $scope.pagination_3=response.data.total_pages;
-					else $scope.pagination_3=1000;
-					$scope.current_page_3=response.data.page;
-					$scope.from_3=(response.data.page-1)*20+1;
-					$scope.to_3=(response.data.page-1)*20+response.data.results.length;
-					$scope.in_3=response.data.total_results;
-					$scope.is_3=false;
+					$scope.people3 = response.data.data;
+					$scope.pagination_3=response.data.last_page;
+					$scope.current_page_3=response.data.current_page;
+					$scope.from_3=response.data.from;
+					$scope.to_3=response.data.to;
+					$scope.in_3=response.data.total;
 				});
 				break;
 			case 4:

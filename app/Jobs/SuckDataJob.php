@@ -42,12 +42,12 @@ class SuckDataJob implements ShouldQueue
      */
     public function handle()
     {
+        RefreshSiteMapJob::dispatch()->onQueue("low");
+
         $total_pages = json_decode(file_get_contents('https://api.themoviedb.org/3/person/popular?api_key='.config('constants.api_key').'&language=en-US&page=1'), true)['total_pages'];
         for ($page=1; $page <= $total_pages; $page++) { 
             SuckPeoplePageJob::dispatch($page)->onQueue("low");
         }
-
-        /*RefreshSiteMapJob::dispatch()->onQueue("low");
 
 
         foreach(Series_rated::All()->pluck('series_id')->unique() as $id){
@@ -98,6 +98,6 @@ class SuckDataJob implements ShouldQueue
 
 
 
-        RestartJob::dispatch()->onQueue("low");*/
+        RestartJob::dispatch()->onQueue("low");
     }
 }

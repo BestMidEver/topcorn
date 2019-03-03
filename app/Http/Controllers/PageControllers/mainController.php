@@ -41,6 +41,29 @@ class mainController extends Controller
 
 
 
+    public static function get_popular_people($mode)
+    {
+        $pagination = 24;
+        if(Auth::check()){
+            $pagination = Auth::User()->pagination;
+        }
+
+        $people = DB::table('people')
+        ->whereNotNull('people.birthday')
+        ->select(
+            'people.id',
+            'people.profile_path',
+            'people.name',
+            'people.birthday',
+            'people.deathday'
+        )
+        ->orderBy('people.birthday', 'desc');
+
+        return $users->paginate($pagination);
+    }
+
+
+
     public static function get_popular_lists($mode)
     {
         $pagination = 24;
@@ -158,9 +181,10 @@ class mainController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         
+        $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('commenters');
         $reviews = $this->get_popular_reviews('most liked');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('users', $users)->with('reviews', $reviews);
+		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('people', $people)->with('users', $users)->with('reviews', $reviews);
 	}
 }
