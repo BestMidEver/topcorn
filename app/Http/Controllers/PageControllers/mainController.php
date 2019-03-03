@@ -159,7 +159,6 @@ class mainController extends Controller
             $join->on('series.id', '=', 'reviews.movie_series_id')
             ->where('reviews.mode', '=', 3);
         })
-        ->whereNotNull('review_likes.id')
         ->groupBy('reviews.id');
 
         if(Auth::check()){
@@ -198,6 +197,7 @@ class mainController extends Controller
 
         if($mode == 'most liked'){
             $reviews = $reviews
+            ->whereNotNull('review_likes.id')
             ->orderBy('count', 'desc');
         }else if($mode == 'newest'){
             $reviews = $reviews
