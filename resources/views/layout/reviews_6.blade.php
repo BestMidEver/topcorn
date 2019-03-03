@@ -47,25 +47,25 @@
                     </button>
                 </div>
             </div>
-            <div id="@{{'accordion'+$index}}">
+            <div id="@{{'accordion'+($index+6)}}">
                 <div ng-if="review.id == 'long'">
-                    <div id="@{{'collapse'+$index+'a'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse">
+                    <div id="@{{'collapse'+($index+6)+'a'}}" data-parent="@{{'#accordion'+($index+6)}}" class="lead lead-small collapse">
                         <div>
                             <div ng-bind-html="review.content"></div>
                         </div>
                         <div class="text-center pt-0">
-                            <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'b'}}" aria-expanded="true"><i class="fa fa-angle-up"></i></button>
+                            <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white hidereview" data-toggle="collapse" data-target="@{{'#collapse'+($index+6)+'b'}}" aria-expanded="true"><i class="fa fa-angle-up"></i></button>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div id="@{{'collapse'+$index+'b'}}" data-parent="@{{'#accordion'+$index}}" class="lead lead-small collapse show">
+                    <div id="@{{'collapse'+($index+6)+'b'}}" data-parent="@{{'#accordion'+($index+6)}}" class="lead lead-small collapse show">
                         <div>
                             <div ng-bind-html="review.url"></div>
                         </div>
                         <div ng-if="review.id == 'long'">
                             <div class="text-center pt-1">
-                                <button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+$index+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
+                                <button class="btn btn-outline-secondary border-0 text-muted hover-white showreview" data-toggle="collapse" data-target="@{{'#collapse'+($index+6)+'a'}}" aria-expanded="false"><small>{{ __('general.read_all') }}</small></button>
                             </div>
                         </div>
                     </div>
