@@ -53,9 +53,9 @@
 	    <span class="h5" ng-if="page_variables.active_tab_3=='most popular'">People: Most Popular</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data();">Born Today</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='died today';get_first_page_data();">Died Popular</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='most popular';get_first_page_data();">Most Popular</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data(3);">Born Today</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='died today';get_first_page_data(3);">Died Today</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='most popular';get_first_page_data(3);">Most Popular</button>
 	    </div>
 	</div>
 	<div ng-show="people3.length>0">
