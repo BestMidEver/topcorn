@@ -145,7 +145,7 @@ class mainController extends Controller
             'listes.id',
             'listes.title',
             DB::raw('COUNT(listlikes.list_id) as like_count'),
-            'listes.updated_at',
+            DB::raw('DATEDIFF(listes.updated_at, CURDATE()) as updated_at'),
             DB::raw('LEFT(listes.entry_1 , 50) AS entry_1'),
             DB::raw('LEFT(listes.entry_1 , 51) AS entry_1_raw'),
             'm1.'.App::getlocale().'_poster_path as m1_poster_path',
