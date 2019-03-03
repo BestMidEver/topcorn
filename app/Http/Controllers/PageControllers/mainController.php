@@ -145,7 +145,7 @@ class mainController extends Controller
             'listes.id',
             'listes.title',
             DB::raw('COUNT(listlikes.list_id) as like_count'),
-            DB::raw('DATEDIFF(listes.updated_at, CURDATE()) as updated_at'),
+            'listes.updated_at',
             DB::raw('LEFT(listes.entry_1 , 50) AS entry_1'),
             DB::raw('LEFT(listes.entry_1 , 51) AS entry_1_raw'),
             'm1.'.App::getlocale().'_poster_path as m1_poster_path',
@@ -167,7 +167,13 @@ class mainController extends Controller
             ->orderBy('listes.updated_at', 'desc');
         }
 
-        return $listes->paginate($pagination);
+        $listes = $listes->paginate($pagination);
+
+        foreach ($listes as $row) {
+            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+        }
+
+        return $listes;
     }
 
 
