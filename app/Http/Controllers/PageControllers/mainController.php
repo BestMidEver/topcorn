@@ -50,7 +50,7 @@ class mainController extends Controller
         }
 
         $people = DB::table('people')
-        ->whereDate('people.birthday', Carbon::today())
+        ->whereRaw("DATE_FORMAT(FROM_UNIXTIME(people.birthday),'%m-%d') = DATE_FORMAT(NOW(),'%m-%d')")
         ->select(
             'people.id',
             'people.profile_path',
