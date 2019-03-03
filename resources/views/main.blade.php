@@ -28,7 +28,7 @@
     @include('layout.moviecard_6', ['suffix' => '1'])
 	</div>
 </div>
-<hr class="mt-5">
+<hr class="mt-4">
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2=0">
@@ -46,7 +46,7 @@
     @include('layout.moviecard_6', ['suffix' => '2'])
 	</div>
 </div>
-<hr class="mt-5">
+<hr class="mt-4">
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
@@ -64,7 +64,7 @@
     @include('layout.peoplecard_6', ['suffix' => '3'])
 	</div>
 </div>
-<hr class="mt-5">
+<hr class="mt-4">
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
@@ -82,7 +82,7 @@
     @include('layout.userscard_6', ['suffix' => '4'])
 	</div>
 </div>
-<hr class="mt-5">
+<hr class="mt-4">
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4=0">
@@ -98,7 +98,7 @@
     @include('layout.reviews_6', ['suffix' => '5'])
 	</div>
 </div>
-<hr class="mt-5">
+<hr class="mt-4">
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_5=0">
