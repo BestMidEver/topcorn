@@ -26,12 +26,12 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	}
 
 	console.log(pass.people)
-	$scope.people3 = pass.users.data;
-	$scope.pagination_3=pass.users.last_page;
-	$scope.current_page_3=pass.users.current_page;
-	$scope.from_3=pass.users.from;
-	$scope.to_3=pass.users.to;
-	$scope.in_3=pass.users.total;
+	$scope.people3 = pass.people.data;
+	$scope.pagination_3=pass.people.last_page;
+	$scope.current_page_3=pass.people.current_page;
+	$scope.from_3=pass.people.from;
+	$scope.to_3=pass.people.to;
+	$scope.in_3=pass.people.total;
 
 
 	$scope.users4 = pass.users.data;
