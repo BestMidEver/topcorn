@@ -59,7 +59,7 @@ class mainController extends Controller
         )
         ->orderBy('people.birthday', 'desc');
 
-        return $users->paginate($pagination);
+        return $people->paginate($pagination);
     }
 
 
