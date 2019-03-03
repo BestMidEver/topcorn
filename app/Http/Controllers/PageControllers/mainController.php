@@ -155,7 +155,17 @@ class mainController extends Controller
             'm5.'.App::getlocale().'_poster_path as m5_poster_path',
             'm6.'.App::getlocale().'_poster_path as m6_poster_path'
         )
+        ->where('listes.visibility', 1)
         ->groupBy('listes.id');
+
+        if($mode == 'most liked'){
+            $listes = $listes
+            ->whereNotNull('listlikes.id')
+            ->orderBy('count', 'desc');
+        }else if($mode == 'newest'){
+            $listes = $listes
+            ->orderBy('listes.updated_at', 'desc');
+        }
 
         return $listes->paginate($pagination);
     }
