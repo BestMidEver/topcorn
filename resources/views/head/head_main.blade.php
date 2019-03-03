@@ -13,7 +13,8 @@ pass={
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
 	"users":{!! json_encode($users) !!},
 	"reviews":{!! json_encode($reviews) !!},
-	"people":{!! json_encode($people) !!}
+	"people":{!! json_encode($people) !!},
+	"listes":{!! json_encode($listes) !!}
 };
 </script>
 @endsection

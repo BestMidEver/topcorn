@@ -257,7 +257,8 @@ class mainController extends Controller
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
+        $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('people', $people)->with('users', $users)->with('reviews', $reviews);
+		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
 	}
 }

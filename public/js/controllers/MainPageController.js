@@ -25,7 +25,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		});
 	}
 
-	console.log(pass.people)
+	console.log(pass.listes)
 	$scope.people3 = pass.people.data;
 	$scope.pagination_3=pass.people.last_page;
 	$scope.current_page_3=pass.people.current_page;
