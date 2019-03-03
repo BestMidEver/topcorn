@@ -50,13 +50,14 @@ class mainController extends Controller
         }
 
         $people = DB::table('people')
-        ->whereRaw("DATE_FORMAT(FROM_UNIXTIME(people.birthday),'%m-%d') = DATE_FORMAT(NOW(),'%m-%d')")
+        //->whereRaw("DATE_FORMAT(FROM_UNIXTIME(people.birthday),'%m-%d') = DATE_FORMAT(NOW(),'%m-%d')")
         ->select(
             'people.id',
             'people.profile_path',
             'people.name',
             'people.birthday',
-            'people.deathday'
+            'people.deathday',
+            DB::raw("DATE_FORMAT(FROM_UNIXTIME(people.birthday),'%m-%d')")
         )
         ->orderBy('people.popularity', 'desc');
 
