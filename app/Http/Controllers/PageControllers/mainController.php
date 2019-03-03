@@ -50,7 +50,7 @@ class mainController extends Controller
         }
 
         $people = DB::table('people')
-        ->where('people.birthday', '=', Carbon::today())
+        ->whereDate('people.birthday', Carbon::today())
         ->select(
             'people.id',
             'people.profile_path',
