@@ -35,7 +35,7 @@
         </div>
 	</div>
 </div>
-<div class="collapse" id="collapseMovies{{ $suffix }}">
+<div class="collapse container-fluid" id="collapseMovies{{ $suffix }}">
 	<div ng-if="reviews{{ $suffix }}.length > 6">
     	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:100:6">
             <div class="d-flex justify-content-between">
