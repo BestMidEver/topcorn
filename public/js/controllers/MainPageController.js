@@ -138,7 +138,6 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.get_first_page_data(1);
 	$scope.get_first_page_data(2);
-	$scope.get_first_page_data(3);
 
 	$scope.paginate_1 = function(page)
 	{
