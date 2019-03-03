@@ -25,7 +25,6 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		});
 	}
 
-	console.log(pass.listes)
 	$scope.people3 = pass.people.data;
 	$scope.pagination_3=pass.people.last_page;
 	$scope.current_page_3=pass.people.current_page;
@@ -49,6 +48,15 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	$scope.from_5=pass.reviews.from;
 	$scope.to_5=pass.reviews.to;
 	$scope.in_5=pass.reviews.total;
+
+	console.log(pass.listes)
+	$scope.listes6 = pass.users.data;
+	$scope.pagination_6=pass.users.last_page;
+	$scope.current_page_6=pass.users.current_page;
+	$scope.from_6=pass.users.from;
+	$scope.to_6=pass.users.to;
+	$scope.in_6=pass.users.total;
+
 
 
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
