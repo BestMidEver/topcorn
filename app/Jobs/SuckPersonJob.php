@@ -46,5 +46,7 @@ class SuckPersonJob implements ShouldQueue
             'birthday' => $person['birthday']!=null ? new Carbon($movie['birthday']) : null,
             'deathday' => $person['deathday']!=null ? new Carbon($movie['deathday']) : null]
         );
+
+        sleep(1);
     }
 }
