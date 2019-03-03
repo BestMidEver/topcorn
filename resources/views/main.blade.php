@@ -101,13 +101,13 @@
 <hr class="mt-4">
 <div class="mt-4">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_6=0">
-	    <span class="h5" ng-show="page_variables.active_tab_6==0">Lists: Most Liked</span>
-	    <span class="h5" ng-show="page_variables.active_tab_6==1">Lists: Newest</span>
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_6='newest'">
+	    <span class="h5" ng-show="page_variables.active_tab_6=='newest'">Lists: Newest</span>
+	    <span class="h5" ng-show="page_variables.active_tab_6=='most liked'">Lists: Most Liked</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_6=0;">Most Liked</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_6=1;">Newest</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_6='newest';;get_first_page_data(6);">Newest</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_6='most liked';;get_first_page_data(6);">Most Liked</button>
 	    </div>
 	</div>
 	<div ng-show="listes6.length>0">
