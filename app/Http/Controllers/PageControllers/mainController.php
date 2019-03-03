@@ -57,7 +57,8 @@ class mainController extends Controller
             'people.profile_path',
             'people.name',
             'people.birthday',
-            'people.deathday'
+            'people.deathday',
+            'people.popularity'
         )
         ->orderBy('people.popularity', 'desc');
 
