@@ -50,12 +50,12 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	$scope.in_5=pass.reviews.total;
 
 	console.log(pass.listes)
-	$scope.listes6 = pass.users.data;
-	$scope.pagination_6=pass.users.last_page;
-	$scope.current_page_6=pass.users.current_page;
-	$scope.from_6=pass.users.from;
-	$scope.to_6=pass.users.to;
-	$scope.in_6=pass.users.total;
+	$scope.listes6 = pass.listes.data;
+	$scope.pagination_6=pass.listes.last_page;
+	$scope.current_page_6=pass.listes.current_page;
+	$scope.from_6=pass.listes.from;
+	$scope.to_6=pass.listes.to;
+	$scope.in_6=pass.listes.total;
 
 
 
