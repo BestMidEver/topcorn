@@ -43,7 +43,7 @@ class SuckDataJob implements ShouldQueue
     public function handle()
     {
         $total_pages = json_decode(file_get_contents('https://api.themoviedb.org/3/person/popular?api_key='.config('constants.api_key').'&language=en-US&page=1'), true)['total_pages'];
-        for ($page=1; $page <= $total_pages; $page++) { 
+        for ($page=1; $page <= 100/*$total_pages*/; $page++) { 
             SuckPeoplePageJob::dispatch($page)->onQueue("low");
         }
 
