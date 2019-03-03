@@ -74,7 +74,7 @@
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';get_first_page_data(4);">Most Liked Commenters</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='list'get_first_page_data(4);;">Most Liked List Creators</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='list';get_first_page_data(4);">Most Liked List Creators</button>
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='follow';get_first_page_data(4);">Most Followed</button>
 	    </div>
 	</div>
