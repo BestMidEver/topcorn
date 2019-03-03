@@ -50,9 +50,9 @@
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
-	    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">People: Born Today</span>
-	    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">People: Died Today</span>
-	    <span class="h5" ng-show="page_variables.active_tab_3=='most popular'">People: Most Popular</span>
+		    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">People: Born Today</span>
+		    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">People: Died Today</span>
+		    <span class="h5" ng-show="page_variables.active_tab_3=='most popular'">People: Most Popular</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data(3);">Born Today</button>
@@ -68,9 +68,9 @@
 <div class="mt-4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4='comment'">
-	    <span class="h5" ng-show="page_variables.active_tab_4=='comment'">Users: Most Liked Commenters</span>
-	    <span class="h5" ng-show="page_variables.active_tab_4=='list'">Users: Most Liked List Creators</span>
-	    <span class="h5" ng-show="page_variables.active_tab_4=='follow'">Users: Most Followed</span>
+		    <span class="h5" ng-show="page_variables.active_tab_4=='comment'">Users: Most Liked Commenters</span>
+		    <span class="h5" ng-show="page_variables.active_tab_4=='list'">Users: Most Liked List Creators</span>
+		    <span class="h5" ng-show="page_variables.active_tab_4=='follow'">Users: Most Followed</span>
 	    </button>
 	    <div class="dropdown-menu">
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';get_first_page_data(4);">Most Liked Commenters</button>

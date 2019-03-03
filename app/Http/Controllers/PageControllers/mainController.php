@@ -52,11 +52,11 @@ class mainController extends Controller
             ->leftjoin('listes', function ($join) {
                 $join->on('listes.user_id', '=', 'users.id');
             })
-            ->leftjoin('list_likes', function ($join) {
-                $join->on('list_likes.list_id', '=', 'listes.id');
+            ->leftjoin('listlikes', function ($join) {
+                $join->on('listlikes.list_id', '=', 'listes.id');
             })
-            ->where('list_likes.is_deleted', '=', 0)
-            ->whereNotNull('list_likes.id');
+            ->where('listlikes.is_deleted', '=', 0)
+            ->whereNotNull('listlikes.id');
         }
 
         return $users->paginate($pagination);
