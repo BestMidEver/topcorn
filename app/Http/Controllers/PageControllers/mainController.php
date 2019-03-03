@@ -167,7 +167,13 @@ class mainController extends Controller
             ->orderBy('listes.updated_at', 'desc');
         }
 
-        return $listes->paginate($pagination);
+        $listes = $listes->paginate($pagination);
+
+        foreach ($listes->data as $row) {
+            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+        }
+
+        return $listes;
     }
 
 
