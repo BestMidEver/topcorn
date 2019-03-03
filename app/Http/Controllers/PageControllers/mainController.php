@@ -50,8 +50,8 @@ class mainController extends Controller
         }
 
         $people = DB::table('people')
-        ->whereMonth('people.birhday', 3)
-        ->whereDay('people.birhday', 2)
+        ->whereMonth('people.birthday', 3)
+        ->whereDay('people.birthday', 2)
         ->select(
             'people.id',
             'people.profile_path',
