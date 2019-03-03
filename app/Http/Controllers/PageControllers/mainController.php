@@ -102,26 +102,61 @@ class mainController extends Controller
             $pagination = Auth::User()->pagination;
         }
 
-        $users = DB::table('users')
-        ->leftjoin('reviews', function ($join) {
-            $join->on('reviews.user_id', '=', 'users.id');
+        $listes = DB::table('listes')
+        ->leftjoin('users', function ($join) {
+            $join->on('listes.user_id', '=', 'users.id');
         })
-        ->leftjoin('review_likes', function ($join) {
-            $join->on('review_likes.review_id', '=', 'reviews.id')
-            ->where('review_likes.is_deleted', '=', 0);
+        ->leftjoin('listlikes', function ($join) {
+            $join->on('listlikes.list_id', '=', 'listes.id')
+            ->where('listlikes.is_deleted', '=', 0);
         })
-        ->whereNotNull('review_likes.id')
+        ->leftjoin('listitems as l1', function ($join) {
+            $join->on('l1.list_id', '=', 'listes.id')
+            ->where('l1.position', '=', 1);
+        })
+        ->leftjoin('movies as m1', 'm1.id', '=', 'l1.movie_id')
+        ->leftjoin('listitems as l2', function ($join) {
+            $join->on('l2.list_id', '=', 'listes.id')
+            ->where('l2.position', '=', 2);
+        })
+        ->leftjoin('movies as m2', 'm2.id', '=', 'l2.movie_id')
+        ->leftjoin('listitems as l3', function ($join) {
+            $join->on('l3.list_id', '=', 'listes.id')
+            ->where('l3.position', '=', 3);
+        })
+        ->leftjoin('movies as m3', 'm3.id', '=', 'l3.movie_id')
+        ->leftjoin('listitems as l4', function ($join) {
+            $join->on('l4.list_id', '=', 'listes.id')
+            ->where('l4.position', '=', 4);
+        })
+        ->leftjoin('movies as m4', 'm4.id', '=', 'l4.movie_id')
+        ->leftjoin('listitems as l5', function ($join) {
+            $join->on('l5.list_id', '=', 'listes.id')
+            ->where('l5.position', '=', 5);
+        })
+        ->leftjoin('movies as m5', 'm5.id', '=', 'l5.movie_id')
+        ->leftjoin('listitems as l6', function ($join) {
+            $join->on('l6.list_id', '=', 'listes.id')
+            ->where('l6.position', '=', 6);
+        })
+        ->leftjoin('movies as m6', 'm6.id', '=', 'l6.movie_id')
         ->select(
-            'users.id as user_id',
-            'users.name as name',
-            'users.facebook_profile_pic as facebook_profile_path',
-            'users.profile_pic as profile_path',
-            DB::raw('COUNT(users.id) as count')
+            'listes.id',
+            'listes.title',
+            DB::raw('COUNT(listlikes.list_id) as like_count'),
+            'listes.updated_at',
+            DB::raw('LEFT(listes.entry_1 , 50) AS entry_1'),
+            DB::raw('LEFT(listes.entry_1 , 51) AS entry_1_raw'),
+            'm1.'.App::getlocale().'_poster_path as m1_poster_path',
+            'm2.'.App::getlocale().'_poster_path as m2_poster_path',
+            'm3.'.App::getlocale().'_poster_path as m3_poster_path',
+            'm4.'.App::getlocale().'_poster_path as m4_poster_path',
+            'm5.'.App::getlocale().'_poster_path as m5_poster_path',
+            'm6.'.App::getlocale().'_poster_path as m6_poster_path'
         )
-        ->groupBy('users.id')
-        ->orderBy('count', 'desc');
+        ->groupBy('listes.id');
 
-        return $users->paginate($pagination);
+        return $listes->paginate($pagination);
     }
 
 

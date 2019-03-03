@@ -110,5 +110,8 @@
 	        <button class="dropdown-item" ng-click="page_variables.active_tab_6=1;">Newest</button>
 	    </div>
 	</div>
+	<div class="card-group no-gutters" ng-show="listes.length>0">
+		@include('layout.listcard')
+	</div>
 </div>
 @endsection
