@@ -133,6 +133,18 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.in_5=response.data.total;
 				});
 				break;
+			case 6:
+				rate.get_popular_lists($scope.page_variables.active_tab_6, $scope.page_6)
+				.then(function(response){
+					console.log(response);
+					$scope.listes6 = response.data.data;
+					$scope.pagination_6=pass.listes.last_page;
+					$scope.current_page_6=pass.listes.current_page;
+					$scope.from_6=pass.listes.from;
+					$scope.to_6=pass.listes.to;
+					$scope.in_6=pass.listes.total;
+				});
+				break;
 			default:
 		}
 		$(".tooltip").hide();
