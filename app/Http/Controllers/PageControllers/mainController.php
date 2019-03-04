@@ -304,6 +304,6 @@ class mainController extends Controller
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('movies', $movies))->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
+		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('movies', $movies)->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
 	}
 }
