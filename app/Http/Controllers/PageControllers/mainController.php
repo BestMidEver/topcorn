@@ -32,7 +32,7 @@ class mainController extends Controller
             'movies.'.App::getlocale().'_poster_path as poster_path'
         )
         ->groupBy('movies.id')
-        ->orderBy('rateds.updated_at', 'desc');
+        ->orderBy('rateds.updated_at', 'asc');
 
         return $movies->paginate($pagination);
     }
