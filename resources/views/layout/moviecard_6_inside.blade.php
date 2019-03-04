@@ -19,7 +19,7 @@
 				<div class="d-flex flex-row justify-content-center" ng-if="movie.last_voter_name.length>0">
 					<div class="text-white">
 						<small>{{ __('general.last_voter') }}</small>
-						<div><span class="h5 text-warning">@{{movie.last_voter_name}}</span></div>
+						<div><span class="text-warning">@{{movie.last_voter_name}}</span></div>
 					</div>
 				</div>
 			</div>

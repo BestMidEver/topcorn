@@ -121,6 +121,7 @@ return [
     'language' => 'EREDETI NYELV',                                                                      //recommendations_languages,
     'last_episode' => 'Utolsó epizód',                                                                  //series,
     'last_seen_episode' => 'Utolsó megnézett epizód',                                                   //series,
+    'last_voter' => 'Last voted by',                                                                //main,////////////////////
     'like' => 'Tetszik',                                                                                //list          
     'liked_ones' => 'Kedvelt',                                                                          //profile,         
     'like_count' => 'Tetszik-ek száma',                                                                 //list          

@@ -121,6 +121,7 @@ return [
     'language' => 'ORIGINAL LANGUAGE',                                                              //recommendations_languages,
     'last_episode' => 'Last Episode',                                                               //series,
     'last_seen_episode' => 'Last Seen Episode',                                                     //series,
+    'last_voter' => 'Last voted by',                                                                //main,
     'like' => 'Like',                                                                               //list   
     'liked_ones' => 'Liked',                                                                        //profile,               
     'like_count' => 'like',                                                                         //list          

@@ -121,6 +121,7 @@ return [
     'language' => 'ORİJİNAL DİL',                                                                       //recommendations_languages,
     'last_episode' => 'Son Bölüm',                                                                      //series,
     'last_seen_episode' => 'İzlenen Son Bölüm',                                                         //series,
+    'last_voter' => 'Son oy veren',                                                                     //main,
     'like' => 'Beğen',                                                                                  //list          
     'liked_ones' => 'Beğenilen',                                                                        //profile,               
     'like_count' => 'beğeni',                                                                           //list          
