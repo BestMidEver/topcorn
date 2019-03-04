@@ -53,7 +53,7 @@ class mainController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->where('ss.rank', '=' 1)
+        ->where('ss.rank', '=', 1)
         ->select(
             'ss.id',
             'movies.original_title as original_title',
