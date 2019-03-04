@@ -54,9 +54,25 @@ class mainController extends Controller
             }
         )
         ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'movies.id')
+            ->where('rateds.user_id', '=', Auth::id());
+        })
+        ->leftjoin('laters', function ($join) {
+            $join->on('laters.movie_id', '=', 'movies.id')
+            ->where('laters.user_id', '=', Auth::id());
+        })
+        ->leftjoin('bans', function ($join) {
+            $join->on('bans.movie_id', '=', 'movies.id')
+            ->where('bans.user_id', '=', Auth::id());
+        })
         ->select(
             'ss.*',
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
+            'rateds.id as rated_id',
+            'rateds.rate as rate_code',
+            'laters.id as later_id',
+            'bans.id as ban_id'
         );
 
         return $movies->paginate($pagination);
