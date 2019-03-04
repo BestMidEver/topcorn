@@ -52,6 +52,7 @@ class mainController extends Controller
             function($join) use ($subq) {
                 $join->on('rateds.updated_at', '=', 'ss.updated_at')
                 ->addBinding($subq->getBindings());
+                $join->on('rateds.movie_id', '=', 'ss.id');
             }
         )
         ->select('ss.*');
