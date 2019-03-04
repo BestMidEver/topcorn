@@ -24,50 +24,41 @@ class mainController extends Controller
         ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
             'movies.id',
-            //DB::raw('MAX(rateds.updated_at) as updated_at'),
-            'rateds.updated_at',
-            'rateds.rate',
-            DB::raw('LEFT(users.name , 25) AS last_voter_name'),
-            DB::raw('RANK() OVER(ORDER BY rateds.updated_at) AS rank')
-        )
-        //->groupBy('movies.id')
-        ->orderBy('rateds.updated_at', 'desc');
-
-        if($mode == 'legendary'){
-            $subq = $subq
-            ->where('rateds.rate', '=', 5);
-        }else if($mode == 'garbage'){
-            $subq = $subq
-            ->where('rateds.rate', '=', 1);
-        }
-
-        $qqSql = $subq->toSql();
-
-        /////////////////////////////////////////////////////////
-
-        $movies = DB::table('movies')
-        ->join(
-            DB::raw('(' . $qqSql. ') as ss'),
-            function($join) use ($subq) {
-                $join->on('movies.id', '=', 'ss.id')
-                ->addBinding($subq->getBindings());  
-            }
-        )
-        ->where('ss.rank', '=', 1)
-        ->select(
-            'ss.id',
             'movies.original_title as original_title',
             'movies.vote_average',
             'movies.vote_count',
             'movies.release_date',
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
-            'ss.updated_at',
-            'ss.rate',
-            'ss.last_voter_name'
+            DB::raw('MAX(rateds.updated_at) as updated_at'),
+            //'rateds.updated_at',
+            'rateds.rate',
+            DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
-        ->orderBy('ss.updated_at', 'desc')
+        //->groupBy('movies.id')
+        ->orderBy('rateds.updated_at', 'desc');
+
+        $qqSql = $subq->toSql();
+
+        /////////////////////////////////////////////////////////
+
+        $movies = DB::table('rateds')
+        ->join(
+            DB::raw('(' . $qqSql. ') as ss'),
+            function($join) use ($subq) {
+                $join->on('rateds.updated_at', '=', 'ss.updated_at')
+                ->addBinding($subq->getBindings());  
+            }
+        )
         ->groupBy('ss.id');
+
+        if($mode == 'legendary'){
+            $movies = $movies
+            ->where('ss.rate', '=', 5);
+        }else if($mode == 'garbage'){
+            $movies = $movies
+            ->where('ss.rate', '=', 1);
+        }
 
         return $movies->paginate($pagination);
     }
