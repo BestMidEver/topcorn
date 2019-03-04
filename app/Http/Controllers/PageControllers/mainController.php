@@ -91,7 +91,7 @@ class mainController extends Controller
         ->leftjoin('series', 'series.id', '=', 'series_rateds.series_id')
         ->select(
             'series.id',
-            'series.original_title as original_title',
+            'series.original_name as original_title',
             'series.vote_average',
             'series.vote_count',
             'series.first_air_date as release_date',
