@@ -84,14 +84,15 @@ class seriesController extends Controller
                     $last_seen_season = $temp->last_seen_season==''?'null':$temp->last_seen_season;
                     $last_seen_episode = $temp->last_seen_episode==''?'null':$temp->last_seen_episode;
                 }
-                $watch_togethers = DB::table('parties')
-                ->where('parties.watched_with_user_id', '=', Auth::id())
-                ->join('users', 'users.id', '=', 'parties.user_id')
+                $watch_togethers = DB::table('follows')
+                ->where('follows.object_id', '=', Auth::id())
+                ->where('is_deleted', '=', 0)
+                ->join('users', 'users.id', '=', 'follows.subject_id')
                 ->select(
                     'users.id as user_id',
                     'users.name as user_name'
                 )
-                ->orderBy('parties.updated_at', 'desc')
+                ->orderBy('follows.updated_at', 'desc')
                 ->paginate('50');
             }else{
                 $image_quality = 1;
