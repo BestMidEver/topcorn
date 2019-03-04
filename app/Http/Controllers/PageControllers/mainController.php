@@ -32,6 +32,7 @@ class mainController extends Controller
             'movies.'.App::getlocale().'_poster_path as poster_path',
             //DB::raw('MAX(rateds.updated_at) as updated_at'),
             'rateds.updated_at',
+            'rateds.rate',
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
         //->groupBy('movies.id')
@@ -53,10 +54,10 @@ class mainController extends Controller
 
         if($mode == 'legendary'){
             $movies = $movies
-            ->where('rateds.rate', '=', 5);
+            ->where('ss.rate', '=', 5);
         }else if($mode == 'garbage'){
             $movies = $movies
-            ->where('rateds.rate', '=', 1);
+            ->where('ss.rate', '=', 1);
         }
 
         return $movies->paginate($pagination);
