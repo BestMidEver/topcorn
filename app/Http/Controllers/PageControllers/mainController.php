@@ -27,7 +27,8 @@ class mainController extends Controller
             //DB::raw('MAX(rateds.updated_at) as updated_at'),
             'rateds.updated_at',
             'rateds.rate',
-            DB::raw('LEFT(users.name , 25) AS last_voter_name')
+            DB::raw('LEFT(users.name , 25) AS last_voter_name'),
+            DB::raw('RANK() OVER(ORDER BY rateds.updated_at) AS rank')
         )
         //->groupBy('movies.id')
         ->orderBy('rateds.updated_at', 'desc');
@@ -52,6 +53,7 @@ class mainController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
+        ->where('ss.rank', '=' 1)
         ->select(
             'ss.id',
             'movies.original_title as original_title',
