@@ -88,6 +88,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 						$scope.to_1=(response.data.page-1)*20+response.data.results.length;
 						$scope.in_1=response.data.total_results;
 						$scope.is_1=false;
+						$(".tooltip").hide();
 					});
 				}else{
 					rate.get_legendary_garbage_movies($scope.page_variables.active_tab_1, 'newest', $scope.page_1)
@@ -99,6 +100,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 						$scope.from_1=response.data.from;
 						$scope.to_1=response.data.to;
 						$scope.in_1=response.data.total;
+						$(".tooltip").hide();
 					});
 				}
 				break;
@@ -114,6 +116,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.to_2=(response.data.page-1)*20+response.data.results.length;
 					$scope.in_2=response.data.total_results;
 					$scope.is_2=false;
+						$(".tooltip").hide();
 				});
 				break;
 			case 3:
@@ -126,6 +129,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.from_3=response.data.from;
 					$scope.to_3=response.data.to;
 					$scope.in_3=response.data.total;
+					$(".tooltip").hide();
 				});
 				break;
 			case 4:
@@ -138,6 +142,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.from_4=response.data.from;
 					$scope.to_4=response.data.to;
 					$scope.in_4=response.data.total;
+					$(".tooltip").hide();
 				});
 				break;
 			case 5:
@@ -151,6 +156,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.from_5=response.data.from;
 					$scope.to_5=response.data.to;
 					$scope.in_5=response.data.total;
+					$(".tooltip").hide();
 				});
 				break;
 			case 6:
@@ -163,11 +169,11 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					$scope.from_6=pass.listes.from;
 					$scope.to_6=pass.listes.to;
 					$scope.in_6=pass.listes.total;
+					$(".tooltip").hide();
 				});
 				break;
 			default:
 		}
-		$(".tooltip").hide();
 	}
 
     $scope.get_first_page_data = function(mode)
