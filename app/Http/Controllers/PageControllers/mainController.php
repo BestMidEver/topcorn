@@ -36,7 +36,7 @@ class mainController extends Controller
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
         //->groupBy('movies.id')
-        ->orderBy('rateds.updated_at', 'desc');
+        ->orderBy('updated_at', 'desc');
 
         if($mode == 'legendary'){
             $subq = $subq
