@@ -21,7 +21,6 @@ class mainController extends Controller
 
         $subq = DB::table('rateds')
         ->leftjoin('movies', 'movies.id', '=', 'rateds.movie_id')
-        ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
             'movies.id',
             'movies.original_title as original_title',
@@ -30,8 +29,7 @@ class mainController extends Controller
             'movies.release_date',
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
-            DB::raw('MAX(rateds.updated_at) as updated_at'),
-            DB::raw('LEFT(users.name , 25) AS last_voter_name')
+            DB::raw('MAX(rateds.updated_at) as updated_at')
         )
         ->groupBy('movies.id')
         ->orderBy('updated_at', 'desc');
@@ -55,7 +53,11 @@ class mainController extends Controller
                 $join->on('rateds.movie_id', '=', 'ss.id');
             }
         )
-        ->select('ss.*');
+        ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
+        ->select(
+            'ss.*',
+            DB::raw('LEFT(users.name , 25) AS last_voter_name')
+        );
 
         return $movies->paginate($pagination);
     }
