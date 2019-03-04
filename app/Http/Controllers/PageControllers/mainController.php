@@ -20,7 +20,6 @@ class mainController extends Controller
         }
 
         $movies = DB::table('rateds')
-        ->where('rateds.rate', '=', 5)
         ->leftjoin('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
@@ -36,6 +35,14 @@ class mainController extends Controller
         )
         ->groupBy('movies.id')
         ->orderBy('updated_at', 'desc');
+
+        if($mode == 'legendary'){
+            $movies = $movies
+            ->where('rateds.rate', '=', 5);
+        }else if($mode == 'garbage'){
+            $movies = $movies
+            ->where('rateds.rate', '=', 1);
+        }
 
         return $movies->paginate($pagination);
     }
