@@ -303,24 +303,26 @@
 <!--People Who Liked Also Liked Section-->
 <div class="container-fluid px-0 mt-5" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
-    <div class="dropdown d-inline mr-2">
-        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="h5" ng-show="page_variables.active_tab_3==3">@{{movie.belongs_to_collection.name}}</span>
-        <span class="h5" ng-if="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>
-        <span class="h5" ng-if="page_variables.active_tab_3==1">{{ __('general.similar_movies') }}</span>
-        <span class="h5" ng-if="page_variables.active_tab_3==2">{{ __('general.movie_lists_title') }}</span>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3=3;set_recommendations();" ng-if="movie.belongs_to_collection">@{{movie.belongs_to_collection.name}}</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3=0;set_recommendations();" ng-show="page_variables.has_recommendation">{{ __('general.people_who_liked_this_also_liked') }}</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;set_recommendations();" ng-show="page_variables.has_similar">{{ __('general.similar_movies') }}</button>
-            <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;" ng-show="listes.length>0">{{ __('general.movie_lists_title') }}</button>
-        </div>
-    </div>
-    <span class="text-muted scrollmenu px-3 px-md-0" ng-if="page_variables.active_tab_3!=2 && page_variables.active_tab_3!=3"><small>Sorted by relevance</small></span>
-	<a href="/createlist/new" class="btn btn-outline-success d-none" ng-if="page_variables.active_tab_3==2" target="{{$target}}">
-		<i class="fas fa-plus"></i> {{ __('general.create_list') }}
-	</a>
+		<div>
+		    <div class="dropdown d-inline mr-2">
+		        <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		        <span class="h5" ng-show="page_variables.active_tab_3==3">@{{movie.belongs_to_collection.name}}</span>
+		        <span class="h5" ng-if="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>
+		        <span class="h5" ng-if="page_variables.active_tab_3==1">{{ __('general.similar_movies') }}</span>
+		        <span class="h5" ng-if="page_variables.active_tab_3==2">{{ __('general.movie_lists_title') }}</span>
+		        </button>
+		        <div class="dropdown-menu" aria-labelledby="peopleWhoLikedAlsoLikedDropdownButton">
+		            <button class="dropdown-item" ng-click="page_variables.active_tab_3=3;set_recommendations();" ng-if="movie.belongs_to_collection">@{{movie.belongs_to_collection.name}}</button>
+		            <button class="dropdown-item" ng-click="page_variables.active_tab_3=0;set_recommendations();" ng-show="page_variables.has_recommendation">{{ __('general.people_who_liked_this_also_liked') }}</button>
+		            <button class="dropdown-item" ng-click="page_variables.active_tab_3=1;set_recommendations();" ng-show="page_variables.has_similar">{{ __('general.similar_movies') }}</button>
+		            <button class="dropdown-item" ng-click="page_variables.active_tab_3=2;" ng-show="listes.length>0">{{ __('general.movie_lists_title') }}</button>
+		        </div>
+		    </div>
+		    <span class="text-muted scrollmenu px-3 px-md-0" ng-if="page_variables.active_tab_3!=2 && page_variables.active_tab_3!=3"><small>Sorted by relevance</small></span>
+		</div>
+		<a href="/createlist/new" class="btn btn-outline-success d-none" ng-if="page_variables.active_tab_3==2" target="{{$target}}">
+			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
+		</a>
 		<span class="mb-0 pr-2 align-middle mt-3 d-none">{{ __('general.reviews') }}</span>
 		@if(Auth::check())
 		<button href="/createlist/new" class="btn btn-outline-secondary addblack border-0" ng-if="page_variables.active_tab_3==2" target="{{$target}}"><div><i class="fas fa-plus"></i></div> <span>{{ __('general.create_list') }}</span></button>
