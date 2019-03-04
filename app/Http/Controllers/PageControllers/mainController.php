@@ -29,10 +29,11 @@ class mainController extends Controller
             'movies.vote_count',
             'movies.release_date',
             'movies.'.App::getlocale().'_title as title',
-            'movies.'.App::getlocale().'_poster_path as poster_path'
+            'movies.'.App::getlocale().'_poster_path as poster_path',
+            'MAX(rateds.updated_at) as updated_at'
         )
         ->groupBy('movies.id')
-        ->orderBy('MAX(rateds.updated_at)', 'desc');
+        ->orderBy('updated_at', 'desc');
 
         return $movies->paginate($pagination);
     }
