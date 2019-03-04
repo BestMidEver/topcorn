@@ -38,6 +38,14 @@ class mainController extends Controller
         //->groupBy('movies.id')
         ->orderBy('rateds.updated_at', 'desc');
 
+        if($mode == 'legendary'){
+            $subq = $subq
+            ->where('ss.rate', '=', 5);
+        }else if($mode == 'garbage'){
+            $subq = $subq
+            ->where('ss.rate', '=', 1);
+        }
+
         $qqSql = $subq->toSql();
 
         /////////////////////////////////////////////////////////
@@ -51,14 +59,6 @@ class mainController extends Controller
             }
         )
         ->groupBy('ss.id');
-
-        if($mode == 'legendary'){
-            $movies = $movies
-            ->where('ss.rate', '=', 5);
-        }else if($mode == 'garbage'){
-            $movies = $movies
-            ->where('ss.rate', '=', 1);
-        }
 
         return $movies->paginate($pagination);
     }
