@@ -112,7 +112,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				}
 				break;
 			case 2:
-				if($scope.page_variables.active_tab_1 == 'on air'){
+				if($scope.page_variables.active_tab_2 == 'on air'){
 					rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
 					.then(function(response){
 						//console.log(response);
@@ -202,8 +202,6 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
     	$scope['page_'+mode]=1;
     	$scope.get_page_data(mode);
 	}
-
-	$scope.get_first_page_data(2);
 
 	$scope.paginate_1 = function(page)
 	{
