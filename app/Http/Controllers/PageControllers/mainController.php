@@ -46,7 +46,15 @@ class mainController extends Controller
 
         $qqSql = $subq->toSql();
 
-        $movies = DB::raw('(' . $qqSql. ') as ss'));
+        $movies = DB::table('movies')
+        ->join(
+            DB::raw('(' . $qqSql. ') as ss'),
+            function($join) use ($subq) {
+                $join->on('movies.id', '=', 'ss.id')
+                ->addBinding($subq->getBindings());  
+            }
+        )
+        ->select('ss.*');
 
         return $movies->paginate($pagination);
     }
