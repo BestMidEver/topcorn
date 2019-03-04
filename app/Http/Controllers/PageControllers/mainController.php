@@ -30,23 +30,23 @@ class mainController extends Controller
             'movies.release_date',
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
-            //DB::raw('MAX(rateds.updated_at) as updated_at'),
-            'rateds.updated_at',
+            DB::raw('MAX(rateds.updated_at) as updated_at'),
+            //'rateds.updated_at',
             'rateds.rate',
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
-        //->groupBy('movies.id')
+        ->groupBy('movies.id')
         ->orderBy('rateds.updated_at', 'desc');
 
         $qqSql = $subq->toSql();
 
         /////////////////////////////////////////////////////////
 
-        $movies = DB::table('movies')
+        $movies = DB::table('rateds')
         ->join(
             DB::raw('(' . $qqSql. ') as ss'),
             function($join) use ($subq) {
-                $join->on('movies.id', '=', 'ss.id')
+                $join->on('rateds.updated_at', '=', 'ss.updated_at')
                 ->addBinding($subq->getBindings());  
             }
         )
