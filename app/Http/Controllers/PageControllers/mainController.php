@@ -44,7 +44,11 @@ class mainController extends Controller
             ->where('rateds.rate', '=', 1);
         }
 
-        return $subq->paginate($pagination);
+        $qqSql = $subq->toSql();
+
+        $movies = DB::raw('(' . $qqSql. ') as ss');
+
+        return $movies->paginate($pagination);
     }
 
 
