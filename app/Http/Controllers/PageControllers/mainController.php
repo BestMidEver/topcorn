@@ -19,7 +19,7 @@ class mainController extends Controller
             $pagination = Auth::User()->pagination;
         }
 
-        $movies = DB::table('rateds')
+        $subq = DB::table('rateds')
         ->leftjoin('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
@@ -30,11 +30,26 @@ class mainController extends Controller
             'movies.release_date',
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
-            DB::raw('MAX(rateds.updated_at) as updated_at'),
+            //DB::raw('MAX(rateds.updated_at) as updated_at'),
+            'rateds.updated_at',
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
-        ->groupBy('movies.id')
-        ->orderBy('updated_at', 'desc');
+        //->groupBy('movies.id')
+        ->orderBy('rateds.updated_at', 'desc');
+
+        $qqSql = $subq->toSql();
+
+        /////////////////////////////////////////////////////////
+
+        $movies = DB::table('movies')
+        ->join(
+            DB::raw('(' . $qqSql. ') as ss'),
+            function($join) use ($subq) {
+                $join->on('movies.id', '=', 'ss.id')
+                ->addBinding($subq->getBindings());  
+            }
+        )
+        ->groupBy('movies.id');
 
         if($mode == 'legendary'){
             $movies = $movies
