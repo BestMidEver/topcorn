@@ -50,11 +50,11 @@ class mainController extends Controller
 
         /////////////////////////////////////////////////////////
 
-        $movies = DB::table('rateds')
+        $movies = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') as ss'),
             function($join) use ($subq) {
-                $join->on('rateds.updated_at', '=', 'ss.updated_at')
+                $join->on('movies.id', '=', 'ss.id')
                 ->addBinding($subq->getBindings());  
             }
         )
