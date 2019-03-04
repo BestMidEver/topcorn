@@ -24,20 +24,19 @@ class mainController extends Controller
         ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
             'movies.id',
-            DB::raw('MAX(rateds.updated_at) as updated_at'),
+            'movies.original_title as original_title',
+            'movies.vote_average',
+            'movies.vote_count',
+            'movies.release_date',
+            'movies.'.App::getlocale().'_title as title',
+            'movies.'.App::getlocale().'_poster_path as poster_path',
+            //DB::raw('MAX(rateds.updated_at) as updated_at'),
+            'rateds.updated_at',
             'rateds.rate',
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
         //->groupBy('movies.id')
-        ->orderBy('updated_at', 'desc');
-
-        if($mode == 'legendary'){
-            $subq = $subq
-            ->where('rateds.rate', '=', 5);
-        }else if($mode == 'garbage'){
-            $subq = $subq
-            ->where('rateds.rate', '=', 1);
-        }
+        ->orderBy('rateds.updated_at', 'desc');
 
         $qqSql = $subq->toSql();
 
@@ -51,19 +50,15 @@ class mainController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->select(
-            'ss.id',
-            'movies.original_title as original_title',
-            'movies.vote_average',
-            'movies.vote_count',
-            'movies.release_date',
-            'movies.'.App::getlocale().'_title as title',
-            'movies.'.App::getlocale().'_poster_path as poster_path',
-            'ss.updated_at',
-            'ss.rate',
-            'ss.last_voter_name'
-        )
         ->groupBy('ss.id');
+
+        if($mode == 'legendary'){
+            $movies = $movies
+            ->where('ss.rate', '=', 5);
+        }else if($mode == 'garbage'){
+            $movies = $movies
+            ->where('ss.rate', '=', 1);
+        }
 
         return $movies->paginate($pagination);
     }
@@ -274,8 +269,8 @@ class mainController extends Controller
         if(Auth::check()){
             $reviews = $reviews
             ->select(
-            	'users.name as name',
-            	'users.id as user_id',
+                'users.name as name',
+                'users.id as user_id',
                 'reviews.id as review_id',
                 'reviews.review as content',
                 'reviews.mode as mode',
@@ -291,8 +286,8 @@ class mainController extends Controller
         }else{
             $reviews = $reviews
             ->select(
-            	'users.name as name',
-            	'users.id as user_id',
+                'users.name as name',
+                'users.id as user_id',
                 'reviews.id as review_id',
                 'reviews.review as content',
                 'reviews.mode as mode',
@@ -319,11 +314,11 @@ class mainController extends Controller
 
 
 
-	public function main($lang = '')
-	{
-    	if($lang != '') App::setlocale($lang);
+    public function main($lang = '')
+    {
+        if($lang != '') App::setlocale($lang);
 
-    	$image_quality = Auth::User()->image_quality;
+        $image_quality = Auth::User()->image_quality;
 
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
@@ -335,6 +330,6 @@ class mainController extends Controller
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('movies', $movies)->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
-	}
+        return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('movies', $movies)->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
+    }
 }
