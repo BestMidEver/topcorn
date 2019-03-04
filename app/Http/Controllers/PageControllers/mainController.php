@@ -61,7 +61,7 @@ class mainController extends Controller
             'movies.'.App::getlocale().'_poster_path as poster_path',
             'ss.updated_at',
             'ss.rate',
-            'ss.last_voter_name',
+            'ss.last_voter_name'
         )
         ->groupBy('ss.id');
 
