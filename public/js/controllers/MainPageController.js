@@ -25,6 +25,13 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		});
 	}
 
+	$scope.similar_movies1 = pass.movies.data;
+	$scope.pagination_1=pass.movies.last_page;
+	$scope.current_page_1=pass.movies.current_page;
+	$scope.from_1=pass.movies.from;
+	$scope.to_1=pass.movies.to;
+	$scope.in_1=pass.movies.total;
+
 	$scope.people3 = pass.people.data;
 	$scope.pagination_3=pass.people.last_page;
 	$scope.current_page_3=pass.people.current_page;
@@ -169,7 +176,6 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
     	$scope.get_page_data(mode);
 	}
 
-	$scope.get_first_page_data(1);
 	$scope.get_first_page_data(2);
 
 	$scope.paginate_1 = function(page)

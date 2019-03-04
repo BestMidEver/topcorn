@@ -11,6 +11,7 @@ pass={
 	@endif
 	"watched_movie_number":{{ $watched_movie_number }},
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
+	"movies":{!! json_encode($movies) !!},
 	"users":{!! json_encode($users) !!},
 	"reviews":{!! json_encode($reviews) !!},
 	"people":{!! json_encode($people) !!},
