@@ -50,7 +50,7 @@ class mainController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->groupBy('movies.id');
+        ->groupBy('ss.id');
 
         if($mode == 'legendary'){
             $movies = $movies
