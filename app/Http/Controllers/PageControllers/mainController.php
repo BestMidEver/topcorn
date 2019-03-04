@@ -51,7 +51,7 @@ class mainController extends Controller
                 ->addBinding($subq->getBindings());  
             }
         )
-        ->orderBy('ss.rank', 'desc');
+        ->orderBy('ss.rank', 'desc')
         ->groupBy('ss.id');
 
         if($mode == 'legendary'){
