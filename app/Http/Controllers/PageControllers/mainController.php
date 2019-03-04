@@ -31,7 +31,7 @@ class mainController extends Controller
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
             //DB::raw('MAX(rateds.updated_at) as updated_at'),
-            DB::raw('RANK() as rank'),
+            DB::raw('RANK() OVER (ORDER BY rateds.updated_at) as rank'),
             'rateds.updated_at',
             'rateds.rate',
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
