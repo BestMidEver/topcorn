@@ -126,21 +126,21 @@ class mainController extends Controller
             $join->on('r2.series_id', '=', 'ss.id')
             ->where('r2.user_id', '=', Auth::id());
         })
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.series_id', '=', 'ss.id')
-            ->where('laters.user_id', '=', Auth::id());
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'ss.id')
+            ->where('series_laters.user_id', '=', Auth::id());
         })
-        ->leftjoin('bans', function ($join) {
-            $join->on('bans.series_id', '=', 'ss.id')
-            ->where('bans.user_id', '=', Auth::id());
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.series_id', '=', 'ss.id')
+            ->where('series_bans.user_id', '=', Auth::id());
         })
         ->select(
             'ss.*',
             DB::raw('LEFT(users.name , 25) AS last_voter_name'),
             'r2.id as rated_id',
             'r2.rate as rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
         );
 
         return $series->paginate($pagination);
