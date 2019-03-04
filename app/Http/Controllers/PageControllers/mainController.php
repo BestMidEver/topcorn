@@ -24,12 +24,6 @@ class mainController extends Controller
         ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
             'movies.id',
-            'movies.original_title as original_title',
-            'movies.vote_average',
-            'movies.vote_count',
-            'movies.release_date',
-            'movies.'.App::getlocale().'_title as title',
-            'movies.'.App::getlocale().'_poster_path as poster_path',
             //DB::raw('MAX(rateds.updated_at) as updated_at'),
             'rateds.updated_at',
             'rateds.rate',
@@ -49,6 +43,18 @@ class mainController extends Controller
                 $join->on('movies.id', '=', 'ss.id')
                 ->addBinding($subq->getBindings());  
             }
+        )
+        ->select(
+            'ss.id',
+            'movies.original_title as original_title',
+            'movies.vote_average',
+            'movies.vote_count',
+            'movies.release_date',
+            'movies.'.App::getlocale().'_title as title',
+            'movies.'.App::getlocale().'_poster_path as poster_path',
+            'ss.updated_at',
+            'ss.rate',
+            'ss.last_voter_name'
         )
         ->groupBy('ss.id');
 
