@@ -19,9 +19,9 @@
 	    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">Movies: Now Playing</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='legendary';">Legendary</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='garbage';">Garbage</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';">Now Playing</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='legendary';;get_first_page_data(1);">Legendary</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='garbage';;get_first_page_data(1);">Garbage</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';;get_first_page_data(1);">Now Playing</button>
 	    </div>
 	</div>
 	<div ng-show="similar_movies1.length>0">
