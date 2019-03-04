@@ -33,10 +33,10 @@ class mainController extends Controller
         ->orderBy('rateds.updated_at', 'desc');
 
         if($mode == 'legendary'){
-            $movies = $movies
+            $subq = $subq
             ->where('rateds.rate', '=', 5);
         }else if($mode == 'garbage'){
-            $movies = $movies
+            $subq = $subq
             ->where('rateds.rate', '=', 1);
         }
 
