@@ -187,11 +187,11 @@
 			</div>
 			<div ng-if="movie.budget > 0 && movie.budget != 0">
 				<div class="h6 pt-1">{{ __('general.budget') }}</div>
-				<p>$@{{fancybudget}}.00</p>
+				<p>$@{{fancybudget}}</p>
 			</div>
 			<div ng-if="movie.revenue > 0 && movie.revenue != 0">
 				<div class="h6 pt-1">{{ __('general.revenue') }}</div>
-				<p>$@{{fancyrevenue}}.00</p>
+				<p>$@{{fancyrevenue}}</p>
 			</div>
             <div ng-if="movie.external_ids.facebook_id.length>0 || movie.external_ids.instagram_id.length>0 || movie.external_ids.twitter_id.length>0">
                 <div class="h6 pt-1">{{ __('general.links') }}</div>
