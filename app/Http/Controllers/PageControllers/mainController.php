@@ -64,6 +64,7 @@ class mainController extends Controller
             'ss.rate',
             'ss.last_voter_name'
         )
+        ->orderBy('ss.updated_at', 'desc')
         ->groupBy('ss.id');
 
         return $movies->paginate($pagination);
