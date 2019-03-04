@@ -30,7 +30,7 @@ class mainController extends Controller
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
         //->groupBy('movies.id')
-        ->orderBy('rateds.updated_at', 'desc');
+        ->orderBy('rateds.updated_at', 'asc');
 
         $qqSql = $subq->toSql();
 
