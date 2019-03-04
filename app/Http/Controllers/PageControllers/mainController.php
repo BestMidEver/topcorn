@@ -43,7 +43,7 @@ class mainController extends Controller
         /////////////////////////////////////////////////////////
 
         $movies = DB::table('movies')
-        ->join(
+        ->leftjoin(
             DB::raw('(' . $qqSql. ') as ss'),
             function($join) use ($subq) {
                 $join->on('movies.id', '=', 'ss.id')
