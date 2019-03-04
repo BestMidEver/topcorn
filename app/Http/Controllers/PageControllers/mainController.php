@@ -31,6 +31,7 @@ class mainController extends Controller
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
             //DB::raw('MAX(rateds.updated_at) as updated_at'),
+            DB::raw('RANK() as rank'),
             'rateds.updated_at',
             'rateds.rate',
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
@@ -43,13 +44,14 @@ class mainController extends Controller
         /////////////////////////////////////////////////////////
 
         $movies = DB::table('movies')
-        ->leftjoin(
+        ->join(
             DB::raw('(' . $qqSql. ') as ss'),
             function($join) use ($subq) {
                 $join->on('movies.id', '=', 'ss.id')
                 ->addBinding($subq->getBindings());  
             }
         )
+        ->orderBy('ss.rank', 'desc');
         ->groupBy('ss.id');
 
         if($mode == 'legendary'){
