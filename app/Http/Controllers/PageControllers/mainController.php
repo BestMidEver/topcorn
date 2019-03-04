@@ -46,7 +46,7 @@ class mainController extends Controller
 
         $qqSql = $subq->toSql();
 
-        $movies = DB::raw('(' . $qqSql. ') as ss');
+        $movies = DB::raw('(' . $qqSql. ') as ss'));
 
         return $movies->paginate($pagination);
     }
