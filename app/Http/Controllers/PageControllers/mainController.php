@@ -30,7 +30,15 @@ class mainController extends Controller
             DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
         //->groupBy('movies.id')
-        ->orderBy('rateds.updated_at', 'asc');
+        ->orderBy('rateds.updated_at', 'desc');
+
+        if($mode == 'legendary'){
+            $movies = $movies
+            ->where('rateds.rate', '=', 5);
+        }else if($mode == 'garbage'){
+            $movies = $movies
+            ->where('rateds.rate', '=', 1);
+        }
 
         $qqSql = $subq->toSql();
 
@@ -57,14 +65,6 @@ class mainController extends Controller
             'ss.last_voter_name'
         )
         ->groupBy('ss.id');
-
-        if($mode == 'legendary'){
-            $movies = $movies
-            ->where('ss.rate', '=', 5);
-        }else if($mode == 'garbage'){
-            $movies = $movies
-            ->where('ss.rate', '=', 1);
-        }
 
         return $movies->paginate($pagination);
     }
