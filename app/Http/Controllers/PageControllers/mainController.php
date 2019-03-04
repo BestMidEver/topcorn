@@ -68,7 +68,7 @@ class mainController extends Controller
         })
         ->select(
             'ss.*',
-            DB::raw('LEFT(users.name , 25) AS last_voter_name')
+            DB::raw('LEFT(users.name , 25) AS last_voter_name'),
             'r2.id as rated_id',
             'r2.rate as rate_code',
             'laters.id as later_id',
