@@ -16,6 +16,12 @@
 						<small ng-if="active_tab=='mood_pick'"><span class="h5 text-warning">@{{movie.point}}</span>/@{{movie.count*5}} {{ __('general.point') }}</small>
 					</div>
 				</div>
+				<div class="d-flex flex-row justify-content-center" ng-if="movie.last_voter_name.length>0">
+					<div class="text-white">
+						<small>{{ __('general.last_voter') }}</small>
+						<div><span class="h5 text-warning">@{{movie.last_voter_name}}</span></div>
+					</div>
+				</div>
 			</div>
 			<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 				<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">

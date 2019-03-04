@@ -22,6 +22,7 @@ class mainController extends Controller
         $movies = DB::table('rateds')
         ->where('rateds.rate', '=', 5)
         ->leftjoin('movies', 'movies.id', '=', 'rateds.movie_id')
+        ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
             'movies.id',
             'movies.original_title as original_title',
@@ -30,7 +31,8 @@ class mainController extends Controller
             'movies.release_date',
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
-            DB::raw('MAX(rateds.updated_at) as updated_at')
+            DB::raw('MAX(rateds.updated_at) as updated_at'),
+            'users.name as last_voter_name'
         )
         ->groupBy('movies.id')
         ->orderBy('updated_at', 'desc');
