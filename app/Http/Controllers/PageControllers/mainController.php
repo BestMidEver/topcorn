@@ -12,6 +12,33 @@ use Illuminate\Support\Facades\DB;
 
 class mainController extends Controller
 {
+    public static function get_legendary_garbage_movies($mode, $sort)
+    {
+        $pagination = 24;
+        if(Auth::check()){
+            $pagination = Auth::User()->pagination;
+        }
+
+        $movies = DB::table('rateds')
+        ->where('rateds.rate', '=', 5)
+        ->leftjoin('movies', 'movies.id', '=', 'rateds.movie_id')
+        ->select(
+            'movies.id',
+            'movies.original_title as original_title',
+            'movies.vote_average',
+            'movies.vote_count',
+            'movies.release_date',
+            'movies.'.App::getlocale().'_title as title',
+            'movies.'.App::getlocale().'_poster_path as poster_path'
+        )
+        ->groupBy('movies.id')
+        ->orderBy('rateds.updated_at', 'desc');
+
+        return $movies->paginate($pagination);
+    }
+
+
+
     public static function get_popular_users($mode)
     {
         $pagination = 24;
@@ -271,11 +298,12 @@ class mainController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         
+        $movies = $this->get_legendary_garbage_movies('legendary', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
+		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('movies', $movies))->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
 	}
 }

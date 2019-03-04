@@ -153,6 +153,7 @@ Route::post('api/get_series_momosu','PageControllers\recommendationsController@g
 Route::get('main/{lang?}', 'PageControllers\mainController@main')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
+Route::get('api/get_legendary_garbage_movies/{mode}/{sort}','PageControllers\mainController@get_legendary_garbage_movies');
 Route::get('api/get_popular_people/{mode}','PageControllers\mainController@get_popular_people');
 Route::get('api/get_popular_users/{mode}','PageControllers\mainController@get_popular_users');
 Route::get('api/get_popular_lists/{mode}','PageControllers\mainController@get_popular_lists');

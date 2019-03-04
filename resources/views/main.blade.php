@@ -13,15 +13,15 @@
 </div>
 <div>
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=0">
-	    <span class="h5" ng-show="page_variables.active_tab_1==0">Movies: Now Playing</span>
-	    <span class="h5" ng-show="page_variables.active_tab_1==1">Movies: Legendary</span>
-	    <span class="h5" ng-show="page_variables.active_tab_1==2">Movies: Garbage</span>
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1='legendary'">
+	    <span class="h5" ng-show="page_variables.active_tab_1=='legendary'">Movies: Legendary</span>
+	    <span class="h5" ng-show="page_variables.active_tab_1=='garbage'">Movies: Garbage</span>
+	    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">Movies: Now Playing</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1=0;">Now Playing</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1=1;">Legendary</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1=2;">Garbage</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='legendary';">Legendary</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='garbage';">Garbage</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';">Now Playing</button>
 	    </div>
 	</div>
 	<div ng-show="similar_movies1.length>0">
