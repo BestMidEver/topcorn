@@ -80,6 +80,74 @@ class mainController extends Controller
 
 
 
+    public static function get_legendary_garbage_series($mode, $sort)
+    {
+        $pagination = 24;
+        if(Auth::check()){
+            $pagination = Auth::User()->pagination;
+        }
+
+        $subq = DB::table('series_rateds')
+        ->leftjoin('series', 'series.id', '=', 'series_rateds.series_id')
+        ->select(
+            'series.id',
+            'series.original_title as original_title',
+            'series.vote_average',
+            'series.vote_count',
+            'series.first_air_date as release_date',
+            'series.'.App::getlocale().'_name as title',
+            'series.'.App::getlocale().'_poster_path as poster_path',
+            DB::raw('MAX(series_rateds.updated_at) as updated_at')
+        )
+        ->groupBy('series.id')
+        ->orderBy('updated_at', 'desc');
+
+        if($mode == 'legendary'){
+            $subq = $subq
+            ->where('series_rateds.rate', '=', 5);
+        }else if($mode == 'garbage'){
+            $subq = $subq
+            ->where('series_rateds.rate', '=', 1);
+        }
+
+        $qqSql = $subq->toSql();
+
+        $series = DB::table('series_rateds')
+        ->join(
+            DB::raw('(' . $qqSql. ') as ss'),
+            function($join) use ($subq) {
+                $join->on('series_rateds.updated_at', '=', 'ss.updated_at')
+                ->addBinding($subq->getBindings());
+                $join->on('series_rateds.series_id', '=', 'ss.id');
+            }
+        )
+        ->leftjoin('users', 'users.id', '=', 'series_rateds.user_id')
+        ->leftjoin('series_rateds as r2', function ($join) {
+            $join->on('r2.series_id', '=', 'ss.id')
+            ->where('r2.user_id', '=', Auth::id());
+        })
+        ->leftjoin('laters', function ($join) {
+            $join->on('laters.series_id', '=', 'ss.id')
+            ->where('laters.user_id', '=', Auth::id());
+        })
+        ->leftjoin('bans', function ($join) {
+            $join->on('bans.series_id', '=', 'ss.id')
+            ->where('bans.user_id', '=', Auth::id());
+        })
+        ->select(
+            'ss.*',
+            DB::raw('LEFT(users.name , 25) AS last_voter_name'),
+            'r2.id as rated_id',
+            'r2.rate as rate_code',
+            'laters.id as later_id',
+            'bans.id as ban_id'
+        );
+
+        return $series->paginate($pagination);
+    }
+
+
+
     public static function get_popular_users($mode)
     {
         $pagination = 24;
@@ -340,11 +408,18 @@ class mainController extends Controller
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         
         $movies = $this->get_legendary_garbage_movies('legendary', 'newest');
+        $series = $this->get_legendary_garbage_series('legendary', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'))->with('movies', $movies)->with('people', $people)->with('users', $users)->with('reviews', $reviews)->with('listes', $listes);
+		return view('main', compact('image_quality', 'target', 'watched_movie_number'))
+            ->with('movies', $movies)
+            ->with('series', $series)
+            ->with('people', $people)
+            ->with('users', $users)
+            ->with('reviews', $reviews)
+            ->with('listes', $listes);
 	}
 }

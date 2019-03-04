@@ -32,6 +32,13 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	$scope.to_1=pass.movies.to;
 	$scope.in_1=pass.movies.total;
 
+	$scope.similar_movies2 = pass.series.data;
+	$scope.pagination_2=pass.series.last_page;
+	$scope.current_page_2=pass.series.current_page;
+	$scope.from_2=pass.series.from;
+	$scope.to_2=pass.series.to;
+	$scope.in_2=pass.series.total;
+
 	$scope.people3 = pass.people.data;
 	$scope.pagination_3=pass.people.last_page;
 	$scope.current_page_3=pass.people.current_page;
@@ -105,19 +112,33 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				}
 				break;
 			case 2:
-				rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
-				.then(function(response){
-					//console.log(response);
-					$scope.similar_movies2=response.data.results;
-					if(response.data.total_pages<1000) $scope.pagination_2=response.data.total_pages;
-					else $scope.pagination_2=1000;
-					$scope.current_page_2=response.data.page;
-					$scope.from_2=(response.data.page-1)*20+1;
-					$scope.to_2=(response.data.page-1)*20+response.data.results.length;
-					$scope.in_2=response.data.total_results;
-					$scope.is_2=false;
+				if($scope.page_variables.active_tab_1 == 'on air'){
+					rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
+					.then(function(response){
+						//console.log(response);
+						$scope.similar_movies2=response.data.results;
+						if(response.data.total_pages<1000) $scope.pagination_2=response.data.total_pages;
+						else $scope.pagination_2=1000;
+						$scope.current_page_2=response.data.page;
+						$scope.from_2=(response.data.page-1)*20+1;
+						$scope.to_2=(response.data.page-1)*20+response.data.results.length;
+						$scope.in_2=response.data.total_results;
+						$scope.is_2=false;
+							$(".tooltip").hide();
+					});
+				}else{
+					rate.get_legendary_garbage_series($scope.page_variables.active_tab_2, 'newest', $scope.page_2)
+					.then(function(response){
+						console.log(response);
+						$scope.similar_movies2 = response.data.data;
+						$scope.pagination_2=response.data.last_page;
+						$scope.current_page_2=response.data.current_page;
+						$scope.from_2=response.data.from;
+						$scope.to_2=response.data.to;
+						$scope.in_2=response.data.total;
 						$(".tooltip").hide();
-				});
+					});
+				}
 				break;
 			case 3:
 				rate.get_popular_people($scope.page_variables.active_tab_3, $scope.page_3)

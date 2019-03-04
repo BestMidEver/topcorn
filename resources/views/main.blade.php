@@ -19,9 +19,9 @@
 	    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">Movies: Now Playing</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='legendary';;get_first_page_data(1);">Legendary</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='garbage';;get_first_page_data(1);">Garbage</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';;get_first_page_data(1);">Now Playing</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='legendary';get_first_page_data(1);">Legendary</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='garbage';get_first_page_data(1);">Garbage</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';get_first_page_data(1);">Now Playing</button>
 	    </div>
 	</div>
 	<div ng-show="similar_movies1.length>0">
@@ -31,15 +31,15 @@
 <hr class="mt-4">
 <div class="mt-4">
 	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2=0">
-	    <span class="h5" ng-show="page_variables.active_tab_2==0">Series: On The Air</span>
-	    <span class="h5" ng-show="page_variables.active_tab_2==1">Series: Legendary</span>
-	    <span class="h5" ng-show="page_variables.active_tab_2==1">Series: Garbage</span>
+	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2='legendary'">
+	    <span class="h5" ng-show="page_variables.active_tab_2=='legendary'">Series: Legendary</span>
+	    <span class="h5" ng-show="page_variables.active_tab_2=='garbage'">Series: Garbage</span>
+	    <span class="h5" ng-show="page_variables.active_tab_2=='on air'">Series: On The Air</span>
 	    </button>
 	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_2=0;">On The Air</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_2=1;">Legendary</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_2=2;">Garbage</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_2='legendary';get_first_page_data(2);">Legendary</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_2='garbage';get_first_page_data(2);">Garbage</button>
+	        <button class="dropdown-item" ng-click="page_variables.active_tab_2='on air';get_first_page_data(2);">On The Air</button>
 	    </div>
 	</div>
 	<div ng-show="similar_movies2.length>0">

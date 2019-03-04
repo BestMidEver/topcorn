@@ -36,6 +36,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_legendary_garbage_series = function(mode, sort, page) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_legendary_garbage_series/'+mode+'/'+sort+'?page='+page,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
 
     get_now_on_air = function(constants_api_key, lang, page) 
     {
@@ -887,6 +904,7 @@ MyApp.factory('rate', function($http) {
     return {
     	get_now_playing: get_now_playing,
     	get_legendary_garbage_movies: get_legendary_garbage_movies,
+    	get_legendary_garbage_series: get_legendary_garbage_series,
     	get_now_on_air: get_now_on_air,
     	get_popular_people: get_popular_people,
     	get_popular_users: get_popular_users,
