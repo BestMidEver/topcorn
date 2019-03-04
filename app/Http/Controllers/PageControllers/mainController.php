@@ -32,7 +32,7 @@ class mainController extends Controller
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
             DB::raw('MAX(rateds.updated_at) as updated_at'),
-            'users.name as last_voter_name'
+            DB::raw('LEFT(users.name , 25) AS last_voter_name')
         )
         ->groupBy('movies.id')
         ->orderBy('updated_at', 'desc');
