@@ -19,7 +19,7 @@ class mainController extends Controller
             $pagination = Auth::User()->pagination;
         }
 
-        $movies = DB::table('rateds')
+        $subq = DB::table('rateds')
         ->leftjoin('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('users', 'users.id', '=', 'rateds.user_id')
         ->select(
@@ -37,14 +37,14 @@ class mainController extends Controller
         ->orderBy('updated_at', 'desc');
 
         if($mode == 'legendary'){
-            $movies = $movies
+            $subq = $subq
             ->where('rateds.rate', '=', 5);
         }else if($mode == 'garbage'){
-            $movies = $movies
+            $subq = $subq
             ->where('rateds.rate', '=', 1);
         }
 
-        return $movies->paginate($pagination);
+        return $subq->paginate($pagination);
     }
 
 
