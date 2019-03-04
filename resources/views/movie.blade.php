@@ -323,7 +323,7 @@
 	<div ng-show="page_variables.active_tab_3!=2">
     @include('layout.moviecard_6', ['suffix' => ''])
 	</div>
-	<div class="p-5" ng-show="(page_variables.active_tab_3==2 && listes.length==0) || !similar_movies.length>0">
+	<div class="p-5" ng-show="(page_variables.active_tab_3==2 && listes.length==0) || (page_variables.active_tab_3!=2 && !similar_movies.length>0)">
 		<div class="text-muted text-center"><span>{{ __('general.no_result') }}</span></div>
 	</div>
 	<div class="card-group no-gutters" ng-if="page_variables.active_tab_3==2">
