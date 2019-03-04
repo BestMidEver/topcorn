@@ -40,10 +40,10 @@ class mainController extends Controller
 
         if($mode == 'legendary'){
             $subq = $subq
-            ->where('ss.rate', '=', 5);
+            ->where('rateds.rate', '=', 5);
         }else if($mode == 'garbage'){
             $subq = $subq
-            ->where('ss.rate', '=', 1);
+            ->where('rateds.rate', '=', 1);
         }
 
         $qqSql = $subq->toSql();
