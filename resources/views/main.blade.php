@@ -3,7 +3,7 @@
 @include('head.head_main')
 
 @section('body')
-<div class=" mt-3 mt-md-4">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==1">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -26,8 +26,8 @@
     @include('layout.moviecard_6', ['suffix' => '1'])
 	</div>
 </div>
-<hr class="mt-4">
-<div class="mt-4">
+<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==2">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2='legendary'">
 	    <span class="h5" ng-show="page_variables.active_tab_2=='legendary'">Series: Legendary</span>
@@ -44,8 +44,8 @@
     @include('layout.moviecard_6', ['suffix' => '2'])
 	</div>
 </div>
-<hr class="mt-4">
-<div class="mt-4">
+<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==3">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
 		    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">People: Born Today</span>
@@ -62,8 +62,8 @@
     @include('layout.peoplecard_6', ['suffix' => '3'])
 	</div>
 </div>
-<hr class="mt-4">
-<div class="mt-4">
+<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==4">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4='comment'">
 		    <span class="h5" ng-show="page_variables.active_tab_4=='comment'">Users: Most Liked Commenters</span>
@@ -80,8 +80,8 @@
     @include('layout.userscard_6', ['suffix' => '4'])
 	</div>
 </div>
-<hr class="mt-4">
-<div class="mt-4">
+<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==5">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_5='newest'">
 	    <span class="h5" ng-show="page_variables.active_tab_5=='newest'">Reviews: Newest</span>
@@ -96,8 +96,8 @@
     @include('layout.reviews_6', ['suffix' => '5'])
 	</div>
 </div>
-<hr class="mt-4">
-<div class="mt-4">
+<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==6">
 	<div class="dropdown d-inline">
 	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_6='newest'">
 	    <span class="h5" ng-show="page_variables.active_tab_6=='newest'">Lists: Newest</span>
