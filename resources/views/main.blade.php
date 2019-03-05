@@ -64,7 +64,6 @@
 				<button class="dropdown-item" ng-click="page_variables.f_sort1='most voted';get_first_page_data(1);">Most Voted</button>
 			</div>
 		</div>
-		</div>
 	</div>
 	<div ng-show="similar_movies1.length>0">
     @include('layout.moviecard_6', ['suffix' => '1'])
