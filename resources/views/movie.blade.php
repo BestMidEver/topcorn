@@ -320,10 +320,6 @@
 		    </div>
 		    <span class="text-muted scrollmenu px-3 px-md-0" ng-if="page_variables.active_tab_3!=2 && page_variables.active_tab_3!=3"><small>Sorted by relevance</small></span>
 		</div>
-		<a href="/createlist/new" class="btn btn-outline-success d-none" ng-if="page_variables.active_tab_3==2" target="{{$target}}">
-			<i class="fas fa-plus"></i> {{ __('general.create_list') }}
-		</a>
-		<span class="mb-0 pr-2 align-middle mt-3 d-none">{{ __('general.reviews') }}</span>
 		@if(Auth::check())
 		<button href="/createlist/new" class="btn btn-outline-secondary addblack border-0" ng-if="page_variables.active_tab_3==2" target="{{$target}}"><div><i class="fas fa-plus"></i></div> <span>{{ __('general.create_list') }}</span></button>
         @endif
