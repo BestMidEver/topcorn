@@ -27,6 +27,10 @@ pass={
 @include('cdn.underscore')
 @endsection
 
+@section('external_internal_data_merger')
+<script src="/js/functions/external_internal_data_merger.js?v={{config('constants.version')}}"></script>
+@endsection
+
 @section('angular_controller_js')
 <script src="/js/controllers/MainPageController.js?v={{config('constants.version')}}"></script>
 @endsection

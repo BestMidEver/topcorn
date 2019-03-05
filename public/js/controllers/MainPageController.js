@@ -1,4 +1,4 @@
-MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, rate, $sce)
+MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, rate, $sce, external_internal_data_merger)
 {
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
@@ -13,6 +13,16 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
+	rate.get_user_movies('movies')
+	.then(function(response){
+		console.log(response.data);
+		$scope.user_movies = response.data;
+	});
+	rate.get_user_movies('series')
+	.then(function(response){
+		console.log(response.data);
+		$scope.user_series = response.data;
+	});
 
 	$scope.prepeare_reviews = function(reviews){
 		_.each(reviews, function(review){
@@ -91,6 +101,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					rate.get_now_playing(pass.api_key, pass.lang, pass.lang=='en'?'us':(pass.lang=='tr'?'tr':'hu'), $scope.page_1)
 					.then(function(response){
 						console.log(response);
+						external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
 						$scope.similar_movies1=response.data.results;
 						if(response.data.total_pages<1000) $scope.pagination_1=response.data.total_pages;
 						else $scope.pagination_1=1000;
@@ -120,6 +131,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 					rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
 					.then(function(response){
 						console.log(response);
+						external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
 						$scope.similar_movies2=response.data.results;
 						if(response.data.total_pages<1000) $scope.pagination_2=response.data.total_pages;
 						else $scope.pagination_2=1000;
@@ -128,7 +140,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 						$scope.to_2=(response.data.page-1)*20+response.data.results.length;
 						$scope.in_2=response.data.total_results;
 						$scope.is_2=false;
-							$(".tooltip").hide();
+						$(".tooltip").hide();
 					});
 				}else{
 					rate.get_legendary_garbage_series($scope.page_variables.active_tab_2, $scope.page_variables.f_following2, $scope.page_variables.f_sort2, $scope.page_2)
