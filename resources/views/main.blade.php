@@ -24,8 +24,8 @@
 	</div>
 	<div class="container-fluid mt-3" ng-show="is_expanded1">
 		<div class="btn-group mr-2">
-			<button type="button" class="btn btn-outline-secondary btn-sm" ng-class="page_variables.f_following1=='all'?'active':''" ng-click="page_variables.f_following1='all';get_first_page_data(1);">All Users</button>
-			<button type="button" class="btn btn-outline-secondary btn-sm" ng-class="page_variables.f_following1=='following'?'active':''" ng-click="page_variables.f_following1='following';get_first_page_data(1);">Following</button>
+			<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.f_following1=='all'?'active':''" ng-click="page_variables.f_following1='all';get_first_page_data(1);">All Users</button>
+			<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.f_following1=='following'?'active':''" ng-click="page_variables.f_following1='following';get_first_page_data(1);">Following</button>
 		</div>
 		<div class="btn-group mr-2">
 			<button type="button" class="btn btn-outline-secondary btn-sm" ng-class="page_variables.f_seen1=='all'?'active':''" ng-click="page_variables.f_seen1='all';get_first_page_data(1);">All Movies</button>
