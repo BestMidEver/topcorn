@@ -99,7 +99,7 @@
 	</div>
 </div>
 <hr class="mt-4" ng-show="page_variables.expanded==-1">
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==5">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==5" id="scroll_to_top5">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -116,12 +116,12 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=5;iscast5=true;is_expanded5=true;toggle_collapse('collapseMovies5', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast5=false;is_expanded5=false;toggle_collapse('collapseMovies5', 'collapse');scroll_to_top('scroll_to_top5');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
-	<div ng-show="reviews5.length>0" id="scroll_to_top5">
+	<div ng-show="reviews5.length>0">
     @include('layout.reviews_6', ['suffix' => '5'])
 	</div>
 </div>
 <hr class="mt-4" ng-show="page_variables.expanded==-1">
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==6">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==6" id="scroll_to_top6">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -138,7 +138,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=6;iscast6=true;is_expanded6=true;toggle_collapse('collapseMovies6', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast6=false;is_expanded6=false;toggle_collapse('collapseMovies6', 'collapse');scroll_to_top('scroll_to_top6');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
-	<div ng-show="listes6.length>0" id="scroll_to_top6">
+	<div ng-show="listes6.length>0">
 		@include('layout.listcard_6', ['suffix' => '6'])
 	</div>
 </div>
