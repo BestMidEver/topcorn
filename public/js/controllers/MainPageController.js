@@ -77,7 +77,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
-	$scope.page_variables={expanded:-1, f_following1:'all'};
+	$scope.page_variables={expanded:-1, f_following1:'all', f_vote1:5};
 	$scope.page_1=0;
 	$scope.page_2=0;
 

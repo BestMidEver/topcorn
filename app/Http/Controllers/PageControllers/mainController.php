@@ -32,15 +32,8 @@ class mainController extends Controller
             DB::raw('MAX(rateds.updated_at) as updated_at')
         )
         ->groupBy('movies.id')
+        ->where('rateds.rate', '=', $mode)
         ->orderBy('updated_at', 'desc');
-
-        if($mode == 'legendary'){
-            $subq = $subq
-            ->where('rateds.rate', '=', 5);
-        }else if($mode == 'garbage'){
-            $subq = $subq
-            ->where('rateds.rate', '=', 1);
-        }
 
         $qqSql = $subq->toSql();
 
@@ -100,15 +93,8 @@ class mainController extends Controller
             DB::raw('MAX(series_rateds.updated_at) as updated_at')
         )
         ->groupBy('series.id')
+        ->where('rateds.rate', '=', $mode)
         ->orderBy('updated_at', 'desc');
-
-        if($mode == 'legendary'){
-            $subq = $subq
-            ->where('series_rateds.rate', '=', 5);
-        }else if($mode == 'garbage'){
-            $subq = $subq
-            ->where('series_rateds.rate', '=', 1);
-        }
 
         $qqSql = $subq->toSql();
 
