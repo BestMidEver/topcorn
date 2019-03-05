@@ -55,20 +55,44 @@
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
-			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2='legendary'">
-			    <span class="h5" ng-show="page_variables.active_tab_2=='legendary'">Series: Legendary</span>
-			    <span class="h5" ng-show="page_variables.active_tab_2=='garbage'">Series: Garbage</span>
+			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span class="h5" ng-show="page_variables.active_tab_2==5">Series: Legendary</span>
+			    <span class="h5" ng-show="page_variables.active_tab_2==4">Series: Good</span>
 			    <span class="h5" ng-show="page_variables.active_tab_2=='on air'">Series: On The Air</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_2='legendary';get_first_page_data(2);">Legendary</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_2='garbage';get_first_page_data(2);">Garbage</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_2=5;get_first_page_data(2);">Legendary</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_2=4;get_first_page_data(2);">Good</button>
 			        <button class="dropdown-item" ng-click="page_variables.active_tab_2='on air';get_first_page_data(2);">On The Air</button>
 			    </div>
 			</div>
 		</div>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=2;iscast_movies2=true;is_expanded2=true;toggle_collapse('collapseMovies2', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded2=false;iscast_movies2=false;toggle_collapse('collapseMovies2', 'collapse');scroll_to_top('scroll_to_top2');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
+	</div>
+	<div class="container-fluid" ng-show="similar_movies2">
+		<div class="dropdown d-inline">
+			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-filter"></i>
+				<span ng-show="page_variables.f_following2=='following'">Following</span>
+				<span ng-show="page_variables.f_following2=='all'">All Users</span>
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" ng-click="page_variables.f_following2='following';get_first_page_data(2);">Following</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following2='all';get_first_page_data(2);">All Users</button>
+			</div>
+		</div>
+		<div class="dropdown d-inline">
+			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fas fa-sort-amount-down"></i>
+				<span ng-show="page_variables.f_sort2=='newest'">Newest</span>
+				<span ng-show="page_variables.f_sort2=='most voted'">Most Voted</span>
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" ng-click="page_variables.f_sort2='newest';get_first_page_data(2);">Newest</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort2='most voted';get_first_page_data(2);">Most Voted</button>
+			</div>
+		</div>
 	</div>
 	<div ng-show="similar_movies2.length>0">
     @include('layout.moviecard_6', ['suffix' => '2'])
