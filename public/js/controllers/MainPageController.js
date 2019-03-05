@@ -217,35 +217,35 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	{
 		$scope.page_2 = page;
 		$scope.get_page_data(2);
-		$scope.scroll_to_top();
+		$scope.scroll_to_top('scroll_to_top2');
 	}
 
 	$scope.paginate_3 = function(page)
 	{
 		$scope.page_3 = page;
 		$scope.get_page_data(3);
-		$scope.scroll_to_top();
+		$scope.scroll_to_top('scroll_to_top3');
 	}
 
 	$scope.paginate_4 = function(page)
 	{
 		$scope.page_4 = page;
 		$scope.get_page_data(4);
-		$scope.scroll_to_top();
+		$scope.scroll_to_top('scroll_to_top4');
 	}
 
 	$scope.paginate_5 = function(page)
 	{
 		$scope.page_5 = page;
 		$scope.get_page_data(5);
-		$scope.scroll_to_top();
+		$scope.scroll_to_top('scroll_to_top5');
 	}
 
 	$scope.paginate_6 = function(page)
 	{
 		$scope.page_6 = page;
 		$scope.get_page_data(6);
-		$scope.scroll_to_top();
+		$scope.scroll_to_top('scroll_to_top6');
 	}
 
 	$scope.toggle_collapse = function(id, mode)
