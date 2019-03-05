@@ -55,7 +55,7 @@
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
-			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2=5">
 			    <span class="h5" ng-show="page_variables.active_tab_2==5">Series: Legendary</span>
 			    <span class="h5" ng-show="page_variables.active_tab_2==4">Series: Good</span>
 			    <span class="h5" ng-show="page_variables.active_tab_2=='on air'">Series: On The Air</span>
