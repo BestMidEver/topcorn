@@ -25,8 +25,8 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded1=false;iscast_movies1=false;toggle_collapse('collapseMovies1', 'collapse');scroll_to_top('scroll_to_top1');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div class="container-fluid" ng-show="iscast_movies1">
-		<div class="dropdown d-inline mr-2 mt-3">
-			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<div class="dropdown d-inline">
+			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<span ng-show="page_variables.f_following1=='all'">All Users</span>
 				<span ng-show="page_variables.f_following1=='following'">Following</span>
 			</button>
@@ -35,8 +35,8 @@
 				<button class="dropdown-item" ng-click="page_variables.f_following1='following';get_first_page_data(1);">Following</button>
 			</div>
 		</div>
-		<div class="dropdown d-inline mr-2 mt-3">
-			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<div class="dropdown d-inline">
+			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<span ng-show="page_variables.f_vote1==5">{{ __('general.definitely_recommend') }}</span>
 				<span ng-show="page_variables.f_vote1==4">{{ __('general.recommend') }}</span>
 				<span ng-show="page_variables.f_vote1==3">{{ __('general.not_sure') }}</span>
@@ -53,16 +53,17 @@
 				<div class="dropdown-divider"></div>
 				<button class="dropdown-item" ng-click="f_vote1='all';get_first_page_data(1);">{{ __('general.all') }}</button>
 			</div>
-			<div class="dropdown d-inline mr-2 mt-3">
-				<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span ng-show="page_variables.f_sort1=='newest'">Newest</span>
-					<span ng-show="page_variables.f_sort1=='most voted'">Most Voted</span>
-				</button>
-				<div class="dropdown-menu">
-					<button class="dropdown-item" ng-click="page_variables.f_sort1='newest';get_first_page_data(1);">Newest</button>
-					<button class="dropdown-item" ng-click="page_variables.f_sort1='most voted';get_first_page_data(1);">Most Voted</button>
-				</div>
+		</div>
+		<div class="dropdown d-inline">
+			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span ng-show="page_variables.f_sort1=='newest'">Newest</span>
+				<span ng-show="page_variables.f_sort1=='most voted'">Most Voted</span>
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" ng-click="page_variables.f_sort1='newest';get_first_page_data(1);">Newest</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort1='most voted';get_first_page_data(1);">Most Voted</button>
 			</div>
+		</div>
 		</div>
 	</div>
 	<div ng-show="similar_movies1.length>0">
