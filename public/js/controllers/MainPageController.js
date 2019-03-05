@@ -101,7 +101,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 						$(".tooltip").hide();
 					});
 				}else{
-					rate.get_legendary_garbage_movies($scope.page_variables.active_tab_1, page_variables.f_following1, page_variables.f_sort1, $scope.page_1)
+					rate.get_legendary_garbage_movies($scope.page_variables.active_tab_1, $scope.page_variables.f_following1, $scope.page_variables.f_sort1, $scope.page_1)
 					.then(function(response){
 						console.log(response);
 						$scope.similar_movies1 = response.data.data;
@@ -130,7 +130,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 							$(".tooltip").hide();
 					});
 				}else{
-					rate.get_legendary_garbage_series($scope.page_variables.active_tab_2, page_variables.f_following2, page_variables.f_sort2, $scope.page_2)
+					rate.get_legendary_garbage_series($scope.page_variables.active_tab_2, $scope.page_variables.f_following2, $scope.page_variables.f_sort2, $scope.page_2)
 					.then(function(response){
 						console.log(response);
 						$scope.similar_movies2 = response.data.data;
