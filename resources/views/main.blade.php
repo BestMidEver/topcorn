@@ -13,7 +13,6 @@
 			    </button>
 			    <div class="dropdown-menu">
 					<span class="dropdown-header h6">Last Votes</span>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_1='last votes';get_first_page_data(1);">Last Votes</button>
 					<button class="dropdown-item" ng-click="f_vote1=5;get_first_page_data(1);">{{ __('general.definitely_recommend') }}</button>
 					<button class="dropdown-item" ng-click="f_vote1=4;get_first_page_data(1);">{{ __('general.recommend') }}</button>
 					@if(auth::check())
