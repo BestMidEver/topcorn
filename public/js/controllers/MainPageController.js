@@ -7,7 +7,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		$anchorScroll.yOffset = 55;
 		setTimeout(function() {
 			$anchorScroll(id);
-		}, 750);
+		}, 10);
 		
 	}
 //////////////////////////////////////////////////////////////////////////////////////////
