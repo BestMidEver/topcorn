@@ -108,7 +108,7 @@ class mainController extends Controller
             'series.vote_average',
             'series.vote_count',
             'series.first_air_date as release_date',
-            'series.'.App::getlocale().'_name as title',
+            'series.'.App::getlocale().'_name as name',
             'series.'.App::getlocale().'_poster_path as poster_path',
             DB::raw('MAX(series_rateds.updated_at) as updated_at'),
             DB::raw('COUNT(series.id) as count')
