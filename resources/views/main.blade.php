@@ -19,7 +19,7 @@
 			    </div>
 			</div>
 		</div>
-		<button class="btn btn-outline-secondary addblack border-0"><div><i class="fas fa-arrows-alt"></i></div> <span>Full Screen</span></button>
+		<button class="btn btn-outline-secondary addblack border-0"><div><i class="fas fa-arrows-alt"></i></div></button>
 	</div>
 	<div ng-show="similar_movies1.length>0">
     @include('layout.moviecard_6', ['suffix' => '1'])
