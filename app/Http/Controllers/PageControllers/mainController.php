@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class mainController extends Controller
 {
-    public static function get_legendary_garbage_movies($mode, $sort)
+    public static function get_legendary_garbage_movies($mode, $users, $sort)
     {
         $pagination = 24;
         if(Auth::check()){
@@ -34,6 +34,15 @@ class mainController extends Controller
         ->groupBy('movies.id')
         ->where('rateds.rate', '=', $mode)
         ->orderBy('updated_at', 'desc');
+
+        if($users == 'following'){
+            $subq = $subq
+            ->leftjoin('follows', function ($join) {
+                $join->on('rateds.user_id', '=', 'follows.object_id')
+                ->where('follows.subject_id', '=', Auth::id());
+            })
+            ->whereNotNull('follows.id');
+        }
 
         $qqSql = $subq->toSql();
 
@@ -73,7 +82,7 @@ class mainController extends Controller
 
 
 
-    public static function get_legendary_garbage_series($mode, $sort)
+    public static function get_legendary_garbage_series($mode, $users, $sort)
     {
         $pagination = 24;
         if(Auth::check()){
@@ -393,8 +402,8 @@ class mainController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         
-        $movies = $this->get_legendary_garbage_movies('legendary', 'newest');
-        $series = $this->get_legendary_garbage_series('legendary', 'newest');
+        $movies = $this->get_legendary_garbage_movies('legendary', 'all', 'newest');
+        $series = $this->get_legendary_garbage_series('legendary', 'all', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');

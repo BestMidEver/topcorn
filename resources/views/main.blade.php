@@ -7,7 +7,7 @@
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
-			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1='last votes'">
+			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=5">
 				    <span class="h5" ng-show="page_variables.active_tab_1==5">Movies: Legendary</span>
 				    <span class="h5" ng-show="page_variables.active_tab_1==4">Movies: Good</span>
 				    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">Movies: Now Playing</span>
@@ -25,13 +25,12 @@
 	<div class="container-fluid" ng-show="iscast_movies1">
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<small>Voted By: </small> 
-				<span ng-show="page_variables.f_following1=='all'">All Users</span>
 				<span ng-show="page_variables.f_following1=='following'">Following</span>
+				<span ng-show="page_variables.f_following1=='all'">All Users</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following1='all';get_first_page_data(1);">All Users</button>
 				<button class="dropdown-item" ng-click="page_variables.f_following1='following';get_first_page_data(1);">Following</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following1='all';get_first_page_data(1);">All Users</button>
 			</div>
 		</div>
 		<div class="dropdown d-inline">

@@ -19,11 +19,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_legendary_garbage_movies = function(mode, sort, page) 
+    get_legendary_garbage_movies = function(mode, users, sort, page) 
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_legendary_garbage_movies/'+mode+'/'+sort+'?page='+page,
+			url: '/api/get_legendary_garbage_movies/'+mode+'/'+users+'/'+sort+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -36,11 +36,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_legendary_garbage_series = function(mode, sort, page) 
+    get_legendary_garbage_series = function(mode, users, sort, page) 
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_legendary_garbage_series/'+mode+'/'+sort+'?page='+page,
+			url: '/api/get_legendary_garbage_series/'+mode+'/'+users+'/'+sort+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'

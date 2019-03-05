@@ -77,7 +77,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
-	$scope.page_variables={expanded:-1, f_following1:'all', f_sort1:'newest'};
+	$scope.page_variables={expanded:-1, f_following1:'all', f_sort1:'newest', f_following2:'all', f_sort2:'newest'};
 	$scope.page_1=0;
 	$scope.page_2=0;
 
@@ -89,7 +89,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				if($scope.page_variables.active_tab_1 == 'now playing'){
 					rate.get_now_playing(pass.api_key, pass.lang, pass.lang=='en'?'us':(pass.lang=='tr'?'tr':'hu'), $scope.page_1)
 					.then(function(response){
-						//console.log(response);
+						console.log(response);
 						$scope.similar_movies1=response.data.results;
 						if(response.data.total_pages<1000) $scope.pagination_1=response.data.total_pages;
 						else $scope.pagination_1=1000;
@@ -101,7 +101,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 						$(".tooltip").hide();
 					});
 				}else{
-					rate.get_legendary_garbage_movies($scope.page_variables.active_tab_1, 'newest', $scope.page_1)
+					rate.get_legendary_garbage_movies($scope.page_variables.active_tab_1, page_variables.f_following1, page_variables.f_sort1, $scope.page_1)
 					.then(function(response){
 						console.log(response);
 						$scope.similar_movies1 = response.data.data;
@@ -118,7 +118,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				if($scope.page_variables.active_tab_2 == 'on air'){
 					rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
 					.then(function(response){
-						//console.log(response);
+						console.log(response);
 						$scope.similar_movies2=response.data.results;
 						if(response.data.total_pages<1000) $scope.pagination_2=response.data.total_pages;
 						else $scope.pagination_2=1000;
@@ -130,7 +130,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 							$(".tooltip").hide();
 					});
 				}else{
-					rate.get_legendary_garbage_series($scope.page_variables.active_tab_2, 'newest', $scope.page_2)
+					rate.get_legendary_garbage_series($scope.page_variables.active_tab_2, page_variables.f_following2, page_variables.f_sort2, $scope.page_2)
 					.then(function(response){
 						console.log(response);
 						$scope.similar_movies2 = response.data.data;
