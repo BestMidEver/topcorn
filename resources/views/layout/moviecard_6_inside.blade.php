@@ -20,7 +20,11 @@
 					<div class="text-white">
 						<small>{{ __('general.last_voter') }}</small>
 						<div><span class="text-warning break-word">@{{movie.last_voter_name}}</span></div>
-						<small>@{{movie.updated_at}}</small>
+						@if(Auth::check())
+							@if(Auth::User()->advanced_filter)
+						<small>@{{movie.updated_at}} {{ __('general.ago') }}</small>
+							@endif
+						@endif
 					</div>
 				</div>
 			</div>

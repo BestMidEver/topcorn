@@ -20,6 +20,7 @@ return [
     'add_person' => 'Watch Together',                                                               //recommendations,
     'add_review' => 'Write Something',                                                              //movie,
     'advanced_recommendations' => 'Advanced Recommendations',                                       //accountinterface,
+    'ago' => 'ago',                                                                                 //moviecard,               
     'ago_message' =>                        
         'Created :created_at ago, last updated :updated_at ago.',                                   //list,
     'airs_days_later' =>

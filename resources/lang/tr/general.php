@@ -20,6 +20,7 @@ return [
     'add_person' => 'Beraber İzle',                                                                     //recommendations,
     'add_review' => 'Bi\'şey Yaz',                                                                      //movie,
     'advanced_recommendations' => 'Gelişmiş Tavsiyeler',                                                //accountinterface,
+    'ago' => 'önce',                                                                                    //moviecard,
     'ago_message' => 
         ':created_at önce ekledi, en son :updated_at önce güncelledi.',                                 //list,
     'airs_days_later' =>

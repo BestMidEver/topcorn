@@ -19,7 +19,8 @@ return [
     'add_movie' => 'Film hozzáadása',                                                                   //list,             
     'add_person' => 'Nézzük együtt',                                                                    //recommendations,
     'add_review' => 'Vélemény hozzáadása',                                                              //movie,
-	'advanced_recommendations' => 'Fejlesztett ajánlások',             
+	'advanced_recommendations' => 'Fejlesztett ajánlások',       
+    'ago' => 'ago',                                                                                 //moviecard,//////////////      
     'ago_message' =>                
         'Létrehozva :created_at, utolsó módosítás :updated_at.',                                        //list,
     'airs_days_later' =>                
