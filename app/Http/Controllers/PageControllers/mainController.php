@@ -433,7 +433,7 @@ class mainController extends Controller
         ->where('follows.subject_id', '=', Auth::id())
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.user_id', '=', 'follows.object_id')
-            ->where('rateds.rate', '=', 5);
+            ->where('rateds.rate', '=', 6);
         })
         ->count();
 
@@ -445,7 +445,7 @@ class mainController extends Controller
         })
         ->count();
         
-        $movies = $this->get_legendary_garbage_movies(5, $is_following1==0?'following':'all', 'newest');
+        $movies = $this->get_legendary_garbage_movies(5, $is_following1>0?'following':'all', 'newest');
         $series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
