@@ -22,6 +22,12 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=1;iscast_movies1=true;is_expanded1=true;toggle_collapse('collapseMovies1', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded1=false;iscast_movies1=false;toggle_collapse('collapseMovies1', 'collapse');scroll_to_top('scroll_to_top1');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
+	<div class="container-fluid mt-3" ng-show="is_expanded1">
+		<div class="btn-group mr-2" role="group" aria-label="Movies or Series" ng-show="active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'">
+			<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.f_following1=='all'?'active':''" ng-click="page_variables.f_following1='all';get_first_page_data(1);">All Users</button>
+			<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.f_following1=='following'?'active':''" ng-click="page_variables.f_following1='following';get_first_page_data(1);">Following</button>
+		</div>
+	</div>
 	<div ng-show="similar_movies1.length>0">
     @include('layout.moviecard_6', ['suffix' => '1'])
 	</div>
