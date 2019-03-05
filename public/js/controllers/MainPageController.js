@@ -505,12 +505,12 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 			v1 = 'id';
 			v2 = 'series_id';
 		}
-		if($scope['v0'][index].later_id == null){
-			rate[f1]($scope['v0'][index].id)
+		if($scope[v0][index].later_id == null){
+			rate[f1]($scope[v0][index].id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope['v0'][index].later_id=response.data.data[v1];
+					$scope[v0][index].later_id=response.data.data[v1];
 					$scope[f3]({
 						'movie_id':response.data.data[v2],
 						'rated_id':null,
@@ -521,12 +521,12 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				}
 			});
 		}else{
-			var temp = $scope['v0'][index];
-			rate[f2]($scope['v0'][index].later_id)
+			var temp = $scope[v0][index];
+			rate[f2]($scope[v0][index].later_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204 || response.status == 404){
-					$scope['v0'][index].later_id=null;
+					$scope[v0][index].later_id=null;
 					$scope[f3]({
 						'movie_id':temp.id,
 						'rated_id':temp.rated_id,
