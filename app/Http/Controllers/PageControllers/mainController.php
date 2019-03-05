@@ -86,9 +86,14 @@ class mainController extends Controller
             'r2.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
-        );
+        )
+        ->paginate($pagination);
 
-        return $movies->paginate($pagination);
+        foreach ($movies as $row) {
+            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+        }
+
+        return $movies;
     }
 
 
@@ -167,9 +172,14 @@ class mainController extends Controller
             'r2.rate as rate_code',
             'series_laters.id as later_id',
             'series_bans.id as ban_id'
-        );
+        )
+        ->paginate($pagination);
 
-        return $series->paginate($pagination);
+        foreach ($series as $row) {
+            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+        }
+
+        return $series;
     }
 
 

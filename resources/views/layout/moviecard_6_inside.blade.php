@@ -20,6 +20,7 @@
 					<div class="text-white">
 						<small>{{ __('general.last_voter') }}</small>
 						<div><span class="text-warning break-word">@{{movie.last_voter_name}}</span></div>
+						<small>@{{movie.updated_at}}</small>
 					</div>
 				</div>
 			</div>
