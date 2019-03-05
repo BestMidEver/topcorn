@@ -8,6 +8,7 @@ pass={
 	@if(Auth::check())
 	"user_id":{{ Auth::id() }},
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
+	"is_following":{{ $is_following }},
 	@endif
 	"watched_movie_number":{{ $watched_movie_number }},
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",

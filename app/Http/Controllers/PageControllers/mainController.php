@@ -428,15 +428,19 @@ class mainController extends Controller
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+
+        $is_following = DB::table('follows')
+        ->where('follows.subject_id', '=', Auth::id())
+        ->count();
         
-        $movies = $this->get_legendary_garbage_movies(5, 'all', 'newest');
-        $series = $this->get_legendary_garbage_series(5, 'all', 'newest');
+        $movies = $this->get_legendary_garbage_movies(5, $is_following>0?'following':'all', 'newest');
+        $series = $this->get_legendary_garbage_series(5, $is_following>0?'following':'all', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number'))
+		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following'))
             ->with('movies', $movies)
             ->with('series', $series)
             ->with('people', $people)
