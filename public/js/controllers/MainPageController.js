@@ -4,7 +4,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	$scope.scroll_to_top=function(id){
-		$anchorScroll.yOffset = 155;
+		$anchorScroll.yOffset = 70;
 		setTimeout(function() {
 			$anchorScroll(id);
 		}, 10);
