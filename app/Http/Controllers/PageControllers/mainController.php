@@ -93,7 +93,7 @@ class mainController extends Controller
             DB::raw('MAX(series_rateds.updated_at) as updated_at')
         )
         ->groupBy('series.id')
-        ->where('rateds.rate', '=', $mode)
+        ->where('series_rateds.rate', '=', $mode)
         ->orderBy('updated_at', 'desc');
 
         $qqSql = $subq->toSql();
