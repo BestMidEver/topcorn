@@ -138,7 +138,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=6;iscast6=true;is_expanded6=true;toggle_collapse('collapseMovies6', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast6=false;is_expanded6=false;toggle_collapse('collapseMovies6', 'collapse');scroll_to_top('scroll_to_top6');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
-	<div ng-show="listes6.length>0">
+	<div ng-show="listes6.length>0" id="scroll_to_top6">
 		@include('layout.listcard_6', ['suffix' => '6'])
 	</div>
 </div>
