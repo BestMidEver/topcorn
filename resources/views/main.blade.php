@@ -12,17 +12,24 @@
 	Lists: most liked | last added | last liked
 </div>
 <div>
-	<div class="dropdown d-inline">
-	    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1='legendary'">
-	    <span class="h5" ng-show="page_variables.active_tab_1=='legendary'">Movies: Legendary</span>
-	    <span class="h5" ng-show="page_variables.active_tab_1=='garbage'">Movies: Garbage</span>
-	    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">Movies: Now Playing</span>
-	    </button>
-	    <div class="dropdown-menu">
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='legendary';get_first_page_data(1);">Legendary</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='garbage';get_first_page_data(1);">Garbage</button>
-	        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';get_first_page_data(1);">Now Playing</button>
-	    </div>
+	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
+		<div>
+			<div class="dropdown d-inline">
+			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 mt-3 mt-md-4 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1='legendary'">
+			    <span class="h5" ng-show="page_variables.active_tab_1=='legendary'">Movies: Legendary</span>
+			    <span class="h5" ng-show="page_variables.active_tab_1=='garbage'">Movies: Garbage</span>
+			    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">Movies: Now Playing</span>
+			    </button>
+			    <div class="dropdown-menu">
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_1='legendary';get_first_page_data(1);">Legendary</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_1='garbage';get_first_page_data(1);">Garbage</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';get_first_page_data(1);">Now Playing</button>
+			    </div>
+			</div>
+		</div>
+		<button class="btn btn-outline-success d-none">
+			<i class="fas fa-arrows-alt"></i>
+		</button>
 	</div>
 	<div ng-show="similar_movies1.length>0">
     @include('layout.moviecard_6', ['suffix' => '1'])
