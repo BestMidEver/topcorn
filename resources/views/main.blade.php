@@ -8,7 +8,7 @@
 		<div>
 		    <span class="h5">Movies: </span>
 			<div class="dropdown d-inline">
-			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1='legendary'">
+			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1='legendary'">
 				    <span class="h5" ng-show="page_variables.active_tab_1=='legendary'">Legendary</span>
 				    <span class="h5" ng-show="page_variables.active_tab_1=='garbage'">Garbage</span>
 				    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">Now Playing</span>
