@@ -250,6 +250,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.toggle_collapse = function(id, mode)
 	{
+		$(".tooltip").hide();
 		if(mode == 'expand'){
 			$('#'+id).collapse('show');
 		}else{
