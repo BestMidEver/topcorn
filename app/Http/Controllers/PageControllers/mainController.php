@@ -402,8 +402,8 @@ class mainController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
         
-        $movies = $this->get_legendary_garbage_movies('legendary', 'all', 'newest');
-        $series = $this->get_legendary_garbage_series('legendary', 'all', 'newest');
+        $movies = $this->get_legendary_garbage_movies(5, 'all', 'newest');
+        $series = $this->get_legendary_garbage_series(5, 'all', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
