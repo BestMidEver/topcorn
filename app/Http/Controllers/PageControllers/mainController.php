@@ -432,17 +432,17 @@ class mainController extends Controller
         $is_following1 = DB::table('follows')
         ->where('follows.subject_id', '=', Auth::id())
         ->leftjoin('rateds', function ($join) {
-            $join->on('rateds.user_id', '=', 'follows.object_id')
-            ->where('rateds.rate', '=', 6);
+            $join->on('rateds.user_id', '=', 'follows.object_id');
         })
+        ->where('rateds.rate', '=', 6)
         ->count();
 
         $is_following2 = DB::table('follows')
         ->where('follows.subject_id', '=', Auth::id())
         ->leftjoin('series_rateds', function ($join) {
-            $join->on('series_rateds.user_id', '=', 'follows.object_id')
-            ->where('series_rateds.rate', '=', 5);
+            $join->on('series_rateds.user_id', '=', 'follows.object_id');
         })
+        ->where('series_rateds.rate', '=', 5)
         ->count();
         
         $movies = $this->get_legendary_garbage_movies(5, $is_following1>0?'following':'all', 'newest');
