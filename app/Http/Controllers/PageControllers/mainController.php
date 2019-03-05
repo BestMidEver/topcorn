@@ -29,11 +29,19 @@ class mainController extends Controller
             'movies.release_date',
             'movies.'.App::getlocale().'_title as title',
             'movies.'.App::getlocale().'_poster_path as poster_path',
-            DB::raw('MAX(rateds.updated_at) as updated_at')
+            DB::raw('MAX(rateds.updated_at) as updated_at'),
+            DB::raw('COUNT(movies.id) as count')
         )
         ->groupBy('movies.id')
-        ->where('rateds.rate', '=', $mode)
-        ->orderBy('updated_at', 'desc');
+        ->where('rateds.rate', '=', $mode);
+
+        if($sort == 'newest'){
+            $subq = $subq
+            ->orderBy('updated_at', 'desc');
+        }else{
+            $subq = $subq
+            ->orderBy('count', 'desc');
+        }
 
         if($users == 'following'){
             $subq = $subq
