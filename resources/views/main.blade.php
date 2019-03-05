@@ -37,11 +37,11 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fas fa-sort-amount-down"></i>
-				<span ng-show="page_variables.f_sort1=='newest'">Most Recent</span>
+				<span ng-show="page_variables.f_sort1=='newest'">Latest Vote</span>
 				<span ng-show="page_variables.f_sort1=='most voted'">Most Voted</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_sort1='newest';get_first_page_data(1);">Most Recent</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort1='newest';get_first_page_data(1);">Latest Vote</button>
 				<button class="dropdown-item" ng-click="page_variables.f_sort1='most voted';get_first_page_data(1);">Most Voted</button>
 			</div>
 		</div>
@@ -85,11 +85,11 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fas fa-sort-amount-down"></i>
-				<span ng-show="page_variables.f_sort2=='newest'">Most Recent</span>
+				<span ng-show="page_variables.f_sort2=='newest'">Latest Vote</span>
 				<span ng-show="page_variables.f_sort2=='most voted'">Most Voted</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_sort2='newest';get_first_page_data(2);">Most Recent</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort2='newest';get_first_page_data(2);">Latest Vote</button>
 				<button class="dropdown-item" ng-click="page_variables.f_sort2='most voted';get_first_page_data(2);">Most Voted</button>
 			</div>
 		</div>
