@@ -434,7 +434,7 @@ class mainController extends Controller
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.user_id', '=', 'follows.object_id');
         })
-        ->where('rateds.rate', '=', 6)
+        ->where('rateds.rate', '=', 5)
         ->count();
 
         $is_following2 = DB::table('follows')
