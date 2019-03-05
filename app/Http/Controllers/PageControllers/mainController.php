@@ -445,7 +445,7 @@ class mainController extends Controller
         })
         ->count();
         
-        $movies = $this->get_legendary_garbage_movies(5, $is_following1>0?'following':'all', 'newest');
+        $movies = $this->get_legendary_garbage_movies(5, $is_following1==0?'following':'all', 'newest');
         $series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
