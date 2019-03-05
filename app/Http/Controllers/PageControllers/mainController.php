@@ -37,7 +37,8 @@ class mainController extends Controller
 
         if($sort == 'newest'){
             $subq = $subq
-            ->orderBy('updated_at', 'desc');
+            ->orderBy('updated_at', 'desc')
+            ->orderBy('count', 'desc');
         }else{
             $subq = $subq
             ->orderBy('count', 'desc')
@@ -117,7 +118,8 @@ class mainController extends Controller
 
         if($sort == 'newest'){
             $subq = $subq
-            ->orderBy('updated_at', 'desc');
+            ->orderBy('updated_at', 'desc')
+            ->orderBy('count', 'desc');
         }else{
             $subq = $subq
             ->orderBy('count', 'desc')

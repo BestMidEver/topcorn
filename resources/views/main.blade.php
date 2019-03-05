@@ -70,7 +70,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=2;iscast_movies2=true;is_expanded2=true;toggle_collapse('collapseMovies2', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded2=false;iscast_movies2=false;toggle_collapse('collapseMovies2', 'collapse');scroll_to_top('scroll_to_top2');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
-	<div class="container-fluid" ng-show="similar_movies2">
+	<div class="container-fluid" ng-show="iscast_movies2">
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
