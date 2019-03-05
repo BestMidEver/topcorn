@@ -66,7 +66,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 	$scope.to_5=pass.reviews.to;
 	$scope.in_5=pass.reviews.total;
 
-	console.log(pass.listes)
+	console.log(pass)
 	$scope.listes6 = pass.listes.data;
 	$scope.pagination_6=pass.listes.last_page;
 	$scope.current_page_6=pass.listes.current_page;
@@ -188,11 +188,11 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				.then(function(response){
 					console.log(response);
 					$scope.listes6 = response.data.data;
-					$scope.pagination_6=pass.listes.last_page;
-					$scope.current_page_6=pass.listes.current_page;
-					$scope.from_6=pass.listes.from;
-					$scope.to_6=pass.listes.to;
-					$scope.in_6=pass.listes.total;
+					$scope.pagination_6=response.data.last_page;
+					$scope.current_page_6=response.data.current_page;
+					$scope.from_6=response.data.from;
+					$scope.to_6=response.data.to;
+					$scope.in_6=response.data.total;
 					$(".tooltip").hide();
 				});
 				break;

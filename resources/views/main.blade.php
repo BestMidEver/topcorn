@@ -19,7 +19,7 @@
 			    </div>
 			</div>
 		</div>
-		<button class="btn btn-outline-secondary addblack border-0" ng-click="page_variables.expanded=1;iscast_movies1=true;is_expanded1=true;toggle_collapse('collapseMovies1', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=1;iscast_movies1=true;is_expanded1=true;toggle_collapse('collapseMovies1', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded1=false;iscast_movies1=false;toggle_collapse('collapseMovies1', 'collapse');scroll_to_top('scroll_to_top1');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div ng-show="similar_movies1.length>0">
