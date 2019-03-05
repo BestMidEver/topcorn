@@ -19,8 +19,8 @@
 			    </div>
 			</div>
 		</div>
-		<button class="btn btn-outline-secondary addblack border-0" ng-click="page_variables.expanded=1;iscast_movies1=true;toggle_collapse('collapseMovies1', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
-		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast_movies1=false;toggle_collapse('collapseMovies1', 'collapse');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" ng-click="page_variables.expanded=1;iscast_movies1=true;is_expanded=true;toggle_collapse('collapseMovies1', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded=false;iscast_movies1=false;toggle_collapse('collapseMovies1', 'collapse');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div ng-show="similar_movies1.length>0">
     @include('layout.moviecard_6', ['suffix' => '1'])
