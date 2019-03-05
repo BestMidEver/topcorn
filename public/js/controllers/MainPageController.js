@@ -487,10 +487,10 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		}
 	}
 
-	$scope.later=function(index)
+	$scope.later=function(index, mode)
 	{
 		console.log(index)
-		if($scope.active_tab == 'movie'){
+		if(mode == 'movie'){
 			f1 = 'add_later';
 			f2 = 'un_later';
 			f3 = 'modify_user_movies';
