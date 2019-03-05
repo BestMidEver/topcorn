@@ -113,8 +113,8 @@
 			    </div>
 			</div>
 		</div>
-		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=5" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
-		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=5;iscast5=true;is_expanded5=true;toggle_collapse('collapseMovies5', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast5=false;is_expanded5=false;toggle_collapse('collapseMovies5', 'collapse');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div ng-show="reviews5.length>0">
     @include('layout.reviews_6', ['suffix' => '5'])
@@ -135,8 +135,8 @@
 			    </div>
 			</div>
 		</div>
-		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=6" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
-		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=6;iscast6=true;is_expanded6=true;toggle_collapse('collapseMovies6', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast6=false;is_expanded6=false;toggle_collapse('collapseMovies6', 'collapse');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div ng-show="listes6.length>0">
 		@include('layout.listcard_6', ['suffix' => '6'])
