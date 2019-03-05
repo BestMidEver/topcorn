@@ -39,7 +39,8 @@ class mainController extends Controller
             $subq = $subq
             ->leftjoin('follows', function ($join) {
                 $join->on('rateds.user_id', '=', 'follows.object_id')
-                ->where('follows.subject_id', '=', Auth::id());
+                ->where('follows.subject_id', '=', Auth::id())
+                ->where('follows.is_deleted', '=', 0);
             })
             ->whereNotNull('follows.id');
         }
