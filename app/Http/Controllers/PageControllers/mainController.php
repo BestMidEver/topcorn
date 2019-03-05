@@ -108,11 +108,29 @@ class mainController extends Controller
             'series.first_air_date as release_date',
             'series.'.App::getlocale().'_name as title',
             'series.'.App::getlocale().'_poster_path as poster_path',
-            DB::raw('MAX(series_rateds.updated_at) as updated_at')
+            DB::raw('MAX(series_rateds.updated_at) as updated_at'),
+            DB::raw('COUNT(series.id) as count')
         )
         ->groupBy('series.id')
-        ->where('series_rateds.rate', '=', $mode)
-        ->orderBy('updated_at', 'desc');
+        ->where('series_rateds.rate', '=', $mode);
+
+        if($sort == 'newest'){
+            $subq = $subq
+            ->orderBy('updated_at', 'desc');
+        }else{
+            $subq = $subq
+            ->orderBy('count', 'desc');
+        }
+
+        if($users == 'following'){
+            $subq = $subq
+            ->leftjoin('follows', function ($join) {
+                $join->on('series_rateds.user_id', '=', 'follows.object_id')
+                ->where('follows.subject_id', '=', Auth::id())
+                ->where('follows.is_deleted', '=', 0);
+            })
+            ->whereNotNull('follows.id');
+        }
 
         $qqSql = $subq->toSql();
 
