@@ -25,6 +25,7 @@
 	<div class="container-fluid" ng-show="iscast_movies1">
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-filter"></i>
 				<span ng-show="page_variables.f_following1=='following'">Following</span>
 				<span ng-show="page_variables.f_following1=='all'">All Users</span>
 			</button>
@@ -35,6 +36,7 @@
 		</div>
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fas fa-sort-amount-down"></i>
 				<span ng-show="page_variables.f_sort1=='newest'">Newest</span>
 				<span ng-show="page_variables.f_sort1=='most voted'">Most Voted</span>
 			</button>

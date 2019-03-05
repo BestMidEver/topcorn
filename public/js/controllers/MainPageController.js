@@ -78,7 +78,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
 	$scope.page_variables={expanded:-1, f_following1:(pass.is_following1>0?'following':'all'), f_sort1:'newest', f_following2:(pass.is_following2>0?'following':'all'), f_sort2:'newest'};
-	console.log($scope.page_variables)
+
 	$scope.page_1=0;
 	$scope.page_2=0;
 
