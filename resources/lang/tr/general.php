@@ -46,6 +46,7 @@ return [
     'camera' => 'Kameramanlık',                                                                         //movie,
     'canceled' => 'İptal edildi',                                                                       //profile,series
     'change_password' => 'Şifreyi Değiştir',                                                            //accountpassword,
+    'compress' => 'Daralt',                                                                             //main,
     'close' => 'Kapat',                                                                                 //movie,
     'conclusion' => 'Sonuç Yazısı',                                                                     //list              
     'continue_without_facebook' => 'Facebook Olmadan Devam Et',                                         //home
@@ -83,6 +84,7 @@ return [
     'episodes' => 'Bölüm',                                                                              //series,  
     'ethereum' => 'Ethereum',                                                                           //donation,
     'ethereum_address' => 'Ethereum Adresimiz',                                                         //donation,
+    'expand' => 'Ekranı kapla',                                                                         //main,
     'everyone' => 'Herkes',                                                                             //list,             
     'euro_account' => 'Euro Hesabı',                                                                    //donation,
     'facebook_profile_photo' => 'Facebook Profil Resimi',                                               //account,

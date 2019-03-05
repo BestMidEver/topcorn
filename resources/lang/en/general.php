@@ -47,6 +47,7 @@ return [
     'canceled' => 'Canceled',                                                                       //profile,series
     'close' => 'Close',                                                                             //movie,
     'change_password' => 'Change Password',                                                         //accountpassword,
+    'compress' => 'Compress',                                                                       //main,
     'conclusion' => 'Conclusion',                                                                   //list             
     'continue_without_facebook' => 'Continue Without Facebook',                                     //home
     'continuing' => 'Continuing',                                                                   //series
@@ -83,6 +84,7 @@ return [
     'episodes' => 'Episodes',                                                                       //series,                    
     'ethereum' => 'Ethereum',                                                                       //donation,
     'ethereum_address' => 'Our Ethereum Address',                                                   //donation,
+    'expand' => 'Expand',                                                                           //main,
     'everyone' => 'Public',                                                                         //list,             
     'euro_account' => 'Euro Account',                                                               //donation,
     'facebook_profile_photo' => 'Facebook Profile Picture',                                         //account,

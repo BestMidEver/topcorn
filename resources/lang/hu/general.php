@@ -46,6 +46,7 @@ return [
     'camera' => 'Kamera',                                                                               //movie
     'canceled' => 'Megszűnt',                                                                           //profile,series
     'change_password' => 'Jelszó módosítása',                                                           //accountpassword,
+    'compress' => 'Compress',                                                                           //main,///////////////
     'close' => 'Close',                                                                                 //movie,            //////////////
     'conclusion' => 'Befejezés',                                                                        //list              
     'continue_without_facebook' => 'Folytatás Facebook nélkül',                                         //home
@@ -83,6 +84,7 @@ return [
     'episodes' => 'Epizód',                                                                             //series, 
     'ethereum' => 'Ethereum',                                                                           //donation,
     'ethereum_address' => 'Ethereum címünk',                                                            //donation,
+    'expand' => 'Expand',                                                                           //main,////////////////
     'everyone' => 'Nyilvános',                                                                          //list,             
     'euro_account' => 'Euro számla',                                                                    //donation,
     'facebook_profile_photo' => 'Facebook profilkép',                                                   //account,
