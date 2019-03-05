@@ -91,8 +91,8 @@
 			    </div>
 			</div>
 		</div>
-		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=4" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
-		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=4;iscast4=true;is_expanded4=true;toggle_collapse('collapseMovies4', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
+		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast4=false;is_expanded4=false;toggle_collapse('collapseMovies4', 'collapse');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div ng-show="users4.length>0">
     @include('layout.userscard_6', ['suffix' => '4'])
