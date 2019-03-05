@@ -429,8 +429,20 @@ class mainController extends Controller
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-        $is_following = DB::table('follows')
+        $is_following1 = DB::table('follows')
         ->where('follows.subject_id', '=', Auth::id())
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.user_id', '=', 'follows.object_id')
+            ->where('rateds.rate', '=', 5);
+        })
+        ->count();
+
+        $is_following2 = DB::table('follows')
+        ->where('follows.subject_id', '=', Auth::id())
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series_rateds.user_id', '=', 'follows.object_id')
+            ->where('series_rateds.rate', '=', 5);
+        })
         ->count();
         
         $movies = $this->get_legendary_garbage_movies(5, $is_following>0?'following':'all', 'newest');
@@ -440,7 +452,7 @@ class mainController extends Controller
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following'))
+		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following1', 'is_following2'))
             ->with('movies', $movies)
             ->with('series', $series)
             ->with('people', $people)
