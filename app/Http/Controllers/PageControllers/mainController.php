@@ -120,7 +120,8 @@ class mainController extends Controller
             ->orderBy('updated_at', 'desc');
         }else{
             $subq = $subq
-            ->orderBy('count', 'desc');
+            ->orderBy('count', 'desc')
+            ->orderBy('updated_at', 'desc');
         }
 
         if($users == 'following'){
