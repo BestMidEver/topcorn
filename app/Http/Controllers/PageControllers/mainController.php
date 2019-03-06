@@ -248,10 +248,9 @@ class mainController extends Controller
             'users.name as name',
             'users.facebook_profile_pic as facebook_profile_path',
             'users.profile_pic as profile_path',
-            DB::raw('COUNT(users.id) as count')
+            DB::raw('COUNT(users.id) as '.$mode=='comment'?'comment_count':($mode=='list'?'list_count':'follow_count'))
         )
-        ->groupBy('users.id')
-        ->orderBy('count', 'desc');
+        ->groupBy('users.id');
 
         if($mode == 'comment'){
             $users = $users
@@ -262,7 +261,8 @@ class mainController extends Controller
                 $join->on('review_likes.review_id', '=', 'reviews.id')
                 ->where('review_likes.is_deleted', '=', 0);
             })
-            ->whereNotNull('review_likes.id');
+            ->whereNotNull('review_likes.id')
+            ->orderBy('comment_count', 'desc');
         }else if($mode == 'list'){
             $users = $users
             ->leftjoin('listes', function ($join) {
@@ -272,13 +272,15 @@ class mainController extends Controller
                 $join->on('listlikes.list_id', '=', 'listes.id')
                 ->where('listlikes.is_deleted', '=', 0);
             })
-            ->whereNotNull('listlikes.id');
+            ->whereNotNull('listlikes.id')
+            ->orderBy('list_count', 'desc');
         }else if($mode == 'follow'){
             $users = $users
             ->leftjoin('follows', function ($join) {
                 $join->on('follows.object_id', '=', 'users.id');
             })
-            ->whereNotNull('follows.id');
+            ->whereNotNull('follows.id')
+            ->orderBy('follow_count', 'desc');
         }
 
         return $users->paginate($pagination);

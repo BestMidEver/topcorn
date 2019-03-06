@@ -3,12 +3,13 @@
         <div class="card moviecard h-100 d-flex flex-column justify-content-between">
             <a ng-href="/profile/@{{ user.user_id }}" target={{$target}}>
                 <div class="position-relative text-center min-height-200">
-                    <img class="card-img-top" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+                    <img class="card-img-top darken-cover" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
                     <div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
                         <div class="d-flex flex-row justify-content-center">
                             <div class="text-white">
-                                <small>If lived</small>
-                                <span class="d-block"><span class="h5 text-warning">asdas</span> <small>asdasd</small></span>
+                                <small ng-if="user.comment_count!=undefined"><span class="h5 text-warning">@{{user.comment_count}}</span> likes</small>
+                                <small ng-if="user.list_count!=undefined"><span class="h5 text-warning">@{{user.list_count}}</span> likes</small>
+                                <small ng-if="user.follow_count!=undefined"><span class="h5 text-warning">@{{user.follow_count}}</span> followers</small>
                             </div>
                         </div>
                     </div>
