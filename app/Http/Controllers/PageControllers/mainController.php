@@ -302,7 +302,7 @@ class mainController extends Controller
             'people.deathday',
             'people.popularity',
             DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, CURDATE()) AS age'),
-            DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, people.deathday) AS died_age'),
+            DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, people.deathday) AS died_age')
         )
         ->orderBy('people.popularity', 'desc');
 
