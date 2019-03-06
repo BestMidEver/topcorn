@@ -227,7 +227,7 @@ class mainController extends Controller
             ->whereNotNull('series_laters.id');
         }else if($mode == 'all'){
             $series = $series
-            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(7)])
+            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(7)]);
         }
 
         return $series->paginate($pagination);;
