@@ -9,6 +9,22 @@
 							<h6 class="card-title px-1 pt-1 text-dark">@{{person.name}}</h6>
 						</div>
 					</a>
+					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
+						<div class="d-flex flex-row justify-content-center">
+							<div class="text-white">
+								<small>asdfasdf</small>
+								<span class="d-block"><span class="h5 text-warning">asdfasdfa</span><small> qwerqwere</small></span>
+							</div>
+						</div>
+					</div>
+					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
+						<div class="d-flex flex-row justify-content-center">
+							<div class="text-white">
+								<small>wwww</small>
+								<span class="d-block"><span class="h5 text-warning">qwerqwer</span><small>sdafasdfasd</small></span>
+							</div>
+						</div>
+					</div>
 					<div class="card-title px-1 text-muted text-center mb-0"><small>@{{person.character}}</small></div>
 				</div>
 			</div>
