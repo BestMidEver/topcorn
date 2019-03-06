@@ -78,8 +78,8 @@
 				<span ng-show="page_variables.f_watch_later2=='all'">All Series</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='watch later';get_first_page_data(2);">Following</button>
-				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='all';get_first_page_data(2);">All Users</button>
+				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='watch later';get_first_page_data(2);">Watch Later</button>
+				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='all';get_first_page_data(2);">All Series</button>
 			</div>
 		</div>
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2!='on air'">
