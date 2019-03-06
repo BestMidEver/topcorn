@@ -209,6 +209,7 @@ class mainController extends Controller
             'series.original_name as original_title',
             'series.vote_average',
             'series.vote_count',
+            'series.next_episode_air_date as next_episode_air_date',
             'series.first_air_date as release_date',
             'series.'.App::getlocale().'_name as name',
             'series.'.App::getlocale().'_poster_path as poster_path',
@@ -222,7 +223,7 @@ class mainController extends Controller
         ->paginate($pagination);
 
         foreach ($series as $row) {
-            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+            $row->next_episode_air_date = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->next_episode_air_date))->diffForHumans()));
         }
 
         return $series;
