@@ -3,7 +3,7 @@
 		<div class="d-flex flex-wrap">
 			<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in people{{  $suffix  }} | limitTo:6">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
-					<a href="/person/@{{person.id}}" target={{$target}}>
+					<a href="/person/@{{person.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" data-original-title="@{{person.birthday}}">
 						<div class="position-relative text-center min-height-200">
 							<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 							<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
