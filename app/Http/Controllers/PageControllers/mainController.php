@@ -540,7 +540,7 @@ class mainController extends Controller
             $f_watch_later = 'all';
         }
         $people = $this->get_popular_people('born today');
-        $users = $this->get_popular_users('comment', 'all');
+        $users = $this->get_popular_users('list', 'all');
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
