@@ -275,6 +275,29 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 		}
 	}
 
+	$scope.like_review=function(index){
+		console.log(index)
+		if($scope.reviews5[index].is_liked == 0){
+			rate.add_review_like($scope.reviews5[index].review_id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 201){
+					$scope.reviews5[index].is_liked = 1;
+					$scope.reviews5[index].count ++;
+				}
+			});
+		}else{
+			rate.un_review_like($scope.reviews5[index].review_id)
+			.then(function(response){
+				console.log(response);
+				if(response.status == 204 || response.status == 404){
+					$scope.reviews5[index].is_liked = 0;
+					$scope.reviews5[index].count --;
+				}
+			});
+		}
+	}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// RETRIEVE MOVIECARD DATA //////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
