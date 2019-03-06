@@ -209,7 +209,7 @@ class mainController extends Controller
             'series.original_name as original_title',
             'series.vote_average',
             'series.vote_count',
-            'series.next_episode_air_date as next_episode_air_date',
+            DB::raw('DATEDIFF(series.next_episode_air_date, CURDATE()) AS day_difference_next'),
             'series.first_air_date as release_date',
             'series.'.App::getlocale().'_name as name',
             'series.'.App::getlocale().'_poster_path as poster_path',
@@ -219,14 +219,9 @@ class mainController extends Controller
             'series_bans.id as ban_id'
         )
         ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(7)])
-        ->orderBy('series.next_episode_air_date', 'asc')
-        ->paginate($pagination);
+        ->orderBy('series.next_episode_air_date', 'asc');
 
-        foreach ($series as $row) {
-            //$row->next_episode_air_date = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->next_episode_air_date))->diffForHumans()));
-        }
-
-        return $series;
+        return $series->paginate($pagination);;
     }
 
 
