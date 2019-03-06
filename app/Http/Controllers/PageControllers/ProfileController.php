@@ -538,8 +538,10 @@ class ProfileController extends Controller
     {
         $review = DB::table('reviews')
         ->where('reviews.user_id', $user)
-        ->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
-        ->where('review_likes.is_deleted', '=', 0)
+        ->leftjoin('review_likes', function ($join) {
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
+        })
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'reviews.movie_series_id');
             $join->on('rateds.user_id', '=', 'reviews.user_id')
