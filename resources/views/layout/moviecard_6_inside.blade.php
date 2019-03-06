@@ -16,6 +16,18 @@
 						<small ng-if="active_tab=='mood_pick'"><span class="h5 text-warning">@{{movie.point}}</span>/@{{movie.count*5}} {{ __('general.point') }}</small>
 					</div>
 				</div>
+				<div class="d-flex flex-row justify-content-center" ng-if="!isNaN(movie.day_difference_last)">
+					<div>
+						<div class="text-white">
+							<small>{{ __('general.new_episode') }}</small>
+							<div>
+								<span ng-if="movie.day_difference_next>1">{!! __('general.airs_days_later') !!}</span>
+								<span ng-if="movie.day_difference_next==1">{!! __('general.airs_tomorrow') !!}</span>
+								<span ng-if="movie.day_difference_next==0">{!! __('general.airs_today') !!}</span>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="d-flex flex-row justify-content-center" ng-if="movie.last_voter_name.length>0">
 					<div class="text-white">
 						<small>{{ __('general.last_voter') }}</small>
