@@ -184,6 +184,52 @@ class mainController extends Controller
 
 
 
+    public static function get_airing_series($mode)
+    {
+        $pagination = 24;
+        if(Auth::check()){
+            $pagination = Auth::User()->pagination;
+        }
+
+        $series = DB::table('series')
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series.series_id', '=', 'series.id')
+            ->where('series.user_id', '=', Auth::id());
+        })
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'series.id')
+            ->where('series_laters.user_id', '=', Auth::id());
+        })
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.series_id', '=', 'series.id')
+            ->where('series_bans.user_id', '=', Auth::id());
+        })
+        ->select(
+            'series.id as id',
+            'series.original_name as original_title',
+            'series.vote_average',
+            'series.vote_count',
+            'series.first_air_date as release_date',
+            'series.'.App::getlocale().'_name as name',
+            'series.'.App::getlocale().'_poster_path as poster_path',
+            'series_rateds.id as rated_id',
+            'series_rateds.rate as rate_code',
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
+        )
+        ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(7)])
+        ->orderBy('series.next_episode_air_date', 'asc')
+        ->paginate($pagination);
+
+        foreach ($series as $row) {
+            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+        }
+
+        return $series;
+    }
+
+
+
     public static function get_popular_users($mode)
     {
         $pagination = 24;
@@ -460,7 +506,8 @@ class mainController extends Controller
         ->count();
         
         $movies = $this->get_legendary_garbage_movies(5, $is_following1>0?'following':'all', 'newest');
-        $series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
+        //$series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
+        $series = $this->get_airing_series('watch later');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
