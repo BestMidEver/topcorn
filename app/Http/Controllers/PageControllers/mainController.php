@@ -285,7 +285,7 @@ class mainController extends Controller
         if($f_following == 'following'){
             $users = $users
             ->leftjoin('follows as f2', function ($join) {
-                $join->on('rateds.user_id', '=', 'f2.object_id')
+                $join->on('users.id', '=', 'f2.object_id')
                 ->where('f2.subject_id', '=', Auth::id())
                 ->where('f2.is_deleted', '=', 0);
             })
@@ -293,7 +293,7 @@ class mainController extends Controller
         }else if($f_following == 'follower'){
             $users = $users
             ->leftjoin('follows as f2', function ($join) {
-                $join->on('rateds.user_id', '=', 'f2.subject_id')
+                $join->on('users.id', '=', 'f2.subject_id')
                 ->where('f2.subject_id', '=', Auth::id())
                 ->where('f2.is_deleted', '=', 0);
             })
