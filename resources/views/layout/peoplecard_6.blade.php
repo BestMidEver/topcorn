@@ -5,26 +5,26 @@
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 					<a href="/person/@{{person.id}}" target={{$target}}>
 						<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+						<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
+							<div class="d-flex flex-row justify-content-center">
+								<div class="text-white">
+									<small>asdfasdf</small>
+									<span class="d-block"><span class="h5 text-warning">asdfasdfa</span><small> qwerqwere</small></span>
+								</div>
+							</div>
+						</div>
+						<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
+							<div class="d-flex flex-row justify-content-center">
+								<div class="text-white">
+									<small>wwww</small>
+									<span class="d-block"><span class="h5 text-warning">qwerqwer</span><small>sdafasdfasd</small></span>
+								</div>
+							</div>
+						</div>
 						<div class="card-block text-center">
 							<h6 class="card-title px-1 pt-1 text-dark">@{{person.name}}</h6>
 						</div>
 					</a>
-					<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
-						<div class="d-flex flex-row justify-content-center">
-							<div class="text-white">
-								<small>asdfasdf</small>
-								<span class="d-block"><span class="h5 text-warning">asdfasdfa</span><small> qwerqwere</small></span>
-							</div>
-						</div>
-					</div>
-					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
-						<div class="d-flex flex-row justify-content-center">
-							<div class="text-white">
-								<small>wwww</small>
-								<span class="d-block"><span class="h5 text-warning">qwerqwer</span><small>sdafasdfasd</small></span>
-							</div>
-						</div>
-					</div>
 					<div class="card-title px-1 text-muted text-center mb-0"><small>@{{person.character}}</small></div>
 				</div>
 			</div>
