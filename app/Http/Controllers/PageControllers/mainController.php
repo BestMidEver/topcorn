@@ -193,8 +193,8 @@ class mainController extends Controller
 
         $series = DB::table('series')
         ->leftjoin('series_rateds', function ($join) {
-            $join->on('series.series_id', '=', 'series.id')
-            ->where('series.user_id', '=', Auth::id());
+            $join->on('series_rateds.series_id', '=', 'series.id')
+            ->where('series_rateds.user_id', '=', Auth::id());
         })
         ->leftjoin('series_laters', function ($join) {
             $join->on('series_laters.series_id', '=', 'series.id')
