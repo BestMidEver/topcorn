@@ -223,7 +223,7 @@ class mainController extends Controller
         ->paginate($pagination);
 
         foreach ($series as $row) {
-            $row->next_episode_air_date = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->next_episode_air_date))->diffForHumans()));
+            //$row->next_episode_air_date = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->next_episode_air_date))->diffForHumans()));
         }
 
         return $series;
