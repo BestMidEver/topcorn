@@ -300,9 +300,9 @@ class mainController extends Controller
             'people.name',
             'people.birthday',
             'people.deathday',
-            'people.popularity'
+            'people.popularity',
+            DB::raw('DATEDIFF(people.birthday, CURDATE()) AS age')
         )
-        DB::raw('DATEDIFF(people.birthday, CURDATE()) AS age'),
         ->orderBy('people.popularity', 'desc');
 
         if($mode == 'born today'){
