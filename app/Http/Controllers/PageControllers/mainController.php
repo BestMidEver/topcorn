@@ -219,12 +219,15 @@ class mainController extends Controller
             'series_laters.id as later_id',
             'series_bans.id as ban_id'
         )
-        ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(7)])
         ->orderBy('series.next_episode_air_date', 'asc');
 
         if($mode == 'watch later'){
             $series = $series
+            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(300)])
             ->whereNotNull('series_laters.id');
+        }else if($mode == 'all'){
+            $series = $series
+            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(7)])
         }
 
         return $series->paginate($pagination);;
@@ -510,6 +513,7 @@ class mainController extends Controller
         $movies = $this->get_legendary_garbage_movies(5, $is_following1>0?'following':'all', 'newest');
         //$series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
         $series = $this->get_airing_series('watch later');
+        if($series->count()==0) $series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
