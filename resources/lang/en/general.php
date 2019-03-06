@@ -26,7 +26,7 @@ return [
     'airs_days_later' =>
         'Airs <span class="h5 text-warning">{{movie.day_difference_next}}</span> days later',       //profile,
     'airs_tomorrow' =>
-        'Airs <span class="h5 text-warning">tomorrow</span> days later',                            //profile,
+        'Airs <span class="h5 text-warning">tomorrow</span>',                                       //profile,
     'airs_today' =>                     
         'Airs <span class="h5 text-warning">today</span>',                                          //profile,
     'air_date' => 'Air date',                                                                       //profile,
