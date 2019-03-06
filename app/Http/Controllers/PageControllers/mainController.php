@@ -209,6 +209,7 @@ class mainController extends Controller
             'series.original_name as original_title',
             'series.vote_average',
             'series.vote_count',
+            'series.next_episode_air_date',
             DB::raw('DATEDIFF(series.next_episode_air_date, CURDATE()) AS day_difference_next'),
             'series.first_air_date as release_date',
             'series.'.App::getlocale().'_name as name',
