@@ -7,9 +7,9 @@
                     <div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
                         <div class="d-flex flex-row justify-content-center">
                             <div class="text-white">
-                                <small ng-if="user.comment_count!=undefined"><span class="h5 text-warning">@{{user.comment_count}}</span> likes</small>
-                                <small ng-if="user.list_count!=undefined"><span class="h5 text-warning">@{{user.list_count}}</span> likes</small>
-                                <small ng-if="user.follow_count!=undefined"><span class="h5 text-warning">@{{user.follow_count}}</span> followers</small>
+                                <small ng-if="page_variables.active_tab_4=='comment'"><span class="h5 text-warning">@{{user.comment_count}}</span> likes</small>
+                                <small ng-if="page_variables.active_tab_4=='list'"><span class="h5 text-warning">@{{user.list_count}}</span> likes</small>
+                                <small ng-if="page_variables.active_tab_4=='follow'"><span class="h5 text-warning">@{{user.follow_count}}</span> followers</small>
                             </div>
                         </div>
                     </div>
