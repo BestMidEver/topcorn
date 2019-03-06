@@ -219,7 +219,8 @@ class mainController extends Controller
             'series_laters.id as later_id',
             'series_bans.id as ban_id'
         )
-        ->orderBy('series.next_episode_air_date', 'asc');
+        ->orderBy('series.next_episode_air_date', 'asc')
+        ->orderBy('series.popularity', 'desc');
 
         if($mode == 'watch later'){
             $series = $series
