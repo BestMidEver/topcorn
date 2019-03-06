@@ -2,9 +2,19 @@
 	<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users{{ $suffix }} | limitTo:6">
         <div class="card moviecard h-100 d-flex flex-column justify-content-between">
             <a ng-href="/profile/@{{ user.user_id }}" target={{$target}}>
-                <img class="card-img-top" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
-                <div class="card-block">
-                    <h6 class="card-title px-1 pt-1 text-muted text-center">@{{user.name}}</h6>
+                <div class="position-relative text-center min-height-200">
+                    <img class="card-img-top" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+                    <div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
+                        <div class="d-flex flex-row justify-content-center" ng-if="person.age>0">
+                            <div class="text-white">
+                                <small ng-if="person.died_age>0">If lived</small>
+                                <span class="d-block"><span class="h5 text-warning">asdas</span> <small>asdasd</small></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <h6 class="card-title px-1 pt-1 text-muted text-center">@{{user.name}}</h6>
+                    </div>
                 </div>
             </a>
             <div class="card-footer p-0">
