@@ -187,7 +187,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				});
 				break;
 			case 5:
-				rate.get_popular_reviews($scope.page_variables.active_tab_5, $scope.page_5)
+				rate.get_popular_reviews($scope.page_variables.active_tab_5, $scope.page_variables.f_following5, $scope.page_5)
 				.then(function(response){
 					console.log(response);
 					$scope.reviews5 = response.data.data;

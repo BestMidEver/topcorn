@@ -139,11 +139,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_popular_reviews = function(mode, page) 
+    get_popular_reviews = function(mode, f_following, page) 
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_popular_reviews/'+mode+'?page='+page,
+			url: '/api/get_popular_reviews/'+mode+'/'+f_following+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
