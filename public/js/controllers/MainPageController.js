@@ -467,7 +467,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 	$scope.votemodal=function(index, movie)
 	{
-		$scope.active_tab = movie.title.length>0?'movie':'series';
+		$scope.active_tab = movie.title!=undefined?'movie':'series';
 		$scope.modalmovie = movie;
 		$scope.modalmovie.index = index;
 		$('#myModal').modal('show');
