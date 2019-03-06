@@ -550,23 +550,25 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 			f1 = 'add_rate';
 			f2 = 'un_rate';
 			f3 = 'modify_user_movies';
+			v0 = 'similar_movies1';
 			v1 = 'rated_id';
 			v2 = 'movie_id';
 		}else{
 			f1 = 'series_add_rate';
 			f2 = 'series_un_rate';
 			f3 = 'modify_user_series';
+			v0 = 'similar_movies2';
 			v1 = 'id';
 			v2 = 'series_id';
 		}
 		$('#myModal').modal('hide');
 		if(rate_code != null){
-			rate[f1]($scope.movies[index].id, rate_code)
+			rate[f1]($scope[v0][index].id, rate_code)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.movies[index].rated_id=response.data.data[v1];
-					$scope.movies[index].rate_code=response.data.data.rate;
+					$scope[v0][index].rated_id=response.data.data[v1];
+					$scope[v0][index].rate_code=response.data.data.rate;
 					$scope[f3]({
 						'movie_id':response.data.data[v2],
 						'rated_id':response.data.data[v1],
@@ -578,13 +580,13 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				if(pass.watched_movie_number<50) $scope.get_watched_movie_number();
 			});
 		}else if(rate_code == null){
-			var temp = $scope.movies[index];
-			rate[f2]($scope.movies[index].rated_id)
+			var temp = $scope[v0][index];
+			rate[f2]($scope[v0][index].rated_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
-					$scope.movies[index].rated_id=null;
-					$scope.movies[index].rate_code=null;
+					$scope[v0][index].rated_id=null;
+					$scope[v0][index].rate_code=null;
 					$scope[f3]({
 						'movie_id':temp.id,
 						'rated_id':null,
