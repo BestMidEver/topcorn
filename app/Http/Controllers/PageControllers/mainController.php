@@ -220,7 +220,12 @@ class mainController extends Controller
             'series_bans.id as ban_id'
         )
         ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(7)])
-        ->orderBy('series.next_episode_air_date', 'desc');
+        ->orderBy('series.next_episode_air_date', 'asc');
+
+        if($mode == 'watch later'){
+            $series = $series
+            ->whereNotNull('series_laters.id');
+        }
 
         return $series->paginate($pagination);;
     }
