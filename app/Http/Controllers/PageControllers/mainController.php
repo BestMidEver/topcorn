@@ -223,7 +223,7 @@ class mainController extends Controller
 
         if($mode == 'watch later'){
             $series = $series
-            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(0)])
+            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(300)])
             ->whereNotNull('series_laters.id');
         }else if($mode == 'all'){
             $series = $series
@@ -513,13 +513,17 @@ class mainController extends Controller
         $movies = $this->get_legendary_garbage_movies(5, $is_following1>0?'following':'all', 'newest');
         //$series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
         $series = $this->get_airing_series('watch later');
-        if($series->count()==0) $series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
+        $f_watch_later = 'watch later';
+        if($series->count()==0){
+            $series = $this->get_airing_series('all');
+            $f_watch_later = 'all';
+        }
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('comment');
         $reviews = $this->get_popular_reviews('newest');
         $listes = $this->get_popular_lists('newest');
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following1', 'is_following2'))
+		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following1', 'is_following2', 'f_watch_later'))
             ->with('movies', $movies)
             ->with('series', $series)
             ->with('people', $people)

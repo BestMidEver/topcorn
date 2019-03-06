@@ -87,7 +87,14 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 
 
 	$scope.constants_image_thumb_nail = pass.constants_image_thumb_nail;
-	$scope.page_variables={expanded:-1, f_following1:(pass.is_following1>0?'following':'all'), f_sort1:'newest', f_following2:(pass.is_following2>0?'following':'all'), f_sort2:'newest'};
+	$scope.page_variables={
+		expanded: -1,
+		f_following1: pass.is_following1>0?'following':'all',
+		f_sort1: 'newest',
+		f_following2: pass.is_following2>0?'following':'all',
+		f_sort2: 'newest',
+		f_watch_later2: pass.f_watch_later
+	};
 
 	$scope.page_1=0;
 	$scope.page_2=0;
@@ -128,18 +135,15 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				break;
 			case 2:
 				if($scope.page_variables.active_tab_2 == 'on air'){
-					rate.get_now_on_air(pass.api_key, pass.lang, $scope.page_2)
+					rate.get_airing_series($scope.page_variables.f_watch_later2, $scope.page_2)
 					.then(function(response){
 						console.log(response);
-						external_internal_data_merger.merge_user_movies_to_external_data(response.data.results, $scope.user_movies);
-						$scope.similar_movies2=response.data.results;
-						if(response.data.total_pages<1000) $scope.pagination_2=response.data.total_pages;
-						else $scope.pagination_2=1000;
-						$scope.current_page_2=response.data.page;
-						$scope.from_2=(response.data.page-1)*20+1;
-						$scope.to_2=(response.data.page-1)*20+response.data.results.length;
-						$scope.in_2=response.data.total_results;
-						$scope.is_2=false;
+						$scope.similar_movies2 = response.data.data;
+						$scope.pagination_2=response.data.last_page;
+						$scope.current_page_2=response.data.current_page;
+						$scope.from_2=response.data.from;
+						$scope.to_2=response.data.to;
+						$scope.in_2=response.data.total;
 						$(".tooltip").hide();
 					});
 				}else{
