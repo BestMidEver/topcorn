@@ -162,9 +162,9 @@
 				<span ng-show="page_variables.f_following4=='all'">All Users</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following4='following';get_first_page_data(1);">Following</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following4='followers';get_first_page_data(1);">Followers</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following4='all';get_first_page_data(1);">All Users</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following4='following';get_first_page_data(4);">Following</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following4='followers';get_first_page_data(4);">Followers</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following4='all';get_first_page_data(4);">All Users</button>
 			</div>
 		</div>
 	</div>
