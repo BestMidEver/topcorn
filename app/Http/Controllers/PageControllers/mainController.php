@@ -248,7 +248,7 @@ class mainController extends Controller
             'users.name as name',
             'users.facebook_profile_pic as facebook_profile_path',
             'users.profile_pic as profile_path',
-            DB::raw('COUNT(users.id) as '.'follow_count'))
+            DB::raw('COUNT(users.id) as '.'follow_count')
         )
         ->groupBy('users.id');
 
