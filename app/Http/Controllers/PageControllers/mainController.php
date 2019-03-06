@@ -294,7 +294,7 @@ class mainController extends Controller
             $users = $users
             ->leftjoin('follows as f2', function ($join) {
                 $join->on('users.id', '=', 'f2.subject_id')
-                ->where('f2.subject_id', '=', Auth::id())
+                ->where('f2.object_id', '=', Auth::id())
                 ->where('f2.is_deleted', '=', 0);
             })
             ->whereNotNull('f2.id');
