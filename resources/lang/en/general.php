@@ -31,6 +31,7 @@ return [
         'Airs <span class="h5 text-warning">today</span>',                                          //profile,
     'air_date' => 'Air date',                                                                       //profile,
     'all' => 'All',                                                                                 //profile,
+    'all_users' => 'All Users',                                                                     //main,
     'author' => 'Author',                                                                           //movie,
     'available' => 'Available',                                                                     //profile,
     'awaited' => 'Awaited',                                                                         //profile,
@@ -125,6 +126,7 @@ return [
     'last_episode' => 'Last Episode',                                                               //series,
     'last_seen_episode' => 'Last Seen Episode',                                                     //series,
     'last_voter' => 'Last voted by',                                                                //main,
+    'latest_vote' => 'Latest Vote',                                                                 //main,
     'like' => 'Like',                                                                               //list   
     'liked_ones' => 'Liked',                                                                        //profile,               
     'like_count' => 'like',                                                                         //list          
@@ -156,6 +158,7 @@ return [
     'most_liked' => 'Most Liked',                                                                   //movie,
     'most_rated' => 'Most Rated',                                                                   //person,
     'most_populer' => 'Most Popular',                                                               //recommendations,
+    'most_voted' => 'Most Voted',                                                                   //main,
     'movies_original_language' => 'The Original Language of the Movie',                             //accountinterface,
     'my_secondary_language' => 'My Secondary Language',                                             //accountinterface,
     'networks' => 'Networks',                                                                       //series,
@@ -175,6 +178,7 @@ return [
     'notification_and_email' => 'Send Notification & Email',                                        //account,
     'notifications_emails' => 'Notification & Email',                                               //account,
     'novel' => 'Novel',                                                                             //person,
+    'now_playing' => 'Now Playing',                                                                 //main,
     'official_website' => 'Official Website',                                                       //movie,
     'only_me' => 'Private',                                                                         //list,         
     'open_new_tab' => 'New Tab',                                                                    //accountinterface,

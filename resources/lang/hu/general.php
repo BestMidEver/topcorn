@@ -31,6 +31,7 @@ return [
         '<span class="h5 text-warning">Ma</span>',                                                      //profile,
     'air_date' => 'Megjelenés',                                                                         //profile,
     'all' => 'Mind',                                                                                    //profile,
+    'all_users' => 'All Users',                                                                     //main,/////////////
     'author' => 'Szerző',                                                                               //movie
     'available' => 'Elérhető',                                                                          //profile,
     'awaited' => 'Várakozik',                                                                           //profile,
@@ -125,6 +126,7 @@ return [
     'last_episode' => 'Utolsó epizód',                                                                  //series,
     'last_seen_episode' => 'Utolsó megnézett epizód',                                                   //series,
     'last_voter' => 'Last voted by',                                                                //main,////////////////////
+    'latest_vote' => 'Latest Vote',                                                                 //main,/////////////
     'like' => 'Tetszik',                                                                                //list          
     'liked_ones' => 'Kedvelt',                                                                          //profile,         
     'like_count' => 'Tetszik-ek száma',                                                                 //list          
@@ -156,6 +158,7 @@ return [
     'most_liked' => 'Most Liked',                                                                       //movie,    /////////////////////
     'most_rated' => 'Legnépszerűbb',                            
     'most_populer' => 'Legnépszerűbb',                                                                  //recommendations,
+    'most_voted' => 'Most Voted',                                                                   //main,////////////
     'movies_original_language' => 'A film eredeti nyelve',                                              //recommendations,
     'my_secondary_language' => 'Másodlagos nyelvem',                                                    //accountinterface,
     'networks' => 'Műsorszolgáltató',                                                                   //series,
@@ -175,6 +178,7 @@ return [
     'notification_and_email' => 'Send Notification & Email',                                            //account,//////////////////
     'notifications_emails' => 'Notification & Email',                                                   //account,/////////////////
     'novel' => 'Regény',                                                                                //person,
+    'now_playing' => 'Now Playing',                                                                 //main,/////////////
     'official_website' => 'Hivatalos honlap',                                                           //movie,
     'only_me' => 'Csak én',                                                                             //list,         
     'open_new_tab' => 'Megnyitás új lapon',                                                             //accountinterface,

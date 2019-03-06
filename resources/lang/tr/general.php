@@ -31,6 +31,7 @@ return [
         '<span class="h5 text-warning">Bugün</span>',                                                   //profile,
     'air_date' => 'Yayın tarihi',                                                                       //profile,
     'all' => 'Hepsi',                                                                                   //profile,
+    'all_users' => 'Bütün Kullanıcılar',                                                                //main,
     'author' => 'Yaratıcı',
     'available' => 'Yayınlanmış',                                                                       //profile,
     'awaited' => 'Beklenen',                                                                            //profile,
@@ -125,6 +126,7 @@ return [
     'last_episode' => 'Son Bölüm',                                                                      //series,
     'last_seen_episode' => 'İzlenen Son Bölüm',                                                         //series,
     'last_voter' => 'Son oy veren',                                                                     //main,
+    'latest_vote' => 'En Yeni Oy',                                                                      //main,
     'like' => 'Beğen',                                                                                  //list          
     'liked_ones' => 'Beğenilen',                                                                        //profile,               
     'like_count' => 'beğeni',                                                                           //list          
@@ -156,6 +158,7 @@ return [
     'most_liked' => 'En Çok Beğenilen',                                                                 //movie,
     'most_rated' => 'En Çok Oylanan',               
     'most_populer' => 'En Popüler',                                                                     //recommendations,
+    'most_voted' => 'En Çok Oy Alan',                                                                   //main,
     'movies_original_language' => 'Filmin Orijinal Dili',                                               //accountinterface,
     'my_secondary_language' => 'İkinci Dil\'im',                                                        //accountinterface,
     'networks' => 'Yayıncı',                                                                            //series,
@@ -174,6 +177,7 @@ return [
     'not_sure' => 'Kararsızım',                                                                         //ratemodal, profile,
     'notification_and_email' => 'Bildirim & E-Posta Yolla',                                             //account,
     'notifications_emails' => 'Bildirim & E-posta',                                                     //account,
+    'now_playing' => 'Gösterimde',                                                                      //main,
     'novel' => 'Roman',             
     'official_website' => 'Resmi İnternet Sitesi',              
     'only_me' => 'Sadece Ben',                                                                          //list,         
