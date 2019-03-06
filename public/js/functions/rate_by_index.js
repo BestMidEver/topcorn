@@ -105,7 +105,7 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_popular_users = function(mode, page) 
+    get_popular_users = function(mode, f_following, page) 
     {
         return $http({
 			method: 'GET',

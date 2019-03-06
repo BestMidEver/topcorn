@@ -157,7 +157,7 @@ Route::get('api/get_legendary_garbage_movies/{mode}/{users}/{sort}','PageControl
 Route::get('api/get_legendary_garbage_series/{mode}/{users}/{sort}','PageControllers\mainController@get_legendary_garbage_series');
 Route::get('api/get_airing_series/{mode}','PageControllers\mainController@get_airing_series');
 Route::get('api/get_popular_people/{mode}','PageControllers\mainController@get_popular_people');
-Route::get('api/get_popular_users/{mode}','PageControllers\mainController@get_popular_users');
+Route::get('api/get_popular_users/{mode}/{f_following}','PageControllers\mainController@get_popular_users');
 Route::get('api/get_popular_lists/{mode}','PageControllers\mainController@get_popular_lists');
 Route::get('api/get_popular_reviews/{mode}','PageControllers\mainController@get_popular_reviews');
 //////////////////////////////////////////////////////////////////////////////////////////

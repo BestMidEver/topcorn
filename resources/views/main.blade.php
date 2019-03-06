@@ -155,7 +155,7 @@
 	</div>
 	<div class="container-fluid" ng-show="iscast4">
 		<div class="dropdown d-inline">
-			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following4='all'">
 				<i class="fa fa-filter"></i>
 				<span ng-show="page_variables.f_following4=='following'">Following</span>
 				<span ng-show="page_variables.f_following4=='follower'">Followers</span>
