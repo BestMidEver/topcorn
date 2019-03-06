@@ -10,7 +10,7 @@ pass={
 	"tt_navbar":{{ Auth::User()->tt_navbar }},
 	"is_following1":{{ $is_following1 }},
 	"is_following2":{{ $is_following2 }},
-	"f_watch_later":{{ $f_watch_later }},
+	"f_watch_later":"{{ $f_watch_later }}",
 	@endif
 	"watched_movie_number":{{ $watched_movie_number }},
 	"constants_image_thumb_nail":"{{config('constants.image.thumb_nail')[$image_quality]}}",
