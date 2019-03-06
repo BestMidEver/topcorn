@@ -223,7 +223,7 @@ class mainController extends Controller
 
         if($mode == 'watch later'){
             $series = $series
-            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(300)])
+            ->whereBetween('series.next_episode_air_date', [Carbon::today(), Carbon::today()->addDays(0)])
             ->whereNotNull('series_laters.id');
         }else if($mode == 'all'){
             $series = $series
