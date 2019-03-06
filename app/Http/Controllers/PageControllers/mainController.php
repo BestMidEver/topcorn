@@ -340,7 +340,7 @@ class mainController extends Controller
 
 
 
-    public static function get_popular_lists($mode)
+    public static function get_popular_lists($mode, $f_following)
     {
         $pagination = 24;
         if(Auth::check()){
@@ -409,6 +409,16 @@ class mainController extends Controller
         }else if($mode == 'newest'){
             $listes = $listes
             ->orderBy('listes.updated_at', 'desc');
+        }
+
+        if($f_following == 'following'){
+            $listes = $listes
+            ->leftjoin('follows as f2', function ($join) {
+                $join->on('listes.user_id', '=', 'f2.object_id')
+                ->where('f2.subject_id', '=', Auth::id())
+                ->where('f2.is_deleted', '=', 0);
+            })
+            ->whereNotNull('f2.id');
         }
 
         $listes = $listes->paginate($pagination);
@@ -508,14 +518,6 @@ class mainController extends Controller
                 ->where('f2.is_deleted', '=', 0);
             })
             ->whereNotNull('f2.id');
-        }else if($f_following == 'follower'){
-            $reviews = $reviews
-            ->leftjoin('follows as f2', function ($join) {
-                $join->on('reviews.user_id', '=', 'f2.subject_id')
-                ->where('f2.object_id', '=', Auth::id())
-                ->where('f2.is_deleted', '=', 0);
-            })
-            ->whereNotNull('f2.id');
         }
 
         return $reviews->paginate($pagination);
@@ -560,7 +562,7 @@ class mainController extends Controller
         $people = $this->get_popular_people('born today');
         $users = $this->get_popular_users('list', 'all');
         $reviews = $this->get_popular_reviews('newest', 'all');
-        $listes = $this->get_popular_lists('newest');
+        $listes = $this->get_popular_lists('newest', 'all');
 
 		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following1', 'is_following2', 'f_watch_later'))
             ->with('movies', $movies)

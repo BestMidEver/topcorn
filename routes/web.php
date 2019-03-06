@@ -158,7 +158,7 @@ Route::get('api/get_legendary_garbage_series/{mode}/{users}/{sort}','PageControl
 Route::get('api/get_airing_series/{mode}','PageControllers\mainController@get_airing_series');
 Route::get('api/get_popular_people/{mode}','PageControllers\mainController@get_popular_people');
 Route::get('api/get_popular_users/{mode}/{f_following}','PageControllers\mainController@get_popular_users');
-Route::get('api/get_popular_lists/{mode}','PageControllers\mainController@get_popular_lists');
+Route::get('api/get_popular_lists/{mode}/{f_following}','PageControllers\mainController@get_popular_lists');
 Route::get('api/get_popular_reviews/{mode}/{f_following}','PageControllers\mainController@get_popular_reviews');
 //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////// MAIN PAGE (PUBLIC) ///////////////////////////////

@@ -201,7 +201,7 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 				});
 				break;
 			case 6:
-				rate.get_popular_lists($scope.page_variables.active_tab_6, $scope.page_6)
+				rate.get_popular_lists($scope.page_variables.active_tab_6, $scope.page_variables.f_following6, $scope.page_6)
 				.then(function(response){
 					console.log(response);
 					$scope.listes6 = response.data.data;

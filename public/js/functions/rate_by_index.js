@@ -122,11 +122,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_popular_lists = function(mode, page) 
+    get_popular_lists = function(mode, f_following, page) 
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_popular_lists/'+mode+'?page='+page,
+			url: '/api/get_popular_lists/'+mode+'/'+f_following+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'

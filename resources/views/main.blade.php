@@ -225,6 +225,19 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.expand') }}" ng-click="page_variables.expanded=6;iscast6=true;is_expanded6=true;toggle_collapse('collapseMovies6', 'expand');" ng-show="page_variables.expanded==-1"><div><i class="fas fa-arrows-alt"></i></div></button>
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast6=false;is_expanded6=false;toggle_collapse('collapseMovies6', 'collapse');scroll_to_top('scroll_to_top6');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
+	<div class="container-fluid" ng-show="iscast6">
+		<div class="dropdown d-inline">
+			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following6='all'">
+				<i class="fa fa-filter"></i>
+				<span ng-show="page_variables.f_following6=='following'">Following</span>
+				<span ng-show="page_variables.f_following6=='all'">All Users</span>
+			</button>
+			<div class="dropdown-menu">
+				<button class="dropdown-item" ng-click="page_variables.f_following6='following';get_first_page_data(5);">Following</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following6='all';get_first_page_data(5);">All Users</button>
+			</div>
+		</div>
+	</div>
 	<div ng-show="listes6.length>0">
 		@include('layout.listcard_6', ['suffix' => '6'])
 	</div>
