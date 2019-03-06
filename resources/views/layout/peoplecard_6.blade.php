@@ -4,7 +4,7 @@
 			<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in people{{  $suffix  }} | limitTo:6">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 					<a href="/person/@{{person.id}}" target={{$target}}>
-						<img class="card-img-top" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
+						<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 						<div class="card-block text-center">
 							<h6 class="card-title px-1 pt-1 text-dark">@{{person.name}}</h6>
 						</div>
