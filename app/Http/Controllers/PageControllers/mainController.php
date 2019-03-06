@@ -405,7 +405,8 @@ class mainController extends Controller
         if($mode == 'most liked'){
             $listes = $listes
             ->whereNotNull('listlikes.id')
-            ->orderBy('like_count', 'desc');
+            ->orderBy('like_count', 'desc')
+            ->orderBy('listes.updated_at', 'desc');
         }else if($mode == 'newest'){
             $listes = $listes
             ->orderBy('listes.updated_at', 'desc');
