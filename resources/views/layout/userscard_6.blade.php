@@ -3,18 +3,20 @@
         <div class="card moviecard h-100 d-flex flex-column justify-content-between">
             <a ng-href="/profile/@{{ user.user_id }}" target={{$target}}>
                 <div class="position-relative text-center min-height-200">
-                    <img class="card-img-top darken-cover" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
-                    <div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
-                        <div class="d-flex flex-row justify-content-center">
-                            <div class="text-white">
-                                <small ng-if="page_variables.active_tab_4=='comment'"><span class="h5 text-warning">@{{user.count}}</span> likes</small>
-                                <small ng-if="page_variables.active_tab_4=='list'"><span class="h5 text-warning">@{{user.count}}</span> likes</small>
-                                <small ng-if="page_variables.active_tab_4=='follow'"><span class="h5 text-warning">@{{user.count}}</span> followers</small>
+                    <div class="justify-content-between">
+                        <img class="card-img-top darken-cover" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
+                        <div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="text-white">
+                                    <small ng-if="page_variables.active_tab_4=='comment'"><span class="h5 text-warning">@{{user.count}}</span> likes</small>
+                                    <small ng-if="page_variables.active_tab_4=='list'"><span class="h5 text-warning">@{{user.count}}</span> likes</small>
+                                    <small ng-if="page_variables.active_tab_4=='follow'"><span class="h5 text-warning">@{{user.count}}</span> followers</small>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-block">
-                        <h6 class="card-title px-1 pt-1 text-muted text-center">@{{user.name}}</h6>
+                        <div class="card-block">
+                            <h6 class="card-title px-1 pt-1 text-muted text-center">@{{user.name}}</h6>
+                        </div>
                     </div>
                 </div>
             </a>
