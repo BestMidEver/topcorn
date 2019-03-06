@@ -53,11 +53,11 @@ MyApp.factory('rate', function($http) {
 
 
 
-    get_airing_series = function(mode, users, sort, page) 
+    get_airing_series = function(mode, page) 
     {
         return $http({
 			method: 'GET',
-			url: '/api/get_airing_series/'+mode+'/'+users+'/'+sort+'?page='+page,
+			url: '/api/get_airing_series/'+mode+'?page='+page,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
