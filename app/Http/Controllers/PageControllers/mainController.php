@@ -298,7 +298,7 @@ class mainController extends Controller
             'people.id',
             'people.profile_path',
             'people.name',
-            'DATE(people.birthday)',
+            DB::raw('DATE(people.birthday) as birthday'),
             'people.deathday',
             'people.popularity',
             DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, CURDATE()) AS age'),
