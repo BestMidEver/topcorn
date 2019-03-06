@@ -5,9 +5,9 @@
                 <div class="position-relative text-center min-height-200">
                     <img class="card-img-top" ng-src="@{{user.profile_path == null || user.profile_path == '' ? user.facebook_profile_path : constants_image_thumb_nail + user.profile_path}}" on-error-src="{{config('constants.image.thumb_nail_error')}}" alt="Card image cap">
                     <div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
-                        <div class="d-flex flex-row justify-content-center" ng-if="person.age>0">
+                        <div class="d-flex flex-row justify-content-center">
                             <div class="text-white">
-                                <small ng-if="person.died_age>0">If lived</small>
+                                <small>If lived</small>
                                 <span class="d-block"><span class="h5 text-warning">asdas</span> <small>asdasd</small></span>
                             </div>
                         </div>
