@@ -233,8 +233,8 @@
 				<span ng-show="page_variables.f_following6=='all'">All Users</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following6='following';get_first_page_data(5);">Following</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following6='all';get_first_page_data(5);">All Users</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following6='following';get_first_page_data(6);">Following</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following6='all';get_first_page_data(6);">All Users</button>
 			</div>
 		</div>
 	</div>
