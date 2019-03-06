@@ -7,18 +7,18 @@
 						<div class="position-relative text-center min-height-200">
 							<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{person.profile_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">
 							<div class="custom-over-layer h-50 d-flex flex-column justify-content-center">
-								<div class="d-flex flex-row justify-content-center">
+								<div class="d-flex flex-row justify-content-center" ng-if="person.age>0">
 									<div class="text-white">
-										<small>asdfasdf</small>
-										<span class="d-block"><span class="h5 text-warning">asdfasdfa</span><small> qwerqwere</small></span>
+										<small ng-if="person.died_age>0">If lived</small>
+										<span class="d-block"><span class="h5 text-warning">@{{person.age}}</span> <small>years old</small></span>
 									</div>
 								</div>
 							</div>
 							<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 								<div class="d-flex flex-row justify-content-center">
-									<div class="text-white">
-										<small>wwww</small>
-										<span class="d-block"><span class="h5 text-warning">qwerqwer</span><small>sdafasdfasd</small></span>
+									<div class="text-white" ng-if="person.died_age>0">
+										<small>When died</small>
+										<span class="d-block"><span class="h5 text-warning">@{{person.died_age}}</span> <small>years old</small></span>
 									</div>
 								</div>
 							</div>
