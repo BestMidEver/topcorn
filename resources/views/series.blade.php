@@ -374,7 +374,7 @@
 
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-show="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0" ng-hide="is_waiting">
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-show="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0 && page_variables.active_tab_1!=-1" ng-hide="is_waiting">
     <div class="px-3 px-md-0"><div class="h5">{{ __('general.guest_stars') }}</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
