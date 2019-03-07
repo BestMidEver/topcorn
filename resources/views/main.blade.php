@@ -61,9 +61,9 @@
 			    <span class="h5" ng-show="page_variables.active_tab_2==4">{{ __('general.p_series') }}: {{ __('general.recommend') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_2='on air';get_first_page_data(2);">{{ ucwords(__('air_date')) }}</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_2=5;get_first_page_data(2);">{{ __('definitely_recommend') }}</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_2=4;get_first_page_data(2);">{{ __('recommend') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_2='on air';get_first_page_data(2);">{{ ucwords(__('general.air_date')) }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_2=5;get_first_page_data(2);">{{ __('general.definitely_recommend') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_2=4;get_first_page_data(2);">{{ __('general.recommend') }}</button>
 			    </div>
 			</div>
 		</div>
