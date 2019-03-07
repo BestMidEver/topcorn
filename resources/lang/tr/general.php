@@ -99,6 +99,7 @@ return [
     'first_episode' => 'Başlangıç',                                                                     //profile,series,
     'follow' => 'Takip Et',                                                                             //profile,
     'follows' => 'Takipler',                                                                            //profile,
+    'follower' => 'Takipçi',                                                                            //main,
     'followers' => 'Takipçiler',                                                                        //profile,
     'following' => 'Takiptesin',                                                                        //profile,
     'followings' => 'Takip Edilenler',                                                                  //profile,

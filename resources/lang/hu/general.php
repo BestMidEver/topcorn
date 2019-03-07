@@ -99,6 +99,7 @@ return [
     'first_episode' => 'Első epizód',                                                                   //profile,series,
     'follow' => 'Follow',                                                                           //profile,  ///////////////////
     'follows' => 'Follows',                                                                         //profile,///////////////////
+    'follower' => 'Follower',                                                                       //main,//////////////////
     'followers' => 'Followers',                                                                     //profile,/////////////
     'following' => 'Following',                                                                     //profile,/////////////////////////
     'followings' => 'Following',                                                                    //profile,//////////////////////
