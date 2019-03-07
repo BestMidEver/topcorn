@@ -112,7 +112,7 @@ class listController extends Controller
                     ->where('listitems.mode', '1');
                 })
                 ->select(
-                    'listitems.movie_id as id',
+                    DB::raw('IF(listitems.mode=0, movies.id, series.id) AS id'),
                     'listitems.position',
                     'listitems.explanation',
                     'listitems.mode',
@@ -136,7 +136,7 @@ class listController extends Controller
                 ->leftjoin('movies', 'listitems.movie_id', '=', 'movies.id')
                 ->leftjoin('series', 'listitems.movie_id', '=', 'series.id')
                 ->select(
-                    'listitems.id',
+                    DB::raw('IF(listitems.mode=0, movies.id, series.id) AS id'),
                     'listitems.position',
                     'listitems.explanation',
                     'listitems.mode',

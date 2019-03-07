@@ -150,7 +150,7 @@
 	<div class="col-12 col-md-9 col-lg-6">
 		<div class="container-fluid">
 			<p class="h6 pt-3 pt-md-0"><span data-toggle="tooltip" data-placement="top" data-original-title="@{{movie.release_date}}" ng-show="movie.release_date.length>0">@{{movie.release_date.substring(0, 4)}}</span> <span class="text-muted" ng-show="movie.genres.length > 0 && movie.release_date.length>0">•</span> <span ng-repeat="genre in movie.genres"><span ng-show="$index!=0">, </span>@{{genre.name}}</span></p>
-			<div class="pt-2" ng-if="movie.overview.length > 0 && movie.overview != 'No overview found.'"><p>@{{movie.overview}}</p></div>
+			<div class="pt-2" ng-show="movie.overview.length > 0 && movie.overview != 'No overview found.'"><p>@{{movie.overview}}</p></div>
 			<div ng-show="directors.length > 0">
 				<div class="h6 pt-1"><span ng-show="directors.length == 1">{{ __('general.director') }}</span><span ng-show="directors.length > 1">{{ __('general.directors') }}</span></div>
 				<p><span class="d-inline" ng-repeat="director in directors"><span ng-show="$index!=0">, </span><a href="/person/@{{director.id}}" target={{$target}} class="text-dark">@{{director.name}}</a></span></p>
@@ -181,7 +181,7 @@
 				<div class="h6 pt-1"><span ng-show="movie.production_countries.length == 1">{{ __('general.producer_country') }}</span><span ng-show="movie.production_countries.length > 1">{{ __('general.producer_countries') }}</span></span></div>
 				<p><span ng-repeat="country in movie.production_countries"><span ng-show="$index!=0">, </span>@{{country.name}}</span></p>
 			</div>
-			<div ng-if="movie.runtime > 0">
+			<div ng-show="fancyruntime.hour > 0">
 				<div class="h6 pt-1">{{ __('general.runtime') }}</div>
 				<p>@{{movie.runtime}} {{ __('general.time_minutes') }} <small class="text-muted">(@{{fancyruntime.hour}}{{ __('general.h') }} @{{fancyruntime.minute}}{{ __('general.m') }})</small></p>
 			</div>
