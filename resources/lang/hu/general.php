@@ -158,7 +158,10 @@ return [
     'moviecard_percent' => '{{:suffix}}%',                                                              //recommendations,  
     'movies' => 'Film',                                                     
     'movie_details' => 'Film részletei',                                                                //movie,
+    'most_followed' => 'Most Followed',                                                             //main,////////////////
     'most_liked' => 'Most Liked',                                                                       //movie,    /////////////////////
+    'most_liked_commenters' => 'Most Liked Commenters',                                             //main,/////////////////
+    'most_liked_list_creators' => 'Most Liked List Creators',                                       //main,///////////////
     'most_rated' => 'Legnépszerűbb',                            
     'most_populer' => 'Legnépszerűbb',                                                                  //recommendations,
     'most_voted' => 'Most Voted',                                                                   //main,////////////
@@ -300,6 +303,7 @@ return [
     'un_read' => 'Új',                                                                                  //notifications,
     'unseen' => 'Meg nem nézett',                                                                       //profile,
     'user' => 'Felhasználó',
+    'users' => 'Users',                                                                             //main,////////////
     'user_name' => 'Felhasználónév',                                                                    //register, account,
     'users_facebook' => 'Facebook link',                                                                //account, profile
     'users_instagram' => 'Instagram link',                                                              //account, profile

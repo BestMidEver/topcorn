@@ -158,7 +158,10 @@ return [
     'moviecard_percent' => '%{{:suffix}}',                                                              //recommendations,
     'movies' => 'Film',                                                                                 //person,
     'movie_details' => 'Film Detayları',                
+    'most_followed' => 'En Çok Takip Edilenler',                                                        //main,
     'most_liked' => 'En Çok Beğenilen',                                                                 //movie,
+    'most_liked_commenters' => 'En Çok Beğenilen Yorumcular',                                           //main,
+    'most_liked_list_creators' => 'En Çok Beğenilen Liste Sahipleri',                                   //main,
     'most_rated' => 'En Çok Oylanan',               
     'most_populer' => 'En Popüler',                                                                     //recommendations,
     'most_voted' => 'En Çok Oy Alan',                                                                   //main,
@@ -300,6 +303,7 @@ return [
     'un_read' => 'Yeni',                                                                                //notifications,
     'unseen' => 'İzlenmemiş',                                                                           //profile,
     'user' => 'Kullanıcı',                          
+    'users' => 'Kullanıcılar',                                                                          //main,
     'user_name' => 'Kullanıcı Adı',                                                                     //register, account,
     'users_facebook' => 'Facebook Bağlantısı',                                                          //account, profile      
     'users_instagram' => 'İnstagram Bağlantısı',                                                        //account, profile      

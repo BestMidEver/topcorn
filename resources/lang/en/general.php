@@ -158,7 +158,10 @@ return [
     'moviecard_percent' => '{{:suffix}}%',                                                          //recommendations,
     'movies' => 'movies',                                                                           //person,
     'movie_details' => 'Movie Details',                                                             //movie,
+    'most_followed' => 'Most Followed',                                                             //main,
     'most_liked' => 'Most Liked',                                                                   //movie,
+    'most_liked_commenters' => 'Most Liked Commenters',                                             //main,
+    'most_liked_list_creators' => 'Most Liked List Creators',                                       //main,
     'most_rated' => 'Most Rated',                                                                   //person,
     'most_populer' => 'Most Popular',                                                               //recommendations,
     'most_voted' => 'Most Voted',                                                                   //main,
@@ -301,6 +304,7 @@ return [
     'un_read' => 'New',                                                                             //notifications,
     'unseen' => 'Unseen',                                                                           //profile,
     'user' => 'User',
+    'users' => 'Users',                                                                             //main,
     'user_name' => 'User Name',                                                                     //register, account,
     'users_facebook' => 'Facebook Link',                                                            //account, profile      
     'users_instagram' => 'İnstagram Link',                                                          //account, profile      

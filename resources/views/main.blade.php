@@ -8,14 +8,14 @@
 		<div>
 			<div class="dropdown d-inline">
 			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_1=5">
-				    <span class="h5" ng-show="page_variables.active_tab_1==5">{{ __('p_movies') }}: {{ __('definitely_recommend') }}</span>
-				    <span class="h5" ng-show="page_variables.active_tab_1==4">{{ __('p_movies') }}: {{ __('recommend') }}</span>
-				    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">{{ __('p_movies') }}: {{ __('now_playing') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_1==5">{{ __('general.p_movies') }}: {{ __('general.definitely_recommend') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_1==4">{{ __('general.p_movies') }}: {{ __('general.recommend') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_1=='now playing'">{{ __('general.p_movies') }}: {{ __('general.now_playing') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
-					<button class="dropdown-item" ng-click="page_variables.active_tab_1=5;get_first_page_data(1);">{{ __('definitely_recommend') }}</button>
-					<button class="dropdown-item" ng-click="page_variables.active_tab_1=4;get_first_page_data(1);">{{ __('recommend') }}</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';get_first_page_data(1);">{{ __('now_playing') }}</button>
+					<button class="dropdown-item" ng-click="page_variables.active_tab_1=5;get_first_page_data(1);">{{ __('general.definitely_recommend') }}</button>
+					<button class="dropdown-item" ng-click="page_variables.active_tab_1=4;get_first_page_data(1);">{{ __('general.recommend') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_1='now playing';get_first_page_data(1);">{{ __('general.now_playing') }}</button>
 			    </div>
 			</div>
 		</div>
@@ -26,23 +26,23 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following1=='following'">{{ __('following') }}</span>
-				<span ng-show="page_variables.f_following1=='all'">{{ __('all_users') }}</span>
+				<span ng-show="page_variables.f_following1=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following1=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following1='following';get_first_page_data(1);">{{ __('following') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following1='all';get_first_page_data(1);">{{ __('all_users') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following1='following';get_first_page_data(1);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following1='all';get_first_page_data(1);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fas fa-sort-amount-down"></i>
-				<span ng-show="page_variables.f_sort1=='newest'">{{ __('latest_vote') }}</span>
-				<span ng-show="page_variables.f_sort1=='most voted'">{{ __('most_voted') }}</span>
+				<span ng-show="page_variables.f_sort1=='newest'">{{ __('general.latest_vote') }}</span>
+				<span ng-show="page_variables.f_sort1=='most voted'">{{ __('general.most_voted') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_sort1='newest';get_first_page_data(1);">{{ __('latest_vote') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_sort1='most voted';get_first_page_data(1);">{{ __('most_voted') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort1='newest';get_first_page_data(1);">{{ __('general.latest_vote') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort1='most voted';get_first_page_data(1);">{{ __('general.most_voted') }}</button>
 			</div>
 		</div>
 	</div>
@@ -56,9 +56,9 @@
 		<div>
 			<div class="dropdown d-inline">
 			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_2='on air'">
-			    <span class="h5" ng-show="page_variables.active_tab_2=='on air'">{{ __('p_series') }}: {{ ucwords(__('air_date')) }}</span>
-			    <span class="h5" ng-show="page_variables.active_tab_2==5">{{ __('p_series') }}: {{ __('definitely_recommend') }}</span>
-			    <span class="h5" ng-show="page_variables.active_tab_2==4">{{ __('p_series') }}: {{ __('recommend') }}</span>
+			    <span class="h5" ng-show="page_variables.active_tab_2=='on air'">{{ __('general.p_series') }}: {{ ucwords(__('general.air_date')) }}</span>
+			    <span class="h5" ng-show="page_variables.active_tab_2==5">{{ __('general.p_series') }}: {{ __('general.definitely_recommend') }}</span>
+			    <span class="h5" ng-show="page_variables.active_tab_2==4">{{ __('general.p_series') }}: {{ __('general.recommend') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
 			        <button class="dropdown-item" ng-click="page_variables.active_tab_2='on air';get_first_page_data(2);">{{ ucwords(__('air_date')) }}</button>
@@ -74,34 +74,34 @@
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2=='on air'">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_watch_later2=='watch later'">{{ __('watch_later') }}</span>
-				<span ng-show="page_variables.f_watch_later2=='all'">{{ __('all_series') }}</span>
+				<span ng-show="page_variables.f_watch_later2=='watch later'">{{ __('general.watch_later') }}</span>
+				<span ng-show="page_variables.f_watch_later2=='all'">{{ __('general.all_series') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='watch later';get_first_page_data(2);">{{ __('watch_later') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='all';get_first_page_data(2);">{{ __('all_series') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='watch later';get_first_page_data(2);">{{ __('general.watch_later') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='all';get_first_page_data(2);">{{ __('general.all_series') }}</button>
 			</div>
 		</div>
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2!='on air'">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following2=='following'">{{ __('following') }}</span>
-				<span ng-show="page_variables.f_following2=='all'">{{ __('all_users') }}</span>
+				<span ng-show="page_variables.f_following2=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following2=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following2='following';get_first_page_data(2);">{{ __('following') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following2='all';get_first_page_data(2);">{{ __('all_users') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following2='following';get_first_page_data(2);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following2='all';get_first_page_data(2);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2!='on air'">
 			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fas fa-sort-amount-down"></i>
-				<span ng-show="page_variables.f_sort2=='newest'">{{ __('latest_vote') }}</span>
-				<span ng-show="page_variables.f_sort2=='most voted'">{{ __('most_voted') }}</span>
+				<span ng-show="page_variables.f_sort2=='newest'">{{ __('general.latest_vote') }}</span>
+				<span ng-show="page_variables.f_sort2=='most voted'">{{ __('general.most_voted') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_sort2='newest';get_first_page_data(2);">{{ __('latest_vote') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_sort2='most voted';get_first_page_data(2);">{{ __('most_voted') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort2='newest';get_first_page_data(2);">{{ __('general.latest_vote') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_sort2='most voted';get_first_page_data(2);">{{ __('general.most_voted') }}</button>
 			</div>
 		</div>
 	</div>
@@ -115,14 +115,14 @@
 		<div>
 			<div class="dropdown d-inline">
 			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
-				    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">{{ __('people') }}: {{ __('born_today') }}</span>
-				    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">{{ __('people') }}: {{ __('died_today') }}</span>
-				    <span class="h5" ng-show="page_variables.active_tab_3=='most popular'">{{ __('people') }}: Most Popular</span>
+				    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">{{ __('general.people') }}: {{ __('general.born_today') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">{{ __('general.people') }}: {{ __('general.died_today') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_3=='most popular'">{{ __('general.people') }}: {{ __('general.most_populer') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data(3);">{{ __('born_today') }}</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='died today';get_first_page_data(3);">{{ __('died_today') }}</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='most popular';get_first_page_data(3);">Most Popular</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data(3);">{{ __('general.born_today') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='died today';get_first_page_data(3);">{{ __('general.died_today') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='most popular';get_first_page_data(3);">{{ __('general.most_populer') }}</button>
 			    </div>
 			</div>
 		</div>
@@ -139,14 +139,14 @@
 		<div>
 			<div class="dropdown d-inline">
 			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_4='list'">
-				    <span class="h5" ng-show="page_variables.active_tab_4=='comment'">Users: Most Liked Commenters</span>
-				    <span class="h5" ng-show="page_variables.active_tab_4=='list'">Users: Most Liked List Creators</span>
-				    <span class="h5" ng-show="page_variables.active_tab_4=='follow'">Users: Most Followed</span>
+				    <span class="h5" ng-show="page_variables.active_tab_4=='comment'">{{ __('general.users') }}: {{ __('general.most_liked_commenters') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_4=='list'">{{ __('general.users') }}: {{ __('general.most_liked_list_creators') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_4=='follow'">{{ __('general.users') }}: {{ __('general.most_followed') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='list';get_first_page_data(4);">Most Liked List Creators</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';get_first_page_data(4);">Most Liked Commenters</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='follow';get_first_page_data(4);">Most Followed</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='list';get_first_page_data(4);">{{ __('general.most_liked_commenters') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';get_first_page_data(4);">{{ __('general.most_liked_list_creators') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='follow';get_first_page_data(4);">{{ __('general.most_followed') }}</button>
 			    </div>
 			</div>
 		</div>
@@ -157,14 +157,14 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following4='all'">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following4=='following'">{{ __('following') }}</span>
-				<span ng-show="page_variables.f_following4=='follower'">Followers</span>
-				<span ng-show="page_variables.f_following4=='all'">{{ __('all_users') }}</span>
+				<span ng-show="page_variables.f_following4=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following4=='follower'">{{ __('general.followers') }}</span>
+				<span ng-show="page_variables.f_following4=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following4='following';get_first_page_data(4);">{{ __('following') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following4='follower';get_first_page_data(4);">Followers</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following4='all';get_first_page_data(4);">{{ __('all_users') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following4='following';get_first_page_data(4);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following4='follower';get_first_page_data(4);">{{ __('general.followers') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following4='all';get_first_page_data(4);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
 	</div>
@@ -178,12 +178,12 @@
 		<div>
 			<div class="dropdown d-inline">
 			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_5='newest'">
-			    <span class="h5" ng-show="page_variables.active_tab_5=='newest'">Reviews: Newest</span>
-			    <span class="h5" ng-show="page_variables.active_tab_5=='most liked'">Reviews: Most Liked</span>
+			    <span class="h5" ng-show="page_variables.active_tab_5=='newest'">{{ __('general.reviews') }}: {{ __('general.newest') }}</span>
+			    <span class="h5" ng-show="page_variables.active_tab_5=='most liked'">{{ __('general.reviews') }}: {{ __('general.most_liked') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_5='newest';get_first_page_data(5);">Newest</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_5='most liked';get_first_page_data(5);">Most Liked</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_5='newest';get_first_page_data(5);">{{ __('general.newest') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_5='most liked';get_first_page_data(5);">{{ __('general.most_liked') }}</button>
 			    </div>
 			</div>
 		</div>
@@ -194,12 +194,12 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following5='all'">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following5=='following'">{{ __('following') }}</span>
-				<span ng-show="page_variables.f_following5=='all'">{{ __('all_users') }}</span>
+				<span ng-show="page_variables.f_following5=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following5=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following5='following';get_first_page_data(5);">{{ __('following') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following5='all';get_first_page_data(5);">{{ __('all_users') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following5='following';get_first_page_data(5);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following5='all';get_first_page_data(5);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
 	</div>
@@ -213,12 +213,12 @@
 		<div>
 			<div class="dropdown d-inline">
 			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_6='newest'">
-			    <span class="h5" ng-show="page_variables.active_tab_6=='newest'">Lists: Newest</span>
-			    <span class="h5" ng-show="page_variables.active_tab_6=='most liked'">Lists: Most Liked</span>
+			    <span class="h5" ng-show="page_variables.active_tab_6=='newest'">{{ __('general.lists') }}: {{ __('general.newest') }}</span>
+			    <span class="h5" ng-show="page_variables.active_tab_6=='most liked'">{{ __('general.lists') }}: {{ __('general.most_liked') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_6='newest';;get_first_page_data(6);">Newest</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_6='most liked';;get_first_page_data(6);">Most Liked</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_6='newest';;get_first_page_data(6);">{{ __('general.newest') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_6='most liked';;get_first_page_data(6);">{{ __('general.most_liked') }}</button>
 			    </div>
 			</div>
 		</div>
@@ -229,12 +229,12 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following6='all'">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following6=='following'">{{ __('following') }}</span>
-				<span ng-show="page_variables.f_following6=='all'">{{ __('all_users') }}</span>
+				<span ng-show="page_variables.f_following6=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following6=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following6='following';get_first_page_data(6);">{{ __('following') }}</button>
-				<button class="dropdown-item" ng-click="page_variables.f_following6='all';get_first_page_data(6);">{{ __('all_users') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following6='following';get_first_page_data(6);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following6='all';get_first_page_data(6);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
 	</div>
