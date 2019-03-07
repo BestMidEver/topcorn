@@ -18,6 +18,7 @@
                     </div>
                 </div>
             </a>
+            @if(Auth::check())
             <div class="card-footer p-0">
                 <div class="row no-gutters">
                     <div class="col">
@@ -25,6 +26,7 @@
                     </div>
                 </div>
             </div>
+            @endif
         </div>
 	</div>
 </div>
@@ -50,6 +52,7 @@
                             </div>
                         </div>
                     </a>
+                    @if(Auth::check())
                     <div class="card-footer p-0">
                         <div class="row no-gutters">
                             <div class="col">
@@ -57,6 +60,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
         	</div>
         </div>
