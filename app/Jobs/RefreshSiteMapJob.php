@@ -36,6 +36,7 @@ class RefreshSiteMapJob implements ShouldQueue
         $myfile = fopen(public_path("sitemap.xml"), "w");
         $xml = '<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://topcorn.io/main</loc> <lastmod>'.substr(Carbon::now(), 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url>
 <url> <loc>https://topcorn.io/recommendations</loc> <lastmod>'.substr(Carbon::now(), 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url>
 <url> <loc>https://topcorn.io</loc> <lastmod>'.substr(Carbon::now(), 0, 10).'</lastmod> <changefreq>weekly</changefreq> <priority>1</priority> </url>
 <url> <loc>https://topcorn.io/home</loc> <lastmod>2018-05-11</lastmod> <changefreq>monthly</changefreq> <priority>0.80</priority> </url>
