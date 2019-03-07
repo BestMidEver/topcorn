@@ -100,6 +100,7 @@ return [
     'follow' => 'Follow',                                                                           //profile,
     'follows' => 'Follows',                                                                         //profile,
     'follower' => 'Follower',                                                                       //main,
+    'follower_plural' => 'Followers',                                                               //main,
     'followers' => 'Followers',                                                                     //profile,
     'following' => 'Following',                                                                     //profile,
     'followings' => 'Following',                                                                    //profile,

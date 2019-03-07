@@ -100,6 +100,7 @@ return [
     'follow' => 'Takip Et',                                                                             //profile,
     'follows' => 'Takipler',                                                                            //profile,
     'follower' => 'Takipçi',                                                                            //main,
+    'follower_plural' => 'Takipçi',                                                                     //main,
     'followers' => 'Takipçiler',                                                                        //profile,
     'following' => 'Takiptesin',                                                                        //profile,
     'followings' => 'Takip Edilenler',                                                                  //profile,
