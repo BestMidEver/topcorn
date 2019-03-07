@@ -1,5 +1,5 @@
 <div class="d-flex flex-wrap">
-	<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users{{ $suffix }} | limitTo:6">
+	<div class="col-6 col-sm-4 col-lg-2 mt-4 px-1" ng-repeat="user in users{{ $suffix }} | limitTo:6">
         <div class="card moviecard h-100 d-flex flex-column justify-content-between">
             <a ng-href="/profile/@{{ user.user_id }}#!#Lists" target={{$target}}>
                 <div class="position-relative text-center min-height-200">
@@ -33,7 +33,7 @@
 <div class="collapse" id="collapseMovies{{ $suffix }}">
 	<div ng-if="users{{ $suffix }}.length > 6">
 		<div class="d-flex flex-wrap">
-        	<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users{{ $suffix }} | limitTo:100:6">
+        	<div class="col-6 col-sm-4 col-lg-2 mt-4 px-1" ng-repeat="user in users{{ $suffix }} | limitTo:100:6">
                 <div class="card moviecard h-100 d-flex flex-column justify-content-between">
                     <a ng-href="/profile/@{{ user.user_id }}#!#Lists" target={{$target}}>
                         <div class="position-relative text-center min-height-200">
