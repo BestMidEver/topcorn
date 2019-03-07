@@ -17,7 +17,7 @@ class blog_if_not_logged_in
     public function handle($request, Closure $next)
     {
         if (Auth::check()){
-            return redirect('/recommendations');
+            return redirect('/main');
         }else{
             return $next($request);
         }
