@@ -120,7 +120,7 @@ else $theme='';
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item d-md-none">
                         <a class="nav-link {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/"><i class="fas fa-home d-none d-md-inline"></i> {{ __('navbar.home') }}</a>
                     </li>
                     <li class="nav-item"
