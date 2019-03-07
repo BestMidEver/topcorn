@@ -1,7 +1,7 @@
 <div class="" id="cast{{  $suffix  }}" ng-if="people{{  $suffix  }}.length > 0">
 	<div class="">
 		<div class="d-flex flex-wrap">
-			<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in people{{  $suffix  }} | limitTo:6">
+			<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="person in people{{  $suffix  }} | limitTo:6">
 				<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 					<a href="/person/@{{person.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" data-original-title="@{{person.birthday}}">
 						<div class="position-relative text-center min-height-200">
@@ -35,7 +35,7 @@
 	<div class="collapse" id="collapseCast{{  $suffix  }}">
 		<div ng-if="people{{  $suffix  }}.length > 6">
 			<div class="d-flex flex-wrap">
-				<div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in people{{  $suffix  }} | limitTo:100:6">
+				<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="person in people{{  $suffix  }} | limitTo:100:6">
 					<div class="card moviecard h-100 d-flex flex-column justify-content-between">
 						<a href="/person/@{{person.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" data-original-title="@{{person.birthday}}">
 							<div class="position-relative text-center min-height-200">
