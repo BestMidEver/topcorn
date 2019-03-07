@@ -79,6 +79,7 @@ class mainController extends Controller
             $join->on('bans.movie_id', '=', 'ss.id')
             ->where('bans.user_id', '=', Auth::id());
         })
+        ->whereNull('bans.id')
         ->select(
             'ss.*',
             DB::raw('LEFT(users.name , 25) AS last_voter_name'),
