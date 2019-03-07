@@ -95,7 +95,7 @@ else $theme='';
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand p-0 ml-auto d-none d-md-inline" href="/">
+            <a class="navbar-brand p-0 ml-auto d-none d-md-inline" href="/main">
                 <img src="/images/topcorn_logo.png" class="nav-logo">
             </a>
             <ul class="navbar-nav ml-auto">
