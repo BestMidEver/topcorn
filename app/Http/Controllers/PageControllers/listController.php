@@ -29,8 +29,8 @@ class listController extends Controller
     public function list($id)
     {
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
-        $hover_title = 'title';
-        $hover_name = 'name';
+        $hover_title = 'original_title';
+        $hover_name = 'original_name';
 
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
