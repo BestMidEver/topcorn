@@ -536,30 +536,35 @@ class mainController extends Controller
 	{
     	if($lang != '') App::setlocale($lang);
 
-    	$image_quality = Auth::User()->image_quality;
+        if(Auth::check()){
+            $image_quality = Auth::User()->image_quality;
+            $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
+            $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+            
+            $is_following1 = DB::table('follows')
+            ->where('follows.subject_id', '=', Auth::id())
+            ->leftjoin('rateds', function ($join) {
+                $join->on('rateds.user_id', '=', 'follows.object_id');
+            })
+            ->where('rateds.rate', '=', 5)
+            ->count();
 
-        $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
-
-        $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
-
-        $is_following1 = DB::table('follows')
-        ->where('follows.subject_id', '=', Auth::id())
-        ->leftjoin('rateds', function ($join) {
-            $join->on('rateds.user_id', '=', 'follows.object_id');
-        })
-        ->where('rateds.rate', '=', 5)
-        ->count();
-
-        $is_following2 = DB::table('follows')
-        ->where('follows.subject_id', '=', Auth::id())
-        ->leftjoin('series_rateds', function ($join) {
-            $join->on('series_rateds.user_id', '=', 'follows.object_id');
-        })
-        ->where('series_rateds.rate', '=', 5)
-        ->count();
+            $is_following2 = DB::table('follows')
+            ->where('follows.subject_id', '=', Auth::id())
+            ->leftjoin('series_rateds', function ($join) {
+                $join->on('series_rateds.user_id', '=', 'follows.object_id');
+            })
+            ->where('series_rateds.rate', '=', 5)
+            ->count();
+        }else{
+            $image_quality = 1;
+            $target = '_self';
+            $watched_movie_number = null;
+            $is_following1 = 0;
+            $is_following2 = 0;
+        }
         
         $movies = $this->get_legendary_garbage_movies(5, $is_following1>0?'following':'all', 'newest');
-        //$series = $this->get_legendary_garbage_series(5, $is_following2>0?'following':'all', 'newest');
         $series = $this->get_airing_series('watch later');
         $f_watch_later = 'watch later';
         if($series->count()==0){
