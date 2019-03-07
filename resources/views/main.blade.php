@@ -148,8 +148,8 @@
 				    <span class="h5" ng-show="page_variables.active_tab_4=='follow'">{{ __('general.users') }}: {{ __('general.most_followed') }}</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='list';get_first_page_data(4);">{{ __('general.most_liked_commenters') }}</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';get_first_page_data(4);">{{ __('general.most_liked_list_creators') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='comment';get_first_page_data(4);">{{ __('general.most_liked_commenters') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='list';get_first_page_data(4);">{{ __('general.most_liked_list_creators') }}</button>
 			        <button class="dropdown-item" ng-click="page_variables.active_tab_4='follow';get_first_page_data(4);">{{ __('general.most_followed') }}</button>
 			    </div>
 			</div>
