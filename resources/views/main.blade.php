@@ -26,11 +26,11 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following1=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following1=='following'">{{ __('general.followings') }}</span>
 				<span ng-show="page_variables.f_following1=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following1='following';get_first_page_data(1);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following1='following';get_first_page_data(1);">{{ __('general.followings') }}</button>
 				<button class="dropdown-item" ng-click="page_variables.f_following1='all';get_first_page_data(1);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
@@ -85,11 +85,11 @@
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2!='on air'">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following2=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following2=='following'">{{ __('general.followings') }}</span>
 				<span ng-show="page_variables.f_following2=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following2='following';get_first_page_data(2);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following2='following';get_first_page_data(2);">{{ __('general.followings') }}</button>
 				<button class="dropdown-item" ng-click="page_variables.f_following2='all';get_first_page_data(2);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
@@ -157,12 +157,12 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following4='all'">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following4=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following4=='following'">{{ __('general.followings') }}</span>
 				<span ng-show="page_variables.f_following4=='follower'">{{ __('general.followers') }}</span>
 				<span ng-show="page_variables.f_following4=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following4='following';get_first_page_data(4);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following4='following';get_first_page_data(4);">{{ __('general.followings') }}</button>
 				<button class="dropdown-item" ng-click="page_variables.f_following4='follower';get_first_page_data(4);">{{ __('general.followers') }}</button>
 				<button class="dropdown-item" ng-click="page_variables.f_following4='all';get_first_page_data(4);">{{ __('general.all_users') }}</button>
 			</div>
@@ -194,11 +194,11 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following5='all'">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following5=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following5=='following'">{{ __('general.followings') }}</span>
 				<span ng-show="page_variables.f_following5=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following5='following';get_first_page_data(5);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following5='following';get_first_page_data(5);">{{ __('general.followings') }}</button>
 				<button class="dropdown-item" ng-click="page_variables.f_following5='all';get_first_page_data(5);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
@@ -229,11 +229,11 @@
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following6='all'">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_following6=='following'">{{ __('general.following') }}</span>
+				<span ng-show="page_variables.f_following6=='following'">{{ __('general.followings') }}</span>
 				<span ng-show="page_variables.f_following6=='all'">{{ __('general.all_users') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_following6='following';get_first_page_data(6);">{{ __('general.following') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_following6='following';get_first_page_data(6);">{{ __('general.followings') }}</button>
 				<button class="dropdown-item" ng-click="page_variables.f_following6='all';get_first_page_data(6);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
