@@ -32,7 +32,7 @@
 					<div class="text-white">
 						<small>{{ __('general.last_voter') }}</small>
 						<div><span class="text-warning break-word">@{{movie.last_voter_name}}</span></div>
-						<small>@{{movie.updated_at}} {{ timeAgo(__('general.ago')) }}</small>
+						<small>@{{timeAgo(movie.updated_a)t}} {{ __('general.ago') }}</small>
 					</div>
 				</div>
 			</div>
