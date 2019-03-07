@@ -291,7 +291,7 @@
 
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="cast" ng-show="series.credits.cast.length > 0" ng-hide="is_waiting">
+<div class="container-fluid px-0 mt-5" id="cast" ng-show="series.credits.cast.length > 0 && is_waiting!=true">
     <div class="px-3 px-md-0">
         <div class="h5">{{ __('general.actors') }}
         @if(Auth::check())
