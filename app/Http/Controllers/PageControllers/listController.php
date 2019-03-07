@@ -29,6 +29,8 @@ class listController extends Controller
     public function list($id)
     {
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
+        $hover_title = 'original_title';
+        $hover_name = 'original_name';
 
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
@@ -36,13 +38,8 @@ class listController extends Controller
             if(Auth::User()->hover_title_language == 0){
                 $hover_title = Auth::User()->secondary_lang.'_title';
                 $hover_name = Auth::User()->secondary_lang.'_name';
-            }else{
-                $hover_title = 'original_title';
-                $hover_name = 'original_name';
             }
         }else{
-            $hover_title = 'original_title';
-            $hover_title = 'original_name';
             $target = '_self';
             $watched_movie_number = null;
         }
