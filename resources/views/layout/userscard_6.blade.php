@@ -9,7 +9,7 @@
                             <div class="text-white">
                                 <small ng-if="page_variables.active_tab_4=='comment'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.like_count') }}</span><span ng-show="user.count>1">{{ __('general.like_counts') }}</span></small>
                                 <small ng-if="page_variables.active_tab_4=='list'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.like_count') }}</span><span ng-show="user.count>1">{{ __('general.like_counts') }}</span></small>
-                                <small ng-if="page_variables.active_tab_4=='follow'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.follower') }}</span><span ng-show="user.count>1">{{ __('general.followers') }}</span></small>
+                                <small ng-if="page_variables.active_tab_4=='follow'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.follower') }}</span><span ng-show="user.count>1">{{ __('general.follower_plural') }}</span></small>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                                     <div class="text-white">
                                         <small ng-if="page_variables.active_tab_4=='comment'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.like_count') }}</span><span ng-show="user.count>1">{{ __('general.like_counts') }}</span></small>
                                         <small ng-if="page_variables.active_tab_4=='list'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.like_count') }}</span><span ng-show="user.count>1">{{ __('general.like_counts') }}</span></small>
-                                        <small ng-if="page_variables.active_tab_4=='follow'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.follower') }}</span><span ng-show="user.count>1">{{ __('general.followers') }}</span></small>
+                                        <small ng-if="page_variables.active_tab_4=='follow'"><span class="h5 text-warning">@{{user.count}}</span> <span ng-show="user.count==1">{{ __('general.follower') }}</span><span ng-show="user.count>1">{{ __('general.follower_plural') }}</span></small>
                                     </div>
                                 </div>
                             </div>
