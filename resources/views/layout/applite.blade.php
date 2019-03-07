@@ -73,6 +73,9 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="/main"><i class="fas fa-home d-none d-md-inline"></i> {{ __('navbar.home') }}</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/recommendations"><i class="fa fa-th-list d-none d-md-inline"></i> {{ __('navbar.recommendations') }}</a>
                     </li>
                     <li class="nav-item">
@@ -146,6 +149,7 @@
                     <div class="py-2 small"><a class="text-dark" href="/donation">{{ __('navbar.donation') }}</a></div>
                 </div>
                 <div class="col col-sm-3 d-none d-sm-inline">
+                    <div class="py-2 small"><a class="text-dark" href="/main">{{ __('navbar.home') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/recommendations">{{ __('navbar.movie_recommendations') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/search">{{ __('navbar.movie_person_user_search') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a></div>
