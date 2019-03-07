@@ -100,7 +100,7 @@ else $theme='';
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-md-none {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/main"><i class="fas fa-home"></i><span class="d-none d-sm-inline"> {{ __('navbar.home') }}</span></a>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/"><i class="fas fa-home"></i><span class="d-none d-sm-inline"> {{ __('navbar.home') }}</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -120,6 +120,9 @@ else $theme='';
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/"><i class="fas fa-home d-none d-md-inline"></i> {{ __('navbar.home') }}</a>
+                    </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
                             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="recommendations"
@@ -235,6 +238,7 @@ else $theme='';
                     >{{ __('navbar.donation') }}</a></div>
                 </div>
                 <div class="col col-sm-3 d-none d-sm-inline">
+                    <div class="py-2 small"><a class="text-dark" href="/main">{{ __('navbar.home') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/recommendations">{{ __('navbar.movie_recommendations') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/search">{{ __('navbar.movie_person_user_search') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/profile/{{ Auth::user()->id }}">{{ __('navbar.profile') }}</a></div>
