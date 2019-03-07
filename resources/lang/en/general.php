@@ -31,6 +31,7 @@ return [
         'Airs <span class="h5 text-warning">today</span>',                                          //profile,
     'air_date' => 'Air date',                                                                       //profile,
     'all' => 'All',                                                                                 //profile,
+    'all_series' => 'All Series',                                                                   //main,
     'all_users' => 'All Users',                                                                     //main,
     'author' => 'Author',                                                                           //movie,
     'available' => 'Available',                                                                     //profile,
@@ -44,6 +45,7 @@ return [
     'bank_transfer' => 'Bank Transfer',                                                             //donation,
     'bitcoin' => 'Bitcoin',                                                                         //donation,
     'bitcoin_address' => 'Our Bitcoin Adress',                                                      //donation,
+    'born_today' => 'Born Today',                                                                   //main,
     'budget' => 'Budget',                                                                           //movie,
     'camera' => 'Camera',                                                                           //movie,
     'canceled' => 'Canceled',                                                                       //profile,series
@@ -61,6 +63,7 @@ return [
     'creators' => 'Creators',                                                                       //series,
     'crew' => 'Crew',                                                       
     'current_password' => 'Current Password',                                                       //accountpassword,
+    'died_today' => 'Death Anniversary',                                                            //main,
     'directing' => 'Directing',                                                                     //person
     'director' => 'Director',                                                                       //movie
     'directors' => 'Directors',                                                                     //movie
@@ -201,6 +204,7 @@ return [
         '{{from:suffix}} - {{to:suffix}} <span class="px-2">of</span> {{in:suffix}}',               //pagination,
     'password' => 'Password',                                                                       //login, register, account,
     'password_confirmation' => 'Password Confirmation',                                             //register,
+    'people' => 'People',                                                                           //main,
     'people_who_liked_this_also_liked' => 'Recommendations',                                        //series,
     'person' => 'Person',                                                                           //search,
     'personal_website' => 'Personal Link',                                                          //account           

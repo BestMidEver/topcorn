@@ -74,12 +74,12 @@
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2=='on air'">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
-				<span ng-show="page_variables.f_watch_later2=='watch later'">Watch Later</span>
-				<span ng-show="page_variables.f_watch_later2=='all'">All Series</span>
+				<span ng-show="page_variables.f_watch_later2=='watch later'">{{ __('watch_later') }}</span>
+				<span ng-show="page_variables.f_watch_later2=='all'">{{ __('all_series') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='watch later';get_first_page_data(2);">Watch Later</button>
-				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='all';get_first_page_data(2);">All Series</button>
+				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='watch later';get_first_page_data(2);">{{ __('watch_later') }}</button>
+				<button class="dropdown-item" ng-click="page_variables.f_watch_later2='all';get_first_page_data(2);">{{ __('all_series') }}</button>
 			</div>
 		</div>
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2!='on air'">
@@ -115,13 +115,13 @@
 		<div>
 			<div class="dropdown d-inline">
 			    <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle border-0 background-inherit nowrap mr-2 py-0 px-md-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.active_tab_3='born today'">
-				    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">People: Born Today</span>
-				    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">People: Died Today</span>
-				    <span class="h5" ng-show="page_variables.active_tab_3=='most popular'">People: Most Popular</span>
+				    <span class="h5" ng-show="page_variables.active_tab_3=='born today'">{{ __('people') }}: {{ __('born_today') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_3=='died today'">{{ __('people') }}: {{ __('died_today') }}</span>
+				    <span class="h5" ng-show="page_variables.active_tab_3=='most popular'">{{ __('people') }}: Most Popular</span>
 			    </button>
 			    <div class="dropdown-menu">
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data(3);">Born Today</button>
-			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='died today';get_first_page_data(3);">Died Today</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='born today';get_first_page_data(3);">{{ __('born_today') }}</button>
+			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='died today';get_first_page_data(3);">{{ __('died_today') }}</button>
 			        <button class="dropdown-item" ng-click="page_variables.active_tab_3='most popular';get_first_page_data(3);">Most Popular</button>
 			    </div>
 			</div>

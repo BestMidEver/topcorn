@@ -31,6 +31,7 @@ return [
         '<span class="h5 text-warning">Ma</span>',                                                      //profile,
     'air_date' => 'Megjelenés',                                                                         //profile,
     'all' => 'Mind',                                                                                    //profile,
+    'all_series' => 'All Series',                                                                   //main,////////////
     'all_users' => 'All Users',                                                                     //main,/////////////
     'author' => 'Szerző',                                                                               //movie
     'available' => 'Elérhető',                                                                          //profile,
@@ -44,6 +45,7 @@ return [
     'bank_transfer' => 'Banki átutalás',                                                                //donation,
     'bitcoin' => 'Bitcoin',                                                                             //donation,
     'bitcoin_address' => 'Bitcoin címünk',                                                              //donation,
+    'born_today' => 'Born Today',                                                                   //main,/////////////////
     'budget' => 'Költségvetés',                                                                         //movie
     'camera' => 'Kamera',                                                                               //movie
     'canceled' => 'Megszűnt',                                                                           //profile,series
@@ -61,6 +63,7 @@ return [
     'creators' => 'Alkotók',                                                                            //series,
     'crew' => 'Stáb',                           
     'current_password' => 'Jelenlegi jelszó',                                                           //accountpassword,
+    'died_today' => 'Death Anniversary',                                                                   //main,/////////////
     'directing' => 'Rendezés',                          
     'director' => 'Rendező',                                                                            //movie
     'directors' => 'Rendezők',                                                                          //movie
@@ -201,6 +204,7 @@ return [
         '{{from:suffix}} - {{to:suffix}} <span class="px-2">/</span> {{in:suffix}} találat',            //pagination,
     'password' => 'Jelszó',                                                                             //login, register, account,
     'password_confirmation' => 'Jelszó megerősítése',                                                   //register,
+    'people' => 'People',                                                                           //main,/////////////
     'people_who_liked_this_also_liked' => 'Akiknek ez tetszett, ezeket is kedvelték',                   //series,
     'person' => 'Személy',                                                                              //search,
     'personal_website' => 'Személyes link',                                                             //account

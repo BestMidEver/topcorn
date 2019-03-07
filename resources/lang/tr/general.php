@@ -31,6 +31,7 @@ return [
         '<span class="h5 text-warning">Bugün</span>',                                                   //profile,
     'air_date' => 'Yayın tarihi',                                                                       //profile,
     'all' => 'Hepsi',                                                                                   //profile,
+    'all_series' => 'Bütün Diziler',                                                                    //main,
     'all_users' => 'Bütün Kullanıcılar',                                                                //main,
     'author' => 'Yaratıcı',
     'available' => 'Yayınlanmış',                                                                       //profile,
@@ -44,6 +45,7 @@ return [
     'bank_transfer' => 'Banka Transferi',                                                               //donation,
     'bitcoin' => 'Bitcoin',                                                                             //donation,
     'bitcoin_address' => 'Bitcoin Adresimiz',                                                           //donation,
+    'born_today' => 'Bugün Doğan',                                                                      //main,
     'budget' => 'Bütçe',
     'camera' => 'Kameramanlık',                                                                         //movie,
     'canceled' => 'İptal edildi',                                                                       //profile,series
@@ -61,6 +63,7 @@ return [
     'creators' => 'Yaratıcılar',                                                                        //series,
     'crew' => 'Set Ekibi',          
     'current_password' => 'Şimdiki Şifre',                                                              //accountpassword,
+    'died_today' => 'Ölüm Yıldönümü',                                                                   //main,
     'directing' => 'Yönetmenlik',
     'director' => 'Yönetmen',
     'directors' => 'Yönetmenler',
@@ -201,6 +204,7 @@ return [
         '{{in:suffix}} <span class="pr-2"> sonuç içinde</span> {{from:suffix}} - {{to:suffix}}',        //pagination,
     'password' => 'Şifre',                                                                              //login, register, account,
     'password_confirmation' => 'Tekrar Şifre',                                                          //register
+    'people' => 'Kişiler',                                                                              //main,
     'people_who_liked_this_also_liked' => 'Bunu Beğenenlere Tavsiyeler',                                //series,movie,
     'person' => 'Kişi',                         
     'personal_website' => 'Kişisel İnternet Sitesi',                                                    //account           
