@@ -422,7 +422,7 @@
 </div>
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="pwhlal" ng-show="similar_movies.length > 0" ng-hide="is_waiting || similar_movies.length==0">
+<div class="container-fluid px-0 mt-5" id="pwhlal" ng-show="similar_movies.length > 0 && !(is_waiting || similar_movies.length==0)">
     <div class="dropdown d-inline">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="h5" ng-show="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>
