@@ -23,6 +23,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded1=false;iscast_movies1=false;toggle_collapse('collapseMovies1', 'collapse');scroll_to_top('scroll_to_top1');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div class="container-fluid" ng-show="iscast_movies1 && page_variables.active_tab_1!='now playing'">
+		@if(Auth::check())
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
@@ -34,6 +35,7 @@
 				<button class="dropdown-item" ng-click="page_variables.f_following1='all';get_first_page_data(1);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
+		@endif
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fas fa-sort-amount-down"></i>
@@ -71,6 +73,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;is_expanded2=false;iscast_movies2=false;toggle_collapse('collapseMovies2', 'collapse');scroll_to_top('scroll_to_top2');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div class="container-fluid" ng-show="iscast_movies2">
+		@if(Auth::check())
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2=='on air'">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fa fa-filter"></i>
@@ -93,6 +96,7 @@
 				<button class="dropdown-item" ng-click="page_variables.f_following2='all';get_first_page_data(2);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
+		@endif
 		<div class="dropdown d-inline" ng-show="page_variables.active_tab_2!='on air'">
 			<button class="btn btn-outline-secondary dropdown-toggle mr-2 mt-3" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<i class="fas fa-sort-amount-down"></i>
@@ -154,6 +158,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast4=false;is_expanded4=false;toggle_collapse('collapseMovies4', 'collapse');scroll_to_top('scroll_to_top4');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div class="container-fluid" ng-show="iscast4">
+		@if(Auth::check())
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following4='all'">
 				<i class="fa fa-filter"></i>
@@ -167,6 +172,7 @@
 				<button class="dropdown-item" ng-click="page_variables.f_following4='all';get_first_page_data(4);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
+		@endif
 	</div>
 	<div ng-show="users4.length>0">
     @include('layout.userscard_6', ['suffix' => '4'])
@@ -191,6 +197,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast_movies5=false;is_expanded5=false;toggle_collapse('collapseMovies5', 'collapse');scroll_to_top('scroll_to_top5');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div class="container-fluid" ng-show="iscast_movies5">
+		@if(Auth::check())
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following5='all'">
 				<i class="fa fa-filter"></i>
@@ -202,6 +209,7 @@
 				<button class="dropdown-item" ng-click="page_variables.f_following5='all';get_first_page_data(5);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
+		@endif
 	</div>
 	<div ng-show="reviews5.length>0">
     @include('layout.reviews_6', ['suffix' => '5'])
@@ -226,6 +234,7 @@
 		<button class="btn btn-outline-secondary addblack border-0" data-toggle="tooltip" data-placement="top" title="{{ __('general.compress') }}" ng-click="page_variables.expanded=-1;iscast6=false;is_expanded6=false;toggle_collapse('collapseMovies6', 'collapse');scroll_to_top('scroll_to_top6');" ng-show="page_variables.expanded!=-1"><div><i class="fas fa-compress-arrows-alt"></i></div></button>
 	</div>
 	<div class="container-fluid" ng-show="iscast6">
+		@if(Auth::check())
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle mt-3 mr-2" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-init="page_variables.f_following6='all'">
 				<i class="fa fa-filter"></i>
@@ -237,6 +246,7 @@
 				<button class="dropdown-item" ng-click="page_variables.f_following6='all';get_first_page_data(6);">{{ __('general.all_users') }}</button>
 			</div>
 		</div>
+		@endif
 	</div>
 	<div ng-show="listes6.length>0">
 		@include('layout.listcard_6', ['suffix' => '6'])
