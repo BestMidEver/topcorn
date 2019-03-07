@@ -42,7 +42,7 @@
 										@if($liste[0]->sort != 0)
 										<span>@{{ movie.position }}.</span> 
 										@endif
-										@{{ movie.title }} <small class="text-muted" ng-if="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
+										@{{ movie.title }} <small class="text-muted" ng-show="movie.release_date.length > 0"><em>(@{{movie.release_date.substring(0, 4)}})</em></small></h6>
 								</a>
 							</div>
 							@if(Auth::check())
@@ -62,10 +62,10 @@
 									</a>
 								</div>
 
-								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-if="!movie.explanation && movie.overview.length > 0">
+								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-show="!movie.explanation && movie.overview.length > 0">
 									<div class="pr-1 pb-1 text-dark quote-line">@{{ movie.overview }}</div>
 								</div>
-								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-if="movie.explanation">
+								<div class="col-8 col-md-9 col-xl-10 lead lead-small" ng-show="movie.explanation">
 									<div class="pl-3 pr-1 pb-1 text-dark line-break">@{{ movie.explanation }}</div>
 								</div>
 							</div>
