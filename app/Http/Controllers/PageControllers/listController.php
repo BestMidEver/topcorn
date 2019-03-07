@@ -133,7 +133,8 @@ class listController extends Controller
             }else{
                 $movies = $temp
                 ->leftjoin('listitems', 'listitems.list_id', '=', 'listes.id')
-                ->join('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->leftjoin('movies', 'listitems.movie_id', '=', 'movies.id')
+                ->leftjoin('series', 'listitems.movie_id', '=', 'series.id')
                 ->select(
                     'listitems.id',
                     'listitems.position',
