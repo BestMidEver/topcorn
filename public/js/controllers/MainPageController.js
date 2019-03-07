@@ -13,16 +13,18 @@ MyApp.controller('MainPageController', function($scope, $http, $anchorScroll, ra
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////// SCROLL TO TOP ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-	rate.get_user_movies('movies')
-	.then(function(response){
-		console.log(response.data);
-		$scope.user_movies = response.data;
-	});
-	rate.get_user_movies('series')
-	.then(function(response){
-		console.log(response.data);
-		$scope.user_series = response.data;
-	});
+	if(pass.is_auth == 1){
+		rate.get_user_movies('movies')
+		.then(function(response){
+			console.log(response.data);
+			$scope.user_movies = response.data;
+		});
+		rate.get_user_movies('series')
+		.then(function(response){
+			console.log(response.data);
+			$scope.user_series = response.data;
+		});
+	}
 
 	$scope.prepeare_reviews = function(reviews){
 		_.each(reviews, function(review){
