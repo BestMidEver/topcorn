@@ -253,7 +253,9 @@ class mainController extends Controller
             DB::raw('COUNT(users.id) as count')
         )
         ->groupBy('users.id')
-        ->orderBy('count', 'desc');
+        ->orderBy('count', 'desc')
+        ->orderBy('users.last_login', 'desc')
+        ->orderBy('users.id', 'desc');
 
         if($mode == 'comment'){
             $users = $users
@@ -324,8 +326,7 @@ class mainController extends Controller
             DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, CURDATE()) AS age'),
             DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, people.deathday) AS died_age')
         )
-        ->orderBy('people.popularity', 'desc')
-        ->orderBy('people.last_login', 'desc');
+        ->orderBy('people.popularity', 'desc');
 
         if($mode == 'born today'){
             $people = $people
