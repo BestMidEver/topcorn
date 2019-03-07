@@ -375,7 +375,7 @@
 
 <!--Cast Section-->
 <div class="container-fluid px-0 mt-5" id="guest_stars" ng-show="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0 && page_variables.active_tab_1>0" ng-hide="is_waiting">
-    <div class="px-3 px-md-0"><div class="h5">{{ __('general.guest_stars') }}</div></div>
+    <div class="px-3 px-md-0"><div class="h5">{{ __('general.guest_stars') }} @{{page_variables.active_tab_1}}</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
             <div class="col-4 col-md-2 mt-4 px-2" ng-repeat="person in series.episodes[page_variables.active_tab_2-1].guest_stars | limitTo:6">
