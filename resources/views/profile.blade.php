@@ -218,25 +218,27 @@
 	</div>
 
 	<div class="d-inline" ng-show="active_tab=='get_lists'">
-		<div class="dropdown d-inline" ng-init="list_mod_title='{{ __('general.created_ones') }}';">
+		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				@{{list_mod_title}}
+				<span ng-show="follows_mode=='created_ones'">{{ __('general.created_ones') }}</span>
+				<span ng-show="follows_mode=='liked_ones'">{{ __('general.liked_ones') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.created_ones') }}';list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
-				<button class="dropdown-item" ng-click="list_mod_title='{{ __('general.liked_ones') }}';list_mode='liked_ones';get_first_page_data();">{{ __('general.liked_ones') }}</button>
+				<button class="dropdown-item" ng-click="list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
+				<button class="dropdown-item" ng-click="list_mode='liked_ones';get_first_page_data();">{{ __('general.liked_ones') }}</button>
 			</div>
 		</div>
 	</div>
 
 	<div class="d-inline" ng-show="active_tab=='get_follows'">
-		<div class="dropdown d-inline" ng-init="follow_mod_title='{{ __('general.followings') }}';">
+		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				@{{follow_mod_title}}
+				<span ng-show="follows_mode=='following'">{{ __('general.followings') }}</span>
+				<span ng-show="follows_mode=='followers'">{{ __('general.followers') }}</span>
 			</button>
 			<div class="dropdown-menu">
-				<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.followings') }}';follows_mode='following';get_first_page_data();">{{ __('general.followings') }}</button>
-				<button class="dropdown-item" ng-click="follow_mod_title='{{ __('general.followers') }}';follows_mode='followers';get_first_page_data();">{{ __('general.followers') }}</button>
+				<button class="dropdown-item" ng-click="follows_mode='following';get_first_page_data();">{{ __('general.followings') }}</button>
+				<button class="dropdown-item" ng-click="follows_mode='followers';get_first_page_data();">{{ __('general.followers') }}</button>
 			</div>
 		</div>
 	</div>

@@ -49,6 +49,7 @@ class RefreshSiteMapJob implements ShouldQueue
 ';
 
         $movies = DB::table('movies')
+        ->where('movies.popularity', '>', 3)
         ->select(
             'movies.id',
             'movies.original_title',
@@ -61,6 +62,7 @@ class RefreshSiteMapJob implements ShouldQueue
         }
 
         $seriess = DB::table('series')
+        ->where('series.popularity', '>', 3)
         ->select(
             'series.id',
             'series.original_name',

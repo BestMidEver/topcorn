@@ -57,11 +57,14 @@ MyApp.controller('ProfilePageController', function($scope, $http, $anchorScroll,
 		case '#!#Watch-Later':
 			$scope.active_tab = 'get_laters';
 			break;
-		case '#!#Ban':
+		case '#!#Hidden':
 			$scope.active_tab = 'get_bans';
 			break;
 		case '#!#Lists':
 			$scope.active_tab = 'get_lists';
+			break;
+		case '#!#Reviews':
+			$scope.active_tab = 'get_reviews';
 			break;
 		case '':
 			$scope.active_tab = 'get_rateds/all';
