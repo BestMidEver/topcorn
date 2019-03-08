@@ -8,6 +8,7 @@ return [
     'home' => 'Topcorn - Testre szabott filmjavaslatok',
     'login' => 'Bejelentkezés - Topcorn',
     'movie' => ' - Topcorn',
+    'main' => 'Topcorn',
     'notifications' => 'Értesítések - Topcorn',
     'register' => 'Regisztráció - Topcorn',
     'reset' => 'Elfelejtett jelszó - Topcorn',

@@ -8,6 +8,7 @@ return [
     'home' => 'Topcorn - Zevkinize Uygun Film Önerileri',
     'login' => 'Giriş Yap - Topcorn',
     'movie' => ' - Topcorn',
+    'main' => 'Ana Sayfa - Topcorn',
     'notifications' => 'Bildirimler - Topcorn',
     'register' => 'Profil Oluştur - Topcorn',
     'reset' => 'Şifremi Unuttum - Topcorn',
