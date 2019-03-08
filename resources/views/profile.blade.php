@@ -42,6 +42,11 @@
 								<i class="fas fa-heart mr-1"></i><div class="d-inline" >{{ $like_number }}</div>
 							</div>
 							@endif
+							@if($follow_number =! '0 / 0')
+							<div class="pl-2 pl-sm-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.follow_number') }}">
+								<i class="fas fa-users mr-1"></i></i><div class="d-inline" >{{ $follow_number }}</div>
+							</div>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -82,6 +87,11 @@
 						@if($like_number > 0)
 						<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.like_number') }}">
 							<i class="fas fa-heart"></i><div class="d-inline pl-1" >{{ $like_number }}</div>
+						</div>
+						@endif
+						@if($follow_number =! '0 / 0')
+						<div class="pl-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.follow_number') }}">
+							<i class="fas fa-users"></i><div class="d-inline pl-1" >{{ $follow_number }}</div>
 						</div>
 						@endif
 					</div>

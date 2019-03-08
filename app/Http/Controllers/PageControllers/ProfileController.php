@@ -53,6 +53,16 @@ class ProfileController extends Controller
             $profile_profile_pic = config('constants.image.thumb_nail')[$image_quality].$user->profile_pic;
         }
 
+        $follower_number = DB::table('follows')
+        ->where('follows.object_id', '=', $profile_user_id)
+        ->count();
+
+        $following_number = DB::table('follows')
+        ->where('follows.subject_id', '=', $profile_user_id)
+        ->count();
+
+        $follow_number = $follower_number.' / '.$following_number;
+
         $review_number = DB::table('reviews')
         ->where('reviews.user_id', '=', $profile_user_id)
         ->count();
@@ -79,7 +89,7 @@ class ProfileController extends Controller
 
         $like_number = $like_number + $comment_like_number;
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name', 'follow_id', 'is_following_you'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name', 'follow_id', 'is_following_you', 'follow_number'));
 	}
 
     public function get_rateds($rate, $user, $lang)
