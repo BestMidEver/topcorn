@@ -39,7 +39,7 @@
 							@endif
 							@if($like_number > 0)
 							<div class="pl-2 pl-sm-3" data-toggle="tooltip" data-placement="top" title="{{ __('general.like_number') }}">
-								<i class="fas fa-heart mr-1"></i><div class="d-inline" >{{ $follow_number }}</div>
+								<i class="fas fa-heart mr-1"></i><div class="d-inline" >{{ $like_number }}</div>
 							</div>
 							@endif
 							@if($follow_number =! '0 / 0')
