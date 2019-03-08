@@ -61,7 +61,7 @@ class ProfileController extends Controller
         ->where('follows.subject_id', '=', $profile_user_id)
         ->count();
 
-        $follow_number = $follower_number.' / '.$following_number;
+        $follow_number = $follower_number.'/'.$following_number;
 
         $review_number = DB::table('reviews')
         ->where('reviews.user_id', '=', $profile_user_id)

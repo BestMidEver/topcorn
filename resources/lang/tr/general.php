@@ -98,6 +98,7 @@ return [
     'finale_date' => 'Bitiş',                                                                           //series,
     'first_episode' => 'Başlangıç',                                                                     //profile,series,
     'follow' => 'Takip Et',                                                                             //profile,
+    'follow_number' => 'Takipçi sayısı / Takip edilen sayısı',                                          //main,
     'follows' => 'Takipler',                                                                            //profile,
     'follower' => 'Takipçi',                                                                            //main,
     'follower_plural' => 'Takipçi',                                                                     //main,

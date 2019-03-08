@@ -98,6 +98,7 @@ return [
     'finale_date' => 'Utolsó epizód',                                                                   //series,
     'first_episode' => 'Első epizód',                                                                   //profile,series,
     'follow' => 'Follow',                                                                           //profile,  ///////////////////
+    'follow_number' => 'Follower count / Following count',                                          //main,////////////////
     'follows' => 'Follows',                                                                         //profile,///////////////////
     'follower' => 'Follower',                                                                       //main,//////////////////
     'follower_plural' => 'Followers',                                                               //main,////////////////////
