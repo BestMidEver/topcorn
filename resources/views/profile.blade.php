@@ -230,8 +230,8 @@
 	<div class="d-inline" ng-show="active_tab=='get_lists'">
 		<div class="dropdown d-inline">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<span ng-show="follows_mode=='created_ones'">{{ __('general.created_ones') }}</span>
-				<span ng-show="follows_mode=='liked_ones'">{{ __('general.liked_ones') }}</span>
+				<span ng-show="list_mode=='created_ones'">{{ __('general.created_ones') }}</span>
+				<span ng-show="list_mode=='liked_ones'">{{ __('general.liked_ones') }}</span>
 			</button>
 			<div class="dropdown-menu">
 				<button class="dropdown-item" ng-click="list_mode='created_ones';get_first_page_data();">{{ __('general.created_ones') }}</button>
