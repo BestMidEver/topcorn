@@ -201,17 +201,26 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
 	$scope.quick_ban=function()
 	{
+		if($scope.quick_vote_mode == 'movies'){
+			f1 = 'add_ban';
+			f2 = 'un_ban';
+			v1 = 'ban_id';
+		}else{
+			f1 = 'series_add_ban';
+			f2 = 'series_un_ban';
+			v1 = 'id';
+		}
 		if($scope.modalmovie.ban_id == null){
-			rate.add_ban($scope.modalmovie.id)
+			rate[f1]($scope.modalmovie.id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.modalmovie.ban_id=response.data.data.ban_id;
+					$scope.modalmovie.ban_id=response.data.data[v1];
 					$scope.modify_movies($scope.modalmovie);
 				}
 			});
 		}else{
-			rate.un_ban($scope.modalmovie.ban_id)
+			rate[f2]($scope.modalmovie.ban_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
