@@ -126,17 +126,26 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
 	$scope.quick_later=function()
 	{
+		if($scope.quick_vote_mode == 'movie'){
+			f1 = 'add_later';
+			f2 = 'un_later';
+			v1 = 'later_id';
+		}else{
+			f1 = 'series_add_later';
+			f2 = 'series_un_later';
+			v1 = 'id';
+		}
 		if($scope.modalmovie.later_id == null){
-			rate.add_later($scope.modalmovie.id)
+			rate[f1]($scope.modalmovie.id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.modalmovie.later_id=response.data.data.later_id;
+					$scope.modalmovie.later_id=response.data.data[v1];
 					$scope.modify_movies($scope.modalmovie);
 				}
 			});
 		}else{
-			rate.un_later($scope.modalmovie.later_id)
+			rate[f2]($scope.modalmovie.later_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
