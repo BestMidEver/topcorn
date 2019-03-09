@@ -98,8 +98,8 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addban" ng-click="first_quick_vote('movies')">{{ __('general.p_movies') }}</button>
-				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addban" ng-click="first_quick_vote('series')">{{ __('general.p_series') }}</button>
+				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addban" ng-click="quick_vote_mode='movies';get_quick_rate(">{{ __('general.p_movies') }}</button>
+				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addban" ng-click="quick_vote_mode='series';get_quick_rate(">{{ __('general.p_series') }}</button>
 			</div>
 		</div>
 	</div>

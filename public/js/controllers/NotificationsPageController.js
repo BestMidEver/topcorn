@@ -75,13 +75,19 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
 	$scope.quickvote=function()
 	{
-		$scope.get_quick_rate();
+		if($scope.quick_vote_mode == 'movies') $scope.get_quick_rate();
+		else $scope.get_quick_rate_series();
 		$('#myModal').modal('show');
 	};
 
 	$scope.get_quick_rate=function()
 	{
-		rate.get_quick_rate(pass.lang)
+		if($scope.quick_vote_mode == 'movies'){
+			f1 = 'get_quick_rate';
+		}else{
+			f1 = 'get_quick_rate_series';
+		}
+		rate[f1](pass.lang)
 		.then(function(response){
 			console.log(response.data)
 			if(response.data.length>0){
@@ -93,6 +99,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 			}
 		});
 	};
+	$scope.quick_vote_mode='movies';
 	$scope.get_quick_rate();
 
 	$scope.next_quick_rate=function()

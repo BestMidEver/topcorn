@@ -264,6 +264,23 @@ MyApp.factory('rate', function($http) {
 
 
 
+    get_quick_rate_series = function(lang) 
+    {
+        return $http({
+			method: 'GET',
+			url: '/api/get_quick_rate_series/'+lang,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+    };
+
+
+
     get_watched_movie_number = function() 
     {
         return $http({
@@ -934,6 +951,7 @@ MyApp.factory('rate', function($http) {
     	get_notifications: get_notifications,
     	send_movie_to_user: send_movie_to_user,
     	get_quick_rate: get_quick_rate,
+    	get_quick_rate_series: get_quick_rate_series,
     	get_watched_movie_number: get_watched_movie_number,
     	get_profile_reviews: get_profile_reviews,
     	add_review: add_review,
