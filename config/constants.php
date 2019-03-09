@@ -7,7 +7,7 @@ return array(
 
 
 
-  'version' => 68,
+  'version' => 69,
 
 
 

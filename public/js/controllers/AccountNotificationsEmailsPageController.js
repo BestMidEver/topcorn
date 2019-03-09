@@ -7,15 +7,26 @@ MyApp.controller('AccountNotificationsEmailsPageController', function($scope, $h
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////// QUICK RATE /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
+	$scope.first_quick_vote=function()
+	{
+		$('#quick_vote_movies_or_series').modal('show');
+	};
+
 	$scope.quickvote=function()
 	{
+		$('#quick_vote_movies_or_series').modal('hide');
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
 	};
 
 	$scope.get_quick_rate=function()
 	{
-		rate.get_quick_rate(pass.lang)
+		if($scope.quick_vote_mode == 'movies'){
+			f1 = 'get_quick_rate';
+		}else{
+			f1 = 'get_quick_rate_series';
+		}
+		rate[f1](pass.lang)
 		.then(function(response){
 			console.log(response.data)
 			if(response.data.length>0){
@@ -27,6 +38,7 @@ MyApp.controller('AccountNotificationsEmailsPageController', function($scope, $h
 			}
 		});
 	};
+	$scope.quick_vote_mode='movies';
 	$scope.get_quick_rate();
 
 	$scope.next_quick_rate=function()
@@ -53,17 +65,26 @@ MyApp.controller('AccountNotificationsEmailsPageController', function($scope, $h
 
 	$scope.quick_later=function()
 	{
+		if($scope.quick_vote_mode == 'movies'){
+			f1 = 'add_later';
+			f2 = 'un_later';
+			v1 = 'later_id';
+		}else{
+			f1 = 'series_add_later';
+			f2 = 'series_un_later';
+			v1 = 'id';
+		}
 		if($scope.modalmovie.later_id == null){
-			rate.add_later($scope.modalmovie.id)
+			rate[f1]($scope.modalmovie.id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.modalmovie.later_id=response.data.data.later_id;
+					$scope.modalmovie.later_id=response.data.data[v1];
 					$scope.modify_movies($scope.modalmovie);
 				}
 			});
 		}else{
-			rate.un_later($scope.modalmovie.later_id)
+			rate[f2]($scope.modalmovie.later_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
@@ -77,12 +98,21 @@ MyApp.controller('AccountNotificationsEmailsPageController', function($scope, $h
 	$scope.quick_rate=function(rate_code)
 	{
 		console.log(rate_code)
+		if($scope.quick_vote_mode == 'movies'){
+			f1 = 'add_rate';
+			f2 = 'un_rate';
+			v1 = 'rated_id';
+		}else{
+			f1 = 'series_add_rate';
+			f2 = 'series_un_rate';
+			v1 = 'id';
+		}
 		if(rate_code != null){
-			rate.add_rate($scope.modalmovie.id, rate_code)
+			rate[f1]($scope.modalmovie.id, rate_code)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.modalmovie.rated_id=response.data.data.rated_id;
+					$scope.modalmovie.rated_id=response.data.data[v1];
 					$scope.modalmovie.rate_code=response.data.data.rate;
 					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
 					$(".tooltip").hide();
@@ -92,7 +122,7 @@ MyApp.controller('AccountNotificationsEmailsPageController', function($scope, $h
 				}
 			});
 		}else if(rate_code == null){
-			rate.un_rate($scope.modalmovie.rated_id)
+			rate[f2]($scope.modalmovie.rated_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
@@ -110,17 +140,26 @@ MyApp.controller('AccountNotificationsEmailsPageController', function($scope, $h
 
 	$scope.quick_ban=function()
 	{
+		if($scope.quick_vote_mode == 'movies'){
+			f1 = 'add_ban';
+			f2 = 'un_ban';
+			v1 = 'ban_id';
+		}else{
+			f1 = 'series_add_ban';
+			f2 = 'series_un_ban';
+			v1 = 'id';
+		}
 		if($scope.modalmovie.ban_id == null){
-			rate.add_ban($scope.modalmovie.id)
+			rate[f1]($scope.modalmovie.id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.modalmovie.ban_id=response.data.data.ban_id;
+					$scope.modalmovie.ban_id=response.data.data[v1];
 					$scope.modify_movies($scope.modalmovie);
 				}
 			});
 		}else{
-			rate.un_ban($scope.modalmovie.ban_id)
+			rate[f2]($scope.modalmovie.ban_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){

@@ -115,7 +115,7 @@ else $theme='';
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button class="nav-link d-md-none text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star"></i><span class="d-none d-sm-inline"> {{ __('navbar.sequentialvote') }}</span></button>
+                    <button class="nav-link d-md-none text-warning btn btn-link" ng-click="first_quick_vote()"><i class="far fa-star"></i><span class="d-none d-sm-inline"> {{ __('navbar.sequentialvote') }}</span></button>
                 </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -142,7 +142,7 @@ else $theme='';
                             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="quickvote"
                             @endif
                         >
-                        <button class="nav-link text-warning btn btn-link" ng-click="quickvote()"><i class="far fa-star d-none d-md-inline"></i> {{ __('navbar.sequentialvote') }}</button>
+                        <button class="nav-link text-warning btn btn-link" ng-click="first_quick_vote()"><i class="far fa-star d-none d-md-inline"></i> {{ __('navbar.sequentialvote') }}</button>
                         <div class="dropdown-divider d-md-none"></div>
                     </li>
                     <!--<li class="nav-item d-md-none {{ Request::segment(1) === 'profile' ? 'd-none' : null }}">

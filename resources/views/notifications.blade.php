@@ -73,9 +73,6 @@
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab=='old'}" ng-click="page_variables.active_tab='old';get_first_page_data();">{{ __('general.read') }}</button>
         </li>
-        <li class="nav-item">
-            <button class="btn btn-link nav-link text-muted"" ng-click="first_quick_vote();">{{ __('navbar.sequentialvote') }}</button>
-        </li>
     </ul>
 </div>
 <!-- Tabs Button -->
