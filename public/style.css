@@ -38,7 +38,7 @@ a:hover .text-hover-underline{text-decoration: underline!important;}
 .addprimary:hover {color:#007bff!important;background-color: #ececec;}, .fa{color:#007bff!important;}
 .addfacebook:hover {color:#4267b2!important;background-color: #ececec;}, .fa{color:#4267b2!important;}
 .addlike:hover {color:#4267b2!important;background-color: #ececec;}, .fa{color:#4267b2!important;}
-.addblack:hover {color:#000!important;background-color: #ececec;}, .fa{color:#000!important;}
+.addblack:hover {color:#000;background-color: #ececec;}, .fa{color:#000;}
 .btn-vot{background: #fff!important;color: #000!important;}
 .divfooter{position: absolute;bottom: .5rem!important;width: 100%;}
 .votecard .card-img{z-index: 5;}
