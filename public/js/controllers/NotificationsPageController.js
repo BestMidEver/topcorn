@@ -126,7 +126,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
 	$scope.quick_later=function()
 	{
-		if($scope.quick_vote_mode == 'movie'){
+		if($scope.quick_vote_mode == 'movies'){
 			f1 = 'add_later';
 			f2 = 'un_later';
 			v1 = 'later_id';
