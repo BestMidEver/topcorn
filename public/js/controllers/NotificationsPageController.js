@@ -159,12 +159,21 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 	$scope.quick_rate=function(rate_code)
 	{
 		console.log(rate_code)
+		if($scope.quick_vote_mode == 'movies'){
+			f1 = 'add_rate';
+			f2 = 'un_rate';
+			v1 = 'rated_id';
+		}else{
+			f1 = 'series_add_rate';
+			f2 = 'series_un_rate';
+			v1 = 'id';
+		}
 		if(rate_code != null){
-			rate.add_rate($scope.modalmovie.id, rate_code)
+			rate[f1]($scope.modalmovie.id, rate_code)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 201){
-					$scope.modalmovie.rated_id=response.data.data.rated_id;
+					$scope.modalmovie.rated_id=response.data.data[v1];
 					$scope.modalmovie.rate_code=response.data.data.rate;
 					$scope.previous_quick_rate_movie=$scope.modalmovies.shift();
 					$(".tooltip").hide();
@@ -174,7 +183,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 				}
 			});
 		}else if(rate_code == null){
-			rate.un_rate($scope.modalmovie.rated_id)
+			rate[f2]($scope.modalmovie.rated_id)
 			.then(function(response){
 				console.log(response);
 				if(response.status == 204){
