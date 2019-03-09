@@ -87,3 +87,20 @@
 	</div>
 </div>
 <img class="d-none" ng-src="{{config('constants.image.rate_modal')[$image_quality]}}@{{next_modalmovie.poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
+
+<div class="modal fade" id="quick_vote_movies_or_series" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h6 class="modal-title">{{ __('navbar.sequentialvote') }}</h6>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addban" ng-click="first_quick_vote('movies')">{{ __('general.p_movies') }}</button>
+				<button type="button" class="btn btn-outline-secondary border-0 btn-lg btn-block addban" ng-click="first_quick_vote('series')">{{ __('general.p_series') }}</button>
+			</div>
+		</div>
+	</div>
+</div>
