@@ -227,11 +227,11 @@ class RatedController extends Controller
         ->orderBy('count', 'DESC')
         ->select(
             'series.id as id',
-            'series.'.$hover_title.' as original_title',
+            'series.'.$hover_title.' as original_name',
             DB::raw('COUNT(*) as count'),
             'series.vote_average',
             'series.first_air_date',
-            'series.'.$lang.'_name as title',
+            'series.'.$lang.'_name as name',
             'series.'.$lang.'_poster_path as poster_path',
             'r2.id as rated_id',
             'r2.rate as rate_code',
@@ -259,10 +259,10 @@ class RatedController extends Controller
             })
             ->select(
                 'series.id as id',
-                'series.'.$hover_title.' as original_title',
+                'series.'.$hover_title.' as original_name',
                 'series.vote_average',
                 'series.first_air_date',
-                'series.'.$lang.'_name as title',
+                'series.'.$lang.'_name as name',
                 'series.'.$lang.'_poster_path as poster_path',
                 'series_rateds.id as rated_id',
                 'series_rateds.rate as rate_code',
