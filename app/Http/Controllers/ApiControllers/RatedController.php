@@ -197,6 +197,89 @@ class RatedController extends Controller
 
 
 
+    public function get_quick_rate_series($lang)
+    {
+        if(Auth::User()->hover_title_language == 0){
+            $hover_title = Auth::User()->secondary_lang.'_name';
+        }else{
+            $hover_title = 'original_name';
+        }
+
+        $return_val = DB::table('series_rateds')
+        ->where('series_rateds.rate', '>', 0)
+        ->join('series', 'series.id', '=', 'series_rateds.series_id')
+        ->leftjoin('series_rateds as r2', function ($join) {
+            $join->on('r2.series_id', '=', 'series.id')
+            ->where('r2.user_id', Auth::id());
+        })
+        ->where('r2.user_id', null)
+        ->leftjoin('laters', function ($join) {
+            $join->on('laters.series_id', '=', 'series.id')
+            ->where('laters.user_id', Auth::id());
+        })
+        ->where('laters.id', '=', null)
+        ->leftjoin('bans', function ($join) {
+            $join->on('bans.series_id', '=', 'series.id')
+            ->where('bans.user_id', Auth::id());
+        })
+        ->where('bans.id', '=', null)
+        ->groupBy('series.id')
+        ->orderBy('count', 'DESC')
+        ->select(
+            'series.id as id',
+            'series.'.$hover_title.' as original_title',
+            DB::raw('COUNT(*) as count'),
+            'series.vote_average',
+            'series.first_air_date',
+            'series.'.$lang.'_title as title',
+            'series.'.$lang.'_poster_path as poster_path',
+            'r2.id as rated_id',
+            'r2.rate as rate_code',
+            'laters.id as later_id',
+            'bans.id as ban_id'
+        )
+        ->take(10)->get();
+
+        if($return_val->count()) return $return_val;
+        else{
+            $return_val = DB::table('series')
+            ->leftjoin('series_rateds as series_rateds', function ($join) {
+            $join->on('series_rateds.series_id', '=', 'series.id')
+            ->where('series_rateds.user_id', Auth::id());
+            })
+            ->where('series_rateds.user_id', null)
+            ->leftjoin('laters', function ($join) {
+                $join->on('laters.series_id', '=', 'series.id')
+                ->where('laters.user_id', Auth::id());
+            })
+            ->where('laters.id', '=', null)
+            ->leftjoin('bans', function ($join) {
+                $join->on('bans.series_id', '=', 'series.id')
+                ->where('bans.user_id', Auth::id());
+            })
+            ->select(
+                'series.id as id',
+                'series.'.$hover_title.' as original_title',
+                'series.vote_average',
+                'series.first_air_date',
+                'series.'.$lang.'_title as title',
+                'series.'.$lang.'_poster_path as poster_path',
+                'series_rateds.id as rated_id',
+                'series_rateds.rate as rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            )
+            ->where('bans.id', '=', null)
+            ->inRandomOrder();
+
+            return $return_val->take(50)->get();
+        }
+        
+    }
+
+
+
+
     public function get_watched_movie_number()
     {
         return Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();

@@ -261,6 +261,7 @@ Route::apiResource('api/laters','ApiControllers\LaterController');
 Route::apiResource('api/rateds','ApiControllers\RatedController');
 Route::get('api/search_users/{text?}','ApiControllers\SearchController@search_users');
 Route::get('api/get_quick_rate/{lang}','ApiControllers\RatedController@get_quick_rate');
+Route::get('api/get_quick_rate_series/{lang}','ApiControllers\RatedController@get_quick_rate_series');
 Route::get('api/get_watched_movie_number','ApiControllers\RatedController@get_watched_movie_number');
 Route::get('api/suck_movie/{movie_id}','ApiControllers\JobController@suck_movie');
 Route::get('api/suck_series/{series_id}','ApiControllers\JobController@suck_series');
