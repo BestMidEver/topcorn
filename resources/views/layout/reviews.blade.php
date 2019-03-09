@@ -2,7 +2,7 @@
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<span class="mb-0 pr-2 align-middle mt-3">{{ __('general.reviews') }}</span>
 		@if(Auth::check())
-		<button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-secondary addblack border-0" ng-click="setFocus('input_review')"
+		<button data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-secondary addban border-0" ng-click="setFocus('input_review')"
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="review"
             	@endif
