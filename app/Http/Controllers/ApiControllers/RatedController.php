@@ -213,16 +213,16 @@ class RatedController extends Controller
             ->where('r2.user_id', Auth::id());
         })
         ->where('r2.user_id', null)
-        ->leftjoin('laters', function ($join) {
-            $join->on('laters.series_id', '=', 'series.id')
-            ->where('laters.user_id', Auth::id());
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'series.id')
+            ->where('series_laters.user_id', Auth::id());
         })
-        ->where('laters.id', '=', null)
-        ->leftjoin('bans', function ($join) {
-            $join->on('bans.series_id', '=', 'series.id')
-            ->where('bans.user_id', Auth::id());
+        ->where('series_laters.id', '=', null)
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.series_id', '=', 'series.id')
+            ->where('series_bans.user_id', Auth::id());
         })
-        ->where('bans.id', '=', null)
+        ->where('series_bans.id', '=', null)
         ->groupBy('series.id')
         ->orderBy('count', 'DESC')
         ->select(
@@ -235,8 +235,8 @@ class RatedController extends Controller
             'series.'.$lang.'_poster_path as poster_path',
             'r2.id as rated_id',
             'r2.rate as rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
         )
         ->take(10)->get();
 
@@ -248,14 +248,14 @@ class RatedController extends Controller
             ->where('series_rateds.user_id', Auth::id());
             })
             ->where('series_rateds.user_id', null)
-            ->leftjoin('laters', function ($join) {
-                $join->on('laters.series_id', '=', 'series.id')
-                ->where('laters.user_id', Auth::id());
+            ->leftjoin('series_laters', function ($join) {
+                $join->on('series_laters.series_id', '=', 'series.id')
+                ->where('series_laters.user_id', Auth::id());
             })
-            ->where('laters.id', '=', null)
-            ->leftjoin('bans', function ($join) {
-                $join->on('bans.series_id', '=', 'series.id')
-                ->where('bans.user_id', Auth::id());
+            ->where('series_laters.id', '=', null)
+            ->leftjoin('series_bans', function ($join) {
+                $join->on('series_bans.series_id', '=', 'series.id')
+                ->where('series_bans.user_id', Auth::id());
             })
             ->select(
                 'series.id as id',
@@ -266,10 +266,10 @@ class RatedController extends Controller
                 'series.'.$lang.'_poster_path as poster_path',
                 'series_rateds.id as rated_id',
                 'series_rateds.rate as rate_code',
-                'laters.id as later_id',
-                'bans.id as ban_id'
+                'series_laters.id as later_id',
+                'series_bans.id as ban_id'
             )
-            ->where('bans.id', '=', null)
+            ->where('series_bans.id', '=', null)
             ->inRandomOrder();
 
             return $return_val->take(50)->get();
