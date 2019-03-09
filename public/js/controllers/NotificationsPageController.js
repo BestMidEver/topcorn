@@ -75,8 +75,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
 	$scope.quickvote=function()
 	{
-		if($scope.quick_vote_mode == 'movies') $scope.get_quick_rate();
-		else $scope.get_quick_rate_series();
+		$scope.get_quick_rate();
 		$('#myModal').modal('show');
 	};
 
