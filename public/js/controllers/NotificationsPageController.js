@@ -75,6 +75,7 @@ MyApp.controller('NotificationsPageController', function($scope, $http, $anchorS
 
 	$scope.quickvote=function()
 	{
+		$('#quick_vote_movies_or_series').modal('hide');
 		$scope.get_quick_rate();
 		$('#myModal').modal('show');
 	};
