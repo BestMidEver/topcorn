@@ -105,7 +105,7 @@ MyApp.controller('SeriesPageController', function($scope, $http, $sce, $anchorSc
 	$scope.implement_static_data = function(){
 		if($scope.page_variables.active_tab_1 == -1){
 			$scope.movie = $scope.series;
-			if($scope.series.networks.length>0) $scope.page_variables.network_logo = $scope.series.networks[0].logo_path.split('.')[0]+'.svg';
+			if($scope.series.networks.length>0) if($scope.series.networks[0].logo_path!=null) $scope.page_variables.network_logo = $scope.series.networks[0].logo_path.split('.')[0]+'.svg';
 		}
 	}
 
