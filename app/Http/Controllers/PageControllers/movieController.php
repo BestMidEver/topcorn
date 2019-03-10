@@ -20,12 +20,7 @@ class movieController extends Controller
 {
     public function movie($id, $lang = '', $secondary_lang='')
     {
-    	if($lang != ''){
-            App::setlocale($lang);
-            $local_lang = $lang;
-        }else{
-            $local_lang = App::getlocale();
-        }
+    	if($lang != '') App::setlocale($lang);
     	if($secondary_lang != '') session(['secondary_lang' => $secondary_lang]);
 
         $id_dash_title=$id;
@@ -77,7 +72,7 @@ class movieController extends Controller
         }
 
 
-    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_plot', 'local_lang', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'))->with('watch_togethers', $watch_togethers);
+    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_plot', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'))->with('watch_togethers', $watch_togethers);
     }
 
 

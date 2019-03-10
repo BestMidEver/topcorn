@@ -59,9 +59,9 @@ Watch trailer of series {{$series_name}} {{$series_year}}. Read summary, reviews
 @endsection
 
 @section('og_tags')
-<meta property="og:url" content="{{url('/')}}/series/{{$id}}"/>
+<meta property="og:url" content="{{url('/')}}/series/{{$id_dash_title}}/{{App::getlocale()}}"/>
 <meta property="og:title" content="{{$series_name}} ({{$series_year}})"/>
-<meta property="og:description" content="Check every detail of {{$series_name}} ({{$series_year}}). Read reviews, watch trailers. Find out series score based on your taste. And so on..."/>
+<meta property="og:description" content="{{$series_plot}}}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>

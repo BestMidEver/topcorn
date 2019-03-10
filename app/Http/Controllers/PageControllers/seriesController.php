@@ -12,6 +12,7 @@ class seriesController extends Controller
 {
     public function series($id, $lang = '', $secondary_lang='')
     {
+        if($lang != '') App::setlocale($lang);
         $id_dash_title=$id;
         $id=explode("-", $id)[0];
         if(!is_numeric($id)){
@@ -105,8 +106,8 @@ class seriesController extends Controller
             ->where('series.id', '=', $id);
             if($series->count() > 0){
                 $series = $series->first();
-                $series_name = $series->{$local_lang.'_name'};
-                $series_plot = $series->{$local_lang.'_plot'};
+                $series_name = $series->{App::getlocale().'_name'};
+                $series_plot = $series->{App::getlocale().'_plot'};
                 $series_en_name = $series->en_name != $series_name ? $series->en_name : '';
                 $series_tr_name = $series->tr_name != $series_name ? ($series->tr_name != $series_en_name ? $series->tr_name :'') : '';
                 $series_hu_name = $series->hu_name != $series_name ? ($series->hu_name != $series_en_name ? ($series->hu_name != $series_tr_name ? $series->hu_name :'') :'') : '';
