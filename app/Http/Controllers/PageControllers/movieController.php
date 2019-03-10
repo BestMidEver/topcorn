@@ -77,7 +77,7 @@ class movieController extends Controller
         }
 
 
-    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_plot', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'))->with('watch_togethers', $watch_togethers);
+    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_plot', 'local_lang', 'movie_en_title', 'movie_tr_title', 'movie_hu_title', 'movie_year', 'poster_path'))->with('watch_togethers', $watch_togethers);
     }
 
 
