@@ -32,7 +32,7 @@ class movieController extends Controller
             ->where('movies.id', '=', $id);
             if($movie->count() > 0){
                 $movie = $movie->first();
-                $movie_title = $movie->original_title;
+                $movie_title = $movie->{'original_title'};
                 $movie_en_title = $movie->en_title != $movie_title ? $movie->en_title : '';
                 $movie_tr_title = $movie->tr_title != $movie_title ? ($movie->tr_title != $movie_en_title ? $movie->tr_title :'') : '';
                 $movie_hu_title = $movie->hu_title != $movie_title ? ($movie->hu_title != $movie_en_title ? ($movie->hu_title != $movie_tr_title ? $movie->hu_title :'') :'') : '';
