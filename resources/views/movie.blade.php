@@ -131,7 +131,7 @@
 			<button type="button" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addban" ng-click="open_share_modal()"><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</button>
 			@endif
 			@if(Auth::guest())
-			<a ng-href="{{config('constants.facebook.share_website')}}/movie/{{$id}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook"><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</a>
+			<a ng-href="{{config('constants.facebook.share_website')}}/movie/{{$id}}/{{App::getlocale()}}" target="_blank" class="btn btn-outline-secondary btn-sm btn-block border-0 mt-0 px-lg-4 addfacebook"><div><i class="fas fa-share"></i></div>{{ __('general.share') }}</a>
             @endif
 		</div>
 	</div>
