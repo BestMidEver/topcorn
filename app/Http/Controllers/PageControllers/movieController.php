@@ -20,7 +20,12 @@ class movieController extends Controller
 {
     public function movie($id, $lang = '', $secondary_lang='')
     {
-    	if($lang != '') App::setlocale($lang);
+    	if($lang != ''){
+            App::setlocale($lang);
+            $local_lang = $lang;
+        }else{
+            $local_lang = App::getlocale();
+        }
     	if($secondary_lang != '') session(['secondary_lang' => $secondary_lang]);
 
         $id_dash_title=$id;
@@ -32,8 +37,8 @@ class movieController extends Controller
             ->where('movies.id', '=', $id);
             if($movie->count() > 0){
                 $movie = $movie->first();
-                $movie_title = $movie->{App::getlocale().'_title'};
-                $movie_plot = $movie->{App::getlocale().'_plot'};
+                $movie_title = $movie->{$local_lang.'_title'};
+                $movie_plot = $movie->{$local_lang.'_plot'};
                 $movie_en_title = $movie->en_title != $movie_title ? $movie->en_title : '';
                 $movie_tr_title = $movie->tr_title != $movie_title ? ($movie->tr_title != $movie_en_title ? $movie->tr_title :'') : '';
                 $movie_hu_title = $movie->hu_title != $movie_title ? ($movie->hu_title != $movie_en_title ? ($movie->hu_title != $movie_tr_title ? $movie->hu_title :'') :'') : '';
