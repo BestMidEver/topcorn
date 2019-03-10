@@ -12,7 +12,7 @@ class seriesController extends Controller
 {
     public function series($id, $lang = '', $secondary_lang='')
     {
-        $id_dash_name=$id;
+        $id_dash_title=$id;
         $id=explode("-", $id)[0];
         if(!is_numeric($id)){
             return redirect('/not-found');
@@ -121,6 +121,6 @@ class seriesController extends Controller
             }
         }
 
-    	return view('series', compact('id', 'id_dash_name', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent', 'last_seen_id', 'last_seen_season', 'last_seen_episode', 'poster_path'))->with('watch_togethers', $watch_togethers);
+    	return view('series', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_tr_name', 'series_hu_name', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent', 'last_seen_id', 'last_seen_season', 'last_seen_episode', 'poster_path'))->with('watch_togethers', $watch_togethers);
     }
 }
