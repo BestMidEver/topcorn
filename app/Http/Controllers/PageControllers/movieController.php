@@ -32,8 +32,8 @@ class movieController extends Controller
             ->where('movies.id', '=', $id);
             if($movie->count() > 0){
                 $movie = $movie->first();
-                $movie_title = $movie->{App::getlocale().'_title'};
-                $movie_plot = $movie->{App::getlocale().'_plot'};
+                $movie_title = $movie->{$lang==''?App::getlocale():$lang.'_title'};
+                $movie_plot = $movie->{$lang==''?App::getlocale():$lang.'_plot'};
                 $movie_en_title = $movie->en_title != $movie_title ? $movie->en_title : '';
                 $movie_tr_title = $movie->tr_title != $movie_title ? ($movie->tr_title != $movie_en_title ? $movie->tr_title :'') : '';
                 $movie_hu_title = $movie->hu_title != $movie_title ? ($movie->hu_title != $movie_en_title ? ($movie->hu_title != $movie_tr_title ? $movie->hu_title :'') :'') : '';
