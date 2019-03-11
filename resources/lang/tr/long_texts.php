@@ -45,5 +45,8 @@ return [
     ),
     'person' => array(
       'description' => 'Filmler, tv dizileri, görseller ve daha fazlası...',
+    ),
+    'profile' => array(
+      'description' => 'Beğendiği filmler, izlediği diziler, yazdığı yorumlar, oluşturduğu listeler ve daha fazlası...',
     )
 ];

@@ -44,5 +44,8 @@ return [
     ),
     'person' => array(
       'description' => 'Movies, tv series, images and more...',////////////////////////
+    ),
+    'profile' => array(
+      'description' => 'Movies, tv series, reviews, custom lists and more...',////////////
     )
 ]; 
