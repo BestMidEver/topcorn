@@ -64,7 +64,7 @@ class LoginController extends Controller
             $user = Auth::user();
             if($user->facebook_profile_pic == null){
                 $user->facebook_id = $userSocial->id;
-                $user->facebook_profile_pic = $userSocial->avatar;
+                $user->facebook_profile_pic = str_replace('picture?type=normal', 'picture?type=large', $userSocial->avatar);
                 $user->save();
             }
             return redirect($return_to);
@@ -76,7 +76,7 @@ class LoginController extends Controller
             $user->facebook_id = $userSocial->id;
             $user->lang = App::getlocale();
             $user->secondary_lang = Session::get('secondary_lang');
-            $user->facebook_profile_pic = $userSocial->avatar;
+            $user->facebook_profile_pic = str_replace('picture?type=normal', 'picture?type=large', $userSocial->avatar);
             $user->save();
             Auth::login($user, filter_var(session('remember_me'), FILTER_VALIDATE_BOOLEAN) );
             return redirect($return_to);
