@@ -26,7 +26,7 @@ class id_dash_personname
         if($request->id == $correct_url){
             return $next($request);
         }else{
-            return redirect('/profile/'.$correct_url);
+            return redirect('/person/'.$correct_url);
         }
     }
 }
