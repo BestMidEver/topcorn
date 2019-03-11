@@ -30,3 +30,16 @@ pass={
 @{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 {{ $profile_user_name.__('title.profile') }}
 @endsection
+
+@section('meta_description')
+{{$profile_user_name}} | {{ __('long_texts.profile.description') }}
+@endsection
+
+@section('og_tags')
+<meta property="og:url" content="{{url('/')}}/profile/{{$profile_user_id}}/{{App::getlocale()}}"/>
+<meta property="og:title" content="{{$profile_user_name}}"/>
+<meta property="og:description" content="{{ __('long_texts.profile.description') }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="{{$profile_profile_pic}}"/>
+<meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
+@endsection

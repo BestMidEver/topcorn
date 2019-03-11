@@ -38,7 +38,7 @@ pass={
 @endsection
 
 @section('meta_description')
-{{ __('long_texts.home.description') }}
+{{$person_data->name}}{{$person_data->age>0?' ('.$person_data->age.')':''}} | {{ __('long_texts.person.description') }}
 @endsection
 
 @section('og_tags')
