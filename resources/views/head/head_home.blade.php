@@ -11,6 +11,6 @@
 <meta property="og:title" content="{{ __('long_texts.home.h1') }}"/>
 <meta property="og:description" content="{{ __('long_texts.home.description') }}"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="{{url('/')}}images/examplecard_mac.png"/>
+<meta property="og:image" content="{{url('/')}}/images/examplecard_mac.png"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
 @endsection
