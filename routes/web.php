@@ -53,7 +53,7 @@ Route::get('home', 'PageControllers\DonationController@whatmovieshouldiwatch')->
 Route::get('/{lang?}', 'PageControllers\homeController@home')
 	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
 
-Route::get('person/{id}/{lang?}', 'PageControllers\personController@person')
+Route::get('person/{id}/{lang?}', 'PageControllers\personController@person')->middleware('id_dash_personname')
 	->where('lang', config('constants.supported_languages.for_web_php'));//AUTH
 
 Route::get('donation/{lang?}', 'PageControllers\DonationController@donate')
