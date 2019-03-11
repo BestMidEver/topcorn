@@ -27,13 +27,13 @@ pass={
 @endsection
 
 @section('meta_description')
-{{$liste[0]->entry_1}}
+{{$liste[0]->title}}
 @endsection
 
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/list/{{$id}}/{{App::getlocale()}}"/>
-<meta property="og:title" content="{{$liste[0]->entry_1}}"/>
-<meta property="og:description" content="{{ $liste[0]->entry_1 }}"/>
+<meta property="og:title" content="{{$liste[0]->title}}"/>
+<meta property="og:description" content="{{ $liste[0]->title }}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.thumb_nail')[2].$movies[0]->poster_path}}"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
