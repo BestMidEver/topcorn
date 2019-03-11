@@ -62,11 +62,11 @@ class LoginController extends Controller
             Auth::login($findUser, filter_var(session('remember_me'), FILTER_VALIDATE_BOOLEAN) );
 
             $user = Auth::user();
-            if($user->facebook_profile_pic == null){
+            //if($user->facebook_profile_pic == null){
                 $user->facebook_id = $userSocial->id;
                 $user->facebook_profile_pic = str_replace('picture?type=normal', 'picture?type=large', $userSocial->avatar);
                 $user->save();
-            }
+            //}
             return redirect($return_to);
         }else{
             $user = new User;
