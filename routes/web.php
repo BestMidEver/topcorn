@@ -51,7 +51,8 @@ Route::get('home', 'PageControllers\DonationController@whatmovieshouldiwatch')->
 ///////////////////////////////////////// OTHER PAGES ////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/{lang?}', 'PageControllers\homeController@home')
-	->where('lang', config('constants.supported_languages.for_web_php'));//PUBLIC
+	->where('lang', config('constants.supported_languages.for_web_php'))
+	->middleware('blog_if_not_logged_in');//PUBLIC
 
 Route::get('person/{id}/{lang?}', 'PageControllers\personController@person')->middleware('id_dash_personname')
 	->where('lang', config('constants.supported_languages.for_web_php'));//AUTH
