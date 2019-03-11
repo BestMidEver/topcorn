@@ -46,6 +46,6 @@ return [
       'description' => 'Movies, tv series, images and more...',
     ),
     'profile' => array(
-      'description' => 'Movies, tv series, reviews, custom lists and more...',
+      'description' => 'Favorite movies, tv series that are seen, reviews, custom lists and more...',
     )
 ];
