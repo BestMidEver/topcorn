@@ -42,7 +42,7 @@ pass={
 @endsection
 
 @section('og_tags')
-<meta property="og:url" content="{{url('/')}}/person/{{$id}}"/>
+<meta property="og:url" content="{{url('/')}}/person/{{$id_dash_title}}"/>
 <meta property="og:title" content="@{{person.name}} @{{age}}"/>
 <meta property="og:description" content="@{{person.place_of_birth}} - @{{person.birthday.length>0?person.birthday:''}}"/>
 <meta property="og:type" content="website"/>

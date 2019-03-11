@@ -15,6 +15,7 @@ class personController extends Controller
     	if($lang != '') App::setlocale($lang);
         $id_dash_title=$id;
         $id=explode("-", $id)[0];
+        $person_data = Person::Find($id);
 
         if(Auth::check()){
         	$image_quality = Auth::User()->image_quality;
@@ -30,6 +31,6 @@ class personController extends Controller
             $watched_movie_number = 0;
         }
 
-		return view('person', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number'));
+		return view('person', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number'))->with('person_data', $person_data);
 	}
 }
