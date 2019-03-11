@@ -25,3 +25,16 @@ pass={
 @{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 {{ $liste[0]->title.__('title.list') }}
 @endsection
+
+@section('meta_description')
+{{$liste[0]->entry_1}}
+@endsection
+
+@section('og_tags')
+<meta property="og:url" content="{{url('/')}}/list/{{$id}}/{{App::getlocale()}}"/>
+<meta property="og:title" content="{{$liste[0]->entry_1}}"/>
+<meta property="og:description" content="{{ $liste[0]->entry_1 }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="{{config('constants.image.original').$movies[0]->poster_path}}"/>
+<meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
+@endsection
