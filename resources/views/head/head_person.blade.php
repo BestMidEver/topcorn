@@ -43,7 +43,7 @@ pass={
 
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/person/{{$id_dash_title}}"/>
-<meta property="og:title" content="{{person_data->name}} @{{age}}"/>
+<meta property="og:title" content="{{$person_data->name}} @{{age}}"/>
 <meta property="og:description" content="@{{person.place_of_birth}} - @{{person.birthday.length>0?person.birthday:''}}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.thumb_nail')[$image_quality]}}@{{person.profile_path}}"/>
