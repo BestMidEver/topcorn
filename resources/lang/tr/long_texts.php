@@ -42,5 +42,8 @@ return [
       'sent_movie' => "<a ng-href=\"{{notification.data[0].notification_mode==4?'movie':'series'}}/{{notification.data[0].movie_id}}\" class=\"text-dark\" data-toggle=\"tooltip\" data-placement=\"top\" data-original-title=\"{{notification.data[0].original_title}} {{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}\">{{notification.data[0].title}}</a>, {{notification.total}} kullanıcı tarafından sana tavsiye edildi. {{notification.total>1?'Kullanıcılar':'Kullanıcı'}}: <span ng-repeat=\"item in notification.data\"><span ng-hide=\"&dollar;index==0\">, </span>{{item.user_name}}</span>",
       'watch_together' => "<a ng-href=\"profile/{{notification.data[0].user_id}}\" class=\"text-dark\">{{notification.data[0].user_name}}</a> seninle beraber izledi. Paylaş tuşunu kullanarak bu kullanıcıya film ve dizi önerebilirsin.",
       'started_following' => "<a ng-href=\"profile/{{notification.data[0].user_id}}\" class=\"text-dark\">{{notification.data[0].user_name}}</a> seni takibe başladı.",
+    ),
+    'person' => array(
+      'description' => 'Filmler, tv dizileri, görseller ve daha fazlası...',
     )
 ];

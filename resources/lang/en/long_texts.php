@@ -41,5 +41,8 @@ return [
       'sent_movie' => "{{notification.total}} {{notification.total>1?'users':'user'}} recommended <a ng-href=\"{{notification.data[0].notification_mode==4?'movie':'series'}}/{{notification.data[0].movie_id}}\" class=\"text-dark\" data-toggle=\"tooltip\" data-placement=\"top\" data-original-title=\"{{notification.data[0].original_title}} {{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}\">{{notification.data[0].title}}</a>. {{notification.total>1?'Users':'User'}}: <span ng-repeat=\"item in notification.data\"><span ng-hide=\"&dollar;index==0\">, </span>{{item.user_name}}</span>",
       'watch_together' => "<a ng-href=\"profile/{{notification.data[0].user_id}}\" class=\"text-dark\">{{notification.data[0].user_name}}</a> \"watch together\" with you. You can use share button to recommend movies and series to this user.",
       'started_following' => "<a ng-href=\"profile/{{notification.data[0].user_id}}\" class=\"text-dark\">{{notification.data[0].user_name}}</a> started following you.",
+    ),
+    'person' => array(
+      'description' => 'Movies, tv series, images and more...',
     )
 ];
