@@ -44,8 +44,8 @@ pass={
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/person/{{$id_dash_title}}"/>
 @if($person_data != null)
-<meta property="og:title" content="{{$person_data->name}}"/>
-<meta property="og:description" content="@{{person.place_of_birth}} - @{{person.birthday.length>0?person.birthday:''}}"/>
+<meta property="og:title" content="{{$person_data->name}}{{$person_data->age>0?' ('.$person_data->age.')':''}}"/>
+<meta property="og:description" content="{{ __('long_texts.person.description') }}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.thumb_nail')[$image_quality].$person_data->profile_path}}"/>
 @endif

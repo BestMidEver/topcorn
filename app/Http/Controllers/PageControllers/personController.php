@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\PageControllers;
 
 use App\Http\Controllers\Controller;
-use App\Model\Person;
 use App\Model\Rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -16,7 +15,12 @@ class personController extends Controller
     	if($lang != '') App::setlocale($lang);
         $id_dash_title=$id;
         $id=explode("-", $id)[0];
-        $person_data = Person::where('id', '=', $id);
+        $person_data = DB::table('people')
+        ->where('id', '=', $id)
+        ->select(
+            'people.*',
+            DB::raw('IF(people.deathday IS NULL, TIMESTAMPDIFF(YEAR, people.birthday, CURDATE()), TIMESTAMPDIFF(YEAR, people.birthday, people.deathday)) AS age')
+        );
         if($person_data->count() > 0){
             $person_data = $person_data->first();
         }else{
