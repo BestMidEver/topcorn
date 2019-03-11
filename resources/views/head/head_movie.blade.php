@@ -47,12 +47,12 @@ pass={
 @endsection
 
 @section('meta_description')
-Watch trailer of movie {{$movie_title}} {{$movie_year}}. Read summary, reviews and every detail. See full cast, director, writer, original title, original language, producers, budget, revenue, official website. English {{$movie_en_title}}, Türkçe {{$movie_tr_title}}, Magyar {{$movie_hu_title}}@endsection
+{{$movie_title}} ({{$movie_year}}) | {{$movie_plot}}}@endsection
 
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/movie/{{$id_dash_title}}/{{App::getlocale()}}"/>
 <meta property="og:title" content="{{$movie_title}} ({{$movie_year}})"/>
-<meta property="og:description" content="{{$movie_plot}}}"/>
+<meta property="og:description" content="{{$movie_plot}}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>

@@ -55,13 +55,12 @@ pass={
 @endsection
 
 @section('meta_description')
-Watch trailer of series {{$series_name}} {{$series_year}}. Read summary, reviews and every detail. See full cast, director, writer, original name, original language, producers, budget, revenue, official website. English {{$series_en_name}}, Türkçe {{$series_tr_name}}, Magyar {{$series_hu_name}}
-@endsection
+{{$series_name}} ({{$series_year}}) | {{$series_plot}}@endsection
 
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/series/{{$id_dash_title}}/{{App::getlocale()}}"/>
 <meta property="og:title" content="{{$series_name}} ({{$series_year}})"/>
-<meta property="og:description" content="{{$series_plot}}}"/>
+<meta property="og:description" content="{{$series_plot}}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.fb_https')}}{{$poster_path}}"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
