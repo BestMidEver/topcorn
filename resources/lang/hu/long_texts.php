@@ -31,6 +31,8 @@ return [
 
       'h4' => 'Teljesen ingyenes!',
       't41' => 'Mire vársz?',
+
+      'description' => 'Learn what to watch tonight, based on your taste. Filter movies with original language, release year, genre and vote count. Completely free',///////////////
     ),
     'notifications' => array(
       'air_date' => "<a ng-href=\"series/{{notification.data[0].movie_id}}\" class=\"text-dark\" data-toggle=\"tooltip\" data-placement=\"top\" data-original-title=\"{{notification.data[0].original_title}} {{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}\">{{notification.data[0].title}}</a> új epizód megjelenési dátuma meghatározott. Dátum: {{notification.data[0].next_episode_air_date.substring(0, 10)}} ({{notification.data[0].day_difference_next}} nap múlva)",

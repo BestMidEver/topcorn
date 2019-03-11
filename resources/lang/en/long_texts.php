@@ -31,6 +31,8 @@ return [
 
       'h4' => 'Completely free!',
       't41' => 'What are you waiting for?',
+
+      'description' => 'Movie and tv series recommendations, based on your unique taste. Filter with original languages, release years and genres. Completely free.',
     ),
     'notifications' => array(
       'air_date' => "<a ng-href=\"series/{{notification.data[0].movie_id}}\" class=\"text-dark\" data-toggle=\"tooltip\" data-placement=\"top\" data-original-title=\"{{notification.data[0].original_title}} {{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}\">{{notification.data[0].title}}</a> new episode air date is defined. Date: {{notification.data[0].next_episode_air_date.substring(0, 10)}} ({{notification.data[0].day_difference_next}} {{notification.data[0].day_difference_next>1?'days':'day'}} later)",

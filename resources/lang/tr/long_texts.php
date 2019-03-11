@@ -32,6 +32,8 @@ return [
 
       'h4' => 'Tamamen ücretsiz!',
       't41' => 'Daha ne duruyorsun?',
+
+      'description' => 'Eşsiz zevkine göre film ve dizi önerileri burada. Tamamen ücretsiz.',
     ),
     'notifications' => array(
       'air_date' => "<a ng-href=\"series/{{notification.data[0].movie_id}}\" class=\"text-dark\" data-toggle=\"tooltip\" data-placement=\"top\" data-original-title=\"{{notification.data[0].original_title}} {{notification.data[0].release_date.length>0?'('+notification.data[0].release_date.substring(0, 4)+')':''}}\">{{notification.data[0].title}}</a> yeni bölüm tarihi belirlendi. Tarih: {{notification.data[0].next_episode_air_date.substring(0, 10)}} ({{notification.data[0].day_difference_next}} gün sonra)",
