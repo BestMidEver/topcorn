@@ -26,8 +26,9 @@ class listController extends Controller
 
 
 
-    public function list($id)
+    public function list($id, $lang)
     {
+        if($lang != '') App::setlocale($lang);
         $image_quality = Auth::check() ? Auth::User()->image_quality : 1;
         $hover_title = 'original_title';
         $hover_name = 'original_name';
