@@ -31,7 +31,7 @@ pass={
 @endsection
 
 @section('og_tags')
-<meta property="og:url" content="{{url('/')}}/list/{{$id}}/{{App::getlocale()}}"/>
+<meta property="og:url" content="{{url('/')}}/list/{{$id}}"/>
 <meta property="og:title" content="{{$liste[0]->title}}"/>
 <meta property="og:description" content="{{ $liste[0]->title }}"/>
 <meta property="og:type" content="website"/>
