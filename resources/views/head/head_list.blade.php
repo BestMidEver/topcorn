@@ -33,7 +33,7 @@ pass={
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/list/{{$id}}"/>
 <meta property="og:title" content="{{$liste[0]->title}}"/>
-<meta property="og:description" content="{{ $liste[0]->title }}"/>
+<meta property="og:description" content="{{ $liste[0]->entry_1 }}"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="{{config('constants.image.thumb_nail')[2].$movies[0]->poster_path}}"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
