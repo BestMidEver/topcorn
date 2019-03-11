@@ -11,7 +11,7 @@ Learn what to watch tonight, based on your taste. Filter movies with original la
 <meta property="og:title" content="What movie should I watch tonight?"/>
 <meta property="og:description" content="Learn what to watch tonight, based on your taste. Filter movies with original language, release year, genre and vote count. Completely free"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="/images/godfather_feeling.png"/>
+<meta property="og:image" content="https://topcorn.io/images/godfather_feeling.png"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
 @endsection
 
