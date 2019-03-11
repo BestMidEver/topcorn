@@ -7,7 +7,7 @@
 @endsection
 
 @section('og_tags')
-<meta property="og:url" content="{{url('/')}}"/>
+<meta property="og:url" content="{{url('/')}}/{{App::getlocale()}}"/>
 <meta property="og:title" content="{{ __('long_texts.home.h1') }}"/>
 <meta property="og:description" content="{{ __('long_texts.home.description') }}"/>
 <meta property="og:type" content="website"/>
