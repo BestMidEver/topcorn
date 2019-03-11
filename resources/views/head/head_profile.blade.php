@@ -40,6 +40,6 @@ pass={
 <meta property="og:title" content="{{$profile_user_name}}"/>
 <meta property="og:description" content="{{ __('long_texts.profile.description') }}"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="{{$profile_profile_pic}}"/>
+<meta property="og:image" content="{{$quality_image}}"/>
 <meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
 @endsection
