@@ -16,7 +16,7 @@ class personController extends Controller
     	if($lang != '') App::setlocale($lang);
         $id_dash_title=$id;
         $id=explode("-", $id)[0];
-        $person_data = Person::Find($id);
+        $person_data = Person::FindOrFail($id);
 
         if(Auth::check()){
         	$image_quality = Auth::User()->image_quality;
