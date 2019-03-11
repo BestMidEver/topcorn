@@ -40,3 +40,14 @@ pass={
 @section('meta_description')
 {{ __('long_texts.home.description') }}
 @endsection
+
+@section('og_tags')
+<meta property="og:url" content="{{url('/')}}/person/{{$id_dash_title}}"/>
+@if($person_data != null)
+<meta property="og:title" content="{{$person_data->name}}"/>
+<meta property="og:description" content="@{{person.place_of_birth}} - @{{person.birthday.length>0?person.birthday:''}}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="{{config('constants.image.thumb_nail')[$image_quality].$person_data->profile_path}}"/>
+@endif
+<meta property="fb:app_id" content="{{config('constants.facebook.app_id')}}"/>
+@endsection
