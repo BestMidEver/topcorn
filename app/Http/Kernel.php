@@ -67,6 +67,7 @@ class Kernel extends HttpKernel
         'id_dash_seriesname' => \App\Http\Middleware\id_dash_seriesname::class,
         'id_dash_username' => \App\Http\Middleware\id_dash_username::class,
         'id_dash_listname' => \App\Http\Middleware\id_dash_listname::class,
+        'id_dash_personname' => \App\Http\Middleware\id_dash_personname::class,
         'blog_if_not_logged_in' => \App\Http\Middleware\blog_if_not_logged_in::class,
     ];
 }
