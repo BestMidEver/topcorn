@@ -328,7 +328,7 @@ else $theme='';
     </div>
 </div>
 @endif
-@if(Auth::id()>7 || Auth::id()!=33)
+@if(Auth::id()>7 && Auth::id()!=33)
 <script type="text/javascript">
 var infolinks_pid = 3165314;
 var infolinks_wsid = 0;
