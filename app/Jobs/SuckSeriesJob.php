@@ -85,7 +85,7 @@ class SuckSeriesJob implements ShouldQueue
                     })
                     ->whereRaw('series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL')
                     ->select('users.id as user_id', 'users.when_automatic_notification')
-                    ->get()
+                    ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
                 foreach ($items as $item) {
                     $notification = Notification::updateOrCreate(
@@ -209,7 +209,7 @@ class SuckSeriesJob implements ShouldQueue
                     })
                     ->whereRaw('series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL')
                     ->select('users.id as user_id', 'users.when_automatic_notification')
-                    ->get()
+                    ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
                 foreach ($items as $item) {
                     $notification = Notification::updateOrCreate(
