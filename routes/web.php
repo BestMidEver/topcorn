@@ -315,7 +315,7 @@ Route::get('test', function(){
                 ->where('series_rateds.series_id', '=', 1421)
                 ->where('series_rateds.rate', '>', 3);
             })
-            ->whereRaw('series_laters.id IS NOT NULL')
+            ->whereRaw('series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL')
             ->select('users.id as user_id', 'users.when_automatic_notification')
             ->get());
 });
