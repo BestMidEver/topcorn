@@ -315,7 +315,7 @@ Route::get('test', function(){
                 ->where('series_rateds.series_id', '=', 1421)
                 ->where('series_rateds.rate', '>', 3);
             })
-            ->groupBy('users.id')
+            //->groupBy('users.id')
             //->whereRaw('SUM(IF(series_laters.id IS NULL OR series_rateds.id IS NULL, 0, 1)) > 0')
             ->select('users.id as user_id', 'users.when_automatic_notification')
             ->get());
