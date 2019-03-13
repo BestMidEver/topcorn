@@ -310,6 +310,11 @@ Route::get('test', function(){
                 $join->on('series_laters.user_id', '=', 'users.id')
                 ->where('series_laters.series_id', '=', 1421);
             })
+            ->leftjoin('series_rateds', function ($join) {
+                $join->on('series_rateds.user_id', '=', 'users.id')
+                ->where('series_rateds.series_id', '=', 1421)
+                ->where('series_rateds.rate', '>', 3);
+            })
             ->select('users.id as user_id', 'users.when_automatic_notification')
             ->get());
 });
