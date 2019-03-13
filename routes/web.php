@@ -304,19 +304,12 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	return dd(DB::table('users')
-	->leftjoin('laters', 'laters.user_id', 'users.id')
-	->select(
-		'users.id',
-		'users.facebook_id',
-		'users.name',
-		'users.tt_navbar',
-		'users.tt_movie',
-        DB::raw('COUNT(laters.id) as later_count')
-	)
-	->groupBy('users.id')
-    ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
-	->paginate(20));
+	return dd(DB::table('series_laters')
+            ->where('series_laters.series_id', '=', $this->id)
+            ->join('users', 'users.id', '=', 'series_laters.user_id')
+            ->where('users.when_automatic_notification', '>', 0)
+            ->select('users.id as user_id', 'users.when_automatic_notification')
+            ->get());
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
