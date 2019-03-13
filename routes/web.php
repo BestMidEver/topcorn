@@ -305,19 +305,18 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
 	return dd(DB::table('users')
-           	->where('users.when_automatic_notification', '>', 0)
-            ->leftjoin('series_laters', function ($join) {
-                $join->on('series_laters.user_id', '=', 'users.id')
-                ->where('series_laters.series_id', '=', 1421);
-            })
-            ->leftjoin('series_rateds', function ($join) {
-                $join->on('series_rateds.user_id', '=', 'users.id')
-                ->where('series_rateds.series_id', '=', 1421)
-                ->where('series_rateds.rate', '>', 3);
-            })
-            ->whereRaw('series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL')
-            ->select('users.id as user_id', 'users.when_automatic_notification')
-            ->get());
+	->leftjoin('laters', 'laters.user_id', 'users.id')
+	->select(
+		'users.id',
+		'users.facebook_id',
+		'users.name',
+		'users.tt_navbar',
+		'users.tt_movie',
+        DB::raw('COUNT(laters.id) as later_count')
+	)
+	->groupBy('users.id')
+    ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
+	->paginate(20));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
