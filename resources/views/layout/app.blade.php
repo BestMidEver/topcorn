@@ -95,12 +95,12 @@ else $theme='';
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand p-0 ml-auto d-none d-md-inline" href="/">
+            <a class="navbar-brand p-0 ml-auto d-none d-md-inline" href="/main">
                 <img src="/images/topcorn_logo.png" class="nav-logo">
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link d-md-none {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/"><i class="fas fa-home"></i><span class="d-none d-sm-inline"> {{ __('navbar.home') }}</span></a>
+                    <a class="nav-link d-md-none {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/main"><i class="fas fa-home"></i><span class="d-none d-sm-inline"> {{ __('navbar.home') }}</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -121,7 +121,7 @@ else $theme='';
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item d-md-none">
-                        <a class="nav-link {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/"><i class="fas fa-home d-none d-md-inline"></i> {{ __('navbar.home') }}</a>
+                        <a class="nav-link {{ Request::segment(1) === 'main' ? 'active' : null }}" href="/main"><i class="fas fa-home d-none d-md-inline"></i> {{ __('navbar.home') }}</a>
                     </li>
                     <li class="nav-item"
                             @if(Auth::User()->tt_navbar < 50)
