@@ -304,10 +304,12 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	return dd(DB::table('series_laters')
-            ->where('series_laters.series_id', '=', 1421)
-            ->join('users', 'users.id', '=', 'series_laters.user_id')
-            ->where('users.when_automatic_notification', '>', 0)
+	return dd(DB::table('users')
+           	->where('users.when_automatic_notification', '>', 0)
+            ->leftjoin('series_laters', function ($join) {
+                $join->on('series_laters.user_id', '=', 'users.id')
+                ->where('series_laters.series_id', '=', 1421);
+            })
             ->select('users.id as user_id', 'users.when_automatic_notification')
             ->get());
 });
