@@ -97,16 +97,11 @@ class ProfileController extends Controller
     public function get_rateds($rate, $user, $lang)
     {
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_title = Auth::User()->secondary_lang.'_title';
-            }else{
-                $hover_title = 'original_title';
-            }
             $pagin=Auth::User()->pagination;
         }else{
-            $hover_title = 'original_title';
             $pagin=24;
         }
+        $hover_title = 'original_title';
 
         $return_val = DB::table('rateds')
         ->where('rateds.user_id', $user)
@@ -154,16 +149,11 @@ class ProfileController extends Controller
     public function get_laters($user, $lang)
     {
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_title = Auth::User()->secondary_lang.'_title';
-            }else{
-                $hover_title = 'original_title';
-            }
             $pagin=Auth::User()->pagination;
         }else{
-            $hover_title = 'original_title';
             $pagin=24;
         }
+        $hover_title = 'original_title';
 
         $return_val = DB::table('laters')
         ->where('laters.user_id', $user)
@@ -209,16 +199,11 @@ class ProfileController extends Controller
     public function get_bans($user, $lang)
     {
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_title = Auth::User()->secondary_lang.'_title';
-            }else{
-                $hover_title = 'original_title';
-            }
             $pagin=Auth::User()->pagination;
         }else{
-            $hover_title = 'original_title';
             $pagin=24;
         }
+        $hover_title = 'original_title';
 
         $return_val = DB::table('bans')
         ->where('bans.user_id', $user)
@@ -349,16 +334,11 @@ class ProfileController extends Controller
     public function get_series_laters($mode, $user, $lang)
     {
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_name = Auth::User()->secondary_lang.'_name';
-            }else{
-                $hover_name = 'original_name';
-            }
             $pagin=Auth::User()->pagination;
         }else{
-            $hover_name = 'original_name';
             $pagin=24;
         }
+        $hover_name = 'original_name';
 
         $return_val = DB::table('series_laters')
         ->where('series_laters.user_id', $user)
@@ -437,16 +417,11 @@ class ProfileController extends Controller
     public function get_series_rateds($rate, $user, $lang)
     {
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_name = Auth::User()->secondary_lang.'_name';
-            }else{
-                $hover_name = 'original_name';
-            }
             $pagin=Auth::User()->pagination;
         }else{
-            $hover_name = 'original_name';
             $pagin=24;
         }
+        $hover_name = 'original_name';
 
         $return_val = DB::table('series_rateds')
         ->where('series_rateds.user_id', $user)
@@ -494,16 +469,11 @@ class ProfileController extends Controller
     public function get_series_bans($user, $lang)
     {
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_name = Auth::User()->secondary_lang.'_name';
-            }else{
-                $hover_name = 'original_name';
-            }
             $pagin=Auth::User()->pagination;
         }else{
-            $hover_name = 'original_name';
             $pagin=24;
         }
+        $hover_name = 'original_name';
 
         $return_val = DB::table('series_bans')
         ->where('series_bans.user_id', $user)

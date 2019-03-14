@@ -116,11 +116,8 @@ class RatedController extends Controller
 
     public function get_quick_rate($lang)
     {
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
+
+        $hover_title = 'original_title';
 
         $return_val = DB::table('rateds')
         ->where('rateds.rate', '>', 0)
@@ -199,12 +196,8 @@ class RatedController extends Controller
 
     public function get_quick_rate_series($lang)
     {
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_name';
-        }else{
-            $hover_title = 'original_name';
-        }
-
+        $hover_title = 'original_name';
+        
         $return_val = DB::table('series_rateds')
         ->where('series_rateds.rate', '>', 0)
         ->join('series', 'series.id', '=', 'series_rateds.series_id')

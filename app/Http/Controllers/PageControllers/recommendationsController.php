@@ -50,11 +50,7 @@ class recommendationsController extends Controller
         $start = microtime(true);
 
         if(auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_title = Auth::User()->secondary_lang.'_title';
-            }else{
-                $hover_title = 'original_title';
-            }
+            $hover_title = 'original_title';
 
             $subq = DB::table('rateds')
             ->whereIn('rateds.user_id', $request->f_users)
@@ -231,11 +227,7 @@ class recommendationsController extends Controller
         $start = microtime(true);
 
         if(auth::check()){
-            if(Auth::User()->hover_title_language == 0){
-                $hover_name = Auth::User()->secondary_lang.'_name';
-            }else{
-                $hover_name = 'original_name';
-            }
+            $hover_name = 'original_name';
 
             $subq = DB::table('series_rateds')
             ->whereIn('series_rateds.user_id', $request->f_users)
@@ -392,11 +384,7 @@ class recommendationsController extends Controller
     {
         $start = microtime(true);
 
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-        }else{
-            $hover_title = 'original_title';
-        }
+        $hover_title = 'original_title';
 
         $subq = DB::table('rateds')
         ->whereIn('rateds.user_id', $request->f_users)
@@ -538,11 +526,7 @@ class recommendationsController extends Controller
     {
         $start = microtime(true);
 
-        if(Auth::User()->hover_title_language == 0){
-            $hover_name = Auth::User()->secondary_lang.'_name';
-        }else{
-            $hover_name = 'original_name';
-        }
+        $hover_name = 'original_name';
 
         $subq = DB::table('series_rateds')
         ->whereIn('series_rateds.user_id', $request->f_users)
@@ -695,7 +679,6 @@ class recommendationsController extends Controller
         $hover_title = 'original_title';
         $pagination = 24;
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0)$hover_title = Auth::User()->secondary_lang.'_title';
             $pagination = Auth::User()->pagination;
         }
 
@@ -857,7 +840,6 @@ class recommendationsController extends Controller
         $hover_name = 'original_name';
         $pagination = 24;
         if(Auth::check()){
-            if(Auth::User()->hover_title_language == 0)$hover_name = Auth::User()->secondary_lang.'_name';
             $pagination = Auth::User()->pagination;
         } 
 

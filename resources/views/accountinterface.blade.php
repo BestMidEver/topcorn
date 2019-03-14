@@ -100,24 +100,6 @@
 				        </div>
 				    </div>
 				</div>
-				<div class="row">
-				    <div class="col-md-3 field-label-responsive">
-				        <label for="hover_title_language" ng-mouseenter="hovering_hove=true" ng-mouseleave="hovering_hove=false" data-toggle="tooltip" data-placement="top" title="{{ __('long_texts.hint_hover_title') }}">{{ __('general.hover_title_language') }} <span ng-show="!hovering_hove"><i class="far fa-question-circle"></i></span><span ng-show="hovering_hove"><i class="fas fa-question-circle"></i></span></label>
-				    </div>
-				    <div class="col-md-6">
-				        <div class="form-group">
-				            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-				                <div class="input-group-prepend">
-				                	<div class="input-group-text" style="width: 2.6rem"><i class="fa fa-mouse-pointer"></i></div>
-				                </div>
-				                <select class="form-control" id="hover_title_language" name="hover_title_language" ng-model="hover_title_language" ng-change="check_save_disabled()">
-									<option value=1>{{ __('general.movies_original_language') }}</option>
-									<option value=0>{{ __('general.my_secondary_language') }}</option>
-								</select>
-				            </div>
-				        </div>
-				    </div>
-				</div>
 
 				<div class="row mt-3">
 				    <div class="col-md-3 field-label-responsive">

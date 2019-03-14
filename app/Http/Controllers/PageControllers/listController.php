@@ -35,10 +35,6 @@ class listController extends Controller
         if(Auth::check()){
             $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
             $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
-            if(Auth::User()->hover_title_language == 0){
-                $hover_title = Auth::User()->secondary_lang.'_title';
-                $hover_name = Auth::User()->secondary_lang.'_name';
-            }
         }else{
             $target = '_self';
             $watched_movie_number = null;
@@ -178,14 +174,9 @@ class listController extends Controller
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
 
-        if(Auth::User()->hover_title_language == 0){
-            $hover_title = Auth::User()->secondary_lang.'_title';
-            $hover_name = Auth::User()->secondary_lang.'_name';
-        }else{
-            $hover_title = 'original_title';
-            $hover_name = 'original_name';
-        }
-
+        $hover_title = 'original_title';
+        $hover_name = 'original_name';
+        
         $id_dash_title = $id;
         $id=explode("-", $id)[0];
         if($id == 'new'){

@@ -2,7 +2,6 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 {
 	$scope.lang=pass.lang;
 	$scope.secondary_lang=pass.secondary_lang;
-	$scope.hover_title_language=pass.hover_title_language;
 	$scope.image_quality=pass.image_quality;
 	$scope.margin_x_setting=pass.margin_x_setting;
 	$scope.theme=pass.theme;
@@ -17,7 +16,6 @@ MyApp.controller('AccountInterfacePageController', function($scope, $http, rate)
 		/*if(
 			(pass.lang != $scope.lang
 			|| pass.secondary_lang != $scope.secondary_lang
-			|| pass.hover_title_language != $scope.hover_title_language
 			|| pass.image_quality != $scope.image_quality
 			|| pass.margin_x_setting != $scope.margin_x_setting
 			|| pass.theme != $scope.theme

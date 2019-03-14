@@ -119,7 +119,6 @@ return [
     'highest_budget' => 'Highest Budget',                                                           //recommendations,
     'highest_revenue' => 'Highest Revenue',                                                         //recommendations,
     'hismovies' => 'Movies',                                                                        //person,
-    'hover_title_language' => 'Movie Tooltip',                                                      //accountinterface,
     'image' => 'image',                                                                             //person,
     'images' => 'images',                                                                           //person,
     'image_quality' => 'Image Quality',                                                             //accountinterface,

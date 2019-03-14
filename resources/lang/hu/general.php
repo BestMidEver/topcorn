@@ -119,7 +119,6 @@ return [
     'highest_budget' => 'Highest Budget',                                                               //recommendations,/////////////////////
     'highest_revenue' => 'Highest Revenue',                                                             //recommendations,/////////////////////
     'hismovies' => 'Filmjei',                                                                           //person
-    'hover_title_language' => 'Buboréksúgó',                                                            //accountinterface,
     'image' => 'képek',                                                                                 //person,
     'images' => 'képek',                                                                                //person,
     'image_quality' => 'Képminőség',                                                                    //accountinterface,
