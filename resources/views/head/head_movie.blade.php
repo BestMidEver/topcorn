@@ -69,7 +69,7 @@ pass={
 @endsection
 
 if(Auth::check())
-if(Auth::id()==7)
+	if(Auth::id()==7)
 @section('amazon_affiliate')
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
@@ -86,5 +86,5 @@ amzn_assoc_linkid = "9fa35a0684981b57cbea8dc44a110ce7";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 @endsection
-@endif
+	@endif
 @endif
