@@ -202,8 +202,7 @@
 </div>
 <!--Poster Plot Details Section-->
 
-
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+<div id="amazon-div"></div>
 
 <!--Cast Section-->
 <div
