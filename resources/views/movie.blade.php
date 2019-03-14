@@ -202,7 +202,6 @@
 </div>
 <!--Poster Plot Details Section-->
 
-<div>
 	<script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_search_bar = "false";
@@ -216,7 +215,6 @@ amzn_assoc_default_search_phrase = "one punch man";
 amzn_assoc_default_category = "All";
 amzn_assoc_linkid = "9fa35a0684981b57cbea8dc44a110ce7";
 </script>
-</div>
 
 <!--Cast Section-->
 <div
