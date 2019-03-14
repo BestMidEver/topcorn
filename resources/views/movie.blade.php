@@ -202,7 +202,8 @@
 </div>
 <!--Poster Plot Details Section-->
 
-<div id="amzn_assoc_ad_div_lalala_0"></div>
+
+    @yield('amazon_affiliate')
 
 <!--Cast Section-->
 <div

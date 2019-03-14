@@ -64,7 +64,6 @@
 
     @yield('adsense')
 
-    @yield('amazon_affiliate')
     
 </head>
 
