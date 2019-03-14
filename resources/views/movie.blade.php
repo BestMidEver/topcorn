@@ -202,7 +202,7 @@
 </div>
 <!--Poster Plot Details Section-->
 
-<div id="amzn_assoc_ad_div_adunit0_0">
+<div>
 	<script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_search_bar = "false";
