@@ -68,7 +68,7 @@ pass={
 </script>-->
 @endsection
 
-@section('adsense')
+@section('amazon_affiliate')
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_search_bar = "false";
