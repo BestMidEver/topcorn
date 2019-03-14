@@ -82,7 +82,7 @@ amzn_assoc_default_search_phrase = "{{$movie_en_title}}";
 amzn_assoc_default_category = "All";
 amzn_assoc_design = "in_content";
 amzn_assoc_linkid = "19df56684bc54ebd75ff6227dcf5fca8";
-amzn_assoc_title = "my add";
+amzn_assoc_title = "";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 	@endif
