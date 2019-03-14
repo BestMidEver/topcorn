@@ -202,7 +202,7 @@
 </div>
 <!--Poster Plot Details Section-->
 
-<div id="amzn-native-ad-0"></div>
+<div id="amzn_assoc_ad_div_lalala_0"></div>
 
 <!--Cast Section-->
 <div
