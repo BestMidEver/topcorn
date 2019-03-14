@@ -5,11 +5,6 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.notifications') }}</h1>
 
-<div class="my-2 d-flex justify-content-center">
-    <input type="hidden" name="IL_IN_ARTICLE">
-</div>
-
-
 
 
 <!-- Page Body -->
