@@ -884,4 +884,18 @@ console.log(pass)
 //////////////////////////////////////// TUTORIAL ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 	}
+
+	AmazonEmbededCode(){
+		amzn_assoc_placement = "adunit0";
+		amzn_assoc_tracking_id = "topcornio-20";
+		amzn_assoc_ad_mode = "search";
+		amzn_assoc_ad_type = "smart";
+		amzn_assoc_marketplace = "amazon";
+		amzn_assoc_region = "US";
+		amzn_assoc_default_search_phrase = "memento 2000";
+		amzn_assoc_default_category = "All";
+		amzn_assoc_design = "in_content";
+		amzn_assoc_linkid = "19df56684bc54ebd75ff6227dcf5fca8";
+		amzn_assoc_title = "my add";
+	}
 });

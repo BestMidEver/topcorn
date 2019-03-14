@@ -69,5 +69,5 @@ pass={
 @endsection
 
 @section('amazon_affiliate')
-
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 @endsection
