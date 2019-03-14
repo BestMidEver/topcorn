@@ -202,7 +202,6 @@
 </div>
 <!--Poster Plot Details Section-->
 
-<div id="amzn_assoc_ad_div_adunit0_0">
 	<script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_search_bar = "false";
@@ -217,7 +216,6 @@ amzn_assoc_default_category = "All";
 amzn_assoc_linkid = "9fa35a0684981b57cbea8dc44a110ce7";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-</div>
 
 <!--Cast Section-->
 <div
