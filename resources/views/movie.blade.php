@@ -202,7 +202,7 @@
 </div>
 <!--Poster Plot Details Section-->
 
-<div id="amazon-div"></div>
+<div id="amzn_assoc_ad_div_adunit0_0"></div>
 
 <!--Cast Section-->
 <div
