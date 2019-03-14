@@ -202,13 +202,7 @@
 </div>
 <!--Poster Plot Details Section-->
 
-@if(Auth::check())
-	@if(Auth::id()==7)
-<div className="amazon-div" onLoad={this.AmazonEmbededCode()}>
-    embed code here...
- </div>
-	@endif
-@endif
+<div id="amzn_assoc_ad_div_lalala_0"></div>
 
 <!--Cast Section-->
 <div
