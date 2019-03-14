@@ -7,8 +7,6 @@
 
 
 
-@if(Auth::check())
-	@if(Auth::id()==7)
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_tracking_id = "topcornio-20";
@@ -23,8 +21,6 @@ amzn_assoc_linkid = "19df56684bc54ebd75ff6227dcf5fca8";
 amzn_assoc_title = "my add";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-	@endif
-@endif
 
 
 <!-- Tabs Button -->
