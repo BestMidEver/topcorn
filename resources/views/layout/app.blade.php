@@ -223,7 +223,24 @@ else $theme='';
         @show
     </div>
 
-
+@if(Auth::check())
+    @if(Auth::id()==7)
+<script type="text/javascript">
+amzn_assoc_placement = "lalala";
+amzn_assoc_tracking_id = "topcornio-20";
+amzn_assoc_ad_mode = "search";
+amzn_assoc_ad_type = "smart";
+amzn_assoc_marketplace = "amazon";
+amzn_assoc_region = "US";
+amzn_assoc_default_search_phrase = "memento 2000";
+amzn_assoc_default_category = "All";
+amzn_assoc_linkid = "dca82953eb9275f59d2c24ecbc031c54";
+amzn_assoc_search_bar = "false";
+amzn_assoc_title = "";
+</script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+    @endif
+@endif
 
 
     <footer class="footer">
@@ -329,24 +346,6 @@ else $theme='';
         <a class="btn btn-sm btn-link d-inline" href="#navbar-tooltips-all-done">{{ __("tutorial.understood") }}</a>
     </div>
 </div>
-@endif
-@if(Auth::check())
-    @if(Auth::id()==7)
-<script type="text/javascript">
-amzn_assoc_placement = "lalala";
-amzn_assoc_tracking_id = "topcornio-20";
-amzn_assoc_ad_mode = "search";
-amzn_assoc_ad_type = "smart";
-amzn_assoc_marketplace = "amazon";
-amzn_assoc_region = "US";
-amzn_assoc_default_search_phrase = "memento 2000";
-amzn_assoc_default_category = "All";
-amzn_assoc_linkid = "dca82953eb9275f59d2c24ecbc031c54";
-amzn_assoc_search_bar = "false";
-amzn_assoc_title = "";
-</script>
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
-    @endif
 @endif
 </body>
 </html>
