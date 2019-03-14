@@ -68,8 +68,8 @@ pass={
 </script>-->
 @endsection
 
-if(Auth::check())
-	if(Auth::id()==7)
+@if(Auth::check())
+	@if(Auth::id()==7)
 @section('amazon_affiliate')
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
