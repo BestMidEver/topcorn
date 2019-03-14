@@ -202,7 +202,19 @@
 </div>
 <!--Poster Plot Details Section-->
 
-<div id="adunit0"></div>
+<script type="text/javascript">
+amzn_assoc_placement = "adunit0";
+amzn_assoc_search_bar = "false";
+amzn_assoc_tracking_id = "topcornio-20";
+amzn_assoc_ad_mode = "search";
+amzn_assoc_ad_type = "smart";
+amzn_assoc_marketplace = "amazon";
+amzn_assoc_region = "US";
+amzn_assoc_title = "Shop Related Products";
+amzn_assoc_default_search_phrase = "one punch man";
+amzn_assoc_default_category = "All";
+amzn_assoc_linkid = "9fa35a0684981b57cbea8dc44a110ce7";
+</script>
 
 <!--Cast Section-->
 <div
