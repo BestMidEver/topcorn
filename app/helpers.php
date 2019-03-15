@@ -63,24 +63,24 @@ function amazon_variables_general() {
         ->where('rateds.rate', '=', 5)
         ->groupBy('movies.id')
         ->join('movies', 'movies.id', '=', 'rateds.movie_id')
-        ->select('movies.en_title as title')
-        ->inRandomOrder()
-        ->first();
+        ->select('movies.en_title as title');
         if(Auth::check()){
             $search_query = $search_query
-            ->where('rateds.user_id', '=', Auth::id());
+            ->where('rateds.user_id', '=', Auth::id())
+            ->inRandomOrder()
+            ->first();
         }
     }else{
         $search_query = DB::table('series_rateds')
         ->where('series_rateds.rate', '=', 5)
         ->groupBy('series.id')
         ->join('series', 'series.id', '=', 'series_rateds.series_id')
-        ->select('series.en_name as title')
-        ->inRandomOrder()
-        ->first();
+        ->select('series.en_name as title');
         if(Auth::check()){
             $search_query = $search_query
-            ->where('series_rateds.user_id', '=', Auth::id());
+            ->where('series_rateds.user_id', '=', Auth::id())
+            ->inRandomOrder()
+            ->first();
         }
     }
 
