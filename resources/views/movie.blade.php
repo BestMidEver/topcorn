@@ -205,6 +205,7 @@
 
     @yield('amazon_affiliate')
 
+
 <!--Cast Section-->
 <div
 			@if(Auth::check())
@@ -297,7 +298,7 @@
 <!--Cast Section-->
 
 @include('layout.reviews')
-
+@yield('amazon_affiliate_2')
 
 <!--People Who Liked Also Liked Section-->
 <div class="container-fluid px-0 mt-5" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)">
