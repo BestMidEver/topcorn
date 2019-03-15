@@ -139,7 +139,6 @@
 <!--Under Trailer Section-->
 
 @yield('amazon_affiliate')
-{{$amazon_variables_general[0]}}
 
 <!--Poster Plot Details Section-->
 <div class="row no-gutters mt-3 mt-md-5">
