@@ -67,8 +67,9 @@ class movieController extends Controller
             $watch_togethers = [];
         }
 
+        $random_int = rand(1, 3);
 
-    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_plot', 'movie_year', 'poster_path'))->with('watch_togethers', $watch_togethers);
+    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'random_int', 'movie_plot', 'movie_year', 'poster_path'))->with('watch_togethers', $watch_togethers);
     }
 
 
