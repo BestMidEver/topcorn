@@ -67,8 +67,8 @@ class movieController extends Controller
             $watch_togethers = [];
         }
 
-        $category = array("KindleStore", "VideoGames", "Toys", "Music", "MP3Downloads", "Kitchen", "Jewelry", "Industrial", "Collectibles", "DVD", "Books", "Baby", "Apparel")
-        $node = array("133140011", "468642", "165793011", "301668", "163856011", "284507", "3367581", "16310091", "5088769011", "130", "283155", "165796011", "1036592")
+        $category = array("KindleStore", "VideoGames", "Toys", "Music", "MP3Downloads", "Kitchen", "Jewelry", "Industrial", "Collectibles", "DVD", "Books", "Baby", "Apparel");
+        $node = array("133140011", "468642", "165793011", "301668", "163856011", "284507", "3367581", "16310091", "5088769011", "130", "283155", "165796011", "1036592");
         $random_int = rand(0, 12);
         $amzn_assoc_default_category = $category[$random_int];
         $amzn_assoc_default_browse_node = $node[$random_int];
