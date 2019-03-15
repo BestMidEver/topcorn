@@ -66,6 +66,10 @@ function amazon_variables_general() {
         ->select('movies.en_title as title')
         ->inRandomOrder()
         ->first();
+        if(Auth::check()){
+            $search_query = $search_query
+            ->where('rateds.user_id', '=', Auth::id());
+        }
     }else{
         $search_query = DB::table('series_rateds')
         ->where('series_rateds.rate', '=', 5)
@@ -74,6 +78,10 @@ function amazon_variables_general() {
         ->select('series.en_name as title')
         ->inRandomOrder()
         ->first();
+        if(Auth::check()){
+            $search_query = $search_query
+            ->where('series_rateds.user_id', '=', Auth::id());
+        }
     }
 
     $category = array("KindleStore", "VideoGames", "Toys", "Music", "MP3Downloads", "Kitchen", "Jewelry", "Industrial", "Collectibles", "DVD", "Books", "Baby", "Apparel", "VHS");
