@@ -84,14 +84,14 @@ amzn_assoc_tracking_id = "topcornio-20";
 amzn_assoc_ad_mode = "search";
 amzn_assoc_ad_type = "smart";
 amzn_assoc_marketplace = "amazon";
-amzn_assoc_region = "US";
+amzn_assoc_region = "de";
 amzn_assoc_default_search_phrase = "{{$series_en_name}} {{$series_year}}";
 amzn_assoc_default_category = "All";
 amzn_assoc_design = "in_content";
 amzn_assoc_linkid = "19df56684bc54ebd75ff6227dcf5fca8";
 amzn_assoc_title = "";
 </script>
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=de"></script>
 </div>
 @endsection
 
@@ -103,13 +103,13 @@ amzn_assoc_tracking_id = "topcornio-20";
 amzn_assoc_ad_mode = "search";
 amzn_assoc_ad_type = "smart";
 amzn_assoc_marketplace = "amazon";
-amzn_assoc_region = "US";
+amzn_assoc_region = "de";
 amzn_assoc_default_search_phrase = "{{$series_en_name}}";
 amzn_assoc_default_category = "{{$amazon_variables[0]}}";
 amzn_assoc_linkid = "47db36acc921bab6a2ed3c6ecda0c48f";
 amzn_assoc_design = "in_content";
 amzn_assoc_default_browse_node = "{{$amazon_variables[1]}}";
 </script>
-<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=de"></script>
 </div>
 @endsection
