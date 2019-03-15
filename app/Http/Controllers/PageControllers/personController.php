@@ -43,6 +43,8 @@ class personController extends Controller
             $watched_movie_number = 0;
         }
 
-		return view('person', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number'))->with('person_data', $person_data);
+        $amazon_variables = amazon_variables();
+
+		return view('person', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'amazon_variables'))->with('person_data', $person_data);
 	}
 }
