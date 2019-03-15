@@ -72,7 +72,7 @@ amzn_assoc_title = "";
 @endsection
 
 @section('amazon_affiliate_2')
-<div class="mt-4 mb-5">
+<div class="mt-5 mb-5">
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_tracking_id = "topcornio-20";
