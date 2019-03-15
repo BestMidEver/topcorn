@@ -79,6 +79,23 @@ function amazon_variables_general() {
             ->where('series_rateds.user_id', '=', Auth::id());
         }
     }
+
+    if($search_query->count()==0){
+        if(rand(0, 1) == 0){
+            $search_query = DB::table('rateds')
+            ->where('rateds.rate', '=', 5)
+            ->groupBy('movies.id')
+            ->join('movies', 'movies.id', '=', 'rateds.movie_id')
+            ->select('movies.en_title as title');
+        }else{
+            $search_query = DB::table('series_rateds')
+            ->where('series_rateds.rate', '=', 5)
+            ->groupBy('series.id')
+            ->join('series', 'series.id', '=', 'series_rateds.series_id')
+            ->select('series.en_name as title');
+        }
+    }
+
     $search_query = $search_query
     ->inRandomOrder()
     ->first();
