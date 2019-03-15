@@ -144,8 +144,6 @@
 </div>
 @endif
 
-@yield('amazon_affiliate')
-
 
 <!--
 <div class="scrollmenu mt-3 tab2">
@@ -197,6 +195,8 @@
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_follows'}" ng-click="active_tab='get_follows';follows_mode='following';get_first_page_data();">{{ __('general.reviews') }}</button>
 </div>
 <!-- Tabs Button Mobile -->
+
+@yield('amazon_affiliate')
 
 
 
