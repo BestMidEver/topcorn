@@ -51,6 +51,7 @@
 </div>
 
 
+@yield('amazon_affiliate')
 
 
 
@@ -171,4 +172,6 @@
 		<img class="mh-100 mw-100 card-img" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image_poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
 	</div>
 </div>
+
+@yield('amazon_affiliate_2')
 @endsection
