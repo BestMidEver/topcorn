@@ -69,6 +69,7 @@ pass={
 @endsection
 
 @section('amazon_affiliate')
+<div class="my-3">
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_tracking_id = "topcornio-20";
@@ -83,6 +84,7 @@ amzn_assoc_linkid = "19df56684bc54ebd75ff6227dcf5fca8";
 amzn_assoc_title = "";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+</div>
 @endsection
 
 @section('amazon_affiliate_2')
