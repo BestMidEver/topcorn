@@ -56,3 +56,31 @@ function amazon_variables() {
 
     return array($amzn_assoc_default_category, $amzn_assoc_default_browse_node);
 }
+
+function amazon_variables_general() {
+    if(rand(0, 1) == 0){
+        $search_query = DB::table('rateds')
+        ->where('rateds.rate', '=', 5)
+        ->groupBy('movies.id')
+        ->join('movies', 'movies.id', '=', 'rateds.movie_id')
+        ->select('movies.en_title as title')
+        ->inRandomOrder()
+        ->first();
+    }else{
+        $search_query = DB::table('series_rateds')
+        ->where('series_rateds.rate', '=', 5)
+        ->groupBy('series.id')
+        ->join('series', 'series.id', '=', 'series_rateds.series_id')
+        ->select('series.en_name as title')
+        ->inRandomOrder()
+        ->first();
+    }
+
+    $category = array("KindleStore", "VideoGames", "Toys", "Music", "MP3Downloads", "Kitchen", "Jewelry", "Industrial", "Collectibles", "DVD", "Books", "Baby", "Apparel", "VHS");
+    $node = array("133140011", "468642", "165793011", "301668", "163856011", "284507", "3367581", "16310091", "5088769011", "130", "283155", "165796011", "1036592", "404272");
+    $random_int = rand(0, 13);
+    $amzn_assoc_default_category = $category[$random_int];
+    $amzn_assoc_default_browse_node = $node[$random_int];
+
+    return array($search_query->title, $amzn_assoc_default_category, $amzn_assoc_default_browse_node);
+}

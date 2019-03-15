@@ -69,7 +69,9 @@ class movieController extends Controller
 
         $amazon_variables = amazon_variables();
 
-    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_plot', 'movie_year', 'poster_path', 'amazon_variables'))->with('watch_togethers', $watch_togethers);
+        $amazon_variables_general = amazon_variables_general();
+
+    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_plot', 'movie_year', 'poster_path', 'amazon_variables'), 'amazon_variables_general'))->with('watch_togethers', $watch_togethers);
     }
 
 
