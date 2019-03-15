@@ -21,6 +21,8 @@
 </div>
 <!-- H1 +AddPerson +AddMode row  -->
 
+@yield('amazon_affiliate')
+
 
 
 
@@ -312,5 +314,7 @@
 
 @include('layout.pagination', ['suffix' => ''])
 <!-- MovieCard -->
+
+@yield('amazon_affiliate_2')
 
 @endsection

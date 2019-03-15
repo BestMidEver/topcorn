@@ -38,8 +38,10 @@ class recommendationsController extends Controller
             $watched_movie_number = 0;
         }
 
+        $amazon_variables_general = amazon_variables_general();
+        $amazon_variables_general_2 = amazon_variables_general();
 
-        return view('recommendations', compact('image_quality', 'target', 'watched_movie_number'));
+        return view('recommendations', compact('image_quality', 'target', 'watched_movie_number', 'amazon_variables_general', 'amazon_variables_general_2'));
     }
 
     
