@@ -52,7 +52,9 @@
     @include('layout.moviecard_6', ['suffix' => '1'])
 	</div>
 </div>
-<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div ng-show="page_variables.expanded==-1">
+@yield('amazon_affiliate')
+</div>
 <div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==2" id="scroll_to_top2">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
@@ -114,7 +116,7 @@
 	</div>
 </div>
 <div ng-show="page_variables.expanded==-1">
-@yield('amazon_affiliate')
+@yield('amazon_affiliate_2')
 </div>
 <div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==3" id="scroll_to_top3">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
@@ -139,7 +141,9 @@
     @include('layout.peoplecard_6', ['suffix' => '3'])
 	</div>
 </div>
-<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div ng-show="page_variables.expanded==-1">
+@yield('amazon_affiliate_3')
+</div>
 <div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==4" id="scroll_to_top4">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
@@ -181,7 +185,7 @@
 	</div>
 </div>
 <div ng-show="page_variables.expanded==-1">
-@yield('amazon_affiliate_2')
+@yield('amazon_affiliate_4')
 </div>
 <div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==5" id="scroll_to_top5">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
@@ -219,7 +223,9 @@
     @include('layout.reviews_6', ['suffix' => '5'])
 	</div>
 </div>
-<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div ng-show="page_variables.expanded==-1">
+@yield('amazon_affiliate_5')
+</div>
 <div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==6" id="scroll_to_top6">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
