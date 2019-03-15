@@ -21,8 +21,6 @@
 </div>
 <!-- H1 +AddPerson +AddMode row  -->
 
-@yield('amazon_affiliate')
-
 
 
 
@@ -155,6 +153,8 @@
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{!! __('general.p_series') !!}</button>
 	</div>
 </div>
+
+@yield('amazon_affiliate')
 
 
 
