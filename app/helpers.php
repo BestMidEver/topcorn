@@ -66,7 +66,7 @@ function amazon_variables_general() {
         ->select('movies.en_title as title');
         if(Auth::check()){
             $search_query = $search_query
-            ->where('rateds.user_id', '=', Auth::id())
+            ->where('rateds.user_id', '=', Auth::id());
         }
     }else{
         $search_query = DB::table('series_rateds')
