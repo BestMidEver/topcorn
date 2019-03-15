@@ -69,7 +69,7 @@ pass={
 @endsection
 
 @section('amazon_affiliate')
-<div class="my-3">
+<div class="my-5">
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_tracking_id = "topcornio-20";
@@ -88,7 +88,7 @@ amzn_assoc_title = "";
 @endsection
 
 @section('amazon_affiliate_2')
-<div class="my-3">
+<div class="my-5">
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_tracking_id = "topcornio-20";
