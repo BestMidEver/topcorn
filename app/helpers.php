@@ -67,8 +67,6 @@ function amazon_variables_general() {
         if(Auth::check()){
             $search_query = $search_query
             ->where('rateds.user_id', '=', Auth::id())
-            ->inRandomOrder()
-            ->first();
         }
     }else{
         $search_query = DB::table('series_rateds')
@@ -78,11 +76,12 @@ function amazon_variables_general() {
         ->select('series.en_name as title');
         if(Auth::check()){
             $search_query = $search_query
-            ->where('series_rateds.user_id', '=', Auth::id())
-            ->inRandomOrder()
-            ->first();
+            ->where('series_rateds.user_id', '=', Auth::id());
         }
     }
+    $search_query = $search_query
+    ->inRandomOrder()
+    ->first();
 
     $category = array("KindleStore", "VideoGames", "Toys", "Music", "MP3Downloads", "Kitchen", "Jewelry", "Industrial", "Collectibles", "DVD", "Books", "Baby", "Apparel", "VHS");
     $node = array("133140011", "468642", "165793011", "301668", "163856011", "284507", "3367581", "16310091", "5088769011", "130", "283155", "165796011", "1036592", "404272");
