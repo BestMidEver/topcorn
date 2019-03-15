@@ -96,9 +96,8 @@ amzn_assoc_region = "US";
 amzn_assoc_default_search_phrase = "{{$movie_en_title}}";
 amzn_assoc_default_category = "KindleStore";
 amzn_assoc_linkid = "47db36acc921bab6a2ed3c6ecda0c48f";
+amzn_assoc_design = "in_content";
 amzn_assoc_default_browse_node = "133140011";
-amzn_assoc_search_bar = "false";
-amzn_assoc_title = "Shop Related Products";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 @endsection
