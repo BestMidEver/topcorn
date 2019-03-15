@@ -154,8 +154,6 @@
 	</div>
 </div>
 
-@yield('amazon_affiliate')
-
 
 
 
@@ -192,6 +190,8 @@
 	@endif
 </div>
 <!-- Tabs Button Mobile -->
+
+@yield('amazon_affiliate')
 
 
 
