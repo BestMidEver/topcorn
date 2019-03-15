@@ -92,8 +92,9 @@ class ProfileController extends Controller
         $like_number = $like_number + $comment_like_number;
 
         $amazon_variables_general = amazon_variables_general();
+        $amazon_variables_general_2 = amazon_variables_general();
 
-		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'quality_image', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name', 'follow_id', 'is_following_you', 'follow_number', 'amazon_variables_general'));
+		return view('profile', compact('profile_user_id', 'profile_user_name', 'profile_cover_pic', 'profile_profile_pic', 'quality_image', 'image_quality', 'target', 'watched_movie_number', 'profile_watched_movie_number', 'profile_watched_series_number', 'list_number', 'review_number', 'like_number', 'facebook_link', 'instagram_link', 'twitter_link', 'youtube_link', 'another_link_url', 'another_link_name', 'follow_id', 'is_following_you', 'follow_number', 'amazon_variables_general', 'amazon_variables_general_2'));
 	}
 
     public function get_rateds($rate, $user, $lang)
