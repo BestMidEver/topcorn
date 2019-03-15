@@ -56,7 +56,7 @@ Get movie recommendations from all over the world based on your unique taste. to
 @endsection
 
 @section('amazon_affiliate')
-<div class="mt-4 mb-5">
+<div class="mt-5 mb-5">
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_tracking_id = "topcornio-20";
