@@ -299,7 +299,6 @@
 
 @include('layout.reviews')
 @yield('amazon_affiliate_2')
-{{$random_int}}
 
 <!--People Who Liked Also Liked Section-->
 <div class="container-fluid px-0 mt-5" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)">
