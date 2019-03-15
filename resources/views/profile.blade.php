@@ -144,6 +144,7 @@
 </div>
 @endif
 
+@yield('amazon_affiliate')
 
 
 <!--
@@ -352,5 +353,6 @@
 </div>
 @include('layout.pagination', ['suffix' => ''])
 
+@yield('amazon_affiliate_2')
 
 @endsection
