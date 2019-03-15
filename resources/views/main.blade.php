@@ -113,8 +113,9 @@
     @include('layout.moviecard_6', ['suffix' => '2'])
 	</div>
 </div>
-<hr class="mt-4" ng-show="page_variables.expanded==-1">
+<div ng-show="page_variables.expanded==-1">
 @yield('amazon_affiliate')
+</div>
 <div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==3" id="scroll_to_top3">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
@@ -179,8 +180,9 @@
     @include('layout.userscard_6', ['suffix' => '4'])
 	</div>
 </div>
-<hr class="mt-4" ng-show="page_variables.expanded==-1">
-@yield('amazon_affiliate')
+<div ng-show="page_variables.expanded==-1">
+@yield('amazon_affiliate_2')
+</div>
 <div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==5" id="scroll_to_top5">
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
