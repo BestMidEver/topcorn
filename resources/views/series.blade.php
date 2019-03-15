@@ -134,6 +134,8 @@
 <!--Under Trailer Section-->
 
 
+@yield('amazon_affiliate')
+
 
 <!-- Tabs_1 Button -->
 <div class="container-fluid p-0 d-none d-md-inline">
@@ -414,6 +416,7 @@
 </div>
 <!--Cast Section-->
 
+@yield('amazon_affiliate_2')
 <div ng-hide="is_waiting"> 
 @include('layout.reviews')
 </div>
