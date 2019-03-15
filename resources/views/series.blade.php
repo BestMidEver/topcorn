@@ -134,8 +134,6 @@
 <!--Under Trailer Section-->
 
 
-@yield('amazon_affiliate')
-
 
 <!-- Tabs_1 Button -->
 <div class="container-fluid p-0 d-none d-md-inline">
@@ -156,6 +154,9 @@
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in movie.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-show="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-show="season.season_number == 0">{{ __('general.specials') }}</span></button>
 </div>
 <!-- Tabs_1 Button Mobile -->
+
+
+@yield('amazon_affiliate')
 
 
 <!-- Tabs_2 Button -->
