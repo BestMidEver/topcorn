@@ -137,6 +137,7 @@
 	</div>
 </div>
 <!--Under Trailer Section-->
+    @yield('amazon_affiliate')
 
 <!--Poster Plot Details Section-->
 <div class="row no-gutters mt-3 mt-md-5">
@@ -203,7 +204,6 @@
 <!--Poster Plot Details Section-->
 
 
-    @yield('amazon_affiliate')
 
 
 <!--Cast Section-->
