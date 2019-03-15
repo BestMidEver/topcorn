@@ -5,6 +5,8 @@
 @section('body')
 <h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('general.search') }}</h1>
 
+@yield('amazon_affiliate')
+
 
 
 

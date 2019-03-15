@@ -24,7 +24,10 @@ class searchController extends Controller
         $target = Auth::User()->open_new_tab == 1 ? '_blank' : '_self';
 
         $watched_movie_number = Rated::where('user_id', Auth::id())->where('rate', '<>', 0)->count();
+        
+        $amazon_variables_general = amazon_variables_general();
+        $amazon_variables_general_2 = amazon_variables_general();
 
-		return view('search', compact('image_quality', 'target', 'watched_movie_number'));
+		return view('search', compact('image_quality', 'target', 'watched_movie_number', 'amazon_variables_general', 'amazon_variables_general_2'));
 	}
 }
