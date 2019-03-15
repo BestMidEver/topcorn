@@ -577,8 +577,12 @@ class mainController extends Controller
         $users = $this->get_popular_users('list', 'all');
         $reviews = $this->get_popular_reviews('newest', 'all');
         $listes = $this->get_popular_lists('newest', 'all');
+        
+        $amazon_variables_general = amazon_variables_general();
+        $amazon_variables_general_2 = amazon_variables_general();
+        $amazon_variables_general_3 = amazon_variables_general();
 
-		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following1', 'is_following2', 'f_watch_later'))
+		return view('main', compact('image_quality', 'target', 'watched_movie_number', 'is_following1', 'is_following2', 'f_watch_later', 'amazon_variables_general', 'amazon_variables_general_2', 'amazon_variables_general_3'))
             ->with('movies', $movies)
             ->with('series', $series)
             ->with('people', $people)
