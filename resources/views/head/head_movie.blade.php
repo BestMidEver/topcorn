@@ -86,6 +86,7 @@ amzn_assoc_title = "";
 @endsection
 
 @section('amazon_affiliate_2')
+<div class="my-3">
 <script type="text/javascript">
 amzn_assoc_placement = "adunit0";
 amzn_assoc_tracking_id = "topcornio-20";
@@ -100,4 +101,5 @@ amzn_assoc_design = "in_content";
 amzn_assoc_default_browse_node = "133140011";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
+</div>
 @endsection
