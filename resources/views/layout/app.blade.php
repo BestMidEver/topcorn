@@ -9,7 +9,7 @@
 
     @yield('og_tags')
 
-    <title ng-cloak>
+    <title>
         @section('title')
         @show
     </title>
