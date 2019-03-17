@@ -3,7 +3,7 @@
 @include('head.head_search')
 
 @section('body')
-<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('general.search') }}</h1>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4" ng-cloak>{{ __('general.search') }}</h1>
 
 @yield('amazon_affiliate')
 
@@ -13,7 +13,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 d-none d-md-inline">
+<div class="container-fluid mt-3 d-none d-md-inline" ng-cloak>
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='movie'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')">{{ __('general.movie') }}</button>
@@ -38,7 +38,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu my-3 tab2 d-md-none">
+<div class="scrollmenu my-3 tab2 d-md-none" ng-cloak>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='movie'}" ng-click="reset_tab();active_tab='movie';get_page_data();setFocus('input_movie')">{{ __('general.movie') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='series'}" ng-click="reset_tab();active_tab='series';get_page_data();setFocus('input_series')">Series</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='person'}" ng-click="reset_tab();active_tab='person';get_page_data();setFocus('input_person')">{{ __('general.person') }}</button>
@@ -51,7 +51,7 @@
 
 
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3" ng-cloak>
 	<div class="row">
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8">
@@ -68,7 +68,7 @@
 	</div>
 </div>
 
-<div id="scroll_top_point">
+<div id="scroll_top_point" ng-cloak>
 	<div class="p-5" ng-hide="(movies.length>0 || people.length>0 || users.length>0 || listes.length>0 || (movies==null && people==null && users==null && listes==null)) && !is_waiting">
 		<div class="text-muted text-center" ng-if="!is_waiting">{{ __('general.no_result') }}</div><div class="text-muted text-center" ng-if="is_waiting">{{ __('general.searching') }}</div>
 	</div>

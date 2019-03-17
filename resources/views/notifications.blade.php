@@ -3,12 +3,12 @@
 @include('head.head_notifications')
 
 @section('body')
-<h1 class="h5 text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.notifications') }}</h1>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4" ng-cloak>{{ __('navbar.notifications') }}</h1>
 
 
 
 <!-- Page Body -->
-<div ng-hide="is_waiting">
+<div ng-hide="is_waiting" ng-cloak>
     <div class="mt-3" id="scroll_top_point">
         <div ng-repeat="notification in page_variables.notifications">
             <div class="d-flex py-2 pl-2 align-items-center" ng-class="notification.data[0].is_seen?'':'background-lightgrey'">

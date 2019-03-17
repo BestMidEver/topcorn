@@ -3,7 +3,7 @@
 @include('head.head_createlist')
 
 @section('body')
-<div class="row no-gutters">
+<div class="row no-gutters" ng-cloak>
 	<div class="col"></div>
 	<div class="col-12 col-lg-10 col-xl-8">
 		<div class="d-flex d-row">
@@ -32,7 +32,7 @@
     </div>
 	@endif
 
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3" ng-cloak>
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-12 col-lg-10 col-xl-8">

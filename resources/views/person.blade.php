@@ -3,7 +3,7 @@
 @include('head.head_person')
 
 @section('body')
-<div class="position-relative mt-md-4">
+<div class="position-relative mt-md-4" ng-cloak>
 	<img ng-src="{{config('constants.image.cover')[$image_quality]}}@{{cover}}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid coverpic" alt="Responsive image">
 	<div class="coveroverlayersmall-profile d-md-none">
 		<div class="d-flex flex-column align-items-center">
@@ -56,7 +56,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 pb-3 d-none d-md-inline">
+<div class="container-fluid mt-3 pb-3 d-none d-md-inline" ng-cloak>
 	<ul class="nav justify-content-md-center tab1" ng-init="active_tab_0='movies'">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">{{ __('general.p_movies') }}</button>
@@ -75,7 +75,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu my-3 d-md-none tab2">
+<div class="scrollmenu my-3 d-md-none tab2" ng-cloak>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='movies'}" ng-click="active_tab_0='movies';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">{{ __('general.p_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='series'}" ng-click="active_tab_0='series';page_variables.active_tab='vote_count';page_variables.cast_or_crew='{{ __('general.all') }}';switch_tab()">{{ __('general.series') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab_0=='images'}" ng-click="active_tab_0='images';switch_tab()">{{ __('general.gallery') }}</button>
@@ -85,7 +85,7 @@
 
 
 
-<div class="container-fluid" ng-if="active_tab_0 != 'images'">
+<div class="container-fluid" ng-if="active_tab_0 != 'images'" ng-cloak>
 	<div class="dropdown d-inline mr-2" ng-init="page_variables.active_tab='vote_count'">
 		<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			<i class="fas fa-sort-amount-down"></i> <span ng-if="page_variables.active_tab=='vote_count'">{{ __('general.most_populer') }}</span><span ng-if="page_variables.active_tab=='vote_average'">{{ __('general.top_rated') }}</span><span ng-if="page_variables.active_tab=='release_date'">{{ __('general.newest') }}</span><span ng-if="page_variables.active_tab=='title'">{{ __('general.a_z') }}</span>
@@ -113,11 +113,11 @@
 </div>
 
 @include('layout.moviecard')
-<div class="p-5" ng-if="active_tab_0!='images'&&!movies.length>0">
+<div class="p-5" ng-if="active_tab_0!='images'&&!movies.length>0" ng-cloak>
 	<div class="text-muted text-center"><span ng-show="!page_variables.is_waiting">{{ __('general.not_found') }}</span><span ng-show="page_variables.is_waiting">{{ __('general.loading') }}</span></div>
 </div>
 
-<div ng-if="active_tab_0 == 'images'" id="scroll_top_point">
+<div ng-if="active_tab_0 == 'images'" id="scroll_top_point" ng-cloak>
 	<div class="container-fluid">
 		<div class="dropdown d-inline" ng-init="page_variables.image_tab='profile'">
 			<button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -167,7 +167,7 @@
 		@include('layout.pagination', ['suffix' => ''])
 	</div>
 </div>
-<div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal">
+<div class="modal fade" id="image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal" ng-cloak>
 	<div class="modal-dialog modal-dialog-centered" ng-class="page_variables.aspect_ratio<1?'votecard':'modal-lg'">
 		<img class="mh-100 mw-100 card-img" ng-src="{{config('constants.image.original')}}@{{page_variables.current_image_poster_path}}" on-error-src="{{config('constants.image.rate_modal_error')}}" alt="Card image">
 	</div>

@@ -3,7 +3,7 @@
 @include('head.head_list')
 
 @section('body')
-<div class="row no-gutters">
+<div class="row no-gutters" ng-cloak>
 	<div class="col"></div>
 	<div class="col-12 col-lg-10 col-xl-8">
 		<div class="d-flex d-row">

@@ -1,4 +1,4 @@
-<div class="pt-2">
+<div class="pt-2" ng-cloak>
 	<button id="languages_button" class="btn btn-outline-secondary dropdown-toggle h6 m-0 border-0 filterButtons" type="button" data-toggle="collapse" data-target="#collapseLanguages"><span class="h6">{{ __('general.language') }}</span></button>
 	<div class="collapse" id="collapseLanguages">
 		<div class="">

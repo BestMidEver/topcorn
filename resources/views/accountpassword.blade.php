@@ -3,11 +3,11 @@
 @include('head.head_accountpassword')
 
 @section('body')
-<h5 class="text-center text-md-left col mt-3 mt-md-4">{{ __('navbar.account') }}</h5>
+<h5 class="text-center text-md-left col mt-3 mt-md-4" ng-cloak>{{ __('navbar.account') }}</h5>
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 pb-1 d-none d-md-inline">
+<div class="container-fluid mt-3 pb-1 d-none d-md-inline" ng-cloak>
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<a class="nav-link text-muted" href="/account">{{ __('general.profile') }}</a>
@@ -29,7 +29,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu my-3 d-md-none tab2">
+<div class="scrollmenu my-3 d-md-none tab2" ng-cloak>
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account">{{ __('general.profile') }}</a>
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration active" href="/account/password">{{ __('general.password') }}</a>
 	<a class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" href="/account/interface">{{ __('general.interface') }}</a>
@@ -45,7 +45,7 @@
     {!! session('status') !!}
     </div>
 @endif
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3" ng-cloak>
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-12 col-xl-10">

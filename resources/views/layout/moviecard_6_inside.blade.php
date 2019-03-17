@@ -1,4 +1,4 @@
-<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2">
+<div class="card moviecard h-100 d-flex flex-column justify-content-between mx-2" ng-cloak>
 	<a ng-href="/@{{movie.title.length>0?'movie':'series'}}/@{{movie.id}}" target={{$target}} data-toggle="tooltip" data-placement="top" title="@{{movie.original_title.length>0?movie.original_title:movie.original_name}}">
 		<div class="position-relative text-center min-height-200">
 			<img class="card-img-top darken-cover" ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" alt="Card image cap">

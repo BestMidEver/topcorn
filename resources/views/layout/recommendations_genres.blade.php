@@ -1,4 +1,4 @@
-<div class="pt-3">
+<div class="pt-3" ng-cloak>
 	<button id="genres_button" class="btn btn-outline-secondary dropdown-toggle h6 m-0 border-0 filterButtons" type="button" data-toggle="collapse" data-target="#collapseGenres"><span class="h6">{{ __('general.genre') }}</span></button>
 	<div class="collapse" id="collapseGenres">
 		<div>

@@ -3,7 +3,7 @@
 @include('head.head_main')
 
 @section('body')
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==1" id="scroll_to_top1">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==1" id="scroll_to_top1" ng-cloak>
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -55,7 +55,7 @@
 <div ng-show="page_variables.expanded==-1">
 @yield('amazon_affiliate')
 </div>
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==2" id="scroll_to_top2">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==2" id="scroll_to_top2" ng-cloak>
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -118,7 +118,7 @@
 <div ng-show="page_variables.expanded==-1">
 @yield('amazon_affiliate_2')
 </div>
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==3" id="scroll_to_top3">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==3" id="scroll_to_top3" ng-cloak>
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -144,7 +144,7 @@
 <div ng-show="page_variables.expanded==-1">
 @yield('amazon_affiliate_3')
 </div>
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==4" id="scroll_to_top4">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==4" id="scroll_to_top4" ng-cloak>
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -187,7 +187,7 @@
 <div ng-show="page_variables.expanded==-1">
 @yield('amazon_affiliate_4')
 </div>
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==5" id="scroll_to_top5">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==5" id="scroll_to_top5" ng-cloak>
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">
@@ -226,7 +226,7 @@
 <div ng-show="page_variables.expanded==-1">
 @yield('amazon_affiliate_5')
 </div>
-<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==6" id="scroll_to_top6">
+<div class="mt-4" ng-show="page_variables.expanded==-1 || page_variables.expanded==6" id="scroll_to_top6" ng-cloak>
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 			<div class="dropdown d-inline">

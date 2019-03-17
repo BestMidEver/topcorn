@@ -1,4 +1,4 @@
-<div class="d-flex flex-wrap">
+<div class="d-flex flex-wrap" ng-cloak>
 	<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users{{ $suffix }} | limitTo:6">
         <div class="card moviecard h-100 d-flex flex-column justify-content-between">
             <a ng-href="/profile/@{{ user.user_id }}#!#Lists" target={{$target}}>
@@ -30,7 +30,7 @@
         </div>
 	</div>
 </div>
-<div class="collapse" id="collapseMovies{{ $suffix }}">
+<div class="collapse" id="collapseMovies{{ $suffix }}" ng-cloak>
 	<div ng-if="users{{ $suffix }}.length > 6">
 		<div class="d-flex flex-wrap">
         	<div class="col-6 col-sm-4 col-md-3 col-lg-2 mt-4 px-1" ng-repeat="user in users{{ $suffix }} | limitTo:100:6">
@@ -66,12 +66,12 @@
         </div>
     </div>
 </div>
-<div ng-show="iscast{{  $suffix  }}">
+<div ng-show="iscast{{  $suffix  }}" ng-cloak>
 @include('layout.pagination', ['suffix' => '_'.$suffix])
 </div>
-<div class="text-center pt-1" ng-hide="iscast{{ $suffix }} || !(users{{ $suffix }}.length>6) || is_expanded{{ $suffix }}">
+<div class="text-center pt-1" ng-hide="iscast{{ $suffix }} || !(users{{ $suffix }}.length>6) || is_expanded{{ $suffix }}" ng-cloak>
     <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast{{ $suffix }} = true;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><small>{{__('general.show_everyone')}}</small></button>
 </div>
-<div class="text-center pt-1" ng-show="iscast{{ $suffix }} && users{{ $suffix }}.length>6 && is_expanded{{ $suffix }}!=true">
+<div class="text-center pt-1" ng-show="iscast{{ $suffix }} && users{{ $suffix }}.length>6 && is_expanded{{ $suffix }}!=true" ng-cloak>
     <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast{{ $suffix }} = false;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><i class="fa fa-angle-up"></i></button>
 </div>

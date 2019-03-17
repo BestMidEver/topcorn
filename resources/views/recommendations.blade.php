@@ -4,7 +4,7 @@
 
 @section('body')
 <!-- H1 +AddPerson +AddMode row  -->
-<div class="col mb-2 mt-3 mt-md-4">
+<div class="col mb-2 mt-3 mt-md-4" ng-cloak>
 	<h1 class="h5 d-inline align-middle my-2 mr-3">{{ __('navbar.recommendations') }}</h1>
 	@if(auth::check())
 	<div class="d-inline" ng-show="active_tab!='mood_pick'">
@@ -25,7 +25,7 @@
 
 
 <!-- AddPerson / AddMode section -->
-<div class="collapse container-fluid background-lightgrey" id="collapseAdd">
+<div class="collapse container-fluid background-lightgrey" id="collapseAdd" ng-cloak>
 	<div class="row pt-3">
 		<div class="col"></div>
 		<div class="input-group input-group-lg col-12 col-xl-8" id="scroll_toppest_point">
@@ -147,7 +147,7 @@
 
 
 
-<div class="scrollmenu mt-3 tab2">
+<div class="scrollmenu mt-3 tab2" ng-cloak>
 	<div class="btn-group d-block mb-2 mb-md-0 text-center" role="group" aria-label="Movies or Series">
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='movies'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('movies')">{!! __('general.p_movies') !!}</button>
 		<button type="button" class="btn" ng-class="page_variables.movies_or_series=='series'?'btn-tab':'btn-outline-tab'" ng-click="switch_page_mode('series')">{!! __('general.p_series') !!}</button>
@@ -161,7 +161,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid p-0 d-none d-md-inline" id="filter">
+<div class="container-fluid p-0 d-none d-md-inline" id="filter" ng-cloak>
 	<ul class="nav justify-content-md-center tab1 mt-1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
@@ -182,7 +182,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu mb-3 d-md-none tab2">
+<div class="scrollmenu mb-3 d-md-none tab2" ng-cloak>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='top_rated'}" ng-click="active_tab='top_rated';get_first_page_data()">{!! __('general.according_to_popular_taste') !!}</button>
 	@if(auth::check())
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='pemosu'}" ng-click="active_tab='pemosu';get_first_page_data()">{{ __('general.according_to_my_taste') }}</button>
@@ -197,7 +197,7 @@
 
 
 <!-- Sort by and Filter section -->
-<div class="container-fluid">
+<div class="container-fluid" ng-cloak>
 	<div class="dropdown d-inline mr-2">
 		<button id="filter_button" class="btn btn-outline-secondary mt-3 filterButtons" ng-click="scroll_to_filter()" type="button" data-toggle="collapse" data-target="#collapseFilter" ng-disabled="{{ auth::check()?'false':'true' }} && active_tab=='top_rated'"><i class="fa fa-filter"></i> {{ __('general.filter') }}</button>
 	</div>
@@ -246,7 +246,7 @@
 
 
 <!-- Filter secion -->
-<div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter"	@if(auth::guest()) ng-hide="active_tab=='top_rated'" @endif>
+<div class="collapse container-fluid background-lightgrey my-3" id="collapseFilter"	@if(auth::guest()) ng-hide="active_tab=='top_rated'" @endif ng-cloak>
 	@include('layout.recommendations_languages')
 	@include('layout.recommendations_genres')
 	<div class="pt-3">
@@ -305,7 +305,7 @@
 
 
 <!-- MovieCard -->
-<div id="scroll_top_point">
+<div id="scroll_top_point" ng-cloak>
 	<div class="p-5" ng-show="movies.length==0">
 		<div class="text-muted text-center"><span ng-if="!is_waiting && !(active_tab=='mood_pick' && mode_movies.length==0)">{{ __('general.no_result') }}</span><span ng-if="!is_waiting && active_tab=='mood_pick' && mode_movies.length==0">{{ __('general.no_mode_movies') }}</span><span ng-if="is_waiting">{{ __('general.searching') }}</span></div>
 	</div>

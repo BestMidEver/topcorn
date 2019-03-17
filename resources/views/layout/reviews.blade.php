@@ -1,4 +1,4 @@
-<div class="container-fluid px-0 mt-5">	
+<div class="container-fluid px-0 mt-5" ng-cloak>	
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<span class="mb-0 pr-2 align-middle mt-3">{{ __('general.reviews') }}</span>
 		@if(Auth::check())
@@ -50,7 +50,7 @@
 		<div class="text-muted text-center">{{ __('general.no_result_review') }}</div>
 	</div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" ng-cloak>
 	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

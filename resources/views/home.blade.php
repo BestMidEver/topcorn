@@ -3,7 +3,7 @@
 @include('head.head_home')
 
 @section('body')
-<div class="container-fluid p-0">
+<div class="container-fluid p-0" ng-cloak>
 	<div class="jumbotron text-sm-center background-white">
 		<div class="row">
 			<div class="col-12 col-lg-6">

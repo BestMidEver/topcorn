@@ -4,7 +4,7 @@
 
 @section('body')
 <!--Trailer Section-->
-<div class="mt-md-4">
+<div class="mt-md-4" ng-cloak>
     <div class="position-relative">
         <div id="accordion">
             <div>
@@ -107,7 +107,7 @@
 <!--Trailer Section-->
 
 <!--Under Trailer Section-->
-<div class="d-flex flex-wrap justify-content-between">
+<div class="d-flex flex-wrap justify-content-between" ng-cloak>
     <div>
         <div class="d-flex flex-column">
             <div class="px-3 px-md-0">
@@ -136,7 +136,7 @@
 
 
 <!-- Tabs_1 Button -->
-<div class="container-fluid p-0 d-none d-md-inline">
+<div class="container-fluid p-0 d-none d-md-inline" ng-cloak>
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;page_variables.active_tab_2==-1;pull_data()">{{ __('general.general_info') }}</button>
@@ -149,7 +149,7 @@
 <!-- Tabs_1 Button -->
 
 <!-- Tabs_1 Button Mobile -->
-<div class="scrollmenu d-md-none tab2">
+<div class="scrollmenu d-md-none tab2" ng-cloak>
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_1==-1}" ng-click="page_variables.active_tab_1=-1;page_variables.active_tab_2==-1;pull_data()">{{ __('general.general_info') }}</button>
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-repeat="season in movie.seasons" ng-class="{'active':page_variables.active_tab_1==season.season_number, 'text-primary font-weight-bold':season.season_number==user_movie_record.last_seen_season, 'text-muted':season.season_number!=user_movie_record.last_seen_season}" ng-click="page_variables.active_tab_1=season.season_number;page_variables.active_tab_2=-1;pull_data()"><span ng-show="season.season_number != 0">S@{{season.season_number>9?season.season_number:'0'+season.season_number}}</span><span ng-show="season.season_number == 0">{{ __('general.specials') }}</span></button>
 </div>
@@ -160,7 +160,7 @@
 
 
 <!-- Tabs_2 Button -->
-<div class="container-fluid p-0 d-none d-md-inline" ng-show="page_variables.active_tab_1!=-1">
+<div class="container-fluid p-0 d-none d-md-inline" ng-show="page_variables.active_tab_1!=-1" ng-cloak>
     <ul class="nav justify-content-md-center tab1">
         <li class="nav-item">
             <button class="btn btn-link nav-link text-muted" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">{{ __('general.season_info') }}</button>
@@ -173,7 +173,7 @@
 <!-- Tabs_2 Button -->
 
 <!-- Tabs_2 Button Mobile -->
-<div class="scrollmenu d-md-none tab2" ng-show="page_variables.active_tab_1!=-1">
+<div class="scrollmenu d-md-none tab2" ng-show="page_variables.active_tab_1!=-1" ng-cloak>
     <button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':page_variables.active_tab_2==-1}" ng-click="page_variables.active_tab_2=-1;pull_data()">{{ __('general.season_info') }}</button>
     <button class="btn btn-link border-no-radius text-sm-center text-no-decoration" ng-repeat="episode in series.episodes" ng-class="{'active':page_variables.active_tab_2==episode.episode_number,'font-weight-bold text-primary':(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode), 'text-muted':!(page_variables.active_tab_1==user_movie_record.last_seen_season && episode.episode_number==user_movie_record.last_seen_episode)}" ng-click="page_variables.active_tab_2=episode.episode_number;pull_data()"><span>E@{{episode.episode_number>9?episode.episode_number:'0'+episode.episode_number}}</span></button>
 </div>
@@ -181,10 +181,10 @@
 
 
 <!--Poster Plot Details Section-->
-<div class="p-5" ng-show="is_waiting">
+<div class="p-5" ng-show="is_waiting" ng-cloak>
     <div class="text-muted text-center">{{ __('general.loading') }}</div>
 </div>
-<div class="row no-gutters mt-3 mt-md-5 mb-md-5" ng-hide="is_waiting">
+<div class="row no-gutters mt-3 mt-md-5 mb-md-5" ng-hide="is_waiting" ng-cloak>
     <div class="col-12 col-md-3 col-lg-3" ng-show="page_variables.active_tab_1==-1 || page_variables.active_tab_2==-1">
         <img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{series.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
     </div>
@@ -291,7 +291,7 @@
 
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="cast" ng-show="series.credits.cast.length > 0 && is_waiting!=true">
+<div class="container-fluid px-0 mt-5" id="cast" ng-show="series.credits.cast.length > 0 && is_waiting!=true" ng-cloak>
     <div class="px-3 px-md-0">
         <div class="h5">{{ __('general.actors') }}
         @if(Auth::check())
@@ -374,7 +374,7 @@
 
 
 <!--Cast Section-->
-<div class="container-fluid px-0 mt-5" id="guest_stars" ng-show="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0 && page_variables.active_tab_1 != -1 && is_waiting!=true">
+<div class="container-fluid px-0 mt-5" id="guest_stars" ng-show="series.episodes[page_variables.active_tab_2-1].guest_stars.length > 0 && page_variables.active_tab_1 != -1 && is_waiting!=true" ng-cloak>
     <div class="px-3 px-md-0"><div class="h5">{{ __('general.guest_stars') }}</div></div>
     <div class="">
         <div class="d-flex flex-wrap">
@@ -423,7 +423,7 @@
 </div>
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" id="pwhlal" ng-show="similar_movies.length > 0 && !(is_waiting || similar_movies.length==0)">
+<div class="container-fluid px-0 mt-5" id="pwhlal" ng-show="similar_movies.length > 0 && !(is_waiting || similar_movies.length==0)" ng-cloak>
     <div class="dropdown d-inline">
         <button class="btn btn-lg btn-outline-dark text-dark dropdown-toggle px-3 px-md-0 border-0 background-inherit nowrap" type="button" id="peopleWhoLikedAlsoLikedDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="h5" ng-show="page_variables.active_tab_3==0">{{ __('general.people_who_liked_this_also_liked') }}</span>

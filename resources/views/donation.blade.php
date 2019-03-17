@@ -13,7 +13,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid mt-3 d-none d-md-inline">
+<div class="container-fluid mt-3 d-none d-md-inline" ng-cloak>
 	<ul class="nav justify-content-md-center tab1" ng-init="active_tab='bitcoin'">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab=='bitcoin'}" ng-click="active_tab='bitcoin'">{{ __('general.bitcoin') }}</button>
@@ -35,7 +35,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu my-3 d-md-none tab2">
+<div class="scrollmenu my-3 d-md-none tab2" ng-cloak>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='bitcoin'}" ng-click="active_tab='bitcoin'">{{ __('general.bitcoin') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='ethereum'}" ng-click="active_tab='ethereum'">{{ __('general.ethereum') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration d-none" ng-class="{'active':active_tab=='patreon'}" ng-click="active_tab='patreon'">Patreon</button>
@@ -46,7 +46,7 @@
 
 
 
-<div class="jumbotron text-center background-white" ng-show="active_tab=='bitcoin'">
+<div class="jumbotron text-center background-white" ng-show="active_tab=='bitcoin'" ng-cloak>
 	<div class="row">
 		<div class="col-12 col-lg-6">
 			<div class="h-100 d-flex flex-column justify-content-center">
@@ -65,7 +65,7 @@
 	</div>
 </div>
 
-<div class="jumbotron text-center background-white" ng-show="active_tab=='ethereum'">
+<div class="jumbotron text-center background-white" ng-show="active_tab=='ethereum'" ng-cloak>
 	<div class="row">
 		<div class="col-12 col-lg-6">
 			<div class="h-100 d-flex flex-column justify-content-center">
@@ -84,7 +84,7 @@
 	</div>
 </div>
 
-<div class="jumbotron text-center background-white" ng-show="active_tab=='patreon'">
+<div class="jumbotron text-center background-white" ng-show="active_tab=='patreon'" ng-cloak>
 	<div class="row">
 		<div class="col">
 			<div class="h-100 d-flex flex-column justify-content-center">
@@ -96,7 +96,7 @@
 	</div>
 </div>
 
-<div class="jumbotron background-white" ng-show="active_tab=='bank_transfer'">
+<div class="jumbotron background-white" ng-show="active_tab=='bank_transfer'" ng-cloak>
 	<div class="row">
 		<div class="col">
 			<div class="h-100 d-flex flex-column justify-content-center">

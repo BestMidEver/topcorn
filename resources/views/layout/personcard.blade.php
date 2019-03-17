@@ -1,4 +1,4 @@
-<div class="card-group no-gutters">
+<div class="card-group no-gutters" ng-cloak>
 	<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="person in people">
 		<div class="card mx-2">
 			<a href="/person/@{{person.id}}" target={{$target}}>

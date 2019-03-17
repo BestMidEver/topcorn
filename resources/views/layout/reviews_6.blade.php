@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-cloak>
 	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:3">
         <div class="d-flex justify-content-between">
             <div class="h6 pb-2" ng-if="review.author.length>0">@{{review.author}}</div>
@@ -35,7 +35,7 @@
         </div>
 	</div>
 </div>
-<div class="collapse container-fluid" id="collapseMovies{{ $suffix }}">
+<div class="collapse container-fluid" id="collapseMovies{{ $suffix }}" ng-cloak>
 	<div ng-if="reviews{{ $suffix }}.length > 3">
     	<div class="py-4" ng-repeat="review in reviews{{ $suffix }} | limitTo:100:3">
             <div class="d-flex justify-content-between">
@@ -74,12 +74,12 @@
         </div>
     </div>
 </div>
-<div ng-show="iscast_movies{{  $suffix  }}">
+<div ng-show="iscast_movies{{  $suffix  }}" ng-cloak>
 @include('layout.pagination', ['suffix' => '_'.$suffix])
 </div>
-<div class="text-center pt-1" ng-hide="iscast_movies{{ $suffix }} || !(reviews{{ $suffix }}.length>3) || is_expanded{{ $suffix }}">
+<div class="text-center pt-1" ng-hide="iscast_movies{{ $suffix }} || !(reviews{{ $suffix }}.length>3) || is_expanded{{ $suffix }}" ng-cloak>
     <button class="btn btn-outline-secondary border-0 text-muted hover-white" ng-click="iscast_movies{{ $suffix }} = true;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><small>{{__('general.show_all')}}</small></button>
 </div>
-<div class="text-center pt-1" ng-show="iscast_movies{{ $suffix }} && reviews{{ $suffix }}.length>3 && is_expanded{{ $suffix }}!=true">
+<div class="text-center pt-1" ng-show="iscast_movies{{ $suffix }} && reviews{{ $suffix }}.length>3 && is_expanded{{ $suffix }}!=true" ng-cloak>
     <button class="btn btn-outline-secondary btn-lg fa40 border-0 text-muted hover-white" ng-click="iscast_movies{{ $suffix }} = false;" data-toggle="collapse" data-target="#collapseMovies{{ $suffix }}"><i class="fa fa-angle-up"></i></button>
 </div>

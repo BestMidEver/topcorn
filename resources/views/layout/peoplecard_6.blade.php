@@ -1,4 +1,4 @@
-<div class="" id="cast{{  $suffix  }}" ng-if="people{{  $suffix  }}.length > 0">
+<div class="" id="cast{{  $suffix  }}" ng-if="people{{  $suffix  }}.length > 0" ng-cloak>
 	<div class="">
 		<div class="d-flex flex-wrap">
 			<div class="col-6 col-md-4 col-lg-3 col-xl-2 mt-4" ng-repeat="person in people{{  $suffix  }} | limitTo:6">

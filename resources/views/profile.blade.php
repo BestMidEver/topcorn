@@ -3,7 +3,7 @@
 @include('head.head_profile')
 
 @section('body')
-<div class="position-relative mt-md-4">
+<div class="position-relative mt-md-4" ng-cloak>
 	<img ng-src="{{config('constants.image.cover')[$image_quality]}}{{ $profile_cover_pic }}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid coverpic" alt="Responsive image">
 	<div class="coveroverlayersmall-profile d-md-none">
 		<div class="d-flex flex-column align-items-center">
@@ -128,7 +128,7 @@
 
 
 @if(Auth::check())
-<div class="d-flex flex-wrap justify-content-between">
+<div class="d-flex flex-wrap justify-content-between" ng-cloak>
 	<div class="d-flex flex-column mt-1 mt-md-1 px-0 col-12 col-md-auto fa22 ml-auto">
 		<div class="d-flex flex-row justify-content-between text-center">
 			@if($profile_user_id != Auth::user()->id)
@@ -158,7 +158,7 @@
 
 
 <!-- Tabs Button -->
-<div class="container-fluid d-none d-md-inline no-gutters mt-5">
+<div class="container-fluid d-none d-md-inline no-gutters mt-5" ng-cloak>
 	<ul class="nav justify-content-md-center tab1">
 		<li class="nav-item">
 			<button class="btn btn-link nav-link text-muted" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
@@ -186,7 +186,7 @@
 
 
 <!-- Tabs Button Mobile -->
-<div class="scrollmenu d-md-none tab2 no-gutters mt-3">
+<div class="scrollmenu d-md-none tab2 no-gutters mt-3" ng-cloak>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab!='get_laters' && active_tab!='get_bans' && active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'}" ng-click="mod_title='{{ __('general.all') }}';active_tab='get_rateds/all';get_first_page_data()">{{ __('general.seen_movies') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_laters'}" ng-click="active_tab='get_laters';get_first_page_data();">{{ __('general.watch_later') }}</button>
 	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-class="{'active':active_tab=='get_bans'}" ng-show="!page_variables.is_guest" ng-click="active_tab='get_bans';get_first_page_data();">{{ __('general.banneds') }}</button>
@@ -200,7 +200,7 @@
 
 
 
-<div class="container-fluid mt-3" ng-show="!is_waiting">
+<div class="container-fluid mt-3" ng-show="!is_waiting" ng-cloak>
 	<div class="btn-group mr-2" role="group" aria-label="Movies or Series" ng-show="active_tab!='get_lists' && active_tab!='get_reviews' && active_tab!='get_follows'">
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='movies'?'active':''" ng-click="switch_page_mode('movies')">{{ __('general.p_movies') }}</button>
 		<button type="button" class="btn btn-outline-secondary" ng-class="page_variables.movies_or_series=='series'?'active':''" ng-click="switch_page_mode('series')">{{ __('general.p_series') }}</button>
@@ -272,7 +272,7 @@
 </div>
 
 
-<div id="scroll_top_point">
+<div id="scroll_top_point" ng-cloak>
 	<div class="p-5" ng-show="(active_tab != 'get_lists' && movies.length==0) || (active_tab == 'get_lists' && listes.length==0) || (active_tab == 'get_follows' && page_variables.follows.length==0) || is_waiting">
 		<div class="text-muted text-center" ng-if="!is_waiting">{{ __('general.no_result') }}</div><div class="text-muted text-center" ng-if="is_waiting">{{ __('general.searching') }}</div>
 	</div>

@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" ng-cloak>
 	<div class="votecard modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="card">
