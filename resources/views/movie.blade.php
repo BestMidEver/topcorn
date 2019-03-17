@@ -4,7 +4,7 @@
 
 @section('body')
 <!--Trailer Section-->
-<div class="mt-md-4">
+<div class="mt-md-4" ng-cloak>
 	<div class="position-relative">
 		<div id="accordion">
 			<div>
@@ -106,7 +106,7 @@
 <!--Trailer Section-->
 
 <!--Under Trailer Section-->
-<div class="d-flex flex-wrap justify-content-between">
+<div class="d-flex flex-wrap justify-content-between" ng-cloak>
 	<div>
 		<div class="d-flex flex-column">
 			<div class="px-3 px-md-0">
@@ -141,7 +141,7 @@
 @yield('amazon_affiliate')
 
 <!--Poster Plot Details Section-->
-<div class="row no-gutters mt-3 mt-md-5">
+<div class="row no-gutters mt-3 mt-md-5" ng-cloak>
 	<div class="col-12 col-md-3 col-lg-3">
 		<img ng-src="{{config('constants.image.movie_card')[$image_quality]}}@{{movie.poster_path}}" on-error-src="{{config('constants.image.movie_card_error')}}" class="card-img-top d-none d-md-inline" alt="Responsive image">
 	</div>
@@ -208,7 +208,7 @@
 
 
 <!--Cast Section-->
-<div
+<div ng-cloak
 			@if(Auth::check())
 				@if(Auth::User()->tt_movie < 50)
             data-toggle="popover" data-placement="bottom" title='{{ __("tutorial.hint") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="cast"
@@ -302,7 +302,7 @@
 @include('layout.reviews')
 
 <!--People Who Liked Also Liked Section-->
-<div class="container-fluid px-0 mt-5" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)">
+<div class="container-fluid px-0 mt-5" ng-hide="is_waiting || (similar_movies.length==0 && listes.length==0)" ng-cloak>
 	<div class="h5 px-3 px-md-0 mb-0 d-flex justify-content-between">
 		<div>
 		    <div class="dropdown d-inline mr-2">

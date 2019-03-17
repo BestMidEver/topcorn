@@ -68,7 +68,7 @@
 
 
 
-<body ng-cloak>
+<body>
 
     <!--<div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -82,7 +82,7 @@
 
 
 
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-night py-md-0">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-night py-md-0" ng-cloak>
         <div class="container">
             <a class="navbar-brand" href="/main">
                 <img src="/images/topcorn_logo.png" class="d-none d-md-inline nav-logo">
@@ -140,7 +140,7 @@
 
 
 
-    <footer class="footer">
+    <footer class="footer" ng-cloak>
         <div class="container pt-5">
             <div class="row text-center text-sm-left">
                 <div class="col col-sm-3 d-none d-sm-inline">
