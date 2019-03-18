@@ -55,6 +55,12 @@
 								</div>
 							</div>
 						</div>
+						<div class="d-flex flex-row justify-content-center" ng-if="movie.updated_at.length>0">
+							<div class="text-white">
+								<small>{{ __('general.last_voter') }}</small>
+								<small>@{{movie.updated_at}} {{ __('general.ago') }}</small>
+							</div>
+						</div>
 					</div>
 					<div class="custom-over-layer-bottom h-50 d-flex flex-column justify-content-center">
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.vote_average > 0">
