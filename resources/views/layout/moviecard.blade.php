@@ -57,7 +57,7 @@
 						</div>
 						<div class="d-flex flex-row justify-content-center" ng-if="movie.updated_at.length>0">
 							<div class="text-white">
-								<small class="d-block">{{ __('general.last_voter') }}</small>
+								<small class="d-block">{{ __('general.vote_updated_at') }}</small>
 								<small>@{{movie.updated_at}} {{ __('general.ago') }}</small>
 							</div>
 						</div>

@@ -312,6 +312,7 @@ return [
     'users_twitter' => 'Twitter link',                                                                  //account, profile
     'users_youtube' => 'Youtube Csatorna',                                                              //account, profile
     'visibility' => 'Láthatóság',                                                                       //list       
+    'vote_updated_at' => 'Updated at',                                                              //list/////////////
     'watch_later' => 'Később megnézem',                         
     'watch_together' => 'Nézzük meg együtt!',                                                           //profile,
     'watched_movie_number' => 'Megnézett filmek száma',                                                 //profile,

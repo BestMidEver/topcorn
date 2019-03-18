@@ -312,6 +312,7 @@ return [
     'users_twitter' => 'Twitter Bağlantısı',                                                            //account, profile      
     'users_youtube' => 'Youtube Kanalı',                                                                //account, profile      
     'visibility' => 'Kimler Görebilir?',                                                                //list                  
+    'vote_updated_at' => 'Oylandı',                                                                     //list
     'watch_later' => 'Sonra İzle',                          
     'watch_together' => 'Beraber İzle',                                                                 //profile,
     'watched_movie_number' => 'İzlenen film sayısı',                                                    //profile,              

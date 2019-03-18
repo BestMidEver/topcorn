@@ -460,17 +460,24 @@ class ProfileController extends Controller
             'r2.rate as rate_code',
             'series_laters.id as later_id',
             'series_bans.id as ban_id',
-            'series_rateds.rate as profile_user_rate'
+            'series_rateds.rate as profile_user_rate',
+            'series_rateds.updated_at as updated_at'
         )
         ->orderBy('series_rateds.updated_at', 'desc');
 
         if($rate=='all'){
-            $return_val = $return_val->where('series_rateds.rate', '<>', 0);
+            $return_val = $return_val->where('series_rateds.rate', '<>', 0)
+            ->paginate($pagin);
         }else{
-            $return_val = $return_val->where('series_rateds.rate', $rate);
+            $return_val = $return_val->where('series_rateds.rate', $rate)
+            ->paginate($pagin);
         }
 
-        return $return_val->paginate($pagin);
+        foreach ($return_val as $row) {
+            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+        }
+
+        return $return_val;
     }
 
 
