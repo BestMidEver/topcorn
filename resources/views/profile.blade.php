@@ -3,6 +3,9 @@
 @include('head.head_profile')
 
 @section('body')
+
+@include('layout.top_banner')
+
 <div class="position-relative mt-md-4" ng-cloak>
 	<img ng-src="{{config('constants.image.cover')[$image_quality]}}{{ $profile_cover_pic }}" on-error-src="{{config('constants.image.cover_error')}}" class="img-fluid coverpic" alt="Responsive image">
 	<div class="coveroverlayersmall-profile d-md-none">
