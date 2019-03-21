@@ -307,7 +307,7 @@ Route::get('test', function(){
 	return dd(DB::table('rateds')
 	->where('rateds.movie_id', '=', 585860)
 	->select(
-        DB::raw('COUNT(rateds.movie_id) as count')
+        DB::raw('COUNT(rateds.movie_id) as counts')
 	)
 	->groupBy('rateds.movie_id')
 	->first());
