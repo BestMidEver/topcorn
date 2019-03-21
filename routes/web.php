@@ -307,7 +307,8 @@ Route::get('test', function(){
 	return dd(DB::table('rateds')
 	->where('rateds.movie_id', '=', 585860)
 	->select(
-        DB::raw('COUNT(rateds.movie_id) as counts')
+        DB::raw('SUM(rateds.rate) as vote_sum'),
+        DB::raw('COUNT(rateds.movie_id) as vote_count')
 	)
 	->groupBy('rateds.movie_id')
 	->first());
