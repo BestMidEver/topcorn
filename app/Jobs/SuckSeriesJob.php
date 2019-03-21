@@ -46,7 +46,7 @@ class SuckSeriesJob implements ShouldQueue
         $is_recent = Serie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
         ->first();
-        //if($is_recent) return;
+        if($is_recent) return;
         $topcorn_vote_data = DB::table('series_rateds')
         ->where('series_rateds.series_id', '=', $this->id)
         ->where('series_rateds.rate', '>', 0)
