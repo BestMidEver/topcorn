@@ -44,7 +44,7 @@ class SuckMovieJob implements ShouldQueue
         ->first();
         //if($is_recent) return;
         $topcorn_vote_data = DB::table('rateds')
-        ->where('rateds.movie_id', '=', 585860)
+        ->where('rateds.movie_id', '=', $this->id)
         ->where('rateds.rate', '>', 0)
         ->select(
             DB::raw('SUM((rateds.rate-1)*2.5) as vote_sum'),
