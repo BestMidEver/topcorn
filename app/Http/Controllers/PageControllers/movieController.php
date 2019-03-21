@@ -37,12 +37,16 @@ class movieController extends Controller
                 $movie_plot = $movie->{App::getlocale().'_plot'};
                 $movie_year = substr($movie->release_date,0 ,4);
                 $poster_path = $movie->en_poster_path;
+                $vote_average = $movie->vote_average;
+                $vote_count = $movie->vote_count;
             }else{
                 $movie_title = '';
                 $movie_en_title = '';
                 $movie_plot = '';
                 $movie_year = '';
                 $poster_path = '';
+                $vote_average = 0;
+                $vote_count = 0;
             }
         }
 
@@ -69,7 +73,7 @@ class movieController extends Controller
 
         $amazon_variables = amazon_variables();
 
-    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_plot', 'movie_year', 'poster_path', 'amazon_variables'))->with('watch_togethers', $watch_togethers);
+    	return view('movie', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'movie_title', 'movie_en_title', 'movie_plot', 'movie_year', 'poster_path', 'amazon_variables', 'vote_average', 'vote_count'))->with('watch_togethers', $watch_togethers);
     }
 
 

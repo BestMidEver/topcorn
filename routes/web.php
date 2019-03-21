@@ -304,15 +304,19 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	return dd(DB::table('rateds')
-	->where('rateds.movie_id', '=', 585860)
-	->where('rateds.rate', '>', 0)
+	return dd(DB::table('users')
+	->leftjoin('laters', 'laters.user_id', 'users.id')
 	->select(
-        DB::raw('SUM((rateds.rate-1)*2.5) as vote_sum'),
-        DB::raw('COUNT(rateds.movie_id) as vote_count')
+		'users.id',
+		'users.facebook_id',
+		'users.name',
+		'users.tt_navbar',
+		'users.tt_movie',
+        DB::raw('COUNT(laters.id) as later_count')
 	)
-	->groupBy('rateds.movie_id')
-	->first());
+	->groupBy('users.id')
+    ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
+	->paginate(20));
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
