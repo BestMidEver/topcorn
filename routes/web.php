@@ -306,6 +306,7 @@ Route::get('refreshSitemap', function(){
 Route::get('test', function(){
 	return dd(DB::table('rateds')
 	->where('rateds.movie_id', '=', 585860)
+	->where('rateds.rate', '>', 0)
 	->select(
         DB::raw('SUM((rateds.rate-1)*2.5) as vote_sum'),
         DB::raw('COUNT(rateds.movie_id) as vote_count')
