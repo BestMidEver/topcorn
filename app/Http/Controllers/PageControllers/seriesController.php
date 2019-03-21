@@ -112,17 +112,21 @@ class seriesController extends Controller
                 $series_plot = $series->{App::getlocale().'_plot'};
                 $series_year = substr($series->first_air_date, 0 ,4);
                 $poster_path = $series->en_poster_path;
+                $vote_average = $series->vote_average;
+                $vote_count = $series->vote_count;
             }else{
                 $series_name = '';
                 $series_en_name = '';
                 $series_plot = '';
                 $series_year = '';
                 $poster_path = '';
+                $vote_average = 0;
+                $vote_count = 0;
             }
         }
         
         $amazon_variables = amazon_variables();
 
-    	return view('series', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_plot', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent', 'last_seen_id', 'last_seen_season', 'last_seen_episode', 'poster_path', 'amazon_variables'))->with('watch_togethers', $watch_togethers);
+    	return view('series', compact('id', 'id_dash_title', 'image_quality', 'target', 'watched_movie_number', 'series_name', 'series_en_name', 'series_plot', 'series_year', 'series_path', 'rated_id', 'rate_code', 'later_id', 'ban_id', 'point', 'p2', 'count', 'percent', 'last_seen_id', 'last_seen_season', 'last_seen_episode', 'poster_path', 'amazon_variables', 'vote_average', 'vote_count'))->with('watch_togethers', $watch_togethers);
     }
 }
