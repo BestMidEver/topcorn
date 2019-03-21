@@ -13,6 +13,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\DB;
 
 class SuckMovieJob implements ShouldQueue
 {
@@ -42,6 +43,15 @@ class SuckMovieJob implements ShouldQueue
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
         //if($is_recent) return;
+        $topcorn_vote_data = DB::table('rateds')
+        ->where('rateds.movie_id', '=', 585860)
+        ->where('rateds.rate', '>', 0)
+        ->select(
+            DB::raw('SUM((rateds.rate-1)*2.5) as vote_sum'),
+            DB::raw('COUNT(rateds.movie_id) as vote_count')
+        )
+        ->groupBy('rateds.movie_id')
+        ->first();
         if($this->isWithRecommendation){
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=recommendations,reviews'), true);
             Recommendation::where(['movie_id' => $this->id])->delete();
@@ -57,10 +67,18 @@ class SuckMovieJob implements ShouldQueue
             }
             $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr&append_to_response=reviews'), true);
             $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu&append_to_response=reviews'), true);
+            if($topcorn_vote_data){
+                $vote_count = $topcorn_vote_data->vote_count+$movie['vote_count'];
+                $vote_average = ($topcorn_vote_data->vote_sum + $movie['vote_average']*$movie['vote_count']) / $vote_count;
+                $vote_average = round($vote_average, 1);
+            }else{
+                $vote_count = $movie['vote_count'];
+                $vote_average = $movie['vote_average'];
+            }
             Movie::updateOrCreate(
                 ['id' => $movie['id']],
                 ['original_title' => $movie['original_title'],
-                'vote_average' => $movie['vote_average'],
+                'vote_average' => $vote_average,
                 'budget' => $movie['budget'],
                 'revenue' => $movie['revenue'],
                 'original_language' => $movie['original_language'],
@@ -78,7 +96,7 @@ class SuckMovieJob implements ShouldQueue
                 'en_plot' => $movie['overview'],
                 'tr_plot' => $movie_tr['overview'],
                 'hu_plot' => $movie_hu['overview'],
-                'vote_count' => $movie['vote_count']]
+                'vote_count' => $vote_count]
             );
             Genre::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['genres']); $k++) { 
@@ -116,10 +134,18 @@ class SuckMovieJob implements ShouldQueue
             $movie = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=en&append_to_response=reviews'), true);
             $movie_tr = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=tr&append_to_response=reviews'), true);
             $movie_hu = json_decode(file_get_contents('https://api.themoviedb.org/3/movie/'.$this->id.'?api_key='.config('constants.api_key').'&language=hu&append_to_response=reviews'), true);
+            if($topcorn_vote_data){
+                $vote_count = $topcorn_vote_data->vote_count+$movie['vote_count'];
+                $vote_average = ($topcorn_vote_data->vote_sum + $movie['vote_average']*$movie['vote_count']) / $vote_count;
+                $vote_average = round($vote_average, 1);
+            }else{
+                $vote_count = $movie['vote_count'];
+                $vote_average = $movie['vote_average'];
+            }
             Movie::updateOrCreate(
                 ['id' => $movie['id']],
                 ['original_title' => $movie['original_title'],
-                'vote_average' => $movie['vote_average'],
+                'vote_average' => $vote_average,
                 'budget' => $movie['budget'],
                 'revenue' => $movie['revenue'],
                 'original_language' => $movie['original_language'],
@@ -137,7 +163,7 @@ class SuckMovieJob implements ShouldQueue
                 'en_plot' => $movie['overview'],
                 'tr_plot' => $movie_tr['overview'],
                 'hu_plot' => $movie_hu['overview'],
-                'vote_count' => $movie['vote_count']]
+                'vote_count' => $vote_count]
             );
             Genre::where(['movie_id' => $this->id])->delete();
             for ($k=0; $k < count($movie['genres']); $k++) { 
