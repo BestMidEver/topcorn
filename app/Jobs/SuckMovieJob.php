@@ -42,7 +42,7 @@ class SuckMovieJob implements ShouldQueue
         $is_recent = Movie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
-        //if($is_recent) return;
+        if($is_recent) return;
         $topcorn_vote_data = DB::table('rateds')
         ->where('rateds.movie_id', '=', $this->id)
         ->where('rateds.rate', '>', 0)

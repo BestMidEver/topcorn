@@ -47,7 +47,15 @@ class SuckSeriesJob implements ShouldQueue
         ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
         ->first();
         //if($is_recent) return;
-        
+        $topcorn_vote_data = DB::table('series_rateds')
+        ->where('series_rateds.series_id', '=', $this->id)
+        ->where('series_rateds.rate', '>', 0)
+        ->select(
+            DB::raw('SUM((series_rateds.rate-1)*2.5) as vote_sum'),
+            DB::raw('COUNT(series_rateds.series_id) as vote_count')
+        )
+        ->groupBy('series_rateds.series_id')
+        ->first();
         $temp = Serie::where('id', $this->id)->first();
         if($temp) $is_next_episode_defined = $temp->next_episode_air_date == null ? false : true;
         else $is_next_episode_defined = false;
@@ -122,10 +130,18 @@ class SuckSeriesJob implements ShouldQueue
             }
             $last_episode_air_date = null;
             if($series['last_air_date'] != null){$last_episode_air_date = new Carbon($series['last_air_date']);}
+            if($topcorn_vote_data){
+                $vote_count = $topcorn_vote_data->vote_count+$series['vote_count'];
+                $vote_average = ($topcorn_vote_data->vote_sum + $series['vote_average']*$series['vote_count']) / $vote_count;
+                $vote_average = round($vote_average, 1);
+            }else{
+                $vote_count = $series['vote_count'];
+                $vote_average = $series['vote_average'];
+            }
             Serie::updateOrCreate(
                 ['id' => $series['id']],
                 ['original_name' => $series['original_name'],
-                'vote_average' => $series['vote_average'],
+                'vote_average' => $vote_average,
                 'original_language' => $series['original_language'],
                 'first_air_date' => $first_air_date,
                 'next_episode_air_date' => $next_episode_air_date,
@@ -144,7 +160,7 @@ class SuckSeriesJob implements ShouldQueue
                 'en_plot' => $series['overview'],
                 'tr_plot' => $series_tr['overview'],
                 'hu_plot' => $series_hu['overview'],
-                'vote_count' => $series['vote_count']]
+                'vote_count' => $vote_count]
             );
             Series_genre::where(['series_id' => $this->id])->delete();
             for ($k=0; $k < count($series['genres']); $k++) { 
@@ -246,10 +262,18 @@ class SuckSeriesJob implements ShouldQueue
             }
             $last_episode_air_date = null;
             if($series['last_air_date'] != null){$last_episode_air_date = new Carbon($series['last_air_date']);}
+            if($topcorn_vote_data){
+                $vote_count = $topcorn_vote_data->vote_count+$series['vote_count'];
+                $vote_average = ($topcorn_vote_data->vote_sum + $series['vote_average']*$series['vote_count']) / $vote_count;
+                $vote_average = round($vote_average, 1);
+            }else{
+                $vote_count = $series['vote_count'];
+                $vote_average = $series['vote_average'];
+            }
             Serie::updateOrCreate(
                 ['id' => $series['id']],
                 ['original_name' => $series['original_name'],
-                'vote_average' => $series['vote_average'],
+                'vote_average' => $vote_average,
                 'original_language' => $series['original_language'],
                 'first_air_date' => $first_air_date,
                 'next_episode_air_date' => $next_episode_air_date,
@@ -268,7 +292,7 @@ class SuckSeriesJob implements ShouldQueue
                 'en_plot' => $series['overview'],
                 'tr_plot' => $series_tr['overview'],
                 'hu_plot' => $series_hu['overview'],
-                'vote_count' => $series['vote_count']]
+                'vote_count' => $vote_count]
             );
             Series_genre::where(['series_id' => $this->id])->delete();
             for ($k=0; $k < count($series['genres']); $k++) { 
