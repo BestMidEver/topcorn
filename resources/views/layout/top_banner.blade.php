@@ -1,5 +1,5 @@
 @if(Auth::check())
-	@if(Auth::id()==7)
+	@if(Auth::id()==0)
 <div class="p-5">
 	<p class="h6">An offer that you can't refuse.</p>
 	<p>If you liked using Topcorn.io contribute us by signing up Amazon Prime 30-day free trial.</p>
