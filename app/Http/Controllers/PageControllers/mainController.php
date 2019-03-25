@@ -33,7 +33,7 @@ class mainController extends Controller
             DB::raw('COUNT(movies.id) as count')
         )
         ->groupBy('movies.id')
-        ->where('rateds.rate', '=', 2);
+        ->where('rateds.rate', '=', $mode);
 
         if($sort == 'newest'){
             $subq = $subq
