@@ -22,7 +22,7 @@ ON rateds.user_id = NG.user_id
 
 
 	LEFT JOIN movies ON rateds.movie_id = movies.id 
-	WHERE rateds.rate > 0 AND NG.count > 75
+	WHERE rateds.rate > 3 AND NG.count > 75
 	""", conn)
 
 X = df.drop(columns=['rate'])
