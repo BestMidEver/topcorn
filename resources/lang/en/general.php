@@ -313,7 +313,7 @@ return [
     'users_twitter' => 'Twitter Link',                                                              //account, profile      
     'users_youtube' => 'Youtube Channel',                                                           //account, profile      
     'visibility' => 'Visibility',                                                                   //list    
-    'vote_updated_at' => 'Updated at',                                                              //list
+    'vote_updated_at' => 'Updated',                                                                 //list
     'watch_later' => 'Watch Later',
     'watch_together' => 'Watch Together',                                                           //profile,
     'watched_movie_number' => 'Watched movie count',                                                //profile,              
