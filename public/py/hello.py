@@ -10,7 +10,7 @@ db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
 
 df = pd.read_sql("""
-	SELECT rateds.user_id, rateds.movie_id, IF(rateds.rate=1 OR rateds.rate=2, 0, 1) as rate
+	SELECT rateds.user_id, rateds.movie_id, IF(rateds.rate=1 OR rateds.rate=2, 0, IF(rateds.rate=2, 1, 2)) as rate
 	FROM rateds
 
 
@@ -23,7 +23,7 @@ ON rateds.user_id = NG.user_id
 
 
 	LEFT JOIN movies ON rateds.movie_id = movies.id 
-	WHERE (rateds.rate <> 0 OR rateds.rate <> 3) AND NG.count > 75
+	WHERE rateds.rate <> 0 AND NG.count > 75
 	""", conn)
 
 X = df.drop(columns=['rate'])
