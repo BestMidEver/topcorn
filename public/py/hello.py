@@ -32,5 +32,5 @@ print model.fit(X,y)
 
 predictions = model.predict([[7,332562]])
 
-score = accuracy_score(y_test, predictions)
-print(score)
+#score = accuracy_score(y_test, predictions)
+print(predictions)
