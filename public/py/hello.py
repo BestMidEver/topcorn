@@ -23,6 +23,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
 model = MLPClassifier(hidden_layer_sizes=(8,8))
 model.fit(X, y)
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test)
 predictions = model.predict(X_test)
 
 score = classification_report(y_test, predictions)
