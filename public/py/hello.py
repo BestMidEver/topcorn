@@ -15,14 +15,14 @@ df = pd.read_sql("""
 
 
 INNER JOIN
-    (SELECT user_id, Count(1) As NameCount
+    (SELECT user_id, Count(1) As count
     FROM rateds
     GROUP BY user_id) NG
 ON rateds.user_id = NG.user_id
 
 
 	LEFT JOIN movies ON rateds.movie_id = movies.id 
-	WHERE rateds.rate > 0
+	WHERE rateds.rate > 0 AND NG.count > 100
 	""", conn)
 
 X = df.drop(columns=['rate'])
