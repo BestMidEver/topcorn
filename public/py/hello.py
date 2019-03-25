@@ -10,7 +10,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SELECT * FROM custom_notifications")
+mycursor.execute("SELECT rateds.user_id, rateds.movie_id FROM rateds")
 
 myresult = mycursor.fetchall()
 
