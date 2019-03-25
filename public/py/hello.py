@@ -22,7 +22,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
 model = MLPClassifier(hidden_layer_sizes=(13,13,13))
 model.fit(X, y)
-predictions = model.predict([[7,7345]])#X_test)
+predictions = model.predict([[7,37724]])#X_test)
 
 #score = accuracy_score(y_test, predictions)
 print(predictions)
