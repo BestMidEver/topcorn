@@ -20,7 +20,7 @@ y = df['rate']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
-model = MLPClassifier(hidden_layer_sizes=(4,8,15,10,4))
+model = MLPClassifier(hidden_layer_sizes=(4,8,8,3))
 model.fit(X, y)
 predictions = model.predict([[7,228967],[7,195589],[7,109414],[7,262543],[7,131634]])#X_test)
 
