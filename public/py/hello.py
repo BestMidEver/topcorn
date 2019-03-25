@@ -13,7 +13,7 @@ y = df['rate']
 
 model = DecisionTreeClassifier()
 model.fit(X, y)
-predictions = model.predict([ [7, 550] ])
+predictions = model.predict([ [7, 603] ])
 
 
 print(predictions)
