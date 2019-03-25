@@ -18,7 +18,7 @@ df = pd.read_sql("""
 X = df.drop(columns=['rate'])
 y = df['rate']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.01)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.001)
 
 model = DecisionTreeClassifier()
 model.fit(X_train, y_train)
