@@ -1,3 +1,1 @@
-print("This line will be printed.")
-<php
-return ':D';
+print("Selamın hello")
