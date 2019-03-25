@@ -16,4 +16,4 @@ model.fit(X, y)
 predictions = model.predict([ [7, 1124] ])
 
 
-print(df)
+print(predictions)
