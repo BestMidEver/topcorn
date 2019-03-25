@@ -10,7 +10,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SELECT rateds.user_id, rateds.movie_id FROM rateds")
+mycursor.execute("SELECT rateds.user_id, rateds.movie_id, rateds.rate FROM rateds WHERE rateds.rate > 0")
 
 myresult = mycursor.fetchall()
 
