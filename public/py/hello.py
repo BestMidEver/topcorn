@@ -15,7 +15,7 @@ df = pd.read_sql("""
 	WHERE rateds.rate > 0
 	""", conn)
 
-X = df.drop(columns=['rate'])
+X = df.drop(columns=['rate', 'vote_average'])
 y = df['rate','vote_average']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
