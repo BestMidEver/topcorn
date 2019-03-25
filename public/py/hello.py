@@ -13,6 +13,6 @@ y = df['rate']
 
 model = DecisionTreeClassifier()
 model.fit(X, y)
-df
 
-print(y)
+
+print(df)
