@@ -1,18 +1,8 @@
-from sklearn.tree import DecisionTreeClassifier
-import mysql.connector
+from sqlalchemy import create_engine
+import pymysql
+import pandas as pd
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  passwd="S1freyokki",
-  database="laravel"
-)
+db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
+conn = create_engine(db_connection)
 
-mycursor = mydb.cursor()
-
-mycursor.execute("SELECT rateds.user_id, rateds.movie_id, rateds.rate FROM rateds WHERE rateds.rate > 0")
-
-myresult = mycursor.fetchall()
-
-#for x in myresult:
-  print(myresult)
+df = pd.read_sql("SELECT rateds.user_id, rateds.movie_id, rateds.rate FROM rateds WHERE rateds.rate > 0", conn)
