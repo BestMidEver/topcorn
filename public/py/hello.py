@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
 
-df = pd.read_sql("SELECT rateds.user_id, rateds.movie_id, (rateds.rate - 1)*25 as rate, CAST(movies.vote_average AS INT) FROM rateds LEFT JOIN movies ON rateds.movie_id = movies.id WHERE rateds.rate > 0", conn)
+df = pd.read_sql("SELECT rateds.user_id, rateds.movie_id, (rateds.rate - 1)*25 as rate, ROUND(movies.vote_average, 0) as vote_average FROM rateds LEFT JOIN movies ON rateds.movie_id = movies.id WHERE rateds.rate > 0", conn)
 
 X = df.drop(columns=['rate'])
 y = df['rate']
