@@ -10,8 +10,8 @@ conn = create_engine(db_connection)
 
 df = pd.read_sql("SELECT rateds.user_id, rateds.movie_id, (rateds.rate - 1)*25 as rate, movies.vote_average FROM rateds LEFT JOIN movies ON rateds.movie_id = movies.id WHERE rateds.rate > 0", conn)
 
-X = df.drop(columns=['rate'])
-y = df['rate']
+X = df.drop(columns=['vote_average'])
+y = df['vote_average']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
