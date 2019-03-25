@@ -22,7 +22,7 @@ ON rateds.user_id = NG.user_id
 
 
 	LEFT JOIN movies ON rateds.movie_id = movies.id 
-	WHERE rateds.rate > 0 AND NG.count > 100
+	WHERE rateds.rate > 0 AND NG.count > 500
 	""", conn)
 
 X = df.drop(columns=['rate'])
@@ -36,4 +36,4 @@ model.fit(X_train,y_train)
 predictions = model.predict(X_test)
 
 score = accuracy_score(y_test, predictions)
-print(score)
+print(df)
