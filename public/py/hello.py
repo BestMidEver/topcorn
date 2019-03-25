@@ -4,7 +4,15 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  passwd="S1freyokki"
+  passwd="S1freyokki",
+  database="laravel"
 )
 
-print(mydb)
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM rateds")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
