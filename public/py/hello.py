@@ -27,10 +27,10 @@ y = df['rate']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
-model = MLPClassifier(hidden_layer_sizes=(150,150,150))#,max_iter=250)
-print model.fit(X_train,y_train)
+model = MLPClassifier(hidden_layer_sizes=(100,100,100))#,max_iter=250)
+print model.fit(X,y)
 
-predictions = model.predict(X_test)
+predictions = model.predict([[7,332562]])
 
 score = accuracy_score(y_test, predictions)
 print(score)
