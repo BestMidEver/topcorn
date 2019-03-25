@@ -304,19 +304,9 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////// TEST ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
-	return dd(DB::table('users')
-	->leftjoin('laters', 'laters.user_id', 'users.id')
-	->select(
-		'users.id',
-		'users.facebook_id',
-		'users.name',
-		'users.tt_navbar',
-		'users.tt_movie',
-        DB::raw('COUNT(laters.id) as later_count')
-	)
-	->groupBy('users.id')
-    ->orderBy(DB::raw('COUNT(laters.id)'), 'DESC')
-	->paginate(20));
+	$command = escapeshellcmd('/py/hello.py');
+	$output = shell_exec($command);
+	echo $output;
 });
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////// TEST ////////////////////////////////////////
