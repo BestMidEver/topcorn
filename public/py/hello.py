@@ -14,5 +14,5 @@ mycursor.execute("SELECT rateds.user_id, rateds.movie_id, rateds.rate FROM rated
 
 myresult = mycursor.fetchall()
 
-for x in myresult:
-  print(x)
+#for x in myresult:
+  print(myresult)
