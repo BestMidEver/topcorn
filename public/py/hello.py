@@ -9,13 +9,10 @@ db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
 
 df = pd.read_sql("""
-	SELECT r1.user_id, r1.movie_id, (r1.rate - 1)*25 as rate, ROUND(movies.vote_average, 0) as vote_average
-	FROM rateds AS r1,
-		(SELECT r2.id, COUNT(*) AS the_count
-		FROM rateds as r2
-		GROUP BY r2.user_id) AS r2
-	LEFT JOIN movies ON r1.movie_id = movies.id 
-	WHERE r1.rate > 0 AND r1.id = r2.id
+	SELECT rateds.user_id, rateds.movie_id, (rateds.rate - 1)*25 as rate, ROUND(movies.vote_average, 0) as vote_average 
+	FROM rateds 
+	LEFT JOIN movies ON rateds.movie_id = movies.id 
+	WHERE rateds.rate > 0
 	""", conn)
 
 X = df.drop(columns=['rate'])
