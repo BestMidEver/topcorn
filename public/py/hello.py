@@ -25,5 +25,5 @@ model = MLPClassifier(hidden_layer_sizes=(8,8))
 model.fit(X, y)
 predictions = model.predict(X_test)
 
-score = confusion_matrix(y_test, predictions)
+score = classification_report(y_test, predictions)
 print(score)
