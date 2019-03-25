@@ -9,7 +9,7 @@ db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
 
 df = pd.read_sql("""
-	SELECT rateds.user_id, rateds.movie_id, rateds.rate
+	SELECT rateds.user_id, rateds.movie_id, rateds.rate, ROUND(movies.vote_average, 0) as vote_average
 	FROM rateds 
 	LEFT JOIN movies ON rateds.movie_id = movies.id 
 	WHERE rateds.rate > 0
