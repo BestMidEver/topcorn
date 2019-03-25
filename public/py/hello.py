@@ -16,7 +16,7 @@ y = df['rate']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 model = DecisionTreeClassifier()
-model.fit(X, y)
+model.fit(X_train, y_train)
 predictions = model.predict([ [7, 603] ])
 
 score = accuracy_score(y_test, predictions)
