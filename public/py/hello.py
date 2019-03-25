@@ -25,7 +25,7 @@ df = pd.read_sql("""
 X = df.drop(columns=['rate'])
 y = df['rate']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
 model = MLPClassifier(max_iter=500)#hidden_layer_sizes=(13,13,13,13,13,13,13),)
 print model.fit(X_train,y_train)
