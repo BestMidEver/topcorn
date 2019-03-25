@@ -4,7 +4,8 @@ import pandas as pd
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from sklearn.metrics import classification_report,confusion_matrix
+from sklearn.preprocessing import StandardScaler
+
 
 db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
@@ -27,5 +28,5 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 predictions = model.predict(X_test)
 
-score = classification_report(y_test, predictions)
+score = accuracy_score(y_test, predictions)
 print(score)
