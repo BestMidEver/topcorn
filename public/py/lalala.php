@@ -1,2 +1,2 @@
 <?php
-	return ':D';
+	echo ':D';
