@@ -19,7 +19,7 @@ df = pd.read_sql("""
 	    GROUP BY user_id) NG
 	ON rateds.user_id = NG.user_id
 	LEFT JOIN movies ON rateds.movie_id = movies.id 
-	WHERE rateds.rate <> 0 AND NG.count > 100
+	WHERE rateds.rate <> 0 AND NG.count > 66
 	""", conn)
 
 X = df.drop(columns=['rate'])
@@ -27,7 +27,7 @@ y = df['rate']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 
-model = MLPClassifier(hidden_layer_sizes=(300,300,1000),max_iter=5000)#,)
+model = MLPClassifier(hidden_layer_sizes=(300,300,300),max_iter=5000)#,)
 print model.fit(X_train,y_train)
 
 predictions = model.predict(X_test)
