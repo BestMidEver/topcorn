@@ -28,9 +28,9 @@ X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
 
 model = MLPClassifier(hidden_layer_sizes=(13,13,13),max_iter=500)
-print model.fit(X_train,y_train)
+model.fit(X_train,y_train)
 
-#predictions = model.predict(X_test)
+predictions = model.predict(X_test)
 
-#score = accuracy_score(y_test, predictions)
-#print(score)
+score = accuracy_score(y_test, predictions)
+print(score)
