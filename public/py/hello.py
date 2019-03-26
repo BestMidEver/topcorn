@@ -19,7 +19,7 @@ df = pd.read_sql("""
 	    GROUP BY user_id) NG
 	ON rateds.user_id = NG.user_id
 	LEFT JOIN movies ON rateds.movie_id = movies.id 
-	WHERE rateds.rate > 0 AND NG.count > 66
+	WHERE rateds.rate > 0 AND NG.count > 66 AND rateds.user_id = 7
 	""", conn)
 
 X = df.drop(columns=['rate'])
