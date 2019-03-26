@@ -10,7 +10,7 @@ db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
 
 df = pd.read_sql("""
-	SELECT rateds.user_id, rateds.movie_id, rateds.rate, movies.vote_count
+	SELECT rateds.user_id, rateds.movie_id, rateds.rate, movies.vote_count, movies.vote_average
 	FROM rateds
 	INNER JOIN
 	    (SELECT user_id, Count(1) As count
@@ -30,7 +30,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
 model = MLPClassifier(hidden_layer_sizes=(100))#,max_iter=250)
 model.fit(X,y)
 
-predictions = model.predict([[7,102651, 7878]])
+predictions = model.predict([[7,102651, 7878, 7]])
 
 #score = accuracy_score(y_test, predictions)
 print(predictions)
