@@ -10,7 +10,7 @@ db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
 
 df = pd.read_sql("""
-	SELECT rateds.user_id, rateds.movie_id, rateds.rate, movies.vote_count, movies.vote_average, movies.popularity, movies.release_date
+	SELECT rateds.user_id, rateds.movie_id, rateds.rate, movies.vote_count, movies.vote_average, movies.popularity, UNIX_TIMESTAMP(movies.release_date)
 	FROM rateds
 	INNER JOIN
 	    (SELECT user_id, Count(1) As count
