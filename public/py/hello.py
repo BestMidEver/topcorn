@@ -10,7 +10,7 @@ db_connection = 'mysql+pymysql://root:S1freyokki@localhost/laravel'
 conn = create_engine(db_connection)
 
 df = pd.read_sql("""
-	SELECT rateds.user_id, rateds.movie_id, rateds.rate, movies.vote_count, movies.vote_average, movies.popularity, UNIX_TIMESTAMP(movies.release_date)
+	SELECT rateds.user_id, rateds.movie_id, rateds.rate, movies.vote_count, movies.vote_average, movies.popularity, UNIX_TIMESTAMP(movies.release_date) as release_date, budget, revenue
 	FROM rateds
 	INNER JOIN
 	    (SELECT user_id, Count(1) As count
@@ -34,4 +34,4 @@ model.fit(X_train,y_train)
 predictions = model.predict(X_test)
 
 score = accuracy_score(y_test, predictions)
-print(df)
+print(score)
