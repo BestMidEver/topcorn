@@ -305,7 +305,6 @@ Route::get('refreshSitemap', function(){
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('test', function(){
 	$items = DB::table('users')
-    ->where('users.when_automatic_notification', '>', 0)
     ->leftjoin('series_laters', function ($join) {
         $join->on('series_laters.user_id', '=', 'users.id')
         ->where('series_laters.series_id', '=', 1421);
@@ -315,6 +314,7 @@ Route::get('test', function(){
         ->where('series_rateds.series_id', '=', 1421)
         ->where('series_rateds.rate', '>', 3);
     })
+    ->whereRaw('(series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL) AND users.when_automatic_notification > 0')
     ->select('users.id as user_id', 'users.when_automatic_notification')
     ->get();
     foreach ($items as $item) {
