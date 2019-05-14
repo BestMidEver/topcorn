@@ -45,7 +45,7 @@ pass={
 
 @section('og_tags')
 <meta property="og:url" content="{{url('/')}}/person/{{$id_dash_title}}/{{App::getlocale()}}"/>
-@if($person_data != null)
+@if ($person_data)
 <meta property="og:title" content="{{$person_data->name}}{{$person_data->age>0?' ('.$person_data->age.')':''}}"/>
 <meta property="og:description" content="{{ __('long_texts.person.description') }}"/>
 <meta property="og:type" content="website"/>
