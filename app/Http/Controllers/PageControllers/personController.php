@@ -25,7 +25,7 @@ class personController extends Controller
         if($person_data->count() > 0){
             $person_data = $person_data->first();
         }else{
-            $person_data = [];
+            $person_data = null;
         }
 
 

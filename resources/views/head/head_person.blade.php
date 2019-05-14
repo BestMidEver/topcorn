@@ -38,7 +38,9 @@ pass={
 @endsection
 
 @section('meta_description')
+@if ($person_data)
 {{$person_data->name}}{{$person_data->age>0?' ('.$person_data->age.')':''}} | {{ __('long_texts.person.description') }}
+@endif
 @endsection
 
 @section('og_tags')
