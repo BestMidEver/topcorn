@@ -23,6 +23,7 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \App\Http\Middleware\Locale::class,
         \App\Http\Middleware\PreferredDomain::class,
+        \App\Http\Middleware\CORS::class,
     ];
 
     /**
@@ -69,5 +70,6 @@ class Kernel extends HttpKernel
         'id_dash_listname' => \App\Http\Middleware\id_dash_listname::class,
         'id_dash_personname' => \App\Http\Middleware\id_dash_personname::class,
         'blog_if_not_logged_in' => \App\Http\Middleware\blog_if_not_logged_in::class,
+        'CORS' => \App\Http\Middleware\CORS::class,
     ];
 }
