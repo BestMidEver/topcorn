@@ -156,7 +156,7 @@
 <!-- Tabs_1 Button Mobile -->
 
 
-@yield('amazon_affiliate')
+<!-- @yield('amazon_affiliate') -->
 
 
 <!-- Tabs_2 Button -->
@@ -417,7 +417,7 @@
 </div>
 <!--Cast Section-->
 
-@yield('amazon_affiliate_2')
+<!-- @yield('amazon_affiliate_2') -->
 <div ng-hide="is_waiting"> 
 @include('layout.reviews')
 </div>

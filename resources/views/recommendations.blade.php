@@ -154,7 +154,7 @@
 	</div>
 </div>
 
-@yield('amazon_affiliate')
+<!-- @yield('amazon_affiliate') -->
 
 
 
@@ -315,6 +315,6 @@
 @include('layout.pagination', ['suffix' => ''])
 <!-- MovieCard -->
 
-@yield('amazon_affiliate_2')
+<!-- @yield('amazon_affiliate_2') -->
 
 @endsection

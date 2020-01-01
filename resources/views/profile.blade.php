@@ -199,7 +199,7 @@
 </div>
 <!-- Tabs Button Mobile -->
 
-@yield('amazon_affiliate')
+<!-- @yield('amazon_affiliate') -->
 
 
 
@@ -356,6 +356,6 @@
 </div>
 @include('layout.pagination', ['suffix' => ''])
 
-@yield('amazon_affiliate_2')
+<!-- @yield('amazon_affiliate_2') -->
 
 @endsection

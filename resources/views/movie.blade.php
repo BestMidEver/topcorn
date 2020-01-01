@@ -138,7 +138,7 @@
 </div>
 <!--Under Trailer Section-->
 
-@yield('amazon_affiliate')
+<!-- @yield('amazon_affiliate') -->
 
 <!--Poster Plot Details Section-->
 <div class="row no-gutters mt-3 mt-md-5" ng-cloak>
@@ -298,7 +298,7 @@
 </div>
 <!--Cast Section-->
 
-@yield('amazon_affiliate_2')
+<!-- @yield('amazon_affiliate_2') -->
 @include('layout.reviews')
 
 <!--People Who Liked Also Liked Section-->

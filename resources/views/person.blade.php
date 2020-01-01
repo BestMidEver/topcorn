@@ -51,7 +51,7 @@
 </div>
 
 
-@yield('amazon_affiliate')
+<!-- @yield('amazon_affiliate') -->
 
 
 
@@ -173,5 +173,5 @@
 	</div>
 </div>
 
-@yield('amazon_affiliate_2')
+<!-- @yield('amazon_affiliate_2') -->
 @endsection
