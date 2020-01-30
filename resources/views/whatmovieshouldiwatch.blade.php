@@ -27,16 +27,16 @@
 		<p><strong>No time to waste on bad movies!</strong></p>
 		<p>If you came here to get some movie recommendations from somebody who may or may not share the same movie taste with you, you may scroll down to the bottom of the page for that. Even so I didn’t create this page to announce my “Top 100 Greatest Movies of All Time”.</p>
 		<p>Look:</p>
-		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, Topcorn.io offers <strong>customized movie recommendation</strong> list in addition to all of them.</p>
+		<p>When you search movies on internet, you will possibly end up at lists which are created by individuals. Of course there is a chance that these individuals share similar movie taste with you but in my opinion it is less likely. You may end up at some websites which display top 250 lists and so on but this lists are created by everyone. And if you don’t share similar movie taste with majority… On the other hand, topcorn.xyz offers <strong>customized movie recommendation</strong> list in addition to all of them.</p>
 		<div class="jumbotron">
 			<p class="lead">Everyone has a friend who recommends you which movies you should watch. Eventhough you are not interested in that kind of movies at all.</p>
 			<hr class="my-4">
-			<p>Topcorn.io doesn't only understand what you like, it also understands what you don't like!</p>
+			<p>topcorn.xyz doesn't only understand what you like, it also understands what you don't like!</p>
 		</div>
 		<p>Here's the deal:</p>
 		<p>This page is a hook so you can reach this website. If you want to get the answer of the question immediately, then you can simply skip reading this long post and start using this personalized movie recommendation engine.</p>
 		<div class="jumbotron">
-			<p class="lead">Start using Topcorn.io to get movie recommendations according to your unique movie taste right now.</p>
+			<p class="lead">Start using topcorn.xyz to get movie recommendations according to your unique movie taste right now.</p>
 		</div>
 		<p>You can create an account with your facebook account or with your email address easily and quickly. You don’t even have to confirm your email address.</p>
 		<p>If it is still too much work to do, you can just go to the recommendations page and define your mood with several movies and get your movie suggestions according to that mood.</p>
@@ -62,9 +62,9 @@
 			<p class="lead">You will not have to overthink or oversearch the movie that you should watch tonight anymore.</p>
 		</div>
 		<p><strong>Which movie you should watch?</strong></p>
-		<p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use Topcorn.io. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
+		<p>There are 19351 of movies in the database currently and it is increasing everyday. So I invite you to use topcorn.xyz. It is completely free and it will stay like this. On the other hand, I quit my job and I need to take some advertisements when the right time comes.</p>
 		<div class="jumbotron">
-			<p class="lead">Topcorn.io is completely free and it will stay like that!</p>
+			<p class="lead">topcorn.xyz is completely free and it will stay like that!</p>
 		</div>
 		<p>After you create and strengthen your profile, you can get your customized movie recommendations right away.</p>
 		<p>If you entered enough movies to the system, you will have a lot of movies in your list. You can use the filter to narrow the list down.</p>
@@ -75,7 +75,7 @@
 		<p>If that filter is not enough complex for you and if you want to see more choices there, you can go to interface settings to enable advanced recommendations.</p>
 		<p>You can also customize your profile&background pictures and many other things from there too.</p>
 		<img src="/images/godfather_feeling.png" class="img-fluid mb-4 mt-1 b-image-border" alt="THAT FEELING WHEN SOMEBODY LOVED THE MOVIE YOUR RECOMMENDED - Godfather Don Vito Corleone's hand is getting kissed">
-		<p>I am spending a lot of time on developing Topcorn.io. Every time when Topcorn.io has new users, that makes me really happy. I am glad if I can help other people to find some good movies to watch.</p>
+		<p>I am spending a lot of time on developing topcorn.xyz. Every time when topcorn.xyz has new users, that makes me really happy. I am glad if I can help other people to find some good movies to watch.</p>
 		<div class="jumbotron">
 			<p class="lead">There are some features of the website however you must enable advanced recommendations from the interface settings, in order to reveal them. They are hidden at the beginning because I realised that too much option can confuse the new users.</p>
 		</div>
@@ -89,8 +89,8 @@
 		<div class="jumbotron">
 			<p class="lead">If you want to choose a movie to watch with your friends/family/partner, use "watch together" feature.</p>
 		</div>
-		<p><strong>Another use of Topcorn.io</strong></p>
-		<p>Topcorn.io is created to give customized movie recommendation lists however you can create custom lists for any reason and you can share it with other users too.</p>
+		<p><strong>Another use of topcorn.xyz</strong></p>
+		<p>topcorn.xyz is created to give customized movie recommendation lists however you can create custom lists for any reason and you can share it with other users too.</p>
 		<p>In this way:</p>
 		<p>At the bottom section of the related movie detail pages, your lists will be shown. Thanks to that people can reach to your lists and your profile.</p>
 		<p>In addition to them:</p>
@@ -104,10 +104,10 @@
 		</div>
 		<p>I don’t have any problem who love american cinema and actually I watch hollywood movies more than other cinemas however I really enjoy other cinemas too. I love to hear and listen the stories from different cultures in different languages. So much essence is hidden inside those movies. Some spanish crime mystery movies, almost all of the good scandinavian movies without certain endings, quality movies of bollywood, old time japanese movies, weird romantic korean movies and more that I can’t remember right now.</p>
 		<p><strong>Special films for you, they wait for you!</strong></p>
-		<p>When I tried to find a customized movie recommendation engine which can also give this kind of movies, I couldn’t find it. That really makes Topcorn.io different from other personalized movie suggestion systems and that’s why I am developing it.</p>
+		<p>When I tried to find a customized movie recommendation engine which can also give this kind of movies, I couldn’t find it. That really makes topcorn.xyz different from other personalized movie suggestion systems and that’s why I am developing it.</p>
 		<p>It is not rocket science or something magical by the way. When I was creating this website, I planned users to spend as least time as possible on the site. Users come to the website, find the best movie for their taste quickly and then they can spend their time on watching them. All of my plans are according to it. It is a very simple page and offers you to find a good movie to watch, nothing else.</p>
 		<div class="jumbotron">
-			<p class="lead">Topcorn.io is specially designed to be plain and not time consuming. You shouldn't waste your time on searching what to watch tonight. Instead, spend your precious time on watching quality&interesting movies!</p>
+			<p class="lead">topcorn.xyz is specially designed to be plain and not time consuming. You shouldn't waste your time on searching what to watch tonight. Instead, spend your precious time on watching quality&interesting movies!</p>
 		</div>
 		<p class="mt-2">Last but not least:</p>
 		<p>Here is my <strong>"What to watch tonight"</strong> list.</p>
@@ -128,7 +128,7 @@
 		<p>Another surprising movie for me is Click (2006). I know that they don’t need my affection, they are professionals who are earning good money. However, I am not a huge fan of Adam Sandler either. At the same time, I am a huge fan of this movie. This movie always affects me deeply when I watch it. I probably watched it like 3 times, I recommend you to watch it too.</p>
 		<h3 class="mt-4"><a href="/movie/82690-Wreck-It-Ralph" target="_blank">Wreck-It Ralph</a></h3>
 		<p>2012 • Family, Animation, Comedy, Adventure</p>
-		<p>I am a huge fan of this one. Actually it is the best animation movie in my opinion. Wreck-It Ralph (2012). I won’t tell too much about it but if you’ve already watched this film and loved it, I recommend you to watch Bit by Bit Creating the Worlds of Wreck-It Ralph (2012) too. Couple of interviews with the people who created the world of the movie. I discovered the short film via Topcorn.io by the way.</p>
+		<p>I am a huge fan of this one. Actually it is the best animation movie in my opinion. Wreck-It Ralph (2012). I won’t tell too much about it but if you’ve already watched this film and loved it, I recommend you to watch Bit by Bit Creating the Worlds of Wreck-It Ralph (2012) too. Couple of interviews with the people who created the world of the movie. I discovered the short film via topcorn.xyz by the way.</p>
 		<h3 class="mt-4"><a href="/movie/871-Planet-of-the-Apes" target="_blank">Planet of the Apes</a></h3>
 		<p>1968 • Science Fiction, Adventure, Drama, Action</p>
 		<p>I and my wife turned our living room to a very modest home theater two years ago. Since then we are watching movies almost every night. Last month we started to watch all of the Planet of the Apes movies. Old and new ones. I liked the new movies too, however too much action makes me sleepy somehow. In my opinion the first movie of the first sequel is the best one. Planet of the Apes(1968). I save you from wasting your time. Don’t continue the old sequel, you can watch the first one and leave it there. Just trust me in this.</p>
@@ -139,7 +139,7 @@
 		<p>2009 • Drama, Comedy, Romance</p>
 		<p>Last movie that I will recommend you is Castaway on the Moon(2009). It is a weird korean Robinson Crusoe. If you haven't heard about this movie yet, you can thank me later.</p>
 		<p>What’s the bottom line?</p>
-		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve Topcorn.io, please contact us. I am waiting your merciless critics.</p>
+		<p>If you are asking yourself "What movie should I watch?", then you came to the right place. Because I am asking the same question to myself every night. If you have any ideas or critics to improve topcorn.xyz, please contact us. I am waiting your merciless critics.</p>
 	</div>
 
 	<div class="col-12 col-lg-4 pl-0 pl-lg-4 pt-0 pt-lg-5">

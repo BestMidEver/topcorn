@@ -48,7 +48,7 @@ pass={
 @section('title')
 @{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 @if($series_name != '')
-{{$series_name}} ({{$series_year}}) - topcorn.io
+{{$series_name}} ({{$series_year}}) - topcorn.xyz
 @else
 @{{movie.name}}@{{ movie.first_air_date ? ' (' + movie.first_air_date.substring(0, 4) + ')' : ''}}{{ __('title.movie') }}
 @endif

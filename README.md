@@ -1,2 +1,2 @@
-Topcorn.io is a customized movie recommendation system created by Uygar Yılmaz.
+topcorn.xyz is a customized movie recommendation system created by Uygar Yılmaz.
 

@@ -2,7 +2,7 @@
 	@if(Auth::id()==0)
 <div class="p-5">
 	<p class="h6">An offer that you can't refuse.</p>
-	<p>If you liked using Topcorn.io contribute us by signing up Amazon Prime 30-day free trial.</p>
+	<p>If you liked using topcorn.xyz contribute us by signing up Amazon Prime 30-day free trial.</p>
 	<p>It is completely free and you can cancel it any time. We will get benefit even if you don't complete the full 30 days.</p>
 	<p class="h6">What will you earn if you sign up Amazon Prime</p>
 	<p>Instant streaming of thousands of movies and TV shows</p>

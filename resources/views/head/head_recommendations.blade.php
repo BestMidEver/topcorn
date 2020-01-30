@@ -49,7 +49,7 @@ pass={
 @endsection
 
 @section('meta_description')
-Get movie recommendations from all over the world based on your unique taste. topcorn.io learns your taste and gives movie advices accordingly. You can filter movies with original languages, years and genres. See movie rating in this personalized movie recommendation engine. @endsection
+Get movie recommendations from all over the world based on your unique taste. topcorn.xyz learns your taste and gives movie advices accordingly. You can filter movies with original languages, years and genres. See movie rating in this personalized movie recommendation engine. @endsection
 
 
 @section('adsense')

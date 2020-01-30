@@ -1,3 +1,4 @@
+
 <?php
 
 namespace Illuminate\Foundation\Auth;
@@ -18,7 +19,7 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
-        if(url()->previous()!='https://topcorn.io/login' && url()->previous()!='https://topcorn.io/register'){
+        if(url()->previous()!='https://topcorn.xyz/login' && url()->previous()!='https://topcorn.xyz/register'){
             session(['links' => url()->previous()]);
         }
         return view('auth.login');

@@ -40,7 +40,7 @@ pass={
 @section('title')
 @{{page_variables.notification_count>0?'('+page_variables.notification_count+') ':''}}
 @if($movie_title != '')
-{{$movie_title}} {{$movie_year>0?'('.$movie_year.')':''}} - topcorn.io
+{{$movie_title}} {{$movie_year>0?'('.$movie_year.')':''}} - topcorn.xyz
 @else
 @{{movie.title}}@{{ movie.release_date ? ' (' + movie.release_date.substring(0, 4) + ')' : ''}}{{ __('title.movie') }}
 @endif

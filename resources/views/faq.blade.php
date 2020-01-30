@@ -9,14 +9,14 @@
 	What Is This Website About?
 </div>
 <div class="quote-line lead">
-	Topcorn.io is a personalized movie recommendation engine. In other words, topcorn.io understands your unique taste and suggests you movies accordingly.
+	topcorn.xyz is a personalized movie recommendation engine. In other words, topcorn.xyz understands your unique taste and suggests you movies accordingly.
 </div>
 
 <div class="h6 mt-4">
 	Why Is This Different From Other Movie Review Sites?
 </div>
 <div class="quote-line lead">
-	Unlike Rotten Tomatoes, Metacritic, IMDB or a list which is made by some individual; topcorn.io shows customized lists for you.
+	Unlike Rotten Tomatoes, Metacritic, IMDB or a list which is made by some individual; topcorn.xyz shows customized lists for you.
 </div>
 
 <div class="h6 mt-4">

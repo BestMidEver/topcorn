@@ -271,7 +271,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 				else if(pass.tt_navbar==2)location.hash="tooltip-navbar-recommendations";
 				else if(pass.tt_navbar==3)location.hash="tooltip-navbar-profile";
 				else if(pass.tt_navbar==4)location.hash="tooltip-navbar-percentage";
-			}else if(location.href.indexOf('topcorn.io/movie/')>-1){
+			}else if(location.href.indexOf('topcorn.xyz/movie/')>-1){
 				if(pass.tt_movie<50){
 					if(pass.tt_movie==0)location.hash="tooltip-movie-share";
 					else if(pass.tt_movie==1)location.hash="tooltip-movie-search";
@@ -322,7 +322,7 @@ MyApp.controller('CreatelistPageController', function($scope, $http, $timeout, r
 					rate.tt_manipulate('navbar', 50)
 					.then(function(response){
 						pass.tt_navbar=50;
-						if(location.href.indexOf('topcorn.io/movie')>-1) location.hash='#tooltip-movie-share';
+						if(location.href.indexOf('topcorn.xyz/movie')>-1) location.hash='#tooltip-movie-share';
 					});
 				}else if(location.hash.indexOf('tooltip-footer-like')>-1){
 					$("[data-toggle=popover]").popover('hide');

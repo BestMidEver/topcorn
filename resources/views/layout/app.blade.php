@@ -229,7 +229,7 @@ else $theme='';
             <div class="row text-center text-sm-left">
                 <div class="col col-sm-3 d-none d-sm-inline">
                     <div class="py-2 small"><a class="text-dark" href="/faq">{{ __('navbar.faq') }}</a></div>
-                    <div class="py-2 small"><a class="text-dark" href="https://www.facebook.com/topcorn.io/" target="_blank">{{ __('navbar.contact_us') }}</a></div>
+                    <div class="py-2 small"><a class="text-dark" href="https://www.facebook.com/topcorn.xyz/" target="_blank">{{ __('navbar.contact_us') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/privacy-policy">{{ __('navbar.privacy') }}</a></div>
                     <div class="py-2 small"><a class="text-dark" href="/donation"
                     @if(Auth::User()->tt_navbar < 100)
@@ -259,10 +259,10 @@ else $theme='';
                             data-toggle="popover" data-placement="left" title='{{ __("tutorial.cry_for_help") }}<a class="close tooltip-x" href="#close-tooltip">&times;</a>' id="like"
                             @endif
                             >
-                                <!--<div class="fb-like mr-1 mb-2" data-href="https://www.facebook.com/topcorn.io/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>-->
+                                <!--<div class="fb-like mr-1 mb-2" data-href="https://www.facebook.com/topcorn.xyz/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>-->
                                 <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.facebook.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
                             </div>
-                            <!--<div class="fb-share-button" data-href="https://topcorn.io/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.io%2F&amp;src=sdkpreparse"></a></div>-->
+                            <!--<div class="fb-share-button" data-href="https://topcorn.xyz/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.xyz%2F&amp;src=sdkpreparse"></a></div>-->
                             <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.instagram.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
                             <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.twitter.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
                         </div>

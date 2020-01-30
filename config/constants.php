@@ -53,12 +53,12 @@ return array(
 
   'facebook' => array(
 
-    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.io',
+    'share_website' => 'https://www.facebook.com/sharer/sharer.php?u=topcorn.xyz',
     'password_spice' => 'Sp1cEe',
     'app_id' => '525225627985884',
 
     'link' => 'https://www.facebook.com/',
-    'our_link' => 'https://www.facebook.com/topcorn.io/',
+    'our_link' => 'https://www.facebook.com/topcorn.xyz/',
   ),
 
 
@@ -67,7 +67,7 @@ return array(
   'instagram' => array(
 
     'link' => 'https://www.instagram.com/',
-    'our_link' => 'https://www.instagram.com/topcorn.io_/',
+    'our_link' => 'https://www.instagram.com/topcorn.xyz_/',
 
   ),
 
