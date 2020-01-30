@@ -67,7 +67,7 @@ return array(
   'instagram' => array(
 
     'link' => 'https://www.instagram.com/',
-    'our_link' => 'https://www.instagram.com/topcorn.xyz_/',
+    'our_link' => 'https://www.instagram.com/topcorn.xyz/',
 
   ),
 
