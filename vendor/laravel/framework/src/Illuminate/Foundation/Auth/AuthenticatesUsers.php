@@ -1,4 +1,3 @@
-
 <?php
 
 namespace Illuminate\Foundation\Auth;
