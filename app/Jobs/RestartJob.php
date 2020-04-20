@@ -30,6 +30,6 @@ class RestartJob implements ShouldQueue
      */
     public function handle()
     {
-        SuckDataJob::dispatch()->onQueue("low");
+        //SuckDataJob::dispatch()->onQueue("low");
     }
 }
