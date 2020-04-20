@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
         //$schedule->job(SuckDataJob::dispatch()->onQueue("low"))->everyFiveMinutes();
         $schedule->call(function () {
             SuckDataJob::dispatch()->onQueue("low");
-        })->everyMinute();
+        })->daily();
     }
 
     /**
