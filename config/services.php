@@ -42,7 +42,7 @@ return [
     ],
     
     'passport' => [
-        'login_endpoint' => config('api.url').'/oauth/token',
+        'login_endpoint' => env('APP_URL').'/oauth/token',
         'client_id' => '2',
         'client_secret' => 'p1rfitDI8PXGb1cJuAU9fSGQeS1fLwqCGHm0KtB6',
     ],
