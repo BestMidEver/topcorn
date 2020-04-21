@@ -1,9 +1,10 @@
 <?php
 
-use App\Jobs\RefreshSiteMapJob;
-use App\Jobs\SuckDataJob;
 use App\User;
+use App\Jobs\SuckDataJob;
+use App\Jobs\RefreshSiteMapJob;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
@@ -275,12 +276,12 @@ Route::apiResource('api/review_like','ApiControllers\ReviewLikeController');
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('suckData', function(){
-	SuckDataJob::dispatch()->onQueue("low");
-	return 'sucking data.';
+	//SuckDataJob::dispatch()->onQueue("low");
+	return 'not sucking data.';
 });
 Route::get('refreshSitemap', function(){
-	RefreshSiteMapJob::dispatch()->onQueue("high");
-	return 'refreshing sitemaps.';
+	//RefreshSiteMapJob::dispatch()->onQueue("high");
+	return 'not refreshing sitemaps.';
 });
 //Route::get('refreshSitemap','Architect\Architect@refreshSitemap');
 //////////////////////////////////////////////////////////////////////////////////////////
