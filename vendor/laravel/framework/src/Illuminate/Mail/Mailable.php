@@ -167,7 +167,7 @@ class Mailable implements MailableContract, Renderable
     /**
      * Render the mailable into a view.
      *
-     * @return string
+     * @return \Illuminate\View\View
      */
     public function render()
     {
@@ -551,9 +551,9 @@ class Mailable implements MailableContract, Renderable
         return collect($this->{$property})->contains(function ($actual) use ($expected) {
             if (! isset($expected['name'])) {
                 return $actual['address'] == $expected['address'];
+            } else {
+                return $actual == $expected;
             }
-
-            return $actual == $expected;
         });
     }
 

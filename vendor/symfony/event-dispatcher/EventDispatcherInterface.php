@@ -11,8 +11,6 @@
 
 namespace Symfony\Component\EventDispatcher;
 
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEventDispatcherInterface;
-
 /**
  * The EventDispatcherInterface is the central point of Symfony's event listener system.
  * Listeners are registered on the manager and events are dispatched through the
@@ -20,8 +18,21 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractsEvent
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */
-interface EventDispatcherInterface extends ContractsEventDispatcherInterface
+interface EventDispatcherInterface
 {
+    /**
+     * Dispatches an event to all registered listeners.
+     *
+     * @param string $eventName The name of the event to dispatch. The name of
+     *                          the event is the name of the method that is
+     *                          invoked on listeners.
+     * @param Event  $event     The event to pass to the event handlers/listeners
+     *                          If not supplied, an empty Event instance is created.
+     *
+     * @return Event
+     */
+    public function dispatch($eventName, Event $event = null);
+
     /**
      * Adds an event listener that listens on the specified events.
      *
@@ -35,8 +46,10 @@ interface EventDispatcherInterface extends ContractsEventDispatcherInterface
     /**
      * Adds an event subscriber.
      *
-     * The subscriber is asked for all the events it is
+     * The subscriber is asked for all the events he is
      * interested in and added as a listener for these events.
+     *
+     * @param EventSubscriberInterface $subscriber The subscriber
      */
     public function addSubscriber(EventSubscriberInterface $subscriber);
 
@@ -48,12 +61,17 @@ interface EventDispatcherInterface extends ContractsEventDispatcherInterface
      */
     public function removeListener($eventName, $listener);
 
+    /**
+     * Removes an event subscriber.
+     *
+     * @param EventSubscriberInterface $subscriber The subscriber
+     */
     public function removeSubscriber(EventSubscriberInterface $subscriber);
 
     /**
      * Gets the listeners of a specific event or all listeners sorted by descending priority.
      *
-     * @param string|null $eventName The name of the event
+     * @param string $eventName The name of the event
      *
      * @return array The event listeners for the specified event, or all event listeners by event name
      */
@@ -74,7 +92,7 @@ interface EventDispatcherInterface extends ContractsEventDispatcherInterface
     /**
      * Checks whether an event has any registered listeners.
      *
-     * @param string|null $eventName The name of the event
+     * @param string $eventName The name of the event
      *
      * @return bool true if the specified event has any listeners, false otherwise
      */

@@ -35,10 +35,10 @@ class GithubProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $userUrl = 'https://api.github.com/user';
+        $userUrl = 'https://api.github.com/user?access_token='.$token;
 
         $response = $this->getHttpClient()->get(
-            $userUrl, $this->getRequestOptions($token)
+            $userUrl, $this->getRequestOptions()
         );
 
         $user = json_decode($response->getBody(), true);
@@ -58,11 +58,11 @@ class GithubProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getEmailByToken($token)
     {
-        $emailsUrl = 'https://api.github.com/user/emails';
+        $emailsUrl = 'https://api.github.com/user/emails?access_token='.$token;
 
         try {
             $response = $this->getHttpClient()->get(
-                $emailsUrl, $this->getRequestOptions($token)
+                $emailsUrl, $this->getRequestOptions()
             );
         } catch (Exception $e) {
             return;
@@ -81,11 +81,8 @@ class GithubProvider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User)->setRaw($user)->map([
-            'id' => $user['id'],
-            'nickname' => $user['login'],
-            'name' => Arr::get($user, 'name'),
-            'email' => Arr::get($user, 'email'),
-            'avatar' => $user['avatar_url'],
+            'id' => $user['id'], 'nickname' => $user['login'], 'name' => Arr::get($user, 'name'),
+            'email' => Arr::get($user, 'email'), 'avatar' => $user['avatar_url'],
         ]);
     }
 
@@ -94,12 +91,11 @@ class GithubProvider extends AbstractProvider implements ProviderInterface
      *
      * @return array
      */
-    protected function getRequestOptions($token)
+    protected function getRequestOptions()
     {
         return [
             'headers' => [
                 'Accept' => 'application/vnd.github.v3+json',
-                'Authorization' => 'token '.$token,
             ],
         ];
     }

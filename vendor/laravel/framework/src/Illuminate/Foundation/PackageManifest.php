@@ -65,7 +65,7 @@ class PackageManifest
      */
     public function providers()
     {
-        return collect($this->getManifest())->flatMap(function ($configuration) {
+        return collect($this->getManifest())->flatMap(function ($configuration, $name) {
             return (array) ($configuration['providers'] ?? []);
         })->filter()->all();
     }
@@ -77,7 +77,7 @@ class PackageManifest
      */
     public function aliases()
     {
-        return collect($this->getManifest())->flatMap(function ($configuration) {
+        return collect($this->getManifest())->flatMap(function ($configuration, $name) {
             return (array) ($configuration['aliases'] ?? []);
         })->filter()->all();
     }
@@ -111,9 +111,7 @@ class PackageManifest
         $packages = [];
 
         if ($this->files->exists($path = $this->vendorPath.'/composer/installed.json')) {
-            $installed = json_decode($this->files->get($path), true);
-
-            $packages = $installed['packages'] ?? $installed;
+            $packages = json_decode($this->files->get($path), true);
         }
 
         $ignoreAll = in_array('*', $ignore = $this->packagesToIgnore());
@@ -121,7 +119,7 @@ class PackageManifest
         $this->write(collect($packages)->mapWithKeys(function ($package) {
             return [$this->format($package['name']) => $package['extra']['laravel'] ?? []];
         })->each(function ($configuration) use (&$ignore) {
-            $ignore = array_merge($ignore, $configuration['dont-discover'] ?? []);
+            $ignore += $configuration['dont-discover'] ?? [];
         })->reject(function ($configuration, $package) use ($ignore, $ignoreAll) {
             return $ignoreAll || in_array($package, $ignore);
         })->filter()->all());

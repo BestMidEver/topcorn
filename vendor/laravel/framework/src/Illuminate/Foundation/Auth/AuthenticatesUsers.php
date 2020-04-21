@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
 
 trait AuthenticatesUsers
@@ -17,6 +18,9 @@ trait AuthenticatesUsers
      */
     public function showLoginForm()
     {
+        if(url()->previous()!='https://topcorn.xyz/login' && url()->previous()!='https://topcorn.xyz/register'){
+            session(['links' => url()->previous()]);
+        }
         return view('auth.login');
     }
 

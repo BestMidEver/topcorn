@@ -21,7 +21,7 @@ interface OutputFormatterStyleInterface
     /**
      * Sets style foreground color.
      *
-     * @param string|null $color The color name
+     * @param string $color The color name
      */
     public function setForeground($color = null);
 
@@ -48,6 +48,8 @@ interface OutputFormatterStyleInterface
 
     /**
      * Sets multiple style options at once.
+     *
+     * @param array $options
      */
     public function setOptions(array $options);
 

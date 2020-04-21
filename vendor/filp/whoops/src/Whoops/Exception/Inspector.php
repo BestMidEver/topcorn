@@ -26,11 +26,6 @@ class Inspector
     private $previousExceptionInspector;
 
     /**
-     * @var \Throwable[]
-     */
-    private $previousExceptions;
-
-    /**
      * @param \Throwable $exception The exception to inspect
      */
     public function __construct($exception)
@@ -63,28 +58,6 @@ class Inspector
     }
 
     /**
-     * @return string[]
-     */
-    public function getPreviousExceptionMessages()
-    {
-        return array_map(function ($prev) {
-            /** @var \Throwable $prev */
-            return $this->extractDocrefUrl($prev->getMessage())['message'];
-        }, $this->getPreviousExceptions());
-    }
-
-    /**
-     * @return int[]
-     */
-    public function getPreviousExceptionCodes()
-    {
-        return array_map(function ($prev) {
-            /** @var \Throwable $prev */
-            return $prev->getCode();
-        }, $this->getPreviousExceptions());
-    }
-
-    /**
      * Returns a url to the php-manual related to the underlying error - when available.
      *
      * @return string|null
@@ -94,8 +67,7 @@ class Inspector
         return $this->extractDocrefUrl($this->exception->getMessage())['url'];
     }
 
-    private function extractDocrefUrl($message)
-    {
+    private function extractDocrefUrl($message) {
         $docref = [
             'message' => $message,
             'url' => null,
@@ -144,26 +116,6 @@ class Inspector
         return $this->previousExceptionInspector;
     }
 
-
-    /**
-     * Returns an array of all previous exceptions for this inspector's exception
-     * @return \Throwable[]
-     */
-    public function getPreviousExceptions()
-    {
-        if ($this->previousExceptions === null) {
-            $this->previousExceptions = [];
-
-            $prev = $this->exception->getPrevious();
-            while ($prev !== null) {
-                $this->previousExceptions[] = $prev;
-                $prev = $prev->getPrevious();
-            }
-        }
-
-        return $this->previousExceptions;
-    }
-
     /**
      * Returns an iterator for the inspected exception's
      * frames.
@@ -176,6 +128,7 @@ class Inspector
 
             // Fill empty line/file info for call_user_func_array usages (PHP Bug #44428)
             foreach ($frames as $k => $frame) {
+
                 if (empty($frame['file'])) {
                     // Default values when file and line are missing
                     $file = '[internal]';
@@ -191,6 +144,7 @@ class Inspector
                     $frames[$k]['file'] = $file;
                     $frames[$k]['line'] = $line;
                 }
+
             }
 
             // Find latest non-error handling frame index ($i) used to remove error handling frames
@@ -235,7 +189,7 @@ class Inspector
      *
      * If xdebug is installed
      *
-     * @param \Throwable $e
+     * @param  \Throwable $exception
      * @return array
      */
     protected function getTrace($e)
@@ -252,7 +206,7 @@ class Inspector
         }
 
         if (!extension_loaded('xdebug') || !xdebug_is_enabled()) {
-            return $traces;
+            return [];
         }
 
         // Use xdebug to get the full stack trace and remove the shutdown handler stack trace

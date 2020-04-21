@@ -4,9 +4,6 @@ namespace League\Flysystem;
 
 use BadMethodCallException;
 
-/**
- * @deprecated
- */
 abstract class Handler
 {
     /**
@@ -60,7 +57,7 @@ abstract class Handler
     {
         $metadata = $this->filesystem->getMetadata($this->path);
 
-        return $metadata ? $metadata['type'] : 'dir';
+        return $metadata['type'];
     }
 
     /**

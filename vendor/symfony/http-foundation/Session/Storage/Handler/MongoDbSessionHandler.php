@@ -17,7 +17,7 @@ namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
  * @author Markus Bachmann <markus.bachmann@bachi.biz>
  *
  * @see https://packagist.org/packages/mongodb/mongodb
- * @see https://php.net/mongodb
+ * @see http://php.net/manual/en/set.mongodb.php
  */
 class MongoDbSessionHandler extends AbstractSessionHandler
 {
@@ -34,8 +34,6 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     private $options;
 
     /**
-     * Constructor.
-     *
      * List of available options:
      *  * database: The name of the database [required]
      *  * collection: The name of the collection [required]
@@ -56,7 +54,7 @@ class MongoDbSessionHandler extends AbstractSessionHandler
      *         { "expireAfterSeconds": 0 }
      *     )
      *
-     * More details on: https://docs.mongodb.org/manual/tutorial/expire-data/
+     * More details on: http://docs.mongodb.org/manual/tutorial/expire-data/
      *
      * If you use such an index, you can drop `gc_probability` to 0 since
      * no garbage-collection is required.
@@ -74,21 +72,21 @@ class MongoDbSessionHandler extends AbstractSessionHandler
         }
 
         if (!($mongo instanceof \MongoDB\Client || $mongo instanceof \MongoClient || $mongo instanceof \Mongo)) {
-            throw new \InvalidArgumentException('MongoClient or Mongo instance required.');
+            throw new \InvalidArgumentException('MongoClient or Mongo instance required');
         }
 
         if (!isset($options['database']) || !isset($options['collection'])) {
-            throw new \InvalidArgumentException('You must provide the "database" and "collection" option for MongoDBSessionHandler.');
+            throw new \InvalidArgumentException('You must provide the "database" and "collection" option for MongoDBSessionHandler');
         }
 
         $this->mongo = $mongo;
 
-        $this->options = array_merge([
+        $this->options = array_merge(array(
             'id_field' => '_id',
             'data_field' => 'data',
             'time_field' => 'time',
             'expiry_field' => 'expires_at',
-        ], $options);
+        ), $options);
     }
 
     /**
@@ -106,9 +104,9 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     {
         $methodName = $this->mongo instanceof \MongoDB\Client ? 'deleteOne' : 'remove';
 
-        $this->getCollection()->$methodName([
+        $this->getCollection()->$methodName(array(
             $this->options['id_field'] => $sessionId,
-        ]);
+        ));
 
         return true;
     }
@@ -120,9 +118,9 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     {
         $methodName = $this->mongo instanceof \MongoDB\Client ? 'deleteMany' : 'remove';
 
-        $this->getCollection()->$methodName([
-            $this->options['expiry_field'] => ['$lt' => $this->createDateTime()],
-        ]);
+        $this->getCollection()->$methodName(array(
+            $this->options['expiry_field'] => array('$lt' => $this->createDateTime()),
+        ));
 
         return true;
     }
@@ -134,12 +132,12 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     {
         $expiry = $this->createDateTime(time() + (int) ini_get('session.gc_maxlifetime'));
 
-        $fields = [
+        $fields = array(
             $this->options['time_field'] => $this->createDateTime(),
             $this->options['expiry_field'] => $expiry,
-        ];
+        );
 
-        $options = ['upsert' => true];
+        $options = array('upsert' => true);
 
         if ($this->mongo instanceof \MongoDB\Client) {
             $fields[$this->options['data_field']] = new \MongoDB\BSON\Binary($data, \MongoDB\BSON\Binary::TYPE_OLD_BINARY);
@@ -151,8 +149,8 @@ class MongoDbSessionHandler extends AbstractSessionHandler
         $methodName = $this->mongo instanceof \MongoDB\Client ? 'updateOne' : 'update';
 
         $this->getCollection()->$methodName(
-            [$this->options['id_field'] => $sessionId],
-            ['$set' => $fields],
+            array($this->options['id_field'] => $sessionId),
+            array('$set' => $fields),
             $options
         );
 
@@ -168,18 +166,18 @@ class MongoDbSessionHandler extends AbstractSessionHandler
 
         if ($this->mongo instanceof \MongoDB\Client) {
             $methodName = 'updateOne';
-            $options = [];
+            $options = array();
         } else {
             $methodName = 'update';
-            $options = ['multiple' => false];
+            $options = array('multiple' => false);
         }
 
         $this->getCollection()->$methodName(
-            [$this->options['id_field'] => $sessionId],
-            ['$set' => [
+            array($this->options['id_field'] => $sessionId),
+            array('$set' => array(
                 $this->options['time_field'] => $this->createDateTime(),
                 $this->options['expiry_field'] => $expiry,
-            ]],
+            )),
             $options
         );
 
@@ -191,10 +189,10 @@ class MongoDbSessionHandler extends AbstractSessionHandler
      */
     protected function doRead($sessionId)
     {
-        $dbData = $this->getCollection()->findOne([
+        $dbData = $this->getCollection()->findOne(array(
             $this->options['id_field'] => $sessionId,
-            $this->options['expiry_field'] => ['$gte' => $this->createDateTime()],
-        ]);
+            $this->options['expiry_field'] => array('$gte' => $this->createDateTime()),
+        ));
 
         if (null === $dbData) {
             return '';

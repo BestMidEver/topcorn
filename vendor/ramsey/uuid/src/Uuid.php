@@ -14,13 +14,8 @@
 
 namespace Ramsey\Uuid;
 
-use DateTime;
-use Exception;
-use InvalidArgumentException;
 use Ramsey\Uuid\Converter\NumberConverterInterface;
 use Ramsey\Uuid\Codec\CodecInterface;
-use Ramsey\Uuid\Exception\InvalidUuidStringException;
-use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Ramsey\Uuid\Exception\UnsupportedOperationException;
 
 /**
@@ -145,14 +140,14 @@ class Uuid implements UuidInterface
      * @var array
      * @see UuidInterface::getFieldsHex()
      */
-    protected $fields = [
+    protected $fields = array(
         'time_low' => '00000000',
         'time_mid' => '0000',
         'time_hi_and_version' => '0000',
         'clock_seq_hi_and_reserved' => '00',
         'clock_seq_low' => '00',
         'node' => '000000000000',
-    ];
+    );
 
     /**
      * The number converter to use for converting hex values to/from integers.
@@ -234,7 +229,6 @@ class Uuid implements UuidInterface
      *
      * @param string $serialized
      * @link http://php.net/manual/en/class.serializable.php
-     * @throws InvalidUuidStringException
      */
     public function unserialize($serialized)
     {
@@ -246,32 +240,28 @@ class Uuid implements UuidInterface
 
     public function compareTo(UuidInterface $other)
     {
+        $comparison = 0;
+
         if ($this->getMostSignificantBitsHex() < $other->getMostSignificantBitsHex()) {
-            return -1;
+            $comparison = -1;
+        } elseif ($this->getMostSignificantBitsHex() > $other->getMostSignificantBitsHex()) {
+            $comparison = 1;
+        } elseif ($this->getLeastSignificantBitsHex() < $other->getLeastSignificantBitsHex()) {
+            $comparison = -1;
+        } elseif ($this->getLeastSignificantBitsHex() > $other->getLeastSignificantBitsHex()) {
+            $comparison = 1;
         }
 
-        if ($this->getMostSignificantBitsHex() > $other->getMostSignificantBitsHex()) {
-            return 1;
-        }
-
-        if ($this->getLeastSignificantBitsHex() < $other->getLeastSignificantBitsHex()) {
-            return -1;
-        }
-
-        if ($this->getLeastSignificantBitsHex() > $other->getLeastSignificantBitsHex()) {
-            return 1;
-        }
-
-        return 0;
+        return $comparison;
     }
 
     public function equals($other)
     {
-        if (!$other instanceof UuidInterface) {
+        if (!($other instanceof UuidInterface)) {
             return false;
         }
 
-        return $this->compareTo($other) == 0;
+        return ($this->compareTo($other) == 0);
     }
 
     public function getBytes()
@@ -328,7 +318,8 @@ class Uuid implements UuidInterface
      */
     public function getClockSequence()
     {
-        return ($this->getClockSeqHiAndReserved() & 0x3f) << 8 | $this->getClockSeqLow();
+        return (($this->getClockSeqHiAndReserved() & 0x3f) << 8)
+            | $this->getClockSeqLow();
     }
 
     public function getClockSequenceHex()
@@ -341,19 +332,16 @@ class Uuid implements UuidInterface
         return $this->converter;
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getDateTime()
     {
         if ($this->getVersion() != 1) {
             throw new UnsupportedOperationException('Not a time-based UUID');
         }
 
-        $unixTimeNanoseconds = $this->getTimestamp() - 0x01b21dd213814000;
-        $unixTime = ($unixTimeNanoseconds - $unixTimeNanoseconds % 1e7) / 1e7;
+        $unixTime = ($this->getTimestamp() - 0x01b21dd213814000) / 1e7;
+        $unixTime = number_format($unixTime, 0, '', '');
 
-        return new DateTime("@{$unixTime}");
+        return new \DateTime("@{$unixTime}");
     }
 
     /**
@@ -376,14 +364,14 @@ class Uuid implements UuidInterface
      */
     public function getFields()
     {
-        return [
+        return array(
             'time_low' => $this->getTimeLow(),
             'time_mid' => $this->getTimeMid(),
             'time_hi_and_version' => $this->getTimeHiAndVersion(),
             'clock_seq_hi_and_reserved' => $this->getClockSeqHiAndReserved(),
             'clock_seq_low' => $this->getClockSeqLow(),
             'node' => $this->getNode(),
-        ];
+        );
     }
 
     public function getFieldsHex()
@@ -396,9 +384,6 @@ class Uuid implements UuidInterface
         return str_replace('-', '', $this->toString());
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getInteger()
     {
         return $this->converter->fromHex($this->getHex());
@@ -408,7 +393,6 @@ class Uuid implements UuidInterface
      * Returns the least significant 64 bits of this UUID's 128 bit value.
      *
      * @return mixed Converted representation of the unsigned 64-bit integer value
-     * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
      */
     public function getLeastSignificantBits()
     {
@@ -429,7 +413,6 @@ class Uuid implements UuidInterface
      * Returns the most significant 64 bits of this UUID's 128 bit value.
      *
      * @return mixed Converted representation of the unsigned 64-bit integer value
-     * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
      */
     public function getMostSignificantBits()
     {
@@ -551,9 +534,6 @@ class Uuid implements UuidInterface
         return hexdec($this->getTimestampHex());
     }
 
-    /**
-     * @inheritdoc
-     */
     public function getTimestampHex()
     {
         if ($this->getVersion() != 1) {
@@ -576,20 +556,17 @@ class Uuid implements UuidInterface
     public function getVariant()
     {
         $clockSeq = $this->getClockSeqHiAndReserved();
-
         if (0 === ($clockSeq & 0x80)) {
-            return self::RESERVED_NCS;
+            $variant = self::RESERVED_NCS;
+        } elseif (0 === ($clockSeq & 0x40)) {
+            $variant = self::RFC_4122;
+        } elseif (0 === ($clockSeq & 0x20)) {
+            $variant = self::RESERVED_MICROSOFT;
+        } else {
+            $variant = self::RESERVED_FUTURE;
         }
 
-        if (0 === ($clockSeq & 0x40)) {
-            return self::RFC_4122;
-        }
-
-        if (0 === ($clockSeq & 0x20)) {
-            return self::RESERVED_MICROSOFT;
-        }
-
-        return self::RESERVED_FUTURE;
+        return $variant;
     }
 
     public function getVersion()
@@ -635,8 +612,6 @@ class Uuid implements UuidInterface
      *
      * @param string $bytes
      * @return UuidInterface
-     * @throws InvalidUuidStringException
-     * @throws InvalidArgumentException
      */
     public static function fromBytes($bytes)
     {
@@ -648,7 +623,6 @@ class Uuid implements UuidInterface
      *
      * @param string $name A string that specifies a UUID
      * @return UuidInterface
-     * @throws InvalidUuidStringException
      */
     public static function fromString($name)
     {
@@ -660,8 +634,6 @@ class Uuid implements UuidInterface
      *
      * @param string $integer String representation of 128-bit integer
      * @return UuidInterface
-     * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
-     * @throws InvalidUuidStringException
      */
     public static function fromInteger($integer)
     {
@@ -676,13 +648,13 @@ class Uuid implements UuidInterface
      */
     public static function isValid($uuid)
     {
-        $uuid = str_replace(['urn:', 'uuid:', 'URN:', 'UUID:', '{', '}'], '', $uuid);
+        $uuid = str_replace(array('urn:', 'uuid:', '{', '}'), '', $uuid);
 
         if ($uuid == self::NIL) {
             return true;
         }
 
-        if (!preg_match('/' . self::VALID_PATTERN . '/D', $uuid)) {
+        if (!preg_match('/' . self::VALID_PATTERN . '/', $uuid)) {
             return false;
         }
 
@@ -698,10 +670,6 @@ class Uuid implements UuidInterface
      *     could arise when the clock is set backwards in time or if the node ID
      *     changes.
      * @return UuidInterface
-     * @throws UnsatisfiedDependencyException if called on a 32-bit system and
-     *     `Moontoast\Math\BigNumber` is not present
-     * @throws InvalidArgumentException
-     * @throws Exception if it was not possible to gather sufficient entropy
      */
     public static function uuid1($node = null, $clockSeq = null)
     {
@@ -712,10 +680,9 @@ class Uuid implements UuidInterface
      * Generate a version 3 UUID based on the MD5 hash of a namespace identifier
      * (which is a UUID) and a name (which is a string).
      *
-     * @param string|UuidInterface $ns The UUID namespace in which to create the named UUID
+     * @param string $ns The UUID namespace in which to create the named UUID
      * @param string $name The name to create a UUID for
      * @return UuidInterface
-     * @throws InvalidUuidStringException
      */
     public static function uuid3($ns, $name)
     {
@@ -726,9 +693,6 @@ class Uuid implements UuidInterface
      * Generate a version 4 (random) UUID.
      *
      * @return UuidInterface
-     * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
-     * @throws InvalidArgumentException
-     * @throws Exception
      */
     public static function uuid4()
     {
@@ -739,10 +703,9 @@ class Uuid implements UuidInterface
      * Generate a version 5 UUID based on the SHA-1 hash of a namespace
      * identifier (which is a UUID) and a name (which is a string).
      *
-     * @param string|UuidInterface $ns The UUID namespace in which to create the named UUID
+     * @param string $ns The UUID namespace in which to create the named UUID
      * @param string $name The name to create a UUID for
      * @return UuidInterface
-     * @throws InvalidUuidStringException
      */
     public static function uuid5($ns, $name)
     {

@@ -11,9 +11,9 @@
 
 namespace Symfony\Component\HttpKernel\Fragment;
 
-use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Controller\ControllerReference;
 
 /**
@@ -29,15 +29,17 @@ use Symfony\Component\HttpKernel\Controller\ControllerReference;
 class FragmentHandler
 {
     private $debug;
-    private $renderers = [];
+    private $renderers = array();
     private $requestStack;
 
     /**
+     * Constructor.
+     *
      * @param RequestStack                $requestStack The Request stack that controls the lifecycle of requests
      * @param FragmentRendererInterface[] $renderers    An array of FragmentRendererInterface instances
      * @param bool                        $debug        Whether the debug mode is enabled or not
      */
-    public function __construct(RequestStack $requestStack, array $renderers = [], $debug = false)
+    public function __construct(RequestStack $requestStack, array $renderers = array(), $debug = false)
     {
         $this->requestStack = $requestStack;
         foreach ($renderers as $renderer) {
@@ -48,6 +50,8 @@ class FragmentHandler
 
     /**
      * Adds a renderer.
+     *
+     * @param FragmentRendererInterface $renderer A FragmentRendererInterface instance
      */
     public function addRenderer(FragmentRendererInterface $renderer)
     {
@@ -70,7 +74,7 @@ class FragmentHandler
      * @throws \InvalidArgumentException when the renderer does not exist
      * @throws \LogicException           when no master request is being handled
      */
-    public function render($uri, $renderer = 'inline', array $options = [])
+    public function render($uri, $renderer = 'inline', array $options = array())
     {
         if (!isset($options['ignore_errors'])) {
             $options['ignore_errors'] = !$this->debug;
@@ -93,6 +97,8 @@ class FragmentHandler
      * When the Response is a StreamedResponse, the content is streamed immediately
      * instead of being returned.
      *
+     * @param Response $response A Response instance
+     *
      * @return string|null The Response content or null when the Response is streamed
      *
      * @throws \RuntimeException when the Response is not successful
@@ -100,7 +106,7 @@ class FragmentHandler
     protected function deliver(Response $response)
     {
         if (!$response->isSuccessful()) {
-            throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %d).', $this->requestStack->getCurrentRequest()->getUri(), $response->getStatusCode()));
+            throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %s).', $this->requestStack->getCurrentRequest()->getUri(), $response->getStatusCode()));
         }
 
         if (!$response instanceof StreamedResponse) {
@@ -108,7 +114,5 @@ class FragmentHandler
         }
 
         $response->sendContent();
-
-        return null;
     }
 }

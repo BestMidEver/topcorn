@@ -31,8 +31,10 @@ interface ControllerResolverInterface
      * As several resolvers can exist for a single application, a resolver must
      * return false when it is not able to determine the controller.
      *
-     * The resolver must only throw an exception when it should be able to load a
+     * The resolver must only throw an exception when it should be able to load
      * controller but cannot because of some errors made by the developer.
+     *
+     * @param Request $request A Request instance
      *
      * @return callable|false A PHP callable representing the Controller,
      *                        or false if this resolver is not able to determine the controller

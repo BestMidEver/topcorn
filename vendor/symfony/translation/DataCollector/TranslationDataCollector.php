@@ -16,15 +16,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 use Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
 use Symfony\Component\Translation\DataCollectorTranslator;
-use Symfony\Component\VarDumper\Cloner\Data;
 
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
  */
 class TranslationDataCollector extends DataCollector implements LateDataCollectorInterface
 {
+    /**
+     * @var DataCollectorTranslator
+     */
     private $translator;
 
+    /**
+     * @param DataCollectorTranslator $translator
+     */
     public function __construct(DataCollectorTranslator $translator)
     {
         $this->translator = $translator;
@@ -37,7 +42,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
     {
         $messages = $this->sanitizeCollectedMessages($this->translator->getCollectedMessages());
 
-        $this->data += $this->computeCount($messages);
+        $this->data = $this->computeCount($messages);
         $this->data['messages'] = $messages;
 
         $this->data = $this->cloneVar($this->data);
@@ -48,24 +53,14 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
      */
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
-        $this->data['locale'] = $this->translator->getLocale();
-        $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function reset()
-    {
-        $this->data = [];
-    }
-
-    /**
-     * @return array|Data
+     * @return array
      */
     public function getMessages()
     {
-        return isset($this->data['messages']) ? $this->data['messages'] : [];
+        return isset($this->data['messages']) ? $this->data['messages'] : array();
     }
 
     /**
@@ -92,19 +87,6 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return isset($this->data[DataCollectorTranslator::MESSAGE_DEFINED]) ? $this->data[DataCollectorTranslator::MESSAGE_DEFINED] : 0;
     }
 
-    public function getLocale()
-    {
-        return !empty($this->data['locale']) ? $this->data['locale'] : null;
-    }
-
-    /**
-     * @internal since Symfony 4.2
-     */
-    public function getFallbackLocales()
-    {
-        return (isset($this->data['fallback_locales']) && \count($this->data['fallback_locales']) > 0) ? $this->data['fallback_locales'] : [];
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -115,13 +97,13 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
 
     private function sanitizeCollectedMessages($messages)
     {
-        $result = [];
+        $result = array();
         foreach ($messages as $key => $message) {
             $messageId = $message['locale'].$message['domain'].$message['id'];
 
             if (!isset($result[$messageId])) {
                 $message['count'] = 1;
-                $message['parameters'] = !empty($message['parameters']) ? [$message['parameters']] : [];
+                $message['parameters'] = !empty($message['parameters']) ? array($message['parameters']) : array();
                 $messages[$key]['translation'] = $this->sanitizeString($message['translation']);
                 $result[$messageId] = $message;
             } else {
@@ -140,11 +122,11 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
 
     private function computeCount($messages)
     {
-        $count = [
+        $count = array(
             DataCollectorTranslator::MESSAGE_DEFINED => 0,
             DataCollectorTranslator::MESSAGE_MISSING => 0,
             DataCollectorTranslator::MESSAGE_EQUALS_FALLBACK => 0,
-        ];
+        );
 
         foreach ($messages as $message) {
             ++$count[$message['state']];
@@ -161,7 +143,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
             if (mb_strlen($string, $encoding) > $length) {
                 return mb_substr($string, 0, $length - 3, $encoding).'...';
             }
-        } elseif (\strlen($string) > $length) {
+        } elseif (strlen($string) > $length) {
             return substr($string, 0, $length - 3).'...';
         }
 

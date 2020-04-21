@@ -17,6 +17,9 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
+        if(url()->previous()!='https://topcorn.xyz/login' && url()->previous()!='https://topcorn.xyz/register'){
+            session(['links' => url()->previous()]);
+        }
         return view('auth.register');
     }
 

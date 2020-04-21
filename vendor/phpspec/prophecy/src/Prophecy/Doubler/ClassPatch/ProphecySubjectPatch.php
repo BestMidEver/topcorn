@@ -43,7 +43,7 @@ class ProphecySubjectPatch implements ClassPatchInterface
     public function apply(ClassNode $node)
     {
         $node->addInterface('Prophecy\Prophecy\ProphecySubjectInterface');
-        $node->addProperty('objectProphecyClosure', 'private');
+        $node->addProperty('objectProphecy', 'private');
 
         foreach ($node->getMethods() as $name => $method) {
             if ('__construct' === strtolower($name)) {
@@ -65,10 +65,10 @@ class ProphecySubjectPatch implements ClassPatchInterface
         $prophecyArgument = new ArgumentNode('prophecy');
         $prophecyArgument->setTypeHint('Prophecy\Prophecy\ProphecyInterface');
         $prophecySetter->addArgument($prophecyArgument);
-        $prophecySetter->setCode('$this->objectProphecyClosure = function () use ($prophecy) { return $prophecy; };');
+        $prophecySetter->setCode('$this->objectProphecy = $prophecy;');
 
         $prophecyGetter = new MethodNode('getProphecy');
-        $prophecyGetter->setCode('return call_user_func($this->objectProphecyClosure);');
+        $prophecyGetter->setCode('return $this->objectProphecy;');
 
         if ($node->hasMethod('__call')) {
             $__call = $node->getMethod('__call');
@@ -77,7 +77,7 @@ class ProphecySubjectPatch implements ClassPatchInterface
             $__call->addArgument(new ArgumentNode('name'));
             $__call->addArgument(new ArgumentNode('arguments'));
 
-            $node->addMethod($__call, true);
+            $node->addMethod($__call);
         }
 
         $__call->setCode(<<<PHP
@@ -88,8 +88,8 @@ throw new \Prophecy\Exception\Doubler\MethodNotFoundException(
 PHP
         );
 
-        $node->addMethod($prophecySetter, true);
-        $node->addMethod($prophecyGetter, true);
+        $node->addMethod($prophecySetter);
+        $node->addMethod($prophecyGetter);
     }
 
     /**

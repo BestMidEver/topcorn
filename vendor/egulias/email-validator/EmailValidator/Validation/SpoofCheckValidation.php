@@ -10,20 +10,10 @@ use \Spoofchecker;
 class SpoofCheckValidation implements EmailValidation
 {
     /**
-     * @var InvalidEmail|null
+     * @var InvalidEmail
      */
     private $error;
 
-    public function __construct()
-    {
-        if (!extension_loaded('intl')) {
-            throw new \LogicException(sprintf('The %s class requires the Intl extension.', __CLASS__));
-        }
-    }
-
-    /**
-     * @psalm-suppress InvalidArgument
-     */
     public function isValid($email, EmailLexer $emailLexer)
     {
         $checker = new Spoofchecker();
@@ -36,9 +26,6 @@ class SpoofCheckValidation implements EmailValidation
         return $this->error === null;
     }
 
-    /**
-     * @return InvalidEmail|null
-     */
     public function getError()
     {
         return $this->error;

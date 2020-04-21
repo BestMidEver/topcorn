@@ -15,7 +15,7 @@ class TwitterProvider extends AbstractProvider
             throw new InvalidArgumentException('Invalid request. Missing OAuth verifier.');
         }
 
-        $user = $this->server->getUserDetails($token = $this->getToken(), $this->shouldBypassCache($token->getIdentifier(), $token->getSecret()));
+        $user = $this->server->getUserDetails($token = $this->getToken());
 
         $extraDetails = [
             'location' => $user->location,
@@ -26,11 +26,8 @@ class TwitterProvider extends AbstractProvider
                 ->setToken($token->getIdentifier(), $token->getSecret());
 
         return $instance->map([
-            'id' => $user->uid,
-            'nickname' => $user->nickname,
-            'name' => $user->name,
-            'email' => $user->email,
-            'avatar' => $user->imageUrl,
+            'id' => $user->uid, 'nickname' => $user->nickname,
+            'name' => $user->name, 'email' => $user->email, 'avatar' => $user->imageUrl,
             'avatar_original' => str_replace('_normal', '', $user->imageUrl),
         ]);
     }
