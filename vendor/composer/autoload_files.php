@@ -21,7 +21,7 @@ return array(
     '0b0974a5566a1077e4f2e111341112c1' => $vendorDir . '/zendframework/zend-diactoros/src/functions/normalize_server.php',
     '1ca3bc274755662169f9629d5412a1da' => $vendorDir . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
     '40360c0b9b437e69bcbb7f1349ce029e' => $vendorDir . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
-    '37a3dc5111fe8f707ab4c132ef1dbc62' => $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
+    '154e0d165f5fe76e8e9695179d0a7345' => $vendorDir . '/guzzlehttp/guzzle/src/functions.php',
     '2c102faa651ef8ea5874edb585946bce' => $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
     'decc78cc4436b1292c6c0d151b19445c' => $vendorDir . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
     'e7223560d890eab89cda23685e711e2c' => $vendorDir . '/psy/psysh/src/Psy/functions.php',
