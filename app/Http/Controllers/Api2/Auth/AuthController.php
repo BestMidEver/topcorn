@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Api2\Auth;
 use App\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Session;
 use GuzzleHttp\Exception\BadResponseException;
 
 class AuthController extends Controller
@@ -42,7 +40,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:6|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
@@ -50,9 +48,7 @@ class AuthController extends Controller
         return User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password)/* ,
-            'lang' => App::getlocale(),
-            'secondary_lang' => Session::get('secondary_lang'), */
+            'password' => bcrypt($request->password),
         ]);
     }
 
