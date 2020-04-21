@@ -50,9 +50,9 @@ class AuthController extends Controller
         return User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'password' => bcrypt($request->password)/* ,
             'lang' => App::getlocale(),
-            'secondary_lang' => Session::get('secondary_lang'),
+            'secondary_lang' => Session::get('secondary_lang'), */
         ]);
     }
 
