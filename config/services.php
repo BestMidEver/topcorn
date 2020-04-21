@@ -40,5 +40,11 @@ return [
         'client_secret' => 'd628b4ef4ecd62515f74863ae40ff073',
         'redirect' => config('api.url').'/login/facebook/callback',
     ],
+    
+    'passport' => [
+        'login_endpoint' => config('api.url').'/oauth/token',
+        'client_id' => '2',
+        'client_secret' => 'p1rfitDI8PXGb1cJuAU9fSGQeS1fLwqCGHm0KtB6',
+    ],
 
 ];
