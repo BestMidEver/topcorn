@@ -13,7 +13,7 @@ Route::middleware('auth:api')->group(function () {
         return $request->user();
     });
 
-    Route::post('/logout', 'AuthController@logout');
+    Route::post('/logout', 'Api2\Auth\AuthController@logout');
 });
 
 Route::post('/login', 'Api2\Auth\AuthController@login');
