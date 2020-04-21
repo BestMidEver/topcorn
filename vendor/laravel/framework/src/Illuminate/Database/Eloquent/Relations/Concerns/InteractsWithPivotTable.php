@@ -64,7 +64,7 @@ trait InteractsWithPivotTable
     /**
      * Sync the intermediate tables with a list of IDs without detaching.
      *
-     * @param  \Illuminate\Database\Eloquent\Collection|array  $ids
+     * @param  \Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection|array  $ids
      * @return array
      */
     public function syncWithoutDetaching($ids)
@@ -464,11 +464,11 @@ trait InteractsWithPivotTable
     protected function parseIds($value)
     {
         if ($value instanceof Model) {
-            return [$value->getKey()];
+            return [$value->{$this->relatedKey}];
         }
 
         if ($value instanceof Collection) {
-            return $value->modelKeys();
+            return $value->pluck($this->relatedKey)->all();
         }
 
         if ($value instanceof BaseCollection) {
@@ -511,7 +511,7 @@ trait InteractsWithPivotTable
     protected function castAttributes($attributes)
     {
         return $this->using
-                    ? $this->newPivot()->forceFill($attributes)->getAttributes()
+                    ? $this->newPivot()->fill($attributes)->getAttributes()
                     : $attributes;
     }
 }

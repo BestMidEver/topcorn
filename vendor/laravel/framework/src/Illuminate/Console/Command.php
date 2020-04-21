@@ -2,6 +2,7 @@
 
 namespace Illuminate\Console;
 
+use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Support\Arrayable;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -15,6 +16,8 @@ use Symfony\Component\Console\Command\Command as SymfonyCommand;
 
 class Command extends SymfonyCommand
 {
+    use Macroable;
+
     /**
      * The Laravel application instance.
      *
@@ -192,7 +195,7 @@ class Command extends SymfonyCommand
         $arguments['command'] = $command;
 
         return $this->getApplication()->find($command)->run(
-            new ArrayInput($arguments), $this->output
+            $this->createInputFromArguments($arguments), $this->output
         );
     }
 
@@ -208,8 +211,37 @@ class Command extends SymfonyCommand
         $arguments['command'] = $command;
 
         return $this->getApplication()->find($command)->run(
-            new ArrayInput($arguments), new NullOutput
+            $this->createInputFromArguments($arguments), new NullOutput
         );
+    }
+
+    /**
+     * Create an input instance from the given arguments.
+     *
+     * @param  array  $arguments
+     * @return \Symfony\Component\Console\Input\ArrayInput
+     */
+    protected function createInputFromArguments(array $arguments)
+    {
+        return tap(new ArrayInput(array_merge($this->context(), $arguments)), function ($input) {
+            if ($input->hasParameterOption(['--no-interaction'], true)) {
+                $input->setInteractive(false);
+            }
+        });
+    }
+
+    /**
+     * Get all of the context passed to the command.
+     *
+     * @return array
+     */
+    protected function context()
+    {
+        $options = array_only($this->option(), ['no-interaction', 'ansi', 'no-ansi', 'quiet', 'verbose']);
+
+        return collect($options)->mapWithKeys(function ($value, $key) {
+            return ["--{$key}" => $value];
+        })->filter()->all();
     }
 
     /**
@@ -492,7 +524,7 @@ class Command extends SymfonyCommand
         $this->comment('*     '.$string.'     *');
         $this->comment(str_repeat('*', strlen($string) + 12));
 
-        $this->output->writeln('');
+        $this->output->newLine();
     }
 
     /**
