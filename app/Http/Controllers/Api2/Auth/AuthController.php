@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api2\Auth;
 use App\User;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use GuzzleHttp\Exception\BadResponseException;
