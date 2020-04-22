@@ -48,7 +48,10 @@ class AuthController extends Controller
 
         if ($validator->fails())
         {
-            return $validator;
+            return Response::json(array(
+                'success' => false,
+                'errors' => $validator->getMessageBag()->toArray()
+            ), 400); // 400 being the HTTP code for an invalid request.
         }
 
         return User::create([
