@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         if ($validator->fails())
         {
-            return 1;
+            return $validator;
         }
 
         return User::create([
