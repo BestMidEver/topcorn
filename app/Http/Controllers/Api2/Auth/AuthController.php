@@ -58,6 +58,8 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
+            'lang' => App::getlocale(),
+            'secondary_lang' => Session::get('secondary_lang'),
         ]);
     }
 
