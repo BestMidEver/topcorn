@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         if ($validator->fails())
         {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return 1;
         }
 
         return User::create([
