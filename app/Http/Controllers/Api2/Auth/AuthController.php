@@ -46,7 +46,10 @@ class AuthController extends Controller
             'password' => 'required|string|min:6|same:password_confirmation',
         ]);
 
-        return $validator;
+        if ($validator->fails())
+        {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
 
         return User::create([
             'name' => $request->name,
