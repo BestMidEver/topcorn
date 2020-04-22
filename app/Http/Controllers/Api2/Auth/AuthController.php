@@ -39,17 +39,27 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|same:password_confirmation',
-        ]);
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:6|same:password_confirmation',
+            ]);
 
-        return User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
+            return User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+            ]);
+        } catch (BadResponseException $e) {
+            if ($e->getCode() === 400) {
+                return response()->json('Invalid Request. Please enter a username or a password.', $e->getCode());
+            } else if ($e->getCode() === 401) {
+                return response()->json('Your credentials are incorrect. Please try again', $e->getCode());
+            }
+
+            return response()->json('Something went wrong on the server.', $e->getCode());
+        }
     }
 
     public function logout()
