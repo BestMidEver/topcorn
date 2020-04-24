@@ -162,7 +162,7 @@ class SearchController extends Controller
 
 
 
-    public function get_pluck_id($mode)
+    public function get_pluck_id(Request $request, $mode)
     {
         if($mode == 'movies'){
             $rateds = DB::table('rateds')
