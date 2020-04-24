@@ -163,7 +163,7 @@ class SearchController extends Controller
 
 
     public function get_pluck_id($mode)
-    {return Auth::user();
+    {
         if($mode == 'movies'){
             $rateds = DB::table('rateds')
             ->where('user_id', Auth::user()->id)
