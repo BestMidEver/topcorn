@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->group(function () {
     Route::get('/user', function (Request $request) {
-        return 1;
+        return Auth::user();
         return $request->user();
     });
     
