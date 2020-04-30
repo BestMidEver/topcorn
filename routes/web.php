@@ -71,7 +71,7 @@ Route::get('not-found', function () {
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// MOVIE PAGE (PULBIC) ////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-Route::get('movie/{id}/{lang?}/{secondary_lang?}', 'PageControllers\movieController@movie')->middleware('id_dash_moviename')->middleware('UpdateRecents')
+Route::get('movie/{id}/{lang?}/{secondary_lang?}', 'PageControllers\movieController@movie')->middleware('id_dash_moviename')->middleware('UpdateRecents:movie')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
 Route::get('api/get_user_movie_record/{movie}','PageControllers\movieController@get_user_movie_record');//IMPLEMENT AUTH

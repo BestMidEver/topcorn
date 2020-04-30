@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Model\Movie;
 use App\Model\Recent_movie;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,13 +18,13 @@ class UpdateRecents
      */
     public function handle($request, Closure $next)
     {
-        if (!Auth::check()) {
-            return $next($request);
-        }
-        
         $response = $next($request);
+        
+        if (!Auth::check()) return $response;
+        
+        $movie = Movie::where(['id' => $request->id]);
+        if(!$movie->count() > 0) return $response;
 
-        // Perform action
         $recent = Recent_movie::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->id));
         $recent->touch();
 
