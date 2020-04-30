@@ -38,7 +38,7 @@ class UpdateRecentsJob implements ShouldQueue
         if($this->type === 'movie') {
             $recent = Recent_movie::updateOrCreate(array('user_id' => $this->userId, 'movie_id' => $this->objId));
             $recent->touch();
-            Recent_movie::where('user_id', $this->userId)->sortByDesc('updated_at')->skip(3)->get()->each(function($row){ $row->delete(); });
+            Recent_movie::where('user_id', $this->userId)->sortBy('updated_at', 'asc')->skip(3)->get()->each(function($row){ $row->delete(); });
         }
     }
 }
