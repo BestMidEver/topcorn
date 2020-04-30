@@ -40,7 +40,7 @@ class AssignUpdateRecentsJob implements ShouldQueue
     {
         if($this->type === 'movie') SuckMovieJob::dispatch($this->objId, false, $this->userId)->onQueue("high");
         else if($this->type === 'series') SuckSeriesJob::dispatch($this->objId, false, $this->userId)->onQueue("high");
-        else if($this->type === 'person') SuckPersonJob::dispatch($this->objId, false, $this->userId)->onQueue("high");
+        else if($this->type === 'person') SuckPersonJob::dispatch($this->objId, $this->userId)->onQueue("high");
         else if($this->type === 'user') if($this->id !== $this->userId) UpdateRecentsJob::dispatch('user', $this->id, $this->userId)->onQueue("high");
         else if($this->type === 'list') UpdateRecentsJob::dispatch('list', $this->id, $this->userId)->onQueue("high");
     }
