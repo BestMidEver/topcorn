@@ -2,22 +2,23 @@
 
 namespace App\Jobs;
 
-use App\Jobs\SendNotificationEmailJob;
+use Carbon\Carbon;
+use App\Model\Serie;
+use App\Model\Review;
 use App\Jobs\SuckSeriesJob;
 use App\Model\Notification;
-use App\Model\Review;
-use App\Model\Serie;
 use App\Model\Series_genre;
 use App\Model\Series_later;
 use App\Model\Series_network;
-use App\Model\Series_recommendation;
-use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
+use App\Jobs\UpdateRecentsJob;
+use Illuminate\Support\Facades\DB;
+use App\Model\Series_recommendation;
+use App\Jobs\SendNotificationEmailJob;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\DB;
 
 class SuckSeriesJob implements ShouldQueue
 {
@@ -25,15 +26,17 @@ class SuckSeriesJob implements ShouldQueue
 
     protected $id;
     protected $isWithRecommendation;
+    protected $userId;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($id, $isWithRecommendation)
+    public function __construct($id, $isWithRecommendation, $userId = 0)
     {
         $this->id = $id;
         $this->isWithRecommendation = $isWithRecommendation;
+        $this->userId = $userId;
     }
 
     /**
@@ -46,7 +49,10 @@ class SuckSeriesJob implements ShouldQueue
         $is_recent = Serie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(5)->toDateTimeString())
         ->first();
-        if($is_recent) return;
+        if($is_recent) {
+            if($this->userId > 0) UpdateRecentsJob::dispatch('series', $this->id, $this->userId)->onQueue("high");
+            return;
+        }
         $topcorn_vote_data = DB::table('series_rateds')
         ->where('series_rateds.series_id', '=', $this->id)
         ->where('series_rateds.rate', '>', 0)
@@ -333,5 +339,6 @@ class SuckSeriesJob implements ShouldQueue
                 );
             }
         }
+        if($this->userId > 0) UpdateRecentsJob::dispatch('movie', $this->id, $this->userId)->onQueue("high");
     }
 }

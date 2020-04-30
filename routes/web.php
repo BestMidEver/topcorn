@@ -44,7 +44,7 @@ Route::get('/{lang?}', 'PageControllers\homeController@home')
 	->where('lang', config('constants.supported_languages.for_web_php'))
 	->middleware('blog_if_not_logged_in');//PUBLIC
 
-Route::get('person/{id}/{lang?}', 'PageControllers\personController@person')->middleware('id_dash_personname')
+Route::get('person/{id}/{lang?}', 'PageControllers\personController@person')->middleware('id_dash_personname')->middleware('UpdateRecents:person')
 	->where('lang', config('constants.supported_languages.for_web_php'));//AUTH
 
 Route::get('donation/{lang?}', 'PageControllers\DonationController@donate')
@@ -87,7 +87,7 @@ Route::post('api/send_movie_to_user','PageControllers\movieController@send_movie
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SERIES PAGE (PULBIC) ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-Route::get('series/{id}/{lang?}/{secondary_lang?}', 'PageControllers\seriesController@series')->middleware('id_dash_seriesname')
+Route::get('series/{id}/{lang?}/{secondary_lang?}', 'PageControllers\seriesController@series')->middleware('id_dash_seriesname')->middleware('UpdateRecents:series')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SERIES PAGE (PULBIC) ///////////////////////////////
@@ -99,7 +99,7 @@ Route::get('series/{id}/{lang?}/{secondary_lang?}', 'PageControllers\seriesContr
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// LIST PAGE (PULBIC) /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-Route::get('list/{id}', 'PageControllers\listController@list')->middleware('id_dash_listname');
+Route::get('list/{id}', 'PageControllers\listController@list')->middleware('id_dash_listname')->middleware('UpdateRecents:list');
 Route::get('createlist/{id?}', 'PageControllers\listController@create_list')->middleware('id_dash_listname');
 
 Route::get('deletelist/{id}', 'PageControllers\listController@delete_list');
@@ -195,7 +195,7 @@ Route::get('api/get_notification_button', 'PageControllers\NotificationsControll
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// PROFILE PAGE (PUBLIC) ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-Route::get('profile/{user}/{lang?}', 'PageControllers\ProfileController@profile')->middleware('id_dash_username')
+Route::get('profile/{user}/{lang?}', 'PageControllers\ProfileController@profile')->middleware('id_dash_username')->middleware('UpdateRecents:user')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
 Route::get('api/get_rateds/{rate}/{user}/{lang}','PageControllers\ProfileController@get_rateds')
