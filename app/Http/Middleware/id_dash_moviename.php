@@ -16,7 +16,6 @@ class id_dash_moviename
      */
     public function handle($request, Closure $next, $type)
     {
-        return $type;
         $movie = Movie::where(['id' => $request->id]);
 
         if($movie->count() > 0) $movie = $movie->first();
