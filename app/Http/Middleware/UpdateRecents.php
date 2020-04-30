@@ -16,10 +16,10 @@ class UpdateRecents
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $type)
     {
         $response = $next($request);
-        
+
         if (!Auth::check()) return $response;
         
         $movie = Movie::where(['id' => $request->id]);
