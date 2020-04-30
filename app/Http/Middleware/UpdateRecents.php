@@ -25,6 +25,7 @@ class UpdateRecents
 
         // Perform action
         $recent = Recent_movie::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->id));
+        $recent->touch();
 
         return $response;
     }
