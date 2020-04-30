@@ -41,7 +41,7 @@ class UpdateRecentsJob implements ShouldQueue
             //Recent_movie::where('user_id', $this->userId)->sortBy('updated_at', 'asc')->skip(3)->get()->each(function($row){ $row->delete(); });
 
             $keep = Recent_movie::where('user_id', $this->userId)
-            ->sortBy('updated_at', 'asc')
+            ->sortBy('updated_at')
             ->take(5)
             ->pluck('id');
 
