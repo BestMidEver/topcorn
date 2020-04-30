@@ -16,6 +16,7 @@ class SuckPersonJob implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $id;
+    protected $userId;
     /**
      * Create a new job instance.
      *
