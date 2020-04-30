@@ -10,6 +10,8 @@ return array(
     'App\\Exceptions\\ExceptionTrait' => $baseDir . '/app/Exceptions/ExceptionTrait.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Api2\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Api2/Auth/AuthController.php',
+    'App\\Http\\Controllers\\Api2\\MergeController' => $baseDir . '/app/Http/Controllers/Api2/MergeController.php',
+    'App\\Http\\Controllers\\Api2\\SearchController' => $baseDir . '/app/Http/Controllers/Api2/SearchController.php',
     'App\\Http\\Controllers\\ApiControllers\\BanController' => $baseDir . '/app/Http/Controllers/ApiControllers/BanController.php',
     'App\\Http\\Controllers\\ApiControllers\\FollowController' => $baseDir . '/app/Http/Controllers/ApiControllers/FollowController.php',
     'App\\Http\\Controllers\\ApiControllers\\JobController' => $baseDir . '/app/Http/Controllers/ApiControllers/JobController.php',

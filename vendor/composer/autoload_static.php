@@ -404,6 +404,8 @@ class ComposerStaticInitc1d52f4c3200949e1abe2578ee50dff0
         'App\\Exceptions\\ExceptionTrait' => __DIR__ . '/../..' . '/app/Exceptions/ExceptionTrait.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Api2\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api2/Auth/AuthController.php',
+        'App\\Http\\Controllers\\Api2\\MergeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api2/MergeController.php',
+        'App\\Http\\Controllers\\Api2\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api2/SearchController.php',
         'App\\Http\\Controllers\\ApiControllers\\BanController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiControllers/BanController.php',
         'App\\Http\\Controllers\\ApiControllers\\FollowController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiControllers/FollowController.php',
         'App\\Http\\Controllers\\ApiControllers\\JobController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApiControllers/JobController.php',
