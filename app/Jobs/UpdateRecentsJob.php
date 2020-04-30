@@ -57,14 +57,14 @@ class UpdateRecentsJob implements ShouldQueue
             $keep = Recent_person::where('user_id', $this->userId)->latest('updated_at')->take(5/* config('constants.recently_viewed.last_n') */)->pluck('id');
             Recent_person::where('user_id', $this->userId)->whereNotIn('id', $keep)->delete();
         } else if($this->type === 'user') {
-            $user = User::where(['id' => $request->id]);
+            $user = User::where(['id' => $this->userId]);
             if(!$user->count() > 0) return;
             $recent = Recent_user::updateOrCreate(array('user_id' => $this->userId, 'subject_id' => $this->objId));
             $recent->touch();
             $keep = Recent_user::where('user_id', $this->userId)->latest('updated_at')->take(5/* config('constants.recently_viewed.last_n') */)->pluck('id');
             Recent_user::where('user_id', $this->userId)->whereNotIn('id', $keep)->delete();
         } else if($this->type === 'list') {
-            $list = Liste::where(['id' => $request->id]);
+            $list = Liste::where(['id' => $this->userId]);
             if(!$list->count() > 0) return;
             $recent = Recent_list::updateOrCreate(array('user_id' => $this->userId, 'list_id' => $this->objId));
             $recent->touch();
