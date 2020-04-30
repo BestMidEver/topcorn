@@ -14,7 +14,7 @@ class id_dash_moviename
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $type)
     {
         $movie = Movie::where(['id' => $request->id]);
 
