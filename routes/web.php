@@ -281,7 +281,7 @@ Route::get('suckData', function(){
 	//$recent->touch();
 	$keep = Recent_movie::where('user_id', $this->userId)->latest('updated_at')->take(config('constants.recently_viewed.latest_n'))->pluck('id');
 	Recent_movie::where('user_id', $this->userId)->whereNotIn('id', $keep)->delete();
-	return Recent_movie::where('user_id', $this->userId)->latest('updated_at');
+	return Recent_movie::where('user_id', 7)->latest('updated_at');
 	//SuckDataJob::dispatch()->onQueue("low");
 	return 'not sucking data.';
 });
