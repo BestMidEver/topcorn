@@ -204,6 +204,6 @@ class SuckMovieJob implements ShouldQueue
                 );
             }
         }
-        if($userId > 0) UpdateRecentsJob::dispatch('movie', $this->id, $this->userId)->onQueue("high");
+        if($this->userId > 0) UpdateRecentsJob::dispatch('movie', $this->id, $this->userId)->onQueue("high");
     }
 }
