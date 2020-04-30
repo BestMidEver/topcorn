@@ -70,7 +70,7 @@ class Kernel extends HttpKernel
         'id_dash_listname' => \App\Http\Middleware\id_dash_listname::class,
         'id_dash_personname' => \App\Http\Middleware\id_dash_personname::class,
         'blog_if_not_logged_in' => \App\Http\Middleware\blog_if_not_logged_in::class,
-        'LastSeen' => \App\Http\Middleware\LastSeen::class,
+        'UpdateRecents' => \App\Http\Middleware\UpdateRecents::class,
         'CORS' => \App\Http\Middleware\CORS::class,
     ];
 }
