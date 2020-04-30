@@ -46,7 +46,7 @@ class SuckMovieJob implements ShouldQueue
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
         if($is_recent) {
-            if($userId > 0) UpdateRecentsJob::dispatch('movie', $id, $userId)->onQueue("high");
+            if($userId > 0) UpdateRecentsJob::dispatch('movie', $this->id, $this->userId)->onQueue("high");
             return;
         }
         $topcorn_vote_data = DB::table('rateds')
@@ -204,6 +204,6 @@ class SuckMovieJob implements ShouldQueue
                 );
             }
         }
-        if($userId > 0) UpdateRecentsJob::dispatch('movie', $id, $userId)->onQueue("high");
+        if($userId > 0) UpdateRecentsJob::dispatch('movie', $this->id, $this->userId)->onQueue("high");
     }
 }
