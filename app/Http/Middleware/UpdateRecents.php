@@ -22,10 +22,12 @@ class UpdateRecents
 
         if (!Auth::check()) return $response;
         
-        $movie = Movie::where(['id' => $request->id]);
-        if(!$movie->count() > 0) return $response;
+        if($type === 'movies') {
+            $movie = Movie::where(['id' => $request->id]);
+            if(!$movie->count() > 0) return $response;
+            $recent = Recent_movie::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->id));
+        }
 
-        $recent = Recent_movie::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->id));
         $recent->touch();
 
         return $response;
