@@ -112,6 +112,14 @@ return array(
 
 
 
+  'recently_viewed' => array(
+
+    'latest_n' => 96
+
+  ),
+
+
+
 
   'angular_slider' => array(
 
