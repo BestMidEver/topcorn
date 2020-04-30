@@ -3,8 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Model\Movie;
-use App\Model\Recent_movie;
+use App\Jobs\AssignUpdateRecentsJob;
 use Illuminate\Support\Facades\Auth;
 
 class UpdateRecents
@@ -22,13 +21,7 @@ class UpdateRecents
 
         if (!Auth::check()) return $response;
         
-        if($type === 'movie') {
-            $movie = Movie::where(['id' => $request->id]);
-            if(!$movie->count() > 0) return $response;
-            $recent = Recent_movie::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->id));
-        }
-
-        $recent->touch();
+        AssignUpdateRecentsJob::dispatch($type, $request->id, Auth::id())->onQueue("high");
 
         return $response;
     }

@@ -2,18 +2,19 @@
 
 namespace App\Jobs;
 
-use App\Jobs\SuckMovieJob;
+use Carbon\Carbon;
 use App\Model\Genre;
 use App\Model\Movie;
-use App\Model\Recommendation;
 use App\Model\Review;
-use Carbon\Carbon;
+use App\Jobs\SuckMovieJob;
+use App\Model\Recommendation;
 use Illuminate\Bus\Queueable;
+use App\Jobs\UpdateRecentsJob;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\DB;
 
 class SuckMovieJob implements ShouldQueue
 {
@@ -21,15 +22,17 @@ class SuckMovieJob implements ShouldQueue
 
     protected $id;
     protected $isWithRecommendation;
+    protected $userId;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($id, $isWithRecommendation)
+    public function __construct($id, $isWithRecommendation, $userId = 0)
     {
         $this->id = $id;
         $this->isWithRecommendation = $isWithRecommendation;
+        $this->userId = $userId;
     }
 
     /**
@@ -42,7 +45,10 @@ class SuckMovieJob implements ShouldQueue
         $is_recent = Movie::where('id', $this->id)
         ->where('updated_at', '>', Carbon::now()->subHours(30)->toDateTimeString())
         ->first();
-        if($is_recent) return;
+        if($is_recent) {
+            if($userId > 0) UpdateRecentsJob::dispatch('movie', $id, $userId)->onQueue("high");
+            return;
+        }
         $topcorn_vote_data = DB::table('rateds')
         ->where('rateds.movie_id', '=', $this->id)
         ->where('rateds.rate', '>', 0)
@@ -198,5 +204,6 @@ class SuckMovieJob implements ShouldQueue
                 );
             }
         }
+        if($userId > 0) UpdateRecentsJob::dispatch('movie', $id, $userId)->onQueue("high");
     }
 }
