@@ -17,7 +17,7 @@ class UpdateRecents
      * @return mixed
      */
     public function handle($request, Closure $next, $type)
-    {
+    { return $type;
         $response = $next($request);
 
         if (!Auth::check()) return $response;
