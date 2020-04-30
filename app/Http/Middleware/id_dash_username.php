@@ -16,14 +16,14 @@ class id_dash_username
      */
     public function handle($request, Closure $next)
     {
-        $user = User::where(['id' => $request->user]);
+        $user = User::where(['id' => $request->id]);
 
         if($user->count() > 0) $user = $user->first();
         else return $next($request);
 
         $correct_url = $user->id.'-'.str_replace(array(' ','/','?','#','&','<','>',"'",'"','*','%'), '-', $user->name);
         
-        if($request->user == $correct_url){
+        if($request->id == $correct_url){
             return $next($request);
         }else{
             return redirect('/profile/'.$correct_url);
