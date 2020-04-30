@@ -195,7 +195,7 @@ Route::get('api/get_notification_button', 'PageControllers\NotificationsControll
 //////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////// PROFILE PAGE (PUBLIC) ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
-Route::get('profile/{user}/{lang?}', 'PageControllers\ProfileController@profile')->middleware('id_dash_username')->middleware('UpdateRecents:user')
+Route::get('profile/{id}/{lang?}', 'PageControllers\ProfileController@profile')->middleware('id_dash_username')->middleware('UpdateRecents:user')
 	->where('lang', config('constants.supported_languages.for_web_php'));
 
 Route::get('api/get_rateds/{rate}/{user}/{lang}','PageControllers\ProfileController@get_rateds')
