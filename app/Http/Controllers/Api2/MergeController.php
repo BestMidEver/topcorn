@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MergeController extends Controller
 {
     public function pluckId()
-    {return 1;
+    {return 2;
         $rateds = DB::table('rateds')
         ->where('user_id', Auth::user()->id)
         ->pluck('movie_id')
