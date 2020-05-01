@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MergeController extends Controller
 {
-    public function pluckId($mode)
+    public function pluckId()
     {
         //if($mode == 'movies'){
             $rateds = DB::table('rateds')
