@@ -93,7 +93,7 @@ class SearchController extends Controller
             'users.facebook_profile_pic as facebook_profile_path',
             'users.name'
         )
-        ->orderBy('recent_people.updated_at', 'desc');
+        ->orderBy('recent_users.updated_at', 'desc');
 
         return response()->json([
             'movies' => $movies->get(),
