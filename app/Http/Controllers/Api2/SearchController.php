@@ -99,6 +99,7 @@ class SearchController extends Controller
             'movies' => $movies->get(),
             'series' => $series->get(),
             'people' => $people->get(),
+            'users' => $users->get(),
         ]);
     }
 }
