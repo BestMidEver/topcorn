@@ -91,7 +91,7 @@ class SearchController extends Controller
             'users.id',
             'users.profile_path',
             'users.facebook_profile_path',
-            'users.name',
+            'users.name'
         )
         ->orderBy('recent_people.updated_at', 'desc');
 
