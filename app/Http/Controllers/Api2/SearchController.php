@@ -61,7 +61,7 @@ class SearchController extends Controller
             'series.id',
             'series.vote_average',
             'series.vote_count',
-            'series.release_date',
+            'series.first_air_date',
             'series.original_title as original_title',
             'series.'.Auth::User()->lang.'_title as title',
             'series.'.Auth::User()->lang.'_poster_path as poster_path',
