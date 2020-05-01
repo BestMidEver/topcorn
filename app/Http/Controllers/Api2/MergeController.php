@@ -11,7 +11,6 @@ class MergeController extends Controller
 {
     public function pluckId()
     {
-        //if($mode == 'movies'){
             $rateds = DB::table('rateds')
             ->where('user_id', Auth::user()->id)
             ->pluck('movie_id')
@@ -49,8 +48,7 @@ class MergeController extends Controller
                 'bans.id as ban_id'
             );
 
-            //return $movies->get();
-        //}else if($mode == 'series'){
+
             $series_rateds = DB::table('series_rateds')
             ->where('user_id', Auth::user()->id)
             ->pluck('series_id')
@@ -88,14 +86,10 @@ class MergeController extends Controller
                 'series_bans.id as ban_id'
             );
 
-            //return $return_val->get();
 
             return response()->json([
-                'movies' => $movies->get(),
-                'series' => $series->get()
+                'movies' => $movies->take(10)->get(),
+                'series' => $series->take(10)->get()
             ]);
-        /* }else{//both
-
-        } */
     }
 }
