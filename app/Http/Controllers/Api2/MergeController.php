@@ -88,7 +88,7 @@ class MergeController extends Controller
 
 
             return response()->json([
-                'movies' => $movies->take(10)->get(),
+                'movies' => [],
                 'series' => []
             ]);
     }
