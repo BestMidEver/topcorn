@@ -11,6 +11,10 @@ class MergeController extends Controller
 {
     public function pluckId()
     {
+        return response()->json([
+            'movies' => [],
+            'series' => []
+        ]);
             $rateds = DB::table('rateds')
             ->where('user_id', Auth::user()->id)
             ->pluck('movie_id')
