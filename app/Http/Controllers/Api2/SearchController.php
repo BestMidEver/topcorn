@@ -43,7 +43,7 @@ class SearchController extends Controller
 
 
         return response()->json([
-            'movies' => 1,
+            'movies' => $movies->get(),
             /* 'series' => $series->get(),
             'series' => $series->get(),
             'series' => $series->get(),
