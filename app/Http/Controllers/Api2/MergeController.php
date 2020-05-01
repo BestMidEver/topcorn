@@ -89,7 +89,7 @@ class MergeController extends Controller
 
             return response()->json([
                 'movies' => $movies->take(10)->get(),
-                'series' => $series->take(10)->get()
+                'series' => []
             ]);
     }
 }
