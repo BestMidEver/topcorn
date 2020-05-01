@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Jobs\SuckMovieJob;
+use App\Model\Recent_list;
 use App\Jobs\SuckPersonJob;
 use App\Jobs\SuckSeriesJob;
 use Illuminate\Bus\Queueable;
@@ -42,6 +43,6 @@ class AssignUpdateRecentsJob implements ShouldQueue
         else if($this->type === 'series') SuckSeriesJob::dispatch($this->objId, false, $this->userId)->onQueue("high");
         else if($this->type === 'person') SuckPersonJob::dispatch($this->objId, $this->userId)->onQueue("high");
         else if($this->type === 'user') if($this->objId != $this->userId) UpdateRecentsJob::dispatch('user', $this->objId, $this->userId)->onQueue("high");
-        else if($this->type === 'list') UpdateRecentsJob::dispatch('list', $this->objId, $this->userId)->onQueue("high");
+        else if($this->type === 'list') Recent_list::updateOrCreate(array('user_id' => 1, 'list_id' => 1));//UpdateRecentsJob::dispatch('list', $this->objId, $this->userId)->onQueue("high");
     }
 }
