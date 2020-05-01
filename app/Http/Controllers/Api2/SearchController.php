@@ -42,10 +42,41 @@ class SearchController extends Controller
         ->orderBy('recent_movies.updated_at', 'desc');
 
 
+        $series = DB::table('recent_series')
+        ->where('recent_series.user_id', Auth::user()->id)
+        ->join('series', 'series.id', '=', 'recent_series.movie_id')
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series_rateds.movie_id', '=', 'recent_series.movie_id')
+            ->where('series_rateds.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.movie_id', '=', 'recent_series.movie_id')
+            ->where('series_laters.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.movie_id', '=', 'recent_series.movie_id')
+            ->where('series_bans.user_id', '=', Auth::user()->id);
+        })
+        ->select(
+            'series.id',
+            'series.vote_average',
+            'series.vote_count',
+            'series.release_date',
+            'series.original_title as original_title',
+            'series.'.Auth::User()->lang.'_title as title',
+            'series.'.Auth::User()->lang.'_poster_path as poster_path',
+            'series_rateds.id as rated_id',
+            'series_rateds.rate as rate_code',
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
+        )
+        ->orderBy('recent_series.updated_at', 'desc');
+
+
         return response()->json([
             'movies' => $movies->get(),
-            /* 'series' => $series->get(),
             'series' => $series->get(),
+            /* 'series' => $series->get(),
             'series' => $series->get(),
             'series' => $series->get(), */
         ]);
