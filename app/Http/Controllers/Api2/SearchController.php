@@ -11,6 +11,7 @@ class SearchController extends Controller
 {
     public function recenltyVisiteds()
     {
+        return 1;
         $movies = DB::table('recent_movies')
         ->where('recent_movies.id', Auth::user()->id)
         /* ->join('movies', 'movies.id', '=', 'recent_movies.movie_id')
