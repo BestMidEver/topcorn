@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class SearchController extends Controller
 {
-    public function pluckId()
+    public function recenltyVisiteds()
     {
         $movies = DB::table('recent_movies')
         ->where('recent_movies.id', Auth::user()->id)
