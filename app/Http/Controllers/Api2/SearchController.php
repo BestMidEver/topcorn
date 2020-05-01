@@ -96,24 +96,12 @@ class SearchController extends Controller
         ->orderBy('recent_users.updated_at', 'desc');
 
 
-        /* $lists = DB::table('recent_lists')
-        ->where('recent_lists.user_id', Auth::user()->id)
-        ->join('listes', 'listes.id', '=', 'recent_lists.list_id')
-        ->select(
-            'users.id',
-            'users.profile_pic as profile_path',
-            'users.facebook_profile_pic as facebook_profile_path',
-            'users.name'
-        )
-        ->orderBy('recent_users.updated_at', 'desc'); */
-
-
         return response()->json([
             'movies' => $movies->get(),
             'series' => $series->get(),
             'people' => $people->get(),
             'users' => $users->get(),
-            'lists' => []/* $lists->get(), */
+            'lists' => [],
         ]);
     }
 }
