@@ -89,8 +89,8 @@ class SearchController extends Controller
         ->join('users', 'users.id', '=', 'recent_users.person_id')
         ->select(
             'users.id',
-            'users.profile_path',
-            'users.facebook_profile_path',
+            'users.profile_pic as profile_path',
+            'users.facebook_profile_pic as facebook_profile_path',
             'users.name'
         )
         ->orderBy('recent_people.updated_at', 'desc');
