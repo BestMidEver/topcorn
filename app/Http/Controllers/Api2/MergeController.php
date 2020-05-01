@@ -11,7 +11,7 @@ class MergeController extends Controller
 {
     public function pluckId($mode)
     {
-        if($mode == 'movies'){
+        //if($mode == 'movies'){
             $rateds = DB::table('rateds')
             ->where('user_id', Auth::user()->id)
             ->pluck('movie_id')
@@ -27,7 +27,7 @@ class MergeController extends Controller
 
             $users_movies = array_merge($rateds, $laters, $bans);
             
-            $return_val = DB::table('movies')
+            $movies = DB::table('movies')
             ->whereIn('movies.id', $users_movies)
             ->leftjoin('rateds', function ($join) {
                 $join->on('rateds.movie_id', '=', 'movies.id')
@@ -49,8 +49,8 @@ class MergeController extends Controller
                 'bans.id as ban_id'
             );
 
-            return $return_val->get();
-        }else if($mode == 'series'){
+            //return $movies->get();
+        //}else if($mode == 'series'){
             $series_rateds = DB::table('series_rateds')
             ->where('user_id', Auth::user()->id)
             ->pluck('series_id')
@@ -64,10 +64,10 @@ class MergeController extends Controller
             ->pluck('series_id')
             ->toArray();
 
-            $users_movies = array_merge($series_rateds, $series_laters, $series_bans);
+            $users_series = array_merge($series_rateds, $series_laters, $series_bans);
             
-            $return_val = DB::table('series')
-            ->whereIn('series.id', $users_movies)
+            $series = DB::table('series')
+            ->whereIn('series.id', $users_series)
             ->leftjoin('series_rateds', function ($join) {
                 $join->on('series_rateds.series_id', '=', 'series.id')
                 ->where('series_rateds.user_id', '=', Auth::user()->id);
@@ -88,10 +88,14 @@ class MergeController extends Controller
                 'series_bans.id as ban_id'
             );
 
-            return $return_val->get();
+            //return $return_val->get();
 
-        }else{//both
+            return response()->json([
+                'movies' => $movies->get(),
+                'series' => $series->get()
+            ]);
+        /* }else{//both
 
-        }
+        } */
     }
 }

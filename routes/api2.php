@@ -12,7 +12,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    Route::get('/pluckId/{mode}', 'Api2\MergeController@pluckId');
+    Route::get('/pluckId/moviesSeries', 'Api2\MergeController@pluckId');
 
     Route::post('/logout', 'Api2\Auth\AuthController@logout');
 });

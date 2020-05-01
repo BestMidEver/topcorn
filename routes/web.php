@@ -2,7 +2,6 @@
 
 use App\User;
 use App\Jobs\SuckDataJob;
-use App\Model\Recent_movie;
 use App\Jobs\RefreshSiteMapJob;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -277,11 +276,6 @@ Route::apiResource('api/review_like','ApiControllers\ReviewLikeController');
 ///////////////////////////////// SUCK DATA (ONLY ARCHITECT) /////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 Route::get('suckData', function(){
-	//$recent = Recent_movie::updateOrCreate(array('user_id' => $this->userId, 'movie_id' => $this->objId));
-	//$recent->touch();
-	//$keep = Recent_movie::where('user_id', $this->userId)->latest('updated_at')->take(config('constants.recently_viewed.latest_n'))->pluck('id');
-	//Recent_movie::where('user_id', $this->userId)->whereNotIn('id', $keep)->delete();
-	Recent_movie::where('user_id', 7)->latest('updated_at')->skip(2)->take(2)->get()->each(function($row){ $row->delete(); });
 	//SuckDataJob::dispatch()->onQueue("low");
 	return 'not sucking data.';
 });
