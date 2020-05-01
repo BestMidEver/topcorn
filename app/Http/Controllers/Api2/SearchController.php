@@ -86,7 +86,7 @@ class SearchController extends Controller
 
         $users = DB::table('recent_users')
         ->where('recent_users.user_id', Auth::user()->id)
-        ->join('users', 'users.id', '=', 'recent_users.person_id')
+        ->join('users', 'users.id', '=', 'recent_users.subject_id')
         ->select(
             'users.id',
             'users.profile_pic as profile_path',
