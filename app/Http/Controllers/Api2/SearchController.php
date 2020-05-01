@@ -44,17 +44,17 @@ class SearchController extends Controller
 
         $series = DB::table('recent_series')
         ->where('recent_series.user_id', Auth::user()->id)
-        ->join('series', 'series.id', '=', 'recent_series.movie_id')
+        ->join('series', 'series.id', '=', 'recent_series.series_id')
         ->leftjoin('series_rateds', function ($join) {
-            $join->on('series_rateds.movie_id', '=', 'recent_series.movie_id')
+            $join->on('series_rateds.series_id', '=', 'recent_series.series_id')
             ->where('series_rateds.user_id', '=', Auth::user()->id);
         })
         ->leftjoin('series_laters', function ($join) {
-            $join->on('series_laters.movie_id', '=', 'recent_series.movie_id')
+            $join->on('series_laters.series_id', '=', 'recent_series.series_id')
             ->where('series_laters.user_id', '=', Auth::user()->id);
         })
         ->leftjoin('series_bans', function ($join) {
-            $join->on('series_bans.movie_id', '=', 'recent_series.movie_id')
+            $join->on('series_bans.series_id', '=', 'recent_series.series_id')
             ->where('series_bans.user_id', '=', Auth::user()->id);
         })
         ->select(
