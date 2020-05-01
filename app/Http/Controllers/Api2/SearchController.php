@@ -73,12 +73,20 @@ class SearchController extends Controller
         ->orderBy('recent_series.updated_at', 'desc');
 
 
+        $people = DB::table('recent_people')
+        ->where('recent_people.user_id', Auth::user()->id)
+        ->join('people', 'people.id', '=', 'recent_people.person_id')
+        ->select(
+            'people.id',
+            'profile_path',
+            'name'
+        )
+        ->orderBy('recent_people.updated_at', 'desc');
+
         return response()->json([
             'movies' => $movies->get(),
             'series' => $series->get(),
-            /* 'series' => $series->get(),
-            'series' => $series->get(),
-            'series' => $series->get(), */
+            'people' => $people->get(),
         ]);
     }
 }
