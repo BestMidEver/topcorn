@@ -79,11 +79,11 @@ class MergeController extends Controller
             ->where('series_bans.user_id', '=', Auth::user()->id);
         })
         ->select(
-            'series.id as movie_id',
-            'series_rateds.id as rated_id',
-            'series_rateds.rate as rate_code',
-            'series_laters.id as later_id',
-            'series_bans.id as ban_id'
+            'series.id as movie_idmovie_idmovie_idmovie_id',
+            'series_rateds.id as rated_idrated_idrated_idrated_idrated_id',
+            'series_rateds.rate as rate_coderate_coderate_coderate_coderate_code',
+            'series_laters.id as later_idlater_idlater_idlater_id',
+            'series_bans.id as ban_idban_idban_idban_idban_id'
         );
 
 
