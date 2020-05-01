@@ -13,7 +13,7 @@ Route::middleware('auth:api')->group(function () {
         return $request->user();
     });
     Route::get('/pluckId/interactedMoviesSeries', 'Api2\MergeController@pluckId');
-    Route::get('/recenltyVisiteds', 'Api2\SearchController@recenltyVisiteds');
+    Route::get('/recenltyVisiteds', 'Api2\SearchController@recenltyVisitedss');
 
     Route::post('/logout', 'Api2\Auth\AuthController@logout');
 });
