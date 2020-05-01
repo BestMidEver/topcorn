@@ -13,7 +13,7 @@ class SearchController extends Controller
     {
         $movies = DB::table('recent_movies')
         ->where('recent_movies.id', Auth::user()->id)
-        -/* >join('movies', 'movies.id', '=', 'recent_movies.movie_id')
+        /* ->join('movies', 'movies.id', '=', 'recent_movies.movie_id')
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'recent_movies.movie_id')
             ->where('rateds.user_id', '=', Auth::user()->id);
