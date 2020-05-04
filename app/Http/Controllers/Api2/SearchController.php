@@ -97,10 +97,10 @@ class SearchController extends Controller
 
 
         return response()->json([
-            'movies' => $movies->get(),
+            /* 'movies' => $movies->get(),
             'series' => $series->get(),
             'people' => $people->get(),
-            'users' => $users->get(),
+            'users' => $users->get(), */
             'lists' => [],
         ]);
     }
