@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api2;
 
+use App\Model\Recent_movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
@@ -165,7 +166,8 @@ class SearchController extends Controller
 
     public function clearRecentlyVisiteds($type)
     {
-        if($type === 'movie') Recent_movie::where('user_id', $this->userId)->delete();
+        $className = ['Recent_movie'];
+        if($type === 'movie') $className()->where('user_id', $this->userId)->delete();
         return Response::make("", 204);
     }
 
