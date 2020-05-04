@@ -110,8 +110,8 @@ class SearchController extends Controller
         $return_val = DB::table('users')
         ->where('email', '=', $query)
         ->orwhere('name', 'like', '%' . $query . '%')
-        ->select('users.id as user_id',
-                'users.name as name',
+        ->select('users.id',
+                'users.name',
                 'users.profile_pic as profile_path',
                 'users.facebook_profile_pic as facebook_profile_path');
         return $return_val->paginate(Auth::User()->pagination);
