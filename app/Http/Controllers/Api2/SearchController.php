@@ -105,7 +105,7 @@ class SearchController extends Controller
         ]);
     }
 
-    public function search_users($query)
+    public function searchUser($query)
     {
         $return_val = DB::table('users')
         ->where('email', '=', $query)
