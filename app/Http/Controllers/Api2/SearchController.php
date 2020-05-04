@@ -165,7 +165,7 @@ class SearchController extends Controller
     public function clearRecentlyVisiteds($type)
     {
         if($type === 'movie') Recent_movie::where('user_id', $this->userId)->delete();
-        return response()->noContent();
+        return Response::make("", 204);
     }
 
     public function searchUser($query)
