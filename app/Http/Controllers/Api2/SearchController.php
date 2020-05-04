@@ -96,12 +96,18 @@ class SearchController extends Controller
         ->orderBy('recent_users.updated_at', 'desc');
 
 
+        $lists = DB::table('recent_lists')
+        ->where('recent_lists.user_id', Auth::user()->id)
+        ->leftjoin('listes', 'listes.id', '=', 'recent_lists.list_id')
+        ->where('listes.visibility', '=', 1)
+
+
         return response()->json([
             /* 'movies' => $movies->get(),
             'series' => $series->get(),
             'people' => $people->get(),
             'users' => $users->get(), */
-            'lists' => [],
+            'lists' => $lists->get(),
         ]);
     }
 
