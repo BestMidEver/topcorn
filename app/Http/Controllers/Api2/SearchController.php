@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Api2;
 
+use App\Model\Recent_list;
+use App\Model\Recent_user;
 use App\Model\Recent_movie;
+use App\Model\Recent_person;
+use App\Model\Recent_series;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
@@ -166,7 +170,12 @@ class SearchController extends Controller
 
     public function clearRecentlyVisiteds($type)
     {
-        if($type === 'movie') Recent_movie::where('user_id', Auth::id())->delete();
+        if($type === 'movies') Recent_movie::where('user_id', Auth::id())->delete();
+        else if($type === 'series') Recent_series::where('user_id', Auth::id())->delete();
+        else if($type === 'people') Recent_person::where('user_id', Auth::id())->delete();
+        else if($type === 'users') Recent_user::where('user_id', Auth::id())->delete();
+        else if($type === 'lists') Recent_list::where('user_id', Auth::id())->delete();
+        
         return Response::make("", 204);
     }
 
@@ -179,6 +188,7 @@ class SearchController extends Controller
                 'users.name',
                 'users.profile_pic as profile_path',
                 'users.facebook_profile_pic as facebook_profile_path');
+        
         return $return_val->paginate(Auth::User()->pagination);
     }
 }
