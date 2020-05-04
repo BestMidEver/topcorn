@@ -14,6 +14,7 @@ Route::middleware('auth:api')->group(function () {
     });
     Route::get('/pluckId/interactedMoviesSeries', 'Api2\MergeController@pluckId');
     Route::get('/recenltyVisiteds', 'Api2\SearchController@recenltyVisiteds');
+    Route::get('/clearRecentlyVisiteds/{type}', 'Api2\SearchController@clearRecentlyVisiteds');
     Route::get('/searchUser/{query}','Api2\SearchController@searchUser');
 
     Route::post('/logout', 'Api2\Auth\AuthController@logout');

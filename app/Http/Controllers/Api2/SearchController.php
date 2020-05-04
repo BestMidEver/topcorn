@@ -97,7 +97,7 @@ class SearchController extends Controller
         ->orderBy('recent_users.updated_at', 'desc');
 
 
-        $lists = DB::table('recent_lists')
+        /* $lists = DB::table('recent_lists')
         ->where('recent_lists.user_id', Auth::user()->id)
         ->leftjoin('listes', 'listes.id', '=', 'recent_lists.list_id')
         ->where('listes.visibility', '=', 1)
@@ -150,7 +150,7 @@ class SearchController extends Controller
             'm6.'.App::getlocale().'_cover_path as m6_cover_path'
         )
         ->groupBy('listes.id')
-        ->orderBy('listes.updated_at', 'desc');
+        ->orderBy('listes.updated_at', 'desc'); */
 
 
         return response()->json([
@@ -158,8 +158,14 @@ class SearchController extends Controller
             'series' => $series->get(),
             'people' => $people->get(),
             'users' => $users->get(),
-            'lists' => $lists->get(),
+            //'lists' => $lists->get(),
         ]);
+    }
+
+    public function clearRecentlyVisiteds($type)
+    {
+        if($type === 'movie') Recent_movie::where('user_id', $this->userId)->delete();
+        return response()->noContent();
     }
 
     public function searchUser($query)
