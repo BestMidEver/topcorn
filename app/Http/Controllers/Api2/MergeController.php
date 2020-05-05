@@ -42,7 +42,7 @@ class MergeController extends Controller
         })
         ->select(
             'movies.id as movie_id',
-            'rateds.id as rated_id',
+            //'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
@@ -80,7 +80,7 @@ class MergeController extends Controller
         })
         ->select(
             'series.id as movie_id',
-            'series_rateds.id as rated_id',
+            //'series_rateds.id as rated_id',
             'series_rateds.rate as rate_code',
             'series_laters.id as later_id',
             'series_bans.id as ban_id'
