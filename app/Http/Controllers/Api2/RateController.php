@@ -18,9 +18,12 @@ class RateController extends Controller
 
     private function rateMovie($request)
     {
-        $rated = Rated::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->movie_id), array('rate' => $request->rate_code));
-        SuckMovieJob::dispatch($request->movie_id, true)->onQueue("high");
+        if($request->rate_code >= 0) {
+            Rated::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->movie_id), array('rate' => $request->rate_code));
+            SuckMovieJob::dispatch($request->movie_id, true)->onQueue("high");
+        }
+        if($request->rate_code === -1) Rated::delete(array('user_id' => Auth::id(), 'movie_id' => $request->movie_id));
 
-        return Response::make("", 200);
+        return Response::make("", 204);
     }
 }
