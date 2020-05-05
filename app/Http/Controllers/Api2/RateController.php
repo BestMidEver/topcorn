@@ -22,7 +22,7 @@ class RateController extends Controller
             Rated::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->movie_id), array('rate' => $request->rate_code));
             SuckMovieJob::dispatch($request->movie_id, true)->onQueue("high");
         }
-        if($request->rate_code == -1) return Rated::where('user_id', Auth::id())->where('movie_id', $request->movie_id)->delete();
+        if($request->rate_code == -1) Rated::where('user_id', Auth::id())->where('movie_id', $request->movie_id)->delete();
 
         return Response::make("", 204);
     }
