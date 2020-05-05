@@ -9,7 +9,7 @@ class RateController extends Controller
 {
     public function rateAssign(Request $request, $type)
     {
-        /* if($type === 'movie')  */return $this->rateMovie($request);
+        if($type === 'movie') return $this->rateMovie($request);
     }
 
     private function rateMovie($request)
