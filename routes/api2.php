@@ -9,13 +9,14 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+    // Search
     Route::get('/pluckId/interactedMoviesSeries', 'Api2\MergeController@pluckId');
     Route::get('/recenltyVisiteds', 'Api2\SearchController@recenltyVisiteds');
     Route::get('/clearRecentlyVisiteds/{type}', 'Api2\SearchController@clearRecentlyVisiteds');
     Route::get('/searchUser/{query}','Api2\SearchController@searchUser');
+
+    // Rate
+    Route::post('/rate/{type}', 'Api2\RateController@rateAssign');
 
     Route::post('/logout', 'Api2\Auth\AuthController@logout');
 });
