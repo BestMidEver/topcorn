@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Api2;
 
+use App\Model\Later;
 use App\Model\Rated;
 use App\Model\Review;
 use App\Jobs\SuckMovieJob;
 use App\Jobs\SuckSeriesJob;
+use App\Model\Series_later;
 use App\Model\Series_rated;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -79,6 +81,37 @@ class RateController extends Controller
             array('user_id' => Auth::id(), 'movie_series_id' => $request->obj_id, 'mode' => $mode, 'season_number' => null, 'episode_number' => null),
             array('review' => $review, 'lang' => Auth::User()->lang)
         );
+
+        return Response::make("", 204);
+    }
+
+
+
+
+    private function watchLaterAssign(Request $request, $type)
+    {
+        if($type === 'movie') return $this->watchLaterMovie($request);
+        if($type === 'series') return $this->watchLaterSeries($request);
+    }
+
+    private function watchLaterMovie($request)
+    {
+        if($request->later > 0) {   
+            Later::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->obj_id));
+            SuckMovieJob::dispatch($request->obj_id, true)->onQueue("high");
+        }
+        else Later::where('user_id', Auth::id())->where('movie_id', $request->obj_id)->delete();
+
+        return Response::make("", 204);
+    }
+
+    private function watchLaterSeries($request)
+    {
+        if($request->later > 0) {   
+            Series_later::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->obj_id));
+            SuckSeriesJob::dispatch($request->obj_id, true)->onQueue("high");
+        }
+        else Series_later::where('user_id', Auth::id())->where('series_id', $request->obj_id)->delete();
 
         return Response::make("", 204);
     }
