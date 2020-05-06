@@ -88,7 +88,7 @@ class RateController extends Controller
 
 
 
-    private function watchLaterAssign(Request $request, $type)
+    public function watchLaterAssign(Request $request, $type)
     {
         if($type === 'movie') return $this->watchLaterMovie($request);
         if($type === 'series') return $this->watchLaterSeries($request);
