@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Api2;
 
 use App\Model\Later;
+use App\Model\Ban;
 use App\Model\Rated;
 use App\Model\Review;
 use App\Jobs\SuckMovieJob;
 use App\Jobs\SuckSeriesJob;
 use App\Model\Series_later;
+use App\Model\Series_ban;
 use App\Model\Series_rated;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
