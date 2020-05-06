@@ -40,4 +40,22 @@ class RateController extends Controller
 
         return Response::make("", 204);
     }
+
+
+
+
+    public function getUserReview($type, $objId)
+    {
+        if($type === 'movie') return $this->getMovieReview($objId);
+        if($type === 'series') return $this->getSeriesReview($objId);
+    }
+
+    private function getMovieReview($objId)
+    {
+        $review = Review::where('mode', 1)
+        ->where('user_id', Auth::id())
+        ->where('movie_series_id', $objId);
+
+        return response()->json($review->first());
+    }
 }

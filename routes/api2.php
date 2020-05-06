@@ -17,6 +17,7 @@ Route::middleware('auth:api')->group(function () {
 
     // Rate
     Route::post('/rate/{type}', 'Api2\RateController@rateAssign');
+    Route::get('/getUserReview/{type}/{objId}', 'Api2\RateController@getUserReview');
 
     Route::post('/logout', 'Api2\Auth\AuthController@logout');
 });
