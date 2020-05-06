@@ -64,4 +64,20 @@ class RateController extends Controller
 
         return response()->json($review->first());
     }
+
+
+    public function sendReview(Request $request, $type) {
+        if($type === 'movie') return $this->sendMovieSeriesReview(1, $request);
+        if($type === 'series') return $this->sendMovieSeriesReview(3, $request);
+    }
+
+    private function sendMovieSeriesReview($mode, $request)
+    {
+        Review::updateOrCreate(
+            array('user_id' => Auth::id(), 'movie_series_id' => $request->obj_id, 'season_number' => null, 'episode_number' => null),
+            array('review' => strip_tags($request->review), 'mode' => $mode, 'lang' => Auth::User()->lang)
+        );
+
+        return Response::make("", 204);
+    }
 }
