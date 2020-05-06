@@ -115,4 +115,35 @@ class RateController extends Controller
 
         return Response::make("", 204);
     }
+
+
+
+
+    public function banAssign(Request $request, $type)
+    {
+        if($type === 'movie') return $this->banMovie($request);
+        if($type === 'series') return $this->banSeries($request);
+    }
+
+    private function banMovie($request)
+    {
+        if($request->ban > 0) {   
+            Ban::updateOrCreate(array('user_id' => Auth::id(), 'movie_id' => $request->obj_id));
+            SuckMovieJob::dispatch($request->obj_id, true)->onQueue("high");
+        }
+        else Ban::where('user_id', Auth::id())->where('movie_id', $request->obj_id)->delete();
+
+        return Response::make("", 204);
+    }
+
+    private function banSeries($request)
+    {
+        if($request->ban > 0) {   
+            Series_ban::updateOrCreate(array('user_id' => Auth::id(), 'series_id' => $request->obj_id));
+            SuckSeriesJob::dispatch($request->obj_id, true)->onQueue("high");
+        }
+        else Series_ban::where('user_id', Auth::id())->where('series_id', $request->obj_id)->delete();
+
+        return Response::make("", 204);
+    }
 }
