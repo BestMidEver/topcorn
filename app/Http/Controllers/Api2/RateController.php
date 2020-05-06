@@ -47,13 +47,13 @@ class RateController extends Controller
 
     public function getUserReview($type, $objId)
     {
-        if($type === 'movie') return $this->getMovieReview($objId);
-        if($type === 'series') return $this->getSeriesReview($objId);
+        if($type === 'movie') return $this->getMovieSeriesReview(1, $objId);
+        if($type === 'series') return $this->getMovieSeriesReview(3, $objId);
     }
 
-    private function getMovieReview($objId)
+    private function getMovieSeriesReview($mode, $objId)
     {
-        $review = Review::where('mode', 1)
+        $review = Review::where('mode', $mode)
         ->where('user_id', Auth::id())
         ->where('movie_series_id', $objId)
         ->select(
