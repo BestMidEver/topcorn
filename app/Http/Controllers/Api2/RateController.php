@@ -55,7 +55,12 @@ class RateController extends Controller
     {
         $review = Review::where('mode', 1)
         ->where('user_id', Auth::id())
-        ->where('movie_series_id', $objId);
+        ->where('movie_series_id', $objId)
+        ->select(
+            'id',
+            'movie_series_id',
+            'review'
+        );
 
         return response()->json($review->first());
     }
