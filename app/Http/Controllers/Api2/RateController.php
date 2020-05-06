@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api2;
 
 use App\Model\Rated;
+use App\Model\Review;
 use App\Jobs\SuckMovieJob;
 use App\Jobs\SuckSeriesJob;
 use App\Model\Series_rated;
