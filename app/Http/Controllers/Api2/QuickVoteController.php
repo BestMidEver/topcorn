@@ -11,7 +11,7 @@ class QuickVoteController extends Controller
     public function getQuickVoteAssign($type, $objId = null)
     {
         if($type === 'movie') {
-            if($objId !== null) $this->getRelatedMovies($objId);
+            if($objId !== null) return $this->getRelatedMovies($objId);
             return $this->getQuickVoteMovies();
         }
         if($type === 'series') return $this->getQuickVoteSeries();
