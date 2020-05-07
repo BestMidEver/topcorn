@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class QuickVoteController extends Controller
 {
     public function getQuickVoteAssign($type, $objId = null)
-    {
+    {return 1;
         if($type === 'movie') {
             if($objId === null) return $this->getRelatedMovies($objId);
             return $this->getQuickVoteMovies();
