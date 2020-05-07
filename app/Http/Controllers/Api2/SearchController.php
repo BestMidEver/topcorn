@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Response;
 
 class SearchController extends Controller
 {
-    public function recenltyVisiteds()
+    public function recentlyVisiteds()
     {
         $movies = DB::table('recent_movies')
         ->where('recent_movies.user_id', Auth::user()->id)

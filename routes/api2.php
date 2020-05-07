@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->group(function () {
     // Search
     Route::get('/pluckId/interactedMoviesSeries', 'Api2\MergeController@pluckId');
-    Route::get('/recenltyVisiteds', 'Api2\SearchController@recenltyVisiteds');
+    Route::get('/recentlyVisiteds', 'Api2\SearchController@recentlyVisiteds');
     Route::get('/clearRecentlyVisiteds/{type}', 'Api2\SearchController@clearRecentlyVisiteds');
     Route::get('/searchUser/{query}','Api2\SearchController@searchUser');
 
