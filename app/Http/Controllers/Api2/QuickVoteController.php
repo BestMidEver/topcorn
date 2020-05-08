@@ -22,21 +22,21 @@ class QuickVoteController extends Controller
     {
         $movies = DB::table('recommendations')
         ->where('recommendations.this_id', $objId)
-        /* ->leftjoin('rateds', function ($join) {
-            $join->on('rateds.movie_id', '=', 'recommendations.this_id')
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'recommendations.movie_id')
             ->where('rateds.user_id', Auth::id());
         })
         ->where('rateds.user_id', null)
         ->leftjoin('laters', function ($join) {
-            $join->on('laters.movie_id', '=', 'recommendations.this_id')
+            $join->on('laters.movie_id', '=', 'recommendations.movie_id')
             ->where('laters.user_id', Auth::id());
         })
         ->where('laters.id', '=', null)
         ->leftjoin('bans', function ($join) {
-            $join->on('bans.movie_id', '=', 'recommendations.this_id')
+            $join->on('bans.movie_id', '=', 'recommendations.movie_id')
             ->where('bans.user_id', Auth::id());
         })
-        ->where('bans.id', '=', null) */;
+        ->where('bans.id', '=', null);
 
         
         return response()->json($movies->get());
