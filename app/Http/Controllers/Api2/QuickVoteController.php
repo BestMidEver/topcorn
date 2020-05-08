@@ -46,7 +46,7 @@ class QuickVoteController extends Controller
             'movies.id',
             'movies.release_date',
             'movies.original_title as original_title',
-            'recommendations.rank'
+            'recommendations.rank',
             'movies.'.Auth::User()->lang.'_title as title',
             'movies.'.Auth::User()->lang.'_cover_path as cover_path',
             'rateds.rate as rate_code',
@@ -151,7 +151,7 @@ class QuickVoteController extends Controller
             'series.id',
             'series.first_air_date',
             'series.original_name',
-            'series_recommendations.rank'
+            'series_recommendations.rank',
             'series.'.Auth::User()->lang.'_name as name',
             'series.'.Auth::User()->lang.'_backdrop_path as backdrop_path',
             'series_rateds.rate as rate_code',
