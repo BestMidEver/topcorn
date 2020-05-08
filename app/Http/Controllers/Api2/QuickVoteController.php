@@ -41,6 +41,7 @@ class QuickVoteController extends Controller
         })
         ->where('bans.id', '=', null)
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
+        ->orderBy('recommendations.rank', 'DESC')
         ->select(
             'movies.id',
             'movies.vote_average',
@@ -151,7 +152,6 @@ class QuickVoteController extends Controller
         ->join('series', 'series.id', '=', 'series_recommendations.this_id')
         ->orderBy('series_recommendations.rank', 'DESC')
         ->select(
-            'series_recommendations.rank',
             'series.id',
             'series.vote_average',
             'series.vote_count',
@@ -165,6 +165,6 @@ class QuickVoteController extends Controller
             'series_bans.id as ban_id'
         );
 
-        return response()->json($series->get());
+        return response()->json($series->take(2));
     }
 }
