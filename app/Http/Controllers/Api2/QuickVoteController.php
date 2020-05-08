@@ -153,7 +153,7 @@ class QuickVoteController extends Controller
             'series.id',
             'series.vote_average',
             'series.vote_count',
-            'series.release_date',
+            'series.first_air_date',
             'series.original_name',
             'series.'.Auth::User()->lang.'_name as name',
             //'series.'.Auth::User()->lang.'_poster_path as poster_path',
