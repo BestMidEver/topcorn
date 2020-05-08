@@ -26,8 +26,8 @@ class QuickVoteController extends Controller
             $join->on('rateds.movie_id', '=', 'recommendations.movie_id')
             ->where('rateds.user_id', Auth::id());
         })
-        ->where('rateds.user_id', null)
-        /* ->leftjoin('laters', function ($join) {
+        /* ->where('rateds.user_id', null)
+        ->leftjoin('laters', function ($join) {
             $join->on('laters.movie_id', '=', 'recommendations.movie_id')
             ->where('laters.user_id', Auth::id());
         })
