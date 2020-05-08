@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api2;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class QuickVoteController extends Controller
@@ -19,8 +18,9 @@ class QuickVoteController extends Controller
 
     private function getRelatedMovies($objId)
     {
-        $movies = DB::table('movies')
-        ->where('movies.id', $objId)
+        $movies = DB::table('movies');
+        return 1;
+        $movies->where('movies.id', $objId)
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->where('rateds.user_id', Auth::id());
