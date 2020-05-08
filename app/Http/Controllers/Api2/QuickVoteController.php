@@ -39,8 +39,17 @@ class QuickVoteController extends Controller
         ->where('bans.id', '=', null)
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
         ->select(
-            'movies.id as id',
-            'movies.original_title'
+            'movies.id',
+            'movies.vote_average',
+            'movies.vote_count',
+            'movies.release_date',
+            'movies.original_title as original_title',
+            'movies.'.Auth::User()->lang.'_title as title',
+            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+            'movies.'.Auth::User()->lang.'_cover_path as cover_path',
+            'rateds.rate as rate_code',
+            'laters.id as later_id',
+            'bans.id as ban_id'
         );
 
         
