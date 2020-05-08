@@ -213,9 +213,9 @@ class QuickVoteController extends Controller
             })
             ->select(
                 'series.id as id',
-                'series.original_title',
+                'series.original_name',
                 'series.first_air_date',
-                'series.'.Auth::User()->lang.'_title as title',
+                'series.'.Auth::User()->lang.'_name as name',
                 'series.'.Auth::User()->lang.'_backdrop_path as backdrop_path',
                 'series_rateds.rate as rate_code',
                 'series_laters.id as later_id',
