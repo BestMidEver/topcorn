@@ -37,7 +37,7 @@ class QuickVoteController extends Controller
             ->where('bans.user_id', Auth::id());
         })
         ->where('bans.id', '=', null) */
-        ->join('movies', 'movies.id', '=', 'recommendations.movie_id')
+        ->leftjoin('movies', 'movies.id', '=', 'recommendations.movie_id')
         ->select(
             'movies.id as id',
             'movies.original_title'
