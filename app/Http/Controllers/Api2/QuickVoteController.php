@@ -41,12 +41,12 @@ class QuickVoteController extends Controller
         })
         ->where('bans.id', '=', null)
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        //->orderBy('recommendations.rank', 'DESC')
+        ->orderBy('recommendations.is_similar', 'DESC')
         ->select(
             'movies.id',
             'movies.release_date',
             'movies.original_title as original_title',
-            'recommendations.rank',
+            'recommendations.is_similar',
             'movies.'.Auth::User()->lang.'_title as title',
             'movies.'.Auth::User()->lang.'_cover_path as cover_path',
             'rateds.rate as rate_code',
