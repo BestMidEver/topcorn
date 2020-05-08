@@ -10,8 +10,6 @@ class QuickVoteController extends Controller
 {
     public function getQuickVoteAssign($type, $objId = null)
     {
-        $movies = DB::table('movies');
-        return 1;
         if($type === 'movie') {
             if($objId !== null) return $this->getRelatedMovies($objId);
             return $this->getQuickVoteMovies();
@@ -21,9 +19,8 @@ class QuickVoteController extends Controller
 
     private function getRelatedMovies($objId)
     {
-        $movies = DB::table('movies');
-        return 1;
-        $movies->where('movies.id', $objId)
+        $movies = DB::table('movies')
+        ->where('movies.id', $objId)
         ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->where('rateds.user_id', Auth::id());
