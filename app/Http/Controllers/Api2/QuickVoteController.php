@@ -15,7 +15,10 @@ class QuickVoteController extends Controller
             if($objId !== null) return $this->getRelatedMovies($objId);
             return $this->getQuickVoteMovies();
         }
-        if($type === 'series') return $this->getQuickVoteSeries();
+        if($type === 'series') {
+            if($objId !== null) return $this->getRelatedSeries($objId);
+            return $this->getQuickVoteSeries();
+        }
     }
 
     private function getRelatedMovies($objId)
@@ -45,14 +48,13 @@ class QuickVoteController extends Controller
             'movies.release_date',
             'movies.original_title as original_title',
             'movies.'.Auth::User()->lang.'_title as title',
-            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+            //'movies.'.Auth::User()->lang.'_poster_path as poster_path',
             'movies.'.Auth::User()->lang.'_cover_path as cover_path',
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
         );
 
-        
         return response()->json($movies->get());
     }
 
@@ -111,7 +113,7 @@ class QuickVoteController extends Controller
             })
             ->select(
                 'movies.id as id',
-                'movies.original_title as original_title',
+                'movies.original_title',
                 'movies.vote_average',
                 'movies.release_date',
                 'movies.'.Auth::User()->lang.'_title as title',
@@ -124,7 +126,43 @@ class QuickVoteController extends Controller
             ->inRandomOrder();
 
             return $return_val->take(50)->get();
-        }
-        
+        } 
+    }
+
+    private function getRelatedSeries($objId)
+    {
+        $series = DB::table('series_recommendations')
+        ->where('series_recommendations.series_id', $objId)
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series_rateds.series_id', '=', 'series_recommendations.this_id')
+            ->where('series_rateds.user_id', Auth::id());
+        })
+        ->where('series_rateds.user_id', null)
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'series_recommendations.this_id')
+            ->where('series_laters.user_id', Auth::id());
+        })
+        ->where('series_laters.id', '=', null)
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.series_id', '=', 'series_recommendations.this_id')
+            ->where('series_bans.user_id', Auth::id());
+        })
+        ->where('series_bans.id', '=', null)
+        ->join('series', 'series.id', '=', 'series_recommendations.this_id')
+        ->select(
+            'series.id',
+            'series.vote_average',
+            'series.vote_count',
+            'series.release_date',
+            'series.original_name',
+            'series.'.Auth::User()->lang.'_name as name',
+            //'series.'.Auth::User()->lang.'_poster_path as poster_path',
+            'series.'.Auth::User()->lang.'_cover_path as cover_path',
+            'series_rateds.rate as rate_code',
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
+        );
+
+        return response()->json($series->get());
     }
 }
