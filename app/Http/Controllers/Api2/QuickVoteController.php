@@ -161,7 +161,7 @@ class QuickVoteController extends Controller
 
     private function getQuickVoteSeries()
     {
-        /* $series = DB::table('series_rateds')
+        $series = DB::table('series_rateds')
         ->where('series_rateds.rate', '>', 0)
         ->join('series', 'series.id', '=', 'series_rateds.series_id')
         ->leftjoin('series_rateds as r2', function ($join) {
@@ -195,7 +195,7 @@ class QuickVoteController extends Controller
         ->take(2)->get();
 
         if($series->count()) return $series;
-        else { */
+        else {
             $series = DB::table('series')
             ->leftjoin('series_rateds as series_rateds', function ($join) {
                 $join->on('series_rateds.series_id', '=', 'series.id')
@@ -225,6 +225,6 @@ class QuickVoteController extends Controller
             ->inRandomOrder();
 
             return $series->take(50)->get();
-        //} 
+        } 
     }
 }
