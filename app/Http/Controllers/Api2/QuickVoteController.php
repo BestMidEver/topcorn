@@ -19,7 +19,26 @@ class QuickVoteController extends Controller
 
     private function getRelatedMovies($objId)
     {
-        return $objId;
+        $movies = DB::table('movies')
+        ->where('movies.id', $objId)
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'movies.id')
+            ->where('rateds.user_id', Auth::id());
+        })
+        ->where('rateds.user_id', null)
+        ->leftjoin('laters', function ($join) {
+            $join->on('laters.movie_id', '=', 'movies.id')
+            ->where('laters.user_id', Auth::id());
+        })
+        ->where('laters.id', '=', null)
+        ->leftjoin('bans', function ($join) {
+            $join->on('bans.movie_id', '=', 'movies.id')
+            ->where('bans.user_id', Auth::id());
+        })
+        ->where('bans.id', '=', null);
+
+        
+        return response()->json($movies->get());
     }
 
     private function getQuickVoteMovies($objId)
@@ -62,8 +81,8 @@ class QuickVoteController extends Controller
         else {
             $return_val = DB::table('movies')
             ->leftjoin('rateds as rateds', function ($join) {
-            $join->on('rateds.movie_id', '=', 'movies.id')
-            ->where('rateds.user_id', Auth::id());
+                $join->on('rateds.movie_id', '=', 'movies.id')
+                ->where('rateds.user_id', Auth::id());
             })
             ->where('rateds.user_id', null)
             ->leftjoin('laters', function ($join) {
