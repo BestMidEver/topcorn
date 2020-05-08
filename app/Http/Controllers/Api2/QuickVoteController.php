@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api2;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class QuickVoteController extends Controller
