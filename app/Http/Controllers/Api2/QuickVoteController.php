@@ -41,7 +41,7 @@ class QuickVoteController extends Controller
         })
         ->where('bans.id', '=', null)
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
-        ->orderBy('recommendations.rank', 'DESC')
+        //->orderBy('recommendations.rank', 'DESC')
         ->select(
             'movies.id',
             'movies.release_date',
