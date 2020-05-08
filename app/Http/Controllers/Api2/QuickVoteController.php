@@ -149,7 +149,9 @@ class QuickVoteController extends Controller
         })
         ->where('series_bans.id', '=', null)
         ->join('series', 'series.id', '=', 'series_recommendations.this_id')
+        ->orderBy('series_recommendations.rank', 'DESC')
         ->select(
+            'series_recommendations.rank',
             'series.id',
             'series.vote_average',
             'series.vote_count',
