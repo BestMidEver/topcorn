@@ -165,6 +165,6 @@ class QuickVoteController extends Controller
             'series_bans.id as ban_id'
         );
 
-        return response()->json($series->take(2));
+        return response()->json($series->take(2)->get());
     }
 }
