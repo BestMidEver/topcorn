@@ -46,7 +46,7 @@ class QuickVoteController extends Controller
             'movies.id',
             'movies.release_date',
             'movies.original_title as original_title',
-            'recommendations.is_similar',
+            //'recommendations.is_similar',
             'movies.'.Auth::User()->lang.'_title as title',
             'movies.'.Auth::User()->lang.'_cover_path as cover_path',
             'rateds.rate as rate_code',
