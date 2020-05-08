@@ -58,7 +58,7 @@ class QuickVoteController extends Controller
 
     private function getQuickVoteMovies()
     {
-        $movies = DB::table('rateds')
+        /* $movies = DB::table('rateds')
         ->where('rateds.rate', '>', 0)
         ->join('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('rateds as r2', function ($join) {
@@ -92,7 +92,7 @@ class QuickVoteController extends Controller
         ->take(2)->get();
 
         if($movies->count()) return $movies;
-        else {
+        else { */
             $movies = DB::table('movies')
             ->leftjoin('rateds as rateds', function ($join) {
                 $join->on('rateds.movie_id', '=', 'movies.id')
@@ -122,7 +122,7 @@ class QuickVoteController extends Controller
             ->inRandomOrder();
 
             return $movies->take(50)->get();
-        } 
+       // } 
     }
 
     private function getRelatedSeries($objId)
