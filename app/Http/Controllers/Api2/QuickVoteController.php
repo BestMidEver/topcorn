@@ -44,8 +44,6 @@ class QuickVoteController extends Controller
         ->orderBy('recommendations.rank', 'DESC')
         ->select(
             'movies.id',
-            'movies.vote_average',
-            'movies.vote_count',
             'movies.release_date',
             'movies.original_title as original_title',
             'movies.'.Auth::User()->lang.'_title as title',
@@ -55,12 +53,12 @@ class QuickVoteController extends Controller
             'bans.id as ban_id'
         );
 
-        return response()->json($movies->take(5)->get());
+        return response()->json($movies->take(3)->get());
     }
 
-    private function getQuickVoteMovies($objId)
+    private function getQuickVoteMovies()
     {
-        $return_val = DB::table('rateds')
+        $movies = DB::table('rateds')
         ->where('rateds.rate', '>', 0)
         ->join('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('rateds as r2', function ($join) {
@@ -84,7 +82,6 @@ class QuickVoteController extends Controller
             'movies.id as id',
             'movies.original_title as original_title',
             DB::raw('COUNT(*) as count'),
-            'movies.vote_average',
             'movies.release_date',
             'movies.'.Auth::User()->lang.'_title as title',
             'movies.'.Auth::User()->lang.'_cover_path as cover_path',
@@ -92,11 +89,11 @@ class QuickVoteController extends Controller
             'laters.id as later_id',
             'bans.id as ban_id'
         )
-        ->take(10)->get();
+        /* ->take(2) */->get();
 
-        if($return_val->count()) return $return_val;
+        if($movies->count()) return $movies;
         else {
-            $return_val = DB::table('movies')
+            $movies = DB::table('movies')
             ->leftjoin('rateds as rateds', function ($join) {
                 $join->on('rateds.movie_id', '=', 'movies.id')
                 ->where('rateds.user_id', Auth::id());
@@ -114,7 +111,6 @@ class QuickVoteController extends Controller
             ->select(
                 'movies.id as id',
                 'movies.original_title',
-                'movies.vote_average',
                 'movies.release_date',
                 'movies.'.Auth::User()->lang.'_title as title',
                 'movies.'.Auth::User()->lang.'_cover_path as cover_path',
@@ -125,7 +121,7 @@ class QuickVoteController extends Controller
             ->where('bans.id', '=', null)
             ->inRandomOrder();
 
-            return $return_val->take(50)->get();
+            return $movies->take(50)->get();
         } 
     }
 
@@ -152,8 +148,6 @@ class QuickVoteController extends Controller
         ->orderBy('series_recommendations.rank', 'DESC')
         ->select(
             'series.id',
-            'series.vote_average',
-            'series.vote_count',
             'series.first_air_date',
             'series.original_name',
             'series.'.Auth::User()->lang.'_name as name',
@@ -163,6 +157,6 @@ class QuickVoteController extends Controller
             'series_bans.id as ban_id'
         );
 
-        return response()->json($series->take(5)->get());
+        return response()->json($series->take(3)->get());
     }
 }
