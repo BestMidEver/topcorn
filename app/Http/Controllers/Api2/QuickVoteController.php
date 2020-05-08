@@ -81,6 +81,7 @@ class QuickVoteController extends Controller
         ->select(
             'movies.id as id',
             'movies.original_title as original_title',
+            DB::raw('COUNT(*) as count'),
             'movies.release_date',
             'movies.'.Auth::User()->lang.'_title as title',
             'movies.'.Auth::User()->lang.'_cover_path as cover_path',
