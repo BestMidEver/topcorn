@@ -89,7 +89,7 @@ class QuickVoteController extends Controller
             'laters.id as later_id',
             'bans.id as ban_id'
         )
-        ->take(2)->get();
+        ->take(3)->get();
 
         if($movies->count()) return $movies;
         else {
