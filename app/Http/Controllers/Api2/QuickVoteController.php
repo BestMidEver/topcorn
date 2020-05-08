@@ -157,7 +157,7 @@ class QuickVoteController extends Controller
             'series.original_name',
             'series.'.Auth::User()->lang.'_name as name',
             //'series.'.Auth::User()->lang.'_poster_path as poster_path',
-            'series.'.Auth::User()->lang.'_cover_path as cover_path',
+            'series.'.Auth::User()->lang.'_backdrop_path as backdrop_path',
             'series_rateds.rate as rate_code',
             'series_laters.id as later_id',
             'series_bans.id as ban_id'
