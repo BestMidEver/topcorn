@@ -89,7 +89,7 @@ class QuickVoteController extends Controller
             'laters.id as later_id',
             'bans.id as ban_id'
         )
-        ->take(3)->get();
+        ->take(24)->get();
 
         if($movies->count()) return $movies;
         else {
@@ -121,7 +121,7 @@ class QuickVoteController extends Controller
             ->where('bans.id', '=', null)
             ->inRandomOrder();
 
-            return $movies->take(50)->get();
+            return $movies->take(24)->get();
         } 
     }
 
@@ -193,7 +193,7 @@ class QuickVoteController extends Controller
             'series_laters.id as later_id',
             'series_bans.id as ban_id'
         )
-        ->take(2)->get();
+        ->take(24)->get();
 
         if($series->count()) return $series;
         else {
@@ -225,7 +225,7 @@ class QuickVoteController extends Controller
             ->where('series_bans.id', '=', null)
             ->inRandomOrder();
 
-            return $series->take(50)->get();
+            return $series->take(24)->get();
         } 
     }
 }
