@@ -58,7 +58,7 @@ class QuickVoteController extends Controller
 
     private function getQuickVoteMovies()
     {
-        /* $movies = DB::table('rateds')
+        $movies = DB::table('rateds')
         ->where('rateds.rate', '>', 0)
         ->join('movies', 'movies.id', '=', 'rateds.movie_id')
         ->leftjoin('rateds as r2', function ($join) {
@@ -81,7 +81,6 @@ class QuickVoteController extends Controller
         ->select(
             'movies.id as id',
             'movies.original_title as original_title',
-            DB::raw('COUNT(*) as count'),
             'movies.release_date',
             'movies.'.Auth::User()->lang.'_title as title',
             'movies.'.Auth::User()->lang.'_cover_path as cover_path',
@@ -92,7 +91,7 @@ class QuickVoteController extends Controller
         ->take(2)->get();
 
         if($movies->count()) return $movies;
-        else { */
+        else {
             $movies = DB::table('movies')
             ->leftjoin('rateds as rateds', function ($join) {
                 $join->on('rateds.movie_id', '=', 'movies.id')
@@ -122,7 +121,7 @@ class QuickVoteController extends Controller
             ->inRandomOrder();
 
             return $movies->take(50)->get();
-       // } 
+        } 
     }
 
     private function getRelatedSeries($objId)
@@ -158,5 +157,74 @@ class QuickVoteController extends Controller
         );
 
         return response()->json($series->take(3)->get());
+    }
+
+    private function getQuickVoteSeries()
+    {
+        $series = DB::table('series_rateds')
+        ->where('series_rateds.rate', '>', 0)
+        ->join('series', 'series.id', '=', 'series_rateds.series_id')
+        ->leftjoin('series_rateds as r2', function ($join) {
+            $join->on('r2.series_id', '=', 'series.id')
+            ->where('r2.user_id', Auth::id());
+        })
+        ->where('r2.user_id', null)
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'series.id')
+            ->where('series_laters.user_id', Auth::id());
+        })
+        ->where('series_laters.id', '=', null)
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.series_id', '=', 'series.id')
+            ->where('series_bans.user_id', Auth::id());
+        })
+        ->where('series_bans.id', '=', null)
+        ->groupBy('series.id')
+        ->orderBy('count', 'DESC')
+        ->select(
+            'series.id as id',
+            'series.original_name as original_name',
+            DB::raw('COUNT(*) as count'),
+            'series.first_air_date',
+            'series.'.Auth::User()->lang.'_name as name',
+            'series.'.Auth::User()->lang.'_backdrop_path as backdrop_path',
+            'r2.rate as rate_code',
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
+        )
+        ->take(2)->get();
+
+        if($series->count()) return $series;
+        else {
+            $series = DB::table('series')
+            ->leftjoin('series_rateds as series_rateds', function ($join) {
+                $join->on('series_rateds.series_id', '=', 'series.id')
+                ->where('series_rateds.user_id', Auth::id());
+            })
+            ->where('series_rateds.user_id', null)
+            ->leftjoin('series_laters', function ($join) {
+                $join->on('series_laters.series_id', '=', 'series.id')
+                ->where('series_laters.user_id', Auth::id());
+            })
+            ->where('series_laters.id', '=', null)
+            ->leftjoin('series_bans', function ($join) {
+                $join->on('series_bans.series_id', '=', 'series.id')
+                ->where('series_bans.user_id', Auth::id());
+            })
+            ->select(
+                'series.id as id',
+                'series.original_title',
+                'series.first_air_date',
+                'series.'.Auth::User()->lang.'_title as title',
+                'series.'.Auth::User()->lang.'_backdrop_path as backdrop_path',
+                'series_rateds.rate as rate_code',
+                'series_laters.id as later_id',
+                'series_bans.id as ban_id'
+            )
+            ->where('series_bans.id', '=', null)
+            ->inRandomOrder();
+
+            return $series->take(50)->get();
+        } 
     }
 }
