@@ -21,7 +21,7 @@ class QuickVoteController extends Controller
     private function getRelatedMovies($objId)
     {
         $movies = DB::table('recommendations')
-        ->where('recommendations.this_id', $objId)
+        ->where('recommendations.movie_id', $objId)
         /* ->leftjoin('rateds', function ($join) {
             $join->on('rateds.movie_id', '=', 'recommendations.movie_id')
             ->where('rateds.user_id', Auth::id());
