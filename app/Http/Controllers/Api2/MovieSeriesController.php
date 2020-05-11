@@ -17,7 +17,10 @@ class MovieSeriesController extends Controller
 
     private function getMovieData($objId)
     {
-
+        return response()->json([
+            'interactionData' => $this->movieSeriesCardData('movie', $objId),
+            'reviews' => []
+        ]);
     }
     
     private function getSeriesData($objId)
