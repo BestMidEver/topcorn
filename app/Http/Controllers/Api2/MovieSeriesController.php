@@ -11,8 +11,8 @@ class MovieSeriesController extends Controller
 {
     public function getMovieSeriesDataAssign($type, $objId)
     {
-        if($type === 'movie') return $this->getMovieData();
-        if($type === 'series') return $this->getSeriesData();
+        if($type === 'movie') return $this->getMovieData($objId);
+        if($type === 'series') return $this->getSeriesData($objId);
     }
 
     private function getMovieData($objId)
