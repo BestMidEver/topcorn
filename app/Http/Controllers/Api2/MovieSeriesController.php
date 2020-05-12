@@ -57,6 +57,10 @@ class MovieSeriesController extends Controller
         })
         ->select(
             'movies.id',
+            'movies.release_date',
+            'movies.original_title as original_title',
+            'movies.en_title as title',
+            'movies.en_cover_path as cover_path',
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
