@@ -56,7 +56,7 @@ class MovieSeriesController extends Controller
             ->where('r2.user_id', Auth::user()->id);
         })
         ->select(
-            'movies.id as movie_id',
+            'movies.id',
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
