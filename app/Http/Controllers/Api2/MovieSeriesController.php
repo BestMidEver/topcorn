@@ -19,7 +19,7 @@ class MovieSeriesController extends Controller
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('movie', $objId),
-            'reviews' => []
+            'reviews' => $this->reviewDataAssign('movie', $objId),
         ]);
     }
     
@@ -77,6 +77,96 @@ class MovieSeriesController extends Controller
     }
     
     private function seriesCardData($objId)
+    {
+
+    }
+
+    public function reviewDataAssign($type, $objId)
+    {
+        if($type === 'movie') return $this->reviewData($objId, [0, 1]);
+        if($type === 'series') return $this->reviewData($objId, [2, 3]);
+    }
+    
+    private function reviewData($objId, $modes)
+    {
+        $review = DB::table('reviews')
+        ->where('reviews.movie_series_id', $objId)
+        ->whereIn('reviews.mode', $modes)
+        ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
+        ->leftjoin('review_likes', function ($join) {
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
+        })
+        ->groupBy('reviews.id');
+
+        if($modes[0]==0){
+            $review=$review
+            ->leftjoin('rateds as r1', function ($join) {
+                $join->on('r1.movie_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            });
+        }else{
+            $review=$review
+            ->leftjoin('series_rateds as r1', function ($join) {
+                $join->on('r1.series_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            });
+        }
+
+        if($request->season_number != -1){
+            if($request->episode_number != -1){
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->where('reviews.episode_number', '=', $request->episode_number);
+            }else{
+                $review=$review
+                ->where('reviews.season_number', '=', $request->season_number)
+                ->whereNull('reviews.episode_number');
+            }
+        }else{
+            $review=$review
+            ->whereNull('reviews.season_number')
+            ->whereNull('reviews.episode_number');
+        }
+
+        if(Auth::check()){
+            $review = $review
+            ->select(
+                'reviews.tmdb_author_name as author',
+                'reviews.review as content',
+                'reviews.tmdb_review_id as id',
+                'reviews.lang as url',
+                'reviews.id as review_id',
+                'users.name as name',
+                'users.id as user_id',
+                'r1.rate as rate',
+                'reviews.movie_series_id as movie_series_id',
+                DB::raw('COUNT(review_likes.id) as count'),
+                DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
+                DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+            )
+            ->orderBy('is_mine', 'desc')
+            ->orderBy('count', 'desc');
+        }else{
+            $review = $review
+            ->select(
+                'reviews.tmdb_author_name as author',
+                'reviews.review as content',
+                'reviews.tmdb_review_id as id',
+                'reviews.lang as url',
+                'reviews.id as review_id',
+                'users.name as name',
+                'users.id as user_id',
+                'r1.rate as rate',
+                DB::raw('COUNT(review_likes.id) as count')
+            )
+            ->orderBy('count', 'desc');
+        }
+
+        return $review->paginate(25);
+    }
+    
+    private function seriesReviewData($objId)
     {
 
     }
