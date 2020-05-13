@@ -15,7 +15,7 @@ class MovieSeriesController extends Controller
         if($type === 'series') return $this->getSeriesData($request, $objId);
     }
 
-    private function getMovieData($objId)
+    private function getMovieData($request, $objId)
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('movie', $objId),
