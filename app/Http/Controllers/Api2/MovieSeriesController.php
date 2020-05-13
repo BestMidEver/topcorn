@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MovieSeriesController extends Controller
 {
     public function getMovieSeriesDataAssign(Request $request, $type, $objId)
-    {return $request->query('page');
+    {
         if($type === 'movie') return $this->getMovieData($request, $objId);
         if($type === 'series') return $this->getSeriesData($request, $objId);
     }
