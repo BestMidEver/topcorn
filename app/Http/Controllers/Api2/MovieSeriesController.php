@@ -163,7 +163,7 @@ class MovieSeriesController extends Controller
             ->orderBy('count', 'desc');
         }
 
-        return $review->paginate(3);
+        return $review->paginate(Auth::User()->pagination);
     }
     
     private function seriesReviewData($objId)
