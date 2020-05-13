@@ -27,7 +27,10 @@ Route::middleware('auth:api')->group(function () {
 
     // Movie Series
     Route::get('/getMovieSeriesAllData/{type}/{objId}', 'Api2\MovieSeriesController@getMovieSeriesDataAssign');
-    Route::get('/movieSeriesCardData/{type}/{objId}', 'Api2\MovieSeriesController@movieSeriesCardData');
+    //Route::get('/movieSeriesCardData/{type}/{objId}', 'Api2\MovieSeriesController@movieSeriesCardData');
+    
+    // Review
+    Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');
 
     Route::post('/logout', 'Api2\Auth\AuthController@logout');
 });
