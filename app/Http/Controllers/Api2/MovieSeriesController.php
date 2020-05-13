@@ -87,7 +87,7 @@ class MovieSeriesController extends Controller
         if($type === 'series') return $this->reviewData($objId, [2, 3]);
     }
     
-    private function reviewData($objId, $modes)
+    private function reviewData($objId, $modes, $episode_number = -1, $season_number = -1)
     {
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $objId)
@@ -113,14 +113,14 @@ class MovieSeriesController extends Controller
             });
         }
 
-        if($request->season_number != -1){
-            if($request->episode_number != -1){
+        if($season_number != -1){
+            if($episode_number != -1){
                 $review=$review
-                ->where('reviews.season_number', '=', $request->season_number)
-                ->where('reviews.episode_number', '=', $request->episode_number);
+                ->where('reviews.season_number', '=', $season_number)
+                ->where('reviews.episode_number', '=', $episode_number);
             }else{
                 $review=$review
-                ->where('reviews.season_number', '=', $request->season_number)
+                ->where('reviews.season_number', '=', $season_number)
                 ->whereNull('reviews.episode_number');
             }
         }else{
