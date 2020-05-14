@@ -129,39 +129,23 @@ class MovieSeriesController extends Controller
             ->whereNull('reviews.episode_number');
         }
 
-        if(Auth::check()){
-            $review = $review
-            ->select(
-                'reviews.tmdb_author_name as author',
-                'reviews.review as content',
-                'reviews.tmdb_review_id',
-                'reviews.lang as url',
-                'reviews.id as id',
-                'users.name as name',
-                'users.id as user_id',
-                'r1.rate as rate',
-                'reviews.movie_series_id as movie_series_id',
-                DB::raw('COUNT(review_likes.id) as count'),
-                DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
-                DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
-            )
-            ->orderBy('is_mine', 'desc')
-            ->orderBy('count', 'desc');
-        }else{
-            $review = $review
-            ->select(
-                'reviews.tmdb_author_name as author',
-                'reviews.review as content',
-                'reviews.tmdb_review_id',
-                'reviews.lang as url',
-                'reviews.id as id',
-                'users.name as name',
-                'users.id as user_id',
-                'r1.rate as rate',
-                DB::raw('COUNT(review_likes.id) as count')
-            )
-            ->orderBy('count', 'desc');
-        }
+        $review = $review
+        ->select(
+            'reviews.tmdb_author_name as author',
+            'reviews.review as content',
+            'reviews.tmdb_review_id',
+            'reviews.lang as url',
+            'reviews.id as id',
+            'users.name as name',
+            'users.id as user_id',
+            'r1.rate as rate',
+            'reviews.movie_series_id as movie_series_id',
+            DB::raw('COUNT(review_likes.id) as count'),
+            DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
+            DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+        )
+        ->orderBy('is_mine', 'desc')
+        ->orderBy('count', 'desc');
 
         return $review->paginate(Auth::User()->pagination);
     }
