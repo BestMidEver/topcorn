@@ -78,8 +78,12 @@ class RateController extends Controller
     private function sendMovieSeriesReview($mode, $request)
     {
         $review = strip_tags($request->review);
-        if($review == '') Review::where(array('user_id' => Auth::id(), 'movie_series_id' => $request->obj_id, 'mode' => $mode, 'season_number' => null, 'episode_number' => null))->delete();
-        else Review::updateOrCreate(
+        if($review == ''){
+            $reviewToDelete = Review::where(array('user_id' => Auth::id(), 'movie_series_id' => $request->obj_id, 'mode' => $mode, 'season_number' => null, 'episode_number' => null));
+            return $reviewToDelete->first()->id;
+            $reviewToDelete->delete();
+        }
+        else $data = Review::updateOrCreate(
             array('user_id' => Auth::id(), 'movie_series_id' => $request->obj_id, 'mode' => $mode, 'season_number' => null, 'episode_number' => null),
             array('review' => $review, 'lang' => Auth::User()->lang)
         );
