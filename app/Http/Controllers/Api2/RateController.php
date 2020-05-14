@@ -84,7 +84,7 @@ class RateController extends Controller
             array('review' => $review, 'lang' => Auth::User()->lang)
         );
 
-        return Response::make($data, 204);
+        return Response::make($data, 200);
     }
 
 
