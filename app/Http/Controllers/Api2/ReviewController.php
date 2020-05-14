@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Response;
 class ReviewController extends Controller
 {
     public function reviewLikeAssign(Request $request)
-    {return $request->is_liked === 1;
+    {return $request->is_liked === 1 ? 1 : 0;
         if($request->is_liked === 1) return $this->reviewLike($request->review_id);
         if($request->is_liked === 0) return $this->reviewUnLike($request->review_id);
     }
