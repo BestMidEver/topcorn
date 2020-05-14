@@ -144,7 +144,7 @@ class RateController extends Controller
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
                 DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
             );
-            $data = $review->first();
+            $data = $review->first()->toJson();
         }
 
         return Response::make($data, 200);
