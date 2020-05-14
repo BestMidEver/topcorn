@@ -134,9 +134,9 @@ class MovieSeriesController extends Controller
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
-                'reviews.tmdb_review_id as id',
+                'reviews.tmdb_review_id',
                 'reviews.lang as url',
-                'reviews.id as review_id',
+                'reviews.id as id',
                 'users.name as name',
                 'users.id as user_id',
                 'r1.rate as rate',
@@ -152,9 +152,9 @@ class MovieSeriesController extends Controller
             ->select(
                 'reviews.tmdb_author_name as author',
                 'reviews.review as content',
-                'reviews.tmdb_review_id as id',
+                'reviews.tmdb_review_id',
                 'reviews.lang as url',
-                'reviews.id as review_id',
+                'reviews.id as id',
                 'users.name as name',
                 'users.id as user_id',
                 'r1.rate as rate',
