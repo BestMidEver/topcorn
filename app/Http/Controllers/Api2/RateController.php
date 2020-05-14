@@ -146,8 +146,8 @@ class RateController extends Controller
             );
             $data = $review->first()->toJson();
         }
-
-        return Response::make($data, 200);
+        return response()->json($data, 200);
+        //return Response::make($data, 200);
     }
 
 
