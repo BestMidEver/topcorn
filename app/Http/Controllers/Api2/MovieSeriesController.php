@@ -109,8 +109,8 @@ class MovieSeriesController extends Controller
             'series_rateds.rate as rate_code',
             'series_laters.id as later_id',
             'series_bans.id as ban_id',
-            DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*series_recommendations.is_similar, 0)) AS point'),
-            DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.is_similar, 0)) as p2'),
+            DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*series_recommendations.rank, 0)) AS point'),
+            DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.rank, 0)) as p2'),
             DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
             DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
         )
