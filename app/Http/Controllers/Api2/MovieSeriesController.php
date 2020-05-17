@@ -34,7 +34,7 @@ class MovieSeriesController extends Controller
     public function movieSeriesCardData($type, $objId)
     {
         if($type === 'movie') return $this->movieCardData($objId);
-        if($type === 'series') return $objId;//$this->seriesCardData($objId);
+        if($type === 'series') return $this->seriesCardData($objId);
     }
 
     private function movieCardData($objId)
