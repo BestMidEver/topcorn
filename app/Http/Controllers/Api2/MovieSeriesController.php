@@ -159,13 +159,13 @@ class MovieSeriesController extends Controller
             }else{
                 $review=$review
                 ->where('reviews.season_number', '=', $season_number)
-                ->whereNull('reviews.episode_number');
+                /* ->whereNull('reviews.episode_number') */;
             }
-        }else{
+        }/* else{
             $review=$review
             ->whereNull('reviews.season_number')
             ->whereNull('reviews.episode_number');
-        }
+        } */
 
         $review = $review
         ->select(
