@@ -104,7 +104,7 @@ class MovieSeriesController extends Controller
             'series.first_air_date',
             'series.original_name as original_name',
             'series.en_name as name',
-            'series.en_back_path as back_path',
+            'series.en_backdrop_path as backdrop_path',
             //'series_rateds.id as rated_id',
             'series_rateds.rate as rate_code',
             'series_laters.id as later_id',
