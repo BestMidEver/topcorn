@@ -82,7 +82,7 @@ class MovieSeriesController extends Controller
     {
         $return_val = DB::table('series')
         ->where('series.id', '=', $objId)
-        /* ->leftjoin('series_rateds', function ($join) {
+        ->leftjoin('series_rateds', function ($join) {
             $join->on('series_rateds.series_id', '=', 'series.id')
             ->where('series_rateds.user_id', '=', Auth::user()->id);
         })
@@ -114,7 +114,7 @@ class MovieSeriesController extends Controller
             DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
             DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
         )
-        ->groupBy('series.id') */;
+        ->groupBy('series.id');
 
         return response()->json($return_val->first());
     }
