@@ -25,7 +25,10 @@ class MovieSeriesController extends Controller
     
     private function getSeriesData($objId)
     {
-
+        return response()->json([
+            'interactionData' => $this->movieSeriesCardData('series', $objId),
+            'reviews' => []/* $this->reviewDataAssign($request,'series', $objId) */,
+        ]);
     }
 
     public function movieSeriesCardData($type, $objId)
@@ -61,7 +64,7 @@ class MovieSeriesController extends Controller
             'movies.original_title as original_title',
             'movies.en_title as title',
             'movies.en_cover_path as cover_path',
-            'rateds.id as rated_id',
+            //'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id',
@@ -73,12 +76,47 @@ class MovieSeriesController extends Controller
         ->groupBy('movies.id');
 
         return response()->json($return_val->first());
-
     }
     
     private function seriesCardData($objId)
     {
+        $return_val = DB::table('series')
+        ->where('series.id', '=', $objId)
+        ->leftjoin('series_rateds', function ($join) {
+            $join->on('series_rateds.series_id', '=', 'series.id')
+            ->where('series_rateds.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('series_laters', function ($join) {
+            $join->on('series_laters.series_id', '=', 'series.id')
+            ->where('series_laters.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('series_bans', function ($join) {
+            $join->on('series_bans.series_id', '=', 'series.id')
+            ->where('series_bans.user_id', '=', Auth::user()->id);
+        })
+        ->leftjoin('series_recommendations', 'series_recommendations.this_id', '=', 'series.id')
+        ->leftjoin('series_rateds as r2', function ($join) {
+            $join->on('r2.series_id', '=', 'series_recommendations.series_id')
+            ->where('r2.user_id', Auth::user()->id);
+        })
+        ->select(
+            'series.id',
+            'series.first_air_date',
+            'series.original_name as original_name',
+            'series.en_name as name',
+            'series.en_cover_path as cover_path',
+            //'series_rateds.id as rated_id',
+            'series_rateds.rate as rate_code',
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id',
+            DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*series_recommendations.is_similar, 0)) AS point'),
+            DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.is_similar, 0)) as p2'),
+            DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
+            DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
+        )
+        ->groupBy('series.id');
 
+        return response()->json($return_val->first());
     }
 
     public function reviewDataAssign(Request $request, $type, $objId)
