@@ -34,7 +34,7 @@ class MovieSeriesController extends Controller
     public function movieSeriesCardData($type, $objId)
     {
         if($type === 'movie') return $this->movieCardData($objId);
-        if($type === 'series') return $this->seriesCardData($objId);
+        if($type === 'series') return $objId;//$this->seriesCardData($objId);
     }
 
     private function movieCardData($objId)
@@ -79,7 +79,7 @@ class MovieSeriesController extends Controller
     }
     
     private function seriesCardData($objId)
-    {return 1;
+    {return $objId;
         $return_val = DB::table('series')
         ->where('series.id', '=', $objId)
         /* ->leftjoin('series_rateds', function ($join) {
