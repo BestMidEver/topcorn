@@ -27,7 +27,7 @@ class MovieSeriesController extends Controller
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('series', $objId),
-            'reviews' => []/* $this->reviewDataAssign($request,'series', $objId) */,
+            'reviews' => $this->reviewDataAssign($request,'series', $objId),
         ]);
     }
 
