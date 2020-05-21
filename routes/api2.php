@@ -26,7 +26,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/getQuickVote/{type}/{objId?}', 'Api2\QuickVoteController@getQuickVoteAssign');
 
     // Movie Series
-    Route::get('/getMovieSeriesAllData/{type}/{objId}/{season}/{episode}', 'Api2\MovieSeriesController@getMovieSeriesDataAssign');
+    Route::get('/getMovieSeriesAllData/{type}/{objId}/{season?}/{episode?}', 'Api2\MovieSeriesController@getMovieSeriesDataAssign');
     //Route::get('/movieSeriesCardData/{type}/{objId}', 'Api2\MovieSeriesController@movieSeriesCardData');
     
     // Review
