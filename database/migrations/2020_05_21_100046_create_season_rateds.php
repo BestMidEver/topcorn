@@ -17,11 +17,11 @@ class CreateSeasonRateds extends Migration
             $table->increments('id');
             $table->integer('series_id');
             $table->integer('user_id');
-            $table->integer('season_number');
-            $table->integer('episode_number');
+            $table->integer('season');
+            $table->integer('episode');
             $table->tinyInteger('rate');
             $table->timestamps();
-            $table->unique(['series_id', 'user_id', 'season_number', 'episode_number']);
+            $table->unique(['series_id', 'user_id', 'season', 'episode']);
         });
     }
 
