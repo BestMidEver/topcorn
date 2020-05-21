@@ -34,7 +34,8 @@ class MovieSeriesController extends Controller
     public function movieSeriesCardData($type, $objId, $season = -1, $episode = -1)
     {
         if($type === 'movie') return $this->movieCardData($objId);
-        if($type === 'series') return $this->seriesCardData($objId, $season, $episode);
+        if($type === 'series' && $season == -1) return $this->seriesCardData($objId);
+        else return $this->seasonCardData($objId, $season, $episode);
     }
 
     private function movieCardData($objId)
@@ -115,6 +116,21 @@ class MovieSeriesController extends Controller
             DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
         )
         ->groupBy('series.id');
+
+        return response()->json($return_val->first());
+    }
+
+    private function seasonCardData($objId, $season, $episode)
+    {
+        $return_val = DB::table('series_seens')
+        ->where('series_seens.series_id', $objId)
+        ->where('series_seens.user_id', Auth::id())
+        ->where('series_seens.season_number', $season)
+        ->where('series_seens.episode_number', $episode)
+        ->select(
+            'series_seens.series_id',
+            'series_seens.id as seen_id'
+        );
 
         return response()->json($return_val->first());
     }
