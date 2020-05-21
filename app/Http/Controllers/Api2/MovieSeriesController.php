@@ -132,7 +132,8 @@ class MovieSeriesController extends Controller
         })
         ->select(
             'series.id as series_id',
-            'series_seens.id as seen_id'
+            'series_seens.id as seen_id',
+            '1 as asd'
         );
 
         return response()->json($return_val->first());
