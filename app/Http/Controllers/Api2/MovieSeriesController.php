@@ -23,7 +23,7 @@ class MovieSeriesController extends Controller
         ]);
     }
     
-    private function getSeriesData($request, $objId, $season, $episode)
+    private function getSeriesData($request, $objId, $season = -1, $episode = -1)
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('series', $objId, $season, $episode),
@@ -79,7 +79,7 @@ class MovieSeriesController extends Controller
         return response()->json($return_val->first());
     }
     
-    private function seriesCardData($objId, $season, $episode)
+    private function seriesCardData($objId)
     {
         $return_val = DB::table('series')
         ->where('series.id', '=', $objId)
