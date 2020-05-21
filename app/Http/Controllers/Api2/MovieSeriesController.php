@@ -131,7 +131,7 @@ class MovieSeriesController extends Controller
             ->where('series_seens.episode_number', $episode);
         })
         ->select(
-            'series.id as series_id',
+            'series.id as id',
             'series_seens.id as seen_id',
             DB::raw($season . ' as season_number'),
             DB::raw($episode . ' as episode_number')
