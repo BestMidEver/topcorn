@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class MovieSeriesController extends Controller
 {
-    public function getMovieSeriesDataAssign(Request $request, $type, $objId)
+    public function getMovieSeriesDataAssign(Request $request, $type, $objId, $season = -1, $episode = -1)
     {
         if($type === 'movie') return $this->getMovieData($request, $objId);
-        if($type === 'series') return $this->getSeriesData($request, $objId);
+        if($type === 'series') return $this->getSeriesData($request, $objId, $season, $episode);
     }
 
     private function getMovieData($request, $objId)
@@ -23,18 +23,18 @@ class MovieSeriesController extends Controller
         ]);
     }
     
-    private function getSeriesData($request, $objId)
+    private function getSeriesData($request, $objId, $season, $episode)
     {
         return response()->json([
-            'interactionData' => $this->movieSeriesCardData('series', $objId),
-            'reviews' => $this->reviewDataAssign($request,'series', $objId),
+            'interactionData' => $this->movieSeriesCardData('series', $objId, $season, $episode),
+            'reviews' => $this->reviewDataAssign($request,'series', $objId, $season, $episode),
         ]);
     }
 
-    public function movieSeriesCardData($type, $objId)
+    public function movieSeriesCardData($type, $objId, $season = -1, $episode = -1)
     {
         if($type === 'movie') return $this->movieCardData($objId);
-        if($type === 'series') return $this->seriesCardData($objId);
+        if($type === 'series') return $this->seriesCardData($objId, $season, $episode);
     }
 
     private function movieCardData($objId)
@@ -78,7 +78,7 @@ class MovieSeriesController extends Controller
         return response()->json($return_val->first());
     }
     
-    private function seriesCardData($objId)
+    private function seriesCardData($objId, $season, $episode)
     {
         $return_val = DB::table('series')
         ->where('series.id', '=', $objId)
@@ -119,13 +119,13 @@ class MovieSeriesController extends Controller
         return response()->json($return_val->first());
     }
 
-    public function reviewDataAssign(Request $request, $type, $objId)
+    public function reviewDataAssign(Request $request, $type, $objId, $season, $episode)
     {
         if($type === 'movie') return $this->reviewData($request, $objId, [0, 1]);
-        if($type === 'series') return $this->reviewData($request, $objId, [2, 3]);
+        if($type === 'series') return $this->reviewData($request, $objId, [2, 3], $season, $episode);
     }
     
-    private function reviewData($request, $objId, $modes, $episode_number = -1, $season_number = -1)
+    private function reviewData($request, $objId, $modes, $season = -1, $episode = -1)
     {
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $objId)
@@ -151,21 +151,21 @@ class MovieSeriesController extends Controller
             });
         }
 
-        if($season_number != -1){
-            if($episode_number != -1){
+        if($season != -1){
+            if($episode != -1){
                 $review=$review
-                ->where('reviews.season_number', '=', $season_number)
-                ->where('reviews.episode_number', '=', $episode_number);
+                ->where('reviews.season_number', '=', $season)
+                ->where('reviews.episode_number', '=', $episode);
             }else{
                 $review=$review
-                ->where('reviews.season_number', '=', $season_number)
-                /* ->whereNull('reviews.episode_number') */;
+                ->where('reviews.season_number', '=', $season)
+                ->whereNull('reviews.episode_number');
             }
-        }/* else{
+        }else{
             $review=$review
             ->whereNull('reviews.season_number')
             ->whereNull('reviews.episode_number');
-        } */
+        }
 
         $review = $review
         ->select(

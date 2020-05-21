@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Api2;
 
 use App\Model\Ban;
+use Carbon\Carbon;
 use App\Model\Later;
 use App\Model\Rated;
 use App\Model\Review;
 use App\Model\Series_ban;
 use App\Jobs\SuckMovieJob;
+use App\Model\Series_seen;
 use App\Jobs\SuckSeriesJob;
 use App\Model\Series_later;
 use App\Model\Series_rated;
@@ -207,6 +209,28 @@ class RateController extends Controller
             SuckSeriesJob::dispatch($request->obj_id, true)->onQueue("high");
         }
         else Series_ban::where('user_id', Auth::id())->where('series_id', $request->obj_id)->delete();
+
+        return Response::make("", 204);
+    }
+
+
+
+
+    public function lastSeen(Request $request)
+    {
+        if($request->last_seen > 0) {   
+            Series_seen::updateOrCreate(
+                array('user_id' => Auth::id(), 'series_id' => $request->series_id), 
+                array(
+                    'season_number' => $request->last_seen_season,
+                    'episode_number' => $request->last_seen_episode,
+                    'air_date' => new Carbon($request->air_date),
+                    'next_season' => $request->next_season,
+                    'next_episode' => $request->next_episode
+                )
+            );
+        }
+        else Series_seen::where('user_id', Auth::id())->where('series_id', $request->series_id)->delete();
 
         return Response::make("", 204);
     }
