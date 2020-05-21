@@ -134,7 +134,7 @@ class MovieSeriesController extends Controller
             'series.id as series_id',
             'series_seens.id as seen_id',
             DB::raw($season . ' as season_number'),
-            DB::raw($episode . ' as episode_number')
+            DB::raw(-1 . ' as episode_number')
         );
 
         return response()->json($return_val->first());
