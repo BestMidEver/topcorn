@@ -126,8 +126,8 @@ class MovieSeriesController extends Controller
         ->where('series_seens.series_id', $objId)
         ->where('series_seens.user_id', Auth::id())
         ->where('series_seens.season_number', $season)
-        /* ->where('series_seens.episode_number', $episode)
-        ->select(
+        ->where('series_seens.episode_number', $episode)
+        /* ->select(
             'series_seens.series_id',
             'series_seens.id as seen_id'
         ) */;
