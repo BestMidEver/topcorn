@@ -218,6 +218,7 @@ class RateController extends Controller
 
     public function lastSeen(Request $request)
     {
+        return $request;
         if($request->last_seen > 0) {   
             Series_seen::updateOrCreate(
                 array('user_id' => Auth::id(), 'series_id' => $request->series_id), 
