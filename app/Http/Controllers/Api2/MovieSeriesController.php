@@ -133,7 +133,7 @@ class MovieSeriesController extends Controller
         ->select(
             'series.id as series_id',
             'series_seens.id as seen_id',
-            '1 as asd'
+            DB::raw('1 as p2'),
         );
 
         return response()->json($return_val->first());
