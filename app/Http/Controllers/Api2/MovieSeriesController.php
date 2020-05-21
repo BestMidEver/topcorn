@@ -122,6 +122,7 @@ class MovieSeriesController extends Controller
 
     private function seasonCardData($objId, $season, $episode)
     {
+        return [$objId, $season, $episode];
         $return_val = DB::table('series_seens')
         ->where('series_seens.series_id', $objId)
         ->where('series_seens.user_id', Auth::id())
