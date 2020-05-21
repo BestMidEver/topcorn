@@ -124,7 +124,7 @@ class MovieSeriesController extends Controller
     {
         $return_val = DB::table('series')
         ->where('series.id', $objId)
-        ->leftjoin('series_seens', function ($join) {
+        ->leftjoin('series_seens', function ($join, $season) {
             $join->on('series_seens.series_id', '=', 'series.id')
             ->where('series_seens.user_id', Auth::id())
             ->where('series_seens.season_number', $season)
