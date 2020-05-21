@@ -122,13 +122,16 @@ class MovieSeriesController extends Controller
 
     private function seasonCardData($objId, $season, $episode)
     {
-        $return_val = DB::table('series_seens')
-        ->where('series_seens.series_id', $objId)
-        ->where('series_seens.user_id', Auth::id())
-        ->where('series_seens.season_number', $season)
-        ->where('series_seens.episode_number', $episode)
+        $return_val = DB::table('series')
+        ->where('series.id', $objId)
+        ->leftjoin('series_seens', function ($join) {
+            $join->on('series_seens.series_id', '=', 'series.id')
+            ->where('series_seens.user_id', Auth::id())
+            ->where('series_seens.season_number', $season)
+            ->where('series_seens.episode_number', $episode);
+        })
         ->select(
-            'series_seens.series_id',
+            'series.id as series_id',
             'series_seens.id as seen_id'
         );
 
