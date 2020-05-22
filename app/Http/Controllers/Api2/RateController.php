@@ -52,13 +52,13 @@ class RateController extends Controller
 
 
 
-    public function getUserReview($type, $objId, $season, $episode)
+    public function getUserReview($type, $objId, $season = -1, $episode = -1)
     {
         if($type === 'movie') return $this->getMovieSeriesReview(1, $objId);
         if($type === 'series') return $this->getMovieSeriesReview(3, $objId, $season, $episode);
     }
 
-    private function getMovieSeriesReview($mode, $objId, $season_number = -1, $episode_number = -1)
+    private function getMovieSeriesReview($mode, $objId, $season_number, $episode_number)
     {
         $review = DB::table('reviews')
         ->where('mode', $mode)
