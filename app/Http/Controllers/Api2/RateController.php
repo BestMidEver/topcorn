@@ -52,15 +52,16 @@ class RateController extends Controller
 
 
 
-    public function getUserReview($type, $objId)
+    public function getUserReview($type, $objId, $season, $episode)
     {
         if($type === 'movie') return $this->getMovieSeriesReview(1, $objId);
-        if($type === 'series') return $this->getMovieSeriesReview(3, $objId);
+        if($type === 'series') return $this->getMovieSeriesReview(3, $objId, $season, $episode);
     }
 
-    private function getMovieSeriesReview($mode, $objId)
+    private function getMovieSeriesReview($mode, $objId, $season = -1, $episode = -1)
     {
-        $review = Review::where('mode', $mode)
+        $review = DB::table('reviews')
+        ->where('mode', $mode)
         ->where('user_id', Auth::id())
         ->where('movie_series_id', $objId)
         ->select(
@@ -68,6 +69,23 @@ class RateController extends Controller
             'movie_series_id',
             'review'
         );
+        
+        if($season_number != -1){
+            if($episode_number != -1){
+                $review=$review
+                ->where('reviews.season_number', '=', $season_number)
+                ->where('reviews.episode_number', '=', $episode_number);
+            }else{
+                $review=$review
+                ->where('reviews.season_number', '=', $season_number)
+                ->whereNull('reviews.episode_number');
+            }
+        }else{
+            $review=$review
+            ->whereNull('reviews.season_number')
+            ->whereNull('reviews.episode_number');
+        }
+
 
         return response()->json($review->first());
     }
