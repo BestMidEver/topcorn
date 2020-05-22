@@ -67,7 +67,9 @@ class RateController extends Controller
         ->select(
             'id',
             'movie_series_id',
-            'review'
+            'review',
+            DB::raw($season_number . ' as season_number'),
+            DB::raw($episode_number . ' as episode_number'),
         );
 
         if($season_number != -1){
