@@ -117,6 +117,7 @@ class RateController extends Controller
         }
         else {
             $data = Review::updateOrCreate($whereArray, array('review' => $review, 'lang' => Auth::User()->lang));
+            
             $review = DB::table('reviews')
             ->where('reviews.id', $data->id)
             ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
@@ -125,7 +126,6 @@ class RateController extends Controller
                 ->where('review_likes.is_deleted', '=', 0);
             })
             ->groupBy('reviews.id');
-
             if($data->mode == 1){
                 $review = $review
                 ->leftjoin('rateds as r1', function ($join) {
@@ -139,21 +139,6 @@ class RateController extends Controller
                     $join->on('r1.user_id', '=', 'reviews.user_id');
                 });
             }
-            /* if($season_number != -1){
-                if($episode_number != -1){
-                    $review=$review
-                    ->where('reviews.season_number', '=', $season_number)
-                    ->where('reviews.episode_number', '=', $episode_number);
-                }else{
-                    $review=$review
-                    ->where('reviews.season_number', '=', $season_number)
-                    ->whereNull('reviews.episode_number');
-                }
-            }else{
-                $review=$review
-                ->whereNull('reviews.season_number')
-                ->whereNull('reviews.episode_number');
-            } */
             $review = $review
             ->select(
                 'reviews.tmdb_author_name as author',
