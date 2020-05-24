@@ -101,19 +101,22 @@ class RateController extends Controller
     private function sendMovieSeriesReview($mode, $request)
     {
         $review = strip_tags($request->review);
+        $whereArray = array(
+            'user_id' => Auth::id(),
+            'movie_series_id' => $request->obj_id,
+            'mode' => $mode,
+            'season_number' => $request->season_number == -1 || $mode == 1 ? null : $request->season_number,
+            'episode_number' => $request->episode_number == -1 || $mode == 1 ? null : $request->episode_number
+        );
         if($review == ''){
-            $reviewToDelete = Review::where(array('user_id' => Auth::id(), 'movie_series_id' => $request->obj_id, 'mode' => $mode, 'season_number' => null, 'episode_number' => null));
+            $reviewToDelete = Review::where($whereArray);
             $data = $reviewToDelete->first();
             if($data) $data = $data->id;
             else $data = -1;
             $reviewToDelete->delete();
         }
         else {
-            $data = Review::updateOrCreate(
-                array('user_id' => Auth::id(), 'movie_series_id' => $request->obj_id, 'mode' => $mode, 'season_number' => null, 'episode_number' => null),
-                array('review' => $review, 'lang' => Auth::User()->lang)
-            );
-
+            $data = Review::updateOrCreate($whereArray, array('review' => $review, 'lang' => Auth::User()->lang));
             $review = DB::table('reviews')
             ->where('reviews.id', $data->id)
             ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
