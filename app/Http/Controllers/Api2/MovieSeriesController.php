@@ -146,7 +146,7 @@ class MovieSeriesController extends Controller
         if($type === 'series') return $this->reviewData($request, $objId, [2, 3], $season, $episode);
     }
     
-    private function reviewData($request, $objId, $modes, $season, $episode)
+    private function reviewData($request, $objId, $modes, $season = -1, $episode = -1)
     {
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $objId)
