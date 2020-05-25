@@ -58,7 +58,7 @@ class RateController extends Controller
         if($type === 'series') return $this->getMovieSeriesReview(3, $objId, $season, $episode);
     }
 
-    private function getMovieSeriesReview($mode, $objId, $season_number, $episode_number)
+    private function getMovieSeriesReview($mode, $objId, $season_number = -1, $episode_number = -1)
     {
         $review = DB::table('reviews')
         ->where('mode', $mode)
