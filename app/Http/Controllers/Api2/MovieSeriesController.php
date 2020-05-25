@@ -140,13 +140,13 @@ class MovieSeriesController extends Controller
         return response()->json($return_val->first());
     }
 
-    public function reviewDataAssign(Request $request, $type, $objId, $season, $episode)
+    public function reviewDataAssign(Request $request, $type, $objId, $season = -1, $episode = -1)
     {
         if($type === 'movie') return $this->reviewData($request, $objId, [0, 1]);
         if($type === 'series') return $this->reviewData($request, $objId, [2, 3], $season, $episode);
     }
     
-    private function reviewData($request, $objId, $modes, $season = -1, $episode = -1)
+    private function reviewData($request, $objId, $modes, $season, $episode)
     {
         $review = DB::table('reviews')
         ->where('reviews.movie_series_id', $objId)

@@ -114,10 +114,9 @@ class RateController extends Controller
             if($data) $data = $data->id;
             else $data = -1;
             $reviewToDelete->delete();
-        }
-        else {
+        } else {
             $data = Review::updateOrCreate($whereArray, array('review' => $review, 'lang' => Auth::User()->lang));
-            
+
             $review = DB::table('reviews')
             ->where('reviews.id', $data->id)
             ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
