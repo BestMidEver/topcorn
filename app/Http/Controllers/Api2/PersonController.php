@@ -43,6 +43,6 @@ class PersonController extends Controller
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
 
-        return $review->paginate(3/* Auth::User()->pagination */);
+        return $review->paginate(Auth::User()->pagination);
     }
 }
