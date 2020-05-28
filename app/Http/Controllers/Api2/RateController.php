@@ -56,6 +56,7 @@ class RateController extends Controller
     {
         if($type === 'movie') return $this->getMovieSeriesReview(1, $objId);
         if($type === 'series') return $this->getMovieSeriesReview(3, $objId, $season, $episode);
+        if($type === 'person') return $this->getMovieSeriesReview(4, $objId);
     }
 
     private function getMovieSeriesReview($mode, $objId, $season_number = -1, $episode_number = -1)
