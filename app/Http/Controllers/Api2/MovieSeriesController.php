@@ -206,7 +206,7 @@ class MovieSeriesController extends Controller
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
 
-        return $review->paginate(Auth::User()->pagination);
+        return $review->paginate(3/* Auth::User()->pagination */);
     }
     
 }
