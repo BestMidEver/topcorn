@@ -33,7 +33,7 @@ class ReviewController extends Controller
         if($review_like->wasRecentlyCreated && $review->user_id > 0){
             if(User::find($review->user_id)->when_user_interaction > 0){
                 Notification::updateOrCreate(
-                    ['mode' => 0, 'user_id' => $review->user_id, 'multi_id' => $request->review_id],
+                    ['mode' => 0, 'user_id' => $review->user_id, 'multi_id' => $review_id],
                     ['is_seen' => 0]
                 );
             }
