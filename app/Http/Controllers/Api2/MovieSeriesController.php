@@ -19,7 +19,7 @@ class MovieSeriesController extends Controller
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('movie', $objId),
-            'reviews' => $this->reviewDataAssign($request,'movie', $objId),
+            'reviews' => $this->reviewDataAssign($request, 'movie', $objId),
         ]);
     }
     
@@ -207,11 +207,6 @@ class MovieSeriesController extends Controller
         ->orderBy('count', 'desc');
 
         return $review->paginate(Auth::User()->pagination);
-    }
-    
-    private function seriesReviewData($objId)
-    {
-
     }
     
 }

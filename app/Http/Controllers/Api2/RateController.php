@@ -96,6 +96,7 @@ class RateController extends Controller
     public function sendReview(Request $request, $type) {
         if($type === 'movie') return $this->sendMovieSeriesReview(1, $request);
         if($type === 'series') return $this->sendMovieSeriesReview(3, $request);
+        if($type === 'person') return $this->sendMovieSeriesReview(4, $request);
     }
 
     private function sendMovieSeriesReview($mode, $request)
@@ -105,8 +106,8 @@ class RateController extends Controller
             'user_id' => Auth::id(),
             'movie_series_id' => $request->obj_id,
             'mode' => $mode,
-            'season_number' => $request->season_number == -1 || $mode == 1 ? null : $request->season_number,
-            'episode_number' => $request->episode_number == -1 || $mode == 1 ? null : $request->episode_number
+            'season_number' => $request->season_number == -1 || $mode == 1 || $mode == 4 ? null : $request->season_number,
+            'episode_number' => $request->episode_number == -1 || $mode == 1 || $mode == 4 ? null : $request->episode_number
         );
         if($review == ''){
             $reviewToDelete = Review::where($whereArray);
@@ -125,34 +126,49 @@ class RateController extends Controller
                 ->where('review_likes.is_deleted', '=', 0);
             })
             ->groupBy('reviews.id');
-            if($data->mode == 1){
+            if($data->mode == 4){
                 $review = $review
-                ->leftjoin('rateds as r1', function ($join) {
-                    $join->on('r1.movie_id', '=', 'reviews.movie_series_id');
-                    $join->on('r1.user_id', '=', 'reviews.user_id');
-                });
+                ->select(
+                    'reviews.review as content',
+                    'reviews.lang',
+                    'reviews.id as id',
+                    'users.name as name',
+                    'users.id as user_id',
+                    'reviews.movie_series_id as movie_series_id',
+                    DB::raw('COUNT(review_likes.id) as count'),
+                    DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
+                    DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+                );
             } else {
+                if($data->mode == 1){
+                    $review = $review
+                    ->leftjoin('rateds as r1', function ($join) {
+                        $join->on('r1.movie_id', '=', 'reviews.movie_series_id');
+                        $join->on('r1.user_id', '=', 'reviews.user_id');
+                    });
+                } else {
+                    $review = $review
+                    ->leftjoin('series_rateds as r1', function ($join) {
+                        $join->on('r1.series_id', '=', 'reviews.movie_series_id');
+                        $join->on('r1.user_id', '=', 'reviews.user_id');
+                    });
+                }
                 $review = $review
-                ->leftjoin('series_rateds as r1', function ($join) {
-                    $join->on('r1.series_id', '=', 'reviews.movie_series_id');
-                    $join->on('r1.user_id', '=', 'reviews.user_id');
-                });
+                ->select(
+                    'reviews.tmdb_author_name as author',
+                    'reviews.review as content',
+                    'reviews.tmdb_review_id',
+                    'reviews.lang',
+                    'reviews.id as id',
+                    'users.name as name',
+                    'users.id as user_id',
+                    'r1.rate as rate',
+                    'reviews.movie_series_id as movie_series_id',
+                    DB::raw('COUNT(review_likes.id) as count'),
+                    DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
+                    DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+                );
             }
-            $review = $review
-            ->select(
-                'reviews.tmdb_author_name as author',
-                'reviews.review as content',
-                'reviews.tmdb_review_id',
-                'reviews.lang as url',
-                'reviews.id as id',
-                'users.name as name',
-                'users.id as user_id',
-                'r1.rate as rate',
-                'reviews.movie_series_id as movie_series_id',
-                DB::raw('COUNT(review_likes.id) as count'),
-                DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
-                DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
-            );
             $data = $review->first();
         }
         return response()->json($data, 200);

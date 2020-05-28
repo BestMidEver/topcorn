@@ -15,7 +15,7 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('mode');//  0-movie tmdb | 1-movie topcorn | 2-series tmdb | 3-series topcorn
+            $table->tinyInteger('mode');//  0-movie tmdb | 1-movie topcorn | 2-series tmdb | 3-series topcorn | 4-person topcorn
             $table->integer('movie_series_id');// [0,1]-movie id | [2,3]-series id
             $table->integer('season_number')->nullable();// 3-season number
             $table->integer('episode_number')->nullable();// 3-episode number
