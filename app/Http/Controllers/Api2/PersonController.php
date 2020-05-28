@@ -11,7 +11,7 @@ class PersonController extends Controller
     public function getPersonData(Request $request, $id)
     {
         return response()->json([
-            'reviews' => $this->reviewDataAssign($request, 'person', $id),
+            'reviews' => $this->reviewData($request, $id),
         ]);
     }
     
