@@ -35,6 +35,7 @@ Route::middleware('auth:api')->group(function () {
     
     // Review
     Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');
+    Route::get('/getPersonReviewsData/{objId}', 'Api2\PersonController@reviewData');
     Route::post('/likeReview', 'Api2\ReviewController@reviewLikeAssign');
 
     Route::post('/logout', 'Api2\Auth\AuthController@logout');
