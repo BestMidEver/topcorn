@@ -13,9 +13,9 @@ class UserController extends Controller
     {
         return response()->json([
             'movies' => $this->getUserMovies($request),
-            'series' => $this->getUserSeries($request)/* ,
+            'series' => $this->getUserSeries($request),
             'movie_reviews' => $this->getUserReviews($request, 1),
-            'series_reviews' => $this->getUserReviews($request, 3) */
+            'series_reviews' => $this->getUserReviews($request, 3)
         ]);
     }
 
@@ -47,7 +47,7 @@ class UserController extends Controller
         );
         // Profile User Interaction Filter
         if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('laters.id');
-        if($request->interaction == 'All Already Seen') $return_val = $return_val->where('rateds.id', '>', 0);
+        elseif($request->interaction == 'All Seen') $return_val = $return_val->where('rateds.rate', '>', 0);
         elseif(strpos($request->interaction, 'Rate-') !== false) $return_val = $return_val->where('rateds.rate', explode('-', $request->interaction)[1]);
         elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('bans.id');
         else $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', '>', 0)->orWhereNotNull('bans.id')->orWhereNotNull('laters.id'); });
@@ -80,7 +80,6 @@ class UserController extends Controller
         ->leftjoin('series_rateds', function ($join) use ($userId) { $join->on('series_rateds.series_id', '=', 'series.id')->where('series_rateds.user_id', $userId); })
         ->leftjoin('series_laters', function ($join) use ($userId) { $join->on('series_laters.series_id', '=', 'series.id')->where('series_laters.user_id', '=', $userId); })
         ->leftjoin('series_bans', function ($join) use ($userId) { $join->on('series_bans.series_id', '=', 'series.id')->where('series_bans.user_id', '=', $userId); })
-        ->where(function ($query) { $query->where('series_rateds.rate', '>', 0)->orWhereNotNull('series_bans.id')->orWhereNotNull('series_laters.id'); })
         ->leftjoin('series_rateds as r2', function ($join) { $join->on('r2.series_id', '=', 'series.id')->where('r2.user_id', Auth::id()); })
         ->leftjoin('series_laters as l2', function ($join) { $join->on('l2.series_id', '=', 'series.id')->where('l2.user_id', '=', Auth::id()); })
         ->leftjoin('series_bans as b2', function ($join) { $join->on('b2.series_id', '=', 'series.id')->where('b2.user_id', '=', Auth::id()); })
@@ -102,8 +101,10 @@ class UserController extends Controller
         );
         // Profile User Interaction Filter
         if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('series_laters.id');
+        elseif($request->interaction == 'All Seen') $return_val = $return_val->where('series_rateds.rate', '>', 0);
         elseif(strpos($request->interaction, 'Rate-') !== false) $return_val = $return_val->where('series_rateds.rate', explode('-', $request->interaction)[1]);
         elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('series_bans.id');
+        else $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', '>', 0)->orWhereNotNull('series_bans.id')->orWhereNotNull('series_laters.id'); });
         // Vote Average Filter
         if($request->min_vote_average > 0) $return_val = $return_val->where('series.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
