@@ -96,7 +96,7 @@ class UserController extends Controller
             'r2.rate as rate_code',
             'l2.id as later_id',
             'b2.id as ban_id',
-            DB::raw('GREATEST(series_rateds.updated_at, series_seens.updated_at, series_laters.updated_at, series_bans.updated_at) as updated_at'),
+            DB::raw('GREATEST(COALESCE(series_rateds.updated_at, 0), COALESCE(series_seens.updated_at, 0), COALESCE(series_laters.updated_at, 0), COALESCE(series_bans.updated_at, 0)) as updated_at'),
             'series_rateds.rate as user_rate_code',
             'series_laters.id as user_later_id',
             'series_bans.id as user_ban_id'
