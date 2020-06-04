@@ -18,6 +18,8 @@ class UserController extends Controller
 
     public function getUserMovies(Request $request)
     {
+        $userId = $request->id == -1 ? Auth::id() : $request->id;
+        return $userId;
         $return_val = DB::table('movies')
         ->leftjoin('rateds as r2', function ($join) {
             $join->on('r2.movie_id', '=', 'movies.id')
