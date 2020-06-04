@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
         $return_val = DB::table('movies')
-        ->leftjoin('rateds', function ($join) {
+        ->leftjoin('rateds', function ($join) use ($userId) {
             $join->on('rateds.movie_id', '=', 'movies.id')
             ->where('rateds.user_id', $userId);
         })
