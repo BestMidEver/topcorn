@@ -78,6 +78,7 @@ class UserController extends Controller
         $userId = $request->id == -1 ? Auth::id() : $request->id;
         $return_val = DB::table('series')
         ->leftjoin('series_rateds', function ($join) use ($userId) { $join->on('series_rateds.series_id', '=', 'series.id')->where('series_rateds.user_id', $userId); })
+        ->leftjoin('series_seens', function ($join) use ($userId) { $join->on('series_seens.series_id', '=', 'series.id')->where('series_seens.user_id', $userId); })
         ->leftjoin('series_laters', function ($join) use ($userId) { $join->on('series_laters.series_id', '=', 'series.id')->where('series_laters.user_id', '=', $userId); })
         ->leftjoin('series_bans', function ($join) use ($userId) { $join->on('series_bans.series_id', '=', 'series.id')->where('series_bans.user_id', '=', $userId); })
         ->leftjoin('series_rateds as r2', function ($join) { $join->on('r2.series_id', '=', 'series.id')->where('r2.user_id', Auth::id()); })
@@ -94,7 +95,8 @@ class UserController extends Controller
             'r2.rate as rate_code',
             'l2.id as later_id',
             'b2.id as ban_id',
-            DB::raw('IF(series_rateds.updated_at>series_laters.updated_at OR series_laters.updated_at IS NULL, IF(series_rateds.updated_at>series_bans.updated_at OR series_bans.updated_at IS NULL, series_rateds.updated_at, series_bans.updated_at), IF(series_laters.updated_at>series_bans.updated_at OR series_bans.updated_at IS NULL, series_laters.updated_at, series_bans.updated_at)) as updated_at'),
+            //DB::raw('IF(series_rateds.updated_at>series_laters.updated_at OR series_laters.updated_at IS NULL, IF(series_rateds.updated_at>series_bans.updated_at OR series_bans.updated_at IS NULL, series_rateds.updated_at, series_bans.updated_at), IF(series_laters.updated_at>series_bans.updated_at OR series_bans.updated_at IS NULL, series_laters.updated_at, series_bans.updated_at)) as updated_at'),
+            DB::raw('GREATEST(series_rateds.updated_at, series_seens.updated_at, series_laters.updated_at, series_bans.updated_at) as updated_at'),
             'series_rateds.rate as user_rate_code',
             'series_laters.id as user_later_id',
             'series_bans.id as user_ban_id'
