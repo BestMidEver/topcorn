@@ -19,8 +19,11 @@ class UserController extends Controller
     public function getUserMovies(Request $request)
     {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
-        return $userId;
         $return_val = DB::table('movies')
+        ->leftjoin('rateds', function ($join) {
+            $join->on('rateds.movie_id', '=', 'movies.id')
+            ->where('rateds.user_id', $userId);
+        })
         ->leftjoin('rateds as r2', function ($join) {
             $join->on('r2.movie_id', '=', 'movies.id')
             ->where('r2.user_id', Auth::id());
@@ -43,7 +46,8 @@ class UserController extends Controller
             'movies.vote_count as vote_count',
             'r2.rate as rate_code',
             'l2.id as later_id',
-            'b2.id as ban_id'
+            'b2.id as ban_id',
+            'rateds.rate as user_rate_code'
             /* 'rateds.updated_at as updated_at' */
         )
         /* ->orderBy('rateds.updated_at', 'desc') */;
