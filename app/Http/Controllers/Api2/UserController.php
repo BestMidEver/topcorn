@@ -131,6 +131,7 @@ class UserController extends Controller
         $review = DB::table('reviews')
         ->where('reviews.user_id', $userId)
         ->where('reviews.mode', $mode)
+        ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', function ($join) {
             $join->on('review_likes.review_id', '=', 'reviews.id')
             ->where('review_likes.is_deleted', '=', 0);
