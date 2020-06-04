@@ -53,6 +53,7 @@ class UserController extends Controller
         if($request->sort == 'Most Recently Interacted') $return_val = $return_val->orderBy('updated_at', 'desc');
         elseif($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
+        elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
 
 
         /* if($rate=='all'){
