@@ -12,8 +12,8 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         return response()->json([
-            'movies' => $this->getUserMovies($request)/* ,
-            'series' => $this->getUserSeries($request),
+            'movies' => $this->getUserMovies($request),
+            'series' => $this->getUserSeries($request)/* ,
             'movie_reviews' => $this->getUserReviews($request, 1),
             'series_reviews' => $this->getUserReviews($request, 3) */
         ]);
@@ -26,8 +26,8 @@ class UserController extends Controller
         ->leftjoin('rateds', function ($join) use ($userId) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', $userId); })
         ->leftjoin('laters', function ($join) use ($userId) { $join->on('laters.movie_id', '=', 'movies.id')->where('laters.user_id', '=', $userId); })
         ->leftjoin('bans', function ($join) use ($userId) { $join->on('bans.movie_id', '=', 'movies.id')->where('bans.user_id', '=', $userId); })
-        ->where(function ($query) { $query->orWhereNotNull('bans.id')->orWhereNotNull('laters.id')/* ->where('rateds.rate', '>', 0) */; })
-        /* ->leftjoin('rateds as r2', function ($join) { $join->on('r2.movie_id', '=', 'movies.id')->where('r2.user_id', Auth::id()); })
+        //->where(function ($query) { $query->where('rateds.rate', '>', 0)->orWhereNotNull('bans.id')->orWhereNotNull('laters.id'); })
+        ->leftjoin('rateds as r2', function ($join) { $join->on('r2.movie_id', '=', 'movies.id')->where('r2.user_id', Auth::id()); })
         ->leftjoin('laters as l2', function ($join) { $join->on('l2.movie_id', '=', 'movies.id')->where('l2.user_id', '=', Auth::id()); })
         ->leftjoin('bans as b2', function ($join) { $join->on('b2.movie_id', '=', 'movies.id')->where('b2.user_id', '=', Auth::id()); })
         ->select(
@@ -45,7 +45,7 @@ class UserController extends Controller
             'rateds.rate as user_rate_code',
             'laters.id as user_later_id',
             'bans.id as user_ban_id'
-        ) */;
+        );
         // Profile User Interaction Filter
         if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('laters.id');
         elseif(strpos($request->interaction, 'Rate-') !== false) $return_val = $return_val->where('rateds.rate', explode('-', $request->interaction)[1]);
@@ -63,7 +63,7 @@ class UserController extends Controller
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
         elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
-        //else $return_val = $return_val->orderBy('updated_at', 'desc');
+        else $return_val = $return_val->orderBy('updated_at', 'desc');
 
         /* foreach ($return_val as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
