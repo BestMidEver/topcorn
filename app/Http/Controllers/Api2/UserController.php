@@ -41,7 +41,7 @@ class UserController extends Controller
             'movies.vote_count as vote_count',
             'r2.rate as rate_code',
             'l2.id as later_id',
-            'b2.id as ban_id',
+            'b2.id as ban_id'
             /* 'rateds.updated_at as updated_at' */
         )
         /* ->orderBy('rateds.updated_at', 'desc') */;
