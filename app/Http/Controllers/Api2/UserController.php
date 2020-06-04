@@ -58,6 +58,10 @@ class UserController extends Controller
         
         if($request->min_vote_count > 0) $return_val = $return_val->where('movies.vote_count', '>', $request->min_vote_count);
         
+        if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('l2.id');
+        if(in_array('Already Seen', $request->hide)) $return_val = $return_val->whereNot('r2.rate', '>', 0);
+        if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('b2.id');
+
         if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
