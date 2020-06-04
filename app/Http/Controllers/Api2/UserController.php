@@ -45,14 +45,14 @@ class UserController extends Controller
             'rateds.rate as user_rate_code',
             'laters.id as user_later_id',
             'bans.id as user_ban_id',
-            DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL,
-                IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at),
-                IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
+            DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL, IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at), IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
             'rateds.updated_at as rupdated',
             'laters.updated_at as lupdated'
-            /* 'rateds.updated_at as updated_at' */
-        )
-        ->orderBy('updated_at', 'desc');
+        );
+        
+        if($request->order_by == 'Most Recently Interacted') $return_val = $return_val->orderBy('updated_at', 'desc');
+        elseif($request->order_by == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
+
 
         /* if($rate=='all'){
             $return_val = $return_val->where('rateds.rate', '<>', 0)
