@@ -27,7 +27,7 @@ class UserController extends Controller
         ->leftjoin('laters as l2', function ($join) { $join->on('l2.movie_id', '=', 'movies.id')->where('l2.user_id', '=', Auth::id()); })
         ->leftjoin('bans as b2', function ($join) { $join->on('b2.movie_id', '=', 'movies.id')->where('b2.user_id', '=', Auth::id()); })
         ->where(function ($query) {
-            $query->where('rateds.rate_code', '>', 0)
+            $query->where('rateds.rate', '>', 0)
                   ->orWhereNotNull('bans.id')
                   ->orWhereNotNull('laters.id');
         })
