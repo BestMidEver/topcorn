@@ -42,9 +42,9 @@ class UserController extends Controller
             'r2.rate as rate_code',
             'l2.id as later_id',
             'b2.id as ban_id',
-            'rateds.updated_at as updated_at'
+            /* 'rateds.updated_at as updated_at' */
         )
-        ->orderBy('rateds.updated_at', 'desc');
+        /* ->orderBy('rateds.updated_at', 'desc') */;
 
         /* if($rate=='all'){
             $return_val = $return_val->where('rateds.rate', '<>', 0)
