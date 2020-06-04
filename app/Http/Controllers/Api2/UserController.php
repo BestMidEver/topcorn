@@ -139,12 +139,14 @@ class UserController extends Controller
         ->groupBy('reviews.id');
         if($mode==1){
             $review=$review
+            ->leftjoin('movies', 'movies.id', 'reviews.movie_series_id')
             ->leftjoin('rateds as r1', function ($join) {
                 $join->on('r1.movie_id', '=', 'reviews.movie_series_id');
                 $join->on('r1.user_id', '=', 'reviews.user_id');
             });
         }elseif($mode==3){
             $review=$review
+            ->leftjoin('series', 'series.id', 'reviews.movie_series_id')
             ->leftjoin('series_rateds as r1', function ($join) {
                 $join->on('r1.series_id', '=', 'reviews.movie_series_id');
                 $join->on('r1.user_id', '=', 'reviews.user_id');
@@ -161,6 +163,7 @@ class UserController extends Controller
             'users.id as user_id',
             'r1.rate as rate',
             'reviews.movie_series_id as movie_series_id',
+            $mode==1?'movies.en_title as title':'series.en_name as name',
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
             DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
