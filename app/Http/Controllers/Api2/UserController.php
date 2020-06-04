@@ -74,13 +74,13 @@ class UserController extends Controller
     {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
         $return_val = DB::table('series')
-        ->leftjoin('series_rateds', function ($join) use ($userId) { $join->on('series_rateds.movie_id', '=', 'series.id')->where('series_rateds.user_id', $userId); })
-        ->leftjoin('series_laters', function ($join) use ($userId) { $join->on('series_laters.movie_id', '=', 'series.id')->where('series_laters.user_id', '=', $userId); })
-        ->leftjoin('series_bans', function ($join) use ($userId) { $join->on('series_bans.movie_id', '=', 'series.id')->where('series_bans.user_id', '=', $userId); })
+        ->leftjoin('series_rateds', function ($join) use ($userId) { $join->on('series_rateds.series_id', '=', 'series.id')->where('series_rateds.user_id', $userId); })
+        ->leftjoin('series_laters', function ($join) use ($userId) { $join->on('series_laters.series_id', '=', 'series.id')->where('series_laters.user_id', '=', $userId); })
+        ->leftjoin('series_bans', function ($join) use ($userId) { $join->on('series_bans.series_id', '=', 'series.id')->where('series_bans.user_id', '=', $userId); })
         ->where(function ($query) { $query->where('series_rateds.rate', '>', 0)->orWhereNotNull('series_bans.id')->orWhereNotNull('series_laters.id'); })
-        ->leftjoin('series_rateds as r2', function ($join) { $join->on('r2.movie_id', '=', 'series.id')->where('r2.user_id', Auth::id()); })
-        ->leftjoin('series_laters as l2', function ($join) { $join->on('l2.movie_id', '=', 'series.id')->where('l2.user_id', '=', Auth::id()); })
-        ->leftjoin('series_bans as b2', function ($join) { $join->on('b2.movie_id', '=', 'series.id')->where('b2.user_id', '=', Auth::id()); })
+        ->leftjoin('series_rateds as r2', function ($join) { $join->on('r2.series_id', '=', 'series.id')->where('r2.user_id', Auth::id()); })
+        ->leftjoin('series_laters as l2', function ($join) { $join->on('l2.series_id', '=', 'series.id')->where('l2.user_id', '=', Auth::id()); })
+        ->leftjoin('series_bans as b2', function ($join) { $join->on('b2.series_id', '=', 'series.id')->where('b2.user_id', '=', Auth::id()); })
         ->select(
             'series.id as id',
             'series.en_name as name',
