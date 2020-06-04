@@ -51,6 +51,7 @@ class UserController extends Controller
         );
         
         if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('laters.id');
+        elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('bans.id');
         
         if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
