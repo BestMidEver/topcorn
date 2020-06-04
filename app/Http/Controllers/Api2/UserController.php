@@ -67,7 +67,7 @@ class UserController extends Controller
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         } */
 
-        return $return_val->paginate(6);
+        return $return_val->paginate(Auth::User()->pagination);
     }
 
     public function getUserSeries(Request $request)
@@ -120,6 +120,6 @@ class UserController extends Controller
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         } */
 
-        return $return_val->paginate(6);
+        return $return_val->paginate(Auth::User()->pagination);
     }
 }
