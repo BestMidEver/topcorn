@@ -12,8 +12,10 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         return response()->json([
+            'movie_reviews' => $this->getUserReviews($request, 1),
             'movies' => $this->getUserMovies($request),
-            'series' => $this->getUserSeries($request)
+            'series' => $this->getUserSeries($request),
+            'series_reviews' => $this->getUserReviews($request, 3)
         ]);
     }
 
@@ -121,5 +123,50 @@ class UserController extends Controller
         } */
 
         return $return_val->paginate(Auth::User()->pagination);
+    }
+
+    public function getUserReviews(Request $request, $mode)
+    {
+        $userId = $request->id == -1 ? Auth::id() : $request->id;
+        $review = DB::table('reviews')
+        ->where('reviews.user_id', $userId)
+        ->where('reviews.mode', $mode)
+        ->leftjoin('review_likes', function ($join) {
+            $join->on('review_likes.review_id', '=', 'reviews.id')
+            ->where('review_likes.is_deleted', '=', 0);
+        })
+        ->groupBy('reviews.id');
+        if($mode==1){
+            $review=$review
+            ->leftjoin('rateds as r1', function ($join) {
+                $join->on('r1.movie_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            });
+        }elseif($mode==3){
+            $review=$review
+            ->leftjoin('series_rateds as r1', function ($join) {
+                $join->on('r1.series_id', '=', 'reviews.movie_series_id');
+                $join->on('r1.user_id', '=', 'reviews.user_id');
+            });
+        }
+        $review = $review
+        ->select(
+            'reviews.tmdb_author_name as author',
+            'reviews.review as content',
+            'reviews.tmdb_review_id',
+            'reviews.lang as url',
+            'reviews.id as id',
+            'users.name as name',
+            'users.id as user_id',
+            'r1.rate as rate',
+            'reviews.movie_series_id as movie_series_id',
+            DB::raw('COUNT(review_likes.id) as count'),
+            DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
+            DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+        )
+        ->orderBy('is_mine', 'desc')
+        ->orderBy('count', 'desc');
+
+        return $review->paginate(Auth::User()->pagination);
     }
 }
