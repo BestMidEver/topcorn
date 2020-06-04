@@ -50,7 +50,7 @@ class UserController extends Controller
             'laters.updated_at as lupdated'
             /* 'rateds.updated_at as updated_at' */
         )
-        ->orderBy('updated_at)', 'desc');
+        ->orderBy('updated_at', 'desc');
 
         /* if($rate=='all'){
             $return_val = $return_val->where('rateds.rate', '<>', 0)
