@@ -64,6 +64,6 @@ class UserController extends Controller
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         } */
 
-        return $return_val->paginate(Auth::User()->pagination);
+        return $return_val->paginate(2000);
     }
 }
