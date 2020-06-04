@@ -41,7 +41,7 @@ class UserController extends Controller
             'r2.rate as rate_code',
             'l2.id as later_id',
             'b2.id as ban_id',
-            //DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL, IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at), IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
+            DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL, IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at), IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
             'rateds.rate as user_rate_code',
             'laters.id as user_later_id',
             'bans.id as user_ban_id'
