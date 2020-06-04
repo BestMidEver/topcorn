@@ -50,12 +50,13 @@ class UserController extends Controller
             'laters.updated_at as lupdated'
         );
         
-        if($request->sort == 'Most Recently Interacted') $return_val = $return_val->orderBy('updated_at', 'desc');
-        elseif($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
+        if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('later_id');
+        
+        if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
         elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
-
+        else $return_val = $return_val->orderBy('updated_at', 'desc');
 
         /* if($rate=='all'){
             $return_val = $return_val->where('rateds.rate', '<>', 0)
