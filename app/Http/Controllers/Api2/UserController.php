@@ -44,7 +44,8 @@ class UserController extends Controller
             'b2.id as ban_id',
             'rateds.rate as user_rate_code',
             'laters.id as user_later_id',
-            'bans.id as user_ban_id'
+            'bans.id as user_ban_id',
+            DB::raw('IF(rateds.updated_at>laters.updated_at, rateds.updated_at, laters.updated_at) as updated_at'),
             /* 'rateds.updated_at as updated_at' */
         )
         /* ->orderBy('rateds.updated_at', 'desc') */;
