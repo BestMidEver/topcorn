@@ -20,22 +20,12 @@ class UserController extends Controller
     {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
         $return_val = DB::table('movies')
-        ->leftjoin('rateds', function ($join) use ($userId) {
-            $join->on('rateds.movie_id', '=', 'movies.id')
-            ->where('rateds.user_id', $userId);
-        })
-        ->leftjoin('rateds as r2', function ($join) {
-            $join->on('r2.movie_id', '=', 'movies.id')
-            ->where('r2.user_id', Auth::id());
-        })
-        ->leftjoin('laters as l2', function ($join) {
-            $join->on('l2.movie_id', '=', 'movies.id')
-            ->where('l2.user_id', '=', Auth::id());
-        })
-        ->leftjoin('bans as b2', function ($join) {
-            $join->on('b2.movie_id', '=', 'movies.id')
-            ->where('b2.user_id', '=', Auth::id());    
-        })
+        ->leftjoin('rateds', function ($join) use ($userId) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', $userId); })
+        ->leftjoin('laters', function ($join) use ($userId) { $join->on('laters.movie_id', '=', 'movies.id')->where('laters.user_id', '=', $userId); })
+        ->leftjoin('bans', function ($join) use ($userId) { $join->on('bans.movie_id', '=', 'movies.id')->where('bans.user_id', '=', $userId); })
+        ->leftjoin('rateds as r2', function ($join) { $join->on('r2.movie_id', '=', 'movies.id')->where('r2.user_id', Auth::id()); })
+        ->leftjoin('laters as l2', function ($join) { $join->on('l2.movie_id', '=', 'movies.id')->where('l2.user_id', '=', Auth::id()); })
+        ->leftjoin('bans as b2', function ($join) { $join->on('b2.movie_id', '=', 'movies.id')->where('b2.user_id', '=', Auth::id()); })
         ->select(
             'movies.id as id',
             'movies.en_title as title',
@@ -47,7 +37,9 @@ class UserController extends Controller
             'r2.rate as rate_code',
             'l2.id as later_id',
             'b2.id as ban_id',
-            'rateds.rate as user_rate_code'
+            'rateds.rate as user_rate_code',
+            'laters.id as user_later_id',
+            'bans.id as user_ban_id'
             /* 'rateds.updated_at as updated_at' */
         )
         /* ->orderBy('rateds.updated_at', 'desc') */;
@@ -64,6 +56,6 @@ class UserController extends Controller
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
         } */
 
-        return $return_val->paginate(2000);
+        return $return_val->paginate(Auth::User()->pagination);
     }
 }
