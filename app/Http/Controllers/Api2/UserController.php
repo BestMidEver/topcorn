@@ -58,6 +58,7 @@ class UserController extends Controller
         
         if($request->min_vote_count > 0) $return_val = $return_val->where('movies.vote_count', '>', $request->min_vote_count);
         
+        return $request->hide;
         parse_str($request->hide, $hide);
         if(in_array('Watch Later', $hide)) $return_val = $return_val->whereNull('l2.id');
         if(in_array('Already Seen', $hide)) return 1;//$return_val = $return_val->whereNot('r2.rate', '>', 0);
