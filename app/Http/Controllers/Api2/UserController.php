@@ -13,9 +13,9 @@ class UserController extends Controller
     {
         return response()->json([
             /* 'movies' => $this->getUserMovies($request),
-            'series' => $this->getUserSeries($request),
-            'movie_reviews' => $this->getUserReviews($request, 1), */
-            'series_reviews' => $this->getUserReviews($request, 3)
+            'series' => $this->getUserSeries($request), */
+            'movie_reviews' => $this->getUserReviews($request, 1)/* ,
+            'series_reviews' => $this->getUserReviews($request, 3) */
         ]);
     }
 
