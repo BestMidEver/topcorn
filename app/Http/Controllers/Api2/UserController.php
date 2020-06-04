@@ -32,18 +32,17 @@ class UserController extends Controller
             'movies.en_title as title',
             'movies.original_title as original_title',
             'movies.release_date as release_date',
-            'movies.en_poster_path as poster_path',
+            //'movies.en_poster_path as poster_path',
+            'movies.en_cover_path as cover_path',
             'movies.vote_average as vote_average',
             'movies.vote_count as vote_count',
             'r2.rate as rate_code',
             'l2.id as later_id',
             'b2.id as ban_id',
+            DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL, IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at), IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
             'rateds.rate as user_rate_code',
             'laters.id as user_later_id',
-            'bans.id as user_ban_id',
-            DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL, IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at), IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
-            'rateds.updated_at as rupdated',
-            'laters.updated_at as lupdated'
+            'bans.id as user_ban_id'
         );
         // Profile User Interaction Filter
         if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('laters.id');
