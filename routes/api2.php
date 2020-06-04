@@ -34,7 +34,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/getPersonAllData/{id}', 'Api2\PersonController@getPersonData');
 
     // User
-    Route::get('/getUserAllData', 'Api2\UserController@getUserData');
+    Route::post('/getUserAllData', 'Api2\UserController@getUserData');
     
     // Review
     Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');
