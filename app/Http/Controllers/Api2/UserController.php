@@ -12,9 +12,9 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         return response()->json([
-            /* 'movies' => $this->getUserMovies($request),
-            'series' => $this->getUserSeries($request), */
-            'movie_reviews' => $this->getUserReviews($request, 1)/* ,
+            'movies' => $this->getUserMovies($request),
+            'series' => $this->getUserSeries($request)/* ,
+            'movie_reviews' => $this->getUserReviews($request, 1),
             'series_reviews' => $this->getUserReviews($request, 3) */
         ]);
     }
