@@ -50,8 +50,8 @@ class UserController extends Controller
             'laters.updated_at as lupdated'
         );
         
-        if($request->order_by == 'Most Recently Interacted') $return_val = $return_val->orderBy('updated_at', 'desc');
-        elseif($request->order_by == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
+        if($request->sort == 'Most Recently Interacted') $return_val = $return_val->orderBy('updated_at', 'desc');
+        elseif($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
 
 
         /* if($rate=='all'){
