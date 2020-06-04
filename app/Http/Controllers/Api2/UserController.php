@@ -63,7 +63,7 @@ class UserController extends Controller
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
         elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
-        //else $return_val = $return_val->orderBy('updated_at', 'desc');
+        else $return_val = $return_val->orderBy('updated_at', 'desc');
 
         /* foreach ($return_val as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
