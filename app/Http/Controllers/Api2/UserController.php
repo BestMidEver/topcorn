@@ -41,7 +41,7 @@ class UserController extends Controller
             'r2.rate as rate_code',
             'l2.id as later_id',
             'b2.id as ban_id',
-            DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL, IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at), IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
+            //DB::raw('IF(rateds.updated_at>laters.updated_at OR laters.updated_at IS NULL, IF(rateds.updated_at>bans.updated_at OR bans.updated_at IS NULL, rateds.updated_at, bans.updated_at), IF(laters.updated_at>bans.updated_at OR bans.updated_at IS NULL, laters.updated_at, bans.updated_at)) as updated_at'),
             'rateds.rate as user_rate_code',
             'laters.id as user_later_id',
             'bans.id as user_ban_id'
@@ -63,7 +63,7 @@ class UserController extends Controller
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
         elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
-        else $return_val = $return_val->orderBy('updated_at', 'desc');
+        //else $return_val = $return_val->orderBy('updated_at', 'desc');
 
         /* foreach ($return_val as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
