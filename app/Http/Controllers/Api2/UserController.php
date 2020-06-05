@@ -163,7 +163,7 @@ class UserController extends Controller
             'reviews.tmdb_review_id',
             'reviews.lang as url',
             'reviews.id as id',
-            'users.name as name',
+            '',
             'users.id as user_id',
             'r1.rate as rate',
             'reviews.movie_series_id as movie_series_id',
