@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api2;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -12,7 +13,7 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         return response()->json([
-            'user_data' => Auth::user($request->id == -1 ? Auth::id() : $request->id),
+            'user_data' => User::where('id', $request->id == -1 ? Auth::id() : $request->id),
             'movies' => $this->getUserMovies($request),
             'series' => $this->getUserSeries($request),
             'movie_reviews' => $this->getUserReviews($request, 1),
