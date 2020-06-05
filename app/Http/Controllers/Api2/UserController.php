@@ -13,7 +13,7 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         return response()->json([
-            'user_data' => User::where('id', $request->id == -1 ? Auth::id() : $request->id),
+            'user_data' => User::where('id', $request->id == -1 ? Auth::id() : $request->id)->first(),
             'movies' => $this->getUserMovies($request),
             'series' => $this->getUserSeries($request),
             'movie_reviews' => $this->getUserReviews($request, 1),
