@@ -15,7 +15,8 @@ class UserController extends Controller
             'movies' => $this->getUserMovies($request),
             'series' => $this->getUserSeries($request),
             'movie_reviews' => $this->getUserReviews($request, 1),
-            'series_reviews' => $this->getUserReviews($request, 3)
+            'series_reviews' => $this->getUserReviews($request, 3),
+            'people_reviews' => $this->getUserReviews($request, 4)
         ]);
     }
 
@@ -155,6 +156,9 @@ class UserController extends Controller
                 $join->on('r1.series_id', '=', 'reviews.movie_series_id');
                 $join->on('r1.user_id', '=', 'reviews.user_id');
             });
+        }elseif($mode==4){
+            $review=$review
+            ->leftjoin('people', 'people.id', 'reviews.movie_series_id');
         }
         $review = $review
         ->select(
@@ -163,11 +167,11 @@ class UserController extends Controller
             'reviews.tmdb_review_id',
             'reviews.lang as url',
             'reviews.id as id',
-            '',
+            'users.name as name',
             'users.id as user_id',
-            'r1.rate as rate',
+            $mode==4?'people.birthday':'r1.rate as rate',
             'reviews.movie_series_id as movie_series_id',
-            $mode==1?'movies.en_title as title':'series.en_name as name',
+            $mode==1?'movies.en_title as title':($mode==3?'series.en_name as name':'people.name as name'),
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
             DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
