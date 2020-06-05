@@ -47,11 +47,11 @@ class UserController extends Controller
             'bans.id as user_ban_id'
         );
         // Profile User Interaction Filter
-        if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('laters.id');
+        if($request->interaction == 'All') $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', '>', 0)->orWhereNotNull('bans.id')->orWhereNotNull('laters.id'); });
         elseif($request->interaction == 'All Seen') $return_val = $return_val->where('rateds.rate', '>', 0);
         elseif(strpos($request->interaction, 'Rate-') !== false) $return_val = $return_val->where('rateds.rate', explode('-', $request->interaction)[1]);
         elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('bans.id');
-        else $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', '>', 0)->orWhereNotNull('bans.id')->orWhereNotNull('laters.id'); });
+        else $return_val = $return_val->whereNotNull('laters.id');
         // Vote Average Filter
         if($request->min_vote_average > 0) $return_val = $return_val->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
@@ -102,11 +102,11 @@ class UserController extends Controller
             'series_bans.id as user_ban_id'
         );
         // Profile User Interaction Filter
-        if($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('series_laters.id');
+        if($request->interaction == 'All') $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', '>', 0)->orWhereNotNull('series_bans.id')->orWhereNotNull('series_laters.id'); });
         elseif($request->interaction == 'All Seen') $return_val = $return_val->where('series_rateds.rate', '>', 0);
         elseif(strpos($request->interaction, 'Rate-') !== false) $return_val = $return_val->where('series_rateds.rate', explode('-', $request->interaction)[1]);
         elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('series_bans.id');
-        else $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', '>', 0)->orWhereNotNull('series_bans.id')->orWhereNotNull('series_laters.id'); });
+        else $return_val = $return_val->whereNotNull('series_laters.id');
         // Vote Average Filter
         if($request->min_vote_average > 0) $return_val = $return_val->where('series.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
