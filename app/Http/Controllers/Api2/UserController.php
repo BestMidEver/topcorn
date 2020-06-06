@@ -29,7 +29,7 @@ class UserController extends Controller
         ->where('rateds.user_id', $userId)
         ->where('rateds.rate', '>', 0)
         ->groupby('rateds.rate')
-        ->first();
+        ->get();
     }
 
     public function getUserMovies(Request $request)
