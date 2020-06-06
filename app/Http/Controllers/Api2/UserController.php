@@ -29,6 +29,10 @@ class UserController extends Controller
         ->where('rateds.user_id', $userId)
         ->where('rateds.rate', '>', 0)
         ->groupby('rateds.rate')
+        ->select(
+            'rateds.rate',
+            DB::raw('COUNT(rateds.id) as count'),
+        )
         ->get();
     }
 
