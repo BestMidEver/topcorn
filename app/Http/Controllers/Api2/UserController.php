@@ -26,7 +26,6 @@ class UserController extends Controller
     public function getUserDetails(Request $request) {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
         $user = User::where('id', $userId)->first();
-        return $user;
         return (object) array_merge((array) $user, (array) [
             'rated_movies' => $this->rateGrouped($userId, 'rateds'),
             'rated_movie_count' => DB::table('rateds')->where('user_id', $userId)->where('rate', '>', 0)->count(),
