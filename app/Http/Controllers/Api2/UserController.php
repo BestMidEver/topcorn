@@ -25,7 +25,7 @@ class UserController extends Controller
 
     private function getUserDetails($request) {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
-        return $this->rateGrouped($userId, 'rateds')
+        return $this->rateGrouped($userId, 'rateds');
     }
 
     private function rateGrouped($userId, $table) {
