@@ -31,7 +31,7 @@ class UserController extends Controller
         ->groupby('rateds.rate')
         ->select(
             'rateds.rate',
-            DB::raw('COUNT(rateds.id) as count'),
+            DB::raw('COUNT(rateds.id) as count')
         )
         ->get();
     }
