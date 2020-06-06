@@ -13,6 +13,7 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         return response()->json([
+            'details' => $this->getUserDetails($request),
             'user_data' => User::where('id', $request->id == -1 ? Auth::id() : $request->id)->first(),
             'movies' => $this->getUserMovies($request),
             'series' => $this->getUserSeries($request),
@@ -20,6 +21,13 @@ class UserController extends Controller
             'series_reviews' => $this->getUserReviews($request, 3),
             'people_reviews' => $this->getUserReviews($request, 4)
         ]);
+    }
+
+    private function getUserDetails($request) {
+        $userId = $request->id == -1 ? Auth::id() : $request->id;
+        return DB::table('rateds')
+        ->where('rateds.user_id', $userId)
+        ->where('rateds.rate', '>', 0)->first();
     }
 
     public function getUserMovies(Request $request)
