@@ -27,7 +27,9 @@ class UserController extends Controller
         $userId = $request->id == -1 ? Auth::id() : $request->id;
         return DB::table('rateds')
         ->where('rateds.user_id', $userId)
-        ->where('rateds.rate', '>', 0)->first();
+        ->where('rateds.rate', '>', 0)
+        ->groupby('rateds.rate')
+        ->first();
     }
 
     public function getUserMovies(Request $request)
