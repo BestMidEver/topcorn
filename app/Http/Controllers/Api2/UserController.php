@@ -25,13 +25,17 @@ class UserController extends Controller
 
     private function getUserDetails($request) {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
-        return DB::table('rateds')
-        ->where('rateds.user_id', $userId)
-        ->where('rateds.rate', '>', 0)
-        ->groupby('rateds.rate')
+        return $this->rateGrouped($userId, 'rateds')
+    }
+
+    private function rateGrouped($userId, $table) {
+        return DB::table($table)
+        ->where($table.'.user_id', $userId)
+        ->where($table.'.rate', '>', 0)
+        ->groupby($table.'.rate')
         ->select(
-            'rateds.rate',
-            DB::raw('COUNT(rateds.id) as count')
+            $table.'.rate',
+            DB::raw('COUNT('.$table.'.id) as count')
         )
         ->get();
     }
