@@ -27,11 +27,13 @@ class UserController extends Controller
         $userId = $request->id == -1 ? Auth::id() : $request->id;
         return [
             'rated_movies' => $this->rateGrouped($userId, 'rateds'),
+            'rated_movie_count' => DB::table('rateds')->where('user_id', $userId)->where('rate', '>', 0)->count(),
             'rated_series' => $this->rateGrouped($userId, 'series_rateds'),
+            'rated_series_count' => DB::table('series_rateds')->where('user_id', $userId)->where('rate', '>', 0)->count(),
             'follower_count' => DB::table('follows')->where('follows.object_id', $userId)->count(),
             'following_count' => DB::table('follows')->where('follows.subject_id', $userId)->count(),
-            'review_count' => DB::table('reviews')->where('reviews.user_id', $userId)->count(),
-            'review_like_count' => DB::table('reviews')->where('reviews.user_id', '=', $userId)->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')->where('review_likes.is_deleted', '=', 0)->whereNotNull('review_likes.id')->count()
+            'review_like_count' => DB::table('reviews')->where('reviews.user_id', '=', $userId)->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')->where('review_likes.is_deleted', '=', 0)->whereNotNull('review_likes.id')->count(),
+            'review_count' => DB::table('reviews')->where('reviews.user_id', $userId)->count()
         ];
     }
 
