@@ -92,9 +92,9 @@ class UserController extends Controller
         elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('bans.id');
         else $return_val = $return_val->whereNotNull('laters.id');
         // Vote Average Filter
-        if($request->min_vote_average > 0) $return_val = $return_val->where('movies.vote_average', '>', $request->min_vote_average);
+        if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $return_val = $return_val->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
-        if($request->min_vote_count > 0) $return_val = $return_val->where('movies.vote_count', '>', $request->min_vote_count);
+        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $return_val = $return_val->where('movies.vote_count', '>', $request->min_vote_count);
         // User Hide Filter
         if(strpos($request->hide, 'Watch Later') !== false) $return_val = $return_val->whereNull('l2.id');
         if(strpos($request->hide, 'Already Seen') !== false) $return_val = $return_val->where(function ($query) { $query->where('r2.rate', '=', 0)->orWhereNull('r2.rate'); });
