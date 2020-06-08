@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api2;
 
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -113,12 +114,12 @@ class UserController extends Controller
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
         elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
         else $return_val = $return_val->orderBy('updated_at', 'desc');
-
-        /* foreach ($return_val as $row) {
+        $return_val = $return_val->paginate(Auth::User()->pagination);
+        foreach ($return_val as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
-        } */
+        }
 
-        return $return_val->paginate(Auth::User()->pagination);
+        return $return_val;
     }
 
     public function getUserSeries(Request $request)
