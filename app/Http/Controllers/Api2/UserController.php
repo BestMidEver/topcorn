@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         return response()->json([
             //'details' => $this->getUserDetails($request),
-            'user_data' => User::where('id', $request->id == -1 ? Auth::id() : $request->id)->first(),
+            'user_data' => User::where('id', $request->id)->first(),
             'movies' => $this->getUserMovies($request),
             'series' => $this->getUserSeries($request),
             'movie_reviews' => $this->getUserReviews($request, 1),
@@ -31,18 +31,17 @@ class UserController extends Controller
     }
 
     public function getUserDetails($id) {
-        $userId = $id == -1 ? Auth::id() : $id;
-        $user = User::where('id', $userId)->first();
+        $user = User::where('id', $id)->first();
         return [
             'user_data' => $user,
-            'rated_movies' => $this->rateGrouped($userId, 'rateds'),
-            'rated_movie_count' => DB::table('rateds')->where('user_id', $userId)->where('rate', '>', 0)->count(),
-            'rated_series' => $this->rateGrouped($userId, 'series_rateds'),
-            'rated_series_count' => DB::table('series_rateds')->where('user_id', $userId)->where('rate', '>', 0)->count(),
-            'follower_count' => DB::table('follows')->where('follows.object_id', $userId)->count(),
-            'following_count' => DB::table('follows')->where('follows.subject_id', $userId)->count(),
-            'review_like_count' => DB::table('reviews')->where('reviews.user_id', '=', $userId)->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')->where('review_likes.is_deleted', '=', 0)->whereNotNull('review_likes.id')->count(),
-            'review_count' => DB::table('reviews')->where('reviews.user_id', $userId)->count()
+            'rated_movies' => $this->rateGrouped($id, 'rateds'),
+            'rated_movie_count' => DB::table('rateds')->where('user_id', $id)->where('rate', '>', 0)->count(),
+            'rated_series' => $this->rateGrouped($id, 'series_rateds'),
+            'rated_series_count' => DB::table('series_rateds')->where('user_id', $id)->where('rate', '>', 0)->count(),
+            'follower_count' => DB::table('follows')->where('follows.object_id', $id)->count(),
+            'following_count' => DB::table('follows')->where('follows.subject_id', $id)->count(),
+            'review_like_count' => DB::table('reviews')->where('reviews.user_id', '=', $id)->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')->where('review_likes.is_deleted', '=', 0)->whereNotNull('review_likes.id')->count(),
+            'review_count' => DB::table('reviews')->where('reviews.user_id', $id)->count()
         ];
     }
 
@@ -66,7 +65,7 @@ class UserController extends Controller
 
     public function getUserMovies(Request $request)
     {
-        $userId = $request->id == -1 ? Auth::id() : $request->id;
+        $userId = $request->id;
         $hide = $request->hide ? implode(',', $request->hide) : 'Hidden';
         $return_val = DB::table('movies')
         ->leftjoin('rateds', function ($join) use ($userId) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', $userId); })
@@ -124,7 +123,7 @@ class UserController extends Controller
 
     public function getUserSeries(Request $request)
     {
-        $userId = $request->id == -1 ? Auth::id() : $request->id;
+        $userId = $request->id;
         $return_val = DB::table('series')
         ->leftjoin('series_rateds', function ($join) use ($userId) { $join->on('series_rateds.series_id', '=', 'series.id')->where('series_rateds.user_id', $userId); })
         ->leftjoin('series_seens', function ($join) use ($userId) { $join->on('series_seens.series_id', '=', 'series.id')->where('series_seens.user_id', $userId); })
@@ -180,7 +179,7 @@ class UserController extends Controller
 
     public function getUserReviews(Request $request, $mode)
     {
-        $userId = $request->id == -1 ? Auth::id() : $request->id;
+        $userId = $request->id;
         $review = DB::table('reviews')
         ->where('reviews.user_id', $userId)
         ->where('reviews.mode', $mode)
