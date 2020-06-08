@@ -116,7 +116,7 @@ class UserController extends Controller
         else $return_val = $return_val->orderBy('updated_at', 'desc');
         $return_val = $return_val->paginate(Auth::User()->pagination);
         foreach ($return_val as $row) {
-            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
+            $row->updated_at = explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans());
         }
 
         return $return_val;
