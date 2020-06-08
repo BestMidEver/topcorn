@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function getSimpleUserData(Request $request)
+    {
+        return response()->json([
+            'id' => Auth::id()
+        ]);
+    }
+
     public function getUserData(Request $request)
     {
         return response()->json([
