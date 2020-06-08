@@ -90,7 +90,7 @@ class UserController extends Controller
         elseif($request->interaction == 'All Seen') $return_val = $return_val->where('rateds.rate', '>', 0);
         elseif(strpos($request->interaction, 'Rate-') !== false) $return_val = $return_val->where('rateds.rate', explode('-', $request->interaction)[1]);
         elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('bans.id');
-        elseif($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('laters.id');
+        else $return_val = $return_val->whereNotNull('laters.id');
         // Vote Average Filter
         if($request->min_vote_average > 0) $return_val = $return_val->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
@@ -104,7 +104,7 @@ class UserController extends Controller
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
         elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
-        elseif($request->sort == 'Most Recently Interacted') $return_val = $return_val->orderBy('updated_at', 'desc');
+        else $return_val = $return_val->orderBy('updated_at', 'desc');
 
         /* foreach ($return_val as $row) {
             $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
