@@ -90,7 +90,7 @@ class UserController extends Controller
         elseif($request->interaction == 'All Seen') $return_val = $return_val->where('rateds.rate', '>', 0);
         elseif(strpos($request->interaction, 'Rate-') !== false) $return_val = $return_val->where('rateds.rate', explode('-', $request->interaction)[1]);
         elseif($request->interaction == 'Hidden') $return_val = $return_val->whereNotNull('bans.id');
-        else $return_val = $return_val->whereNotNull('laters.id');
+        elseif($request->interaction == 'Watch Later') $return_val = $return_val->whereNotNull('laters.id');
         // Vote Average Filter
         if($request->min_vote_average > 0) $return_val = $return_val->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
