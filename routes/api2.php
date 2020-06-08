@@ -36,6 +36,7 @@ Route::middleware('auth:api')->group(function () {
     // User
     Route::post('/getUserAllData', 'Api2\UserController@getUserData');
     Route::get('/getUserDetailData/{id}', 'Api2\UserController@getUserDetails');
+    Route::post('/getUserInteractionSet', 'Api2\UserController@getUserInteractionSet');
     
     // Review
     Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');

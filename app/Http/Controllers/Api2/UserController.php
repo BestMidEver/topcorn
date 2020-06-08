@@ -51,6 +51,12 @@ class UserController extends Controller
         ->get();
     }
 
+    public function getUserInteractionSet(Request $request) {
+        if($request->type === 'movie') return $this->getUserMovies($request);
+        if($request->type === 'series') return $this->getUserSeries($request);
+        if($request->type === 'comment') return $this->getUserReviews($request, $request->mode);
+    }
+
     public function getUserMovies(Request $request)
     {
         $userId = $request->id == -1 ? Auth::id() : $request->id;
