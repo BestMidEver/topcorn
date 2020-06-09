@@ -218,7 +218,7 @@ class UserController extends Controller
             'users.id as user_id',
             $mode==4?'people.birthday':'r1.rate as rate',
             'reviews.movie_series_id as movie_series_id',
-            $mode==1?'movies.en_title as title':($mode==3?'series.en_name as name':'people.name as name'),
+            ($mode==1?'movies.en_title':($mode==3?'series.en_name':'people.name')).' as obj_name',
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
             DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine'),
