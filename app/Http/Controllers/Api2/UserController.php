@@ -210,6 +210,7 @@ class UserController extends Controller
         $review = $review
         ->select(
             'reviews.tmdb_author_name as author',
+            'reviews.created_at',
             'reviews.review as content',
             'reviews.tmdb_review_id',
             'reviews.lang as url',
