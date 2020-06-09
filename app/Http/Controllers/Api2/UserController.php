@@ -180,9 +180,8 @@ class UserController extends Controller
 
     public function getUserReviews(Request $request, $mode)
     {
-        $userId = $request->id;
         $review = DB::table('reviews')
-        ->where('reviews.user_id', $userId)
+        ->where('reviews.user_id',  $request->id)
         ->where('reviews.mode', $mode)
         ->leftjoin('users', 'users.id', '=', 'reviews.user_id')
         ->leftjoin('review_likes', function ($join) {
