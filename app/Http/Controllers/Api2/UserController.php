@@ -223,7 +223,7 @@ class UserController extends Controller
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
             DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine'),
-            DB::raw('IF(reviews.mode=1,"movie","series") as type')
+            DB::raw('CASE WHEN reviews.mode=1 THEN "movie" WHEN reviews.mode=3 THEN "series" ELSE "person" END as type')
         )
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
