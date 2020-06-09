@@ -226,7 +226,7 @@ class UserController extends Controller
         )
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc')
-        ->orderBy('reviews.updated_at', 'desc');
+        ->orderBy('reviews.created_at', 'desc');
 
         return $review->paginate(Auth::User()->pagination);
     }
