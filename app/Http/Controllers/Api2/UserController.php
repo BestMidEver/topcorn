@@ -225,7 +225,8 @@ class UserController extends Controller
             DB::raw('CASE WHEN reviews.mode=1 THEN "movie" WHEN reviews.mode=3 THEN "series" ELSE "person" END as type')
         )
         ->orderBy('is_mine', 'desc')
-        ->orderBy('count', 'desc');
+        ->orderBy('count', 'desc')
+        ->orderBy('reviews.updated_at', 'desc');
 
         return $review->paginate(Auth::User()->pagination);
     }
