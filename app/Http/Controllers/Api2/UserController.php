@@ -21,7 +21,6 @@ class UserController extends Controller
     public function getUserData(Request $request)
     {
         return response()->json([
-            //'details' => $this->getUserDetails($request),
             'user_data' => User::where('id', $request->id)->first(),
             'movies' => $this->getUserMovies($request),
             'series' => $this->getUserSeries($request),
@@ -223,7 +222,8 @@ class UserController extends Controller
             $mode==1?'movies.en_title as title':($mode==3?'series.en_name as name':'people.name as name'),
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
-            DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+            DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine'),
+            DB::raw('IF(reviews.mode=1,"movie","series") as type')
         )
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
