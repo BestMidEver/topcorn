@@ -179,7 +179,7 @@ class UserController extends Controller
     }
 
     public function getUserReviews(Request $request, $mode)
-    {return $mode;
+    {
         $review = DB::table('reviews')
         ->where('reviews.user_id',  $request->id)
         ->where('reviews.mode', $mode)
