@@ -109,11 +109,11 @@ class UserController extends Controller
             if(strpos($hide, 'Hidden') !== false) $return_val = $return_val->whereNull('b2.id');
         }
         // Sorting
-        if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
-        elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
-        elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc');
-        elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
-        else $return_val = $return_val->orderBy('updated_at', 'desc');
+        if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('vote_average', 'desc');
+        elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc');
+        elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc')->orderBy('popularity', 'desc');
+        elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc')->orderBy('popularity', 'desc');
+        else $return_val = $return_val->orderBy('updated_at', 'desc')->orderBy('popularity', 'desc');
         $return_val = $return_val->paginate(Auth::User()->pagination);
         foreach ($return_val as $row) {
             $row->updated_at = Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans();
@@ -125,6 +125,7 @@ class UserController extends Controller
     public function getUserSeries(Request $request)
     {
         $userId = $request->id;
+        $hide = $request->hide ? implode(',', $request->hide) : 'Hidden';
         $return_val = DB::table('series')
         ->leftjoin('series_rateds', function ($join) use ($userId) { $join->on('series_rateds.series_id', '=', 'series.id')->where('series_rateds.user_id', $userId); })
         ->leftjoin('series_seens', function ($join) use ($userId) { $join->on('series_seens.series_id', '=', 'series.id')->where('series_seens.user_id', $userId); })
@@ -161,21 +162,21 @@ class UserController extends Controller
         // Vote Count Filter
         if($request->vote_count > 0 && $request->vote_count != 'All') $return_val = $return_val->where('series.vote_count', '>', $request->vote_count);
         // User Hide Filter
-        if(strpos($request->hide, 'Watch Later') !== false) $return_val = $return_val->whereNull('l2.id');
-        if(strpos($request->hide, 'Already Seen') !== false) $return_val = $return_val->where(function ($query) { $query->where('r2.rate', '=', 0)->orWhereNull('r2.rate'); });
-        if(strpos($request->hide, 'Hidden') !== false) $return_val = $return_val->whereNull('b2.id');
+        if(strpos($hide, 'Watch Later') !== false) $return_val = $return_val->whereNull('l2.id');
+        if(strpos($hide, 'Already Seen') !== false) $return_val = $return_val->where(function ($query) { $query->where('r2.rate', '=', 0)->orWhereNull('r2.rate'); });
+        if(strpos($hide, 'Hidden') !== false) $return_val = $return_val->whereNull('b2.id');
         // Sorting
-        if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc');
-        elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc');
-        elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('first_air_date', 'desc');
-        elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc');
-        else $return_val = $return_val->orderBy('updated_at', 'desc');
+        if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('vote_average', 'desc');
+        elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc');
+        elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('first_air_date', 'desc')->orderBy('popularity', 'desc');
+        elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc')->orderBy('popularity', 'desc');
+        else $return_val = $return_val->orderBy('updated_at', 'desc')->orderBy('popularity', 'desc');
+        $return_val = $return_val->paginate(Auth::User()->pagination);
+        foreach ($return_val as $row) {
+            $row->updated_at = Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans();
+        }
 
-        /* foreach ($return_val as $row) {
-            $row->updated_at = timeAgo(explode(' ', Carbon::createFromTimeStamp(strtotime($row->updated_at))->diffForHumans()));
-        } */
-
-        return $return_val->paginate(Auth::User()->pagination);
+        return $return_val;
     }
 
     public function getUserReviews(Request $request, $mode)
