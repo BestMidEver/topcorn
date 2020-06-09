@@ -169,7 +169,7 @@ class UserController extends Controller
         if($request->sort == 'Most Popular') $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('vote_average', 'desc');
         elseif($request->sort == 'Top Rated') $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc');
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('first_air_date', 'desc')->orderBy('popularity', 'desc');
-        elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_title', 'asc')->orderBy('popularity', 'desc');
+        elseif($request->sort == 'Alphabetical Order') $return_val = $return_val->orderBy('en_name', 'asc')->orderBy('popularity', 'desc');
         else $return_val = $return_val->orderBy('updated_at', 'desc')->orderBy('popularity', 'desc');
         $return_val = $return_val->paginate(Auth::User()->pagination);
         foreach ($return_val as $row) {
