@@ -223,10 +223,11 @@ class UserController extends Controller
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
             DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine'),
             DB::raw('CASE WHEN reviews.mode=1 THEN "movie" WHEN reviews.mode=3 THEN "series" ELSE "person" END as type')
-        )
-        ->orderBy('is_mine', 'desc')
-        ->orderBy('count', 'desc')
-        ->orderBy('reviews.created_at', 'desc');
+        )/* 
+        ->orderBy('is_mine', 'desc') */;
+        // Sorting
+        if($request->sort == 'Top Rated') $review = $review->orderBy('count', 'desc')->orderBy('reviews.created_at', 'desc');
+        else $review = $review->orderBy('reviews.created_at', 'desc')->orderBy('count', 'desc');
 
         return $review->paginate(Auth::User()->pagination);
     }
