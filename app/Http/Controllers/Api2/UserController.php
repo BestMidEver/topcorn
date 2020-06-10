@@ -239,7 +239,7 @@ class UserController extends Controller
     {
         $friends = DB::table('follows')
         //->where($request->mode == 'following' ? 'follows.subject_id':'follows.object_id', '=', $request->id)
-        //->where('follows.is_deleted', 0)
+        ->where('follows.is_deleted', 0)
         ->leftjoin('users as follower', 'follower.id', 'follows.subject_id')
         ->leftjoin('users as following', 'following.id', 'follows.object_id')
         ->orderBy('follows.updated_at', 'desc')
