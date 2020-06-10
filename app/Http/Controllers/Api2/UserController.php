@@ -252,7 +252,7 @@ class UserController extends Controller
         )
         ->havingRaw('COUNT(1)>1')
         ->groupBy(DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL)'));
-        elseif($request->mode == 'Follows') $friends = $friends->where('follows.object_id', $request->id)
+        elseif($request->mode == 'Followers') $friends = $friends->where('follows.object_id', $request->id)
         ->select(
             'follower.id as id',
             'follower.name',
