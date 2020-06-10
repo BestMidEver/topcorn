@@ -260,10 +260,10 @@ class UserController extends Controller
         );
         else $friends = $friends = $friends->where(function ($query) use ($request) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); })
         ->select(
-            'follower.name as followername',
-            'following.name as followingname',
             DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL) as id'),
-            DB::raw('IF(follower.id='.$request->id.', following.name, follower.name) as name')
+            DB::raw('IF(follower.id='.$request->id.', following.name, follower.name) as name'),
+            DB::raw('IF(follower.id='.$request->id.', following.facebook_profile_pic, follower.facebook_profile_pic) as facebook_profile_path'),
+            DB::raw('IF(follower.id='.$request->id.', following.profile_pic, follower.profile_pic) as profile_path'),
         )
         ->havingRaw('COUNT(1)>1')
         ->groupBy(DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL)'));
