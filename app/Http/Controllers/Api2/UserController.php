@@ -266,6 +266,7 @@ class UserController extends Controller
             DB::raw('IF(follower.id='.$request->id.', following.name, follower.name) as name'),
             DB::raw('COUNT(1) as count')
         )
+        ->where('count', '>', 1)
         ->groupBy(DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL)'));
 
         return $friends->paginate(Auth::User()->pagination);
