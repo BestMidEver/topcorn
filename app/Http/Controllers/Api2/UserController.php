@@ -253,12 +253,16 @@ class UserController extends Controller
         if($request->mode == 'Following') $friends = $friends->where('follows.subject_id', $request->id)
         ->select(
             'following.id as id',
-            'following.name'
+            'following.name',
+            'following.facebook_profile_pic as facebook_profile_path',
+            'following.profile_pic as profile_path'
         );
         elseif($request->mode == 'Follows') $friends = $friends->where('follows.object_id', $request->id)
         ->select(
             'follower.id as id',
-            'follower.name'
+            'follower.name',
+            'follower.facebook_profile_pic as facebook_profile_path',
+            'follower.profile_pic as profile_path'
         );
         else $friends = $friends = $friends->where(function ($query) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); });
 
