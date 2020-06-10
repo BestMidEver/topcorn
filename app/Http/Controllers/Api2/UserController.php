@@ -242,13 +242,7 @@ class UserController extends Controller
         ->where('follows.is_deleted', 0)
         ->leftjoin('users as follower', 'follower.id', 'follows.subject_id')
         ->leftjoin('users as following', 'following.id', 'follows.object_id')
-        ->orderBy('follows.updated_at', 'desc')
-        /* ->select(
-            ($request->mode != 'following' ? 'users.id':'u1.id').' as user_id',
-            ($request->mode != 'following' ? 'users.name':'u1.name').' as name',
-            ($request->mode != 'following' ? 'users.facebook_profile_pic':'u1.facebook_profile_pic').' as facebook_profile_path',
-            ($request->mode != 'following' ? 'users.profile_pic':'u1.profile_pic').' as profile_path'
-        ) */;
+        ->orderBy('follows.updated_at', 'desc');
         // Friend type filter
         if($request->mode == 'Following') $friends = $friends->where('follows.subject_id', $request->id)
         ->select(
