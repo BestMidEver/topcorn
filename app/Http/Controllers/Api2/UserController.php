@@ -259,11 +259,11 @@ class UserController extends Controller
             'follower.profile_pic as profile_path'
         );
         else $friends = $friends = $friends->where(function ($query) use ($request) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); })
-        ->groupBy('id')
+        ->groupBy('asd')
         ->select(
             'follower.name as followername',
             'following.name as followingname',
-            DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', follows.id, follower.id), NULL) as id'),
+            DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', follows.id, follower.id), NULL) as asd'),
             DB::raw('IF(follower.id='.$request->id.', follows.name, follower.name) as name')
         );
 
