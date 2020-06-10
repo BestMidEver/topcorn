@@ -236,7 +236,7 @@ class UserController extends Controller
     }
 
     public function getFriends(Request $request)
-    {return $request;
+    {
         $friends = DB::table('follows')
         ->where($request->mode == 'following' ? 'follows.subject_id':'follows.object_id', '=', $request->id)
         ->where('follows.is_deleted', '=', 0)
