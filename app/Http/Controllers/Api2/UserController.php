@@ -260,7 +260,7 @@ class UserController extends Controller
         );
         else $friends = $friends = $friends->where(function ($query) use ($request) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); })
         ->select(
-            'follower.name',
+            'following.name',
             DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, follower.id, NULL) as id')
         );
 
