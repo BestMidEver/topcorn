@@ -243,21 +243,7 @@ class UserController extends Controller
         ->leftjoin('users as following', 'following.id', 'follows.object_id')
         ->orderBy('follows.updated_at', 'desc');
         // Friend type filter
-        if($request->mode == 'Following') $friends = $friends->where('follows.subject_id', $request->id)
-        ->select(
-            'following.id as id',
-            'following.name',
-            'following.facebook_profile_pic as facebook_profile_path',
-            'following.profile_pic as profile_path'
-        );
-        elseif($request->mode == 'Follows') $friends = $friends->where('follows.object_id', $request->id)
-        ->select(
-            'follower.id as id',
-            'follower.name',
-            'follower.facebook_profile_pic as facebook_profile_path',
-            'follower.profile_pic as profile_path'
-        );
-        else $friends = $friends = $friends->where(function ($query) use ($request) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); })
+        if($request->mode == 'Friends') $friends = $friends = $friends->where(function ($query) use ($request) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); })
         ->select(
             DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL) as id'),
             DB::raw('IF(follower.id='.$request->id.', following.name, follower.name) as name'),
@@ -266,6 +252,20 @@ class UserController extends Controller
         )
         ->havingRaw('COUNT(1)>1')
         ->groupBy(DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL)'));
+        elseif($request->mode == 'Follows') $friends = $friends->where('follows.object_id', $request->id)
+        ->select(
+            'follower.id as id',
+            'follower.name',
+            'follower.facebook_profile_pic as facebook_profile_path',
+            'follower.profile_pic as profile_path'
+        );
+        else $friends = $friends->where('follows.subject_id', $request->id)
+        ->select(
+            'following.id as id',
+            'following.name',
+            'following.facebook_profile_pic as facebook_profile_path',
+            'following.profile_pic as profile_path'
+        );
 
         return $friends->paginate(Auth::User()->pagination);
     }
