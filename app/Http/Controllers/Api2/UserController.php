@@ -239,16 +239,28 @@ class UserController extends Controller
     {
         $friends = DB::table('follows')
         //->where($request->mode == 'following' ? 'follows.subject_id':'follows.object_id', '=', $request->id)
-        ->where('follows.is_deleted', '=', 1)
-        /* ->leftjoin('users', 'users.id', '=', 'follows.subject_id')
-        ->leftjoin('users as u1', 'u1.id', '=', 'follows.object_id')
+        ->where('follows.is_deleted', 0)
+        ->leftjoin('users as follower', 'follower.id', 'follows.subject_id')
+        ->leftjoin('users as following', 'following.id', 'follows.object_id')
         ->orderBy('follows.updated_at', 'desc')
-        ->select(
+        /* ->select(
             ($request->mode != 'following' ? 'users.id':'u1.id').' as user_id',
             ($request->mode != 'following' ? 'users.name':'u1.name').' as name',
             ($request->mode != 'following' ? 'users.facebook_profile_pic':'u1.facebook_profile_pic').' as facebook_profile_path',
             ($request->mode != 'following' ? 'users.profile_pic':'u1.profile_pic').' as profile_path'
         ) */;
+        // Friend type filter
+        if($request->mode == 'Following') $friends = $friends->where('follows.subject_id', $request->id)
+        ->select(
+            'following.id as id',
+            'following.name'
+        );
+        elseif($request->mode == 'Follows') $friends = $friends->where('follows.object_id', $request->id)
+        ->select(
+            'follower.id as id',
+            'follower.name'
+        );
+        else $friends = $friends = $friends->where(function ($query) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); });
 
         return $friends->paginate(Auth::User()->pagination);
     }
