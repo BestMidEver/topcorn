@@ -263,8 +263,7 @@ class UserController extends Controller
             'follower.name as followername',
             'following.name as followingname',
             DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL) as id'),
-            DB::raw('IF(follower.id='.$request->id.', following.name, follower.name) as name'),
-            DB::raw('COUNT(1) as count')
+            DB::raw('IF(follower.id='.$request->id.', following.name, follower.name) as name')
         )
         ->havingRaw('COUNT(1)>1')
         ->groupBy(DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, IF(follower.id='.$request->id.', following.id, follower.id), NULL)'));
