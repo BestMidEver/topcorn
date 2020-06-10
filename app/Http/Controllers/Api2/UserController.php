@@ -62,6 +62,7 @@ class UserController extends Controller
         if($request->type === 'movie') return $this->getUserMovies($request);
         if($request->type === 'series') return $this->getUserSeries($request);
         if($request->type === 'comment') return $this->getUserReviews($request, $request->mode);
+        if($request->type === 'friends') return $this->getFriends($request);
     }
 
     public function getUserMovies(Request $request)
