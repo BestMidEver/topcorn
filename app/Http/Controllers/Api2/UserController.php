@@ -258,7 +258,11 @@ class UserController extends Controller
             'follower.facebook_profile_pic as facebook_profile_path',
             'follower.profile_pic as profile_path'
         );
-        else $friends = $friends = $friends->where(function ($query) use ($request) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); });
+        else $friends = $friends = $friends->where(function ($query) use ($request) { $query->where('follows.subject_id', $request->id)->orWhere('follows.object_id', $request->id); })
+        ->select(
+            'follower.name',
+            DB::raw('IF(follower.id IS NOT NULL AND following.id IS NOT NULL, follower.id, NULL) as id')
+        );
 
         return $friends->paginate(Auth::User()->pagination);
     }
