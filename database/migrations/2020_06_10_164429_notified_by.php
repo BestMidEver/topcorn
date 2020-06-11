@@ -15,7 +15,7 @@ class NotifiedBy extends Migration
     {
         Schema::create('notified_by', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('mode')->default(0);//  0-user
+            $table->tinyInteger('mode');//  0-user
             $table->integer('subject_id');
             $table->integer('object_id');
             $table->timestamps();
