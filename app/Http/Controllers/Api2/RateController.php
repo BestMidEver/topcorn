@@ -276,7 +276,7 @@ class RateController extends Controller
             }
         } else {
             $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->obj_id), array('is_deleted' => 1));
-            Notification::where('multi_id', Auth::id())->where('user_id', $obj_id)->where('mode', 8)->delete();
+            Notification::where('multi_id', Auth::id())->where('user_id', $request->obj_id)->where('mode', 8)->delete();
         }
 
         return Response::make("", 204);
