@@ -267,7 +267,7 @@ class RateController extends Controller
 
 
     public function followAssign(Request $request)
-    {
+    {return $request;
         if($request->follow > 0) {   
             $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->obj_id), array('is_deleted' => 0));
             if($follow->wasRecentlyCreated && User::find($request->obj_id)->when_user_interaction > 0){
