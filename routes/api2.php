@@ -29,11 +29,11 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/getQuickVote/{type}/{objId?}', 'Api2\QuickVoteController@getQuickVoteAssign');
 
     // Movie Series
-    Route::get('/getMovieSeriesAllData/{type}/{objId}/{season?}/{episode?}', 'Api2\MovieSeriesController@getMovieSeriesDataAssign');
+    Route::get('/getMovieSeriesAllData/{type}/{objId}/{season?}/{episode?}', 'Api2\MovieSeriesController@getMovieSeriesDataAssign')->middleware('UpdateRecents:'.$type);
     //Route::get('/movieSeriesCardData/{type}/{objId}', 'Api2\MovieSeriesController@movieSeriesCardData');
 
     // Person
-    Route::get('/getPersonAllData/{id}', 'Api2\PersonController@getPersonData');
+    Route::get('/getPersonAllData/{id}', 'Api2\PersonController@getPersonData')->middleware('UpdateRecents:person');
 
     // User
     Route::post('/getUserAllData', 'Api2\UserController@getUserData')->middleware('UpdateRecents:user');
