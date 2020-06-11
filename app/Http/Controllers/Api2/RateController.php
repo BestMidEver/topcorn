@@ -266,12 +266,7 @@ class RateController extends Controller
 
 
 
-    public function followAssign(Request $request, $type)
-    {
-        if($type === 'user') return $this->followUser($request);
-    }
-
-    private function followUser($request)
+    public function followAssign(Request $request)
     {
         if($request->follow > 0) {   
             $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->obj_id), array('is_deleted' => 0));
