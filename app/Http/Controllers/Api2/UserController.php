@@ -52,7 +52,7 @@ class UserController extends Controller
         $following_id = $following ? $following->id : null;
         $follows = DB::table('follows')->where('object_id', Auth::id())->where('subject_id', $id)->where('is_deleted', 0)->first();
         $follows_id = $follows ? $follows->id : null;
-        $notified_by_id = DB::table('notified_by')->where('subject_id', $id)->where('object_id', Auth::id())->where('mode', 0)->first();
+        $notified_by_id = DB::table('notified_by')->where('subject_id', Auth::id())->where('object_id', $id)->where('mode', 0)->first();
         $notified_by_id = $notified_by_id ? $notified_by_id->id : null;
         return ['following_id' => $following_id, 'follows_id' => $follows_id, 'notified_by_id' => $notified_by_id, 'obj_id' => $id];
     }
