@@ -9,13 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MovieSeriesController extends Controller
 {
-    public function getMovieSeriesDataAssign(Request $request, $type, $objId, $season = -1, $episode = -1)
-    {
-        if($type === 'movie') return $this->getMovieData($request, $objId);
-        if($type === 'series') return $this->getSeriesData($request, $objId, $season, $episode);
-    }
-
-    private function getMovieData($request, $objId)
+    public function getMovieData(Request $request, $objId)
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('movie', $objId),
@@ -23,7 +17,7 @@ class MovieSeriesController extends Controller
         ]);
     }
     
-    private function getSeriesData($request, $objId, $season = -1, $episode = -1)
+    private function getSeriesData(Request $request, $objId, $season = -1, $episode = -1)
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('series', $objId, $season, $episode),
