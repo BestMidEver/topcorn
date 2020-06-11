@@ -11,6 +11,7 @@ use App\Model\Follow;
 use App\Model\Review;
 use App\Model\Series_ban;
 use App\Jobs\SuckMovieJob;
+use App\Model\Notified_by;
 use App\Model\Series_seen;
 use App\Jobs\SuckSeriesJob;
 use App\Model\Notification;
@@ -278,6 +279,24 @@ class RateController extends Controller
             $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->obj_id), array('is_deleted' => 1));
             Notification::where('multi_id', Auth::id())->where('user_id', $request->obj_id)->where('mode', 8)->delete();
         }
+
+        return Response::make("", 204);
+    }
+
+
+
+
+    public function notifiedByAssign(Request $request, $type)
+    {
+        if($type === 'user') return $this->notifiedBy($request, 0);
+    }
+    
+    public function notifiedBy(Request $request, $mode)
+    {
+        if($request->notified_by > 0) {   
+            Notified_by::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->obj_id, 'mode' => $mode));
+        }
+        else Notified_by::where('subject_id', Auth::id())->where('object_id', $request->obj_id)->where('mode', $mode)->delete();
 
         return Response::make("", 204);
     }
