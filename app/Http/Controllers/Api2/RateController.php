@@ -2,21 +2,25 @@
 
 namespace App\Http\Controllers\Api2;
 
+use App\User;
 use App\Model\Ban;
 use Carbon\Carbon;
 use App\Model\Later;
 use App\Model\Rated;
+use App\Model\Follow;
 use App\Model\Review;
 use App\Model\Series_ban;
 use App\Jobs\SuckMovieJob;
 use App\Model\Series_seen;
 use App\Jobs\SuckSeriesJob;
+use App\Model\Notification;
 use App\Model\Series_later;
 use App\Model\Series_rated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\SendNotificationEmailJob;
 use Illuminate\Support\Facades\Response;
 
 class RateController extends Controller
@@ -255,6 +259,30 @@ class RateController extends Controller
             );
         }
         else Series_seen::where('user_id', Auth::id())->where('series_id', $request->series_id)->delete();
+
+        return Response::make("", 204);
+    }
+
+
+
+
+    public function followAssign(Request $request, $type)
+    {
+        if($type === 'user') return $this->followUser($request);
+    }
+
+    private function followUser($request)
+    {
+        if($request->follow > 0) {   
+            $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->obj_id), array('is_deleted' => 0));
+            if($follow->wasRecentlyCreated && User::find($request->obj_id)->when_user_interaction > 0){
+                $notification = Notification::updateOrCreate(['mode' => 8, 'user_id' => $request->obj_id, 'multi_id' => Auth::id()], ['is_seen' => 0]);
+                if(User::find($request->obj_id)->when_user_interaction > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+            }
+        } else {
+            $follow = Follow::updateOrCreate(array('subject_id' => Auth::id(), 'object_id' => $request->obj_id), array('is_deleted' => 1));
+            Notification::where('multi_id', Auth::id())->where('user_id', $obj_id)->where('mode', 8)->delete();
+        }
 
         return Response::make("", 204);
     }

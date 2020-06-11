@@ -22,6 +22,8 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/watchLater/{type}', 'Api2\RateController@watchLaterAssign');
     Route::post('/ban/{type}', 'Api2\RateController@banAssign');
     Route::post('/lastSeen', 'Api2\RateController@lastSeen');
+    Route::post('/follow/{type}', 'Api2\RateController@followAssign');
+    Route::post('/notifiedBy/{type}', 'Api2\RateController@notifiedByAssign');
 
     // QuickVote
     Route::get('/getQuickVote/{type}/{objId?}', 'Api2\QuickVoteController@getQuickVoteAssign');
