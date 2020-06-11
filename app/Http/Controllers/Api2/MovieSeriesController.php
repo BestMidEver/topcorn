@@ -17,7 +17,7 @@ class MovieSeriesController extends Controller
         ]);
     }
     
-    private function getSeriesData(Request $request, $objId, $season = -1, $episode = -1)
+    public function getSeriesData(Request $request, $objId, $season = -1, $episode = -1)
     {
         return response()->json([
             'interactionData' => $this->movieSeriesCardData('series', $objId, $season, $episode),
