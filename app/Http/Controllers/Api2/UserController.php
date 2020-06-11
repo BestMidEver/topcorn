@@ -27,7 +27,8 @@ class UserController extends Controller
             'movie_reviews' => $this->getUserReviews($request, 1),
             'series_reviews' => $this->getUserReviews($request, 3),
             'people_reviews' => $this->getUserReviews($request, 4),
-            'friends' => $this->getFriends($request)
+            'friends' => $this->getFriends($request),
+            'interaction_with_user' => $this->getInteractionWithUser($request->id)
         ]);
     }
 
@@ -44,6 +45,16 @@ class UserController extends Controller
             'review_like_count' => DB::table('reviews')->where('reviews.user_id', '=', $id)->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')->where('review_likes.is_deleted', '=', 0)->whereNotNull('review_likes.id')->count(),
             'review_count' => DB::table('reviews')->where('reviews.user_id', $id)->count()
         ];
+    }
+
+    public function getInteractionWithUser($id) {
+        $following = DB::table('follows')->where('subject_id', Auth::id())->where('object_id', $id)->where('is_deleted', 0)->first();
+        $following_id = $following ? $following->id : null;
+        $follows = DB::table('follows')->where('object_id', Auth::id())->where('subject_id', $id)->where('is_deleted', 0)->first();
+        $follows_id = $follows ? $follows->id : null;
+        $notified_by_id = DB::table('notified_by')->where('subject_id', $id)->where('object_id', Auth::id())->where('mode', 0)->first();
+        $notified_by_id = $notified_by_id ? $notified_by_id->id : null;
+        return ['following_id' => $following_id, 'follows_id' => $follows_id, 'notified_by_id' => $notified_by_id];
     }
 
     private function rateGrouped($userId, $table) {

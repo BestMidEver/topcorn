@@ -13,7 +13,7 @@ class NotifiedBy extends Migration
      */
     public function up()
     {
-        Schema::create('notifiedBy', function (Blueprint $table) {
+        Schema::create('notified_by', function (Blueprint $table) {
             $table->increments('id');
             $table->tinyInteger('mode')->default(0);//  0-user
             $table->integer('subject_id');
