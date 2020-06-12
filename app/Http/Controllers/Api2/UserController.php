@@ -278,4 +278,19 @@ class UserController extends Controller
 
         return $friends->paginate(Auth::User()->pagination);
     }
+
+    public function getCoverPics()
+    {
+    	return DB::table('rateds')
+    	->where('user_id', Auth::id())
+    	->where('rateds.rate', '=', 5)
+    	->join('movies', 'movies.id', '=', 'rateds.movie_id')
+    	->select(
+            'movies.en_title as title',
+            'movies.en_cover_path as cover_path',
+            'movies.id as movie_id'
+        )
+    	->orderBy('movies.en_title', 'asc')
+        ->get();
+    }
 }

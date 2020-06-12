@@ -40,6 +40,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/getSimpleUserData', 'Api2\UserController@getSimpleUserData');
     Route::get('/getUserDetailData/{id}', 'Api2\UserController@getUserDetails');
     Route::post('/getUserInteractionSet', 'Api2\UserController@getUserInteractionSet');
+    Route::get('/getCoverPics', 'Api2\UserController@getCoverPics');
     
     // Review
     Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');
