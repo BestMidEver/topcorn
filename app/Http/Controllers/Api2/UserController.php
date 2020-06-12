@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function getSimpleUserData(Request $request)
     {
-        return User::where('id', $request->id)->first();
+        return Auth::user();
     }
 
     public function getUserData(Request $request)
