@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function getSimpleUserData(Request $request)
+    public function getSimpleUserData()
     {
         return Auth::user();
     }
