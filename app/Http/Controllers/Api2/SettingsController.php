@@ -15,11 +15,11 @@ class SettingsController extends Controller
 
 	private function changeUser($request)
 	{
-		return $request;
 		$request->validate([
 			'name' => 'required|min:6',
-		]);
-
+			]);
+		return $request;
+			
 		$user = Auth::User();
 		$user->name=$request->name;
 		if($request->profile_pic != '? string: ?'){
