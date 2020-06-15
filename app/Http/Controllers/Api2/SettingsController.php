@@ -53,8 +53,8 @@ class SettingsController extends Controller
 			$user = Auth::User();
 			$user->password = Hash::make($request->new_password);
 			$user->save();
-			return $user;
+			return Response::make("", 204);
 		}
-		return response()->json('Current password is not correct', 401);
+		return response()->json(['errors' => ['current_password' => 'Current password is not correct.']], 401);
 	}
 }
