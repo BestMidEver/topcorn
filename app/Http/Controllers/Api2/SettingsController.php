@@ -18,6 +18,7 @@ class SettingsController extends Controller
 		$request->validate([
 			'name' => 'required|min:6',
 		]);
+		return $request;
 
 		$user = Auth::User();
 		$user->name=$request->name;
