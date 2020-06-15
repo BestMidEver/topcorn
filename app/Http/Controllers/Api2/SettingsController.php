@@ -31,6 +31,6 @@ class SettingsController extends Controller
 		if($request->has('another_link_url')) $user->another_link_url = $request->another_link_url;
 		$user->save();
 		
-        return Response::make("", 204);
+        return $user;
 	}
 }
