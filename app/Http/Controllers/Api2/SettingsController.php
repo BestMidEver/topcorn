@@ -33,6 +33,9 @@ class SettingsController extends Controller
 		if($request->has('another_link_url')) $user->another_link_name = 'Website';
 		if($request->has('another_link_url')) $user->another_link_url = $request->another_link_url ? 'https://'.$request->another_link_url : null;
 		if($request->has('pagination')) $user->pagination = $request->pagination;
+		if($request->has('when_user_interaction')) $user->when_user_interaction = $request->when_user_interaction;
+		if($request->has('when_automatic_notification')) $user->when_automatic_notification = $request->when_automatic_notification;
+		if($request->has('when_system_change')) $user->when_system_change = $request->when_system_change;
 		$user->save();
 		
         return $user;
