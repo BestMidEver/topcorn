@@ -16,28 +16,20 @@ class SettingsController extends Controller
 	private function changeUser($request)
 	{
 		$request->validate([
-			'name' => 'required|min:6',
-			]);
-		return $request;
-			
+			'name' => 'required',
+		]);
+		
 		$user = Auth::User();
-		$user->name=$request->name;
-		if($request->profile_pic != '? string: ?'){
-			if($request->profile_pic == "number:0"){
-				$user->profile_pic = '';
-			}else{
-				$user->profile_pic = '/'.explode("/", $request->profile_pic)[1];
-			}
-		}
-		if($request->cover_pic != '? string: ?'){
-			$user->cover_pic = '/'.explode("/", $request->cover_pic)[1];
-		}
-		$user->facebook_link = $request->facebook_link;
-		$user->twitter_link = $request->twitter_link;
-		$user->instagram_link = $request->instagram_link;
-		$user->youtube_link = $request->youtube_link;
-		$user->another_link_name = $request->another_link_name;
-		$user->another_link_url = $request->another_link_url ? $request->url_http.$request->another_link_url : null;
+		if($request->has('name')) $user->name = $request->name;
+		if($request->has('profile_pic')) $user->profile_pic = $request->profile_pic;
+		if($request->has('cover_pic')) $user->cover_pic = $request->cover_pic;
+		if($request->has('facebook_link')) $user->facebook_link = $request->facebook_link;
+		if($request->has('twitter_link')) $user->twitter_link = $request->twitter_link;
+		if($request->has('instagram_link')) $user->instagram_link = $request->instagram_link;
+		if($request->has('youtube_link')) $user->youtube_link = $request->youtube_link;
+		if($request->has('another_link_url')) $user->another_link_name = 'Website';
+		if($request->has('another_link_url')) $user->another_link_url = $request->another_link_url;
+		return $user;
 		$user->save();
 
 		$request->session()->flash('status', __('general.info_updated'));
