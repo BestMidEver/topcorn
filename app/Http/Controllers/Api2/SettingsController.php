@@ -32,6 +32,7 @@ class SettingsController extends Controller
 		if($request->has('youtube_link')) $user->youtube_link = $request->youtube_link;
 		if($request->has('another_link_url')) $user->another_link_name = 'Website';
 		if($request->has('another_link_url')) $user->another_link_url = $request->another_link_url ? 'https://'.$request->another_link_url : null;
+		if($request->has('pagination')) $user->pagination = $request->pagination;
 		$user->save();
 		
         return $user;
