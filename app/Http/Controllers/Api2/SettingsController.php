@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api2;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Response;
 
 class SettingsController extends Controller
@@ -12,6 +13,7 @@ class SettingsController extends Controller
     public function settingsAssign(Request $request)
     {
         if($request->type === 'profile') return $this->changeUser($request);
+        if($request->type === 'password') return $this->changePassword($request);
     }
 
 	private function changeUser($request)
@@ -32,5 +34,27 @@ class SettingsController extends Controller
 		$user->save();
 		
         return $user;
+	}
+
+	private function changePassword($request)
+	{
+		if(Hash::check($request->current_password, Auth::User()->password)){
+			$validator = Validator::make($request->all(), [
+				'current_password' => 'required|min:6',
+	            'new_password' => 'required|confirmed|min:6',
+			]);
+			if ($validator->fails()) {
+				return response()->json(array(
+					'success' => false,
+					'errors' => $validator->getMessageBag()->toArray()
+				), 400); // 400 being the HTTP code for an invalid request.
+			}
+			$user = Auth::User();
+			$user->password = Hash::make($request->new_password);
+			$user->save();
+
+			return $user;
+		}
+
 	}
 }
