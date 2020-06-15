@@ -54,6 +54,6 @@ class SettingsController extends Controller
 			$user->save();
 			return $user;
 		}
-		return response()->json('Current password is not correct');
+		return response()->json('Current password is not correct', 401);
 	}
 }
