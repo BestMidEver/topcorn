@@ -43,7 +43,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/getCoverPics', 'Api2\UserController@getCoverPics');
     
     // Settings
-    Route::post('/getUserInteractionSet', 'Api2\SettingsController@settingsAssign');
+    Route::post('/setUser', 'Api2\SettingsController@settingsAssign');
 
     
     // Review
