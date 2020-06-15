@@ -13,12 +13,12 @@ class SettingsController extends Controller
         if($type === 'profile') return $this->changeUser($request);
     }
 
-	private function changeUser(Request $request)
+	private function changeUser($request)
 	{
+		return $request;
 		$request->validate([
 			'name' => 'required|min:6',
 		]);
-		return $request;
 
 		$user = Auth::User();
 		$user->name=$request->name;
