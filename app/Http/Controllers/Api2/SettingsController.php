@@ -10,7 +10,7 @@ class SettingsController extends Controller
 {
     public function settingsAssign(Request $request)
     {
-        if($type === 'profile') return $this->changeUser($request);
+        if($request->type === 'profile') return $this->changeUser($request);
     }
 
 	private function changeUser($request)
