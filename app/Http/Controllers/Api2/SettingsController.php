@@ -28,7 +28,7 @@ class SettingsController extends Controller
 		if($request->has('instagram_link')) $user->instagram_link = $request->instagram_link;
 		if($request->has('youtube_link')) $user->youtube_link = $request->youtube_link;
 		if($request->has('another_link_url')) $user->another_link_name = 'Website';
-		if($request->has('another_link_url')) $user->another_link_url = ($user->another_link_url && ($user->another_link_url != 'https://')) ? 'https://'.$request->another_link_url : null;
+		if($request->has('another_link_url')) $user->another_link_url = strlen($user->another_link_url) > 8 ? 'https://'.$request->another_link_url : null;
 		$user->save();
 		
         return $user;
