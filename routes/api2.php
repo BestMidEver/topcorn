@@ -44,7 +44,9 @@ Route::middleware('auth:api')->group(function () {
     
     // Settings
     Route::post('/setUser', 'Api2\SettingsController@settingsAssign');
-
+    
+    // Discover
+    Route::post('/discover', 'Api2\DiscoverController@discoverAssign');
     
     // Review
     Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');
