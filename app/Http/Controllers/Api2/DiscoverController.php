@@ -13,12 +13,12 @@ class DiscoverController extends Controller
     }
 
     private function getTopRatedMovies($request)
-    {return $request;
+    {
         $start = microtime(true);
     }
 
     private function getPemosuMovies($request)
-    {
+    {return $request;
         $start = microtime(true);
     }
 }
