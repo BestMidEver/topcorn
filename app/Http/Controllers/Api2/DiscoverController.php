@@ -51,6 +51,8 @@ class DiscoverController extends Controller
 
         // Vote Average Filter
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->min_vote_average);
+        // Vote Count Filter
+        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq_2 = $subq_2->where('movies.vote_count', '>', $request->min_vote_count);
         
         /* if($request->f_genre != []) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
