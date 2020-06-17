@@ -21,7 +21,7 @@ class DiscoverController extends Controller
     }
 
     private function getPemosuMovies($request)
-    {return [] ? 1:2;
+    {return [2] ? 1:2;
         $subq = DB::table('rateds')
         ->where('rateds.user_id', Auth::id())
         ->where('rateds.rate', '>', 0)
