@@ -36,6 +36,8 @@ class DiscoverController extends Controller
         )
         ->groupBy('movies.id')
         ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
+        // Vote Average Filter
+        if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq = $subq->where('movies.vote_average', '>', $request->min_vote_average);
 
         if($request->original_languages) { $subq = $subq->whereIn('original_language', $request->original_languages); }
         if($request->min_year) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
@@ -67,10 +69,7 @@ class DiscoverController extends Controller
         $return_val = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql_2. ') AS ss'),
-            function($join) use ($subq_2) {
-                $join->on('movies.id', '=', 'ss.id')
-                ->addBinding($subq_2->getBindings());  
-            }
+            function($join) use ($subq_2) { $join->on('movies.id', '=', 'ss.id')->addBinding($subq_2->getBindings()); }
         )
         ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', '=', 'movies.id')->where('laters.user_id', '=', Auth::id()); })
         ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', '=', 'movies.id')->where('bans.user_id', Auth::id()); })
@@ -96,7 +95,7 @@ class DiscoverController extends Controller
 
         // Sorting
         if($request->sorting === 'Match Score') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
-        //else if($request->sorting == 'percent') { $return_val = $return_val->orderBy('percent', 'desc')->orderBy('point', 'desc')->orderBy('vote_average', 'desc'); }
+        elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc');
         else if($request->sorting == 'Top Rated') { $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sorting == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
         else if($request->sorting == 'Highest Budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
