@@ -24,7 +24,7 @@ class DiscoverController extends Controller
     {
         $subq = DB::table('rateds')
         ->where('rateds.user_id', Auth::id())
-        ->where('rateds.rate', '>', 0)
+        ->where('rateds.rate', '>', $request->retrieve === 'My Votes' ? 0 : 4)
         ->leftjoin('recommendations', 'recommendations.movie_id', '=', 'rateds.movie_id')
         ->join('movies', 'movies.id', '=', 'recommendations.this_id')
         ->select(
