@@ -21,7 +21,7 @@ class DiscoverController extends Controller
     }
 
     private function getPemosuMovies($request)
-    {return [2] ? 1:2;
+    {
         $subq = DB::table('rateds')
         ->where('rateds.user_id', Auth::id())
         ->where('rateds.rate', '>', 0)
@@ -48,7 +48,7 @@ class DiscoverController extends Controller
             DB::raw('(' . $qqSql. ') AS ss'),
             function($join) use ($subq) { $join->on('movies.id', '=', 'ss.id')->addBinding($subq->getBindings()); }
         )
-        ->leftjoin('rateds', function ($join) use ($request) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', Auth::id()); })
+        ->leftjoin('rateds', function ($join) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', Auth::id()); })
         ->select(
             'ss.id',
             'ss.point',
@@ -101,11 +101,11 @@ class DiscoverController extends Controller
         else if($request->f_sort == 'budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('movies.revenue', 'desc'); }
         else if($request->f_sort == 'revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('movies.budget', 'desc'); }
 
-        if($request->f_genre != []) {
+        if($request->genre_combination) {
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
-            ->whereIn('genre_id', $request->f_genre)
+            ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('movies.id')
-            ->havingRaw('COUNT(movies.id)='.count($request->f_genre));
+            ->havingRaw('COUNT(movies.id)='.count($request->genre_combination));
         }
 
         return $return_val->paginate(Auth::User()->pagination);
