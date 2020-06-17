@@ -169,7 +169,7 @@ class DiscoverController extends Controller
         else if($request->sorting == 'Highest Revenue') { $return_val = $return_val->orderBy('series.revenue', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
 
         if($request->genre_combination) {
-            $return_val = $return_val->join('genres', 'genres.series_id', 'series.id')
+            $return_val = $return_val->join('series_genres', 'series_genres.series_id', 'series.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('series.id')
             ->havingRaw('COUNT(series.id)='.count($request->genre_combination));
