@@ -243,7 +243,7 @@ class DiscoverController extends Controller
         ->leftjoin('series_bans', function ($join) use ($request) { $join->on('series_bans.series_id', 'series.id') ->where('series_bans.user_id', Auth::id()); })
         ->select(
             'series.id',
-            'series.original_title as original_title',
+            'series.original_name as original_name',
             'ss.point',
             'ss.count',
             'ss.percent',
@@ -251,9 +251,9 @@ class DiscoverController extends Controller
             'series.vote_average',
             'series.vote_count',
             'series.first_air_date',
-            'series.en_title as title',
+            'series.en_name as name',
             'series.en_poster_path as poster_path',
-            'series.en_cover_path as cover_path',
+            'series.en_backdrop_path as backdrop_path',
             'series_rateds.id as rated_id',
             'series_rateds.rate as rate_code',
             'series_laters.id as later_id',
