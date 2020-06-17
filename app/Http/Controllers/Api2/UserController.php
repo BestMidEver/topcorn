@@ -75,7 +75,7 @@ class UserController extends Controller
     }
 
     public function getUserMovies(Request $request)
-    {return in_array("Hidden", $request->hide) ? 1 : 2;
+    {
         $userId = $request->id;
         $hide = $request->hide ? implode(',', $request->hide) : 'Hidden';
         $return_val = DB::table('movies')
