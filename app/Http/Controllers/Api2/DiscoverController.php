@@ -31,6 +31,7 @@ class DiscoverController extends Controller
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
         )
         ->groupBy('movies.id');
+        if($request->min_match_rate > 0) $subq->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
         $qqSql = $subq->toSql();
     /////////////////////////////////////////////////////////
         $subq_2 = DB::table('movies')
