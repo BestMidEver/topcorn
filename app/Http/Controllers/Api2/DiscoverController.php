@@ -53,6 +53,11 @@ class DiscoverController extends Controller
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
         if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq_2 = $subq_2->where('movies.vote_count', '>', $request->min_vote_count);
+        // Original Languages Filter
+        if($request->original_languages) { $subq_2 = $subq_2->whereIn('original_language', $request->original_languages); }
+        // Year Filters
+        if($request->min_year) { $subq_2 = $subq_2->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year) { $subq_2 = $subq_2->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
         
         /* if($request->f_genre != []) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
