@@ -36,9 +36,9 @@ class DiscoverController extends Controller
         $subq_2 = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') as ss'),
-            function($join) use ($subq) { $join->on('movies.id', '=', 'ss.id')->addBinding($subq->getBindings()); }
+            function($join) use ($subq) { $join->on('movies.id', 'ss.id')->addBinding($subq->getBindings()); }
         )
-        ->rightjoin('movies as m2', 'm2.id', '=', 'movies.id')
+        ->rightjoin('movies as m2', 'm2.id', 'movies.id')
         ->select(
             'm2.id',
             'ss.point',
@@ -50,7 +50,7 @@ class DiscoverController extends Controller
         ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
 
         if($request->f_genre != []) {
-            $subq_2 = $subq_2->join('genres', 'genres.movie_id', '=', 'm2.id')
+            $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
             ->whereIn('genre_id', $request->f_genre)
             ->groupBy('m2.id')
             ->havingRaw('COUNT(m2.id)='.count($request->f_genre));
@@ -66,11 +66,11 @@ class DiscoverController extends Controller
         $return_val = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql_2. ') AS ss'),
-            function($join) use ($subq_2) { $join->on('movies.id', '=', 'ss.id')->addBinding($subq_2->getBindings()); }
+            function($join) use ($subq_2) { $join->on('movies.id', 'ss.id')->addBinding($subq_2->getBindings()); }
         )
-        ->leftjoin('rateds', function ($join) use ($request) { $join->on('rateds.movie_id', '=', 'movies.id') ->where('rateds.user_id', Auth::id()); })
-        ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', '=', 'movies.id') ->where('laters.user_id', '=', Auth::user()->id); })
-        ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', '=', 'movies.id') ->where('bans.user_id', Auth::id()); })
+        ->leftjoin('rateds', function ($join) use ($request) { $join->on('rateds.movie_id', 'movies.id') ->where('rateds.user_id', Auth::id()); })
+        ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', 'movies.id') ->where('laters.user_id', Auth::user()->id); })
+        ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', 'movies.id') ->where('bans.user_id', Auth::id()); })
         ->select(
             'movies.id',
             'movies.original_title as original_title',
@@ -183,8 +183,8 @@ class DiscoverController extends Controller
         $subq = DB::table('series_rateds')
         ->where('series_rateds.user_id', Auth::id())
         ->where('series_rateds.rate', '>', $request->retrieve === 'My Votes' ? 0 : 4)
-        ->leftjoin('series_recommendations', 'series_recommendations.series_id', '=', 'series_rateds.series_id')
-        ->join('series', 'series.id', '=', 'series_recommendations.this_id')
+        ->leftjoin('series_recommendations', 'series_recommendations.series_id', 'series_rateds.series_id')
+        ->join('series', 'series.id', 'series_recommendations.this_id')
         ->select(
             'series_recommendations.this_id as id',
             DB::raw('sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.rank) AS point'),
@@ -207,11 +207,11 @@ class DiscoverController extends Controller
         $return_val = DB::table('series')
         ->join(
             DB::raw('(' . $qqSql. ') AS ss'),
-            function($join) use ($subq) { $join->on('series.id', '=', 'ss.id')->addBinding($subq->getBindings()); }
+            function($join) use ($subq) { $join->on('series.id', 'ss.id')->addBinding($subq->getBindings()); }
         )
-        ->leftjoin('series_rateds', function ($join) { $join->on('series_rateds.series_id', '=', 'series.id')->where('series_rateds.user_id', Auth::id()); })
-        ->leftjoin('series_laters', function ($join) { $join->on('series_laters.series_id', '=', 'series.id')->where('series_laters.user_id', '=', Auth::id()); })
-        ->leftjoin('series_bans', function ($join) use ($request) { $join->on('series_bans.series_id', '=', 'series.id')->where('series_bans.user_id', Auth::id()); })
+        ->leftjoin('series_rateds', function ($join) { $join->on('series_rateds.series_id', 'series.id')->where('series_rateds.user_id', Auth::id()); })
+        ->leftjoin('series_laters', function ($join) { $join->on('series_laters.series_id', 'series.id')->where('series_laters.user_id', Auth::id()); })
+        ->leftjoin('series_bans', function ($join) use ($request) { $join->on('series_bans.series_id', 'series.id')->where('series_bans.user_id', Auth::id()); })
         ->select(
             'series.original_name',
             'ss.point',
@@ -232,7 +232,7 @@ class DiscoverController extends Controller
         // User Hide Filter
         if($request->hide && !in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('series_laters.id');
-            if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', '=', 0)->orWhereNull('series_rateds.rate'); });
+            if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', 0)->orWhereNull('series_rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('series_bans.id');
         }
         // Sorting
