@@ -95,6 +95,12 @@ class DiscoverController extends Controller
             'bans.id as ban_id'
         )
         ->groupBy('movies.id');
+        // User Hide Filter
+        if($request->hide && !in_array('None', $request->hide)) {
+            if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('laters.id');
+            if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', 0)->orWhereNull('rateds.rate'); });
+            if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('bans.id');
+        }
         // Sorting
         if($request->sort === 'Match Score') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
         elseif($request->sort == 'Newest') { $return_val = $return_val->orderBy('release_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
