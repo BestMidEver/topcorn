@@ -45,10 +45,7 @@ class DiscoverController extends Controller
             'ss.count',
             'ss.percent',
             'ss.p2'
-        )
-        /* ->where('m2.vote_count', '>', $request->f_vote)
-        ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average')) */;
-
+        );
         // Vote Average Filter
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
@@ -59,20 +56,15 @@ class DiscoverController extends Controller
         if($request->min_year) { $subq_2 = $subq_2->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year) { $subq_2 = $subq_2->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
         
-        /* if($request->f_genre != []) {
+        if($request->genre_combination) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
-            ->whereIn('genre_id', $request->f_genre)
+            ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('m2.id')
-            ->havingRaw('COUNT(m2.id)='.count($request->f_genre));
-        }; */
+            ->havingRaw('COUNT(m2.id)='.count($request->genre_combination));
+        };
 
-        /* if($request->f_lang != []) { $subq_2 = $subq_2->whereIn('m2.original_language', $request->f_lang); }
-        if($request->f_min != 1917) { $subq_2 = $subq_2->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1)); }
-        if($request->f_max != 2020) { $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31)); }
-         */$qqSql_2 = $subq_2->toSql();
-
+        $qqSql_2 = $subq_2->toSql();
     /////////////////////////////////////////////////////////
-
         $return_val = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql_2. ') AS ss'),
@@ -113,13 +105,7 @@ class DiscoverController extends Controller
         else if($request->sort == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
         else if($request->sort == 'Highest Budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Highest Revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
-        /* if(!$request->f_add_watched){ $return_val = $return_val->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0'); }
-
-        if($request->f_sort == 'most_popular') { $return_val = $return_val->orderBy('movies.popularity', 'desc'); }
-        else if($request->f_sort == 'top_rated') { $return_val = $return_val->orderBy('movies.vote_average', 'desc')->orderBy('movies.vote_count', 'desc'); }
-        else if($request->f_sort == 'budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('movies.revenue', 'desc'); }
-        else if($request->f_sort == 'revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('movies.budget', 'desc'); }
- */
+        
         return $return_val->paginate(Auth::User()->pagination);
     }
 
@@ -144,7 +130,7 @@ class DiscoverController extends Controller
         // Vote Count Filter
         if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq = $subq->where('movies.vote_count', '>', $request->min_vote_count);
         // Original Languages Filter
-        if($request->original_languages) { $subq = $subq->whereIn('original_language', $request->original_languages); }
+        if($request->original_languages) { $subq = $subq->whereIn('movies.original_language', $request->original_languages); }
         // Year Filters
         if($request->min_year) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
