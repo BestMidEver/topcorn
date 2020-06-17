@@ -31,7 +31,6 @@ class DiscoverController extends Controller
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
         )
         ->groupBy('movies.id');
-        if($request->min_match_rate > 0) $subq->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
         $qqSql = $subq->toSql();
     /////////////////////////////////////////////////////////
         $subq_2 = DB::table('movies')
@@ -47,6 +46,8 @@ class DiscoverController extends Controller
             'ss.percent',
             'ss.p2'
         );
+        // Match Rate Filter
+        if($request->min_match_rate > 0) $subq->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
         // Vote Average Filter
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
@@ -125,6 +126,7 @@ class DiscoverController extends Controller
             DB::raw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) as percent')
         )
         ->groupBy('movies.id')
+        // Match Rate Filter
         ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
         // Vote Average Filter
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq = $subq->where('movies.vote_average', '>', $request->min_vote_average);
@@ -203,6 +205,7 @@ class DiscoverController extends Controller
             DB::raw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) as percent')
         )
         ->groupBy('series.id')
+        // Match Rate Filter
         ->havingRaw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) >= '.$request->min_match_rate.' AND sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.rank) > 15');
         // Vote Average Filter
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq = $subq->where('series.vote_average', '>', $request->min_vote_average);
