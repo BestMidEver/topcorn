@@ -83,7 +83,7 @@ class DiscoverController extends Controller
             'movies.release_date',
             'movies.en_title as title',
             'movies.en_poster_path as poster_path',
-            'series.en_cover_path as cover_path',
+            'movies.en_cover_path as cover_path',
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
