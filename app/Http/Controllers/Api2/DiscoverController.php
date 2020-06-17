@@ -21,7 +21,7 @@ class DiscoverController extends Controller
     }
 
     private function getPemosuMovies($request)
-    {return explode(',', $request->original_languages) ? 1 : 2;
+    {return $request->original_languages ? 1 : 2;
         $subq = DB::table('rateds')
         ->where('rateds.user_id', Auth::id())
         ->where('rateds.rate', '>', 0)
