@@ -46,28 +46,6 @@ class DiscoverController extends Controller
         if($request->max_year) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
 
         $qqSql = $subq->toSql();
-    ////////////////////////////////////////////////////
-        /* $subq_2 = DB::table('movies')
-        ->join(
-            DB::raw('(' . $qqSql. ') AS ss'),
-            function($join) use ($subq) { $join->on('movies.id', '=', 'ss.id')->addBinding($subq->getBindings()); }
-        )
-        ->leftjoin('rateds', function ($join) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', Auth::id()); })
-        ->select(
-            'ss.id',
-            'ss.point',
-            'ss.p2',
-            'ss.count',
-            'ss.percent',
-            'rateds.id as rated_id',
-            'rateds.rate as rate_code'
-        )
-        ->groupBy('movies.id');
-
-        if(!$request->f_add_watched) { $subq_2 = $subq_2->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0'); }
-
-        $qqSql_2 = $subq_2->toSql(); */
-    ////////////////////////////////////////////////////
         $return_val = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') AS ss'),
@@ -76,7 +54,6 @@ class DiscoverController extends Controller
         ->leftjoin('rateds', function ($join) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', Auth::id()); })
         ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', '=', 'movies.id')->where('laters.user_id', '=', Auth::id()); })
         ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', '=', 'movies.id')->where('bans.user_id', Auth::id()); })
-        //->where('bans.id', '=', null)
         ->select(
             'movies.original_title as original_title',
             'ss.point',
@@ -93,8 +70,7 @@ class DiscoverController extends Controller
             'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
-        )
-        ->where('movies.vote_count', '>', $request->min_vote_count);
+        );
 
         // User Hide Filter
         if(!in_array('None', $request->hide)) {
