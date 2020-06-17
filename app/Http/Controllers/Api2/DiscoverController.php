@@ -21,7 +21,7 @@ class DiscoverController extends Controller
     }
 
     private function getPemosuMovies($request)
-    {return $request->original_languages ? 1 : 2;
+    {return [] ? 1:2;
         $subq = DB::table('rateds')
         ->where('rateds.user_id', Auth::id())
         ->where('rateds.rate', '>', 0)
@@ -38,8 +38,8 @@ class DiscoverController extends Controller
         ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
 
         if($request->original_languages) { $subq = $subq->whereIn('original_language', $request->original_languages); }
-        if($request->f_min != 1917) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1)); }
-        if($request->f_max != 2019) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31)); }
+        if($request->min_year) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
 
         $qqSql = $subq->toSql();
     ////////////////////////////////////////////////////
@@ -60,7 +60,7 @@ class DiscoverController extends Controller
         )
         ->groupBy('movies.id');
 
-        if(!$request->f_add_watched) { $subq_2 = $subq_2->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0'); }
+        //if(!$request->f_add_watched) { $subq_2 = $subq_2->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0'); }
 
         $qqSql_2 = $subq_2->toSql();
     ////////////////////////////////////////////////////
@@ -72,9 +72,9 @@ class DiscoverController extends Controller
                 ->addBinding($subq_2->getBindings());  
             }
         )
-        ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', '=', 'movies.id')->where('laters.user_id', '=', Auth::user()->id); })
-        ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', '=', 'movies.id')->whereIn('bans.user_id', $request->f_users); })
-        ->where('bans.id', '=', null)
+        ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', '=', 'movies.id')->where('laters.user_id', '=', Auth::id()); })
+        ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', '=', 'movies.id')->where('bans.user_id', Auth::id()); })
+        //->where('bans.id', '=', null)
         ->select(
             'movies.original_title as original_title',
             'ss.point',
@@ -85,14 +85,14 @@ class DiscoverController extends Controller
             'movies.vote_average',
             'movies.vote_count',
             'movies.release_date',
-            'movies.'.Auth::User()->lang.'_title as title',
-            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+            'movies.en_title as title',
+            'movies.en_poster_path as poster_path',
             'ss.rated_id',
             'ss.rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
         )
-        ->where('movies.vote_count', '>', $request->f_vote);
+        ->where('movies.vote_count', '>', $request->min_vote_count);
 
         if($request->f_sort == 'point') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc'); }
         else if($request->f_sort == 'percent') { $return_val = $return_val->orderBy('percent', 'desc')->orderBy('point', 'desc')->orderBy('vote_average', 'desc'); }

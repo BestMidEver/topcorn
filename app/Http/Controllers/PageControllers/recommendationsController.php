@@ -93,7 +93,7 @@ class recommendationsController extends Controller
 
             if($request->f_lang != []) { $subq_2 = $subq_2->whereIn('m2.original_language', $request->f_lang); }
             if($request->f_min != 1917) { $subq_2 = $subq_2->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1)); }
-            if($request->f_max != 2019) { $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31)); }
+            if($request->f_max != 2020) { $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31)); }
             $qqSql_2 = $subq_2->toSql();
 
         /////////////////////////////////////////////////////////
@@ -166,7 +166,7 @@ class recommendationsController extends Controller
         $request->f_vote=75;
         $request->f_sort='point';
         $request->f_min=1917;
-        $request->f_max=2019;
+        $request->f_max=2020;
         $request->f_lang=[];
         $request->f_genre=['35'];
         $request->f_add_watched=false;*/
@@ -234,7 +234,7 @@ class recommendationsController extends Controller
                 $subq_2 = $subq_2->where('m2.first_air_date', '>=', Carbon::create($request->f_min,1,1));
             }
 
-            if($request->f_max != 2019)
+            if($request->f_max != 2020)
             {
                 $subq_2 = $subq_2->where('m2.first_air_date', '<=', Carbon::create($request->f_max,12,31));
             }
@@ -351,7 +351,7 @@ class recommendationsController extends Controller
 
         if($request->f_lang != []) { $subq = $subq->whereIn('original_language', $request->f_lang); }
         if($request->f_min != 1917) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1)); }
-        if($request->f_max != 2019) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31)); }
+        if($request->f_max != 2020) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31)); }
 
         $qqSql = $subq->toSql();
     ////////////////////////////////////////////////////
@@ -460,7 +460,7 @@ class recommendationsController extends Controller
             $subq = $subq->where('series.first_air_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
-        if($request->f_max != 2019)
+        if($request->f_max != 2020)
         {
             $subq = $subq->where('series.first_air_date', '<=', Carbon::create($request->f_max,12,31));
         }
@@ -576,7 +576,7 @@ class recommendationsController extends Controller
         $$request->f_mode_movies = [77];
         $$request->f_lang = [];
         $request->f_min = 1950;
-        $request->f_max = 2019;
+        $request->f_max = 2020;
         $f_genre = [];
         $request->f_sort = 'point';
         $request->f_vote = true;*/
@@ -605,7 +605,7 @@ class recommendationsController extends Controller
             $subq = $subq->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
-        if($request->f_max != 2019)
+        if($request->f_max != 2020)
         {
             $subq = $subq->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31));
         }
@@ -737,7 +737,7 @@ class recommendationsController extends Controller
         $request->f_mode_movies = [1399];
         $request->f_lang = [];
         $request->f_min = 1950;
-        $request->f_max = 2019;
+        $request->f_max = 2020;
         $request->f_genre = [];
         $request->f_sort = 'point';
         $request->f_vote = true;*/
@@ -766,7 +766,7 @@ class recommendationsController extends Controller
             $subq = $subq->where('m2.first_air_date', '>=', Carbon::create($request->f_min,1,1));
         }
 
-        if($request->f_max != 2019)
+        if($request->f_max != 2020)
         {
             $subq = $subq->where('m2.first_air_date', '<=', Carbon::create($request->f_max,12,31));
         }
