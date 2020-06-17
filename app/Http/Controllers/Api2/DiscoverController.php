@@ -96,6 +96,12 @@ class DiscoverController extends Controller
         )
         ->where('movies.vote_count', '>', $request->min_vote_count);
 
+        // User Hide Filter
+        if(strpos($hide, 'None') === false) {
+            if(strpos($hide, 'Watch Later') !== false) $return_val = $return_val->whereNull('laters.id');
+            if(strpos($hide, 'Already Seen') !== false) $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', '=', 0)->orWhereNull('rateds.rate'); });
+            if(strpos($hide, 'Hidden') !== false) $return_val = $return_val->whereNull('bans.id');
+        }
         // Sorting
         if($request->sorting === 'Match Score') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
         elseif($request->sort == 'Newest') $return_val = $return_val->orderBy('release_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc');
