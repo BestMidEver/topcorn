@@ -14,6 +14,6 @@ class DiscoverController extends Controller
 
     private function getMovies($request)
     {
-        return 1;
+        $start = microtime(true);
     }
 }
