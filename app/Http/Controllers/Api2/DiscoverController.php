@@ -9,10 +9,15 @@ class DiscoverController extends Controller
 {
     public function discoverAssign(Request $request)
     {
-        if($request->type === 'movie') return $this->getMovies($request);
+        if($request->type === 'movie') return $request->retrieve === 'All' ? $this->getTopRatedMovies($request) : $this->getPemosuMovies($request);
     }
 
-    private function getMovies($request)
+    private function getTopRatedMovies($request)
+    {return $request;
+        $start = microtime(true);
+    }
+
+    private function getPemosuMovies($request)
     {
         $start = microtime(true);
     }
