@@ -39,7 +39,7 @@ class DiscoverController extends Controller
         // Vote Average Filter
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq = $subq->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
-        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $return_val = $return_val->where('movies.vote_count', '>', $request->min_vote_count);
+        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq = $subq->where('movies.vote_count', '>', $request->min_vote_count);
 
         if($request->original_languages) { $subq = $subq->whereIn('original_language', $request->original_languages); }
         if($request->min_year) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
