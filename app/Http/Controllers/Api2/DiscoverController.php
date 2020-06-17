@@ -46,20 +46,20 @@ class DiscoverController extends Controller
             'ss.percent',
             'ss.p2'
         )
-        ->where('m2.vote_count', '>', $request->f_vote)
-        ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average'));
+        /* ->where('m2.vote_count', '>', $request->f_vote)
+        ->where('m2.vote_average', '>', config('constants.suck_page.min_vote_average')) */;
 
-        if($request->f_genre != []) {
+        /* if($request->f_genre != []) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
             ->whereIn('genre_id', $request->f_genre)
             ->groupBy('m2.id')
             ->havingRaw('COUNT(m2.id)='.count($request->f_genre));
-        };
+        }; */
 
-        if($request->f_lang != []) { $subq_2 = $subq_2->whereIn('m2.original_language', $request->f_lang); }
+        /* if($request->f_lang != []) { $subq_2 = $subq_2->whereIn('m2.original_language', $request->f_lang); }
         if($request->f_min != 1917) { $subq_2 = $subq_2->where('m2.release_date', '>=', Carbon::create($request->f_min,1,1)); }
         if($request->f_max != 2020) { $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->f_max,12,31)); }
-        $qqSql_2 = $subq_2->toSql();
+         */$qqSql_2 = $subq_2->toSql();
 
     /////////////////////////////////////////////////////////
 
@@ -69,7 +69,7 @@ class DiscoverController extends Controller
             function($join) use ($subq_2) { $join->on('movies.id', 'ss.id')->addBinding($subq_2->getBindings()); }
         )
         ->leftjoin('rateds', function ($join) use ($request) { $join->on('rateds.movie_id', 'movies.id') ->where('rateds.user_id', Auth::id()); })
-        ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', 'movies.id') ->where('laters.user_id', Auth::user()->id); })
+        ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', 'movies.id') ->where('laters.user_id', Auth::id()); })
         ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', 'movies.id') ->where('bans.user_id', Auth::id()); })
         ->select(
             'movies.id',
@@ -81,8 +81,9 @@ class DiscoverController extends Controller
             'movies.vote_average',
             'movies.vote_count',
             'movies.release_date',
-            'movies.'.Auth::User()->lang.'_title as title',
-            'movies.'.Auth::User()->lang.'_poster_path as poster_path',
+            'movies.en_title as title',
+            'movies.en_poster_path as poster_path',
+            'series.en_cover_path as cover_path',
             'rateds.id as rated_id',
             'rateds.rate as rate_code',
             'laters.id as later_id',
@@ -90,13 +91,13 @@ class DiscoverController extends Controller
         )
         ->groupBy('movies.id');
 
-        if(!$request->f_add_watched){ $return_val = $return_val->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0'); }
+        /* if(!$request->f_add_watched){ $return_val = $return_val->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0 AND sum(IF(bans.id IS NULL, 0, 1)) = 0'); }
 
         if($request->f_sort == 'most_popular') { $return_val = $return_val->orderBy('movies.popularity', 'desc'); }
         else if($request->f_sort == 'top_rated') { $return_val = $return_val->orderBy('movies.vote_average', 'desc')->orderBy('movies.vote_count', 'desc'); }
         else if($request->f_sort == 'budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('movies.revenue', 'desc'); }
         else if($request->f_sort == 'revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('movies.budget', 'desc'); }
-
+ */
         return $return_val->paginate(Auth::User()->pagination);
     }
 
