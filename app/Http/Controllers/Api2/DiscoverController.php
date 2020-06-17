@@ -21,7 +21,7 @@ class DiscoverController extends Controller
     }
 
     private function getPemosuMovies($request)
-    {return $request;
+    {return explode(',', $request->languages);
         $subq = DB::table('rateds')
         ->where('rateds.user_id', Auth::id())
         ->where('rateds.rate', '>', 0)
@@ -37,7 +37,7 @@ class DiscoverController extends Controller
         ->groupBy('movies.id')
         ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
 
-        if($request->f_lang != []) { $subq = $subq->whereIn('original_language', $request->f_lang); }
+        if($request->original_languages) { $subq = $subq->whereIn('original_language', $request->original_languages); }
         if($request->f_min != 1917) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->f_min,1,1)); }
         if($request->f_max != 2019) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->f_max,12,31)); }
 
