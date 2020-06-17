@@ -46,8 +46,6 @@ class DiscoverController extends Controller
             'ss.percent',
             'ss.p2'
         );
-        // Match Rate Filter
-        if($request->min_match_rate > 0) $subq->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
         // Vote Average Filter
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
@@ -188,6 +186,93 @@ class DiscoverController extends Controller
 
     private function getTopRatedSeries($request)
     {
+        $subq = DB::table('series_rateds')
+        ->where('series_rateds.user_id', Auth::id())
+        ->where('series_rateds.rate', '>', 0)
+        ->leftjoin('series_recommendations', 'series_recommendations.series_id', 'series_rateds.series_id')
+        ->join('series', 'series.id', 'series_recommendations.this_id')
+        ->select(
+            'series.id',
+            DB::raw('sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.rank) AS point'),
+            DB::raw('sum(4*series_recommendations.rank) as p2'),
+            DB::raw('COUNT(series_recommendations.this_id) as count'),
+            DB::raw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) as percent')
+        )
+        ->groupBy('series.id');
+        $qqSql = $subq->toSql();
+    /////////////////////////////////////////////////////////
+        $subq_2 = DB::table('series')
+        ->join(
+            DB::raw('(' . $qqSql. ') as ss'),
+            function($join) use ($subq) { $join->on('series.id', 'ss.id')->addBinding($subq->getBindings()); }
+        )
+        ->rightjoin('series as m2', 'm2.id', 'series.id')
+        ->select(
+            'm2.id',
+            'ss.point',
+            'ss.count',
+            'ss.percent',
+            'ss.p2'
+        );
+        // Vote Average Filter
+        if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('series.vote_average', '>', $request->min_vote_average);
+        // Vote Count Filter
+        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq_2 = $subq_2->where('series.vote_count', '>', $request->min_vote_count);
+        // Original Languages Filter
+        if($request->original_languages) { $subq_2 = $subq_2->whereIn('series.original_language', $request->original_languages); }
+        // Year Filters
+        if($request->min_year) { $subq_2 = $subq_2->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year) { $subq_2 = $subq_2->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
+        
+        if($request->genre_combination) {
+            $subq_2 = $subq_2->join('series_genres', 'series_genres.series_id', 'm2.id')
+            ->whereIn('genre_id', $request->genre_combination)
+            ->groupBy('m2.id')
+            ->havingRaw('COUNT(m2.id)='.count($request->genre_combination));
+        };
+
+        $qqSql_2 = $subq_2->toSql();
+    /////////////////////////////////////////////////////////
+        $return_val = DB::table('series')
+        ->join(
+            DB::raw('(' . $qqSql_2. ') AS ss'),
+            function($join) use ($subq_2) { $join->on('series.id', 'ss.id')->addBinding($subq_2->getBindings()); }
+        )
+        ->leftjoin('series_rateds', function ($join) use ($request) { $join->on('series_rateds.series_id', 'series.id') ->where('series_rateds.user_id', Auth::id()); })
+        ->leftjoin('series_laters', function ($join) { $join->on('series_laters.series_id', 'series.id') ->where('series_laters.user_id', Auth::id()); })
+        ->leftjoin('series_bans', function ($join) use ($request) { $join->on('series_bans.series_id', 'series.id') ->where('series_bans.user_id', Auth::id()); })
+        ->select(
+            'series.id',
+            'series.original_title as original_title',
+            'ss.point',
+            'ss.count',
+            'ss.percent',
+            'ss.p2',
+            'series.vote_average',
+            'series.vote_count',
+            'series.first_air_date',
+            'series.en_title as title',
+            'series.en_poster_path as poster_path',
+            'series.en_cover_path as cover_path',
+            'series_rateds.id as rated_id',
+            'series_rateds.rate as rate_code',
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
+        )
+        ->groupBy('series.id');
+        // User Hide Filter
+        if($request->hide && !in_array('None', $request->hide)) {
+            if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('series_laters.id');
+            if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', 0)->orWhereNull('series_rateds.rate'); });
+            if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('series_bans.id');
+        }
+        // Sorting
+        if($request->sort === 'Match Score') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
+        elseif($request->sort == 'Newest') { $return_val = $return_val->orderBy('first_air_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
+        else if($request->sort == 'Top Rated') { $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
+        else if($request->sort == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
+        
+        return $return_val->paginate(Auth::User()->pagination);
     }
 
     private function getPemosuSeries($request)
