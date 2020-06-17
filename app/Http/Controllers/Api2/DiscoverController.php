@@ -91,8 +91,7 @@ class DiscoverController extends Controller
         )
         ->groupBy('movies.id');
         // Sorting
-        if($request->sort === 'Match Score') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
-        elseif($request->sort == 'Newest') { $return_val = $return_val->orderBy('release_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
+        if($request->sort == 'Newest') { $return_val = $return_val->orderBy('release_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Top Rated') { $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
         else if($request->sort == 'Highest Budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
