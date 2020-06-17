@@ -94,12 +94,13 @@ class DiscoverController extends Controller
         )
         ->where('movies.vote_count', '>', $request->min_vote_count);
 
-        if($request->f_sort == 'point') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc'); }
-        else if($request->f_sort == 'percent') { $return_val = $return_val->orderBy('percent', 'desc')->orderBy('point', 'desc')->orderBy('vote_average', 'desc'); }
-        else if($request->f_sort == 'top_rated') { $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
-        else if($request->f_sort == 'most_popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
-        else if($request->f_sort == 'budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('movies.revenue', 'desc'); }
-        else if($request->f_sort == 'revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('movies.budget', 'desc'); }
+        // Sorting
+        if($request->sorting === 'Match Score') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc'); }
+        //else if($request->sorting == 'percent') { $return_val = $return_val->orderBy('percent', 'desc')->orderBy('point', 'desc')->orderBy('vote_average', 'desc'); }
+        else if($request->sorting == 'Top Rated') { $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
+        else if($request->sorting == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
+        else if($request->sorting == 'Highest Budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('movies.revenue', 'desc'); }
+        else if($request->sorting == 'Highest Revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('movies.budget', 'desc'); }
 
         if($request->genre_combination) {
             $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
