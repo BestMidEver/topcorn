@@ -40,8 +40,9 @@ class DiscoverController extends Controller
         if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq = $subq->where('movies.vote_average', '>', $request->min_vote_average);
         // Vote Count Filter
         if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq = $subq->where('movies.vote_count', '>', $request->min_vote_count);
-
+        // Original Languages Filter
         if($request->original_languages) { $subq = $subq->whereIn('original_language', $request->original_languages); }
+        // Year Filters
         if($request->min_year) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
 
@@ -87,7 +88,7 @@ class DiscoverController extends Controller
         else if($request->sorting == 'Highest Revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
 
         if($request->genre_combination) {
-            $return_val = $return_val->join('genres', 'genres.movie_id', '=', 'ss.id')
+            $return_val = $return_val->join('genres', 'genres.movie_id', 'movies.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('movies.id')
             ->havingRaw('COUNT(movies.id)='.count($request->genre_combination));
