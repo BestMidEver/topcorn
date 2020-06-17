@@ -134,8 +134,8 @@ class DiscoverController extends Controller
             function($join) use ($subq) { $join->on('series.id', '=', 'ss.id')->addBinding($subq->getBindings()); }
         )
         ->leftjoin('series_rateds', function ($join) { $join->on('series_rateds.series_id', '=', 'series.id')->where('series_rateds.user_id', Auth::id()); })
-        ->leftjoin('laters', function ($join) { $join->on('laters.series_id', '=', 'series.id')->where('laters.user_id', '=', Auth::id()); })
-        ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.series_id', '=', 'series.id')->where('bans.user_id', Auth::id()); })
+        ->leftjoin('series_laters', function ($join) { $join->on('series_laters.series_id', '=', 'series.id')->where('series_laters.user_id', '=', Auth::id()); })
+        ->leftjoin('series_bans', function ($join) use ($request) { $join->on('series_bans.series_id', '=', 'series.id')->where('series_bans.user_id', Auth::id()); })
         ->select(
             'series.original_name',
             'ss.point',
@@ -150,15 +150,15 @@ class DiscoverController extends Controller
             'series.en_backdrop_path as backdrop_path',
             'series.en_poster_path as poster_path',
             'series_rateds.rate as rate_code',
-            'laters.id as later_id',
-            'bans.id as ban_id'
+            'series_laters.id as later_id',
+            'series_bans.id as ban_id'
         );
 
         // User Hide Filter
         if($request->hide && !in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', '=', 0)->orWhereNull('series_rateds.rate'); });
-            if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('bans.id');
+            if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('series_bans.id');
         }
         // Sorting
         if($request->sorting === 'Match Score') { $return_val = $return_val->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
