@@ -47,7 +47,7 @@ class DiscoverController extends Controller
 
         $qqSql = $subq->toSql();
     ////////////////////////////////////////////////////
-        $subq_2 = DB::table('movies')
+        /* $subq_2 = DB::table('movies')
         ->join(
             DB::raw('(' . $qqSql. ') AS ss'),
             function($join) use ($subq) { $join->on('movies.id', '=', 'ss.id')->addBinding($subq->getBindings()); }
@@ -64,15 +64,16 @@ class DiscoverController extends Controller
         )
         ->groupBy('movies.id');
 
-        //if(!$request->f_add_watched) { $subq_2 = $subq_2->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0'); }
+        if(!$request->f_add_watched) { $subq_2 = $subq_2->havingRaw('sum(IF(rateds.id IS NULL OR rateds.rate = 0, 0, 1)) = 0'); }
 
-        $qqSql_2 = $subq_2->toSql();
+        $qqSql_2 = $subq_2->toSql(); */
     ////////////////////////////////////////////////////
         $return_val = DB::table('movies')
         ->join(
-            DB::raw('(' . $qqSql_2. ') AS ss'),
-            function($join) use ($subq_2) { $join->on('movies.id', '=', 'ss.id')->addBinding($subq_2->getBindings()); }
+            DB::raw('(' . $qqSql. ') AS ss'),
+            function($join) use ($qqSql) { $join->on('movies.id', '=', 'ss.id')->addBinding($qqSql->getBindings()); }
         )
+        ->leftjoin('rateds', function ($join) { $join->on('rateds.movie_id', '=', 'movies.id')->where('rateds.user_id', Auth::id()); })
         ->leftjoin('laters', function ($join) { $join->on('laters.movie_id', '=', 'movies.id')->where('laters.user_id', '=', Auth::id()); })
         ->leftjoin('bans', function ($join) use ($request) { $join->on('bans.movie_id', '=', 'movies.id')->where('bans.user_id', Auth::id()); })
         //->where('bans.id', '=', null)
@@ -87,9 +88,9 @@ class DiscoverController extends Controller
             'movies.vote_count',
             'movies.release_date',
             'movies.en_title as title',
+            'movies.en_cover_path as cover_path',
             'movies.en_poster_path as poster_path',
-            'ss.rated_id',
-            'ss.rate_code',
+            'rateds.rate as rate_code',
             'laters.id as later_id',
             'bans.id as ban_id'
         )
