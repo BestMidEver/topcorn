@@ -93,7 +93,7 @@ class DiscoverController extends Controller
         )
         ->groupBy('movies.id');
         // User Hide Filter
-        if($request->hide && !in_array('None', $request->hide)) {
+        if(!in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', 0)->orWhereNull('rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('bans.id');
@@ -162,7 +162,7 @@ class DiscoverController extends Controller
             'bans.id as ban_id'
         );
         // User Hide Filter
-        if($request->hide && !in_array('None', $request->hide)) {
+        if(!in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', 0)->orWhereNull('rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('bans.id');
@@ -261,7 +261,7 @@ class DiscoverController extends Controller
         )
         ->groupBy('series.id');
         // User Hide Filter
-        if($request->hide && !in_array('None', $request->hide)) {
+        if(!in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('series_laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', 0)->orWhereNull('series_rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('series_bans.id');
@@ -328,7 +328,7 @@ class DiscoverController extends Controller
             'series_bans.id as ban_id'
         );
         // User Hide Filter
-        if($request->hide && !in_array('None', $request->hide)) {
+        if(!in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('series_laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', 0)->orWhereNull('series_rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('series_bans.id');
