@@ -47,7 +47,7 @@ class DiscoverController extends Controller
             'ss.p2'
         );
         // Vote Average Filter
-        if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->min_vote_average);
+        if($request->vote_average > 0 && $request->vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->vote_average);
         // Vote Count Filter
         if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq_2 = $subq_2->where('movies.vote_count', '>', $request->min_vote_count);
         // Original Languages Filter
@@ -127,7 +127,7 @@ class DiscoverController extends Controller
         // Match Rate Filter
         ->havingRaw('sum(rateds.rate-1)*25 DIV COUNT(movies.id) >= '.$request->min_match_rate.' AND sum(ABS(rateds.rate-3)*(rateds.rate-3)*recommendations.is_similar) > 15');
         // Vote Average Filter
-        if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq = $subq->where('movies.vote_average', '>', $request->min_vote_average);
+        if($request->vote_average > 0 && $request->vote_average != 'All') $subq = $subq->where('movies.vote_average', '>', $request->vote_average);
         // Vote Count Filter
         if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq = $subq->where('movies.vote_count', '>', $request->min_vote_count);
         // Original Languages Filter
@@ -215,7 +215,7 @@ class DiscoverController extends Controller
             'ss.p2'
         );
         // Vote Average Filter
-        if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq_2 = $subq_2->where('series.vote_average', '>', $request->min_vote_average);
+        if($request->vote_average > 0 && $request->vote_average != 'All') $subq_2 = $subq_2->where('series.vote_average', '>', $request->vote_average);
         // Vote Count Filter
         if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq_2 = $subq_2->where('series.vote_count', '>', $request->min_vote_count);
         // Original Languages Filter
@@ -293,7 +293,7 @@ class DiscoverController extends Controller
         // Match Rate Filter
         ->havingRaw('sum(series_rateds.rate-1)*25 DIV COUNT(series.id) >= '.$request->min_match_rate.' AND sum(ABS(series_rateds.rate-3)*(series_rateds.rate-3)*series_recommendations.rank) > 15');
         // Vote Average Filter
-        if($request->min_vote_average > 0 && $request->min_vote_average != 'All') $subq = $subq->where('series.vote_average', '>', $request->min_vote_average);
+        if($request->vote_average > 0 && $request->vote_average != 'All') $subq = $subq->where('series.vote_average', '>', $request->vote_average);
         // Vote Count Filter
         if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq = $subq->where('series.vote_count', '>', $request->min_vote_count);
         // Original Languages Filter
