@@ -51,12 +51,12 @@ class DiscoverController extends Controller
         // Vote Count Filter
         if($request->vote_count > 0 && $request->vote_count != 'All') $subq_2 = $subq_2->where('movies.vote_count', '>', $request->vote_count);
         // Original Languages Filter
-        if(!in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('movies.original_language', $request->original_languages); }
+        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('movies.original_language', $request->original_languages); }
         // Year Filters
         if($request->min_year > 0) { $subq_2 = $subq_2->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year > 0) { $subq_2 = $subq_2->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
         
-        if(!in_array('All', $request->genre_combination)) {
+        if($request->genre_combination && !in_array('All', $request->genre_combination)) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('m2.id')
@@ -93,7 +93,7 @@ class DiscoverController extends Controller
         )
         ->groupBy('movies.id');
         // User Hide Filter
-        if(!in_array('None', $request->hide)) {
+        if($request->hide && !in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', 0)->orWhereNull('rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('bans.id');
@@ -131,7 +131,7 @@ class DiscoverController extends Controller
         // Vote Count Filter
         if($request->vote_count > 0 && $request->vote_count != 'All') $subq = $subq->where('movies.vote_count', '>', $request->vote_count);
         // Original Languages Filter
-        if(!in_array('All', $request->original_languages)) { $subq = $subq->whereIn('movies.original_language', $request->original_languages); }
+        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq = $subq->whereIn('movies.original_language', $request->original_languages); }
         // Year Filters
         if($request->min_year > 0) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year > 0) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
@@ -162,7 +162,7 @@ class DiscoverController extends Controller
             'bans.id as ban_id'
         );
         // User Hide Filter
-        if(!in_array('None', $request->hide)) {
+        if($request->hide && !in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', 0)->orWhereNull('rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('bans.id');
@@ -174,7 +174,7 @@ class DiscoverController extends Controller
         else if($request->sort == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
         else if($request->sort == 'Highest Budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Highest Revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
-        if(!in_array('All', $request->genre_combination)) {
+        if($request->genre_combination && !in_array('All', $request->genre_combination)) {
             $return_val = $return_val->join('genres', 'genres.movie_id', 'movies.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('movies.id')
@@ -219,12 +219,12 @@ class DiscoverController extends Controller
         // Vote Count Filter
         if($request->vote_count > 0 && $request->vote_count != 'All') $subq_2 = $subq_2->where('series.vote_count', '>', $request->vote_count);
         // Original Languages Filter
-        if(!in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('series.original_language', $request->original_languages); }
+        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('series.original_language', $request->original_languages); }
         // Year Filters
         if($request->min_year > 0) { $subq_2 = $subq_2->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year > 0) { $subq_2 = $subq_2->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
         
-        if(!in_array('All', $request->genre_combination)) {
+        if($request->genre_combination && !in_array('All', $request->genre_combination)) {
             $subq_2 = $subq_2->join('series_genres', 'series_genres.series_id', 'm2.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('m2.id')
@@ -261,7 +261,7 @@ class DiscoverController extends Controller
         )
         ->groupBy('series.id');
         // User Hide Filter
-        if(!in_array('None', $request->hide)) {
+        if($request->hide && !in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('series_laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', 0)->orWhereNull('series_rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('series_bans.id');
@@ -297,7 +297,7 @@ class DiscoverController extends Controller
         // Vote Count Filter
         if($request->vote_count > 0 && $request->vote_count != 'All') $subq = $subq->where('series.vote_count', '>', $request->vote_count);
         // Original Languages Filter
-        if(!in_array('All', $request->original_languages)) { $subq = $subq->whereIn('original_language', $request->original_languages); }
+        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq = $subq->whereIn('original_language', $request->original_languages); }
         // Year Filters
         if($request->min_year > 0) { $subq = $subq->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year > 0) { $subq = $subq->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
@@ -328,7 +328,7 @@ class DiscoverController extends Controller
             'series_bans.id as ban_id'
         );
         // User Hide Filter
-        if(!in_array('None', $request->hide)) {
+        if($request->hide && !in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('series_laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('series_rateds.rate', 0)->orWhereNull('series_rateds.rate'); });
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('series_bans.id');
@@ -338,7 +338,7 @@ class DiscoverController extends Controller
         elseif($request->sort == 'Newest') { $return_val = $return_val->orderBy('first_air_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Top Rated') { $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
-        if(!in_array('All', $request->genre_combination)) {
+        if($request->genre_combination && !in_array('All', $request->genre_combination)) {
             $return_val = $return_val->join('series_genres', 'series_genres.series_id', 'series.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('series.id')
