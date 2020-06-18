@@ -49,7 +49,7 @@ class DiscoverController extends Controller
         // Vote Average Filter
         if($request->vote_average > 0 && $request->vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->vote_average);
         // Vote Count Filter
-        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq_2 = $subq_2->where('movies.vote_count', '>', $request->min_vote_count);
+        if($request->vote_count > 0 && $request->vote_count != 'All') $subq_2 = $subq_2->where('movies.vote_count', '>', $request->vote_count);
         // Original Languages Filter
         if(!in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('movies.original_language', $request->original_languages); }
         // Year Filters
@@ -129,7 +129,7 @@ class DiscoverController extends Controller
         // Vote Average Filter
         if($request->vote_average > 0 && $request->vote_average != 'All') $subq = $subq->where('movies.vote_average', '>', $request->vote_average);
         // Vote Count Filter
-        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq = $subq->where('movies.vote_count', '>', $request->min_vote_count);
+        if($request->vote_count > 0 && $request->vote_count != 'All') $subq = $subq->where('movies.vote_count', '>', $request->vote_count);
         // Original Languages Filter
         if(!in_array('All', $request->original_languages)) { $subq = $subq->whereIn('movies.original_language', $request->original_languages); }
         // Year Filters
@@ -217,7 +217,7 @@ class DiscoverController extends Controller
         // Vote Average Filter
         if($request->vote_average > 0 && $request->vote_average != 'All') $subq_2 = $subq_2->where('series.vote_average', '>', $request->vote_average);
         // Vote Count Filter
-        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq_2 = $subq_2->where('series.vote_count', '>', $request->min_vote_count);
+        if($request->vote_count > 0 && $request->vote_count != 'All') $subq_2 = $subq_2->where('series.vote_count', '>', $request->vote_count);
         // Original Languages Filter
         if(!in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('series.original_language', $request->original_languages); }
         // Year Filters
@@ -295,7 +295,7 @@ class DiscoverController extends Controller
         // Vote Average Filter
         if($request->vote_average > 0 && $request->vote_average != 'All') $subq = $subq->where('series.vote_average', '>', $request->vote_average);
         // Vote Count Filter
-        if($request->min_vote_count > 0 && $request->min_vote_count != 'All') $subq = $subq->where('series.vote_count', '>', $request->min_vote_count);
+        if($request->vote_count > 0 && $request->vote_count != 'All') $subq = $subq->where('series.vote_count', '>', $request->vote_count);
         // Original Languages Filter
         if(!in_array('All', $request->original_languages)) { $subq = $subq->whereIn('original_language', $request->original_languages); }
         // Year Filters
