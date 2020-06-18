@@ -53,8 +53,8 @@ class DiscoverController extends Controller
         // Original Languages Filter
         if($request->original_languages) { $subq_2 = $subq_2->whereIn('movies.original_language', $request->original_languages); }
         // Year Filters
-        if($request->min_year) { $subq_2 = $subq_2->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
-        if($request->max_year) { $subq_2 = $subq_2->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
+        if($request->min_year > 0) { $subq_2 = $subq_2->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year > 0) { $subq_2 = $subq_2->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
         
         if(!in_array('All', $request->genre_combination)) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
@@ -133,8 +133,8 @@ class DiscoverController extends Controller
         // Original Languages Filter
         if($request->original_languages) { $subq = $subq->whereIn('movies.original_language', $request->original_languages); }
         // Year Filters
-        if($request->min_year) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
-        if($request->max_year) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
+        if($request->min_year > 0) { $subq = $subq->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year > 0) { $subq = $subq->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
         $qqSql = $subq->toSql();
         $return_val = DB::table('movies')
         ->join(
@@ -221,8 +221,8 @@ class DiscoverController extends Controller
         // Original Languages Filter
         if($request->original_languages) { $subq_2 = $subq_2->whereIn('series.original_language', $request->original_languages); }
         // Year Filters
-        if($request->min_year) { $subq_2 = $subq_2->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
-        if($request->max_year) { $subq_2 = $subq_2->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
+        if($request->min_year > 0) { $subq_2 = $subq_2->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year > 0) { $subq_2 = $subq_2->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
         
         if(!in_array('All', $request->genre_combination)) {
             $subq_2 = $subq_2->join('series_genres', 'series_genres.series_id', 'm2.id')
@@ -299,8 +299,8 @@ class DiscoverController extends Controller
         // Original Languages Filter
         if($request->original_languages) { $subq = $subq->whereIn('original_language', $request->original_languages); }
         // Year Filters
-        if($request->min_year) { $subq = $subq->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
-        if($request->max_year) { $subq = $subq->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
+        if($request->min_year > 0) { $subq = $subq->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year > 0) { $subq = $subq->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
         $qqSql = $subq->toSql();
         $return_val = DB::table('series')
         ->join(
