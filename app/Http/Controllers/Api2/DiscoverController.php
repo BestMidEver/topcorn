@@ -165,7 +165,6 @@ class DiscoverController extends Controller
         if(!in_array('None', $request->hide)) {
             if(in_array('Watch Later', $request->hide)) $return_val = $return_val->whereNull('laters.id');
             if(in_array('Already Seen', $request->hide)) $return_val = $return_val->where(function ($query) { $query->where('rateds.rate', 0)->orWhereNull('rateds.rate'); });
-            return $request->hide;
             if(in_array('Hidden', $request->hide)) $return_val = $return_val->whereNull('bans.id');
         }
         // Sorting
