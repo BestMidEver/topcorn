@@ -56,7 +56,7 @@ class DiscoverController extends Controller
         if($request->min_year) { $subq_2 = $subq_2->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year) { $subq_2 = $subq_2->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
         
-        if($request->genre_combination) {
+        if(!in_array('All', $request->genre_combination)) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('m2.id')
@@ -174,7 +174,7 @@ class DiscoverController extends Controller
         else if($request->sort == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
         else if($request->sort == 'Highest Budget') { $return_val = $return_val->orderBy('movies.budget', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Highest Revenue') { $return_val = $return_val->orderBy('movies.revenue', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
-        if($request->genre_combination) {
+        if(!in_array('All', $request->genre_combination)) {
             $return_val = $return_val->join('genres', 'genres.movie_id', 'movies.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('movies.id')
@@ -224,7 +224,7 @@ class DiscoverController extends Controller
         if($request->min_year) { $subq_2 = $subq_2->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year) { $subq_2 = $subq_2->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
         
-        if($request->genre_combination) {
+        if(!in_array('All', $request->genre_combination)) {
             $subq_2 = $subq_2->join('series_genres', 'series_genres.series_id', 'm2.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('m2.id')
@@ -338,7 +338,7 @@ class DiscoverController extends Controller
         elseif($request->sort == 'Newest') { $return_val = $return_val->orderBy('first_air_date', 'desc')->orderBy('percent', 'desc')->orderBy('vote_average', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Top Rated') { $return_val = $return_val->orderBy('vote_average', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc')->orderBy('popularity', 'desc'); }
         else if($request->sort == 'Most Popular') { $return_val = $return_val->orderBy('popularity', 'desc')->orderBy('point', 'desc')->orderBy('percent', 'desc'); }
-        if($request->genre_combination) {
+        if(!in_array('All', $request->genre_combination)) {
             $return_val = $return_val->join('series_genres', 'series_genres.series_id', 'series.id')
             ->whereIn('genre_id', $request->genre_combination)
             ->groupBy('series.id')
