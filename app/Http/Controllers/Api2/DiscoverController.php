@@ -297,7 +297,7 @@ class DiscoverController extends Controller
         // Vote Count Filter
         if($request->vote_count > 0 && $request->vote_count != 'All') $subq = $subq->where('series.vote_count', '>', $request->vote_count);
         // Original Languages Filter
-        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq = $subq->whereIn('original_language', $request->original_languages); }
+        //if($request->original_languages && !in_array('All', $request->original_languages)) { $subq = $subq->whereIn('original_language', $request->original_languages); }
         // Year Filters
         if($request->min_year > 0) { $subq = $subq->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year > 0) { $subq = $subq->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
