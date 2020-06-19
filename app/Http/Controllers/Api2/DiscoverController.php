@@ -14,6 +14,7 @@ class DiscoverController extends Controller
     {
         if($request->type === 'movie') return $request->retrieve === 'All' ? $this->getTopRatedMovies($request) : $this->getPemosuMovies($request);
         if($request->type === 'series') return $request->retrieve === 'All' ? $this->getTopRatedSeries($request) : $this->getPemosuSeries($request);
+        if($request->type === 'person') return $this->getPeople($request);
     }
 
     private function getTopRatedMovies($request)
@@ -346,5 +347,33 @@ class DiscoverController extends Controller
         }
 
         return $return_val->paginate(Auth::User()->pagination);
+    }
+
+    private function getPeople($request)
+    {
+        $people = DB::table('people')
+        ->select(
+            'people.id',
+            'people.profile_path',
+            'people.name',
+            DB::raw('DATE(people.birthday) as birthday'),
+            'people.deathday',
+            'people.popularity',
+            DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, CURDATE()) AS age'),
+            DB::raw('TIMESTAMPDIFF(YEAR, people.birthday, people.deathday) AS died_age')
+        )
+        ->orderBy('people.popularity', 'desc');
+
+        if($mode == 'born today') {
+            $people = $people
+            ->whereMonth('people.birthday', Carbon::now()->month)
+            ->whereDay('people.birthday', Carbon::now()->day);
+        } else if($mode == 'died today') {
+            $people = $people
+            ->whereMonth('people.deathday', Carbon::now()->month)
+            ->whereDay('people.deathday', Carbon::now()->day);
+        }
+
+        return $people->paginate(Auth::User()->pagination);
     }
 }
