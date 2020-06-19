@@ -47,14 +47,14 @@ class DiscoverController extends Controller
             'ss.p2'
         );
         // Vote Average Filter
-        if($request->vote_average > 0 && $request->vote_average != 'All') $subq_2 = $subq_2->where('movies.vote_average', '>', $request->vote_average);
+        if($request->vote_average > 0 && $request->vote_average != 'All') $subq_2 = $subq_2->where('m2.vote_average', '>', $request->vote_average);
         // Vote Count Filter
-        if($request->vote_count > 0 && $request->vote_count != 'All') $subq_2 = $subq_2->where('movies.vote_count', '>', $request->vote_count);
+        if($request->vote_count > 0 && $request->vote_count != 'All') $subq_2 = $subq_2->where('m2.vote_count', '>', $request->vote_count);
         // Original Languages Filter
-        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('movies.original_language', $request->original_languages); }
+        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq_2 = $subq_2->whereIn('m2.original_language', $request->original_languages); }
         // Year Filters
-        if($request->min_year > 0) { $subq_2 = $subq_2->where('movies.release_date', '>=', Carbon::create($request->min_year,1,1)); }
-        if($request->max_year > 0) { $subq_2 = $subq_2->where('movies.release_date', '<=', Carbon::create($request->max_year,12,31)); }
+        if($request->min_year > 0) { $subq_2 = $subq_2->where('m2.release_date', '>=', Carbon::create($request->min_year,1,1)); }
+        if($request->max_year > 0) { $subq_2 = $subq_2->where('m2.release_date', '<=', Carbon::create($request->max_year,12,31)); }
         
         if($request->genre_combination && !in_array('All', $request->genre_combination)) {
             $subq_2 = $subq_2->join('genres', 'genres.movie_id', 'm2.id')
@@ -297,7 +297,7 @@ class DiscoverController extends Controller
         // Vote Count Filter
         if($request->vote_count > 0 && $request->vote_count != 'All') $subq = $subq->where('series.vote_count', '>', $request->vote_count);
         // Original Languages Filter
-        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq = $subq->whereIn('original_language', $request->original_languages); }
+        if($request->original_languages && !in_array('All', $request->original_languages)) { $subq = $subq->whereIn('series.original_language', $request->original_languages); }
         // Year Filters
         if($request->min_year > 0) { $subq = $subq->where('series.first_air_date', '>=', Carbon::create($request->min_year,1,1)); }
         if($request->max_year > 0) { $subq = $subq->where('series.first_air_date', '<=', Carbon::create($request->max_year,12,31)); }
