@@ -279,7 +279,7 @@ class DiscoverController extends Controller
     {
         $subq = DB::table('series_rateds')
         ->where('series_rateds.user_id', Auth::id())
-        ->where('series_rateds.rate', '>', $request->retrieve === 'My Votes' ? 0 : 4)
+        ->where('series_rateds.rate', '>', $request->retrieve === 'Recommendations' ? 0 : 4)
         ->leftjoin('series_recommendations', 'series_recommendations.series_id', 'series_rateds.series_id')
         ->join('series', 'series.id', 'series_recommendations.this_id')
         ->select(
