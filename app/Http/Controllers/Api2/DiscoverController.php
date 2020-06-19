@@ -365,7 +365,6 @@ class DiscoverController extends Controller
         ->orderBy('people.popularity', 'desc');
 
         if($request->mode == 'Born Today') {
-            return $request;
             $people = $people
             ->whereMonth('people.birthday', Carbon::now()->month)
             ->whereDay('people.birthday', Carbon::now()->day);
