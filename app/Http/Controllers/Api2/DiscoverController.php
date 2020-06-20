@@ -15,6 +15,7 @@ class DiscoverController extends Controller
         if($request->type === 'movie') return $request->retrieve === 'All' ? $this->getTopRatedMovies($request) : $this->getPemosuMovies($request);
         if($request->type === 'series') return $request->retrieve === 'All' ? $this->getTopRatedSeries($request) : $this->getPemosuSeries($request);
         if($request->type === 'person') return $this->getPeople($request);
+        if($request->type === 'user') return $this->getUsers($request);
     }
 
     private function getTopRatedMovies($request)
@@ -375,5 +376,10 @@ class DiscoverController extends Controller
         }
 
         return $people->paginate(Auth::User()->pagination);
+    }
+
+    private function getUsers($request)
+    {
+
     }
 }
