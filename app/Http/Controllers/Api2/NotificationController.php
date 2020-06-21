@@ -19,4 +19,8 @@ class NotificationController extends Controller
 
         return $notifications;
     }
+
+    public static function getNotifications(Request $request) {
+        return 1;
+    }
 }
