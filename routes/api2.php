@@ -47,6 +47,10 @@ Route::middleware('auth:api')->group(function () {
     
     // Discover
     Route::post('/discover', 'Api2\DiscoverController@discoverAssign');
+
+    // Notifications
+    Route::get('/notifications', 'Api2\NotificationController@getNotificationButton');
+    Route::post('/notifications', 'Api2\NotificationController@getNotifications');
     
     // Review
     Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');
