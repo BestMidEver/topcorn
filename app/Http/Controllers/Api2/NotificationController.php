@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class NotificationController extends Controller
 {
     public static function getNotificationButton() {
-        return 1;
         $notifications = DB::table('notifications')
         ->where('notifications.is_seen', '=', 0);
 
