@@ -45,7 +45,7 @@ class NotificationsController extends Controller
 				->where('reviews.id', '=', $notification->multi_id)
         		->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
                 ->where('review_likes.is_deleted', '=', 0);
-                return $temp;
+                return $temp->toArray();
 				if($temp->first()->mode == 1){
 					$temp = $temp
             		->join('movies', 'movies.id', '=', 'reviews.movie_series_id')
