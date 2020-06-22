@@ -49,7 +49,7 @@ class NotificationController extends Controller
                 		DB::raw($notification->mode.' as notification_mode'),
                 		DB::raw($notification->id.' as notification_id')
             		)
-					->paginate(3);
+					->first();
 				}else if($temp->first()->mode == 3){
 					$temp = $temp
             		->join('series', 'series.id', '=', 'reviews.movie_series_id')
@@ -66,7 +66,7 @@ class NotificationController extends Controller
                 		DB::raw($notification->mode.' as notification_mode'),
                 		DB::raw($notification->id.' as notification_id')
             		)
-					->paginate(3);
+					->first();
 				}
 			}else if($notification->mode == 1){
 				$temp = DB::table('listes')
@@ -83,7 +83,7 @@ class NotificationController extends Controller
             		DB::raw($notification->mode.' as notification_mode'),
             		DB::raw($notification->id.' as notification_id')
         		)
-				->paginate(3);
+				->first();
 			}else if($notification->mode == 2){
                 $temp = DB::table('custom_notifications')
                 ->where('custom_notifications.id', '=', $notification->multi_id)
@@ -94,7 +94,7 @@ class NotificationController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(1);
+                ->first();
             }else if($notification->mode == 3){
                 $temp = DB::table('series')
                 ->where('series.id', '=', $notification->multi_id)
@@ -109,7 +109,7 @@ class NotificationController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(1);
+                ->first();
             }else if($notification->mode == 4){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
@@ -127,7 +127,7 @@ class NotificationController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(3);
+                ->first();
             }else if($notification->mode == 5){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
@@ -145,7 +145,7 @@ class NotificationController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(3);
+                ->first();
             }else if($notification->mode == 6){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
@@ -157,7 +157,7 @@ class NotificationController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(3);
+                ->first();
             }else if($notification->mode == 7){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
@@ -171,7 +171,7 @@ class NotificationController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(1);
+                ->first();
             }else if($notification->mode == 8){
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
@@ -184,7 +184,7 @@ class NotificationController extends Controller
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 )
-                ->paginate(1);
+                ->first();
             }
 			array_push($return_val, $temp);
 		}
