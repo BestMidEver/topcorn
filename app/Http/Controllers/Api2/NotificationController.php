@@ -26,14 +26,13 @@ class NotificationController extends Controller
         ->orderBy('updated_at', 'desc')
         ->paginate(Auth::User()->pagination);
 
-		$return_val = [];
 		foreach ($notifications as $notification) {
-			if($notification->mode == 0){
+			if($notification->mode == 0) {
 				$temp = DB::table('reviews')
 				->where('reviews.id', '=', $notification->multi_id)
         		->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
                 ->where('review_likes.is_deleted', '=', 0);
-				if($temp->first()->mode == 1){
+				if($temp->first()->mode == 1) {
 					$temp = $temp
             		->join('movies', 'movies.id', '=', 'reviews.movie_series_id')
             		->join('users', 'users.id', '=', 'review_likes.user_id')
@@ -48,9 +47,8 @@ class NotificationController extends Controller
                 		DB::raw($notification->is_seen.' as is_seen'),
                 		DB::raw($notification->mode.' as notification_mode'),
                 		DB::raw($notification->id.' as notification_id')
-            		)
-					->first();
-				}else if($temp->first()->mode == 3){
+            		);
+				} else if($temp->first()->mode == 3) {
 					$temp = $temp
             		->join('series', 'series.id', '=', 'reviews.movie_series_id')
             		->join('users', 'users.id', '=', 'review_likes.user_id')
@@ -65,10 +63,9 @@ class NotificationController extends Controller
                 		DB::raw($notification->is_seen.' as is_seen'),
                 		DB::raw($notification->mode.' as notification_mode'),
                 		DB::raw($notification->id.' as notification_id')
-            		)
-					->first();
+            		);
 				}
-			}else if($notification->mode == 1){
+			} else if($notification->mode == 1) {
 				$temp = DB::table('listes')
 				->where('listes.id', '=', $notification->multi_id)
             	->leftjoin('listlikes', 'listlikes.list_id', '=', 'listes.id')
@@ -82,9 +79,8 @@ class NotificationController extends Controller
             		DB::raw($notification->is_seen.' as is_seen'),
             		DB::raw($notification->mode.' as notification_mode'),
             		DB::raw($notification->id.' as notification_id')
-        		)
-				->first();
-			}else if($notification->mode == 2){
+        		);
+			} else if($notification->mode == 2) {
                 $temp = DB::table('custom_notifications')
                 ->where('custom_notifications.id', '=', $notification->multi_id)
                 ->select(
@@ -93,9 +89,8 @@ class NotificationController extends Controller
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
-                )
-                ->first();
-            }else if($notification->mode == 3){
+                );
+            } else if($notification->mode == 3) {
                 $temp = DB::table('series')
                 ->where('series.id', '=', $notification->multi_id)
                 ->select(
@@ -108,9 +103,8 @@ class NotificationController extends Controller
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
-                )
-                ->first();
-            }else if($notification->mode == 4){
+                );
+            } else if($notification->mode == 4) {
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
                 ->join('sent_items', 'sent_items.id', '=', 'notifications.multi_id')
@@ -126,9 +120,8 @@ class NotificationController extends Controller
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
-                )
-                ->first();
-            }else if($notification->mode == 5){
+                );
+            } else if($notification->mode == 5) {
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
                 ->join('sent_items', 'sent_items.id', '=', 'notifications.multi_id')
@@ -144,9 +137,8 @@ class NotificationController extends Controller
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
-                )
-                ->first();
-            }else if($notification->mode == 6){
+                );
+            } else if($notification->mode == 6) {
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
                 ->join('users', 'users.id', '=', 'notifications.multi_id')
@@ -156,9 +148,8 @@ class NotificationController extends Controller
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
-                )
-                ->first();
-            }else if($notification->mode == 7){
+                );
+            } else if($notification->mode == 7) {
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
                 ->join('series', 'series.id', '=', 'notifications.multi_id')
@@ -170,9 +161,8 @@ class NotificationController extends Controller
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
-                )
-                ->first();
-            }else if($notification->mode == 8){
+                );
+            } else if($notification->mode == 8) {
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
                 ->join('users', 'users.id', '=', 'notifications.multi_id')
@@ -183,12 +173,10 @@ class NotificationController extends Controller
                     DB::raw($notification->is_seen.' as is_seen'),
                     DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
-                )
-                ->first();
+                );
             }
-			$notification->notification = $temp;
+			$notification->notification = $temp->first();
         }
-        $notifications->data = [];
-        return [$notifications, $return_val];
+        return $notifications;
     }
 }
