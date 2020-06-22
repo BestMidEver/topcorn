@@ -20,6 +20,7 @@ class CreateNotificationsTable extends Migration
                                         //  6-watchtogether | 7-airingtoday | 8-startedfollowing
             $table->integer('user_id');
             $table->integer('multi_id');
+            $table->integer('subject_id');
             $table->tinyInteger('is_seen');
             $table->timestamps();
         });
