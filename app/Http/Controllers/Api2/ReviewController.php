@@ -49,7 +49,7 @@ class ReviewController extends Controller
             ['is_deleted' => 1]
         );
 
-        Notification::where('multi_id', $review_id)
+        return Notification::where('multi_id', $review_id)
         ->where('user_id', Auth::id())
         ->where('mode', 0)
         ->delete();
