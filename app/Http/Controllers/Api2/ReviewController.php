@@ -50,7 +50,7 @@ class ReviewController extends Controller
         );
 
         return Notification::where('multi_id', $review_id)
-        ->where('user_id', Auth::id())
+        //->where('user_id', Auth::id())
         ->where('mode', 0)
         ->first();
 
