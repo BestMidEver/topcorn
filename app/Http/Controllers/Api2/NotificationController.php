@@ -41,7 +41,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'reviews.mode as review_mode',
-                		DB::raw('reviewlike-movie as type')
+                		DB::raw('"reviewlike-movie" as type')
             		);
 				} else if($temp->first()->mode == 3) {
 					$temp = $temp
