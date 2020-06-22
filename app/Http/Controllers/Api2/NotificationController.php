@@ -29,7 +29,7 @@ class NotificationController extends Controller
 				$temp = DB::table('reviews')
 				->where('reviews.id', $notification->multi_id)
                 ->leftjoin('review_likes', 'review_likes.review_id', 'reviews.id')
-                ->join('users', 'users.id', 'review_likes.user_id')
+                //->join('users', 'users.id', 'review_likes.user_id')
                 ->where('review_likes.is_deleted', 0);
 				/* if($temp->first()->mode == 1) {
 					$temp = $temp->join('movies', 'movies.id', 'reviews.movie_series_id')
@@ -51,10 +51,10 @@ class NotificationController extends Controller
             			'series.original_name as original_title',
                 		'series.en_name as title',
                 		'series.first_air_date as release_date',
-                		'users.name as user_name',
-                		'users.id as user_id',
+                		//'users.name as user_name',
+                		//'users.id as user_id',
                 		'reviews.mode as review_mode',
-                        DB::raw('COUNT(users.id) as count'),
+                        //DB::raw('COUNT(users.id) as count'),
                 		DB::raw('"Review Like Series" as type'),
                 		DB::raw($notification->subject_id.' as type2')
             		);
