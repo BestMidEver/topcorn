@@ -43,6 +43,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                         'users.id as user_id',
                         'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                         'reviews.mode as review_mode',
                 		DB::raw('"Review Like Movie" as type')
             		);
@@ -57,6 +58,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
                 		DB::raw('"Review Like Series" as type')
             		);
@@ -69,6 +71,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
                 		DB::raw('"Review Like Person" as type')
             		);
@@ -122,6 +125,7 @@ class NotificationController extends Controller
                     'users.name as user_name',
                     'users.id as user_id',
                     'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                     DB::raw('"Share Movie" as type')
                 );
             } else if($notification->mode == 5) {
@@ -139,6 +143,7 @@ class NotificationController extends Controller
                     'users.name as user_name',
                     'users.id as user_id',
                     'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                     DB::raw('"Share Series" as type')
                 );
             } /* else if($notification->mode == 6) {
@@ -169,6 +174,7 @@ class NotificationController extends Controller
                     'users.id as user_id',
                     'users.name as user_name',
                     'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                     'notifications.created_at as created_at',
                     DB::raw('"Started Following" as type')
                 );
