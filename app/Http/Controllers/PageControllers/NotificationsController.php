@@ -62,7 +62,7 @@ class NotificationsController extends Controller
                 		DB::raw($notification->id.' as notification_id')
             		)
 					->paginate(3);
-				}else if($temp->first()->mode == 3){
+				}else if($temp->first() && $temp->first()->mode == 3){
 					$temp = $temp
             		->join('series', 'series.id', '=', 'reviews.movie_series_id')
             		->join('users', 'users.id', '=', 'review_likes.user_id')
