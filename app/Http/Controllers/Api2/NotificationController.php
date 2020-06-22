@@ -37,9 +37,12 @@ class NotificationController extends Controller
             			'movies.id as movie_id',
             			'movies.original_title as original_title',
                 		'movies.en_title as title',
+                        'movies.en_poster_path as poster_path',
                 		'movies.release_date as release_date',
                 		'users.name as user_name',
-                		'users.id as user_id',
+                        'users.id as user_id',
+                        'users.profile_pic as profile_path',
+                        'users.facebook_profile_pic as facebook_profile_path',
                         'reviews.mode as review_mode',
                 		DB::raw('"Review Like Movie" as type')
             		);
@@ -48,12 +51,28 @@ class NotificationController extends Controller
             		->select(
             			'series.id as obj_id',
             			'series.original_name as original_title',
-                		'series.en_name as title',
+                        'series.en_name as title',
+                        'series.en_poster_path as poster_path',
                 		'series.first_air_date as release_date',
                 		'users.name as user_name',
                 		'users.id as user_id',
+                        'users.profile_pic as profile_path',
+                        'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
                 		DB::raw('"Review Like Series" as type')
+            		);
+                } else if($temp->first()->mode == 4) {
+					$temp = $temp->leftjoin('people', 'people.id', 'reviews.movie_series_id')
+            		->select(
+            			'people.id as obj_id',
+                        'people.name',
+                        'people.profile_path',
+                		'users.name as user_name',
+                		'users.id as user_id',
+                        'users.profile_pic as profile_path',
+                        'users.facebook_profile_pic as facebook_profile_path',
+                		'reviews.mode as review_mode',
+                		DB::raw('"Review Like Person" as type')
             		);
                 }
                 $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC');
