@@ -41,6 +41,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'reviews.mode as review_mode',
+                        DB::raw('COUNT(users.id) as count'),
                 		DB::raw('"Review Like Movie" as type')
             		);
 				} else if($temp->first()->mode == 3) {
@@ -54,6 +55,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
+                        DB::raw('COUNT(users.id) as count'),
                 		DB::raw('"Review Like Series" as type')
             		);
                 }
