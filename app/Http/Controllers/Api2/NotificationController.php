@@ -41,7 +41,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'reviews.mode as review_mode',
-                        DB::raw('COUNT(users.id) as count'),
+                        DB::raw('COUNT(*) as count'),
                 		DB::raw('"Review Like Movie" as type')
             		);
 				} else if($temp->first()->mode == 3) {
@@ -55,11 +55,11 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
-                        DB::raw('COUNT(users.id) as count'),
+                        DB::raw('COUNT(*) as count'),
                 		DB::raw('"Review Like Series" as type')
             		);
                 }
-                $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) ASC')
+                $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
                 ->groupBy('users.id');
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
