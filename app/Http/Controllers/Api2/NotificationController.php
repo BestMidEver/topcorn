@@ -43,8 +43,9 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                         'users.id as user_id',
                         'users.profile_pic as profile_path',
-                    'users.facebook_profile_pic as facebook_profile_path',
+                        'users.facebook_profile_pic as facebook_profile_path',
                         'reviews.mode as review_mode',
+                        'reviews.review',
                 		DB::raw('"Review Like Movie" as type')
             		);
 				} else if($temp->first()->mode == 3) {
@@ -58,8 +59,9 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'users.profile_pic as profile_path',
-                    'users.facebook_profile_pic as facebook_profile_path',
+                        'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
+                        'reviews.review',
                 		DB::raw('"Review Like Series" as type')
             		);
                 } else if($temp->first()->mode == 4) {
@@ -71,8 +73,9 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'users.profile_pic as profile_path',
-                    'users.facebook_profile_pic as facebook_profile_path',
+                        'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
+                        'reviews.review',
                 		DB::raw('"Review Like Person" as type')
             		);
                 }
@@ -170,6 +173,7 @@ class NotificationController extends Controller
                 $temp = DB::table('notifications')
                 ->where('notifications.id', $notification->id)
                 ->join('users', 'users.id', 'notifications.multi_id')
+                ->join('users as u2', 'u2.id', 'notifications.user_id')
                 ->select(
                     'users.id as user_id',
                     'users.name as user_name',
