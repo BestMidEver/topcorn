@@ -24,7 +24,7 @@ class NotificationController extends Controller
         $notifications = $notifications
         ->select('id', 'multi_id', 'mode', 'is_seen')
         ->orderBy('updated_at', 'desc')
-        ->paginate(Auth::User()->pagination/* , ['*'], 'page', $page */);
+        ->paginate(Auth::User()->pagination);
 
 		$return_val = [];
 		foreach ($notifications as $notification) {
@@ -187,7 +187,8 @@ class NotificationController extends Controller
                 ->first();
             }
 			array_push($return_val, $temp);
-		}
+        }
+        $notifications->data = $return_val;
         return [$notifications, $return_val];
     }
 }
