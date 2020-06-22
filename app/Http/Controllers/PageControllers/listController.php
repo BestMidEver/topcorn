@@ -361,7 +361,7 @@ class listController extends Controller
         );
 
         $will_be_deleted = Notification::where('multi_id', $liste)
-        ->where('user_id', Auth::id())
+        //->where('user_id', Auth::id())
         ->where('mode', 1)
         ->delete();
         

@@ -116,7 +116,6 @@ class ReviewLikeController extends Controller
         );
 
         Notification::where('multi_id', $review_id)
-        ->where('user_id', Auth::id())
         ->where('mode', 0)
         ->delete();
 
