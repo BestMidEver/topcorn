@@ -44,7 +44,7 @@ class NotificationController extends Controller
                         'reviews.mode as review_mode',
                 		DB::raw('"Review Like Movie" as type')
             		);
-				} else if($temp->first()->mode == 3) {
+				} else if($temp->first()->mode == 3) {return $notification->subject_id;
 					$temp = $temp->join('series', 'series.id', 'reviews.movie_series_id')
             		->join('users', 'users.id', 'review_likes.user_id')
                     ->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
