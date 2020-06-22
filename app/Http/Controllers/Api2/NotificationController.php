@@ -153,7 +153,7 @@ class NotificationController extends Controller
                     DB::raw('"Started Following" as type')
                 );
             }
-			$notification->notification = $temp->get();
+			$notification->notification = $temp->first();
         }
         return $notifications;
     }
