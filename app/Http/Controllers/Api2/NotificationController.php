@@ -159,7 +159,6 @@ class NotificationController extends Controller
                 )
                 ->first();
             }else if($notification->mode == 7){
-                $notification->title = 'o.';
                 $temp = DB::table('notifications')
                 ->where('notifications.id', '=', $notification->id)
                 ->join('series', 'series.id', '=', 'notifications.multi_id')
@@ -187,7 +186,7 @@ class NotificationController extends Controller
                 )
                 ->first();
             }
-			array_push($return_val, $temp);
+			$notification = $temp;
         }
         $notifications->data = [];
         return [$notifications, $return_val];
