@@ -12,6 +12,7 @@ class Notification extends Model
     	'mode',
     	'user_id',
     	'multi_id',
+    	'subject_id',
     	'is_seen'
     ];
 
