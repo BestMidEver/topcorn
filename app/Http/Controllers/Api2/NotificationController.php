@@ -19,7 +19,7 @@ class NotificationController extends Controller
     public static function getNotifications(Request $request) {
         $notifications = DB::table('notifications')
         ->where('notifications.user_id', Auth::id())
-        ->select('id', 'multi_id', 'mode', 'is_seen')
+        ->select('id', 'multi_id', 'subject_id', 'mode', 'is_seen')
         ->orderBy('updated_at', 'desc');
         if($request->mode === 'Saved') $notifications = $notifications->where('notifications.is_seen', 2);
         $notifications = $notifications->paginate(Auth::User()->pagination);
@@ -44,7 +44,7 @@ class NotificationController extends Controller
                         'reviews.mode as review_mode',
                 		DB::raw('"Review Like Movie" as type')
             		);
-				} else if($temp->first()->mode == 3) {return $notification;
+				} else if($temp->first()->mode == 3) {
 					$temp = $temp->join('series', 'series.id', 'reviews.movie_series_id')
             		->join('users', 'users.id', 'review_likes.user_id')
                     ->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
