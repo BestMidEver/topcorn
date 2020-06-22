@@ -178,7 +178,7 @@ class NotificationController extends Controller
                     DB::raw('"Started Following" as type')
                 );
             }
-			$notification->notification = $temp->paginate(1);
+			$notification->notification = $temp->paginate(1, ['*'], 'page', 1);
         }
         return $notifications;
     }
