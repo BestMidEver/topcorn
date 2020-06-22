@@ -29,7 +29,7 @@ class NotificationController extends Controller
 				$temp = DB::table('reviews')
 				->where('reviews.id', $notification->multi_id)
                 ->leftjoin('review_likes', 'review_likes.review_id', 'reviews.id')
-                //->join('users', 'users.id', 'review_likes.user_id')
+                ->join('users', 'users.id', 'review_likes.user_id')
                 ->where('review_likes.is_deleted', 0);
 				/* if($temp->first()->mode == 1) {
 					$temp = $temp->join('movies', 'movies.id', 'reviews.movie_series_id')
