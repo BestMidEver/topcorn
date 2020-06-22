@@ -188,7 +188,7 @@ class NotificationController extends Controller
             }
 			array_push($return_val, $temp);
         }
-        $notifications->data = []];
+        $notifications->data = [];
         return [$notifications, $return_val];
     }
 }
