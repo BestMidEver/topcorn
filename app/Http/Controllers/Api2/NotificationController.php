@@ -20,7 +20,7 @@ class NotificationController extends Controller
         $notifications = DB::table('notifications')
         ->where('notifications.user_id', Auth::id())
         ->select('id', 'multi_id', 'mode', 'is_seen')
-        ->orderBy('updated_at', 'desc');]
+        ->orderBy('updated_at', 'desc');
         if($request->mode === 'Saved') $notifications = $notifications->where('notifications.is_seen', 2);
         
 		foreach ($notifications->paginate(Auth::User()->pagination) as $notification) {
