@@ -22,8 +22,9 @@ class NotificationController extends Controller
         ->select('id', 'multi_id', 'mode', 'is_seen')
         ->orderBy('updated_at', 'desc');
         if($request->mode === 'Saved') $notifications = $notifications->where('notifications.is_seen', 2);
+        $notifications = $notifications->paginate(Auth::User()->pagination);
         
-		foreach ($notifications->paginate(Auth::User()->pagination) as $notification) {
+		foreach ($notifications as $notification) {
 			if($notification->mode == 0) {
 				$temp = DB::table('reviews')
 				->where('reviews.id', $notification->multi_id)
