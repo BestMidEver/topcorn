@@ -103,6 +103,7 @@ class NotificationController extends Controller
                     'series.id as movie_id',
                     'series.original_name as original_title',
                     'series.en_name as title',
+                    'series.en_poster_path as poster_path',
                     'series.first_air_date as release_date',
                     'series.next_episode_air_date as next_episode_air_date',
                     DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next'),
@@ -118,9 +119,12 @@ class NotificationController extends Controller
                     'movies.id as movie_id',
                     'movies.original_title as original_title',
                     'movies.en_title as title',
+                    'movies.en_poster_path as poster_path',
                     'movies.release_date as release_date',
                     'users.name as user_name',
                     'users.id as user_id',
+                    'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                     DB::raw('"Share Movie" as type')
                 );
             } else if($notification->mode == 5) {
@@ -133,9 +137,12 @@ class NotificationController extends Controller
                     'series.id as movie_id',
                     'series.original_name as original_title',
                     'series.en_name as title',
+                    'series.en_poster_path as poster_path',
                     'series.first_air_date as release_date',
                     'users.name as user_name',
                     'users.id as user_id',
+                    'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                     DB::raw('"Share Series" as type')
                 );
             } /* else if($notification->mode == 6) {
@@ -154,6 +161,7 @@ class NotificationController extends Controller
                     'series.id as movie_id',
                     'series.original_name as original_title',
                     'series.en_name as title',
+                    'series.en_poster_path as poster_path',
                     'notifications.created_at as created_at',
                     DB::raw('"Airing Today" as type')
                 );
@@ -164,6 +172,8 @@ class NotificationController extends Controller
                 ->select(
                     'users.id as user_id',
                     'users.name as user_name',
+                    'users.profile_pic as profile_path',
+                    'users.facebook_profile_pic as facebook_profile_path',
                     'notifications.created_at as created_at',
                     DB::raw('"Started Following" as type')
                 );
