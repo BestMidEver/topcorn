@@ -54,13 +54,11 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
-                        //DB::raw('COUNT(users.id) as count'),
                 		DB::raw('"Review Like Series" as type'),
                 		DB::raw($notification->subject_id.' as type2')
             		);
                 /* } */
-                $temp = $temp->orderBy('users.id', 'ASC')//Raw('IF(users.id <> ' . $notification->subject_id . ', 1, 0) DESC')
-                /* ->groupBy('obj_id') */;
+                $temp = $temp->orderByRaw('IF(users.id <> ' . $notification->subject_id . ', 1, 0) DESC');
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
 				->where('listes.id', $notification->multi_id)
@@ -153,7 +151,7 @@ class NotificationController extends Controller
                     DB::raw('"Started Following" as type')
                 );
             }
-			$notification->notification = $temp->get();
+			$notification->notification = $temp->paginate(3);
         }
         return $notifications;
     }
