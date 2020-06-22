@@ -76,7 +76,7 @@ class NotificationController extends Controller
                 ->where('custom_notifications.id', '=', $notification->multi_id)
                 ->select(
                     'custom_notifications.icon as icon',
-                    'custom_notifications.'.Auth::User()->lang.'_notification as notification',
+                    'custom_notifications.'.Auth::User()->lang.'_notification as notification'
                 );
             } else if($notification->mode == 3) {
                 $temp = DB::table('series')
