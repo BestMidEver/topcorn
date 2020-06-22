@@ -58,7 +58,7 @@ class NotificationController extends Controller
             		);
                 }
                 $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
-                ->leftjoin('users', 'users.id', 'review_likes.user_id');
+                ->join('users', 'users.id', 'review_likes.user_id');
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
 				->where('listes.id', $notification->multi_id)
