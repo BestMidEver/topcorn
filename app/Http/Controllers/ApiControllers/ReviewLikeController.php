@@ -58,7 +58,7 @@ class ReviewLikeController extends Controller
             if(User::find($review->user_id)->when_user_interaction > 0){
                 Notification::updateOrCreate(
                     ['mode' => 0, 'user_id' => $review->user_id, 'multi_id' => $request->review_id],
-                    ['is_seen' => 0, 'subject_id' => Auth::id()]
+                    ['is_seen' => 0, 'subject_id' => 1]
                 );
             }
         }
