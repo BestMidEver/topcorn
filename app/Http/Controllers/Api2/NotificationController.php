@@ -174,7 +174,7 @@ class NotificationController extends Controller
                 );
             }
             $notification->notification = $temp->paginate(1, ['*'], 'page', 1);
-            $notification->time_ago = Carbon::diffForHumans(Carbon::createFromTimeStamp(strtotime($notification->updated_at)), true, true);
+            $notification->time_ago = Carbon::createFromTimeStamp(strtotime($notification->updated_at))->diffForHumans(null, true);
         }
         return $notifications;
     }
