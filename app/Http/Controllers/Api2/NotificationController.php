@@ -47,7 +47,7 @@ class NotificationController extends Controller
 				} else if($temp->first()->mode == 3) { */
 					$temp = $temp->join('series', 'series.id', 'reviews.movie_series_id')
             		->select(
-            			'series.id as movie_id',
+            			'series.id as obj_id',
             			'series.original_name as original_title',
                 		'series.en_name as title',
                 		'series.first_air_date as release_date',
@@ -60,7 +60,7 @@ class NotificationController extends Controller
             		);
                 /* } */
                 $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
-                ->groupBy('*');
+                ->groupBy('obj_id');
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
 				->where('listes.id', $notification->multi_id)
