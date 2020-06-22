@@ -46,7 +46,8 @@ class NotificationController extends Controller
             		);
 				} else if($temp->first()->mode == 3) {
 					$temp = $temp->join('series', 'series.id', 'reviews.movie_series_id')
-            		->join('users', 'users.id', 'review_likes.user_id')
+            		->join('users', 'users.id', 'review_likes.user_id')->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
+                    ->groupBy('users.id')
             		->select(
             			'series.id as movie_id',
             			'series.original_name as original_title',
@@ -59,8 +60,7 @@ class NotificationController extends Controller
                 		DB::raw('"Review Like Series" as type')
             		);
                 }
-                $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
-                ->groupBy('users.id');
+                $temp = $temp;
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
 				->where('listes.id', $notification->multi_id)
