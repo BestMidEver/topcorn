@@ -186,7 +186,7 @@ class NotificationController extends Controller
                 )
                 ->first();
             }
-			$notification = $temp;
+			$notification = clone $temp;
         }
         $notifications->data = [];
         return [$notifications, $return_val];
