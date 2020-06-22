@@ -40,7 +40,8 @@ class NotificationController extends Controller
                 		'movies.release_date as release_date',
                 		'users.name as user_name',
                 		'users.id as user_id',
-                		'reviews.mode as review_mode'
+                        'reviews.mode as review_mode',
+                		DB::raw('reviewlike-movie as type')
             		);
 				} else if($temp->first()->mode == 3) {
 					$temp = $temp
@@ -53,7 +54,8 @@ class NotificationController extends Controller
                 		'series.first_air_date as release_date',
                 		'users.name as user_name',
                 		'users.id as user_id',
-                		'reviews.mode as review_mode'
+                		'reviews.mode as review_mode',
+                		DB::raw('reviewlike-series as type')
             		);
 				}
 			} else if($notification->mode == 1) {
