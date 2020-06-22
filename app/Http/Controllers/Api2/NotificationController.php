@@ -54,8 +54,7 @@ class NotificationController extends Controller
                 		'series.first_air_date as release_date',
                 		'users.name as user_name',
                 		'users.id as user_id',
-                		'reviews.mode as review_mode',
-                		DB::raw('reviewlike-series as type')
+                		'reviews.mode as review_mode'
             		);
 				}
 			} else if($notification->mode == 1) {
