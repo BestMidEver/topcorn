@@ -32,7 +32,6 @@ class NotificationController extends Controller
                 ->where('review_likes.is_deleted', 0);
 				if($temp->first()->mode == 1) {
 					$temp = $temp->join('movies', 'movies.id', 'reviews.movie_series_id')
-                    ->join('users', 'users.id', 'review_likes.user_id')
             		->select(
             			'movies.id as movie_id',
             			'movies.original_title as original_title',
@@ -46,7 +45,6 @@ class NotificationController extends Controller
             		);
 				} else if($temp->first()->mode == 3) {
 					$temp = $temp->join('series', 'series.id', 'reviews.movie_series_id')
-            		->join('users', 'users.id', 'review_likes.user_id')
             		->select(
             			'series.id as movie_id',
             			'series.original_name as original_title',
@@ -60,7 +58,7 @@ class NotificationController extends Controller
             		);
                 }
                 $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
-                /* ->groupBy('users.id') */;
+                ->join('users', 'users.id', 'review_likes.user_id');
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
 				->where('listes.id', $notification->multi_id)
