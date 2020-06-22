@@ -45,7 +45,6 @@ class NotificationController extends Controller
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
                 		DB::raw($notification->is_seen.' as is_seen'),
-                		DB::raw($notification->mode.' as notification_mode'),
                 		DB::raw($notification->id.' as notification_id')
             		);
 				} else if($temp->first()->mode == 3) {
@@ -61,7 +60,6 @@ class NotificationController extends Controller
                 		'users.id as user_id',
                 		'reviews.mode as review_mode',
                 		DB::raw($notification->is_seen.' as is_seen'),
-                		DB::raw($notification->mode.' as notification_mode'),
                 		DB::raw($notification->id.' as notification_id')
             		);
 				}
@@ -77,7 +75,6 @@ class NotificationController extends Controller
             		'users.name as user_name',
             		'users.id as user_id',
             		DB::raw($notification->is_seen.' as is_seen'),
-            		DB::raw($notification->mode.' as notification_mode'),
             		DB::raw($notification->id.' as notification_id')
         		);
 			} else if($notification->mode == 2) {
@@ -87,7 +84,6 @@ class NotificationController extends Controller
                     'custom_notifications.icon as icon',
                     'custom_notifications.'.Auth::User()->lang.'_notification as notification',
                     DB::raw($notification->is_seen.' as is_seen'),
-                    DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 );
             } else if($notification->mode == 3) {
@@ -101,7 +97,6 @@ class NotificationController extends Controller
                     'series.next_episode_air_date as next_episode_air_date',
                     DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next'),
                     DB::raw($notification->is_seen.' as is_seen'),
-                    DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 );
             } else if($notification->mode == 4) {
@@ -118,7 +113,6 @@ class NotificationController extends Controller
                     'users.name as user_name',
                     'users.id as user_id',
                     DB::raw($notification->is_seen.' as is_seen'),
-                    DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 );
             } else if($notification->mode == 5) {
@@ -135,7 +129,6 @@ class NotificationController extends Controller
                     'users.name as user_name',
                     'users.id as user_id',
                     DB::raw($notification->is_seen.' as is_seen'),
-                    DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 );
             } else if($notification->mode == 6) {
@@ -146,7 +139,6 @@ class NotificationController extends Controller
                     'users.name as user_name',
                     'users.id as user_id',
                     DB::raw($notification->is_seen.' as is_seen'),
-                    DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 );
             } else if($notification->mode == 7) {
@@ -159,7 +151,6 @@ class NotificationController extends Controller
                     'series.'.Auth::User()->lang.'_name as title',
                     'notifications.created_at as created_at',
                     DB::raw($notification->is_seen.' as is_seen'),
-                    DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 );
             } else if($notification->mode == 8) {
@@ -171,7 +162,6 @@ class NotificationController extends Controller
                     'users.name as user_name',
                     'notifications.created_at as created_at',
                     DB::raw($notification->is_seen.' as is_seen'),
-                    DB::raw($notification->mode.' as notification_mode'),
                     DB::raw($notification->id.' as notification_id')
                 );
             }
