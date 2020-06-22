@@ -59,7 +59,7 @@ class NotificationController extends Controller
                 		DB::raw($notification->subject_id.' as type2')
             		);
                 /* } */
-                $temp = $temp->orderBy('users.id', 'ASC')//Raw('IF(users.id <> ' . $notification->subject_id . ', 1, 0) DESC')
+                $temp = $temp->orderBy('users.id', 'DESC')//Raw('IF(users.id <> ' . $notification->subject_id . ', 1, 0) DESC')
                 ->groupBy('obj_id');
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
