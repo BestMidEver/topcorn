@@ -51,7 +51,7 @@ class NotificationController extends Controller
             			'series.original_name as original_title',
                 		'series.en_name as title',
                 		'series.first_air_date as release_date',
-                		//'users.name as user_name',
+                		'users.name as user_name',
                 		//'users.id as user_id',
                 		'reviews.mode as review_mode',
                         //DB::raw('COUNT(users.id) as count'),
