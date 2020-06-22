@@ -43,7 +43,7 @@ class NotificationController extends Controller
                         DB::raw('COUNT(users.id) as count'),
                 		DB::raw('"Review Like Movie" as type')
             		);
-				} else if($temp->first()->mode == 3) {
+				} else {
 					$temp = $temp->join('series', 'series.id', 'reviews.movie_series_id')
             		->select(
             			'series.id as movie_id',
