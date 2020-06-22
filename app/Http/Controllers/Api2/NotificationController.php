@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api2;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -19,7 +20,7 @@ class NotificationController extends Controller
     public static function getNotifications(Request $request) {
         $notifications = DB::table('notifications')
         ->where('notifications.user_id', Auth::id())
-        ->select('id', 'multi_id', 'subject_id', 'mode', 'is_seen')
+        ->select('id', 'multi_id', 'subject_id', 'mode', 'is_seen', 'updated_at')
         ->orderBy('updated_at', 'desc');
         if($request->mode === 'Saved') $notifications = $notifications->where('notifications.is_seen', 2);
         $notifications = $notifications->paginate(Auth::User()->pagination);
@@ -41,7 +42,6 @@ class NotificationController extends Controller
                 		'movies.release_date as release_date',
                 		'users.name as user_name',
                         'users.id as user_id',
-                        'users.profile_pic as profile_path',
                         'users.facebook_profile_pic as facebook_profile_path',
                         'reviews.mode as review_mode',
                 		DB::raw('"Review Like Movie" as type')
@@ -56,7 +56,6 @@ class NotificationController extends Controller
                 		'series.first_air_date as release_date',
                 		'users.name as user_name',
                 		'users.id as user_id',
-                        'users.profile_pic as profile_path',
                         'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
                 		DB::raw('"Review Like Series" as type')
@@ -69,7 +68,6 @@ class NotificationController extends Controller
                         'people.profile_path',
                 		'users.name as user_name',
                 		'users.id as user_id',
-                        'users.profile_pic as profile_path',
                         'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
                 		DB::raw('"Review Like Person" as type')
@@ -123,7 +121,6 @@ class NotificationController extends Controller
                     'movies.release_date as release_date',
                     'users.name as user_name',
                     'users.id as user_id',
-                    'users.profile_pic as profile_path',
                     'users.facebook_profile_pic as facebook_profile_path',
                     DB::raw('"Share Movie" as type')
                 );
@@ -141,7 +138,6 @@ class NotificationController extends Controller
                     'series.first_air_date as release_date',
                     'users.name as user_name',
                     'users.id as user_id',
-                    'users.profile_pic as profile_path',
                     'users.facebook_profile_pic as facebook_profile_path',
                     DB::raw('"Share Series" as type')
                 );
@@ -172,13 +168,13 @@ class NotificationController extends Controller
                 ->select(
                     'users.id as user_id',
                     'users.name as user_name',
-                    'users.profile_pic as profile_path',
                     'users.facebook_profile_pic as facebook_profile_path',
                     'notifications.created_at as created_at',
                     DB::raw('"Started Following" as type')
                 );
             }
-			$notification->notification = $temp->paginate(1, ['*'], 'page', 1);
+            $notification->notification = $temp->paginate(1, ['*'], 'page', 1);
+            $notification->time_ago = Carbon::createFromTimeStamp(strtotime($notification->updated_at))->diffForHumans();
         }
         return $notifications;
     }
