@@ -59,7 +59,7 @@ class NotificationController extends Controller
                 		DB::raw('"Review Like Series" as type')
             		);
                 }
-                $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
+                $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) ASC')
                 ->groupBy('users.id');
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
