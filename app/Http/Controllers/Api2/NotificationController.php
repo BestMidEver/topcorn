@@ -60,6 +60,7 @@ class NotificationController extends Controller
                 		DB::raw('"Review Like Series" as type')
             		);
                 }
+                return $temp;
                 $temp = $temp;
 			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
