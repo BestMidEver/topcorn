@@ -32,7 +32,8 @@ class NotificationController extends Controller
                 ->where('review_likes.is_deleted', 0);
 				if($temp->first()->mode == 1) {
 					$temp = $temp->join('movies', 'movies.id', 'reviews.movie_series_id')
-            		->join('users', 'users.id', 'review_likes.user_id')
+                    ->join('users', 'users.id', 'review_likes.user_id')
+                    ->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
             		->select(
             			'movies.id as movie_id',
             			'movies.original_title as original_title',
