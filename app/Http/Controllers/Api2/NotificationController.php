@@ -41,7 +41,7 @@ class NotificationController extends Controller
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'reviews.mode as review_mode',
-                		DB::raw('"reviewlike-movie" as type')
+                		DB::raw('"Review Like Movie" as type')
             		);
 				} else if($temp->first()->mode == 3) {
 					$temp = $temp
@@ -54,14 +54,15 @@ class NotificationController extends Controller
                 		'series.first_air_date as release_date',
                 		'users.name as user_name',
                 		'users.id as user_id',
-                		'reviews.mode as review_mode'
+                		'reviews.mode as review_mode',
+                		DB::raw('"Review Like Series" as type')
             		);
 				}
-			} else if($notification->mode == 1) {
+			}/*  else if($notification->mode == 1) {
 				$temp = DB::table('listes')
 				->where('listes.id', $notification->multi_id)
             	->leftjoin('listlikes', 'listlikes.list_id', 'listes.id')
-                /* ->where('listlikes.is_deleted', 0) */
+                ->where('listlikes.is_deleted', 0)
         		->join('users', 'users.id', 'listlikes.user_id')
         		->select(
         			'listes.id as list_id',
@@ -69,12 +70,13 @@ class NotificationController extends Controller
             		'users.name as user_name',
             		'users.id as user_id'
         		);
-			} else if($notification->mode == 2) {
+			}  */else if($notification->mode == 2) {
                 $temp = DB::table('custom_notifications')
                 ->where('custom_notifications.id', $notification->multi_id)
                 ->select(
                     'custom_notifications.icon as icon',
-                    'custom_notifications.en_notification as notification'
+                    'custom_notifications.en_notification as notification',
+                    DB::raw('"New Feature" as type')
                 );
             } else if($notification->mode == 3) {
                 $temp = DB::table('series')
@@ -85,7 +87,8 @@ class NotificationController extends Controller
                     'series.en_name as title',
                     'series.first_air_date as release_date',
                     'series.next_episode_air_date as next_episode_air_date',
-                    DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next')
+                    DB::raw('DATEDIFF(series.next_episode_air_date, NOW()) AS day_difference_next'),
+                    DB::raw('"Air Date Changed" as type')
                 );
             } else if($notification->mode == 4) {
                 $temp = DB::table('notifications')
@@ -99,7 +102,8 @@ class NotificationController extends Controller
                     'movies.en_title as title',
                     'movies.release_date as release_date',
                     'users.name as user_name',
-                    'users.id as user_id'
+                    'users.id as user_id',
+                    DB::raw('"Share Movie" as type')
                 );
             } else if($notification->mode == 5) {
                 $temp = DB::table('notifications')
@@ -113,9 +117,10 @@ class NotificationController extends Controller
                     'series.en_name as title',
                     'series.first_air_date as release_date',
                     'users.name as user_name',
-                    'users.id as user_id'
+                    'users.id as user_id',
+                    DB::raw('"Share Series" as type')
                 );
-            } else if($notification->mode == 6) {
+            } /* else if($notification->mode == 6) {
                 $temp = DB::table('notifications')
                 ->where('notifications.id', $notification->id)
                 ->join('users', 'users.id', 'notifications.multi_id')
@@ -123,7 +128,7 @@ class NotificationController extends Controller
                     'users.name as user_name',
                     'users.id as user_id'
                 );
-            } else if($notification->mode == 7) {
+            } */ else if($notification->mode == 7) {
                 $temp = DB::table('notifications')
                 ->where('notifications.id', $notification->id)
                 ->join('series', 'series.id', 'notifications.multi_id')
@@ -131,7 +136,8 @@ class NotificationController extends Controller
                     'series.id as movie_id',
                     'series.original_name as original_title',
                     'series.en_name as title',
-                    'notifications.created_at as created_at'
+                    'notifications.created_at as created_at',
+                    DB::raw('"Airing Today" as type')
                 );
             } else if($notification->mode == 8) {
                 $temp = DB::table('notifications')
@@ -140,7 +146,8 @@ class NotificationController extends Controller
                 ->select(
                     'users.id as user_id',
                     'users.name as user_name',
-                    'notifications.created_at as created_at'
+                    'notifications.created_at as created_at',
+                    DB::raw('"Started Following" as type')
                 );
             }
 			$notification->notification = $temp->first();
