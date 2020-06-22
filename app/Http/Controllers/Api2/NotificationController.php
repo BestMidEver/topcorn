@@ -55,7 +55,7 @@ class NotificationController extends Controller
                 		'reviews.mode as review_mode',
                         DB::raw('COUNT(users.id) as count'),
                 		DB::raw('"Review Like Series" as type'),
-                		DB::raw('"'.$notification->subject_id.'" as type')
+                		DB::raw('users.id = "'.$notification->subject_id.'" as type')
             		);
                 }
                 $temp = $temp->orderByRaw('IF(users.id = ' . $notification->subject_id . ', 1, 0) DESC')
