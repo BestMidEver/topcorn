@@ -45,42 +45,43 @@ class NotificationsController extends Controller
 				->where('reviews.id', '=', $notification->multi_id)
         		->leftjoin('review_likes', 'review_likes.review_id', '=', 'reviews.id')
                 ->where('review_likes.is_deleted', '=', 0);
-                return $temp->toArray();
-				if($temp->first()->mode == 1){
-					$temp = $temp
-            		->join('movies', 'movies.id', '=', 'reviews.movie_series_id')
-            		->join('users', 'users.id', '=', 'review_likes.user_id')
-            		->select(
-            			'movies.id as movie_id',
-            			'movies.original_title as original_title',
-                		'movies.'.Auth::User()->lang.'_title as title',
-                		'movies.release_date as release_date',
-                		'users.name as user_name',
-                		'users.id as user_id',
-                		'reviews.mode as review_mode',
-                		DB::raw($notification->is_seen.' as is_seen'),
-                		DB::raw($notification->mode.' as notification_mode'),
-                		DB::raw($notification->id.' as notification_id')
-            		)
-					->paginate(3);
-				}else if($temp->first()->mode == 3){
-					$temp = $temp
-            		->join('series', 'series.id', '=', 'reviews.movie_series_id')
-            		->join('users', 'users.id', '=', 'review_likes.user_id')
-            		->select(
-            			'series.id as movie_id',
-            			'series.original_name as original_title',
-                		'series.'.Auth::User()->lang.'_name as title',
-                		'series.first_air_date as release_date',
-                		'users.name as user_name',
-                		'users.id as user_id',
-                		'reviews.mode as review_mode',
-                		DB::raw($notification->is_seen.' as is_seen'),
-                		DB::raw($notification->mode.' as notification_mode'),
-                		DB::raw($notification->id.' as notification_id')
-            		)
-					->paginate(3);
-				}
+                if($temp->count() > 0) {
+                    if($temp->first()->mode == 1){
+                        $temp = $temp
+                        ->join('movies', 'movies.id', '=', 'reviews.movie_series_id')
+                        ->join('users', 'users.id', '=', 'review_likes.user_id')
+                        ->select(
+                            'movies.id as movie_id',
+                            'movies.original_title as original_title',
+                            'movies.'.Auth::User()->lang.'_title as title',
+                            'movies.release_date as release_date',
+                            'users.name as user_name',
+                            'users.id as user_id',
+                            'reviews.mode as review_mode',
+                            DB::raw($notification->is_seen.' as is_seen'),
+                            DB::raw($notification->mode.' as notification_mode'),
+                            DB::raw($notification->id.' as notification_id')
+                        )
+                        ->paginate(3);
+                    }else if($temp->first()->mode == 3){
+                        $temp = $temp
+                        ->join('series', 'series.id', '=', 'reviews.movie_series_id')
+                        ->join('users', 'users.id', '=', 'review_likes.user_id')
+                        ->select(
+                            'series.id as movie_id',
+                            'series.original_name as original_title',
+                            'series.'.Auth::User()->lang.'_name as title',
+                            'series.first_air_date as release_date',
+                            'users.name as user_name',
+                            'users.id as user_id',
+                            'reviews.mode as review_mode',
+                            DB::raw($notification->is_seen.' as is_seen'),
+                            DB::raw($notification->mode.' as notification_mode'),
+                            DB::raw($notification->id.' as notification_id')
+                        )
+                        ->paginate(3);
+                    }
+                }
 			}else if($notification->mode == 1){
 				$temp = DB::table('listes')
 				->where('listes.id', '=', $notification->multi_id)
