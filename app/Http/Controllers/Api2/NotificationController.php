@@ -35,7 +35,7 @@ class NotificationController extends Controller
 				if($temp->first()->mode == 1) {
 					$temp = $temp->join('movies', 'movies.id', 'reviews.movie_series_id')
             		->select(
-            			'movies.id as movie_id',
+            			'movies.id as obj_id',
             			'movies.original_title as original_title',
                 		'movies.en_title as title',
                         'movies.en_poster_path as poster_path',
@@ -104,7 +104,7 @@ class NotificationController extends Controller
                 $temp = DB::table('series')
                 ->where('series.id', $notification->multi_id)
                 ->select(
-                    'series.id as movie_id',
+                    'series.id as obj_id',
                     'series.original_name as original_title',
                     'series.en_name as title',
                     'series.en_poster_path as poster_path',
@@ -120,7 +120,7 @@ class NotificationController extends Controller
                 ->join('users', 'users.id', 'sent_items.sender_user_id')
                 ->join('movies', 'movies.id', 'sent_items.multi_id')
                 ->select(
-                    'movies.id as movie_id',
+                    'movies.id as obj_id',
                     'movies.original_title as original_title',
                     'movies.en_title as title',
                     'movies.en_poster_path as poster_path',
@@ -138,7 +138,7 @@ class NotificationController extends Controller
                 ->join('users', 'users.id', 'sent_items.sender_user_id')
                 ->join('series', 'series.id', 'sent_items.multi_id')
                 ->select(
-                    'series.id as movie_id',
+                    'series.id as obj_id',
                     'series.original_name as original_title',
                     'series.en_name as title',
                     'series.en_poster_path as poster_path',
@@ -162,7 +162,7 @@ class NotificationController extends Controller
                 ->where('notifications.id', $notification->id)
                 ->join('series', 'series.id', 'notifications.multi_id')
                 ->select(
-                    'series.id as movie_id',
+                    'series.id as obj_id',
                     'series.original_name as original_title',
                     'series.en_name as title',
                     'series.en_poster_path as poster_path',
