@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api2;
 
 use Carbon\Carbon;
+use App\Model\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -188,5 +189,13 @@ class NotificationController extends Controller
             $notification->time_ago = Carbon::createFromTimeStamp(strtotime($notification->updated_at))->diffForHumans(null, true, true);
         }
         return $notifications;
+    }
+
+    public static function changeNotificationMode(Request $request) {
+        Notification::where('id', $request->id)
+        ->where('user_id', Auth::id())
+        ->update(array('is_seen' => $request->mode));
+
+        return Response::make("", 204);
     }
 }
