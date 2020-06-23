@@ -69,7 +69,7 @@ class NotificationController extends Controller
             		->select(
             			'people.id as obj_id',
                         'people.name',
-                        'people.profile_path',
+                        'people.profile_path as poster_path',
                 		'users.name as user_name',
                 		'users.id as user_id',
                         'users.profile_pic as profile_path',
