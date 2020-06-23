@@ -51,6 +51,7 @@ Route::middleware('auth:api')->group(function () {
     // Notifications
     Route::get('/notifications', 'Api2\NotificationController@getNotificationButton');
     Route::post('/notifications', 'Api2\NotificationController@getNotifications');
+    Route::post('/changeNotificationMode', 'Api2\NotificationController@changeNotificationMode');
     
     // Review
     Route::get('/getReviewsData/{type}/{objId}', 'Api2\MovieSeriesController@reviewDataAssign');
