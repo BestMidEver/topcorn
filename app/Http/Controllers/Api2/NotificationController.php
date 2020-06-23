@@ -167,6 +167,7 @@ class NotificationController extends Controller
                     'series.en_name as title',
                     'series.en_poster_path as poster_path',
                     'notifications.created_at as created_at',
+                    DB::raw('DATEDIFF(notifications.updated_at, NOW()) AS day_difference_update'),
                     DB::raw('"Airing Today" as type')
                 );
             } else if($notification->mode == 8) {
