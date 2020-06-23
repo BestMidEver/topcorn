@@ -196,7 +196,8 @@ class NotificationController extends Controller
         $notification = Notification::where('id', $request->id)
         ->where('user_id', Auth::id());
         $notification->timestamps = false;
-        $notification->update(array('is_seen' => $request->mode));
+        $notification->is_seen = $request->mode;
+        $notification->save();
 
         return Response::make("", 204);
     }
