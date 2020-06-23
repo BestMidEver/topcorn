@@ -193,9 +193,10 @@ class NotificationController extends Controller
     }
 
     public static function changeNotificationMode(Request $request) {
-        Notification::where('id', $request->id)
-        ->where('user_id', Auth::id())
-        ->update(array('is_seen' => $request->mode));
+        $notification = Notification::where('id', $request->id)
+        ->where('user_id', Auth::id());
+        $notification->timestamps = false;
+        $notification->update(array('is_seen' => $request->mode));
 
         return Response::make("", 204);
     }
