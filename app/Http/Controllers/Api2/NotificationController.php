@@ -21,6 +21,11 @@ class NotificationController extends Controller
 
     public static function getNotifications(Request $request) {
         $notifications = DB::table('notifications')
+        ->where('user_id', Auth::id())
+        ->where('is_seen', 0)
+        ->update(array('is_seen' => 1));
+
+        $notifications = DB::table('notifications')
         ->where('notifications.user_id', Auth::id())
         ->select('id', 'multi_id', 'subject_id', 'mode', 'is_seen', 'updated_at')
         ->orderBy('updated_at', 'desc');
@@ -188,7 +193,6 @@ class NotificationController extends Controller
             }
             $notification->notification = $temp->paginate(1, ['*'], 'page', 1);
             $notification->time_ago = Carbon::createFromTimeStamp(strtotime($notification->updated_at))->diffForHumans(null, true, true);
-            $notification->is_seen = $notification->is_seen == 2 ? 2 : 1;
         }
         return $notifications;
     }
