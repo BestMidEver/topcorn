@@ -40,6 +40,8 @@ class ShareController extends Controller
             ->select(
                 'users.id as user_id',
                 'users.name as user_name',
+                'users.profile_pic as profile_path',
+                'users.facebook_profile_pic as facebook_profile_path',
                 'sent_items.id as sent',
                 'notifications.is_seen',
                 'rateds.rate as rate_code',
@@ -58,6 +60,8 @@ class ShareController extends Controller
             ->select(
                 'users.id as user_id',
                 'users.name as user_name',
+                'users.profile_pic as profile_path',
+                'users.facebook_profile_pic as facebook_profile_path',
                 'sent_items.id as sent',
                 'notifications.is_seen',
                 'series_rateds.rate as rate_code',
