@@ -16,13 +16,13 @@ class ShareController extends Controller
         ->where('follows.object_id', Auth::id())
         ->where('is_deleted', 0)
         ->join('users', 'users.id', 'follows.subject_id')
-        ->leftjoin('sent_items', function ($join) use ($type, $objId) {
+        ->leftjoin('sent_items', function ($join) use ($type, $mode) {
             $join->on('sent_items.receiver_user_id', 'users.id')
             ->where('sent_items.sender_user_id', Auth::id())
             ->where('sent_items.multi_id', $objId)
             ->where('sent_items.mode', $mode);
         })
-        ->leftjoin('notifications', function ($join) use ($type, $objId) {
+        ->leftjoin('notifications', function ($join) use ($mode) {
             $join->on('notifications.multi_id', 'sent_items.id')
             ->where('notifications.mode', $mode);
         })
