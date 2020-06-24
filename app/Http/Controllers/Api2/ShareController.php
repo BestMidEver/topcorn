@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Jobs\SendNotificationEmailJob;
+use Illuminate\Support\Facades\Response;
 
 class ShareController extends Controller
 {
