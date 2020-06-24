@@ -11,6 +11,7 @@ class ShareController extends Controller
 {
     public function getShareObjectModalUsers($type, $objId)
     {
+        $mode = $type == 'movie' ? 4 : 5;
         $return_val = DB::table('follows')
         ->where('follows.object_id', Auth::id())
         ->where('is_deleted', 0)
@@ -19,21 +20,51 @@ class ShareController extends Controller
             $join->on('sent_items.receiver_user_id', 'users.id')
             ->where('sent_items.sender_user_id', Auth::id())
             ->where('sent_items.multi_id', $objId)
-            ->where('sent_items.mode', $type == 'movie' ? 4 : 5);
+            ->where('sent_items.mode', $mode);
         })
         ->leftjoin('notifications', function ($join) use ($type, $objId) {
             $join->on('notifications.multi_id', 'sent_items.id')
-            ->where('notifications.mode', $type == 'movie' ? 4 : 5);
+            ->where('notifications.mode', $mode);
         })
-        ->select(
-            'users.id as user_id',
-            'users.name as user_name',
-            'sent_items.id as sent',
-            'notifications.is_seen'
-        )
-        ->orderBy('users.name', 'desc')
-        ->get();
+        ->orderBy('users.name', 'desc');
+        if($type == 'movie') {
+            $return_val = $return_val
+            ->leftjoin('rateds', function ($join) {
+                $join->on('rateds.movie_id', 'sent_items.multi_id')
+                ->where('rateds.user_id', 'sent.items.receiver_user_id');
+            })
+            ->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', 'sent_items.multi_id')
+                ->where('laters.user_id', 'sent.items.receiver_user_id');
+            })
+            ->select(
+                'users.id as user_id',
+                'users.name as user_name',
+                'sent_items.id as sent',
+                'notifications.is_seen',
+                'rateds.rate as rate_code',
+                'laters.id as later_id'
+            );
+        } else {
+            $return_val = $return_val
+            ->leftjoin('series_rateds', function ($join) {
+                $join->on('series_rateds.series_id', 'sent_items.multi_id')
+                ->where('series_rateds.user_id', 'sent.items.receiver_user_id');
+            })
+            ->leftjoin('series_laters', function ($join) {
+                $join->on('series_laters.series_id', 'sent_items.multi_id')
+                ->where('series_laters.user_id', 'sent.items.receiver_user_id');
+            })
+            ->select(
+                'users.id as user_id',
+                'users.name as user_name',
+                'sent_items.id as sent',
+                'notifications.is_seen',
+                'series_rateds.rate as rate_code',
+                'series_laters.id as later_id'
+            );
+        }
 
-        return $return_val;
+        return $return_val->get();
     }
 }
