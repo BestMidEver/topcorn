@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Api2;
 
+use App\Model\SentItem;
+use App\Model\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\SendNotificationEmailJob;
 
 class ShareController extends Controller
 {
@@ -70,5 +73,33 @@ class ShareController extends Controller
         }
 
         return $return_val->get();
+    }
+
+    public function shareObjects(Request $request)
+    {
+        $mode = $request->type == 'movie' ? 4 : 5;
+        $users = DB::table('follows')
+        ->where('follows.object_id', '=', Auth::id())
+        ->where('is_deleted', '=', 0)
+        ->whereIn('follows.subject_id', $request->users)
+        ->join('users', 'users.id', '=', 'follows.subject_id')
+        ->where('users.when_user_interaction', '>', 0)
+        ->select('users.id as id', 'users.when_user_interaction')
+        ->get();
+
+        foreach ($users as $user) {
+            $sent_item = SentItem::updateOrCreate(
+                ['mode' => $mode, 'sender_user_id' => Auth::id(), 'receiver_user_id' => $user->id, 'multi_id' => $request->obj_id],
+                []
+            );
+            $notification = Notification::updateOrCreate(
+                ['mode' => $mode, 'user_id' => $user->id, 'multi_id' => $sent_item->id],
+                ['is_seen' => 0]
+            );
+
+            if($user->when_user_interaction > 1) SendNotificationEmailJob::dispatch($notification->id)->onQueue("high");
+        }
+
+        return Response::make("", 204);
     }
 }
