@@ -26,7 +26,7 @@ class ShareController extends Controller
             $join->on('notifications.multi_id', 'sent_items.id')
             ->where('notifications.mode', $mode);
         })
-        ->orderBy('users.name', 'desc');
+        ->orderBy('users.name', 'asc');
         if($type == 'movie') {
             $return_val = $return_val
             ->leftjoin('rateds', function ($join) use ($objId) {
