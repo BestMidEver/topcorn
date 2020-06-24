@@ -31,17 +31,19 @@ class ShareController extends Controller
             $return_val = $return_val
             ->leftjoin('rateds', function ($join) {
                 $join->on('rateds.movie_id', 'sent_items.multi_id')
-                ->where('rateds.user_id', 'sent.items.receiver_user_id');
+                ->where('rateds.user_id', 'sent_items.receiver_user_id');
             })
             ->leftjoin('laters', function ($join) {
                 $join->on('laters.movie_id', 'sent_items.multi_id')
-                ->where('laters.user_id', 'sent.items.receiver_user_id');
+                ->where('laters.user_id', 'sent_items.receiver_user_id');
             })
             ->select(
                 'users.id as user_id',
                 'users.name as user_name',
                 'sent_items.id as sent',
                 'notifications.is_seen',
+                'sent_items.multi_id',
+                'sent_items.receiver_user_id',
                 'rateds.rate as rate_code',
                 'laters.id as later_id'
             );
@@ -49,11 +51,11 @@ class ShareController extends Controller
             $return_val = $return_val
             ->leftjoin('series_rateds', function ($join) {
                 $join->on('series_rateds.series_id', 'sent_items.multi_id')
-                ->where('series_rateds.user_id', 'sent.items.receiver_user_id');
+                ->where('series_rateds.user_id', 'sent_items.receiver_user_id');
             })
             ->leftjoin('series_laters', function ($join) {
                 $join->on('series_laters.series_id', 'sent_items.multi_id')
-                ->where('series_laters.user_id', 'sent.items.receiver_user_id');
+                ->where('series_laters.user_id', 'sent_items.receiver_user_id');
             })
             ->select(
                 'users.id as user_id',
