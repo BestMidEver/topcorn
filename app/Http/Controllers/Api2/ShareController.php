@@ -62,6 +62,8 @@ class ShareController extends Controller
                 'users.name as user_name',
                 'sent_items.id as sent',
                 'notifications.is_seen',
+                'sent_items.multi_id',
+                'sent_items.receiver_user_id',
                 'series_rateds.rate as rate_code',
                 'series_laters.id as later_id'
             );
