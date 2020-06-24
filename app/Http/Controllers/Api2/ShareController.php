@@ -30,12 +30,12 @@ class ShareController extends Controller
         if($type == 'movie') {
             $return_val = $return_val
             ->leftjoin('rateds', function ($join) {
-                $join->on('rateds.movie_id', 'sent_items.multi_id')
-                ->where('rateds.user_id', 'sent_items.receiver_user_id');
+                $join->on('rateds.user_id', 'follows.subject_id')
+                ->where('rateds.movie_id', $objId);
             })
             ->leftjoin('laters', function ($join) {
-                $join->on('laters.movie_id', 'sent_items.multi_id')
-                ->where('laters.user_id', 'sent_items.receiver_user_id');
+                $join->on('laters.user_id', 'follows.subject_id')
+                ->where('laters.movie_id', $objId);
             })
             ->select(
                 'users.id as user_id',
@@ -52,8 +52,8 @@ class ShareController extends Controller
                 ->where('series_rateds.series_id', $objId);
             })
             ->leftjoin('series_laters', function ($join) {
-                $join->on('series_laters.series_id', 'sent_items.multi_id')
-                ->where('series_laters.user_id', 'sent_items.receiver_user_id');
+                $join->on('series_laters.user_id', 'follows.subject_id')
+                ->where('series_laters.series_id', $objId);
             })
             ->select(
                 'users.id as user_id',
