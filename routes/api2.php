@@ -32,6 +32,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/getMovieSeriesAllData/movie/{id}', 'Api2\MovieSeriesController@getMovieData')->middleware('UpdateRecents:movie');
     Route::get('/getMovieSeriesAllData/series/{id}/{season?}/{episode?}', 'Api2\MovieSeriesController@getSeriesData')->middleware('UpdateRecents:series');
     Route::get('/getShareObjectModalUsers/{type}/{objId}', 'Api2\ShareController@getShareObjectModalUsers');
+    Route::post('/shareObjects', 'Api2\SettingsController@shareObjects');
 
     // Person
     Route::get('/getPersonAllData/{id}', 'Api2\PersonController@getPersonData')->middleware('UpdateRecents:person');
