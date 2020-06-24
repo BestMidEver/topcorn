@@ -89,7 +89,7 @@ class ShareController extends Controller
 
         foreach ($users as $user) {
             $sent_item = SentItem::updateOrCreate(
-                ['mode' => $mode, 'sender_user_id' => Auth::id(), 'receiver_user_id' => $user->id, 'multi_id' => $request->obj_id],
+                ['mode' => $mode, 'sender_user_id' => Auth::id(), 'receiver_user_id' => $user->id, 'multi_id' => $request->objId],
                 []
             );
             $notification = Notification::updateOrCreate(
