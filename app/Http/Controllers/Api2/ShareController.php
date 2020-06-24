@@ -48,7 +48,7 @@ class ShareController extends Controller
         } else {
             $return_val = $return_val
             ->leftjoin('series_rateds', function ($join) use ($objId) {
-                $join->on('series_rateds.user_id', 'follows.object_id')
+                $join->on('series_rateds.user_id', 'follows.subject_id')
                 ->where('series_rateds.series_id', $objId);
             })
             ->leftjoin('series_laters', function ($join) {
