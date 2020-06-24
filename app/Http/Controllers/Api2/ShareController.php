@@ -29,11 +29,11 @@ class ShareController extends Controller
         ->orderBy('users.name', 'desc');
         if($type == 'movie') {
             $return_val = $return_val
-            ->leftjoin('rateds', function ($join) {
+            ->leftjoin('rateds', function ($join) use ($objId) {
                 $join->on('rateds.user_id', 'follows.subject_id')
                 ->where('rateds.movie_id', $objId);
             })
-            ->leftjoin('laters', function ($join) {
+            ->leftjoin('laters', function ($join) use ($objId) {
                 $join->on('laters.user_id', 'follows.subject_id')
                 ->where('laters.movie_id', $objId);
             })
@@ -51,7 +51,7 @@ class ShareController extends Controller
                 $join->on('series_rateds.user_id', 'follows.subject_id')
                 ->where('series_rateds.series_id', $objId);
             })
-            ->leftjoin('series_laters', function ($join) {
+            ->leftjoin('series_laters', function ($join) use ($objId) {
                 $join->on('series_laters.user_id', 'follows.subject_id')
                 ->where('series_laters.series_id', $objId);
             })
