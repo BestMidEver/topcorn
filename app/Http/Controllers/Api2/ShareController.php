@@ -19,11 +19,11 @@ class ShareController extends Controller
             $join->on('sent_items.receiver_user_id', 'users.id')
             ->where('sent_items.sender_user_id', Auth::id())
             ->where('sent_items.multi_id', $objId)
-            ->where('mode', $type == 'movie' ? 4 : 5);
+            ->where('sent_items.mode', $type == 'movie' ? 4 : 5);
         })
         ->leftjoin('notifications', function ($join) use ($type, $objId) {
             $join->on('notifications.multi_id', 'sent_items.id')
-            ->where('mode', $type == 'movie' ? 4 : 5);
+            ->where('notifications.mode', $type == 'movie' ? 4 : 5);
         })
         ->select(
             'users.id as user_id',
