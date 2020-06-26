@@ -82,7 +82,7 @@ class ReviewController extends Controller
             'r1.rate as rate',
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
-            DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+            DB::raw('IF(reviews.user_id = '.Auth::id().', 1, 0) as is_mine')
         )
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
@@ -195,7 +195,7 @@ class ReviewController extends Controller
                 'reviews.movie_series_id as movie_series_id',
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
-                DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+                DB::raw('IF(reviews.user_id = '.Auth::id().', 1, 0) as is_mine')
             )
             ->orderBy('is_mine', 'desc')
             ->orderBy('count', 'desc');
@@ -287,8 +287,8 @@ class ReviewController extends Controller
             'r1.rate as rate',
             DB::raw('COUNT(review_likes.id) as count'),
             DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
-            DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
-        )
+            DB::raw('IF(reviews.user_id = '.Auth::id().', 1, 0) as is_mine')
+            )
         ->orderBy('is_mine', 'desc')
         ->orderBy('count', 'desc');
         

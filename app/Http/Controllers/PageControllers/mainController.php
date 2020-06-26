@@ -489,7 +489,7 @@ class mainController extends Controller
                 DB::raw('IF(movies.id>0, movies.release_date, series.first_air_date) as release_date'),
                 DB::raw('COUNT(review_likes.id) as count'),
                 DB::raw('sum(IF(review_likes.user_id = '.Auth::id().', 1, 0)) as is_liked'),
-                DB::raw('sum(IF(reviews.user_id = '.Auth::id().', 1, 0)) as is_mine')
+                DB::raw('IF(reviews.user_id = '.Auth::id().', 1, 0) as is_mine')
             );
         }else{
             $reviews = $reviews
