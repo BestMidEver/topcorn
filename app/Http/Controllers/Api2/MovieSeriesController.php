@@ -121,12 +121,14 @@ class MovieSeriesController extends Controller
         ->leftjoin('series_seens', function ($join) use ($season, $episode) {
             $join->on('series_seens.series_id', '=', 'series.id')
             ->where('series_seens.user_id', Auth::id())
-            ->where('series_seens.season_number', $season)
-            ->where('series_seens.episode_number', $episode);
+            /* ->where('series_seens.season_number', $season)
+            ->where('series_seens.episode_number', $episode) */;
         })
         ->select(
             'series.id as id',
             'series_seens.id as seen_id',
+            'series_seens.season_number as last_seen_season_number',
+            'series_seens.episode_number as last_seen_episode_number',
             DB::raw($season . ' as season_number'),
             DB::raw($episode . ' as episode_number')
         );
