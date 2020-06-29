@@ -43,7 +43,7 @@ class NotificationController extends Controller
 					$temp = $temp->join('movies', 'movies.id', 'reviews.movie_series_id')
             		->select(
             			'movies.id as obj_id',
-            			'movies.original_title as original_title',
+            			//'movies.original_title as original_title',
                 		'movies.en_title as title',
                         'movies.en_poster_path as poster_path',
                 		'movies.release_date as release_date',
@@ -59,7 +59,7 @@ class NotificationController extends Controller
 					$temp = $temp->join('series', 'series.id', 'reviews.movie_series_id')
             		->select(
             			'series.id as obj_id',
-            			'series.original_name as original_title',
+            			//'series.original_name as original_title',
                         'series.en_name as title',
                         'series.en_poster_path as poster_path',
                 		'series.first_air_date as release_date',
@@ -112,7 +112,7 @@ class NotificationController extends Controller
                 ->where('series.id', $notification->multi_id)
                 ->select(
                     'series.id as obj_id',
-                    'series.original_name as original_title',
+                    //'series.original_name as original_title',
                     'series.en_name as title',
                     'series.en_poster_path as poster_path',
                     'series.first_air_date as release_date',
@@ -128,7 +128,7 @@ class NotificationController extends Controller
                 ->join('movies', 'movies.id', 'sent_items.multi_id')
                 ->select(
                     'movies.id as obj_id',
-                    'movies.original_title as original_title',
+                    //'movies.original_title as original_title',
                     'movies.en_title as title',
                     'movies.en_poster_path as poster_path',
                     'movies.release_date as release_date',
@@ -146,7 +146,7 @@ class NotificationController extends Controller
                 ->join('series', 'series.id', 'sent_items.multi_id')
                 ->select(
                     'series.id as obj_id',
-                    'series.original_name as original_title',
+                    //'series.original_name as original_title',
                     'series.en_name as title',
                     'series.en_poster_path as poster_path',
                     'series.first_air_date as release_date',
@@ -170,7 +170,7 @@ class NotificationController extends Controller
                 ->join('series', 'series.id', 'notifications.multi_id')
                 ->select(
                     'series.id as obj_id',
-                    'series.original_name as original_title',
+                    //'series.original_name as original_title',
                     'series.en_name as title',
                     'series.en_poster_path as poster_path',
                     'notifications.created_at as created_at',
