@@ -94,6 +94,10 @@ class MovieSeriesController extends Controller
             $join->on('r2.series_id', '=', 'series_recommendations.series_id')
             ->where('r2.user_id', Auth::user()->id);
         })
+        ->leftjoin('series_seens', function ($join) {
+            $join->on('series_seens.series_id', '=', 'series.id')
+            ->where('series_seens.user_id', Auth::id());
+        })
         ->select(
             'series.id',
             'series.first_air_date',
@@ -107,7 +111,9 @@ class MovieSeriesController extends Controller
             DB::raw('sum(IF(r2.rate > 0, ABS(r2.rate-3)*(r2.rate-3)*series_recommendations.rank, 0)) AS point'),
             DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.rank, 0)) as p2'),
             DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
-            DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent')
+            DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent'),
+            'series_seens.season_number as last_seen_season_number',
+            'series_seens.episode_number as last_seen_episode_number'
         )
         ->groupBy('series.id');
 
@@ -118,7 +124,7 @@ class MovieSeriesController extends Controller
     {
         $return_val = DB::table('series')
         ->where('series.id', $objId)
-        ->leftjoin('series_seens', function ($join) use ($season, $episode) {
+        ->leftjoin('series_seens', function ($join) {
             $join->on('series_seens.series_id', '=', 'series.id')
             ->where('series_seens.user_id', Auth::id())
             /* ->where('series_seens.season_number', $season)
