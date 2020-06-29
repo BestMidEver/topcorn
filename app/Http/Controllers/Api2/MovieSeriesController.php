@@ -112,6 +112,7 @@ class MovieSeriesController extends Controller
             DB::raw('sum(IF(r2.rate > 0, 4*series_recommendations.rank, 0)) as p2'),
             DB::raw('sum(IF(r2.rate > 0, 1, 0)) as count'),
             DB::raw('sum(IF(r2.rate > 0, r2.rate-1, 0))*25 DIV sum(IF(r2.rate > 0, 1, 0)) as percent'),
+            'series_seens.id as seen_id',
             'series_seens.season_number as last_seen_season_number',
             'series_seens.episode_number as last_seen_episode_number',
             DB::raw(-1 . ' as season_number'),
