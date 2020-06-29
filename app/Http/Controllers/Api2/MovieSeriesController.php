@@ -123,7 +123,7 @@ class MovieSeriesController extends Controller
         return response()->json($return_val->first());
     }
 
-    private function seasonCardData($objId, $season, $episode)
+    public function seasonCardData($objId, $season = -1, $episode = -1)
     {
         $return_val = DB::table('series')
         ->where('series.id', $objId)
