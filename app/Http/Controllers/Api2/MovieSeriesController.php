@@ -197,6 +197,8 @@ class MovieSeriesController extends Controller
         ->select(
             'reviews.tmdb_author_name as author',
             'reviews.review as content',
+            'reviews.season_number',
+            'reviews.episode_number',
             'reviews.tmdb_review_id',
             'reviews.lang as url',
             'reviews.id as id',

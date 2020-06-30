@@ -165,6 +165,8 @@ class RateController extends Controller
                     'reviews.review as content',
                     'reviews.tmdb_review_id',
                     'reviews.lang',
+                    'reviews.season_number',
+                    'reviews.episode_number',
                     'reviews.id as id',
                     'users.name as name',
                     'users.id as user_id',

@@ -69,6 +69,8 @@ class NotificationController extends Controller
                         'users.facebook_profile_pic as facebook_profile_path',
                 		'reviews.mode as review_mode',
                         'reviews.review',
+                        'reviews.season_number',
+                        'reviews.episode_number',
                 		DB::raw('"Review Like Series" as type')
             		);
                 } else if($temp->first()->mode == 4) {
