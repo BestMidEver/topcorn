@@ -226,6 +226,8 @@ class UserController extends Controller
             'reviews.tmdb_review_id',
             'reviews.lang as url',
             'reviews.id as id',
+            'reviews.season_number',
+            'reviews.episode_number',
             'users.name as name',
             'users.id as user_id',
             $mode==4?'people.birthday':'r1.rate as rate',
