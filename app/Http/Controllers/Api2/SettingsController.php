@@ -31,7 +31,7 @@ class SettingsController extends Controller
 		if($request->has('instagram_link')) $user->instagram_link = $request->instagram_link;
 		if($request->has('youtube_link')) $user->youtube_link = $request->youtube_link;
 		if($request->has('another_link_url')) $user->another_link_name = 'Website';
-		if($request->has('another_link_url')) $user->another_link_url = $request->another_link_url ? (strpos($str, "https://") === 0 ? $request->another_link_url : 'https://'.$request->another_link_url) : null;
+		if($request->has('another_link_url')) $user->another_link_url = $request->another_link_url ? (strpos($request->another_link_url, 'https://') === 0 ? $request->another_link_url : 'https://'.$request->another_link_url) : null;
 		if($request->has('pagination')) $user->pagination = $request->pagination;
 		if($request->has('when_user_interaction')) $user->when_user_interaction = $request->when_user_interaction;
 		if($request->has('when_automatic_notification')) $user->when_automatic_notification = $request->when_automatic_notification;
