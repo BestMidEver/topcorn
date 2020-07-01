@@ -40,7 +40,6 @@ Route::middleware('auth:api')->group(function () {
 
     // User
     Route::post('/getUserAllData', 'Api2\UserController@getUserData')->middleware('UpdateRecents:user');
-    Route::get('/getSimpleUserData', 'Api2\UserController@getSimpleUserData');
     Route::get('/getUserDetailData/{id}', 'Api2\UserController@getUserDetails');
     Route::post('/getUserInteractionSet', 'Api2\UserController@getUserInteractionSet');
     Route::get('/getCoverPics', 'Api2\UserController@getCoverPics');
@@ -66,3 +65,4 @@ Route::middleware('auth:api')->group(function () {
 
 Route::post('/login', 'Api2\Auth\AuthController@login');
 Route::post('/register', 'Api2\Auth\AuthController@register');
+Route::get('/getSimpleUserData', 'Api2\UserController@getSimpleUserData');
