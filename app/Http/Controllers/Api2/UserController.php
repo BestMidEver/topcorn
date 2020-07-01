@@ -13,7 +13,12 @@ class UserController extends Controller
 {
     public function getSimpleUserData()
     {
-        return Auth::guard('api')->check() ? 1/* Auth::user() */ : 0;
+        return Auth::user();
+    }
+
+    public function checkLoggedIn()
+    {
+        return Auth::guard('api')->check() ? 1 : 0;
     }
 
     public function getUserData(Request $request)
