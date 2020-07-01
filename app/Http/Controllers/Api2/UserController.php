@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function getSimpleUserData()
     {
-        return Auth::user();
+        return Auth::check() ? Auth::user() : 0;
     }
 
     public function getUserData(Request $request)
