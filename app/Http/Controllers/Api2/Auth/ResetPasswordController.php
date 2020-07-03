@@ -60,7 +60,10 @@ class ResetPasswordController extends Controller
         
         return $response == Password::PASSWORD_RESET
                     ? 1
-                    : 0;
+                    : response()->json(array(
+                        'success' => false,
+                        'errors' => array('token'=> 'The password reset link is broken.')
+                    ), 400);;
     }
 
     protected function rules()
