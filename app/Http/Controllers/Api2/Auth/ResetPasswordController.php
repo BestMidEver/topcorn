@@ -46,7 +46,6 @@ class ResetPasswordController extends Controller
             'email' => 'required|email',
             'password' => 'required|confirmed|min:6',
         ]);
-       // $validator = $this->validate($request, $this->rules()/* , $this->validationErrorMessages() */);
 
         if ($validator->fails())
         {
@@ -69,20 +68,6 @@ class ResetPasswordController extends Controller
                         'errors' => array('token'=> 'The password reset link is broken.')
                     ), 400);
     }
-
-    protected function rules()
-    {
-        return [
-            'token' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed|min:6',
-        ];
-    }
-    
-    protected function validationErrorMessages()
-    {
-        return [];
-    }
     
     protected function credentials(Request $request)
     {
@@ -100,8 +85,6 @@ class ResetPasswordController extends Controller
         $user->save();
 
         event(new PasswordReset($user));
-
-        return 1;
     }
     
     protected function sendResetResponse($response)
