@@ -68,7 +68,7 @@ class ResetPasswordController extends Controller
                     ? Response::make("", 204)
                     : response()->json(array(
                         'success' => false,
-                        'errors' => array('token'=> ['The password reset link is broken.'])
+                        'errors' => array('email'=> ['Email is wrong or the password reset link is broken.'])
                     ), 400);
     }
     
