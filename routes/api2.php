@@ -66,6 +66,6 @@ Route::middleware('auth:api')->group(function () {
 
 Route::post('/login', 'Api2\Auth\AuthController@login');
 Route::post('/register', 'Api2\Auth\AuthController@register');
-Route::post('/sendEmail', 'Api2\Auth\ResetPasswordController@sendEmail');
+Route::post('/sendResetPasswordEmail', 'Api2\Auth\ResetPasswordController@sendResetPasswordEmail');
 Route::post('/resetPassword', 'Api2\Auth\ResetPasswordController@resetPassword');
 Route::get('/checkLoggedIn', 'Api2\UserController@checkLoggedIn');

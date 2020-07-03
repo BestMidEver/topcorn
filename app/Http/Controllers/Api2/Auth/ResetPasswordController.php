@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class ResetPasswordController extends Controller
 {
-    public function sendEmail(Request $request)
+    public function sendResetPasswordEmail(Request $request)
     {return $request;
         $this->validateEmail($request);
 
