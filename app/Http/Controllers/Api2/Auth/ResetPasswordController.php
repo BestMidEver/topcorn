@@ -36,7 +36,12 @@ class ResetPasswordController extends Controller
 
     public function resetPassword(Request $request)
     {
-        $validator = $this->validate($request, $this->rules()/* , $this->validationErrorMessages() */);
+        $validator = Validator::make($request->all(), [
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:6',
+        ]);
+       // $validator = $this->validate($request, $this->rules()/* , $this->validationErrorMessages() */);
 
         if ($validator->fails())
         {
