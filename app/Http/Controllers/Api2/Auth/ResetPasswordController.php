@@ -33,7 +33,7 @@ class ResetPasswordController extends Controller
                     ? Response::make("", 204)
                     : response()->json(array(
                         'success' => false,
-                        'errors' => array('email'=> 'There is not any record with this email.')
+                        'errors' => array('email' => ['There is not any record with this email.'])
                     ), 400);
     }
 
@@ -68,7 +68,7 @@ class ResetPasswordController extends Controller
                     ? Response::make("", 204)
                     : response()->json(array(
                         'success' => false,
-                        'errors' => array('token'=> 'The password reset link is broken.')
+                        'errors' => array('token'=> ['The password reset link is broken.'])
                     ), 400);
     }
     
