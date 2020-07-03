@@ -33,4 +33,6 @@ class ResetPasswordController extends Controller
     {
         return Password::broker();
     }
+
+    
 }
