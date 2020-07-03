@@ -21,8 +21,11 @@ class ResetPasswordController extends Controller
         );
 
         return $response == Password::RESET_LINK_SENT
-                    ? 1/* $this->sendResetLinkResponse($response) */
-                    : 0/* $this->sendResetLinkFailedResponse($request, $response) */;
+                    ? Response::make("", 204)
+                    : response()->json(array(
+                        'success' => false,
+                        'errors' => array('email'=> 'There is not any record with this email.')
+                    ), 400);
     }
 
     protected function validateEmail(Request $request)
@@ -59,11 +62,11 @@ class ResetPasswordController extends Controller
         );
         
         return $response == Password::PASSWORD_RESET
-                    ? 1
+                    ? Response::make("", 204)
                     : response()->json(array(
                         'success' => false,
-                        'errors' => array('token'=> 'The password reset link is broken. Create a new one and try again')
-                    ), 400);;
+                        'errors' => array('token'=> 'The password reset link is broken.')
+                    ), 400);
     }
 
     protected function rules()
