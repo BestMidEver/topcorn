@@ -15,7 +15,15 @@ class ResetPasswordController extends Controller
 {
     public function sendResetPasswordEmail(Request $request)
     {
-        $this->validateEmail($request);
+        $validator = Validator::make($request->all(), ['email' => 'required|email']);
+
+        if ($validator->fails())
+        {
+            return response()->json(array(
+                'success' => false,
+                'errors' => $validator->getMessageBag()->toArray()
+            ), 400); // 400 being the HTTP code for an invalid request.
+        }
         
         $response = $this->broker()->sendResetLink(
             $request->only('email')
@@ -27,11 +35,6 @@ class ResetPasswordController extends Controller
                         'success' => false,
                         'errors' => array('email'=> 'There is not any record with this email.')
                     ), 400);
-    }
-
-    protected function validateEmail(Request $request)
-    {
-        $this->validate($request, ['email' => 'required|email']);
     }
 
     public function broker()
