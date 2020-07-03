@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class ResetPasswordController extends Controller
 {
     public function sendResetPasswordEmail(Request $request)
-    {return $request;
+    {
         $this->validateEmail($request);
 
         // We will send the password reset link to this user. Once we have attempted
@@ -19,7 +19,17 @@ class ResetPasswordController extends Controller
         );
 
         return $response == Password::RESET_LINK_SENT
-                    ? $this->sendResetLinkResponse($response)
-                    : $this->sendResetLinkFailedResponse($request, $response);
+                    ? 1/* $this->sendResetLinkResponse($response) */
+                    : 0/* $this->sendResetLinkFailedResponse($request, $response) */;
+    }
+
+    protected function validateEmail(Request $request)
+    {
+        $this->validate($request, ['email' => 'required|email']);
+    }
+
+    public function broker()
+    {
+        return Password::broker();
     }
 }
