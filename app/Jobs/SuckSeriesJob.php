@@ -91,12 +91,13 @@ class SuckSeriesJob implements ShouldQueue
                         $join->on('series_laters.user_id', '=', 'users.id')
                         ->where('series_laters.series_id', '=', $this->id);
                     })
-                    ->leftjoin('series_rateds', function ($join) {
+                    /* ->leftjoin('series_rateds', function ($join) {
                         $join->on('series_rateds.user_id', '=', 'users.id')
                         ->where('series_rateds.series_id', '=', $this->id)
                         ->where('series_rateds.rate', '>', 3);
                     })
-                    ->whereRaw('(series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL) AND users.when_automatic_notification > 0')
+                    ->whereRaw('(series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL) AND users.when_automatic_notification > 0') */
+                    ->whereRaw('series_laters.id IS NOT NULL AND users.when_automatic_notification > 0')
                     ->select('users.id as user_id', 'users.when_automatic_notification')
                     ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
@@ -222,12 +223,13 @@ class SuckSeriesJob implements ShouldQueue
                         $join->on('series_laters.user_id', '=', 'users.id')
                         ->where('series_laters.series_id', '=', $this->id);
                     })
-                    ->leftjoin('series_rateds', function ($join) {
+                    /* ->leftjoin('series_rateds', function ($join) {
                         $join->on('series_rateds.user_id', '=', 'users.id')
                         ->where('series_rateds.series_id', '=', $this->id)
                         ->where('series_rateds.rate', '>', 3);
                     })
-                    ->whereRaw('(series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL) AND users.when_automatic_notification > 0')
+                    ->whereRaw('(series_laters.id IS NOT NULL OR series_rateds.id IS NOT NULL) AND users.when_automatic_notification > 0') */
+                    ->whereRaw('series_laters.id IS NOT NULL AND users.when_automatic_notification > 0')
                     ->select('users.id as user_id', 'users.when_automatic_notification')
                     ->get();
             if($next_episode_air_date!=null && !$is_next_episode_defined){
