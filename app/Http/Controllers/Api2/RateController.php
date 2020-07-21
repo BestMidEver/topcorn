@@ -120,7 +120,7 @@ class RateController extends Controller
             $data = $reviewToDelete->first();
             if($data) $data = $data->id;
             else $data = -1;
-            return $request;
+            return $data;
             Notification::where('user_id', Auth::id())->where('mode', 0)->delete();
             $reviewToDelete->delete();
         } else {
