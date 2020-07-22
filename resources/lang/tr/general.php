@@ -308,6 +308,7 @@ return [
     'users' => 'Kullanıcılar',                                                                          //main,
     'user_name' => 'Kullanıcı Adı',                                                                     //register, account,
     'users_facebook' => 'Facebook Bağlantısı',                                                          //account, profile      
+    'users_android' => 'Android Uygulamasının Bağlantısı',                                              //account, profile   
     'users_instagram' => 'İnstagram Bağlantısı',                                                        //account, profile      
     'users_twitter' => 'Twitter Bağlantısı',                                                            //account, profile      
     'users_youtube' => 'Youtube Kanalı',                                                                //account, profile      

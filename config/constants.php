@@ -74,6 +74,15 @@ return array(
 
 
 
+  'android' => array(
+
+    'our_link' => 'https://play.google.com/store/apps/details?id=com.vue.topcorn.app',
+
+  ),
+
+
+
+
   'twitter' => array(
 
     'link' => 'https://twitter.com/',

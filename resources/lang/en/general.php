@@ -309,7 +309,8 @@ return [
     'users' => 'Users',                                                                             //main,
     'user_name' => 'User Name',                                                                     //register, account,
     'users_facebook' => 'Facebook Link',                                                            //account, profile      
-    'users_instagram' => 'İnstagram Link',                                                          //account, profile      
+    'users_android' => 'Android App Link',                                                          //account, profile      
+    'users_instagram' => 'Instagram Link',                                                          //account, profile      
     'users_twitter' => 'Twitter Link',                                                              //account, profile      
     'users_youtube' => 'Youtube Channel',                                                           //account, profile      
     'visibility' => 'Visibility',                                                                   //list    

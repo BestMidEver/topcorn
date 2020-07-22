@@ -308,6 +308,7 @@ return [
     'users' => 'Users',                                                                             //main,////////////
     'user_name' => 'Felhasználónév',                                                                    //register, account,
     'users_facebook' => 'Facebook link',                                                                //account, profile
+    'users_android' => 'Android App Link',                                                          //account, profile   
     'users_instagram' => 'Instagram link',                                                              //account, profile
     'users_twitter' => 'Twitter link',                                                                  //account, profile
     'users_youtube' => 'Youtube Csatorna',                                                              //account, profile
