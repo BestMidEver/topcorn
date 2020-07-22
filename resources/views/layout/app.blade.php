@@ -251,7 +251,7 @@ else $theme='';
                     <div class="py-2 small"><a class="text-dark" href="/change_insta_language/hu">Magyar</a></div>
                 </div>
                 <div class="col-8 col-sm-4 text-sm-right">
-                    <div class=" h-100 d-flex flex-column justify-content-between">
+                    <div class="h-100 d-flex flex-column justify-content-between">
                         <div class="py-2 small">
                             <!--<div class="text-dark pb-1">{{ __('navbar.like_us_on_facebook') }}</div>-->
                             <!-- <div class="d-inline"
@@ -262,6 +262,7 @@ else $theme='';
                                 <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.facebook.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
                             </div> -->
                             <!--<div class="fb-share-button" data-href="https://topcorn.xyz/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftopcorn.xyz%2F&amp;src=sdkpreparse"></a></div>-->
+                            <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.instagram.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}">Topcorn on Instagram <i class="fab fa-instagram"></i></a>
                             <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.instagram.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}">Topcorn on Instagram <i class="fab fa-instagram"></i></a>
                             <!-- <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.twitter.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a> -->
                         </div>
