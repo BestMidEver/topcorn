@@ -1,5 +1,5 @@
 @section('title')
-What Movie Should I Watch? (2019)
+What Movie Should I Watch? (2020)
 @endsection
 
 @section('meta_description')
