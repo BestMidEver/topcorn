@@ -83,6 +83,15 @@ return array(
 
 
 
+  'patreon' => array(
+
+    'our_link' => 'https://www.patreon.com/topcorn',
+
+  ),
+
+
+
+
   'twitter' => array(
 
     'link' => 'https://twitter.com/',
