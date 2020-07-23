@@ -12,7 +12,7 @@
 						<h1 class="display-4">{{ __('long_texts.home.h1') }}</h1>
 						<p class="lead">{{ __('long_texts.home.t11') }}</p>
 						<hr class="my-4">
-						<p class="text-center"><a class="btn btn-info btn-lg d-flex align-items-center justify-content-center" href="{{url('log_in/facebook')}}/false"><i class="fab fa-android text-left mr-4" aria-hidden="true"></i>{{ __('general.android_google_play_link') }}</a></p>
+						<p class="text-center"><a class="btn btn-info btn-lg d-flex align-items-center justify-content-center" href="{{config('constants.android.our_link')}}" _target="blank"><i class="fab fa-android text-left mr-4" aria-hidden="true"></i>{{ __('general.android_google_play_link') }}</a></p>
 						<hr class="my-4">
 						<p class="my-4 text-muted">{{ __('long_texts.home.t12') }}</p>
 						<p class="text-center"><a class="btn btn-warning btn-lg d-flex align-items-center justify-content-center" href="{{url('log_in/facebook')}}/false"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
