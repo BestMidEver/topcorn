@@ -301,7 +301,7 @@ return [
     'tr' => 'Turkey',                                                                               //donation
     'try_account' => 'TRY Account',                                                                 //donation,
     'understand_my_taste' => 'Let\'s Get Started',                                                  //home,
-    'android_google_play_link' => 'We Have Android App',                                                    //home,
+    'android_google_play_link' => 'We Also Have an Android App',                                    //home,
     'unfollow' => 'Unfollow',                                                                       //profile,
     'unknown' => 'unknown',                                                                         //profile,
     'un_read' => 'New',                                                                             //notifications,
