@@ -18,6 +18,7 @@ return [
     'logout' => 'Logout',
     'notifications' => 'Notifications',
     'donation' => 'Donate',
+    'patreon' => 'Become a Patron',
     'privacy' => 'Privacy Policy',
     'like_us_on_facebook' => 'Follow Us on Social Media',
     'all_rights_reserved' => 'All Rights Reserved.',  

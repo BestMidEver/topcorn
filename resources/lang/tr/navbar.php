@@ -19,6 +19,7 @@ return [
     'notifications' => 'Bildirimler',
     'donation' => 'Bağış',
     'privacy' => 'Gizlilik Politikası',
+    'patreon' => 'Patreon Sayfası',
     'like_us_on_facebook' => 'Sosyal Medyada Bizi Takip Edin',
     'all_rights_reserved' => 'Her Hakkı Saklıdır.',    
     'activate_nightmode' => 'Gece Moduna Geç',  
