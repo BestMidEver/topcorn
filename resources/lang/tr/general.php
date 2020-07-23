@@ -300,6 +300,7 @@ return [
     'trailer' => 'FRAGMAN & VİDEOLAR',                      
     'try_account' => 'Türk Lirası Hesabı',                                                              //donation,
     'understand_my_taste' => 'Haydi Başlayalım',                                                        //home,
+    'android_google_play_link' => 'Android Uygulaması',                                                 //home,
     'unfollow' => 'Takibi Bırak',                                                                       //profile,
     'unknown' => 'bilinmiyor',                                                                          //profile,
     'un_read' => 'Yeni',                                                                                //notifications,

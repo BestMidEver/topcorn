@@ -300,6 +300,7 @@ return [
     'trailer' => 'FILMELŐZETES & VIDEÓK',                                                               //movie
     'try_account' => 'TRY számla',                                                                      //donation,
     'understand_my_taste' => 'Ismerd meg az ízlésemet!',                                                //home,
+    'android_google_play_link' => 'Android App',                                                    //home,
     'unfollow' => 'Unfollow',                                                                           //profile,////////////////////
     'unknown' => 'ismeretlen',                                                                          //profile,
     'un_read' => 'Új',                                                                                  //notifications,
