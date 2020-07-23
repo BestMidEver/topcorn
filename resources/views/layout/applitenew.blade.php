@@ -132,11 +132,12 @@
                 <div class="col-8 col-sm-4 text-sm-right">
                     <div class=" h-100 d-flex flex-column justify-content-between">
                         <div class="py-2 small">
-                            <div class="d-inline">
+                            <!-- <div class="d-inline">
                                 <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.facebook.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_facebook') }}"><i class="fab fa-facebook-square"></i></a>
-                            </div>
+                            </div> -->
                             <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.instagram.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_instagram') }}"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.twitter.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a>
+                            <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.android.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_android') }}"><i class="fab fa-android"></i></a>
+                            <!-- <a class="btn btn-link btn-sm fa40 text-muted" href="{{config('constants.twitter.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_twitter') }}"><i class="fab fa-twitter-square"></i></a> -->
                         </div>
                         <div class="text-middle-light small py-2"><span>© 2020 {{ config('app.name') }}. {{ __('navbar.all_rights_reserved') }}</span></div>
                     </div>
