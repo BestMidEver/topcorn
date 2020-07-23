@@ -14,6 +14,7 @@
 						<hr class="my-4">
 						<p class="my-4 text-muted">{{ __('long_texts.home.t12') }}</p>
 						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/false"><i class="fab fa-facebook-square text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
+						<p class="text-center"><a class="btn btn-warning btn-lg" href="{{url('log_in/facebook')}}/false"><i class="<i class="fab fa-android"></i> text-left mr-4" aria-hidden="true"></i>{{ __('general.understand_my_taste') }}</a></p>
 						<p class="text-center mb-0"><a class="btn btn-link text-black" href="/register">{{ __('general.continue_without_facebook') }}</a></p>
 					</div>
 				</div>
