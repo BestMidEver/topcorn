@@ -164,9 +164,12 @@ else $theme='';
                         <a class="nav-link" href="/faq">{{ __('navbar.faq') }}</a>
                     </li>
                     <li class="nav-item d-md-none">
-                        <a class="nav-link" href="/donation">{{ __('navbar.donation') }}</a>
+                        <a class="nav-link" href="{{config('constants.patreon.our_link')}}">{{ __('navbar.patreon') }}</a>
                         <div class="dropdown-divider"></div>
                     </li>
+                    <!-- <li class="nav-item d-md-none">
+                        <a class="nav-link" href="/donation">{{ __('navbar.donation') }}</a>
+                    </li> -->
                     <li class="nav-item d-md-none">
                         <a class="nav-link text-muted" href="{{ route('logout') }}" onclick="event.preventDefault();   document.getElementById('logout-form').submit();">{{ __('navbar.logout') }}</a>
                     </li>
@@ -200,7 +203,8 @@ else $theme='';
                             <a class="dropdown-item" href="/theme/{{$theme}}"><i class="fas fa-moon text-muted"></i> {{ $theme==''?__('navbar.activate_nightmode'):__('navbar.deactivate_nightmode') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/faq">{{ __('navbar.faq') }}</a>
-                            <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a>
+                            <!-- <a class="dropdown-item" href="/donation">{{ __('navbar.donation') }}</a> -->
+                            <a class="dropdown-item" href="{{config('constants.patreon.our_link')}}">{{ __('navbar.patreon') }}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-muted" href="{{ route('logout') }}" onclick="event.preventDefault();   document.getElementById('logout-form').submit();">{{ __('navbar.logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
