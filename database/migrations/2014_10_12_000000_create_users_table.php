@@ -36,7 +36,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->timestamp('last_login');
-            $table->tinyInteger('tt_navbar')->default(0);
+            $table->tinyInteger('tt_navbar')->default(100);
             $table->tinyInteger('tt_recommendations')->default(0);
             $table->tinyInteger('tt_search')->default(0);
             $table->tinyInteger('tt_quickvote')->default(0);
