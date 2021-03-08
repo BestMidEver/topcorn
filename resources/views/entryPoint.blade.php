@@ -10,5 +10,5 @@
 </div>
 
 </body>
-<script src="/vue/app.js?v={{config('constants.version')}}"></script>
+<script src=" mix(js/app.js) "></script>
 </html>
