@@ -10,5 +10,5 @@
 </div>
 
 </body>
-<script src="/vue/app2.js?v={{config('constants.version')}}"></script>
+<script type="module" src="/vue/app2.js?v={{config('constants.version')}}"></script>
 </html>
