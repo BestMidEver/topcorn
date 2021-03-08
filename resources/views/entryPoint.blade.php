@@ -5,7 +5,9 @@
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
 
-<div id="app"></div>
+<div id="app">
+{{ message }}
+</div>
 
 </body>
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
