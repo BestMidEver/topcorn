@@ -5,9 +5,7 @@
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
 
-<div id="app">
-	<app></app>
-</div>
+<div id="app"></div>
 
 </body>
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
