@@ -3,7 +3,7 @@
 @include('head.head_search')
 
 @section('body')
-<h1 class="h5 text-center text-md-left col mt-3 mt-md-4" ng-cloak>{{ __('general.search') }}</h1>
+<h1 class="h5 text-center text-md-left col mt-3 mt-md-4" ng-cloak>{{ __('general.search') }}s</h1>
 
 <!-- @yield('amazon_affiliate') -->
 
