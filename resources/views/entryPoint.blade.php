@@ -10,7 +10,7 @@
 </div>
 
 </body>
-<script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<script src="https://npmcdn.com/vue/dist/vues.js"></script>
 <script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
 <script src="/vue/app.js?v={{config('constants.version')}}"></script>
 </html>
