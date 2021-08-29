@@ -74,7 +74,7 @@
 <!-- Recently visited -->
 <div ng-if="isInputEmpty" class="mx-2 mt-4 row d-flex justify-content-between" ng-cloak>
 	<div class="h6">Recently Visited</div>
-	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration" ng-click="">Clear All</button>
+	<button class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration p-0" ng-click="">Clear All</button>
 </div>
 <!-- Recently visited -->
 
