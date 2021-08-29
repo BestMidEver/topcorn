@@ -51,7 +51,7 @@
 
 
 <!-- Recently visited -->
-<div ng-if="isInputEmpty" class="my-3 tab2 d-md-none" ng-cloak>
+<div ng-if="isInputEmpty" class="my-2" ng-cloak>
 	Recently Visited
 </div>
 <!-- Recently visited -->
