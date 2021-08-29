@@ -63,8 +63,11 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				case 'user':
 					$scope.users=response.data
 					break;
+				default:
+			}
 		})
 	}
+	$scope.fetchHistory();
 
 	$scope.generalinput='';
 	$scope.get_page_data = function()
