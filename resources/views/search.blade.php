@@ -72,7 +72,7 @@
 
 
 <!-- Recently visited -->
-<div ng-if="isInputEmpty && active_tab !== 'list'" class="mx-2 mt-4 row d-flex justify-content-between" ng-cloak>
+<div ng-if="isInputEmpty && active_tab !== 'list' && active_tab !== 'user'" class="mx-2 mt-4 row d-flex justify-content-between" ng-cloak>
 	<div class="h6 my-auto">{{ __('general.recently_visited') }}</div>
 	<button ng-if="!noHistory" class="btn btn-link border-no-radius text-sm-center text-muted text-no-decoration p-0" ng-click="clearHistory();">{{ __('general.clear_all') }}</button>
 </div>
