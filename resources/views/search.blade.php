@@ -72,7 +72,7 @@
 
 
 <!-- Recently visited -->
-<div ng-if="isInputEmpty" class="my-2" ng-cloak>
+<div ng-if="isInputEmpty" class="py-2 px-5" ng-cloak>
 	Recently Visited
 </div>
 <!-- Recently visited -->
