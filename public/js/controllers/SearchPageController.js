@@ -45,6 +45,15 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.users=null
 		$scope.listes=null
 		$(".tooltip").hide();
+		$scope.fetchHistory();
+	}
+
+	$scope.fetchHistory = function()
+	{
+		rate.fetch_history()
+		.then(function(response){
+			console.log(2222222, response)
+		})
 	}
 
 	$scope.generalinput='';

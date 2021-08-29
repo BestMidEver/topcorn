@@ -772,6 +772,21 @@ MyApp.factory('rate', function($http) {
 		});
     }
 
+	fetch_history = function()
+	{
+        return $http({
+			method: 'GET',
+			url: '/api2/recentlyVisiteds',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+	}
+
 
 
     search_people = function(constants_api_key, lang, temp, page) 
