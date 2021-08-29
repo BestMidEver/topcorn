@@ -72,8 +72,9 @@
 
 
 <!-- Recently visited -->
-<div ng-if="isInputEmpty" class="mx-2 mt-4" ng-cloak>
-	Recently Visited
+<div ng-if="isInputEmpty" class="mx-2 mt-4 h6 row d-flex justify-content-between" ng-cloak>
+	<div>Recently Visited</div>
+	<div>Clear All</div>
 </div>
 <!-- Recently visited -->
 
