@@ -50,6 +50,7 @@ return [
     'camera' => 'Kameramanlık',                                                                         //movie,
     'canceled' => 'İptal edildi',                                                                       //profile,series
     'change_password' => 'Şifreyi Değiştir',                                                            //accountpassword,
+    'clear_all' => 'Temizle',                                                                           //search,
     'compress' => 'Daralt',                                                                             //main,
     'close' => 'Kapat',                                                                                 //movie,
     'conclusion' => 'Sonuç Yazısı',                                                                     //list              
@@ -228,6 +229,7 @@ return [
     'pw_updated' => 'Şifreniz başarıyla güncellendi.',                                                  //account,
     'read' => 'Eski',                                                                                   //notifications,
     'read_all' => 'Hepsini oku',                            
+    'recently_visited' => 'Son ziyaret edilenler',                                                      //search,
     'recipient_name' => 'Alıcının Adı',                                                                 //donation,
     'recommend' => 'Güzel',                                                                             //ratemodal, profile,
     'recommend_movies' => 'Güzel Filmler',                                                              //recommendations,      

@@ -51,6 +51,7 @@ return [
     'canceled' => 'Canceled',                                                                       //profile,series
     'close' => 'Close',                                                                             //movie,
     'change_password' => 'Change Password',                                                         //accountpassword,
+    'clear_all' => 'Clear All',                                                                     //search,
     'compress' => 'Compress',                                                                       //main,
     'conclusion' => 'Conclusion',                                                                   //list             
     'continue_without_facebook' => 'Continue Without Facebook',                                     //home
@@ -229,6 +230,7 @@ return [
     'profile_photo_help' => '(Actors from the Movie)',                                              //account,
     'read' => 'Old',                                                                                //notifications,
     'read_all' => 'Read more',                                                                      //movie,
+    'recently_visited' => 'Recently Visited',                                                       //search,
     'recipient_name' => 'Recipient Name',                                                           //donation,
     'recommend' => 'Good',                                                                          //ratemodal, profile,
     'recommend_movies' => 'Good Movies',                                                            //recommendations,      

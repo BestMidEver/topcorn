@@ -50,6 +50,7 @@ return [
     'camera' => 'Kamera',                                                                               //movie
     'canceled' => 'Megszűnt',                                                                           //profile,series
     'change_password' => 'Jelszó módosítása',                                                           //accountpassword,
+    'clear_all' => 'Kitöröl',                                                                           //search,
     'compress' => 'Compress',                                                                           //main,///////////////
     'close' => 'Close',                                                                                 //movie,            //////////////
     'conclusion' => 'Befejezés',                                                                        //list              
@@ -229,6 +230,7 @@ return [
     'profile_photo_help' => '(A film szereplői közül)',                                                 //account,
     'read' => 'Régi',                                                                                   //notifications,
     'read_all' => 'Több',                                                                               //movie
+    'recently_visited' => 'Nemrég Látogatott',                                                          //search,
     'recipient_name' => 'A címzett neve',                                                               //donation,
     'recommend' => 'Jó',                                                                                //ratemodal, profile,
     'remember_me' => 'Emlékezz rám!',                                                                   //login,
