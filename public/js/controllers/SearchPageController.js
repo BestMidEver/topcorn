@@ -37,6 +37,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 	$scope.reset_tab = function()
 	{
+		$scope.fetchHistory();
 		$scope.page=null;
 		$scope.pagination=null;
 		$scope.current_page=null;
@@ -45,12 +46,13 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.users=null
 		$scope.listes=null
 		$(".tooltip").hide();
-		$scope.fetchHistory();
 	}
 
 	$scope.fetchHistory = function()
 	{
+		console.log(11111111)
 		rate.fetch_history()
+			console.log(2222222, response)
 		.then(function(response){
 			console.log(2222222, response)
 		})
@@ -61,6 +63,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	{
 		var temp=$scope.generalinput.replace(/ /g , "%20");
 		if(temp.length == 0){
+			console.log(0000000000)
 			$scope.reset_tab();
 		}else{
     		$scope.is_waiting=true;
