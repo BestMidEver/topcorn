@@ -62,6 +62,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		console.log('GET PAGE DATA')
 		var temp=$scope.generalinput.replace(/ /g , "%20");
 		if(temp.length == 0){
+			console.log('GET PAGE DATA 2')
 			$scope.reset_tab();
 		}else{
     		$scope.is_waiting=true;
