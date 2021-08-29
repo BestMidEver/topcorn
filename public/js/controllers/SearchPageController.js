@@ -52,6 +52,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		rate.fetch_history($scope.active_tab)
 		.then(function(response){
 			console.log('XXXXXXXXXXXXXXXXXXXXXXX', response)
+			$scope.movies=response.data
 		})
 	}
 
