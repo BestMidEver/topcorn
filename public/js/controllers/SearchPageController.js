@@ -60,9 +60,9 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				case 'person':
 					$scope.people=response.data
 					break;
-				case 'user':
+				/* case 'user':
 					$scope.users=response.data
-					break;
+					break; */
 				default:
 			}
 			if(!response.data.length) $scope.noHistory=true
