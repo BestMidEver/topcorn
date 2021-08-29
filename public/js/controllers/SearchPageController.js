@@ -61,6 +61,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.generalinput='';
 	$scope.get_page_data = function()
 	{
+		console.log('-----------', response)
 		var temp=$scope.generalinput.replace(/ /g , "%20");
 		if(temp.length == 0){
 			console.log(0000000000)
