@@ -248,8 +248,98 @@ class SearchController extends Controller
         }
     }
 
-    public function fetch_movie_history()
+    public function fetch_history($mode)
     {
-        return 1;
+        if ($mode == 'movies') {
+            return DB::table('recent_movies')
+            ->where('recent_movies.user_id', Auth::user()->id)
+            ->join('movies', 'movies.id', '=', 'recent_movies.movie_id')
+            ->leftjoin('rateds', function ($join) {
+                $join->on('rateds.movie_id', '=', 'recent_movies.movie_id')
+                ->where('rateds.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('laters', function ($join) {
+                $join->on('laters.movie_id', '=', 'recent_movies.movie_id')
+                ->where('laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('bans', function ($join) {
+                $join->on('bans.movie_id', '=', 'recent_movies.movie_id')
+                ->where('bans.user_id', '=', Auth::user()->id);
+            })
+            ->select(
+                'movies.id',
+                'movies.vote_average',
+                'movies.vote_count',
+                'movies.release_date',
+                'movies.original_title as original_title',
+                'movies.en_title as title',
+                'movies.en_poster_path as poster_path',
+                'movies.en_cover_path as cover_path',
+                'rateds.rate as rate_code',
+                'laters.id as later_id',
+                'bans.id as ban_id'
+            )
+            ->orderBy('recent_movies.updated_at', 'desc')
+            ->get();
+        }
+
+        if ($mode == 'series') {
+            return DB::table('recent_series')
+            ->where('recent_series.user_id', Auth::user()->id)
+            ->join('series', 'series.id', '=', 'recent_series.series_id')
+            ->leftjoin('series_rateds', function ($join) {
+                $join->on('series_rateds.series_id', '=', 'recent_series.series_id')
+                ->where('series_rateds.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('series_laters', function ($join) {
+                $join->on('series_laters.series_id', '=', 'recent_series.series_id')
+                ->where('series_laters.user_id', '=', Auth::user()->id);
+            })
+            ->leftjoin('series_bans', function ($join) {
+                $join->on('series_bans.series_id', '=', 'recent_series.series_id')
+                ->where('series_bans.user_id', '=', Auth::user()->id);
+            })
+            ->select(
+                'series.id',
+                'series.vote_average',
+                'series.vote_count',
+                'series.first_air_date',
+                'series.original_name as original_name',
+                'series.en_name as name',
+                'series.en_poster_path as poster_path',
+                'series.en_backdrop_path as backdrop_path',
+                'series_rateds.rate as rate_code',
+                'series_laters.id as later_id',
+                'series_bans.id as ban_id'
+            )
+            ->orderBy('recent_series.updated_at', 'desc')
+        }
+
+        if ($mode == 'people') {
+            return DB::table('recent_people')
+            ->where('recent_people.user_id', Auth::user()->id)
+            ->join('people', 'people.id', '=', 'recent_people.person_id')
+            ->select(
+                'people.id',
+                'profile_path',
+                'name'
+            )
+            ->orderBy('recent_people.updated_at', 'desc')
+            ->get();
+        }
+
+        if ($mode == 'users') {
+            return DB::table('recent_users')
+            ->where('recent_users.user_id', Auth::user()->id)
+            ->join('users', 'users.id', '=', 'recent_users.subject_id')
+            ->select(
+                'users.id',
+                'users.profile_pic as profile_path',
+                'users.facebook_profile_pic as facebook_profile_path',
+                'users.name'
+            )
+            ->orderBy('recent_users.updated_at', 'desc')
+            ->get();
+        }
     }
 }

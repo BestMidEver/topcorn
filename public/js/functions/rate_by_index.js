@@ -772,11 +772,11 @@ MyApp.factory('rate', function($http) {
 		});
     }
 
-	fetch_history = function()
+	fetch_history = function(mode = 'movies')
 	{
         return $http({
 			method: 'GET',
-			url: 'api/fetch_movie_history',
+			url: 'api/fetch_history/'+mode,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
