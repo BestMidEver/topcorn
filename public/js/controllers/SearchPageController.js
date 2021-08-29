@@ -79,6 +79,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			$scope.noHistory=true
 		})
 	}
+	$scope.noHistory=true
 
 	$scope.generalinput='';
 	$scope.get_page_data = function()
