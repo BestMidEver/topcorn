@@ -168,6 +168,7 @@ Route::get('search/{lang?}', 'PageControllers\searchController@search')
 
 Route::get('api/get_pluck_id/{mode}','ApiControllers\SearchController@get_pluck_id');
 Route::get('api/search_lists/{text}','ApiControllers\SearchController@search_lists');
+Route::get('api/fetch_movie_history','ApiControllers\SearchController@fetch_movie_history');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SEARCH PAGE (AUTH) /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////

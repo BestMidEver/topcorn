@@ -247,4 +247,9 @@ class SearchController extends Controller
 
         }
     }
+
+    public function fetch_movie_history()
+    {
+        return 1;
+    }
 }
