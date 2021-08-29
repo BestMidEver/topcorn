@@ -60,10 +60,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.generalinput='';
 	$scope.get_page_data = function()
 	{
-		console.log('-----------')
 		var temp=$scope.generalinput.replace(/ /g , "%20");
 		if(temp.length == 0){
-			console.log(0000000000)
 			$scope.reset_tab();
 		}else{
     		$scope.is_waiting=true;
@@ -72,7 +70,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				case 'series':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page, $scope.active_tab)
 					.then(function(response){
-						console.log(12, $scope.active_tab,response.data);
+						console.log(1, $scope.active_tab,response.data);
 						$scope.inside_get_page_data_movie(response);
 					});
 					break;
