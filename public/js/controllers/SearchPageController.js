@@ -52,7 +52,17 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		rate.fetch_history($scope.active_tab)
 		.then(function(response){
 			console.log('XXXXXXXXXXXXXXXXXXXXXXX', response)
-			$scope.movies=response.data
+			switch($scope.active_tab) {
+				case 'movie':
+				case 'series':
+					$scope.movies=response.data
+					break;
+				case 'person':
+					$scope.people=response.data
+					break;
+				case 'user':
+					$scope.users=response.data
+					break;
 		})
 	}
 
