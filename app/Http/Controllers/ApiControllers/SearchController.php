@@ -249,7 +249,7 @@ class SearchController extends Controller
     }
 
     public function fetch_history($mode)
-    {
+    {return 1;
         if ($mode == 'movies') {
             return DB::table('recent_movies')
             ->where('recent_movies.user_id', Auth::user()->id)
