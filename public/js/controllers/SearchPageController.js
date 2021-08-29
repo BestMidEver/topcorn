@@ -52,7 +52,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		$scope.isInputEmpty=true
 		rate.fetch_history($scope.active_tab)
 		.then(function(response){
-			console.log('XXXXXXXXXXXXXXXXXXXXXXX', response)
 			switch($scope.active_tab) {
 				case 'movie':
 				case 'series':
@@ -69,6 +68,14 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		})
 	}
 	$scope.fetchHistory();
+
+	$scope.clearHistory = function()
+	{
+		rate.clear_history($scope.active_tab)
+		.then(function(response){
+			$scope.reset_tab()
+		})
+	}
 
 	$scope.generalinput='';
 	$scope.get_page_data = function()

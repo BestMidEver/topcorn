@@ -772,11 +772,26 @@ MyApp.factory('rate', function($http) {
 		});
     }
 
-	fetch_history = function(mode = 'movies')
+	fetch_history = function(mode)
 	{
         return $http({
 			method: 'GET',
 			url: 'api/fetch_history/'+mode,
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
+		}).then(function successCallback(response) {
+			return response;
+		}, function errorCallback(response) {
+		});
+	}
+
+	clear_history = function(mode)
+	{
+        return $http({
+			method: 'GET',
+			url: 'api/clear_history/'+mode,
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
@@ -994,6 +1009,7 @@ MyApp.factory('rate', function($http) {
     	get_user_movies: get_user_movies,
     	search_movies: search_movies, 
     	fetch_history: fetch_history, 
+    	clear_history: clear_history, 
     	search_people: search_people,
     	search_users: search_users,
     	search_listes: search_listes,

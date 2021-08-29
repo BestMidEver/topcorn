@@ -169,6 +169,7 @@ Route::get('search/{lang?}', 'PageControllers\searchController@search')
 Route::get('api/get_pluck_id/{mode}','ApiControllers\SearchController@get_pluck_id');
 Route::get('api/search_lists/{text}','ApiControllers\SearchController@search_lists');
 Route::get('api/fetch_history/{mode}','ApiControllers\SearchController@fetch_history');
+Route::get('api/clear_history/{mode}','ApiControllers\SearchController@clear_history');
 //////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////// SEARCH PAGE (AUTH) /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////

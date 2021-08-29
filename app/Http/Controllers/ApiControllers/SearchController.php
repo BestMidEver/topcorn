@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\ApiControllers;
 
+use App\Model\Recent_user;
+use App\Model\Recent_movie;
+use App\Model\Recent_person;
+use App\Model\Recent_series;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Movie\SearchResource;
 use App\Model\Movie;
@@ -342,5 +346,16 @@ class SearchController extends Controller
             ->orderBy('recent_users.updated_at', 'desc')
             ->get();
         }
+    }
+
+    public function clear_history($mode)
+    {
+        if ($mode == 'movies' || $mode == 'movie') Recent_movie::where('user_id', Auth::id())->delete();
+
+        if ($mode == 'series') Recent_series::where('user_id', Auth::id())->delete();
+
+        if ($mode == 'people' || $mode == 'person') Recent_person::where('user_id', Auth::id())->delete();
+
+        if ($mode == 'users') Recent_user::where('user_id', Auth::id())->delete();
     }
 }
