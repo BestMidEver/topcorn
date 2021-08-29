@@ -333,7 +333,7 @@ class SearchController extends Controller
             ->get();
         }
 
-        if ($mode == 'users') {
+        /* if ($mode == 'users') {
             return DB::table('recent_users')
             ->where('recent_users.user_id', Auth::user()->id)
             ->join('users', 'users.id', '=', 'recent_users.subject_id')
@@ -345,7 +345,7 @@ class SearchController extends Controller
             )
             ->orderBy('recent_users.updated_at', 'desc')
             ->get();
-        }
+        } */
     }
 
     public function clear_history($mode)
