@@ -52,7 +52,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	{
 		console.log(11111111)
 		rate.fetch_history()
-			console.log(2222222, response)
 		.then(function(response){
 			console.log(2222222, response)
 		})
@@ -73,7 +72,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 				case 'series':
 					rate.search_movies(pass.constants_api_key, pass.lang, temp, $scope.page, $scope.active_tab)
 					.then(function(response){
-						console.log(1, $scope.active_tab,response.data);
+						console.log(12, $scope.active_tab,response.data);
 						$scope.inside_get_page_data_movie(response);
 					});
 					break;
