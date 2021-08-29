@@ -37,8 +37,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 	$scope.reset_tab = function()
 	{
-		console.log('GET PAGE DATA 2')
-		$scope.fetchHistory();
 		$scope.page=null;
 		$scope.pagination=null;
 		$scope.current_page=null;
@@ -60,10 +58,10 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.generalinput='';
 	$scope.get_page_data = function()
 	{
-		console.log('GET PAGE DATA')
 		var temp=$scope.generalinput.replace(/ /g , "%20");
 		if(temp.length == 0){
 			$scope.reset_tab();
+			$scope.fetchHistory();
 		}else{
     		$scope.is_waiting=true;
 			switch($scope.active_tab) {
