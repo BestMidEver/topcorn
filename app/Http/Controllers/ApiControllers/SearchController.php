@@ -250,7 +250,7 @@ class SearchController extends Controller
 
     public function fetch_history($mode)
     {
-        if ($mode == 'movies') {
+        if ($mode == 'movies' || $mode == 'movie') {
             return DB::table('recent_movies')
             ->where('recent_movies.user_id', Auth::user()->id)
             ->join('movies', 'movies.id', '=', 'recent_movies.movie_id')
