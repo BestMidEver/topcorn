@@ -776,7 +776,11 @@ MyApp.factory('rate', function($http) {
 	{
         return $http({
 			method: 'GET',
-			url: '/api2/recentlyVisiteds',
+			url: '/recentlyVisiteds',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept' : 'application/json'
+			},
 		}).then(function successCallback(response) {
 			return response;
 		}, function errorCallback(response) {
