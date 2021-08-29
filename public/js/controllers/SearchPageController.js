@@ -59,6 +59,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.generalinput='';
 	$scope.get_page_data = function()
 	{
+		console.log('GET PAGE DATA')
 		var temp=$scope.generalinput.replace(/ /g , "%20");
 		if(temp.length == 0){
 			$scope.reset_tab();
