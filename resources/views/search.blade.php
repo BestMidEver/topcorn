@@ -50,6 +50,15 @@
 
 
 
+<!-- Recently visited -->
+<div ng-if="isInputEmpty" class="my-3 tab2 d-md-none" ng-cloak>
+	Recently Visited
+</div>
+<!-- Recently visited -->
+
+
+
+
 
 <div class="container-fluid mt-3" ng-cloak>
 	<div class="row">
