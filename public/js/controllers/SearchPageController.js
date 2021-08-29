@@ -50,7 +50,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 	$scope.fetchHistory = function()
 	{
-		rate.fetch_history()
+		rate.fetch_history($scope.active_tab)
 		.then(function(response){
 			console.log('XXXXXXXXXXXXXXXXXXXXXXX', response)
 		})
