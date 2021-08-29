@@ -776,7 +776,7 @@ MyApp.factory('rate', function($http) {
 	{
         return $http({
 			method: 'GET',
-			url: '/recentlyVisiteds',
+			url: 'api/fetch_movie_history',
 			headers: {
 				'Content-Type': 'application/json',
 				'Accept' : 'application/json'
