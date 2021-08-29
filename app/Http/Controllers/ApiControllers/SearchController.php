@@ -316,7 +316,7 @@ class SearchController extends Controller
             ->get();
         }
 
-        if ($mode == 'people') {
+        if ($mode == 'people' || $mode == 'person') {
             return DB::table('recent_people')
             ->where('recent_people.user_id', Auth::user()->id)
             ->join('people', 'people.id', '=', 'recent_people.person_id')
