@@ -993,7 +993,7 @@ MyApp.factory('rate', function($http) {
     	get_recommendations_page_data: get_recommendations_page_data,
     	get_user_movies: get_user_movies,
     	search_movies: search_movies, 
-    	search_history: search_history, 
+    	fetch_history: fetch_history, 
     	search_people: search_people,
     	search_users: search_users,
     	search_listes: search_listes,
