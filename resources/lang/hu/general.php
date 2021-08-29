@@ -248,8 +248,8 @@ return [
     'search_movie' => 'Film keresése címmel',                                                           //search
     'search_series' => 'Sorozat keresése címmel',                                                       //search,
     'search_results' => 'Keresés eredményei',                                                           //recommendations,
-    'search_person' => 'Személy keresése névvel/Email-lel',                                             //search
-    'search_user' => 'Felhasználó keresése',                                                            //search
+    'search_person' => 'Felhasználó keresése',                                                          //search
+    'search_user' => 'Személy keresése névvel/Email-lel',                                               //search
     'season' => 'Évad',                                                                                 //series,
     'seasons' => 'Évad',                                                                                //series,
     'season_info' => 'Évad info',                                                                       //series,
