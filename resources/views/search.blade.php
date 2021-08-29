@@ -103,6 +103,7 @@
 
 	<div class="card-group no-gutters">
 		@include('layout.listcard')
+		asdasdas
 	</div>
 </div>
 
