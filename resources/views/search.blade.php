@@ -50,15 +50,6 @@
 
 
 
-<!-- Recently visited -->
-<div ng-if="isInputEmpty" class="my-2" ng-cloak>
-	Recently Visited
-</div>
-<!-- Recently visited -->
-
-
-
-
 
 <div class="container-fluid mt-3" ng-cloak>
 	<div class="row">
@@ -76,6 +67,19 @@
 		<div class="col"></div>
 	</div>
 </div>
+
+
+
+
+<!-- Recently visited -->
+<div ng-if="isInputEmpty" class="my-2" ng-cloak>
+	Recently Visited
+</div>
+<!-- Recently visited -->
+
+
+
+
 
 <div id="scroll_top_point" ng-cloak>
 	<div class="p-5" ng-hide="(movies.length>0 || people.length>0 || users.length>0 || listes.length>0 || (movies==null && people==null && users==null && listes==null)) && !is_waiting">
