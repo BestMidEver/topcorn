@@ -58,7 +58,7 @@ class UpdateRecentsJob implements ShouldQueue
             if(!($user->count() > 0)) return;
             $recent = Recent_user::updateOrCreate(array('user_id' => $this->userId, 'subject_id' => $this->objId));
             $recent->touch();
-            Recent_user::where('user_id', $this->userId)->latest('updated_at')->skip(config('constants.recently_viewed.latest_n'))->take(2)->get()->each(function($row){ $row->delete(); });
+            // Recent_user::where('user_id', $this->userId)->latest('updated_at')->skip(config('constants.recently_viewed.latest_n'))->take(2)->get()->each(function($row){ $row->delete(); });
         } else if($this->type === 'list') {
             $list = Liste::where('id', $this->objId)->where('visibility', '=', 1)->where('user_id', '<>', $this->userId);
             if(!$list->count() > 0) return;
