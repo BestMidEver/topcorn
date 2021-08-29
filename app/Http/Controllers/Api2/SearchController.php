@@ -48,6 +48,7 @@ class SearchController extends Controller
         )
         ->orderBy('recent_movies.updated_at', 'desc');
 
+        return 1;
 
         $series = DB::table('recent_series')
         ->where('recent_series.user_id', Auth::user()->id)
