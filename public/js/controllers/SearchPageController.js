@@ -65,6 +65,8 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					break;
 				default:
 			}
+			if(!response.data.length) $scope.noHistory=true
+			else $scope.noHistory=false
 		})
 	}
 	$scope.fetchHistory();
@@ -74,6 +76,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		rate.clear_history($scope.active_tab)
 		.then(function(response){
 			$scope.reset_tab()
+			$scope.noHistory=true
 		})
 	}
 
