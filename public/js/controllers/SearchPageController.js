@@ -56,13 +56,13 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 			switch($scope.active_tab) {
 				case 'movie':
 				case 'series':
-					$scope.movies=response.data
+					$scope.movies=response.data.length ? response.data : null
 					break;
 				case 'person':
-					$scope.people=response.data
+					$scope.people=response.data.length ? response.data : null
 					break;
 				case 'user':
-					$scope.users=response.data
+					$scope.users=response.data.length ? response.data : null
 					break;
 				default:
 			}
