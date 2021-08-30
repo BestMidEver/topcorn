@@ -49,6 +49,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 
 	$scope.fetchHistory = function()
 	{
+		$scope.isInputEmpty=true
 		$scope.reset_tab()
 		rate.fetch_history($scope.active_tab)
 		.then(function(response){
@@ -87,7 +88,6 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 		var temp=$scope.generalinput.replace(/ /g , "%20");
 		if(temp.length == 0){
 			$scope.reset_tab();
-			$scope.isInputEmpty=true
 			$scope.fetchHistory();
 		}else{
     		$scope.is_waiting=true;
