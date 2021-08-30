@@ -50,6 +50,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 	$scope.fetchHistory = function()
 	{
 		$scope.isInputEmpty=true
+		$scope.is_waiting=true
 		rate.fetch_history($scope.active_tab)
 		.then(function(response){
 			switch($scope.active_tab) {
