@@ -61,7 +61,7 @@ MyApp.controller('SearchPageController', function($scope, $http, $anchorScroll, 
 					$scope.people=response.data
 					break;
 				case 'user':
-					$scope.users=[]
+					$scope.users=response.data
 					break;
 				default:
 			}
