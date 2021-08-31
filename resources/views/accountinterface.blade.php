@@ -3,6 +3,13 @@
 @include('head.head_accountinterface')
 
 @section('body')
+<!-- Topcorn commercials -->
+If enjoy using topcorn, consider supporting us
+<!-- Topcorn commercials -->
+
+
+
+
 <h5 class="text-center text-md-left col mt-3 mt-md-4" ng-cloak>{{ __('navbar.account') }}</h5>
 
 
