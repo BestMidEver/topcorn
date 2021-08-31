@@ -6,7 +6,7 @@
 <!-- Topcorn commercials -->
 <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-ride="carousel" data-interval="100000">
   <div class="carousel-inner bg-secondary" style="height: 200px">
-    <div class="carousel-item active d-flex justify-content-center align-items-center h-100 text-center h2">
+    <div class="carousel-item active d-flex justify-content-center align-items-center h-100 text-center h3">
 		<div>If enjoy using topcorn, consider supporting us</div>
     </div>
     <div class="carousel-item">
