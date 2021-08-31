@@ -6,7 +6,7 @@
 <!-- Topcorn commercials -->
 <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-ride="carousel" data-interval="5000">
   <div class="carousel-inner bg-secondary h4 text-center" style="height: 100px">
-    <div class="carousel-item active">
+    <div class="carousel-item active h100">
 		<div class="d-flex justify-content-center align-items-center h-100">
 			<div>
 				If enjoy using topcorn, consider supporting us <a class="btn btn-link btn-sm fa40" style="color:#ff424d" href="{{config('constants.patreon.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('navbar.patreon') }}"><i class="fab fa-patreon"></i></a>
@@ -15,9 +15,6 @@
     </div>
     <div class="carousel-item">
       If enjoy using topcorn, consider supporting us
-    </div>
-    <div class="carousel-item">
-		If enjoy using topcorn, consider supporting us
     </div>
   </div>
 </div>
