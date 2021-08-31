@@ -5,10 +5,9 @@
 @section('body')
 <!-- Topcorn commercials -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="100000">
-  <div class="carousel-inner bg-secondary" style="height: 200px">
-    <div class="carousel-item active h-100 justify-content-center">
-		<div>If enjoy using topcorn, consider supporting us</div>
-		
+  <div class="carousel-inner bg-secondary d-flex justify-content-center" style="height: 200px">
+    <div class="carousel-item active">
+		If enjoy using topcorn, consider supporting us
     </div>
     <div class="carousel-item">
       If enjoy using topcorn, consider supporting us
