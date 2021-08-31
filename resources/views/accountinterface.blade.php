@@ -13,8 +13,12 @@
 			</div>
 		</div>
     </div>
-    <div class="carousel-item">
-      If enjoy using topcorn, consider supporting us
+    <div class="carousel-item h-100">
+		<div class="d-flex justify-content-center align-items-center h-100">
+			<div>
+				Have you tried our Android app <a class="btn btn-link btn-sm fa40" style="color:#a4c639" href="{{config('constants.android.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_android') }}"><i class="fab fa-android"></i></a>
+			</div>
+		</div>
     </div>
   </div>
 </div>
