@@ -7,7 +7,7 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-ride="carousel" data-interval="100000">
   <div class="carousel-inner bg-secondary" style="min-height: 100px">
     <div class="carousel-item active d-flex justify-content-center align-items-center h-100 text-center h4">
-		<div>If enjoy using topcorn, consider supporting us <a class="btn btn-link btn-sm fa40 text-white" href="{{config('constants.patreon.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('navbar.patreon') }}"><i class="fab fa-patreon"></i></a></div>
+		<div>If enjoy using topcorn, consider supporting us <a class="btn btn-link btn-sm fa40" style="color:#ff424d" href="{{config('constants.patreon.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('navbar.patreon') }}"><i class="fab fa-patreon"></i></a></div>
     </div>
     <div class="carousel-item">
       If enjoy using topcorn, consider supporting us
