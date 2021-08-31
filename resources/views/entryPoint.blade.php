@@ -5,7 +5,7 @@
 <p>My first paragraph.</p>
 
 <div id="app">
-@{{ message }}
+@{{ messages }}
 </div>
 
 </body>
