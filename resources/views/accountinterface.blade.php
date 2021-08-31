@@ -9,14 +9,14 @@
     <div class="carousel-item active h-100">
 		<div class="d-flex justify-content-center align-items-center h-100">
 			<div>
-				If enjoy using topcorn, consider supporting us <a class="btn btn-link btn-sm fa40" style="color:#ff424d" href="{{config('constants.patreon.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('navbar.patreon') }}"><i class="fab fa-patreon"></i></a>
+				If enjoy using topcorn, please consider supporting us <a class="btn btn-link btn-sm fa40" style="color:#ff424d" href="{{config('constants.patreon.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('navbar.patreon') }}"><i class="fab fa-patreon"></i></a>
 			</div>
 		</div>
     </div>
     <div class="carousel-item h-100">
 		<div class="d-flex justify-content-center align-items-center h-100">
 			<div>
-				Have you tried the Android app? <a class="btn btn-link btn-sm fa40" style="color:#a4c639" href="{{config('constants.android.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_android') }}"><i class="fab fa-android"></i></a>
+				Check out the Android app <a class="btn btn-link btn-sm fa40" style="color:#a4c639" href="{{config('constants.android.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('general.users_android') }}"><i class="fab fa-android"></i></a>
 			</div>
 		</div>
     </div>
