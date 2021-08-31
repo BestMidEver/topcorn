@@ -4,7 +4,7 @@
 
 @section('body')
 <!-- Topcorn Commercial -->
-${{movie}}
+${{movie.id}}
 <!-- Topcorn Commercial -->
 
 
