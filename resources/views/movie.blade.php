@@ -3,14 +3,6 @@
 @include('head.head_movie')
 
 @section('body')
-<!-- Topcorn Commercial -->
-${{movie.id}}
-<!-- Topcorn Commercial -->
-
-
-
-
-
 <!--Trailer Section-->
 <div class="mt-md-4" ng-cloak>
 	<div class="position-relative">
