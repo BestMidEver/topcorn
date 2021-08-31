@@ -5,7 +5,7 @@
 @section('body')
 <!-- Topcorn commercials -->
 <div id="carouselExampleSlidesOnly" class="carousel slide mt-3" data-ride="carousel" data-interval="15000">
-  <div class="carousel-inner bg-secondary h4 text-center" style="height: 100px">
+  <div class="carousel-inner bg-secondary h4 text-center text-white" style="height: 100px">
     <div class="carousel-item active h-100">
 		<div class="d-flex justify-content-center align-items-center h-100">
 			<div>
