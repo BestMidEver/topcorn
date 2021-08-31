@@ -9,7 +9,7 @@
     <div class="carousel-item active h-100">
 		<div class="d-flex justify-content-center align-items-center h-100">
 			<div>
-				If enjoy using topcorn, please consider supporting us <a class="btn btn-link btn-sm fa40" style="color:#ff424d" href="{{config('constants.patreon.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('navbar.patreon') }}"><i class="fab fa-patreon"></i></a>
+				If enjoy using topcorn, please consider supporting it <a class="btn btn-link btn-sm fa40" style="color:#ff424d" href="{{config('constants.patreon.our_link')}}" target="_blank" data-toggle="tooltip" data-placement="top" title="{{ __('navbar.patreon') }}"><i class="fab fa-patreon"></i></a>
 			</div>
 		</div>
     </div>
