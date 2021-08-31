@@ -4,7 +4,7 @@
 
 @section('body')
 <!-- Topcorn commercials -->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="10000">
   <div class="carousel-inner">
     <div class="carousel-item active">
 		If enjoy using topcorn, consider supporting us
