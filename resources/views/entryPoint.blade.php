@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<?php
-$file=fopen("mytestfile.txt","r");
-?>
 <h1>My First Headings</h1>
 <p>My first paragraph.</p>
 
